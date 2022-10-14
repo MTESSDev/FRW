@@ -1,5 +1,10 @@
 # FRW - Formulaires Web
 
+## Comment débuter?
+1. Procurez-vous une clée API auprès du MTESS;
+2. Configurez votre bac-à-sable;
+3. Clonez le dépôt courant et copiez le répertoire "Exemple" pour le nommer à votre goût, il regroupera tous vos formulaires;
+
 
 ## Vous avez une question ou une problématique?
 

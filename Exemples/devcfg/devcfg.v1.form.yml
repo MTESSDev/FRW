@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../../FRW.form.schema.json
+form:
+  title:
+    fr: Configuration de développement
+  sectionsGroup:
+    - sectionGroup:
+      sections:
+        #Section 0 - contexte
+        - section:
+            fr: Contexte utilisateur
+          id: contexte
+          components:
+            - type: zoneEvidence
+              classes: page-texte
+              text:
+                fr:
+                    <p>Entrez les informations ci-dessous pour configurer votre session de développement.</p>
+            - name: CodeNT
+              type: text 
+              help:
+                fr: "Correspond à votre utilisateur windows (Ex: mes\\cotda05)"
+              outerClasses: md
+              additionals:
+                autocomplete: true
+              label: 
+                fr: Code NT
+            - name: brancheECS
+              type: text
+              additionals:
+                autocomplete: true
+              help:
+                fr: master par défaut
+              label: 
+                fr: Branche ECS
+              validations:
+                optional: null
+            - name: dateProduction
+              type: date
+              help:
+                fr: Date pour la gestion du traitement différé
+              label: 
+                fr: Date de production
+              validations:
+                optional:
+              

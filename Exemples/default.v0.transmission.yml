@@ -1,0 +1,98 @@
+etapes:
+  - tache: genererPdf
+  - tache: traiterDocumentsSoumis
+  - tache: ajouterEstampille
+  - tache: appelerServiceExterne
+    options:
+      client: appel_externe
+      ignorerSurBoutonForcerPdf: true
+
+
+# Cette configuration a été laissée telle quelle pour montrer les cas tordus que l'ont peut gérer en sortie vers un API
+http_client:
+  appel_externe:
+    method: POST
+    url: >-
+      http://{{#if
+      ConfigDev.brancheecs}}{{ConfigDev.brancheecs}}{{else}}master{{/if}}-transmissiondocuments.intra-ecs.sa.mes.reseau.intra/api/v1/TransmissionDocuments/Soumettre/FRW@{{ConfigFormulaire.type}}{{Langue}}
+    use_default_credentials: true
+    headers:
+      CodeNT: '{{CodeNT}}'
+      Accept: application/json
+      IdUtilisateur: '{{IdUtilisateur}}'
+    content:
+      json_content: |
+        {
+          "entree": {
+              "champsFormulaire": {{{Json DonneesFormulaire ">flatten;_;_{0}" ">forceString"}}},
+              "fichiersBruts": {{{Json Pdfs}}}
+              {{#with documentsSoumis}},
+              "documentsSoumis": [
+                {{#each .}}
+                  {{#if @first}}{{else}},{{/if}}
+                  {{#each .}}
+                    {{#if @first}}{{else}},{{/if}}
+                    {
+                        "nomOriginal": {{{Json name}}},
+                        "nomEncode": {{{Json url}}},
+                        "metadonnees": 
+                          {
+                            {{#each .}}
+                              {{#if @first}}{{else}},{{/if}}
+                              "{{@key}}": {{{Json @value}}}
+                            {{/each}}
+                          }
+                    }
+                  {{/each}}
+                {{/each}}
+              ]{{/with}},
+            "configuration": {{{Json FichiersExternes.ECS25A}}}
+          }, 
+          "contexteECS": null
+        }
+    check_response:
+      throw_exception_if_body_not_contains_all:
+        - '"erreurs":null'
+  appel_externe_confirmation:
+    method: POST
+    url: >-
+      http://{{#if
+      ConfigDev.brancheecs}}{{ConfigDev.brancheecs}}{{else}}master{{/if}}-transmissiondocuments.intra-ecs.sa.mes.reseau.intra/api/v1/TransmissionDocuments/Soumettre/FRW@{{ConfigFormulaire.type}}.confirmation{{Langue}}
+    use_default_credentials: true
+    headers:
+      CodeNT: '{{CodeNT}}'
+      Accept: application/json
+      IdUtilisateur: '{{IdUtilisateur}}'
+    content:
+      json_content: |
+        {
+          "entree": {
+              "champsFormulaire": {{{Json DonneesFormulaire ">flatten;_;_{0}" ">forceString"}}},
+              "fichiersBruts": {{{Json Pdfs}}}
+              {{#with documentsSoumis}},
+              "documentsSoumis": [
+                {{#each .}}
+                  {{#if @first}}{{else}},{{/if}}
+                  {{#each .}}
+                    {{#if @first}}{{else}},{{/if}}
+                    {
+                        "nomOriginal": {{{Json name}}},
+                        "nomEncode": {{{Json url}}},
+                        "metadonnees": 
+                          {
+                            {{#each .}}
+                              {{#if @first}}{{else}},{{/if}}
+                              "{{@key}}": {{{Json @value}}}
+                            {{/each}}
+                          }
+                    }
+                  {{/each}}
+                {{/each}}
+              ]{{/with}},
+            "configuration": {{{Json FichiersExternes.ECS25A}}}
+          }, 
+          "contexteECS": null
+        }
+    check_response:
+      throw_exception_if_body_not_contains_all:
+        - '"erreurs":null'

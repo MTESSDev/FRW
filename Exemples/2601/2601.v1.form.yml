@@ -1,5 +1,5 @@
-# yaml-language-server: $schema=../../FRW.form.schema.json
-# debug: langue=auto, showAll=true
+# yaml-language-server: $schema=https://formulaires.it.mtess.gouv.qc.ca/api/v1/SIS/ObtenirSchema/form
+# debug: langue=auto, showAll=false
 form:
   title:
     fr: Déclaration de changement

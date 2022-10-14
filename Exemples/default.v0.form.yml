@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=FRW.form.schema.json
+# yaml-language-server: $schema=https://formulaires.it.mtess.gouv.qc.ca/api/v1/SIS/ObtenirSchema/form
 
 # Ce fichier montre les configurations globale d'un système.
 # Le fichier est facutatif 

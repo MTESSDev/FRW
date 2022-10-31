@@ -3,6 +3,7 @@ swagger: '2.0'
 info:
   title: FRW - API
   description: Définition de l'API publique pour intéragir avec FRW.
+  version: "1"
 paths:
   /api/v1/SIS/CreerFormulaireIndividu/{typeFormulaire}:
     post:
@@ -21,7 +22,6 @@ paths:
           description: '_Example:_ `"3003"`'
           required: true
           type: string
-          example: '3003'
         - in: header
           name: X-ApiKey
           description: Clé Api
@@ -184,7 +184,6 @@ paths:
         - text/plain
         - application/json
         - text/json
-      example: TEST
       parameters:
         - in: path
           name: nomFichierProtege

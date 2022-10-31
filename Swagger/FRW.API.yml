@@ -4,42 +4,13 @@ info:
   title: FRW - API
   description: Définition de l'API publique pour intéragir avec FRW.
 paths:
-  /api/v1/Document/Telecharger/{nomFichierProtege}:
-    get:
-      tags:
-        - Document
-      summary: FRW121 - Télécharger une pièce par nom de fichier protégé
-      produces:
-        - text/plain
-        - application/json
-        - text/json
-      example: TEST
-      parameters:
-        - in: path
-          name: nomFichierProtege
-          description: Nom fichier protégé (provient du contenu du formulaire)
-          required: true
-          type: string
-        - in: header
-          name: X-NoPublicSystemeAutorise
-          description: Guid publique de système autorisé
-          required: true
-          type: string
-        - in: header
-          name: X-ApiKey
-          required: true
-          description: Clée API
-          type: string
-      responses:
-        '200':
-          description: Success
-        '401':
-          description: Unauthorized
   /api/v1/SIS/CreerFormulaireIndividu/{typeFormulaire}:
     post:
       tags:
         - SIS
-      summary: FRW111 - Créer un formulaire Web pour un individu.
+      summary: |
+        FRW111 - Créer un formulaire Web pour un individu. 
+        > Permet de créer un formulaire pour un individu connu par le système autorisé.
       consumes:
         - application/json
       produces:
@@ -79,7 +50,9 @@ paths:
     post:
       tags:
         - SIS
-      summary: FRW112 - Obtenir les formulaire web d'un individu
+      summary: | 
+        FRW112 - Obtenir les formulaire web d'un individu
+        > Permet d'obtenir tous les formulaires d'un individu selon les états passés en paramètres.
       consumes:
         - application/json
       produces:
@@ -115,7 +88,9 @@ paths:
     post:
       tags:
         - SIS
-      summary: FRW113 - Obtenir un identifiant de session pour un formulaire
+      summary: |
+        FRW113 - Obtenir un identifiant de session pour un formulaire
+        > Permet de reprendre un formulaire pour un utilisateur le demandant
       consumes:
         - application/json
       produces:
@@ -149,7 +124,9 @@ paths:
     get:
       tags:
         - SIS
-      summary: FRW114 - Supprimer un formulaire web
+      summary: | 
+        FRW114 - Supprimer un formulaire web
+        > Permet de supprimer un formulaire demandé
       parameters:
         - in: path
           name: noFormulairePublic
@@ -171,31 +148,64 @@ paths:
       responses:
         '200':
           description: Success
-  /api/v1/SIS/DeployerSysteme:
-    post:
+#  /api/v1/SIS/DeployerSysteme:
+#    post:
+#      tags:
+#        - SIS
+#      summary: | 
+#        FRWxxx - Déployer un système au complet
+#        > Il n'est pas recommandé d'utiliser cet api, préférez utiliser l'extension Azure DevOps de déploiement.
+#      consumes:
+#        - application/json
+#      parameters:
+#        - in: header
+#          name: X-ApiKey
+#          required: true
+#          description: Clé Api
+#          type: string
+#        - in: header
+#          name: X-NoPublicSystemeAutorise
+#          required: true
+#          description: Numéro public du système autorisé
+#          type: string
+#        - in: body
+#          name: body
+#          schema:
+#            $ref: '#/definitions/EntrantDeployerSysteme'
+#      responses:
+#        '200':
+#          description: Success
+  /api/v1/Document/Telecharger/{nomFichierProtege}:
+    get:
       tags:
-        - SIS
-      summary: FRWxxx - Déployer un système au complet
-      consumes:
+        - Document
+      summary: FRW121 - Télécharger une pièce par nom de fichier protégé
+      produces:
+        - text/plain
         - application/json
+        - text/json
+      example: TEST
       parameters:
-        - in: header
-          name: X-ApiKey
+        - in: path
+          name: nomFichierProtege
+          description: Nom fichier protégé (provient du contenu du formulaire)
           required: true
-          description: Clé Api
           type: string
         - in: header
           name: X-NoPublicSystemeAutorise
+          description: Guid publique de système autorisé
           required: true
-          description: Numéro public du système autorisé
           type: string
-        - in: body
-          name: body
-          schema:
-            $ref: '#/definitions/EntrantDeployerSysteme'
+        - in: header
+          name: X-ApiKey
+          required: true
+          description: Clée API
+          type: string
       responses:
         '200':
           description: Success
+        '401':
+          description: Unauthorized
 definitions:
   EntrantCreerFormulaireIndividu:
     type: object
@@ -206,12 +216,12 @@ definitions:
       ..AUTRES..:
         type: object
         description: N'importe quelles autres propriétés, vous pouvez choisir les noms à votre guise.
-  EntrantDeployerSysteme:
-    type: object
-    properties:
-      zip:
-        format: byte
-        type: string
+#  EntrantDeployerSysteme:
+#    type: object
+#    properties:
+#      zip:
+#        format: byte
+#        type: string
   EntrantRechercherFormulairesSIS:
     type: object
     properties:
@@ -221,29 +231,36 @@ definitions:
         items:
           type: string
         example:
-        - foo
-        - bar
-        - baz
+        - CRE
+        - REP
+        - MAJ
+        - TRANSMIS
       codeTypeFormulaire:
         type: string
         description: Code du formualaire ex. `3003`
       noConfirmation:
         format: int32
         type: integer
+        description: Numéro confirmant la transmission donné à l'utilisateur
+        example: 12345311
       noPublicFormulaire:
         type: string
+        description: Identifiant unique du formulaire
   RetourCreerReprendreFormulaireIndividu:
     type: object
     properties:
       noPublicSession:
         type: string
+        description: Identifiant de session unique, utilisable une seule fois
       noPublicForm:
         type: string
+        description: Identifiant unique du formulaire
   RetourRechercherFormulaires:
     type: object
     properties:
       typeFormulaire:
         type: string
+        description: Nom du répertoire déployé (nom du formulaire dans l'URL)
         example: 3003
       noPublicForm:
         type: string

@@ -1,34 +1,13 @@
 # FRW - API
 Définition de l'API publique pour intéragir avec FRW.
 
-### /api/v1/Document/Telecharger/{nomFichierProtege}
-
-#### GET
-##### Summary
-
-FRW121 - Télécharger une pièce par nom de fichier protégé
-
-##### Parameters
-
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| nomFichierProtege | path | Nom fichier protégé (provient du contenu du formulaire) | Yes | string |
-| X-NoPublicSystemeAutorise | header | Guid publique de système autorisé | Yes | string |
-| X-ApiKey | header | Clée API | Yes | string |
-
-##### Responses
-
-| Code | Description |
-| ---- | ----------- |
-| 200 | Success |
-| 401 | Unauthorized |
-
 ### /api/v1/SIS/CreerFormulaireIndividu/{typeFormulaire}
 
 #### POST
 ##### Summary
 
 FRW111 - Créer un formulaire Web pour un individu.
+> Permet de créer un formulaire pour un individu connu par le système autorisé.
 
 ##### Parameters
 
@@ -52,6 +31,7 @@ FRW111 - Créer un formulaire Web pour un individu.
 ##### Summary
 
 FRW112 - Obtenir les formulaire web d'un individu
+> Permet d'obtenir tous les formulaires d'un individu selon les états passés en paramètres.
 
 ##### Parameters
 
@@ -74,6 +54,7 @@ FRW112 - Obtenir les formulaire web d'un individu
 ##### Summary
 
 FRW113 - Obtenir un identifiant de session pour un formulaire
+> Permet de reprendre un formulaire pour un utilisateur le demandant
 
 ##### Parameters
 
@@ -96,6 +77,7 @@ FRW113 - Obtenir un identifiant de session pour un formulaire
 ##### Summary
 
 FRW114 - Supprimer un formulaire web
+> Permet de supprimer un formulaire demandé
 
 ##### Parameters
 
@@ -112,26 +94,27 @@ FRW114 - Supprimer un formulaire web
 | ---- | ----------- |
 | 200 | Success |
 
-### /api/v1/SIS/DeployerSysteme
+### /api/v1/Document/Telecharger/{nomFichierProtege}
 
-#### POST
+#### GET
 ##### Summary
 
-FRWxxx - Déployer un système au complet
+FRW121 - Télécharger une pièce par nom de fichier protégé
 
 ##### Parameters
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
-| X-ApiKey | header | Clé Api | Yes | string |
-| X-NoPublicSystemeAutorise | header | Numéro public du système autorisé | Yes | string |
-| body | body |  | No | [EntrantDeployerSysteme](#entrantdeployersysteme) |
+| nomFichierProtege | path | Nom fichier protégé (provient du contenu du formulaire) | Yes | string |
+| X-NoPublicSystemeAutorise | header | Guid publique de système autorisé | Yes | string |
+| X-ApiKey | header | Clée API | Yes | string |
 
 ##### Responses
 
 | Code | Description |
 | ---- | ----------- |
 | 200 | Success |
+| 401 | Unauthorized |
 
 ### Models
 
@@ -142,33 +125,27 @@ FRWxxx - Déployer un système au complet
 | form | object | Le contenu du formulaire (pour pré-remplissage) | No |
 | ..AUTRES.. | object | N'importe quelles autres propriétés, vous pouvez choisir les noms à votre guise. | No |
 
-#### EntrantDeployerSysteme
-
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| zip | byte |  | No |
-
 #### EntrantRechercherFormulairesSIS
 
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
-| etatsFormulaireRecherche | [ string ] | Liste des états à obtenir<br>_Example:_ `["foo","bar","baz"]` | No |
+| etatsFormulaireRecherche | [ string ] | Liste des états à obtenir<br>_Example:_ `["CRE","REP","MAJ","TRANSMIS"]` | No |
 | codeTypeFormulaire | string | Code du formualaire ex. `3003` | No |
-| noConfirmation | integer |  | No |
-| noPublicFormulaire | string |  | No |
+| noConfirmation | integer | Numéro confirmant la transmission donné à l'utilisateur<br>_Example:_ `12345311` | No |
+| noPublicFormulaire | string | Identifiant unique du formulaire | No |
 
 #### RetourCreerReprendreFormulaireIndividu
 
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
-| noPublicSession | string |  | No |
-| noPublicForm | string |  | No |
+| noPublicSession | string | Identifiant de session unique, utilisable une seule fois | No |
+| noPublicForm | string | Identifiant unique du formulaire | No |
 
 #### RetourRechercherFormulaires
 
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
-| typeFormulaire | string | _Example:_ `3003` | No |
+| typeFormulaire | string | Nom du répertoire déployé (nom du formulaire dans l'URL)<br>_Example:_ `3003` | No |
 | noPublicForm | string | Identifiant unique du formulaire | No |
 | identifiantUtilisateur | string | Identifiant de l'utilisateur à qui appartient le formulaire | No |
 | titreFrancais | string | Titre français du formulaire extrait de la configuation | No |

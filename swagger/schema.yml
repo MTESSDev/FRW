@@ -31,8 +31,6 @@ paths:
           description: Success
         '401':
           description: Unauthorized
-          schema:
-            $ref: '#/definitions/ProblemDetails'
   /api/v1/SIS/CreerFormulaireIndividu/{typeFormulaire}:
     post:
       tags:
@@ -226,21 +224,6 @@ definitions:
         type: integer
       noPublicFormulaire:
         type: string
-  ProblemDetails:
-    type: object
-    properties:
-      type:
-        type: string
-      title:
-        type: string
-      status:
-        format: int32
-        type: integer
-      detail:
-        type: string
-      instance:
-        type: string
-    additionalProperties: {}
   RetourCreerReprendreFormulaireIndividu:
     type: object
     properties:

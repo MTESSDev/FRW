@@ -18,10 +18,10 @@ FRW121 - Télécharger une pièce par nom de fichier protégé
 
 ##### Responses
 
-| Code | Description | Schema |
-| ---- | ----------- | ------ |
-| 200 | Success |  |
-| 401 | Unauthorized | [ProblemDetails](#problemdetails) |
+| Code | Description |
+| ---- | ----------- |
+| 200 | Success |
+| 401 | Unauthorized |
 
 ### /api/v1/SIS/CreerFormulaireIndividu/{typeFormulaire}
 
@@ -158,16 +158,6 @@ FRWxxx - Déployer un système au complet
 | codeTypeFormulaire | string | Code du formualaire ex. `3003` | No |
 | noConfirmation | integer |  | No |
 | noPublicFormulaire | string |  | No |
-
-#### ProblemDetails
-
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| type | string |  | No |
-| title | string |  | No |
-| status | integer |  | No |
-| detail | string |  | No |
-| instance | string |  | No |
 
 #### RetourCreerReprendreFormulaireIndividu
 

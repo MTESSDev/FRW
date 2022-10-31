@@ -1,3 +1,4 @@
+# Pour générer le fichier .md : npx swagger-markdown -i .\schema.yml -o .\README.md
 swagger: '2.0'
 info:
   title: FRW - API
@@ -12,6 +13,7 @@ paths:
         - text/plain
         - application/json
         - text/json
+      example: TEST
       parameters:
         - in: path
           name: nomFichierProtege
@@ -20,11 +22,13 @@ paths:
           type: string
         - in: header
           name: X-NoPublicSystemeAutorise
-          description: Guid publique de système autorisé (facultative)
+          description: Guid publique de système autorisé
+          required: true
           type: string
         - in: header
           name: X-ApiKey
-          description: Clée API (facultative)
+          required: true
+          description: Clée API
           type: string
       responses:
         '200':
@@ -43,20 +47,23 @@ paths:
       parameters:
         - in: path
           name: typeFormulaire
-          description: ''
+          description: '_Example:_ `"3003"`'
           required: true
           type: string
+          example: '3003'
         - in: header
           name: X-ApiKey
           description: Clé Api
+          required: true
           type: string
         - in: header
           name: X-NoPublicSystemeAutorise
           description: Numéro public du système autorisé
+          required: true
           type: string
         - in: header
           name: X-IdentifiantUtilisateur
-          description: Identifiant de l'utilisateur
+          description: Identifiant de l'utilisateur pour lequel le formulaire est créé
           type: string
         - in: body
           name: body
@@ -72,7 +79,7 @@ paths:
     post:
       tags:
         - SIS
-      summary: FRW112 - obtenir les formulaire web d'un individu
+      summary: FRW112 - Obtenir les formulaire web d'un individu
       consumes:
         - application/json
       produces:
@@ -80,15 +87,17 @@ paths:
       parameters:
         - in: header
           name: X-ApiKey
+          required: true
           description: Clé Api
           type: string
         - in: header
           name: X-NoPublicSystemeAutorise
+          required: true
           description: Numéro public du système autorisé
           type: string
         - in: header
           name: X-IdentifiantUtilisateur
-          description: Identifiant de l'utilisateur
+          description: Identifiant de l'utilisateur pour lequel obtenir les formulaires
           type: string
         - in: body
           name: body
@@ -114,25 +123,23 @@ paths:
       parameters:
         - in: path
           name: noFormulairePublic
-          description: ''
+          description: Identifiant du formulaire pour lequel créer une session
           required: true
           type: string
         - in: header
           name: X-ApiKey
+          required: true
           description: Clé Api
           type: string
         - in: header
           name: X-NoPublicSystemeAutorise
+          required: true
           description: Numéro public du système autorisé
           type: string
         - in: header
           name: X-IdentifiantUtilisateur
-          description: Identifiant de l'utilisateur
+          description: Identifiant de l'utilisateur pour lequel on demande une session
           type: string
-        - in: body
-          name: body
-          description: ''
-          schema: {}
       responses:
         '200':
           description: Success
@@ -146,7 +153,7 @@ paths:
       parameters:
         - in: path
           name: noFormulairePublic
-          description: ''
+          description: Identifiant du formulaire à supprimer
           required: true
           type: string
         - in: header
@@ -174,15 +181,13 @@ paths:
       parameters:
         - in: header
           name: X-ApiKey
+          required: true
           description: Clé Api
           type: string
         - in: header
           name: X-NoPublicSystemeAutorise
+          required: true
           description: Numéro public du système autorisé
-          type: string
-        - in: header
-          name: X-IdentifiantUtilisateur
-          description: Identifiant de l'utilisateur
           type: string
         - in: body
           name: body
@@ -212,10 +217,13 @@ definitions:
     properties:
       etatsFormulaireRecherche:
         type: array
-        description: >
-            `CRE`, `MAJ`, `TRANSMIS`, TODO à finir, 
+        description: Liste des états à obtenir
         items:
           type: string
+        example:
+        - foo
+        - bar
+        - baz
       codeTypeFormulaire:
         type: string
         description: Code du formualaire ex. `3003`
@@ -236,19 +244,28 @@ definitions:
     properties:
       typeFormulaire:
         type: string
+        example: 3003
       noPublicForm:
         type: string
+        description: Identifiant unique du formulaire
       identifiantUtilisateur:
         type: string
+        description: Identifiant de l'utilisateur à qui appartient le formulaire
       titreFrancais:
         type: string
+        description: Titre français du formulaire extrait de la configuation
       titreAnglais:
         type: string
+        description: Titre anglais du formulaire extrait de la configuation
       dateCreation:
         format: date-time
+        description: Date de création du formulaire
         type: string
       dernierEtat:
         type: string
+        description: Dernier état
+        example: MAJ
       dateDernierEtat:
         format: date-time
+        description: Date de la dernière modification ou ouverture du formulaire
         type: string

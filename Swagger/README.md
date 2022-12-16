@@ -66,6 +66,7 @@ FRW113 - Obtenir un identifiant de session pour un formulaire
 | X-ApiKey | header | Clé Api | Yes | string |
 | X-NoPublicSystemeAutorise | header | Numéro public du système autorisé | Yes | string |
 | X-IdentifiantUtilisateur | header | Identifiant de l'utilisateur pour lequel on demande une session | No | string |
+| body | body | Contenu à remplacer dans le formulaire à reprendre (Ne permet que de remplacer un contexte ou un objet perso. ne remplace pas le contenu d'un formulaire.) | Yes | object |
 
 ##### Responses
 

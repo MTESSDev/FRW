@@ -115,6 +115,11 @@ paths:
           name: X-IdentifiantUtilisateur
           description: Identifiant de l'utilisateur pour lequel on demande une session
           type: string
+        - in: body
+          name: body
+          description: Contenu à remplacer dans le formulaire à reprendre (Ne permet que de remplacer un contexte ou un objet perso. ne remplace pas le contenu d'un formulaire.)
+          required: true
+          type: object
       responses:
         '200':
           description: Success

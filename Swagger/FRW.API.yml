@@ -118,8 +118,8 @@ paths:
         - in: body
           name: body
           description: Contenu à remplacer dans le formulaire à reprendre (Ne permet que de remplacer un contexte ou un objet perso. ne remplace pas le contenu d'un formulaire.)
-          required: true
-          type: object
+          schema: 
+            $ref: '#/definitions/EntrantObtenirIdentifiantSessionFormulaire'
       responses:
         '200':
           description: Success
@@ -213,13 +213,11 @@ paths:
 definitions:
   EntrantCreerFormulaireIndividu:
     type: object
+    additionalProperties: true
     properties:
       form:
         type: object
         description: Le contenu du formulaire (pour pré-remplissage)
-      ..AUTRES..:
-        type: object
-        description: N'importe quelles autres propriétés, vous pouvez choisir les noms à votre guise.
 #  EntrantDeployerSysteme:
 #    type: object
 #    properties:
@@ -250,6 +248,9 @@ definitions:
       noPublicFormulaire:
         type: string
         description: Identifiant unique du formulaire
+  EntrantObtenirIdentifiantSessionFormulaire:
+    type: object
+    additionalProperties: true
   RetourCreerReprendreFormulaireIndividu:
     type: object
     properties:

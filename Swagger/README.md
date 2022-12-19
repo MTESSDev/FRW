@@ -66,7 +66,7 @@ FRW113 - Obtenir un identifiant de session pour un formulaire
 | X-ApiKey | header | Clé Api | Yes | string |
 | X-NoPublicSystemeAutorise | header | Numéro public du système autorisé | Yes | string |
 | X-IdentifiantUtilisateur | header | Identifiant de l'utilisateur pour lequel on demande une session | No | string |
-| body | body | Contenu à remplacer dans le formulaire à reprendre (Ne permet que de remplacer un contexte ou un objet perso. ne remplace pas le contenu d'un formulaire.) | Yes | object |
+| body | body | Contenu à remplacer dans le formulaire à reprendre (Ne permet que de remplacer un contexte ou un objet perso. ne remplace pas le contenu d'un formulaire.) | No | [EntrantObtenirIdentifiantSessionFormulaire](#entrantobteniridentifiantsessionformulaire) |
 
 ##### Responses
 
@@ -126,7 +126,6 @@ FRW121 - Télécharger une pièce par nom de fichier protégé
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
 | form | object | Le contenu du formulaire (pour pré-remplissage) | No |
-| ..AUTRES.. | object | N'importe quelles autres propriétés, vous pouvez choisir les noms à votre guise. | No |
 
 #### EntrantRechercherFormulairesSIS
 
@@ -136,6 +135,12 @@ FRW121 - Télécharger une pièce par nom de fichier protégé
 | codeTypeFormulaire | string | Code du formualaire ex. `3003` | No |
 | noConfirmation | integer | Numéro confirmant la transmission donné à l'utilisateur<br>_Example:_ `12345311` | No |
 | noPublicFormulaire | string | Identifiant unique du formulaire | No |
+
+#### EntrantObtenirIdentifiantSessionFormulaire
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| EntrantObtenirIdentifiantSessionFormulaire | object |  |  |
 
 #### RetourCreerReprendreFormulaireIndividu
 

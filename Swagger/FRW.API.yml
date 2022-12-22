@@ -239,7 +239,7 @@ definitions:
         - TRANSMIS
       codeTypeFormulaire:
         type: string
-        description: Code du formualaire ex. `3003` - NON IMPLÉMENTÉ POUR LE MOMENT
+        description: Code du formulaire ex. `3003` - NON IMPLÉMENTÉ POUR LE MOMENT
       noConfirmation:
         format: int32
         type: integer

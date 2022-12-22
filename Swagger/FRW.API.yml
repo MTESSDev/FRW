@@ -51,7 +51,7 @@ paths:
       tags:
         - SIS
       summary: | 
-        FRW112 - Obtenir les formulaire web d'un individu
+        FRW112 - Obtenir la liste des formulaires Web d'un individu
         > Permet d'obtenir tous les formulaires d'un individu selon les états passés en paramètres.
       consumes:
         - application/json
@@ -239,15 +239,15 @@ definitions:
         - TRANSMIS
       codeTypeFormulaire:
         type: string
-        description: Code du formualaire ex. `3003`
+        description: Code du formualaire ex. `3003` - NON IMPLÉMENTÉ POUR LE MOMENT
       noConfirmation:
         format: int32
         type: integer
-        description: Numéro confirmant la transmission donné à l'utilisateur
+        description: Numéro confirmant la transmission donné à l'utilisateur - NON IMPLÉMENTÉ POUR LE MOMENT
         example: 12345311
       noPublicFormulaire:
         type: string
-        description: Identifiant unique du formulaire
+        description: Identifiant unique du formulaire - NON IMPLÉMENTÉ POUR LE MOMENT
   EntrantObtenirIdentifiantSessionFormulaire:
     type: object
     additionalProperties: true

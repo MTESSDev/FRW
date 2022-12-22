@@ -32,7 +32,7 @@ FRW111 - Créer un formulaire Web pour un individu.
 #### POST
 ##### Summary
 
-FRW112 - Obtenir les formulaire web d'un individu
+FRW112 - Obtenir la liste des formulaires Web d'un individu
 > Permet d'obtenir tous les formulaires d'un individu selon les états passés en paramètres.
 
 ##### Parameters
@@ -132,9 +132,9 @@ FRW121 - Télécharger une pièce par nom de fichier protégé
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
 | etatsFormulaireRecherche | [ string ] | Liste des états à obtenir<br>_Example:_ `["CRE","REP","MAJ","TRANSMIS"]` | No |
-| codeTypeFormulaire | string | Code du formualaire ex. `3003` | No |
-| noConfirmation | integer | Numéro confirmant la transmission donné à l'utilisateur<br>_Example:_ `12345311` | No |
-| noPublicFormulaire | string | Identifiant unique du formulaire | No |
+| codeTypeFormulaire | string | Code du formualaire ex. `3003` - NON IMPLÉMENTÉ POUR LE MOMENT | No |
+| noConfirmation | integer | Numéro confirmant la transmission donné à l'utilisateur - NON IMPLÉMENTÉ POUR LE MOMENT<br>_Example:_ `12345311` | No |
+| noPublicFormulaire | string | Identifiant unique du formulaire - NON IMPLÉMENTÉ POUR LE MOMENT | No |
 
 #### EntrantObtenirIdentifiantSessionFormulaire
 

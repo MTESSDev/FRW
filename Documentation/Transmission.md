@@ -22,7 +22,12 @@ etapes: 
 
     # Appeler service externet permet d'appeler un API de dépôt.
     - tache: appelerServiceExterne    
-        options:      
+        options: 
+            # Nom du client à utiliser
+            # (il doit être inscrit dans le fichier default.v0.transmission.yml) 
+            # dans le bloc de config "http_client:"
             client: appel_externe      
+
+            # Permet de désactiver l'appel à ce service web lors du clique sur le bouton "Forcer PDF" de l'interface de débug
             ignorerSurBoutonForcerPdf: true
 ``` 

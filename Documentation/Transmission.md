@@ -21,7 +21,7 @@ etapes: 
     - tache: ajouterEstampille
 
     # Appeler service externet permet d'appeler un API de dépôt.
-    - tache: appelerServiceExterne    
+    - tache: appelerServiceExterne
         options: 
             # Nom du client à utiliser
             # (il doit être inscrit dans le fichier default.v0.transmission.yml) 

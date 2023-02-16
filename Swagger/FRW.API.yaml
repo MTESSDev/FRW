@@ -1,4 +1,4 @@
-# Pour générer le fichier .md : npx swagger-markdown -i .\FRW.API.yml -o .\README.md
+# Pour générer le fichier .md : npx swagger-markdown -i .\FRW.API.yaml -o .\README.md
 swagger: '2.0'
 info:
   title: FRW - API

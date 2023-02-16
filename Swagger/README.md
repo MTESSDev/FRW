@@ -132,9 +132,9 @@ FRW121 - Télécharger une pièce par nom de fichier protégé
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
 | etatsFormulaireRecherche | [ string ] | Liste des états à obtenir<br>_Example:_ `["CRE","REP","MAJ","TRANSMIS"]` | No |
-| codeTypeFormulaire | string | Code du formulaire ex. `3003` - NON IMPLÉMENTÉ POUR LE MOMENT | No |
-| noConfirmation | integer | Numéro confirmant la transmission donné à l'utilisateur - NON IMPLÉMENTÉ POUR LE MOMENT<br>_Example:_ `12345311` | No |
-| noPublicFormulaire | string | Identifiant unique du formulaire - NON IMPLÉMENTÉ POUR LE MOMENT | No |
+| codeTypeFormulaire | string | Code du formulaire ex. `3003` | No |
+| noConfirmation | integer | Numéro confirmant la transmission donné à l'utilisateur <br>_Example:_ `12345311` | No |
+| noPublicFormulaire | string | Identifiant unique du formulaire | No |
 
 #### EntrantObtenirIdentifiantSessionFormulaire
 

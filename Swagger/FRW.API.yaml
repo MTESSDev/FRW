@@ -239,15 +239,15 @@ definitions:
         - TRANSMIS
       codeTypeFormulaire:
         type: string
-        description: Code du formulaire ex. `3003` - NON IMPLÉMENTÉ POUR LE MOMENT
+        description: Code du formulaire ex. `3003`
       noConfirmation:
         format: int32
         type: integer
-        description: Numéro confirmant la transmission donné à l'utilisateur - NON IMPLÉMENTÉ POUR LE MOMENT
+        description: Numéro confirmant la transmission donné à l'utilisateur
         example: 12345311
       noPublicFormulaire:
         type: string
-        description: Identifiant unique du formulaire - NON IMPLÉMENTÉ POUR LE MOMENT
+        description: Identifiant unique du formulaire
   EntrantObtenirIdentifiantSessionFormulaire:
     type: object
     additionalProperties: true

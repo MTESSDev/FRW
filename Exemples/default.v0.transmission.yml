@@ -14,7 +14,7 @@ http_client:
     method: POST
     url: >-
       http://{{#if
-      ConfigDev.brancheecs}}{{ConfigDev.brancheecs}}{{else}}master{{/if}}-transmissiondocuments.intra-ecs.sa.mes.reseau.intra/api/v1/TransmissionDocuments/Soumettre/FRW@{{ConfigFormulaire.type}}{{Langue}}
+      ConfigDev.branche}}{{ConfigDev.branche}}{{else}}master{{/if}}-transmissiondocuments.intra-ecs.sa.mes.reseau.intra/api/v1/TransmissionDocuments/Soumettre/FRW@{{ConfigFormulaire.type}}{{Langue}}
     use_default_credentials: true
     headers:
       CodeNT: '{{CodeNT}}'
@@ -23,6 +23,7 @@ http_client:
     content:
       json_content: |
         {
+          # Obligatoire pour pousser le contenu du formulaire et les fichiers joints à l'API
           "entree": {
               "champsFormulaire": {{{Json DonneesFormulaire ">flatten;_;_{0}" ">forceString"}}},
               "fichiersBruts": {{{Json Pdfs}}}
@@ -45,10 +46,10 @@ http_client:
                     }
                   {{/each}}
                 {{/each}}
-              ]{{/with}},
-            "configuration": {{{Json FichiersExternes.ECS25A}}}
+              ]{{/with}}
           }, 
-          "contexteECS": null
+          # Exemple de contenu déposé dans le contexte
+          "contexte": null
         }
     check_response:
       throw_exception_if_body_not_contains_all:
@@ -57,7 +58,7 @@ http_client:
     method: POST
     url: >-
       http://{{#if
-      ConfigDev.brancheecs}}{{ConfigDev.brancheecs}}{{else}}master{{/if}}-transmissiondocuments.intra-ecs.sa.mes.reseau.intra/api/v1/TransmissionDocuments/Soumettre/FRW@{{ConfigFormulaire.type}}.confirmation{{Langue}}
+      ConfigDev.branche}}{{ConfigDev.branche}}{{else}}master{{/if}}-transmissiondocuments.intra-ecs.sa.mes.reseau.intra/api/v1/TransmissionDocuments/Soumettre/FRW@{{ConfigFormulaire.type}}.confirmation{{Langue}}
     use_default_credentials: true
     headers:
       CodeNT: '{{CodeNT}}'
@@ -66,6 +67,7 @@ http_client:
     content:
       json_content: |
         {
+          # Obligatoire pour pousser le contenu du formulaire et les fichiers joints à l'API
           "entree": {
               "champsFormulaire": {{{Json DonneesFormulaire ">flatten;_;_{0}" ">forceString"}}},
               "fichiersBruts": {{{Json Pdfs}}}
@@ -88,10 +90,10 @@ http_client:
                     }
                   {{/each}}
                 {{/each}}
-              ]{{/with}},
-            "configuration": {{{Json FichiersExternes.ECS25A}}}
+              ]{{/with}}
           }, 
-          "contexteECS": null
+          # Exemple de contenu déposé dans le contexte
+          "contexte": null
         }
     check_response:
       throw_exception_if_body_not_contains_all:

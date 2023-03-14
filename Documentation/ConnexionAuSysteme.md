@@ -24,10 +24,10 @@ Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de
 
 ## Afficher la liste des formulaires d'un utilisateur
 
-1. Pour afficher une liste des formulaires d'un utilisateur dans une de vos pages, vous devez : celle-ci doit appeler l'API ObtenirFormulairesIndividu (FRW112)
+Pour obtenir la liste des formulaires d'un utilisateur afin de l'afficher dans une de vos pages, vous devez d'appeler l'API [ObtenirFormulairesIndividu](https://github.com/MTESSDev/FRW/tree/main/Swagger#apiv1sisobtenirformulairesindividu) (FRW112).
+ 
 
-1. Obtenir la liste des formulaires d'un utilisateur en appelant l'API [ObtenirFormulairesIndividu](https://github.com/MTESSDev/FRW/tree/main/Swagger#apiv1sisobtenirformulairesindividu) (FRW112)
-
+1. 
 &nbsp;
 ## Reprendre un formulaire
 

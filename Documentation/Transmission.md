@@ -2,6 +2,33 @@
 
 Pour que l'outil FRW puisse gérer le contenu en sortie, il faut ajouter un fichier transmission. il sera nommé `default.v0.transmission.yml` s'il est au niveau de votre répertoire système, sinon, au niveau du formulaire, il sera nommé `NOM_DU_FORM.v0.transmission.yml` où le `NOM_DU_FORM` est identique à votre nom de répertoire du formulaire.
 
+
+## Créer votre premier fichier de base au plus simple :
+```yaml
+# Ajouter une tâche pour l'appel à un service web, même si vous n'avez pas encore d'API, copiez tel quel.
+etapes:
+- tache: appelerServiceExterne
+  options:
+    client: mock
+    modeBoutonTesterTransmission: simuler # Permet d'indiquer de ne pas effectuer l'appel
+
+# Définir un http client de "mock"
+http_client:
+  mock:
+      method: POST
+      url: http://votreapi.ministere.gouv.qc.ca/api/endpoint
+      headers:
+          Accept: 'application/json'
+      content:
+         # Permet de tout "dumper" les variables de l'application vers votre API
+        json_content: |
+          {{{Json .}}}
+      check_response:
+        throw_exception_if_body_not_contains_all:
+            - success # À remplacer par un code de retour ou un mot retourné par votre api afin de valider que tout est concluant
+```
+
+
 ```yaml
 # Liste des étapes désirées dans votre transmission.
 # L'ordre est importante, le traitement la respectera
@@ -48,6 +75,7 @@ etapes: 
         # dans le bloc de config "http_client:"
         client: appel_externe      
 
-        # Permet de désactiver l'appel à ce service web lors du clique sur le bouton "Forcer PDF" de l'interface de débug
-        ignorerSurBoutonForcerPdf: true
+        # Permet de désactiver l'appel à ce service web lors du clique sur le bouton "Tester transmission" de l'interface des outils de développement
+        # Options disponibles : ignorer, simuler ou encore retirer l'option pour que l'étape s'exécute sur le bouton tester transmission
+        modeBoutonTesterTransmission: simuler 
 ``` 

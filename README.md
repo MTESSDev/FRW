@@ -47,12 +47,10 @@ Les formulaires générés sont accessibles, adaptatifs (responsive), sécuritai
 &nbsp;
 ### Utiliser les services FRW à partir de votre système
 
-1. [Créer une instance du formulaire et y rediriger l'utilisateur](https://github.com/MTESSDev/FRW/blob/main/Documentation/ConnexionAuSysteme.md#cr%C3%A9er-un-formulaire-et-y-rediriger-lutilisateur);
-1. [Afficher la liste des formulaires d'un utilisateur](https://github.com/MTESSDev/FRW/blob/main/Documentation/ConnexionAuSysteme.md#afficher-la-liste-des-formulaires-dun-utilisateur) ;
-1. [Reprendre un formulaire](https://github.com/MTESSDev/FRW/blob/main/Documentation/ConnexionAuSysteme.md#reprendre-un-formulaire);
-
-1. [Supprimer un formulaire](https://github.com/MTESSDev/FRW/blob/main/Documentation/ConnexionAuSysteme.md#supprimer-un-formulaire);
-
+1. [Créer une instance du formulaire et y rediriger l'utilisateur](Documentation/ConnexionAuSysteme.md#cr%C3%A9er-un-formulaire-et-y-rediriger-lutilisateur);
+1. [Afficher la liste des formulaires d'un utilisateur](Documentation/ConnexionAuSysteme.md#afficher-la-liste-des-formulaires-dun-utilisateur) ;
+1. [Reprendre un formulaire](Documentation/ConnexionAuSysteme.md#reprendre-un-formulaire);
+1. [Supprimer un formulaire](Documentation/ConnexionAuSysteme.md#supprimer-un-formulaire);
 
 &nbsp;
 ## Vous avez une question ou une suggestion?

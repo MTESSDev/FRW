@@ -24,7 +24,7 @@ Les formulaires générés sont accessibles, adaptatifs (responsive), sécuritai
 
 1. Se procurer une clée API et un code de système autorisé auprès du MESS (Documentation à venir...);
    
-1. Déployez un formulaire avec DevOps ou autre (Documentation à venir...)
+1. Déployer un formulaire avec DevOps ou autre (Documentation à venir...)
  
 &nbsp;
 ### Définir un ou plusieurs fichiers PDF en sortie pour un formulaire (optionnel)

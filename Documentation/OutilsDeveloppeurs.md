@@ -1,27 +1,27 @@
 # Outils de développement
 Dans ce guide, nous expliquons comment utiliser les outils de développement intrégrés à FRW. Ces outils sont disponibles uniquement dans l'environnement IT. Ils permettent notamment de :
-- Voir la liste des formulaires pour votre système et sélectionner celui à tester;
+- Voir la liste des formulaires pour votre système et en tester un;
 - Voir le modèle de données du formulaire en temps réel;
-- Tester la transmission afin de voir les données qui auraient été transmises à votre API, ainsi que les pdf qui auraient été générés;
+- Tester la transmission afin de voir les données qui auraient été transmises à votre API, les fichiers générés, ainsi que des messages liées à votre configuration de transmission;
 - Configurer un contexte d'utilisation. 
 
 
 &nbsp;
 
-## Afficher la liste de tous les formulaires de votre système aux fins d'essais
+## Afficher la liste de tous les formulaires et essais de formulaires
 Accéder à l'url https://formulaires.it.mtess.gouv.qc.ca/{id de votre système}?s={guid de votre système}. Contactez le MESS afin d'obtenir cette information.
 
-Dans cette interface vous avez :
+Dans cette interface vous trouverez :
 
 1. La liste des formulaires de votre système;
 
-1. Un champ afin de saisir du JSON afin de simuler un pré-remplissage;
+1. Un champ permettant de saisir du JSON afin de simuler un pré-remplissage;
 
 1. Une case à cocher vous permettant d'indiquer si vous désirez afficher la barre d'outils de développement;
    
-1. Le bouton "Ouvrir" qui ouvrira le formulaire sélectionné.
+1. Le bouton "Ouvrir" qui ouvre le formulaire sélectionné.
 
-###Insérer l'image ici###
+![image](https://user-images.githubusercontent.com/26974817/226038733-c88eb61c-7fcc-4b89-ad6d-e50b7b2c9d73.png)
 
 &nbsp;
 
@@ -29,14 +29,11 @@ Dans cette interface vous avez :
 
 Il existe 2 façons d'afficher la barre d'outils de développement.
 
-La première est via la case à cocher "Afficher les outils de développement" disponible dans la page de sélection d'un formulaire :
+La première est via la case à cocher "Afficher les outils de développement" disponible dans la page de sélection d'un formulaire (voir point 3 de l'image à la section précédente)
 
-###Insérer l'image ici###
+La seconde est via le lien "Outils de développement" situé à droite dans le pied page (visible uniquement si les outils de développement ne sont pas déjà affichés) :
 
-
-La seconde est via le lien "Outils de développement" situé à droite dans le pied page (visible uniquement si les outils de développement ne sont pas déjà activés) :
-
-###Insérer l'image ici###
+![image](https://user-images.githubusercontent.com/26974817/226039237-5595596a-8825-42cf-b0a6-34b2f36153e6.png)
 
 &nbsp;
 
@@ -45,19 +42,19 @@ Le modèle de données du formulaire est toujours disponible en temps réel dès
 
 Il suffit d'ouvrir la section "Contenu du modèle de données".
 
-###Insérer l'image ici###
+![image](https://user-images.githubusercontent.com/26974817/226006712-698ace28-736f-48f0-b52f-e3088a139b3a.png)
 
 
 &nbsp;
 
 ## Tester la transmission du formulaire
-Cette fonctionnalité est disponible en cliquant sur le bouton "Tester transmisssion" situé à l'intérieur de la zone "Outils de développement".
+Cette fonctionnalité est disponible en cliquant sur le bouton "Tester transmisssion" situé à l'intérieur de la zone "Outils de développement" qui est au bas de la page.
 
-###Insérer l'image ici###
+![image](https://user-images.githubusercontent.com/26974817/226016145-376fccb1-0cdd-4d2e-83f0-60a2e6c00702.png)
 
 Elle permet de voir :
-- Les fichiers pdf ou word qui auraient été générés (s'il y a lieu selon votre config);
-- Les informations qui auraient été transmises à votre API (sans les transmettre réellement).
+1. Les fichiers pdf ou word qui auraient été générés (s'il y a lieu selon votre config);
+2. Les informations qui auraient été transmises à votre API (sans les transmettre réellement) et autres messages en lien avec les tâches définies dans votre fichier de transmission.
  
 Puisque les validations ne sont pas effectuées, il est possible de tester avec un formulaire partiellement rempli.
 

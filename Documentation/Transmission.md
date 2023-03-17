@@ -4,7 +4,7 @@ Pour que l'outil FRW puisse gérer le contenu en sortie, il faut ajouter un fich
 
 
 > **Les niveaux**\
-> Certains blocs de config sont [définissables à plusieurs niveaux](Documentation/Niveaux.md), par contre le comportement de chaque bloc peut différer, voici un tableau détaillant ces comportements.
+> Certains blocs de config sont [définissables à plusieurs niveaux](Niveaux.md), par contre le comportement de chaque bloc peut différer, voici un tableau détaillant ces comportements. 
 >| Bloc config  | Niveau Global | Niveau Système | Niveau Formulaire  |   Détails |
 >|---|---|---|---|---|
 >| etapes  |   |  X  | X  | Si le bloc `etapes` est défini au niveau `Formulaire` il écrase complètement la configuration Système |   
@@ -45,7 +45,7 @@ http_client:
             - success # À remplacer par un code de retour ou un mot retourné par votre api afin de valider que tout est concluant
 ```
 
-Vous pouvez maintenant [déployer](Documentation/Déployer.md). 
+Vous pouvez maintenant [déployer](Déployer.md). 
 
 Une fois le déploiement terminé, rendez-vous sur votre formulaire et lancez les [outils de développement](Documentation/Outils-developement.md)
 

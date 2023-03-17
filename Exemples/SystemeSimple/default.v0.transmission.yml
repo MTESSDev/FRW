@@ -1,0 +1,28 @@
+etapes:
+  # traiter les documents transmis par les utilsateurs dans votre formulaire
+  - tache: traiterDocumentsSoumis
+  # Générer un document
+  - tache: genererWord
+  # Ajouter une estampille aux documents
+  - tache: ajouterEstampille
+  # Appeler une API externe pour la transmision
+  - tache: appelerServiceExterne
+    options:
+      # Le nom du client HTTP à utiliser (doit être défini dans l'objet http_client)
+      client: appel_externe
+      modeBoutonTesterTransmission: simuler
+
+
+# Cette configuration a été laissée telle quelle pour montrer les cas tordus que l'ont peut gérer en sortie vers un API
+http_client:
+  appel_externe:
+    method: POST
+    url: http://votreapi.ministere.gouv.qc.ca/api/endpoint
+    headers:
+      Accept: application/json
+    content:
+      json_content: |
+          {{{Json .}}}
+      check_response:
+        throw_exception_if_body_not_contains_all:
+            - success # À remplacer par un code de retour ou un mot retourné par votre api afin de valider que tout est concluant

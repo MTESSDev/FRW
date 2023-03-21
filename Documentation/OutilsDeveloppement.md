@@ -39,6 +39,16 @@ La seconde est via le lien "Outils de développement" situé à droite dans le p
 
 &nbsp;
 
+## Afficher la barre d'outils de développement (bac à sable)
+
+En mode "bac à sable", la barre d'outils de développement ne contiendra que le contenu du modèle de données.
+
+Pour afficher la barre d'outils, il faut ajouter `devTools=true` dans la ligne de commentaires `debug` du fichier de configuration d'un formulaire.
+###Ici insérer image
+
+
+&nbsp;
+
 ## Consulter le modèle de données du formulaire
 Le modèle de données du formulaire est toujours disponible en temps réel dès que les outils de développement sont activés.
 
@@ -52,7 +62,9 @@ Il est également possible de copier le modèle de données dans le presse-papie
 &nbsp;
 
 ## Tester la transmission du formulaire
-Cette fonctionnalité est disponible en cliquant sur le bouton "Tester transmisssion" situé à l'intérieur de la zone "Outils de développement" qui est au bas de la page.
+Cette fonctionnalité est disponible en cliquant sur le bouton "Tester transmission" situé à l'intérieur de la zone "Outils de développement" qui est au bas de la page.
+
+Non disponible dans le bac à sable.
 
 ![image](https://user-images.githubusercontent.com/26974817/226016145-376fccb1-0cdd-4d2e-83f0-60a2e6c00702.png)
 

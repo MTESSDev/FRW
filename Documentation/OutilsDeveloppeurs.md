@@ -46,7 +46,7 @@ Il suffit d'ouvrir la section "Contenu du modèle de données" (1).
 
 Il est également possible de copier le modèle de données dans le presse-papiers à l'aide du bouton (2) prévu à cet effet. Ce modèle de données peut ensuite être directement copié comme données de [pré-remplissage](Documentation/PreRemplissage.md) d'un formulaire.
 
-![image](https://user-images.githubusercontent.com/26974817/226619491-ee8aef7e-e30d-41b0-b0f6-e0374a8c7d57.png)
+![image](https://user-images.githubusercontent.com/26974817/226624360-ddc94ad5-806b-4127-9c68-61b78996d312.png)
 
 
 &nbsp;

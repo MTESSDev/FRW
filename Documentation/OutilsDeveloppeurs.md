@@ -44,7 +44,7 @@ Le modèle de données du formulaire est toujours disponible en temps réel dès
 
 Il suffit d'ouvrir la section "Contenu du modèle de données" (1).
 
-De plus, il est possible de copier le modèle de données dans le presse-papiers à l'aide du bouton (2) prévu à cet effet. Ce modèle de données peut ensuite être directement copié comme données de ###Ici lien pré-remplissage d'un formulaire.
+Il est également possible de copier le modèle de données dans le presse-papiers à l'aide du bouton (2) prévu à cet effet. Ce modèle de données peut ensuite être directement copié comme données de [pré-remplissage](Documentation/PreRemplissage.md) d'un formulaire.
 
 ![image](https://user-images.githubusercontent.com/26974817/226619491-ee8aef7e-e30d-41b0-b0f6-e0374a8c7d57.png)
 

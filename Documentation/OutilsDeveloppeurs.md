@@ -15,13 +15,15 @@ Dans cette interface vous trouverez :
 
 1. La liste des formulaires de votre système;
 
-1. Un champ permettant de saisir du JSON afin de simuler un pré-remplissage;
+1. Une case à cocher vous permettant d'indiquer si vous désirez ouvrir le formulaire en mode anonyme ou non;
+
+1. Un champ afin de saisir du JSON afin de simuler un pré-remplissage (non disponible si accès anonyme);
 
 1. Une case à cocher vous permettant d'indiquer si vous désirez afficher la barre d'outils de développement;
    
-1. Le bouton "Ouvrir" qui ouvre le formulaire sélectionné.
+1. Le bouton "Ouvrir" qui ouvrira le formulaire sélectionné.
 
-![image](https://user-images.githubusercontent.com/26974817/226038733-c88eb61c-7fcc-4b89-ad6d-e50b7b2c9d73.png)
+![image](https://user-images.githubusercontent.com/26974817/226616307-21c99315-abbf-4894-b23e-8218c0c4dcc6.png)
 
 &nbsp;
 
@@ -29,7 +31,7 @@ Dans cette interface vous trouverez :
 
 Il existe 2 façons d'afficher la barre d'outils de développement.
 
-La première est via la case à cocher "Afficher les outils de développement" disponible dans la page de sélection d'un formulaire (voir point 3 de l'image à la section précédente)
+La première est via la case à cocher "Afficher les outils de développement" disponible dans la page de sélection d'un formulaire (voir point 4 de l'image à la section précédente)
 
 La seconde est via le lien "Outils de développement" situé à droite dans le pied page (visible uniquement si les outils de développement ne sont pas déjà affichés) :
 
@@ -40,9 +42,11 @@ La seconde est via le lien "Outils de développement" situé à droite dans le p
 ## Consulter le modèle de données du formulaire
 Le modèle de données du formulaire est toujours disponible en temps réel dès que les outils de développement sont activés.
 
-Il suffit d'ouvrir la section "Contenu du modèle de données".
+Il suffit d'ouvrir la section "Contenu du modèle de données" (1).
 
-![image](https://user-images.githubusercontent.com/26974817/226006712-698ace28-736f-48f0-b52f-e3088a139b3a.png)
+De plus, il est possible de copier le modèle de données dans le presse-papiers à l'aide du bouton (2) prévu à cet effet. Ce modèle de données peut ensuite être directement copié comme données de ###Ici lien pré-remplissage d'un formulaire.
+
+![image](https://user-images.githubusercontent.com/26974817/226619491-ee8aef7e-e30d-41b0-b0f6-e0374a8c7d57.png)
 
 
 &nbsp;

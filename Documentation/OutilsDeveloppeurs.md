@@ -9,7 +9,7 @@ Dans ce guide, nous expliquons comment utiliser les outils de développement int
 &nbsp;
 
 ## Afficher la liste de tous les formulaires et essais de formulaires
-Accéder à l'url https://formulaires.it.mtess.gouv.qc.ca/{id de votre système}?s={guid de votre système}. Contactez le MESS afin d'obtenir cette information.
+Accéder à l'url `https://formulaires.it.mtess.gouv.qc.ca/{id de votre système}?s={guid de votre système}`. Contactez le MESS afin d'obtenir cette information.
 
 Dans cette interface vous trouverez :
 

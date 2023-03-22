@@ -16,11 +16,11 @@ Dans ce guide, nous expliquons comment intégrer notre solution de formulaires e
 
 - Pour afficher une liste des formulaires d'un utilisateur dans une de vos pages, celle-ci doit appeler l'API ObtenirFormulairesIndividu (FRW112)
 
-1. [https://github.com/MTESSDev/FRW/tree/main/Swagger#apiv1sisobtenirformulairesindividu](https://github.com/MTESSDev/FRW/tree/main/Swagger#apiv1sisobtenirformulairesindividu)
+1. [https://github.com/MTESSDev/FRW/tree/main../Swagger#apiv1sisobtenirformulairesindividu](https://github.com/MTESSDev/FRW/tree/main../Swagger#apiv1sisobtenirformulairesindividu)
 
 - Il est possible de supprimer un formulaire en appelant l'API SupprimerFormulaire (FRW114)
 
-1. [https://github.com/MTESSDev/FRW/tree/main/Swagger#apiv1sissupprimerformulairenoformulairepublic](https://github.com/MTESSDev/FRW/tree/main/Swagger#apiv1sissupprimerformulairenoformulairepublic)
+1. [https://github.com/MTESSDev/FRW/tree/main../Swagger#apiv1sissupprimerformulairenoformulairepublic](https://github.com/MTESSDev/FRW/tree/main../Swagger#apiv1sissupprimerformulairenoformulairepublic)
 
 ### Créer un formulaire
 
@@ -32,7 +32,7 @@ Dans ce guide, nous expliquons comment intégrer notre solution de formulaires e
 
 1. Créer le formulaire en appelant l'API CreerFormulaireIndividu (FRW111);
 
-1. [https://github.com/MTESSDev/FRW/tree/main/Swagger#apiv1siscreerformulaireindividutypeformulaire](https://github.com/MTESSDev/FRW/tree/main/Swagger#apiv1siscreerformulaireindividutypeformulaire)
+1. [https://github.com/MTESSDev/FRW/tree/main../Swagger#apiv1siscreerformulaireindividutypeformulaire](https://github.com/MTESSDev/FRW/tree/main../Swagger#apiv1siscreerformulaireindividutypeformulaire)
 
 1. C'est dans cet appel que vous devez envoyer les données de pré remplissage lorsqu'applicable.
 
@@ -53,7 +53,7 @@ Dans ce guide, nous expliquons comment intégrer notre solution de formulaires e
 
 1. Obtenir un identifiant de session pour le formulaire en appelant l'API ObtenirIdentifiantSessionFormulaire;
 
-1. [https://github.com/MTESSDev/FRW/tree/main/Swagger#apiv1sisobteniridentifiantsessionformulairenoformulairepublic](https://github.com/MTESSDev/FRW/tree/main/Swagger#apiv1sisobteniridentifiantsessionformulairenoformulairepublic)
+1. [https://github.com/MTESSDev/FRW/tree/main../Swagger#apiv1sisobteniridentifiantsessionformulairenoformulairepublic](https://github.com/MTESSDev/FRW/tree/main../Swagger#apiv1sisobteniridentifiantsessionformulairenoformulairepublic)
 
 1. Préparer l'URL de redirection vers la page du formulaire;
 

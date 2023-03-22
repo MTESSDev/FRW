@@ -12,7 +12,7 @@ Les formulaires générés sont accessibles, adaptatifs (responsive), sécuritai
 
 1. Cloner le dépôt courant et copiez le répertoire "Exemple" pour le nommer à votre goût, il regroupera tous vos formulaires (Ne faire cette étape qu'une seule fois);
 
-1. Configurer votre [bac à sable](https://formulaires.it.mtess.gouv.qc.ca/Form/1/P700U/0/N/#p=2).
+1. [Configurer votre bac à sable](https://formulaires.it.mtess.gouv.qc.ca/Form/1/P700U/0/N/#p=2);
 
 &nbsp;
 ### Créer un formulaire
@@ -22,27 +22,25 @@ Les formulaires générés sont accessibles, adaptatifs (responsive), sécuritai
 &nbsp;
 ### Déployer un formulaire
 
-1. Se procurer une clée API et un code de système autorisé auprès du MESS (Documentation à venir...);
+1. Se procurer une clée API et un code de système autorisé auprès du MESS (Contacter le MESS);
    
-1. Déployer un formulaire avec DevOps ou autre. (Documentation à venir...)
+1. [Déployer un formulaire avec DevOps](link);
  
 &nbsp;
-### Définir un ou plusieurs fichiers PDF en sortie pour un formulaire (optionnel)
-1. Configurer le fichier de transmission du formulaire; (Documentation à venir...) 
-1. Créer un gabarit PDF;
-1. Configurer le fichier "bind" du formulaire;
-1. À venir...
+### Définir le ou les fichiers à produire à partir des données du formulaire (optionnel)
+1. [Configurer le fichier de transmission](documentation/transmission.md) du formulaire; 
+1. [Créer un gabarit](documentation/gabarits.md) (PDF ou Word);
+1. [Configurer le fichier "bind"](documentation/fichiers-bind.md) du formulaire;
 
 &nbsp;
-### Définir un fichier Word en sortie pour un formulaire (optionnel)
-1. Configurer le fichier de transmission du formulaire; (Documentation à venir...) 
-1. Créer un gabarit Word; 
-1. À Venir...
+
+### Déployer vos fichiers
+- [Déployer vos fichiers avec Azure DevOps](https://marketplace.visualstudio.com/items?itemName=MTESS.mtess-frw-deploiement);
 
 &nbsp;
 ### Recevoir les données du formulaire transmises à votre système
-1. Configurer le fichier de transmission du formulaire; (Documentation à venir...) 
-1. Dans votre système, créer un api permettant de recevoir les données. (Documentation à venir...) 
+1. [Configurer le fichier de transmission](documentation/transmission.md) du formulaire; 
+1. Dans votre système, créer un api permettant de recevoir les données (exemple à venir). 
 
 &nbsp;
 ### Utiliser les services FRW à partir de votre système
@@ -50,17 +48,17 @@ Les formulaires générés sont accessibles, adaptatifs (responsive), sécuritai
 1. [Créer une instance du formulaire et y rediriger l'utilisateur](Documentation/connexion-au-systeme.md#cr%C3%A9er-un-formulaire-et-y-rediriger-lutilisateur);
 1. [Afficher la liste des formulaires d'un utilisateur](Documentation/connexion-au-systeme.md#afficher-la-liste-des-formulaires-dun-utilisateur) ;
 1. [Reprendre un formulaire](Documentation/connexion-au-systeme.md#reprendre-un-formulaire);
-1. [Supprimer un formulaire](Documentation/connexion-au-systeme.md#supprimer-un-formulaire).
+1. [Supprimer un formulaire](Documentation/connexion-au-systeme.md#supprimer-un-formulaire);
 
 &nbsp;
 ## Vous avez une question ou une suggestion?
 
-1. Vérifier si une discussion existe avec le même questionnement/suggestion;
-1. Créez une discussion si vous n'avez toujours pas de réponse à votre question ou si votre suggestion n'existe pas déjà;
+1. Vérifier si une [discussion](discussions) existe avec le même questionnement/suggestion;
+1. Créez une [discussion](discussions) si vous n'avez toujours pas de réponse à votre question ou si votre suggestion n'existe pas déjà;
 1. N'hésitez pas à aider d'autres utilisateurs ou à partager vos idées.
 
 &nbsp;
 ## Vous avez trouvé un probème (bug) dans la solution?
 
-1. Vérifier si une "issue" existe avec le même problème;
-1. Créez une "issue" s'il n'est existe pas déjà une et mettre le plus de détails possibles afin de reproduire le problème.
+1. Vérifier si une [issue](issues) existe avec le même problème;
+1. Créez une [issue](issues) si elle n'existe pas déjà une et mettre le plus de détails possibles afin de reproduire le problème.

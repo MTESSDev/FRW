@@ -39,9 +39,9 @@ http_client:
             - success # À remplacer par un code de retour ou un mot retourné par votre api afin de valider que tout est concluant
 ```
 
-Vous pouvez maintenant [déployer](Déployer.md). 
+Vous pouvez maintenant [déployer](deployer.md). 
 
-Une fois le déploiement terminé, rendez-vous sur votre formulaire et lancez les [outils de développement](outils-developpement.md)
+Une fois le déploiement terminé, rendez-vous sur votre formulaire et lancez les [outils de développement](outils-developpement.md).
 
 Il suffira alors de remplir quelques champs pour tester et cliquer sur `Tester transmission` pour voir apparaître les données que votre API aurait reçues si elle avait été réellement appelée.
 

@@ -131,9 +131,9 @@ FRW121 - Télécharger une pièce par nom de fichier protégé
 
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
-| etatsFormulaireRecherche | [ string ] | Liste des états à obtenir<br>_Example:_ `["CRE","REP","MAJ","TRANSMIS"]` | No |
+| etatsFormulaireRecherche | [ string ] | Liste des états à obtenir&nbsp;_Example:_ `["CRE","REP","MAJ","TRANSMIS"]` | No |
 | codeTypeFormulaire | string | Code du formulaire ex. `3003` | No |
-| noConfirmation | integer | Numéro confirmant la transmission donné à l'utilisateur <br>_Example:_ `12345311` | No |
+| noConfirmation | integer | Numéro confirmant la transmission donné à l'utilisateur &nbsp;_Example:_ `12345311` | No |
 | noPublicFormulaire | string | Identifiant unique du formulaire | No |
 
 #### EntrantObtenirIdentifiantSessionFormulaire
@@ -153,11 +153,11 @@ FRW121 - Télécharger une pièce par nom de fichier protégé
 
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
-| typeFormulaire | string | Nom du répertoire déployé (nom du formulaire dans l'URL)<br>_Example:_ `3003` | No |
+| typeFormulaire | string | Nom du répertoire déployé (nom du formulaire dans l'URL)&nbsp;_Example:_ `3003` | No |
 | noPublicForm | string | Identifiant unique du formulaire | No |
 | identifiantUtilisateur | string | Identifiant de l'utilisateur à qui appartient le formulaire | No |
 | titreFrancais | string | Titre français du formulaire extrait de la configuation | No |
 | titreAnglais | string | Titre anglais du formulaire extrait de la configuation | No |
 | dateCreation | dateTime | Date de création du formulaire | No |
-| dernierEtat | string | Dernier état<br>_Example:_ `"MAJ"` | No |
+| dernierEtat | string | Dernier état&nbsp;_Example:_ `"MAJ"` | No |
 | dateDernierEtat | dateTime | Date de la dernière modification ou ouverture du formulaire | No |

@@ -11,7 +11,7 @@ Pour que l'outil FRW puisse gérer le contenu en sortie, il faut ajouter un fich
 >| http_client  |   | X  | X  | Les éléments `http_client` se cumulent  |
 
 
-Un fichier `Transmission` est principalement nécessaire au niveau `Système` et que dans certains cas au niveau d'un formulaire, comme par exemple pour remplacer le comportement par défaut que vous aviez défini.
+Un fichier `Transmission` est principalement nécessaire au niveau `Système` et que dans certains précis cas au niveau d'un formulaire, comme par exemple pour remplacer les étapes par défaut que vous aviez défini.
 
 
 ```yaml
@@ -34,8 +34,7 @@ etapes: 
     - tache: genererWord
       numeroExecution: 02
       options:
-        # Fichier Bind est requis pour générer WORD pour préciser quel 
-        # fichier nous allons utiliser
+        # (optionnel) Fichier Bind précis, sinon celui par défault
         fichierBind: NOM_FORM.v1.bind.yml  
 
     # Générer PDF, permet de remplir un ou des PDF avec champs de saisies
@@ -63,4 +62,33 @@ etapes: 
         # Permet de désactiver l'appel à ce service web lors du clique sur le bouton "Tester transmission" de l'interface des outils de développement
         # Options disponibles : ignorer, simuler ou encore retirer l'option pour que l'étape s'exécute sur le bouton tester transmission
         modeBoutonTesterTransmission: simuler 
+
+# La liste des clients http
+http_client:
+  # Nom de votre client, ici appel_externe
+  appel_externe:
+    # Méthode d'appel de votre API, Peut-être POST, PUT, PATCH ou autre... normalement POST est le meilleur choix
+    method: POST
+    # Url de votre API, des paramètres en GET ici peuvent être passés, il est possible de mettre des variables aussi
+    url: http://votreapi.ministere.gouv.qc.ca/api/endpoint
+    # Tous les headers que votre API doit reçevoir sont ici, possible aussi de mettre des variables
+    headers:
+      Accept: application/json
+    content:
+      # Ici le json_content que nous allons passés à votre API, vous êtes libres de mettre la structure que vous voulez, {{{Json .}}} permet de tout "dumper" les variables de l'application vers votre API, utile aussi pour connaître les variables/objets disponibles
+      json_content: |
+          {{{Json .}}}
+      # Utile pour valider que l'appel s'est bien terminé en 200 avec une validation du retour de contenu de votre API en prime
+      check_response:
+        throw_exception_if_body_not_contains_all:
+            - success # À remplacer par un code de retour ou un mot retourné par votre api afin de valider que tout est concluant
 ``` 
+Tout le bloc `http_client` est basé sur l'outil [YamlHttpClient](https://github.com/anisite/YamlHttpClient), vous pouvez vous y référer pour bâtir votre `json_content`.
+
+## Variables 
+
+| Variable | Description |
+| --- |----|
+|IdUtilisateur| Identifiant de l'utilisateur reçus lors de la création du formulaire |
+||Tableau à compléter...|
+

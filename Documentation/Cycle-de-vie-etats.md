@@ -4,7 +4,7 @@
 
 | Code d'état | Description |
 |---|---|
-| CRE | Création |
+| CRE | Création, formulaire neuf, jamais ouvert encore |
 | MAJ | Mis à jour par l'utilisateur |
 | COURRIEL | Un courriel de reprise a été envoyé (mode anonyme) |
 | REP | Repris par l'utilsateur |

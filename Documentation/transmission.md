@@ -4,7 +4,7 @@ Pour que l'outil FRW puisse gérer le contenu en sortie, il faut ajouter un fich
 
 
 > **Les niveaux**\
-> Certains blocs de config sont [définissables à plusieurs niveaux](Niveaux.md), par contre le comportement de chaque bloc peut différer, voici un tableau détaillant ces comportements. 
+> Certains blocs de config sont [définissables à plusieurs niveaux-fichiers-config](niveaux-fichiers-config.md), par contre le comportement de chaque bloc peut différer, voici un tableau détaillant ces comportements. 
 >| Bloc config  | Niveau Global | Niveau Système | Niveau Formulaire  |   Détails |
 >|---|---|---|---|---|
 >| etapes  |   |  X  | X  | Si le bloc `etapes` est défini au niveau `Formulaire` il écrase complètement la configuration Système |   

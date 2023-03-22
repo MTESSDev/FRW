@@ -53,12 +53,12 @@ Les formulaires générés sont accessibles, adaptatifs (responsive), sécuritai
 &nbsp;
 ## Vous avez une question ou une suggestion?
 
-1. Vérifier si une [discussion](/discussions) existe avec le même questionnement/suggestion;
-1. Créez une [discussion](/discussions) si vous n'avez toujours pas de réponse à votre question ou si votre suggestion n'existe pas déjà;
+1. Vérifier si une [discussion](https://github.com/MTESSDev/FRW/discussions) existe avec le même questionnement/suggestion;
+1. Créez une [discussion](https://github.com/MTESSDev/FRW/discussions) si vous n'avez toujours pas de réponse à votre question ou si votre suggestion n'existe pas déjà;
 1. N'hésitez pas à aider d'autres utilisateurs ou à partager vos idées.
 
 &nbsp;
 ## Vous avez trouvé un probème (bug) dans la solution?
 
-1. Vérifier si une [issue](/issues) existe avec le même problème;
-1. Créez une [issue](/issues) si elle n'existe pas déjà une et mettre le plus de détails possibles afin de reproduire le problème.
+1. Vérifier si une [issue](https://github.com/MTESSDev/FRW/issues) existe avec le même problème;
+2. Créez une [issue](https://github.com/MTESSDev/FRW/issues) si elle n'existe pas déjà une et mettre le plus de détails possibles afin de reproduire le problème.

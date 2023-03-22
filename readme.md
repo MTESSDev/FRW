@@ -20,8 +20,11 @@ Les formulaires générés sont accessibles, adaptatifs (responsive), sécuritai
 
 &nbsp;
 ### Créer un formulaire
-  
-1. Utiliser le bac à sable afin de définir la configuration de vos formulaires. Consulter le [guide de configuration de formulaires FRW](https://formulaires.it.mtess.gouv.qc.ca/Form/7/P700U/0/N); 
+    
+Utiliser le bac à sable afin de définir la configuration de vos formulaires. Consulter le [guide de configuration de formulaires FRW](https://formulaires.it.mtess.gouv.qc.ca/Form/7/P700U/0/N); 
+
+
+Pour un premier formulaire, il est fortement recommandé de clôner le présent dépot GitHub et d'utiliser le répertoire [Exemple](Exemples) afin de comprendre la structure requise et diposer d'une base de travail.
 
 &nbsp;
 ### Déployer un formulaire

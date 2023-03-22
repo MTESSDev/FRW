@@ -8,7 +8,7 @@ Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de
 
 1. [Préparer les données de pré remplissage](pre-remplissage.md) (facultatif) À COMPLÉTER;
 
-1. Créer le formulaire en appelant l'API [CreerFormulaireIndividu](../Swagger#apiv1siscreerformulaireindividutypeformulaire) (FRW111)
+1. Créer le formulaire en appelant l'API [CreerFormulaireIndividu](../Swagger/readme.md#apiv1siscreerformulaireindividutypeformulaire) (FRW111)
    
     C'est à cette étape que vous devez fournir les données de pré-remplissage le cas échéant;
 
@@ -24,13 +24,13 @@ Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de
 
 ## Afficher la liste des formulaires d'un utilisateur
 
-Pour obtenir la liste des formulaires d'un utilisateur afin de l'afficher dans une de vos pages, vous devez d'appeler l'API [ObtenirFormulairesIndividu](../Swagger#apiv1sisobtenirformulairesindividu) (FRW112).
+Pour obtenir la liste des formulaires d'un utilisateur afin de l'afficher dans une de vos pages, vous devez d'appeler l'API [ObtenirFormulairesIndividu](../Swagger/readme.md#apiv1sisobtenirformulairesindividu) (FRW112).
  
 
 &nbsp;
 ## Reprendre un formulaire
 
-Pour reprendre un formulaire, il faut connaitre son numéro de formulaire public en ayant préalablement appelé l'API [ObtenirFormulairesIndividu](../Swagger#apiv1sisobtenirformulairesindividu) (FRW112)
+Pour reprendre un formulaire, il faut connaitre son numéro de formulaire public en ayant préalablement appelé l'API [ObtenirFormulairesIndividu](../Swagger/readme.md#apiv1sisobtenirformulairesindividu) (FRW112)
  qui obtient la liste des formulaires d'un utilisateur.
 
 Pour déclencher la reprise, il faut également avoir une page de traitement qui s'occupera des étapes à réaliser. 
@@ -39,7 +39,7 @@ Vous pouvez utiliser la même page que celle que vous aurez fait à l'étape «�
 
 Les étapes à effectuer sont les suivantes :
 
-1. Obtenir un identifiant de session pour le formulaire en appelant l'API [ObtenirIdentifiantSessionFormulaire](../Swagger#apiv1sisobteniridentifiantsessionformulairenoformulairepublic)
+1. Obtenir un identifiant de session pour le formulaire en appelant l'API [ObtenirIdentifiantSessionFormulaire](../Swagger/readme.md#apiv1sisobteniridentifiantsessionformulairenoformulairepublic)
  (FRW113);
 
    
@@ -54,6 +54,6 @@ Les étapes à effectuer sont les suivantes :
 &nbsp;
 ## Supprimer un formulaire
 
-Il est possible de supprimer un formulaire à partir de son numéro de formulaire public. Il suffit d'appeler l'API [SupprimerFormulaire](../Swagger#apiv1sissupprimerformulairenoformulairepublic) (FRW114).
+Il est possible de supprimer un formulaire à partir de son numéro de formulaire public. Il suffit d'appeler l'API [SupprimerFormulaire](../Swagger/readme.md#apiv1sissupprimerformulairenoformulairepublic) (FRW114).
 
 

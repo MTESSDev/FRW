@@ -48,7 +48,7 @@ Pour un premier formulaire, il est fortement recommandé de clôner le présent 
 
 &nbsp;
 ### Tester vos formulaires
-- [Utiliser les outils de développement](Documentation/outils) afin de tester vos formulaires;
+- [Utiliser les outils de développement](Documentation/outils-developpement.md) afin de tester vos formulaires;
 
 &nbsp;
 ### Recevoir les données du formulaire transmises à votre système

@@ -12,25 +12,25 @@ Les formulaires générés sont accessibles, adaptatifs (responsive), sécuritai
 
 1. Cloner le dépôt courant et copiez le répertoire "Exemple" pour le nommer à votre goût, il regroupera tous vos formulaires (Ne faire cette étape qu'une seule fois);
 
-1. [Configurer votre bac à sable](https://formulaires.it.mtess.gouv.qc.ca/Form/1/P700U/0/N/#p=2);
+1. [Configurer votre bac à sable](https://formulaires.it.mtess.gouv.qc.ca/Form/7/P700U/0/N/#p=2);
 
 &nbsp;
 ### Créer un formulaire
   
-1. Utiliser le bac à sable afin de définir la configuration de vos formulaires. Consulter le [guide de configuration de formulaires FRW](https://formulaires.it.mtess.gouv.qc.ca/Form/1/P700U/0/N); 
+1. Utiliser le bac à sable afin de définir la configuration de vos formulaires. Consulter le [guide de configuration de formulaires FRW](https://formulaires.it.mtess.gouv.qc.ca/Form/7/P700U/0/N); 
 
 &nbsp;
 ### Déployer un formulaire
 
 1. Se procurer une clée API et un code de système autorisé auprès du MESS (Contacter le MESS);
    
-1. [Déployer un formulaire avec DevOps](link);
+1. [Déployer un formulaire avec DevOps](Documentation/deployer.md);
  
 &nbsp;
 ### Définir le ou les fichiers à produire à partir des données du formulaire (optionnel)
-1. [Configurer le fichier de transmission](documentation/transmission.md) du formulaire; 
-1. [Créer un gabarit](documentation/gabarits.md) (PDF ou Word);
-1. [Configurer le fichier "bind"](documentation/fichiers-bind.md) du formulaire;
+1. [Configurer le fichier de transmission](Documentation/transmission.md) du formulaire; 
+1. [Créer un gabarit](Documentation/gabarits.md) (PDF ou Word);
+1. [Configurer le fichier "bind"](Documentation/fichiers-bind.md) du formulaire;
 
 &nbsp;
 
@@ -39,7 +39,7 @@ Les formulaires générés sont accessibles, adaptatifs (responsive), sécuritai
 
 &nbsp;
 ### Recevoir les données du formulaire transmises à votre système
-1. [Configurer le fichier de transmission](documentation/transmission.md) du formulaire; 
+1. [Configurer le fichier de transmission](Documentation/transmission.md) du formulaire; 
 1. Dans votre système, créer un api permettant de recevoir les données (exemple à venir). 
 
 &nbsp;

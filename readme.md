@@ -47,6 +47,10 @@ Pour un premier formulaire, il est fortement recommandé de clôner le présent 
 - [Déployer vos fichiers avec Azure DevOps](https://marketplace.visualstudio.com/items?itemName=MTESS.mtess-frw-deploiement);
 
 &nbsp;
+### Tester vos formulaires
+- [Utiliser les outils de développement](Documentation/outils) afin de tester vos formulaires;
+
+&nbsp;
 ### Recevoir les données du formulaire transmises à votre système
 1. [Configurer le fichier de transmission](Documentation/transmission.md) du formulaire; 
 1. Dans votre système, créer un api permettant de recevoir les données (exemple à venir). 

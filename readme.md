@@ -15,7 +15,7 @@ Les formulaires générés sont accessibles, adaptatifs (responsive), sécuritai
 
 1. Cloner le dépôt courant et copiez le répertoire "Exemple" pour le nommer à votre goût, il regroupera tous vos formulaires (Ne faire cette étape qu'une seule fois);
 
-1. [Configurer votre bac à sable](https://formulaires.it.mtess.gouv.qc.ca/Form/7/P700U/0/N/#p=2);
+1. [Configurer votre bac à sable](Documentation/bac-a-sable.md);
 
 &nbsp;
 ### Créer un formulaire

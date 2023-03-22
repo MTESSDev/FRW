@@ -1,7 +1,7 @@
 etapes:
-  # traiter les documents transmis par les utilsateurs dans votre formulaire
+  # Traiter les documents transmis par les utilsateurs dans votre formulaire
   - tache: traiterDocumentsSoumis
-  # Générer un document
+  # Générer un document style questions/réponses à partir d'un gabarit word (gabarit par défaut)
   - tache: genererWord
   # Ajouter une estampille aux documents
   - tache: ajouterEstampille
@@ -10,10 +10,11 @@ etapes:
     options:
       # Le nom du client HTTP à utiliser (doit être défini dans l'objet http_client)
       client: appel_externe
+      # Permet d'indiquer de ne pas effectuer l'appel reel en mode test
       modeBoutonTesterTransmission: simuler
 
 
-# Cette configuration a été laissée telle quelle pour montrer les cas tordus que l'ont peut gérer en sortie vers un API
+# La liste des clients http désirés, ici seulement appel_externe est défini
 http_client:
   appel_externe:
     method: POST
@@ -21,6 +22,7 @@ http_client:
     headers:
       Accept: application/json
     content:
+      # Permet de tout "dumper" les variables de l'application vers votre API
       json_content: |
           {{{Json .}}}
       check_response:

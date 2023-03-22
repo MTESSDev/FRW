@@ -1,6 +1,6 @@
 # Créer votre premier fichier de transmission
 
-Pour débuter et tester un premier fichier de transmission, il est recommandé de débuter avec un fichier nommé `default.v0.transmission.yml` ([Voir configuration transmission](../Transmission.md)) que vous créez à la racine, donc au [niveau système](../Niveaux.md), là où tous vos répertoires de formulaires sont.
+Pour débuter et tester un premier fichier de transmission, il est recommandé de débuter avec un fichier nommé `default.v0.transmission.yml` ([Voir configuration transmission](Transmission.md)) que vous créez à la racine, donc au [niveau système](Niveaux.md), là où tous vos répertoires de formulaires sont.
 
 Amusons-nous à simuler un appel vers un API fictif afin de se familiariser avec la solution et les diverses options. Cette étape est pratique aussi pour se faire une idée des données que votre API pourra recevoir lorsqu'elle sera configurée.
 
@@ -41,8 +41,8 @@ http_client:
 
 Vous pouvez maintenant [déployer](Déployer.md). 
 
-Une fois le déploiement terminé, rendez-vous sur votre formulaire et lancez les [outils de développement](../OutilsDeveloppement.md)
+Une fois le déploiement terminé, rendez-vous sur votre formulaire et lancez les [outils de développement](OutilsDeveloppement.md)
 
 Il suffira alors de remplir quelques champs pour tester et cliquer sur `Tester transmission` pour voir apparaître les données que votre API aurait reçues si elle avait été réellement appelée.
 
-Pour vous aider, il existe [un exemple complet d'un système simple](../../Exemples/SystemeSimple/) qui démontre comment nommer les fichiers de base et leur contenu le plus courant.
+Pour vous aider, il existe [un exemple complet d'un système simple](../Exemples/SystemeSimple/) qui démontre comment nommer les fichiers de base et leur contenu le plus courant.

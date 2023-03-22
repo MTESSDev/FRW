@@ -13,7 +13,7 @@ Pour que l'outil FRW puisse gérer le contenu en sortie, il faut ajouter un fich
 
 Un fichier `Transmission` est principalement nécessaire au niveau `Système` et que dans certains précis cas au niveau d'un formulaire, comme par exemple pour remplacer les étapes par défaut que vous aviez défini.
 
-
+## Exemple de toutes les possibilitées de configuration
 ```yaml
 # Liste des étapes désirées dans votre transmission.
 # L'ordre est importante, le traitement la respectera
@@ -31,6 +31,7 @@ etapes: 
 
     # Générer Word, permet de créer un document docx/pdf/html en sortie
     # contenant questions/réponses automatiquement
+    # ATTENTION: pour le moment il n'est pas possible d'activer genererPdf en même temps
     - tache: genererWord
       numeroExecution: 02
       options:
@@ -40,6 +41,7 @@ etapes: 
     # Générer PDF, permet de remplir un ou des PDF avec champs de saisies
     # Il faut alors ajouter un fichier NOM_DU_FORM.v0.bind.yml pour 
     # permettre l'association des champs
+    # ATTENTION: pour le moment il n'est pas possible d'activer genererWord en même temps
     - tache: genererPdf
 
     # Traiter documents soumis, permet de valider les pièces jointes 

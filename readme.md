@@ -5,17 +5,18 @@
 ## Qu'est-ce que c'est?
 Un outil incroyable qui permet de créer des formulaires très rapidement à l'aide de simples fichiers de configuration YAML (low code). [Consulter les technologies utilisées](Documentation/technologies-utilisees.md).
 
-
 Les formulaires générés sont accessibles, adaptatifs (responsive), sécuritaires et respectent les règles du [système de design Québec.ca](https://design.quebec.ca/).
-
 
 &nbsp;
 
-
 ## Comment l'utiliser?
+
+[Consulter la présentation "fonctionnelle" d'arrimage à un système](Documentation/Documents/FRW_Arrimage%20d'un%20système%20autorisé.pdf)
+
+
 ### Pré-requis
 
-1. Cloner le dépôt courant et copiez le répertoire "Exemple" pour le nommer à votre goût, il regroupera tous vos formulaires (Ne faire cette étape qu'une seule fois);
+1. Clôner le dépôt courant et copiez le répertoire "Exemple" pour le nommer à votre goût, il regroupera tous vos formulaires (Ne faire cette étape qu'une seule fois);
 2. Installer [VS Code](https://code.visualstudio.com/);
 
 3. [Configurer votre bac à sable](https://github.com/MTESSDev/vscode-mtess-frw-bacasable) (Contactez le MESS afin d'obtenir l'url à utiliser lors de la configuration);
@@ -26,13 +27,12 @@ Les formulaires générés sont accessibles, adaptatifs (responsive), sécuritai
 Utiliser le bac à sable afin de définir la configuration de vos formulaires. Consulter le [guide de configuration de formulaires FRW](https://formulaires.it.mtess.gouv.qc.ca/Form/7/P700U/0/N); 
 
 
-Pour un premier formulaire, il est fortement recommandé de clôner le présent dépot GitHub et d'utiliser le répertoire [Exemple](Exemples) afin de comprendre la structure requise et diposer d'une base de travail.
+Pour un premier formulaire, il est fortement recommandé de clôner le présent dépot GitHub (tel que mentionné en [pré-requis](#pré-requis)), afin de comprendre la structure requise et diposer d'une base de travail.
 
 &nbsp;
 ### Déployer un formulaire
 
 1. Se procurer une clée API et un code de système autorisé auprès du MESS (Contacter le MESS);
-   
 1. [Déployer un formulaire avec DevOps](Documentation/deployer.md);
  
 &nbsp;

@@ -1,3 +1,5 @@
+[![Build](https://github.com/MTESSDev/FRW/actions/workflows/build.yml/badge.svg)](https://github.com/MTESSDev/FRW/actions/workflows/build.yml)
+
 # FRW - Formulaires Web
 
 ## Qu'est-ce que c'est?

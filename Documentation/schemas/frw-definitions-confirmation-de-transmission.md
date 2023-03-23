@@ -1,15 +1,3 @@
-# Schéma de Confirmation de transmission
-
-```txt
-https://example.com/schemas/custom#/definitions/ConfirmationTransmission
-```
-
-
-
-| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
-| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
-| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
-
 ## Type de ConfirmationTransmission
 
 `object` ([Confirmation de transmission](frw-definitions-confirmation-de-transmission.md))

@@ -1,15 +1,3 @@
-# Schéma de debuterFormulaire
-
-```txt
-https://example.com/schemas/custom#/definitions/DebuterFormulaire
-```
-
-Paramètres de la page permettant de débuter un formulaire.
-
-| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
-| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
-| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
-
 ## Type de DebuterFormulaire
 
 `object` ([debuterFormulaire](frw-definitions-debuterformulaire.md))

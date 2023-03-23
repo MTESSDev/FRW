@@ -1,15 +1,3 @@
-# Schéma de Fenêtre modale de courriel de confirmation
-
-```txt
-https://example.com/schemas/custom#/definitions/ModaleCourrielConfirmation
-```
-
-
-
-| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
-| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
-| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
-
 ## Type de ModaleCourrielConfirmation
 
 `object` ([Fenêtre modale de courriel de confirmation](frw-definitions-fenêtre-modale-de-courriel-de-confirmation.md))

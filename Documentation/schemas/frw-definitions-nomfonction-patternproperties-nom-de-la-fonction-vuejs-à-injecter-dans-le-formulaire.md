@@ -1,15 +1,3 @@
-# Schéma de Nom de la fonction Vue.js à injecter dans le formulaire
-
-```txt
-https://example.com/schemas/custom#/definitions/NomFonction/patternProperties/^[a-zA-Z0-9]+$
-```
-
-
-
-| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
-| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
-| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
-
 ## Type de ^\[a-zA-Z0-9]+$
 
 `object` ([Nom de la fonction Vue.js à injecter dans le formulaire](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire.md))

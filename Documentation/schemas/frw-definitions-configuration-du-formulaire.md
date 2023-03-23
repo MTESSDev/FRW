@@ -1,15 +1,3 @@
-# Schéma de Configuration du formulaire
-
-```txt
-https://example.com/schemas/custom#/definitions/Config
-```
-
-
-
-| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
-| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
-| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
-
 ## Type de Config
 
 `object` ([Configuration du formulaire](frw-definitions-configuration-du-formulaire.md))

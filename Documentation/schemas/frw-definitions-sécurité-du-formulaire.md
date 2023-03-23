@@ -1,15 +1,3 @@
-# Schéma de Sécurité du formulaire
-
-```txt
-https://example.com/schemas/custom#/definitions/Securite
-```
-
-
-
-| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
-| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
-| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
-
 ## Type de Securite
 
 `object` ([Sécurité du formulaire](frw-definitions-sécurité-du-formulaire.md))

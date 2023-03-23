@@ -1,15 +1,3 @@
-# Schéma de pages
-
-```txt
-https://example.com/schemas/custom#/definitions/Pages
-```
-
-Paramètres associés à différentes pages.
-
-| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
-| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
-| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
-
 ## Type de Pages
 
 `object` ([pages](frw-definitions-pages.md))

@@ -1,15 +1,3 @@
-# Schéma de Schéma sans nom
-
-```txt
-https://example.com/schemas/custom
-```
-
-
-
-| Abstrait                   | Extensible | Statut         | Identifiable             | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                      |
-| :------------------------- | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :------------------------------------------------------------------------------- |
-| Ne peut pas être instancié | Oui        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
-
 ## Type de Schéma sans nom
 
 inconnu

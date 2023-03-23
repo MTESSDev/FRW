@@ -1,15 +1,3 @@
-# Schéma de anonyme
-
-```txt
-https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/anonyme
-```
-
-Paramètres de la page permettant de débuter un formulaire anonyme.
-
-| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
-| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
-| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
-
 ## Type de anonyme
 
 `object` ([anonyme](frw-definitions-debuterformulaire-properties-anonyme.md))

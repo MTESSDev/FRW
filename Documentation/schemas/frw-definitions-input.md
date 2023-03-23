@@ -89,41 +89,41 @@ Required. The type of input element. See the input library for a full range of o
 
 **énumération**: la valeur de cette propriété doit être égale à l'une des valeurs suivantes:
 
-| Valeur                   | Explication |
-| :----------------------- | :---------- |
-| `"listeDeroulante"`      |             |
-| `"text"`                 |             |
-| `"codePostal"`           |             |
-| `"cp12"`                 |             |
-| `"nam"`                  |             |
-| `"nas"`                  |             |
-| `"montant"`              |             |
-| `"adresse"`              |             |
-| `"button"`               |             |
-| `"submit"`               |             |
-| `"customfile"`           |             |
-| `"customfileUlterieure"` |             |
-| `"file"`                 |             |
-| `"group"`                |             |
-| `"repeatableGroup"`      |             |
-| `"radio"`                |             |
-| `"checkbox"`             |             |
-| `"select"`               |             |
-| `"number"`               |             |
-| `"range"`                |             |
-| `"textarea"`             |             |
-| `"color"`                |             |
-| `"date"`                 |             |
-| `"datetime-local"`       |             |
-| `"email"`                |             |
-| `"hidden"`               |             |
-| `"month"`                |             |
-| `"password"`             |             |
-| `"search"`               |             |
-| `"tel"`                  |             |
-| `"time"`                 |             |
-| `"url"`                  |             |
-| `"week"`                 |             |
+| Valeur                   | Explication                |
+| :----------------------- | :------------------------- |
+| `"listeDeroulante"`      |                            |
+| `"text"`                 | Champ texte                |
+| `"codePostal"`           |                            |
+| `"cp12"`                 |                            |
+| `"nam"`                  | Numéro d'assurance maladie |
+| `"nas"`                  |                            |
+| `"montant"`              |                            |
+| `"adresse"`              |                            |
+| `"button"`               |                            |
+| `"submit"`               |                            |
+| `"customfile"`           |                            |
+| `"customfileUlterieure"` |                            |
+| `"file"`                 |                            |
+| `"group"`                |                            |
+| `"repeatableGroup"`      |                            |
+| `"radio"`                |                            |
+| `"checkbox"`             |                            |
+| `"select"`               |                            |
+| `"number"`               |                            |
+| `"range"`                |                            |
+| `"textarea"`             |                            |
+| `"color"`                |                            |
+| `"date"`                 |                            |
+| `"datetime-local"`       |                            |
+| `"email"`                |                            |
+| `"hidden"`               |                            |
+| `"month"`                |                            |
+| `"password"`             |                            |
+| `"search"`               |                            |
+| `"tel"`                  |                            |
+| `"time"`                 |                            |
+| `"url"`                  |                            |
+| `"week"`                 |                            |
 
 ### Valeur par défaut de type
 

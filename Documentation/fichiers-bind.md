@@ -3,9 +3,9 @@
 L'outil FRW permet de générer un fichier à partir des données du formulaire transmis. Le fichier de configuration "bind" est requis afin de configurer le format et les caractéristiques de l'extrant à produire.
 
 ## Tester vos formulaires
-À tout moment, vous pouvez utiliser les [outils de développement](Documentation/outils-developpement.md) afin de tester vos formulaires;
+À tout moment, vous pouvez utiliser les [outils de développement](outils-developpement.md) afin de tester vos formulaires;
 
-Référez vous à la section [Tester la transmission du formulaire](Documentation/outils-developpement.md#tester-la-transmission-du-formulaire) pour prévisualiser le fichier produit à partir de la page Web du formulaire.
+Référez vous à la section [Tester la transmission du formulaire](outils-developpement.md#tester-la-transmission-du-formulaire) pour prévisualiser le fichier produit à partir de la page Web du formulaire.
 
 ## Créer votre premier fichier bind avec le gabarit Word générique
 Pour débuter et tester un premier coup votre fichier bind, vous devez créer le fichier dans le même répertoire que votre formulaire en cours. Il doit être nommé NOM_DU_FORM.v0.bind.yml où le NOM_DU_FORM est identique à votre nom de répertoire du formulaire.

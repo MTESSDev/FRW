@@ -10,10 +10,6 @@ https://example.com/schemas/custom#/definitions/GererPlageDisponibilite
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de GererPlageDisponibilite
-
-`object` ([Gerer les plages de disponibilité](frw-definitions-gerer-les-plages-de-disponibilité.md))
-
 # Propriétés de GererPlageDisponibilite
 
 | Propriété                                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                                |
@@ -35,12 +31,6 @@ https://example.com/schemas/custom#/definitions/GererPlageDisponibilite
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-actif.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/actif")
-
-### Type de actif
-
-`boolean`
-
 ## joursOuvrablesUniquement
 
 
@@ -52,12 +42,6 @@ https://example.com/schemas/custom#/definitions/GererPlageDisponibilite
 *   Type: `boolean`
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-joursouvrablesuniquement.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/joursOuvrablesUniquement")
-
-### Type de joursOuvrablesUniquement
-
-`boolean`
 
 ## nombreConvois
 
@@ -71,12 +55,6 @@ https://example.com/schemas/custom#/definitions/GererPlageDisponibilite
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-nombreconvois.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/nombreConvois")
-
-### Type de nombreConvois
-
-`integer`
-
 ## plages
 
 
@@ -88,9 +66,3 @@ https://example.com/schemas/custom#/definitions/GererPlageDisponibilite
 *   Type: `array`
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-plages.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/plages")
-
-### Type de plages
-
-`array`

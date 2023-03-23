@@ -10,10 +10,6 @@ https://example.com/schemas/custom#/definitions/Tooltip
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de Tooltip
-
-`object` ([Translation](frw-definitions-translation-1.md))
-
 ## Valeur par défaut de Tooltip
 
 La valeur par défaut est:
@@ -44,12 +40,6 @@ Multilingue
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Tooltip/properties/title")
-
-### Type de title
-
-`object` ([Translation](frw-definitions-translation.md))
-
 ### Valeur par défaut de title
 
 La valeur par défaut est:
@@ -71,12 +61,6 @@ Multilingue
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Tooltip/properties/text")
-
-### Type de text
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de text
 

@@ -10,10 +10,6 @@ https://example.com/schemas/custom#/definitions/Soumission
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de Soumission
-
-`object` ([Page de soumission](frw-definitions-page-de-soumission.md))
-
 # Propriétés de Soumission
 
 | Propriété                                     | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                     |
@@ -31,12 +27,6 @@ Multilingue
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Soumission/properties/texteBoutonSoumettre")
-
-### Type de texteBoutonSoumettre
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de texteBoutonSoumettre
 

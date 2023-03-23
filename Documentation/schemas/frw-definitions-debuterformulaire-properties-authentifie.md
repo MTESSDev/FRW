@@ -10,10 +10,6 @@ Paramètres de la page permettant de débuter un formulaire authentifié.
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de authentifie
-
-`object` ([authentifie](frw-definitions-debuterformulaire-properties-authentifie.md))
-
 # Propriétés de authentifie
 
 | Propriété                                                           | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                  |
@@ -36,12 +32,6 @@ Indique si la page d'initialisation d'un formulaire est active ou non.
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-debuterformulaire-properties-authentifie-properties-actif.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/actif")
-
-### Type de actif
-
-`boolean` ([actif](frw-definitions-debuterformulaire-properties-authentifie-properties-actif.md))
-
 ## urlAuthentification
 
 Multilingue
@@ -53,12 +43,6 @@ Multilingue
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/urlAuthentification")
-
-### Type de urlAuthentification
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de urlAuthentification
 
@@ -82,12 +66,6 @@ Multilingue
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/texte")
-
-### Type de texte
-
-`object` ([Translation](frw-definitions-translation.md))
-
 ### Valeur par défaut de texte
 
 La valeur par défaut est:
@@ -110,12 +88,6 @@ Multilingue
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/boutonDebuter")
-
-### Type de boutonDebuter
-
-`object` ([Translation](frw-definitions-translation.md))
-
 ### Valeur par défaut de boutonDebuter
 
 La valeur par défaut est:
@@ -137,12 +109,6 @@ Multilingue
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/boutonDebuterTitreAccessibilite")
-
-### Type de boutonDebuterTitreAccessibilite
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de boutonDebuterTitreAccessibilite
 

@@ -10,10 +10,6 @@ Doit respecter le format fourni dans l'exemple. Votre code va entre les accolade
 | :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de Code
-
-`string` ([Code de la fonction](frw-definitions-code-de-la-fonction.md))
-
 ## Exemple de Code
 
 ```yaml

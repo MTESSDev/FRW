@@ -10,10 +10,6 @@ Paramètres associés au courriel de reprise.
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de CourrielReprise
-
-`object` ([courrielReprise](frw-definitions-courrielreprise.md))
-
 # Propriétés de CourrielReprise
 
 | Propriété                                 | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                          |
@@ -35,12 +31,6 @@ Adresse courriel expéditeur.
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-courrielreprise-properties-courrielexpediteur.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/courrielExpediteur")
-
-### Type de courrielExpediteur
-
-`string` ([courrielExpediteur](frw-definitions-courrielreprise-properties-courrielexpediteur.md))
-
 ### Exemple de courrielExpediteur
 
 ```yaml
@@ -60,12 +50,6 @@ Nom de l'expéditeur expéditeur.
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/nomExpediteur")
-
-### Type de nomExpediteur
-
-`string` ([courrielExpediteur](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md))
-
 ### Exemple de nomExpediteur
 
 ```yaml
@@ -84,12 +68,6 @@ Multilingue
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/objet")
-
-### Type de objet
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de objet
 
@@ -119,12 +97,6 @@ Multilingue
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/corps")
-
-### Type de corps
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de corps
 

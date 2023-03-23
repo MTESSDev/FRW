@@ -10,10 +10,6 @@ https://example.com/schemas/custom#/definitions/Section
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de Section
-
-`object` ([Section](frw-definitions-section.md))
-
 # Propriétés de Section
 
 | Propriété                                                                           | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                    |
@@ -37,12 +33,6 @@ Multilingue
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Section/properties/section")
-
-### Type de section
-
-`object` ([Translation](frw-definitions-translation.md))
-
 ### Valeur par défaut de section
 
 La valeur par défaut est:
@@ -65,12 +55,6 @@ en: ''
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-section-properties-id.md "https://example.com/schemas/custom#/definitions/Section/properties/id")
-
-### Type de id
-
-`string`
-
 ## cacherTexteExplicatifChampsObligatoires
 
 Permet d'afficher l'indication de champs obligatoires.
@@ -82,12 +66,6 @@ Permet d'afficher l'indication de champs obligatoires.
 *   Type: `boolean`
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-section-properties-cachertexteexplicatifchampsobligatoires.md "https://example.com/schemas/custom#/definitions/Section/properties/cacherTexteExplicatifChampsObligatoires")
-
-### Type de cacherTexteExplicatifChampsObligatoires
-
-`boolean`
 
 ## classes
 
@@ -101,12 +79,6 @@ Permet d'afficher l'indication de champs obligatoires.
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-section-properties-classes.md "https://example.com/schemas/custom#/definitions/Section/properties/classes")
-
-### Type de classes
-
-`string`
-
 ## v-if
 
 Conditionnal display on another property/form field.
@@ -119,12 +91,6 @@ Conditionnal display on another property/form field.
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-section-properties-v-if.md "https://example.com/schemas/custom#/definitions/Section/properties/v-if")
-
-### Type de v-if
-
-`string`
-
 ## components
 
 
@@ -136,9 +102,3 @@ Conditionnal display on another property/form field.
 *   Type: an array of merged types ([Détails](frw-definitions-section-properties-components-items.md))
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-section-properties-components.md "https://example.com/schemas/custom#/definitions/Section/properties/components")
-
-### Type de components
-
-an array of merged types ([Détails](frw-definitions-section-properties-components-items.md))

@@ -10,10 +10,6 @@ https://example.com/schemas/custom#/definitions/NomFonction
 | :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de NomFonction
-
-inconnu
-
 # Propriétés de NomFonction
 
 | Propriété        | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                                 |
@@ -31,9 +27,3 @@ inconnu
 *   Type: `object` ([Nom de la fonction Vue.js à injecter dans le formulaire](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire.md))
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire.md "https://example.com/schemas/custom#/definitions/NomFonction/patternProperties/^\[a-zA-Z0-9]+$")
-
-### Type de ^\[a-zA-Z0-9]+$
-
-`object` ([Nom de la fonction Vue.js à injecter dans le formulaire](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire.md))

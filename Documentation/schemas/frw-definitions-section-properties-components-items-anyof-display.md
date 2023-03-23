@@ -1,7 +1,7 @@
 # Schéma de Display
 
 ```txt
-https://example.com/schemas/custom#/definitions/Display
+https://example.com/schemas/custom#/definitions/Section/properties/components/items/anyOf/1
 ```
 
 Display component
@@ -10,7 +10,7 @@ Display component
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-# Propriétés de Display
+# Propriétés de 1
 
 | Propriété                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                      |
 | :------------------------------------ | :-------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |

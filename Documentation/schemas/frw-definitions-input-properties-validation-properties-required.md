@@ -10,10 +10,6 @@ Checks if the input is empty.
 | :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de required
-
-`string`
-
 ## Contraintes de required
 
 **énumération**: la valeur de cette propriété doit être égale à l'une des valeurs suivantes:

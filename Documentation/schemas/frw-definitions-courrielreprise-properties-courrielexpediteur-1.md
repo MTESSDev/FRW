@@ -10,10 +10,6 @@ Nom de l'expéditeur expéditeur.
 | :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de nomExpediteur
-
-`string` ([courrielExpediteur](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md))
-
 ## Exemple de nomExpediteur
 
 ```yaml

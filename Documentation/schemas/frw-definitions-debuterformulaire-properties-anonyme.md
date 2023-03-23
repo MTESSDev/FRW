@@ -10,10 +10,6 @@ Paramètres de la page permettant de débuter un formulaire anonyme.
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de anonyme
-
-`object` ([anonyme](frw-definitions-debuterformulaire-properties-anonyme.md))
-
 # Propriétés de anonyme
 
 | Propriété                                                           | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                          |
@@ -33,12 +29,6 @@ Multilingue
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/anonyme/properties/texte")
-
-### Type de texte
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de texte
 
@@ -62,12 +52,6 @@ Multilingue
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/anonyme/properties/boutonDebuter")
-
-### Type de boutonDebuter
-
-`object` ([Translation](frw-definitions-translation.md))
-
 ### Valeur par défaut de boutonDebuter
 
 La valeur par défaut est:
@@ -89,12 +73,6 @@ Multilingue
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/anonyme/properties/boutonDebuterTitreAccessibilite")
-
-### Type de boutonDebuterTitreAccessibilite
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de boutonDebuterTitreAccessibilite
 

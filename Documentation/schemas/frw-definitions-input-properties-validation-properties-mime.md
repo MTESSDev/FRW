@@ -10,10 +10,6 @@ Checks if the type of file selected is an allowed value. This validator uses the
 | :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de mime
-
-`string`
-
 ## Exemple de mime
 
 ```yaml

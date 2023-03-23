@@ -10,10 +10,6 @@ https://example.com/schemas/custom#/definitions/Defaults
 | :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de Defaults
-
-`object` ([Defaults values](frw-definitions-defaults-values.md))
-
 # Propriétés de Defaults
 
 | Propriété                 | Type | Obligatoire | Nullable    | Défini par |

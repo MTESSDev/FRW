@@ -1,7 +1,7 @@
 # Schéma de Input
 
 ```txt
-https://example.com/schemas/custom#/definitions/Input
+https://example.com/schemas/custom#/definitions/Display/properties/components/items/anyOf/0
 ```
 
 
@@ -10,7 +10,7 @@ https://example.com/schemas/custom#/definitions/Input
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Valeur par défaut de Input
+## Valeur par défaut de 0
 
 La valeur par défaut est:
 
@@ -21,14 +21,14 @@ validations:
 
 ```
 
-## Exemple de Input
+## Exemple de 0
 
 ```yaml
 validations
 
 ```
 
-# Propriétés de Input
+# Propriétés de 0
 
 | Propriété                                   | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                  |
 | :------------------------------------------ | :-------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------- |

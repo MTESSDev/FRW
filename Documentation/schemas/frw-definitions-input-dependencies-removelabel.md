@@ -10,10 +10,6 @@ https://example.com/schemas/custom#/definitions/Input/dependencies/removeLabel
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de removeLabel
-
-inconnu
-
 # Propriétés de removeLabel
 
 | Propriété     | Type         | Obligatoire | Nullable         | Défini par                                                                                                                                                                            |
@@ -31,12 +27,6 @@ inconnu
 *   Type: inconnu
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-input-dependencies-removelabel-properties-type.md "https://example.com/schemas/custom#/definitions/Input/dependencies/removeLabel/properties/type")
-
-### Type de type
-
-inconnu
 
 ### Contraintes de type
 

@@ -10,10 +10,6 @@ https://example.com/schemas/custom#/definitions/Form
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de Form
-
-`object` ([Form](frw-definitions-form.md))
-
 # Propriétés de Form
 
 | Propriété                                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                      |
@@ -37,12 +33,6 @@ https://example.com/schemas/custom#/definitions/Form
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-form-properties-sectionsgroup.md "https://example.com/schemas/custom#/definitions/Form/properties/sectionsGroup")
-
-### Type de sectionsGroup
-
-`object[]` ([Section Group](frw-definitions-section-group.md))
-
 ## templates
 
 
@@ -55,12 +45,6 @@ https://example.com/schemas/custom#/definitions/Form
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-form-properties-templates.md "https://example.com/schemas/custom#/definitions/Form/properties/templates")
-
-### Type de templates
-
-`object` ([Détails](frw-definitions-form-properties-templates.md))
-
 ## title
 
 Multilingue
@@ -72,12 +56,6 @@ Multilingue
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Form/properties/title")
-
-### Type de title
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de title
 
@@ -101,12 +79,6 @@ en: ''
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-form-properties-inputdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/inputDefaultClasses")
-
-### Type de inputDefaultClasses
-
-`object` ([Détails](frw-definitions-form-properties-inputdefaultclasses.md))
-
 ## defaults
 
 
@@ -119,12 +91,6 @@ en: ''
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-form-properties-defaults-values.md "https://example.com/schemas/custom#/definitions/Form/properties/defaults")
-
-### Type de defaults
-
-`object` ([Defaults values](frw-definitions-form-properties-defaults-values.md))
-
 ## outerDefaultClasses
 
 
@@ -136,9 +102,3 @@ en: ''
 *   Type: `object` ([Détails](frw-definitions-form-properties-outerdefaultclasses.md))
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-form-properties-outerdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/outerDefaultClasses")
-
-### Type de outerDefaultClasses
-
-`object` ([Détails](frw-definitions-form-properties-outerdefaultclasses.md))

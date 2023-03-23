@@ -10,10 +10,6 @@ https://example.com/schemas/custom#/definitions/Input/properties/validations
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de validations
-
-`object` ([Validation](frw-definitions-input-properties-validation.md))
-
 ## Valeur par défaut de validations
 
 La valeur par défaut est:
@@ -63,12 +59,6 @@ Checks if the input is empty.
 
 *   peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-required.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/required")
-
-### Type de required
-
-`string`
-
 ### Contraintes de required
 
 **énumération**: la valeur de cette propriété doit être égale à l'une des valeurs suivantes:
@@ -99,12 +89,6 @@ The value must be yes, on, 1 or true. Useful for box inputs, often where you nee
 
 *   peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-accepted.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/accepted")
-
-### Type de accepted
-
-`null`, la valeur doit être nulle
-
 ## before
 
 Checks if a date comes before another date. If no date argument is provided the current time will be used. The value must be a Date object or a string that can be evaluated by Date.parse.
@@ -116,12 +100,6 @@ Checks if a date comes before another date. If no date argument is provided the 
 *   Type: `string`
 
 *   peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-before.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/before")
-
-### Type de before
-
-`string`
 
 ### Exemple de before
 
@@ -142,12 +120,6 @@ Checks if a date comes after another date. If no date argument is provided the c
 
 *   peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-after.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/after")
-
-### Type de after
-
-`string`
-
 ### Exemple de after
 
 ```yaml
@@ -166,12 +138,6 @@ Checks if a value is only alphabetical characters. There are two character sets 
 *   Type: `string`
 
 *   peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-alpha.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/alpha")
-
-### Type de alpha
-
-`string`
 
 ### Contraintes de alpha
 
@@ -201,12 +167,6 @@ Checks if a value is only made of alphabetical characters or numeric digits. For
 
 *   peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-alphanumeric.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/alphanumeric")
-
-### Type de alphanumeric
-
-`string`
-
 ### Contraintes de alphanumeric
 
 **énumération**: la valeur de cette propriété doit être égale à l'une des valeurs suivantes:
@@ -228,12 +188,6 @@ Checks if a number or string length is between a minimum or maximum. Both the ma
 *   Type: `string`
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-between.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/between")
-
-### Type de between
-
-`string`
 
 ### Exemple de between
 
@@ -259,12 +213,6 @@ Checks if the field value matches the value of another field. Mostly used for hi
 
 *   peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-confirm.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/confirm")
-
-### Type de confirm
-
-`string`
-
 ### Exemple de confirm
 
 ```yaml
@@ -284,12 +232,6 @@ Used to logically stop validation on the first subsequent validation error.
 
 *   peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-bail.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/bail")
-
-### Type de bail
-
-`null`, la valeur doit être nulle
-
 ## email
 
 Checks if the input is a valid email address format.
@@ -301,12 +243,6 @@ Checks if the input is a valid email address format.
 *   Type: `null`, la valeur doit être nulle
 
 *   peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-email.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/email")
-
-### Type de email
-
-`null`, la valeur doit être nulle
 
 ## starts\_with
 
@@ -320,12 +256,6 @@ Checks if the input starts with one of the provided options.
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-starts_with.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/starts_with")
-
-### Type de starts\_with
-
-`string`
-
 ## avant
 
 Pour une date qui doit être AVANT la date du jour.
@@ -337,12 +267,6 @@ Pour une date qui doit être AVANT la date du jour.
 *   Type: `string`
 
 *   peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-avant.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/avant")
-
-### Type de avant
-
-`string`
 
 ## ends\_with
 
@@ -356,12 +280,6 @@ Checks if the input ends with one of the provided options.
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-ends_with.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/ends_with")
-
-### Type de ends\_with
-
-`string`
-
 ## in
 
 Checks if the input is included in an array of options.
@@ -374,12 +292,6 @@ Checks if the input is included in an array of options.
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-in.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/in")
-
-### Type de in
-
-`string`
-
 ## matches
 
 Checks if the input matches a particular value or pattern. If you pass multiple arguments, it checks each until a match is found.
@@ -391,12 +303,6 @@ Checks if the input matches a particular value or pattern. If you pass multiple 
 *   Type: `string`
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-matches.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/matches")
-
-### Type de matches
-
-`string`
 
 ### Exemple de matches
 
@@ -421,12 +327,6 @@ Checks the value of a Number, or length of a String or Array is more than a maxi
 *   Type: l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-validation-properties-min.md))
 
 *   peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-min.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/min")
-
-### Type de min
-
-l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-validation-properties-min.md))
 
 ### Exemple de min
 
@@ -457,12 +357,6 @@ Checks that the value of a Number, or length of a String or Array is less than a
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-max.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/max")
-
-### Type de max
-
-l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-validation-properties-max.md))
-
 ### Exemple de max
 
 ```yaml
@@ -492,12 +386,6 @@ Checks if the type of file selected is an allowed value. This validator uses the
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-mime.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/mime")
-
-### Type de mime
-
-`string`
-
 ### Exemple de mime
 
 ```yaml
@@ -522,12 +410,6 @@ Checks to ensure the input data does not match a set of predefined values.
 
 *   ne peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-not.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/not")
-
-### Type de not
-
-`string`
-
 ### Exemple de not
 
 ```yaml
@@ -547,12 +429,6 @@ Checks if the input is a valid number as evaluated by isNaN().
 
 *   peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-number.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/number")
-
-### Type de number
-
-`null`, la valeur doit être nulle
-
 ## optional
 
 Use this rule to make a field optional. When used all validation rules pass until the field is no longer empty. Its location in the list of validation rules has no effect.
@@ -564,12 +440,6 @@ Use this rule to make a field optional. When used all validation rules pass unti
 *   Type: `null`, la valeur doit être nulle
 
 *   peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-optional.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/optional")
-
-### Type de optional
-
-`null`, la valeur doit être nulle
 
 ## url
 
@@ -583,12 +453,6 @@ Checks if the input value appears to be a properly formatted URL including the p
 
 *   peut être nul
 
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-url.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/url")
-
-### Type de url
-
-`null`, la valeur doit être nulle
-
 ## nas
 
 Valider le NAS, si true valide vraiment que le NAS est valide, si false valide que c'est un nombre de 9 de long seulement.
@@ -600,9 +464,3 @@ Valider le NAS, si true valide vraiment que le NAS est valide, si false valide q
 *   Type: `boolean`
 
 *   ne peut être nul
-
-*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-nas.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/nas")
-
-### Type de nas
-
-`boolean`

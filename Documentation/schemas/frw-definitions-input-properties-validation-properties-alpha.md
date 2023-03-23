@@ -10,10 +10,6 @@ Checks if a value is only alphabetical characters. There are two character sets 
 | :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de alpha
-
-`string`
-
 ## Contraintes de alpha
 
 **énumération**: la valeur de cette propriété doit être égale à l'une des valeurs suivantes:

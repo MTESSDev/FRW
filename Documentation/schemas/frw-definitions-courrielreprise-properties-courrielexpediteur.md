@@ -10,10 +10,6 @@ Adresse courriel expéditeur.
 | :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de courrielExpediteur
-
-`string` ([courrielExpediteur](frw-definitions-courrielreprise-properties-courrielexpediteur.md))
-
 ## Exemple de courrielExpediteur
 
 ```yaml

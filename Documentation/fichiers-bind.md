@@ -59,7 +59,6 @@ bundles:
 #Lorsqu'on utilise un gabarit Word pour la production du fichier, on doit spécifier l'extension désirée du document.
 #Dans ce cas-ci, le fichier produit par FRW sera un fichier PDF. La solution supporte les PDF et les DOCX.
   - nomSortie: test.docx
-#Le template permet de référer à la section template plus bas dans le fichier.
     templates:
       - template1
 #Une estampille est un texte qu'on affiche sur le document produit pour donner plus d'informations. Cette section est facultative.
@@ -87,5 +86,56 @@ ignorer:
 - champ: champ2
 ````
 
+## Créer votre premier fichier bind avec un gabarit PDF avec champs de saisie dynamique
+La solution FRW permet d'envoyer les données du formulaire dans un gabarit PDF avec champs de saisie dynamique. 
+
+Pour que FRW l'utilise, vous devez créer un répertoire "Gabarits" dans le même répertoire que votre formulaire en cours et y déposer votre gabarit en vous assurant qu'il soit déverouillé.
+
+Vous pouvez ensuite modifier le fichier bind que vous avez créé précédemment en utilisant l'exemple suivant:
+
+### Exemple de configuration de base avec un gabarit PDF avec champs de saisie dynamique
+
+Détails:
+1. Le fichier produit sera obligatoirement un PDF;
+1. Le traitement utilisera le gabarit PDF spécifique que vous aurez déposé dans le répertoire "Gabarits".
+1. Une estampille s'affichera sur le fichier produit;
+
+````yaml
+config:
+  formulaire:
+#Le système doit être l'identifiant de système autorisé que vous aurez obtenu de l'équipe FRW.
+    systeme: 1
+#Le type doit être le même nom que le répertoire de votre formulaire
+    type: FormTest
+#La section "pdf" permet de définir des options pour la production du fichier.
+  pdf:
+#rapetisserTexteTropLong permet de réduire automatiquement la taille de la police d'un texte qui dépasse légèrement la longueur du champ dans le gabarit PDF.
+    rapetisserTexteTropLong: true
+#redirigerAnnexeTexteTopLong permet de créer une page d'annexe après la dernière page du formulaire pour y afficher les champs qui dépassent la longueur permise dans le gabarit.
+    redirigerAnnexeTexteTroplong: true
+#pourcentageDepassementAnnexe permet de spécifier une limite avant de créer l'annexe des textes trop longs. En dessous de la limite, on rapetisse la police et au dessus, on créé l'annexe.
+    pourcentageDepassementAnnexe: 20
+#verouillerChampsPdf permet de verouiller le fichier lorsque le traitement a terminé d'insérer les valeurs.
+    verrouillerChampsPdf: true
+bundles:
+#Le nomSortie sert à définir le nom du fichier qui sera produit. 
+#Lorsqu'on utilise un gabarit PDF pour la production du fichier, il n'est pas nécessaire de spécifier d'extension puisque ce sera toujours un PDF.
+  - nomSortie: FormTest
+    templates:
+      - test1
+    estampille:
+      positionX: 400
+      positionY: 710
+      tailleFont: 9
+      lignes:
+        - 'Numéro de référence : {{NoConfirmation}}'
+        - 'Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}'
+templates:
+- id: test1
+  name: NomInutile
+  gabarit:
+    fr: FormTest.v1.FR
+    en: FormTest.v1.EN
+````
 
 

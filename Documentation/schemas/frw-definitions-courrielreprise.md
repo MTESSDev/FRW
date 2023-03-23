@@ -10,6 +10,10 @@ Paramètres associés au courriel de reprise.
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de CourrielReprise
+
+`object` ([courrielReprise](frw-definitions-courrielreprise.md))
+
 # Propriétés de CourrielReprise
 
 | Propriété                                 | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                          |
@@ -27,9 +31,11 @@ Adresse courriel expéditeur.
 
 *   est optionnel
 
-*   Type: `string` ([courrielExpediteur](frw-definitions-courrielreprise-properties-courrielexpediteur.md))
-
 *   ne peut être nul
+
+### Type de courrielExpediteur
+
+`string` ([courrielExpediteur](frw-definitions-courrielreprise-properties-courrielexpediteur.md))
 
 ### Exemple de courrielExpediteur
 
@@ -46,9 +52,11 @@ Nom de l'expéditeur expéditeur.
 
 *   est optionnel
 
-*   Type: `string` ([courrielExpediteur](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md))
-
 *   ne peut être nul
+
+### Type de nomExpediteur
+
+`string` ([courrielExpediteur](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md))
 
 ### Exemple de nomExpediteur
 
@@ -65,9 +73,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de objet
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de objet
 
@@ -94,9 +104,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de corps
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de corps
 

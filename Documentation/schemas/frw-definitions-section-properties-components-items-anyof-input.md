@@ -609,6 +609,10 @@ La valeur par défaut est:
 
 *   ne peut être nul
 
+### Contraintes de components
+
+**minimum number of items**: le nombre minimum d'éléments pour ce tableau est :`1`
+
 ## disabled
 
 

@@ -10,6 +10,10 @@ https://example.com/schemas/custom#/definitions/Input/properties/validations
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de validations
+
+`object` ([Validation](frw-definitions-input-properties-validation.md))
+
 ## Valeur par défaut de validations
 
 La valeur par défaut est:
@@ -55,9 +59,11 @@ Checks if the input is empty.
 
 *   est optionnel
 
-*   Type: `string`
-
 *   peut être nul
+
+### Type de required
+
+`string`
 
 ### Contraintes de required
 
@@ -85,9 +91,11 @@ The value must be yes, on, 1 or true. Useful for box inputs, often where you nee
 
 *   est optionnel
 
-*   Type: `null`, la valeur doit être nulle
-
 *   peut être nul
+
+### Type de accepted
+
+`null`, la valeur doit être nulle
 
 ## before
 
@@ -97,9 +105,11 @@ Checks if a date comes before another date. If no date argument is provided the 
 
 *   est optionnel
 
-*   Type: `string`
-
 *   peut être nul
+
+### Type de before
+
+`string`
 
 ### Exemple de before
 
@@ -116,9 +126,11 @@ Checks if a date comes after another date. If no date argument is provided the c
 
 *   est optionnel
 
-*   Type: `string`
-
 *   peut être nul
+
+### Type de after
+
+`string`
 
 ### Exemple de after
 
@@ -135,9 +147,11 @@ Checks if a value is only alphabetical characters. There are two character sets 
 
 *   est optionnel
 
-*   Type: `string`
-
 *   peut être nul
+
+### Type de alpha
+
+`string`
 
 ### Contraintes de alpha
 
@@ -163,9 +177,11 @@ Checks if a value is only made of alphabetical characters or numeric digits. For
 
 *   est optionnel
 
-*   Type: `string`
-
 *   peut être nul
+
+### Type de alphanumeric
+
+`string`
 
 ### Contraintes de alphanumeric
 
@@ -185,9 +201,11 @@ Checks if a number or string length is between a minimum or maximum. Both the ma
 
 *   est optionnel
 
-*   Type: `string`
-
 *   ne peut être nul
+
+### Type de between
+
+`string`
 
 ### Exemple de between
 
@@ -209,9 +227,11 @@ Checks if the field value matches the value of another field. Mostly used for hi
 
 *   est optionnel
 
-*   Type: `string`
-
 *   peut être nul
+
+### Type de confirm
+
+`string`
 
 ### Exemple de confirm
 
@@ -228,9 +248,11 @@ Used to logically stop validation on the first subsequent validation error.
 
 *   est optionnel
 
-*   Type: `null`, la valeur doit être nulle
-
 *   peut être nul
+
+### Type de bail
+
+`null`, la valeur doit être nulle
 
 ## email
 
@@ -240,9 +262,11 @@ Checks if the input is a valid email address format.
 
 *   est optionnel
 
-*   Type: `null`, la valeur doit être nulle
-
 *   peut être nul
+
+### Type de email
+
+`null`, la valeur doit être nulle
 
 ## starts\_with
 
@@ -252,9 +276,11 @@ Checks if the input starts with one of the provided options.
 
 *   est optionnel
 
-*   Type: `string`
-
 *   ne peut être nul
+
+### Type de starts\_with
+
+`string`
 
 ## avant
 
@@ -264,9 +290,11 @@ Pour une date qui doit être AVANT la date du jour.
 
 *   est optionnel
 
-*   Type: `string`
-
 *   peut être nul
+
+### Type de avant
+
+`string`
 
 ## ends\_with
 
@@ -276,9 +304,11 @@ Checks if the input ends with one of the provided options.
 
 *   est optionnel
 
-*   Type: `string`
-
 *   ne peut être nul
+
+### Type de ends\_with
+
+`string`
 
 ## in
 
@@ -288,9 +318,11 @@ Checks if the input is included in an array of options.
 
 *   est optionnel
 
-*   Type: `string`
-
 *   ne peut être nul
+
+### Type de in
+
+`string`
 
 ## matches
 
@@ -300,9 +332,11 @@ Checks if the input matches a particular value or pattern. If you pass multiple 
 
 *   est optionnel
 
-*   Type: `string`
-
 *   ne peut être nul
+
+### Type de matches
+
+`string`
 
 ### Exemple de matches
 
@@ -324,9 +358,11 @@ Checks the value of a Number, or length of a String or Array is more than a maxi
 
 *   est optionnel
 
-*   Type: l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-validation-properties-min.md))
-
 *   peut être nul
+
+### Type de min
+
+l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-validation-properties-min.md))
 
 ### Exemple de min
 
@@ -353,9 +389,11 @@ Checks that the value of a Number, or length of a String or Array is less than a
 
 *   est optionnel
 
-*   Type: l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-validation-properties-max.md))
-
 *   ne peut être nul
+
+### Type de max
+
+l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-validation-properties-max.md))
 
 ### Exemple de max
 
@@ -382,9 +420,11 @@ Checks if the type of file selected is an allowed value. This validator uses the
 
 *   est optionnel
 
-*   Type: `string`
-
 *   ne peut être nul
+
+### Type de mime
+
+`string`
 
 ### Exemple de mime
 
@@ -406,9 +446,11 @@ Checks to ensure the input data does not match a set of predefined values.
 
 *   est optionnel
 
-*   Type: `string`
-
 *   ne peut être nul
+
+### Type de not
+
+`string`
 
 ### Exemple de not
 
@@ -425,9 +467,11 @@ Checks if the input is a valid number as evaluated by isNaN().
 
 *   est optionnel
 
-*   Type: `null`, la valeur doit être nulle
-
 *   peut être nul
+
+### Type de number
+
+`null`, la valeur doit être nulle
 
 ## optional
 
@@ -437,9 +481,11 @@ Use this rule to make a field optional. When used all validation rules pass unti
 
 *   est optionnel
 
-*   Type: `null`, la valeur doit être nulle
-
 *   peut être nul
+
+### Type de optional
+
+`null`, la valeur doit être nulle
 
 ## url
 
@@ -449,9 +495,11 @@ Checks if the input value appears to be a properly formatted URL including the p
 
 *   est optionnel
 
-*   Type: `null`, la valeur doit être nulle
-
 *   peut être nul
+
+### Type de url
+
+`null`, la valeur doit être nulle
 
 ## nas
 
@@ -461,6 +509,8 @@ Valider le NAS, si true valide vraiment que le NAS est valide, si false valide q
 
 *   est optionnel
 
-*   Type: `boolean`
-
 *   ne peut être nul
+
+### Type de nas
+
+`boolean`

@@ -10,6 +10,10 @@ Paramètres associés à l'enregistrement d'un formulaire
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de Enregistrement
+
+`object` ([enregistrement](frw-definitions-enregistrement.md))
+
 # Propriétés de Enregistrement
 
 | Propriété                                                                     | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                    |
@@ -26,9 +30,11 @@ Indique si l'enregistrement du formulaire est actif (bouton enregistré présent
 
 *   est optionnel
 
-*   Type: `boolean` ([actif](frw-definitions-enregistrement-properties-actif.md))
-
 *   ne peut être nul
+
+### Type de actif
+
+`boolean` ([actif](frw-definitions-enregistrement-properties-actif.md))
 
 ## afficherMessageIncitatif
 
@@ -38,9 +44,11 @@ Indique si le message (avis avertissement en haut de chaque page) incitant l'enr
 
 *   est optionnel
 
-*   Type: `boolean` ([afficherMessageIncitatif](frw-definitions-enregistrement-properties-affichermessageincitatif.md))
-
 *   ne peut être nul
+
+### Type de afficherMessageIncitatif
+
+`boolean` ([afficherMessageIncitatif](frw-definitions-enregistrement-properties-affichermessageincitatif.md))
 
 ## texteModaleEnregistrementAuthentifie
 
@@ -50,9 +58,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de texteModaleEnregistrementAuthentifie
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de texteModaleEnregistrementAuthentifie
 

@@ -10,6 +10,10 @@ Paramètres de la page permettant de débuter un formulaire.
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de DebuterFormulaire
+
+`object` ([debuterFormulaire](frw-definitions-debuterformulaire.md))
+
 # Propriétés de DebuterFormulaire
 
 | Propriété                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                |
@@ -25,9 +29,11 @@ Paramètres de la page permettant de débuter un formulaire authentifié.
 
 *   est optionnel
 
-*   Type: `object` ([authentifie](frw-definitions-debuterformulaire-properties-authentifie.md))
-
 *   ne peut être nul
+
+### Type de authentifie
+
+`object` ([authentifie](frw-definitions-debuterformulaire-properties-authentifie.md))
 
 ## anonyme
 
@@ -37,6 +43,8 @@ Paramètres de la page permettant de débuter un formulaire anonyme.
 
 *   est optionnel
 
-*   Type: `object` ([anonyme](frw-definitions-debuterformulaire-properties-anonyme.md))
-
 *   ne peut être nul
+
+### Type de anonyme
+
+`object` ([anonyme](frw-definitions-debuterformulaire-properties-anonyme.md))

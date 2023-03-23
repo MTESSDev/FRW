@@ -10,6 +10,10 @@ Paramètres de la page permettant de débuter un formulaire authentifié.
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de authentifie
+
+`object` ([authentifie](frw-definitions-debuterformulaire-properties-authentifie.md))
+
 # Propriétés de authentifie
 
 | Propriété                                                           | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                  |
@@ -28,9 +32,11 @@ Indique si la page d'initialisation d'un formulaire est active ou non.
 
 *   est optionnel
 
-*   Type: `boolean` ([actif](frw-definitions-debuterformulaire-properties-authentifie-properties-actif.md))
-
 *   ne peut être nul
+
+### Type de actif
+
+`boolean` ([actif](frw-definitions-debuterformulaire-properties-authentifie-properties-actif.md))
 
 ## urlAuthentification
 
@@ -40,9 +46,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de urlAuthentification
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de urlAuthentification
 
@@ -62,9 +70,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de texte
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de texte
 
@@ -84,9 +94,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de boutonDebuter
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de boutonDebuter
 
@@ -106,9 +118,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de boutonDebuterTitreAccessibilite
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de boutonDebuterTitreAccessibilite
 

@@ -10,6 +10,10 @@ Required. The type of input element. See the input library for a full range of o
 | :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de type
+
+`string`
+
 ## Contraintes de type
 
 **énumération**: la valeur de cette propriété doit être égale à l'une des valeurs suivantes:

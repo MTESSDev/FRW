@@ -10,6 +10,10 @@ https://example.com/schemas/custom#/definitions/SectionsGroup
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de SectionsGroup
+
+`object` ([Section Group](frw-definitions-section-group.md))
+
 # Propriétés de SectionsGroup
 
 | Propriété                     | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                  |
@@ -28,9 +32,11 @@ https://example.com/schemas/custom#/definitions/SectionsGroup
 
 *   est optionnel
 
-*   Type: `object[]` ([Section](frw-definitions-section.md))
-
 *   ne peut être nul
+
+### Type de sections
+
+`object[]` ([Section](frw-definitions-section.md))
 
 ## prefixId
 
@@ -40,9 +46,11 @@ https://example.com/schemas/custom#/definitions/SectionsGroup
 
 *   est optionnel
 
-*   Type: `string`
-
 *   ne peut être nul
+
+### Type de prefixId
+
+`string`
 
 ## classes
 
@@ -52,9 +60,11 @@ https://example.com/schemas/custom#/definitions/SectionsGroup
 
 *   est optionnel
 
-*   Type: `string`
-
 *   ne peut être nul
+
+### Type de classes
+
+`string`
 
 ## v-if
 
@@ -64,9 +74,11 @@ Conditionnal display on another property/form field.
 
 *   est optionnel
 
-*   Type: `string`
-
 *   ne peut être nul
+
+### Type de v-if
+
+`string`
 
 ## sectionGroup
 
@@ -76,9 +88,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de sectionGroup
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de sectionGroup
 

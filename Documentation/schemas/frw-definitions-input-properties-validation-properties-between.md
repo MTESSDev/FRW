@@ -10,6 +10,10 @@ Checks if a number or string length is between a minimum or maximum. Both the ma
 | :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de between
+
+`string`
+
 ## Exemple de between
 
 ```yaml

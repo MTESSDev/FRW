@@ -10,6 +10,10 @@ https://example.com/schemas/custom#/definitions/GererPlageDisponibilite
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de GererPlageDisponibilite
+
+`object` ([Gerer les plages de disponibilité](frw-definitions-gerer-les-plages-de-disponibilité.md))
+
 # Propriétés de GererPlageDisponibilite
 
 | Propriété                                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                                |
@@ -27,9 +31,11 @@ https://example.com/schemas/custom#/definitions/GererPlageDisponibilite
 
 *   est optionnel
 
-*   Type: `boolean`
-
 *   ne peut être nul
+
+### Type de actif
+
+`boolean`
 
 ## joursOuvrablesUniquement
 
@@ -39,9 +45,11 @@ https://example.com/schemas/custom#/definitions/GererPlageDisponibilite
 
 *   est optionnel
 
-*   Type: `boolean`
-
 *   ne peut être nul
+
+### Type de joursOuvrablesUniquement
+
+`boolean`
 
 ## nombreConvois
 
@@ -51,9 +59,11 @@ https://example.com/schemas/custom#/definitions/GererPlageDisponibilite
 
 *   est optionnel
 
-*   Type: `integer`
-
 *   ne peut être nul
+
+### Type de nombreConvois
+
+`integer`
 
 ## plages
 
@@ -63,6 +73,8 @@ https://example.com/schemas/custom#/definitions/GererPlageDisponibilite
 
 *   est optionnel
 
-*   Type: `array`
-
 *   ne peut être nul
+
+### Type de plages
+
+`array`

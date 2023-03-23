@@ -1,14 +1,6 @@
-# Schéma de Translation
+## Type de tooltip
 
-```txt
-https://example.com/schemas/custom#/definitions/Input/properties/tooltip
-```
-
-
-
-| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
-| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
-| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
+`object` ([Translation](frw-definitions-input-properties-translation-7.md))
 
 ## Valeur par défaut de tooltip
 
@@ -36,9 +28,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de title
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de title
 
@@ -58,9 +52,11 @@ Multilingue
 
 *   est requis
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de text
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de text
 

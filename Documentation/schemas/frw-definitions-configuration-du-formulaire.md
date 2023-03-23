@@ -10,6 +10,10 @@ https://example.com/schemas/custom#/definitions/Config
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de Config
+
+`object` ([Configuration du formulaire](frw-definitions-configuration-du-formulaire.md))
+
 # Propriétés de Config
 
 | Propriété                                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                               |
@@ -29,7 +33,7 @@ https://example.com/schemas/custom#/definitions/Config
 | [revision](#revision)                                 | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-page-de-révision.md "https://example.com/schemas/custom#/definitions/Config/properties/revision")                                                      |
 | [scripts](#scripts)                                   | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-scripts.md "https://example.com/schemas/custom#/definitions/Config/properties/scripts")                                                                |
 | [securite](#securite)                                 | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-sécurité-du-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/securite")                                                |
-| [soumission](#soumission)                             | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-page-de-soumission.md "https://example.com/schemas/custom#/definitions/Config/properties/soumission")           |
+| [soumission](#soumission)                             | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-page-de-soumission.md "https://example.com/schemas/custom#/definitions/Config/properties/soumission")                                                  |
 | [title](#title)                                       | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Config/properties/title")                                                              |
 
 ## afficherBlocCode
@@ -40,9 +44,11 @@ https://example.com/schemas/custom#/definitions/Config
 
 *   est optionnel
 
-*   Type: `boolean` ([afficherBlocCode](frw-definitions-configuration-du-formulaire-properties-afficherbloccode.md))
-
 *   ne peut être nul
+
+### Type de afficherBlocCode
+
+`boolean` ([afficherBlocCode](frw-definitions-configuration-du-formulaire-properties-afficherbloccode.md))
 
 ## afficherPartagePage
 
@@ -52,9 +58,11 @@ https://example.com/schemas/custom#/definitions/Config
 
 *   est optionnel
 
-*   Type: `boolean` ([afficherPartagePage](frw-definitions-configuration-du-formulaire-properties-afficherpartagepage.md))
-
 *   ne peut être nul
+
+### Type de afficherPartagePage
+
+`boolean` ([afficherPartagePage](frw-definitions-configuration-du-formulaire-properties-afficherpartagepage.md))
 
 ## confirmationTransmission
 
@@ -64,9 +72,11 @@ https://example.com/schemas/custom#/definitions/Config
 
 *   est optionnel
 
-*   Type: `object` ([Confirmation de transmission](frw-definitions-confirmation-de-transmission.md))
-
 *   ne peut être nul
+
+### Type de confirmationTransmission
+
+`object` ([Confirmation de transmission](frw-definitions-confirmation-de-transmission.md))
 
 ## courrielReprise
 
@@ -76,9 +86,11 @@ Paramètres associés au courriel de reprise.
 
 *   est optionnel
 
-*   Type: `object` ([courrielReprise](frw-definitions-courrielreprise.md))
-
 *   ne peut être nul
+
+### Type de courrielReprise
+
+`object` ([courrielReprise](frw-definitions-courrielreprise.md))
 
 ## debuterFormulaire
 
@@ -88,9 +100,11 @@ Paramètres de la page permettant de débuter un formulaire.
 
 *   est optionnel
 
-*   Type: `object` ([debuterFormulaire](frw-definitions-debuterformulaire.md))
-
 *   ne peut être nul
+
+### Type de debuterFormulaire
+
+`object` ([debuterFormulaire](frw-definitions-debuterformulaire.md))
 
 ## enregistrement
 
@@ -100,9 +114,11 @@ Paramètres associés à l'enregistrement d'un formulaire
 
 *   est optionnel
 
-*   Type: `object` ([enregistrement](frw-definitions-enregistrement.md))
-
 *   ne peut être nul
+
+### Type de enregistrement
+
+`object` ([enregistrement](frw-definitions-enregistrement.md))
 
 ## formulaireUnilingue
 
@@ -112,9 +128,11 @@ Permet de retirer le selecteur de langue. Le formulaire s'affichera en français
 
 *   est optionnel
 
-*   Type: `boolean`
-
 *   ne peut être nul
+
+### Type de formulaireUnilingue
+
+`boolean`
 
 ## gererPlageDisponibilite
 
@@ -124,9 +142,11 @@ Permet de retirer le selecteur de langue. Le formulaire s'affichera en français
 
 *   est optionnel
 
-*   Type: `object` ([Gerer les plages de disponibilité](frw-definitions-gerer-les-plages-de-disponibilité.md))
-
 *   ne peut être nul
+
+### Type de gererPlageDisponibilite
+
+`object` ([Gerer les plages de disponibilité](frw-definitions-gerer-les-plages-de-disponibilité.md))
 
 ## injecterJs
 
@@ -136,9 +156,11 @@ Permet de retirer le selecteur de langue. Le formulaire s'affichera en français
 
 *   est optionnel
 
-*   Type: `object` ([Scripts Vue.js à injecter au formulaire.](frw-definitions-scripts-vuejs-à-injecter-au-formulaire.md))
-
 *   ne peut être nul
+
+### Type de injecterJs
+
+`object` ([Scripts Vue.js à injecter au formulaire.](frw-definitions-scripts-vuejs-à-injecter-au-formulaire.md))
 
 ## messages
 
@@ -148,9 +170,11 @@ Paramètres associés aux différents messages.
 
 *   est optionnel
 
-*   Type: `object` ([messages](frw-definitions-messages.md))
-
 *   ne peut être nul
+
+### Type de messages
+
+`object` ([messages](frw-definitions-messages.md))
 
 ## pages
 
@@ -160,9 +184,11 @@ Paramètres associés à différentes pages.
 
 *   est optionnel
 
-*   Type: `object` ([pages](frw-definitions-pages.md))
-
 *   ne peut être nul
+
+### Type de pages
+
+`object` ([pages](frw-definitions-pages.md))
 
 ## piv
 
@@ -172,9 +198,11 @@ Paramètres associés au PIV.
 
 *   est optionnel
 
-*   Type: `object` ([piv](frw-definitions-configuration-du-formulaire-properties-piv.md))
-
 *   ne peut être nul
+
+### Type de piv
+
+`object` ([piv](frw-definitions-configuration-du-formulaire-properties-piv.md))
 
 ## revision
 
@@ -184,9 +212,11 @@ Paramètres associés au PIV.
 
 *   est optionnel
 
-*   Type: `object` ([Page de révision](frw-definitions-page-de-révision.md))
-
 *   ne peut être nul
+
+### Type de revision
+
+`object` ([Page de révision](frw-definitions-page-de-révision.md))
 
 ## scripts
 
@@ -196,9 +226,11 @@ Paramètres associés au PIV.
 
 *   est optionnel
 
-*   Type: `object` ([scripts](frw-definitions-scripts.md))
-
 *   ne peut être nul
+
+### Type de scripts
+
+`object` ([scripts](frw-definitions-scripts.md))
 
 ## securite
 
@@ -208,9 +240,11 @@ Paramètres associés au PIV.
 
 *   est optionnel
 
-*   Type: `object` ([Sécurité du formulaire](frw-definitions-sécurité-du-formulaire.md))
-
 *   ne peut être nul
+
+### Type de securite
+
+`object` ([Sécurité du formulaire](frw-definitions-sécurité-du-formulaire.md))
 
 ## soumission
 
@@ -220,9 +254,11 @@ Paramètres associés au PIV.
 
 *   est optionnel
 
-*   Type: `object` ([Page de soumission](frw-definitions-configuration-du-formulaire-properties-page-de-soumission.md))
-
 *   ne peut être nul
+
+### Type de soumission
+
+`object` ([Page de soumission](frw-definitions-page-de-soumission.md))
 
 ## title
 
@@ -232,9 +268,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de title
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de title
 

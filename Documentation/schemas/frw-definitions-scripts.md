@@ -10,6 +10,10 @@ https://example.com/schemas/custom#/definitions/Scripts
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de Scripts
+
+`object` ([scripts](frw-definitions-scripts.md))
+
 # Propriétés de Scripts
 
 | Propriété                               | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                        |
@@ -24,9 +28,11 @@ Javascript servant à une solution d'outil statistiques (ex. Google Analytics ou
 
 *   est optionnel
 
-*   Type: `string` ([outilStatistiques](frw-definitions-scripts-properties-outilstatistiques.md))
-
 *   ne peut être nul
+
+### Type de outilStatistiques
+
+`string` ([outilStatistiques](frw-definitions-scripts-properties-outilstatistiques.md))
 
 ### Exemple de outilStatistiques
 

@@ -1,7 +1,7 @@
 # Schéma de Input
 
 ```txt
-https://example.com/schemas/custom#/definitions/Input
+https://example.com/schemas/custom#/definitions/Input/properties/components/items/oneOf/0
 ```
 
 
@@ -10,11 +10,7 @@ https://example.com/schemas/custom#/definitions/Input
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de Input
-
-`object` ([Input](frw-definitions-input.md))
-
-## Valeur par défaut de Input
+## Valeur par défaut de 0
 
 La valeur par défaut est:
 
@@ -25,14 +21,14 @@ validations:
 
 ```
 
-## Exemple de Input
+## Exemple de 0
 
 ```yaml
 validations
 
 ```
 
-# Propriétés de Input
+# Propriétés de 0
 
 | Propriété                                   | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                  |
 | :------------------------------------------ | :-------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -77,11 +73,9 @@ Adds a name attribute, and when used with <FormulateForm> this is the key of the
 
 *   est requis
 
+*   Type: `string`
+
 *   ne peut être nul
-
-### Type de name
-
-`string`
 
 ## type
 
@@ -91,11 +85,9 @@ Required. The type of input element. See the input library for a full range of o
 
 *   est optionnel
 
+*   Type: `string`
+
 *   ne peut être nul
-
-### Type de type
-
-`string`
 
 ### Contraintes de type
 
@@ -154,11 +146,9 @@ text
 
 *   est optionnel
 
+*   Type: `string`
+
 *   ne peut être nul
-
-### Type de value
-
-`string`
 
 ## limit
 
@@ -168,11 +158,9 @@ text
 
 *   est optionnel
 
+*   Type: `number`
+
 *   ne peut être nul
-
-### Type de limit
-
-`number`
 
 ## validation-name
 
@@ -182,11 +170,9 @@ Multilingue
 
 *   est optionnel
 
+*   Type: `object` ([Translation](frw-definitions-translation.md))
+
 *   ne peut être nul
-
-### Type de validation-name
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de validation-name
 
@@ -206,11 +192,9 @@ en: ''
 
 *   est optionnel
 
+*   Type: `object` ([validation-messages (Messages de validation personnalisés)](frw-definitions-validationmessages.md))
+
 *   ne peut être nul
-
-### Type de validation-messages
-
-`object` ([validation-messages (Messages de validation personnalisés)](frw-definitions-validationmessages.md))
 
 ## label
 
@@ -220,11 +204,9 @@ Multilingue
 
 *   est optionnel
 
+*   Type: `object` ([Translation](frw-definitions-translation.md))
+
 *   ne peut être nul
-
-### Type de label
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de label
 
@@ -244,11 +226,9 @@ Multilingue
 
 *   est optionnel
 
+*   Type: `object` ([Translation](frw-definitions-translation.md))
+
 *   ne peut être nul
-
-### Type de placeholder
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de placeholder
 
@@ -268,11 +248,9 @@ en: ''
 
 *   est optionnel
 
+*   Type: `string`
+
 *   ne peut être nul
-
-### Type de inputClasses
-
-`string`
 
 ## inputmode
 
@@ -282,11 +260,9 @@ Text field inputmode (html)
 
 *   est optionnel
 
+*   Type: `string`
+
 *   ne peut être nul
-
-### Type de inputmode
-
-`string`
 
 ### Contraintes de inputmode
 
@@ -304,11 +280,9 @@ Regex pattern (html)
 
 *   est optionnel
 
+*   Type: `string`
+
 *   ne peut être nul
-
-### Type de pattern
-
-`string`
 
 ## outerClasses
 
@@ -318,11 +292,9 @@ Regex pattern (html)
 
 *   est optionnel
 
+*   Type: `string`
+
 *   ne peut être nul
-
-### Type de outerClasses
-
-`string`
 
 ## help
 
@@ -332,11 +304,9 @@ Multilingue
 
 *   est optionnel
 
+*   Type: `object` ([Translation](frw-definitions-translation.md))
+
 *   ne peut être nul
-
-### Type de help
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de help
 
@@ -356,11 +326,9 @@ en: ''
 
 *   est optionnel
 
+*   Type: `string`
+
 *   ne peut être nul
-
-### Type de pdfBind
-
-`string`
 
 ## additionals
 
@@ -370,11 +338,9 @@ en: ''
 
 *   est optionnel
 
+*   Type: `object` ([Détails](frw-definitions-input-properties-additionals.md))
+
 *   ne peut être nul
-
-### Type de additionals
-
-`object` ([Détails](frw-definitions-input-properties-additionals.md))
 
 ## v-if
 
@@ -384,11 +350,9 @@ Conditionnal display on another property/form field.
 
 *   est optionnel
 
+*   Type: `string`
+
 *   ne peut être nul
-
-### Type de v-if
-
-`string`
 
 ## v-else-value
 
@@ -398,11 +362,9 @@ Valeur de remplacement lorsque le v-if n'affiche pas le champ. Supporté CÔTÉ 
 
 *   est optionnel
 
+*   Type: `string`
+
 *   ne peut être nul
-
-### Type de v-else-value
-
-`string`
 
 ## helpPosition
 
@@ -412,11 +374,9 @@ Valeur de remplacement lorsque le v-if n'affiche pas le champ. Supporté CÔTÉ 
 
 *   est optionnel
 
+*   Type: `string`
+
 *   ne peut être nul
-
-### Type de helpPosition
-
-`string`
 
 ### Contraintes de helpPosition
 
@@ -435,11 +395,9 @@ Valeur de remplacement lorsque le v-if n'affiche pas le champ. Supporté CÔTÉ 
 
 *   est optionnel
 
+*   Type: l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-min.md))
+
 *   ne peut être nul
-
-### Type de min
-
-l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-min.md))
 
 ## max
 
@@ -449,11 +407,9 @@ l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-
 
 *   est optionnel
 
+*   Type: l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-max.md))
+
 *   ne peut être nul
-
-### Type de max
-
-l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-max.md))
 
 ## addLabel
 
@@ -463,11 +419,9 @@ Multilingue
 
 *   est optionnel
 
+*   Type: `object` ([Translation](frw-definitions-translation.md))
+
 *   ne peut être nul
-
-### Type de addLabel
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de addLabel
 
@@ -487,11 +441,9 @@ Multilingue
 
 *   est optionnel
 
+*   Type: `object` ([Translation](frw-definitions-translation.md))
+
 *   ne peut être nul
-
-### Type de removeLabel
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de removeLabel
 
@@ -511,11 +463,9 @@ Multilingue
 
 *   est optionnel
 
+*   Type: `object` ([Translation](frw-definitions-translation.md))
+
 *   ne peut être nul
-
-### Type de instanceLabel
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de instanceLabel
 
@@ -535,11 +485,9 @@ en: ''
 
 *   est optionnel
 
+*   Type: `object` ([Translation](frw-definitions-translation-1.md))
+
 *   ne peut être nul
-
-### Type de tooltip
-
-`object` ([Translation](frw-definitions-translation-1.md))
 
 ### Valeur par défaut de tooltip
 
@@ -559,11 +507,9 @@ Array or object of options (select or box classifications)
 
 *   est optionnel
 
+*   Type: l'un des éléments suivants :`object` ou `string` ou `array` ([Détails](frw-definitions-input-properties-options.md))
+
 *   peut être nul
-
-### Type de options
-
-l'un des éléments suivants :`object` ou `string` ou `array` ([Détails](frw-definitions-input-properties-options.md))
 
 ### Exemple de options
 
@@ -580,11 +526,9 @@ Multilingue
 
 *   est optionnel
 
+*   Type: `object` ([Translation](frw-definitions-translation.md))
+
 *   ne peut être nul
-
-### Type de nomDocument
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de nomDocument
 
@@ -604,11 +548,9 @@ Indique si le bloc de code utilisé pour générer le contrôle est affiché sou
 
 *   est optionnel
 
+*   Type: `boolean` ([afficherBlocCode](frw-definitions-input-properties-afficherbloccode.md))
+
 *   ne peut être nul
-
-### Type de afficherBlocCode
-
-`boolean` ([afficherBlocCode](frw-definitions-input-properties-afficherbloccode.md))
 
 ## validations
 
@@ -618,11 +560,9 @@ Indique si le bloc de code utilisé pour générer le contrôle est affiché sou
 
 *   est optionnel
 
+*   Type: `object` ([Validation](frw-definitions-input-properties-validation.md))
+
 *   peut être nul
-
-### Type de validations
-
-`object` ([Validation](frw-definitions-input-properties-validation.md))
 
 ### Valeur par défaut de validations
 
@@ -641,11 +581,9 @@ La valeur par défaut est:
 
 *   est optionnel
 
+*   Type: `boolean`
+
 *   ne peut être nul
-
-### Type de repeatable
-
-`boolean`
 
 ## minimum
 
@@ -655,11 +593,9 @@ La valeur par défaut est:
 
 *   est optionnel
 
+*   Type: `number`
+
 *   ne peut être nul
-
-### Type de minimum
-
-`number`
 
 ## components
 
@@ -669,11 +605,13 @@ La valeur par défaut est:
 
 *   est optionnel
 
+*   Type: an array of merged types ([Détails](frw-definitions-input-properties-components-items.md))
+
 *   ne peut être nul
 
-### Type de components
+### Contraintes de components
 
-an array of merged types ([Détails](frw-definitions-input-properties-components-items.md))
+**minimum number of items**: le nombre minimum d'éléments pour ce tableau est :`1`
 
 ## disabled
 
@@ -683,8 +621,6 @@ an array of merged types ([Détails](frw-definitions-input-properties-components
 
 *   est optionnel
 
+*   Type: `boolean`
+
 *   ne peut être nul
-
-### Type de disabled
-
-`boolean`

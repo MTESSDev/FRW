@@ -10,6 +10,10 @@ https://example.com/schemas/custom#/definitions/Revision
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de Revision
+
+`object` ([Page de révision](frw-definitions-page-de-révision.md))
+
 # Propriétés de Revision
 
 | Propriété                                       | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                          |
@@ -24,6 +28,8 @@ Indique si la fenêtre modale permettant la saisie d'une adresse courriel pour l
 
 *   est optionnel
 
-*   Type: `boolean`
-
 *   ne peut être nul
+
+### Type de validationAutomatique
+
+`boolean`

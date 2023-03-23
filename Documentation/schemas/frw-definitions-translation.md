@@ -10,6 +10,10 @@ Multilingue
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de Translation
+
+`object` ([Translation](frw-definitions-translation.md))
+
 ## Valeur par défaut de Translation
 
 La valeur par défaut est:
@@ -36,9 +40,11 @@ Texte de langue française.
 
 *   est requis
 
-*   Type: `string` ([fr](frw-definitions-translation-properties-fr.md))
-
 *   peut être nul
+
+### Type de fr
+
+`string` ([fr](frw-definitions-translation-properties-fr.md))
 
 ## en
 
@@ -48,9 +54,11 @@ Texte de langue anglaise.
 
 *   est optionnel
 
-*   Type: `string` ([en](frw-definitions-translation-properties-en.md))
-
 *   peut être nul
+
+### Type de en
+
+`string` ([en](frw-definitions-translation-properties-en.md))
 
 ## Propriétés Additionnelles
 

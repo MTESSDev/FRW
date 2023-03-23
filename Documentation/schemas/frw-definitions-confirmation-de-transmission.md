@@ -10,6 +10,10 @@ https://example.com/schemas/custom#/definitions/ConfirmationTransmission
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de ConfirmationTransmission
+
+`object` ([Confirmation de transmission](frw-definitions-confirmation-de-transmission.md))
+
 # Propriétés de ConfirmationTransmission
 
 | Propriété                                                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                                  |
@@ -26,9 +30,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de texteSupplementaire
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de texteSupplementaire
 
@@ -48,9 +54,11 @@ Nom du champ courriel qui contient l'adresse courriel à utiliser pour le courri
 
 *   est optionnel
 
-*   Type: `string`
-
 *   ne peut être nul
+
+### Type de nomChampCourrielUtilisateur
+
+`string`
 
 ## modaleCourrielConfirmation
 
@@ -60,6 +68,8 @@ Nom du champ courriel qui contient l'adresse courriel à utiliser pour le courri
 
 *   est optionnel
 
-*   Type: `object` ([Fenêtre modale de courriel de confirmation](frw-definitions-fenêtre-modale-de-courriel-de-confirmation.md))
-
 *   ne peut être nul
+
+### Type de modaleCourrielConfirmation
+
+`object` ([Fenêtre modale de courriel de confirmation](frw-definitions-fenêtre-modale-de-courriel-de-confirmation.md))

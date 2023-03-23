@@ -10,6 +10,10 @@ Paramètres associés à différentes pages.
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de Pages
+
+`object` ([pages](frw-definitions-pages.md))
+
 # Propriétés de Pages
 
 | Propriété                           | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                |
@@ -24,6 +28,8 @@ Paramètres associés à la page de session invalide.
 
 *   est optionnel
 
-*   Type: `object` ([sessionInvalide](frw-definitions-pages-properties-sessioninvalide.md))
-
 *   ne peut être nul
+
+### Type de sessionInvalide
+
+`object` ([sessionInvalide](frw-definitions-pages-properties-sessioninvalide.md))

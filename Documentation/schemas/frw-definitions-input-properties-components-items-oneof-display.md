@@ -1,7 +1,7 @@
 # Schéma de Display
 
 ```txt
-https://example.com/schemas/custom#/definitions/Display
+https://example.com/schemas/custom#/definitions/Input/properties/components/items/oneOf/1
 ```
 
 Display component
@@ -10,11 +10,7 @@ Display component
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de Display
-
-`object` ([Display](frw-definitions-display.md))
-
-# Propriétés de Display
+# Propriétés de 1
 
 | Propriété                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                      |
 | :------------------------------------ | :-------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -39,11 +35,9 @@ Types from custom templates list.
 
 *   est optionnel
 
+*   Type: `string`
+
 *   ne peut être nul
-
-### Type de type
-
-`string`
 
 ### Exemple de type
 
@@ -90,11 +84,9 @@ accordeon
 
 *   est optionnel
 
+*   Type: `string`
+
 *   ne peut être nul
-
-### Type de classes
-
-`string`
 
 ## afficherBlocCode
 
@@ -104,11 +96,9 @@ Indique si le bloc de code utilisé pour générer le contrôle est affiché sou
 
 *   est optionnel
 
+*   Type: `boolean` ([afficherBlocCode](frw-definitions-display-properties-afficherbloccode.md))
+
 *   ne peut être nul
-
-### Type de afficherBlocCode
-
-`boolean` ([afficherBlocCode](frw-definitions-display-properties-afficherbloccode.md))
 
 ## tag
 
@@ -118,11 +108,9 @@ Indique si le bloc de code utilisé pour générer le contrôle est affiché sou
 
 *   est optionnel
 
+*   Type: `string`
+
 *   ne peut être nul
-
-### Type de tag
-
-`string`
 
 ## src
 
@@ -132,11 +120,9 @@ Multilingue
 
 *   est optionnel
 
+*   Type: `object` ([Translation](frw-definitions-translation.md))
+
 *   ne peut être nul
-
-### Type de src
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de src
 
@@ -156,11 +142,9 @@ Multilingue
 
 *   est optionnel
 
+*   Type: `object` ([Translation](frw-definitions-translation.md))
+
 *   ne peut être nul
-
-### Type de base64
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de base64
 
@@ -180,11 +164,9 @@ Multilingue
 
 *   est optionnel
 
+*   Type: `object` ([Translation](frw-definitions-translation.md))
+
 *   ne peut être nul
-
-### Type de text
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de text
 
@@ -204,11 +186,9 @@ Multilingue
 
 *   est optionnel
 
+*   Type: `object` ([Translation](frw-definitions-translation.md))
+
 *   ne peut être nul
-
-### Type de title
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de title
 
@@ -228,11 +208,9 @@ en: ''
 
 *   est optionnel
 
+*   Type: `object` ([Détails](frw-definitions-display-properties-additionals.md))
+
 *   ne peut être nul
-
-### Type de additionals
-
-`object` ([Détails](frw-definitions-display-properties-additionals.md))
 
 ## alt
 
@@ -242,11 +220,9 @@ Multilingue
 
 *   est optionnel
 
+*   Type: `object` ([Translation](frw-definitions-translation.md))
+
 *   ne peut être nul
-
-### Type de alt
-
-`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de alt
 
@@ -266,11 +242,9 @@ Conditionnal display on another property/form field.
 
 *   est optionnel
 
+*   Type: `string`
+
 *   ne peut être nul
-
-### Type de v-if
-
-`string`
 
 ## components
 
@@ -280,8 +254,6 @@ Conditionnal display on another property/form field.
 
 *   est optionnel
 
+*   Type: an array of merged types ([Détails](frw-definitions-display-properties-components-items.md))
+
 *   ne peut être nul
-
-### Type de components
-
-an array of merged types ([Détails](frw-definitions-display-properties-components-items.md))

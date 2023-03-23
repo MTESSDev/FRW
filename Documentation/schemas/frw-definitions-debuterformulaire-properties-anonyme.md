@@ -10,6 +10,10 @@ Paramètres de la page permettant de débuter un formulaire anonyme.
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de anonyme
+
+`object` ([anonyme](frw-definitions-debuterformulaire-properties-anonyme.md))
+
 # Propriétés de anonyme
 
 | Propriété                                                           | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                          |
@@ -26,9 +30,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de texte
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de texte
 
@@ -48,9 +54,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de boutonDebuter
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de boutonDebuter
 
@@ -70,9 +78,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de boutonDebuterTitreAccessibilite
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de boutonDebuterTitreAccessibilite
 

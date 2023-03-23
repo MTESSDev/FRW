@@ -1,14 +1,6 @@
-# Schéma de Page de soumission
+## Type de soumission
 
-```txt
-https://example.com/schemas/custom#/definitions/Config/properties/soumission
-```
-
-
-
-| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
-| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
-| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
+`object` ([Page de soumission](frw-definitions-configuration-du-formulaire-properties-page-de-soumission.md))
 
 # Propriétés de soumission
 
@@ -24,9 +16,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de texteBoutonSoumettre
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de texteBoutonSoumettre
 

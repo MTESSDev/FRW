@@ -10,6 +10,10 @@ Paramètres associés à la page de session invalide.
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
+## Type de sessionInvalide
+
+`object` ([sessionInvalide](frw-definitions-pages-properties-sessioninvalide.md))
+
 # Propriétés de sessionInvalide
 
 | Propriété                                               | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                |
@@ -25,9 +29,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de titrePage
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de titrePage
 
@@ -47,9 +53,11 @@ Multilingue
 
 *   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
-
 *   ne peut être nul
+
+### Type de corpsMessageAvertissement
+
+`object` ([Translation](frw-definitions-translation.md))
 
 ### Valeur par défaut de corpsMessageAvertissement
 

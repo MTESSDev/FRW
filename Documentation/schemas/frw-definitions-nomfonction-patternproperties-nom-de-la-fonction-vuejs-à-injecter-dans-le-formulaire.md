@@ -1,4 +1,4 @@
-# Nom de la fonction Vue.js à injecter dans le formulaire Schema
+# Schéma de Nom de la fonction Vue.js à injecter dans le formulaire
 
 ```txt
 https://example.com/schemas/custom#/definitions/NomFonction/patternProperties/^[a-zA-Z0-9]+$
@@ -6,19 +6,19 @@ https://example.com/schemas/custom#/definitions/NomFonction/patternProperties/^[
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## ^\[a-zA-Z0-9]+$ Type
+## Type de ^\[a-zA-Z0-9]+$
 
 `object` ([Nom de la fonction Vue.js à injecter dans le formulaire](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire.md))
 
-# ^\[a-zA-Z0-9]+$ Properties
+# Propriétés de ^\[a-zA-Z0-9]+$
 
-| Property      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                |
-| :------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [code](#code) | `string` | Required | cannot be null | [Untitled schema](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire-properties-code-de-la-fonction.md "https://example.com/schemas/custom#/definitions/NomFonction/patternProperties/^\[a-zA-Z0-9]+$/properties/code") |
+| Propriété     | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                                                                                |
+| :------------ | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [code](#code) | `string` | Obligatoire | ne peut être nul | [Schéma sans nom](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire-properties-code-de-la-fonction.md "https://example.com/schemas/custom#/definitions/NomFonction/patternProperties/^\[a-zA-Z0-9]+$/properties/code") |
 
 ## code
 
@@ -26,20 +26,21 @@ Doit respecter le format fourni dans l'exemple. Votre code va entre les accolade
 
 `code`
 
-*   is required
+*   est requis
 
 *   Type: `string` ([Code de la fonction](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire-properties-code-de-la-fonction.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire-properties-code-de-la-fonction.md "https://example.com/schemas/custom#/definitions/NomFonction/patternProperties/^\[a-zA-Z0-9]+$/properties/code")
+*   défini dans: [Schéma sans nom](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire-properties-code-de-la-fonction.md "https://example.com/schemas/custom#/definitions/NomFonction/patternProperties/^\[a-zA-Z0-9]+$/properties/code")
 
-### code Type
+### Type de code
 
 `string` ([Code de la fonction](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire-properties-code-de-la-fonction.md))
 
-### code Examples
+### Exemple de code
 
-```json
-"(){return 'bonjour!'}"
+```yaml
+(){return 'bonjour!'}
+
 ```

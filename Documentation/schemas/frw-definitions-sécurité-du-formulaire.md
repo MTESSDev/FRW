@@ -1,4 +1,4 @@
-# Sécurité du formulaire Schema
+# Schéma de Sécurité du formulaire
 
 ```txt
 https://example.com/schemas/custom#/definitions/Securite
@@ -6,19 +6,19 @@ https://example.com/schemas/custom#/definitions/Securite
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Securite Type
+## Type de Securite
 
 `object` ([Sécurité du formulaire](frw-definitions-sécurité-du-formulaire.md))
 
-# Securite Properties
+# Propriétés de Securite
 
-| Property                      | Type      | Required | Nullable       | Defined by                                                                                                                                                              |
-| :---------------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [accesAnonyme](#accesanonyme) | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-sécurité-du-formulaire-properties-accesanonyme.md "https://example.com/schemas/custom#/definitions/Securite/properties/accesAnonyme") |
+| Propriété                     | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                              |
+| :---------------------------- | :-------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [accesAnonyme](#accesanonyme) | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-sécurité-du-formulaire-properties-accesanonyme.md "https://example.com/schemas/custom#/definitions/Securite/properties/accesAnonyme") |
 
 ## accesAnonyme
 
@@ -26,14 +26,14 @@ Permet d'activer l'accès anonyme au formulaire.
 
 `accesAnonyme`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-sécurité-du-formulaire-properties-accesanonyme.md "https://example.com/schemas/custom#/definitions/Securite/properties/accesAnonyme")
+*   défini dans: [Schéma sans nom](frw-definitions-sécurité-du-formulaire-properties-accesanonyme.md "https://example.com/schemas/custom#/definitions/Securite/properties/accesAnonyme")
 
-### accesAnonyme Type
+### Type de accesAnonyme
 
 `boolean`

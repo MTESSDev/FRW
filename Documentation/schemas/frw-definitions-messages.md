@@ -1,4 +1,4 @@
-# messages Schema
+# Schéma de messages
 
 ```txt
 https://example.com/schemas/custom#/definitions/Messages
@@ -6,19 +6,19 @@ https://example.com/schemas/custom#/definitions/Messages
 
 Paramètres associés aux différents messages.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Messages Type
+## Type de Messages
 
 `object` ([messages](frw-definitions-messages.md))
 
-# Messages Properties
+# Propriétés de Messages
 
-| Property                            | Type     | Required | Nullable       | Defined by                                                                                                                                                      |
-| :---------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [erreurTechnique](#erreurtechnique) | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-messages-properties-erreurtechnique.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique") |
+| Propriété                           | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                      |
+| :---------------------------------- | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [erreurTechnique](#erreurtechnique) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-messages-properties-erreurtechnique.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique") |
 
 ## erreurTechnique
 
@@ -26,14 +26,14 @@ Paramètres du message d'erreur technique.
 
 `erreurTechnique`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([erreurTechnique](frw-definitions-messages-properties-erreurtechnique.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-messages-properties-erreurtechnique.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique")
+*   défini dans: [Schéma sans nom](frw-definitions-messages-properties-erreurtechnique.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique")
 
-### erreurTechnique Type
+### Type de erreurTechnique
 
 `object` ([erreurTechnique](frw-definitions-messages-properties-erreurtechnique.md))

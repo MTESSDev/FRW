@@ -1,4 +1,4 @@
-# Untitled schema Schema
+# Schéma de Schéma sans nom
 
 ```txt
 https://example.com/schemas/custom
@@ -6,30 +6,30 @@ https://example.com/schemas/custom
 
 
 
-| Abstract               | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                 |
-| :--------------------- | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------- |
-| Cannot be instantiated | Yes        | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [FRW.form.schema.json](../out/FRW.form.schema.json "open original schema") |
+| Abstrait                   | Extensible | Statut         | Identifiable             | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                      |
+| :------------------------- | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :------------------------------------------------------------------------------- |
+| Ne peut pas être instancié | Oui        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Untitled schema Type
+## Type de Schéma sans nom
 
-unknown
+inconnu
 
-# Untitled schema Definitions
+# Définitions de Schéma sans nom
 
-## Definitions group EcsForm
+## Groupe de définitions EcsForm
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/EcsForm"}
 ```
 
-| Property                                                                              | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                      |
-| :------------------------------------------------------------------------------------ | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [afficherMessageSauvegardeCourrielReprise](#affichermessagesauvegardecourrielreprise) | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-ecsform-properties-affichermessagesauvegardecourrielreprise.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/afficherMessageSauvegardeCourrielReprise") |
-| [form](#form)                                                                         | `object`  | Required | cannot be null | [Untitled schema](frw-definitions-form.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/form")                                                                                            |
-| [config](#config)                                                                     | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-configuration-du-formulaire.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/config")                                                                   |
-| [textes](#textes)                                                                     | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-ecsform-properties-textes.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/textes")                                                                     |
+| Propriété                                                                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                      |
+| :------------------------------------------------------------------------------------ | :-------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [afficherMessageSauvegardeCourrielReprise](#affichermessagesauvegardecourrielreprise) | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-ecsform-properties-affichermessagesauvegardecourrielreprise.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/afficherMessageSauvegardeCourrielReprise") |
+| [form](#form)                                                                         | `object`  | Obligatoire | ne peut être nul | [Schéma sans nom](frw-definitions-ecsform-properties-form.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/form")                                                                         |
+| [config](#config)                                                                     | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-ecsform-properties-configuration-du-formulaire.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/config")                                                |
+| [textes](#textes)                                                                     | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-ecsform-properties-textes.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/textes")                                                                     |
 
 ### afficherMessageSauvegardeCourrielReprise
 
@@ -37,15 +37,15 @@ DEPRECATED (Utiliser maintenant enregistrement.afficherMessageIncitatif)
 
 `afficherMessageSauvegardeCourrielReprise`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-ecsform-properties-affichermessagesauvegardecourrielreprise.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/afficherMessageSauvegardeCourrielReprise")
+*   défini dans: [Schéma sans nom](frw-definitions-ecsform-properties-affichermessagesauvegardecourrielreprise.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/afficherMessageSauvegardeCourrielReprise")
 
-#### afficherMessageSauvegardeCourrielReprise Type
+#### Type de afficherMessageSauvegardeCourrielReprise
 
 `boolean`
 
@@ -55,17 +55,17 @@ DEPRECATED (Utiliser maintenant enregistrement.afficherMessageIncitatif)
 
 `form`
 
-*   is required
+*   est requis
 
-*   Type: `object` ([Form](frw-definitions-form.md))
+*   Type: `object` ([Form](frw-definitions-ecsform-properties-form.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-form.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/form")
+*   défini dans: [Schéma sans nom](frw-definitions-ecsform-properties-form.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/form")
 
-#### form Type
+#### Type de form
 
-`object` ([Form](frw-definitions-form.md))
+`object` ([Form](frw-definitions-ecsform-properties-form.md))
 
 ### config
 
@@ -73,17 +73,17 @@ DEPRECATED (Utiliser maintenant enregistrement.afficherMessageIncitatif)
 
 `config`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Configuration du formulaire](frw-definitions-configuration-du-formulaire.md))
+*   Type: `object` ([Configuration du formulaire](frw-definitions-ecsform-properties-configuration-du-formulaire.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-configuration-du-formulaire.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/config")
+*   défini dans: [Schéma sans nom](frw-definitions-ecsform-properties-configuration-du-formulaire.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/config")
 
-#### config Type
+#### Type de config
 
-`object` ([Configuration du formulaire](frw-definitions-configuration-du-formulaire.md))
+`object` ([Configuration du formulaire](frw-definitions-ecsform-properties-configuration-du-formulaire.md))
 
 ### textes
 
@@ -91,34 +91,34 @@ DEPRECATED (Utiliser maintenant enregistrement.afficherMessageIncitatif)
 
 `textes`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Details](frw-definitions-ecsform-properties-textes.md))
+*   Type: `object` ([Détails](frw-definitions-ecsform-properties-textes.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-ecsform-properties-textes.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/textes")
+*   défini dans: [Schéma sans nom](frw-definitions-ecsform-properties-textes.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/textes")
 
-#### textes Type
+#### Type de textes
 
-`object` ([Details](frw-definitions-ecsform-properties-textes.md))
+`object` ([Détails](frw-definitions-ecsform-properties-textes.md))
 
-## Definitions group Form
+## Groupe de définitions Form
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/Form"}
 ```
 
-| Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                      |
-| :------------------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sectionsGroup](#sectionsgroup)             | `array`  | Optional | cannot be null | [Untitled schema](frw-definitions-form-properties-sectionsgroup.md "https://example.com/schemas/custom#/definitions/Form/properties/sectionsGroup")             |
-| [templates](#templates)                     | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-form-properties-templates.md "https://example.com/schemas/custom#/definitions/Form/properties/templates")                     |
-| [title](#title)                             | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Form/properties/title")                                       |
-| [inputDefaultClasses](#inputdefaultclasses) | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-form-properties-inputdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/inputDefaultClasses") |
-| [defaults](#defaults)                       | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-defaults-values.md "https://example.com/schemas/custom#/definitions/Form/properties/defaults")                                |
-| [outerDefaultClasses](#outerdefaultclasses) | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-form-properties-outerdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/outerDefaultClasses") |
+| Propriété                                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                      |
+| :------------------------------------------ | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sectionsGroup](#sectionsgroup)             | `array`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-form-properties-sectionsgroup.md "https://example.com/schemas/custom#/definitions/Form/properties/sectionsGroup")             |
+| [templates](#templates)                     | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-form-properties-templates.md "https://example.com/schemas/custom#/definitions/Form/properties/templates")                     |
+| [title](#title)                             | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-form-properties-translation.md "https://example.com/schemas/custom#/definitions/Form/properties/title")                       |
+| [inputDefaultClasses](#inputdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-form-properties-inputdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/inputDefaultClasses") |
+| [defaults](#defaults)                       | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-form-properties-defaults-values.md "https://example.com/schemas/custom#/definitions/Form/properties/defaults")                |
+| [outerDefaultClasses](#outerdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-form-properties-outerdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/outerDefaultClasses") |
 
 ### sectionsGroup
 
@@ -126,17 +126,17 @@ Reference this group by using
 
 `sectionsGroup`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object[]` ([Section Group](frw-definitions-section-group.md))
+*   Type: `object[]` ([Section Group](frw-definitions-form-properties-sectionsgroup-section-group.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-form-properties-sectionsgroup.md "https://example.com/schemas/custom#/definitions/Form/properties/sectionsGroup")
+*   défini dans: [Schéma sans nom](frw-definitions-form-properties-sectionsgroup.md "https://example.com/schemas/custom#/definitions/Form/properties/sectionsGroup")
 
-#### sectionsGroup Type
+#### Type de sectionsGroup
 
-`object[]` ([Section Group](frw-definitions-section-group.md))
+`object[]` ([Section Group](frw-definitions-form-properties-sectionsgroup-section-group.md))
 
 ### templates
 
@@ -144,17 +144,17 @@ Reference this group by using
 
 `templates`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Details](frw-definitions-form-properties-templates.md))
+*   Type: `object` ([Détails](frw-definitions-form-properties-templates.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-form-properties-templates.md "https://example.com/schemas/custom#/definitions/Form/properties/templates")
+*   défini dans: [Schéma sans nom](frw-definitions-form-properties-templates.md "https://example.com/schemas/custom#/definitions/Form/properties/templates")
 
-#### templates Type
+#### Type de templates
 
-`object` ([Details](frw-definitions-form-properties-templates.md))
+`object` ([Détails](frw-definitions-form-properties-templates.md))
 
 ### title
 
@@ -162,27 +162,26 @@ Multilingue
 
 `title`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
+*   Type: `object` ([Translation](frw-definitions-form-properties-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Form/properties/title")
+*   défini dans: [Schéma sans nom](frw-definitions-form-properties-translation.md "https://example.com/schemas/custom#/definitions/Form/properties/title")
 
-#### title Type
+#### Type de title
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Translation](frw-definitions-form-properties-translation.md))
 
-#### title Default Value
+#### Valeur par défaut de title
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### inputDefaultClasses
@@ -191,17 +190,17 @@ The default value is:
 
 `inputDefaultClasses`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Details](frw-definitions-form-properties-inputdefaultclasses.md))
+*   Type: `object` ([Détails](frw-definitions-form-properties-inputdefaultclasses.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-form-properties-inputdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/inputDefaultClasses")
+*   défini dans: [Schéma sans nom](frw-definitions-form-properties-inputdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/inputDefaultClasses")
 
-#### inputDefaultClasses Type
+#### Type de inputDefaultClasses
 
-`object` ([Details](frw-definitions-form-properties-inputdefaultclasses.md))
+`object` ([Détails](frw-definitions-form-properties-inputdefaultclasses.md))
 
 ### defaults
 
@@ -209,17 +208,17 @@ The default value is:
 
 `defaults`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Defaults values](frw-definitions-defaults-values.md))
+*   Type: `object` ([Defaults values](frw-definitions-form-properties-defaults-values.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-defaults-values.md "https://example.com/schemas/custom#/definitions/Form/properties/defaults")
+*   défini dans: [Schéma sans nom](frw-definitions-form-properties-defaults-values.md "https://example.com/schemas/custom#/definitions/Form/properties/defaults")
 
-#### defaults Type
+#### Type de defaults
 
-`object` ([Defaults values](frw-definitions-defaults-values.md))
+`object` ([Defaults values](frw-definitions-form-properties-defaults-values.md))
 
 ### outerDefaultClasses
 
@@ -227,34 +226,34 @@ The default value is:
 
 `outerDefaultClasses`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Details](frw-definitions-form-properties-outerdefaultclasses.md))
+*   Type: `object` ([Détails](frw-definitions-form-properties-outerdefaultclasses.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-form-properties-outerdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/outerDefaultClasses")
+*   défini dans: [Schéma sans nom](frw-definitions-form-properties-outerdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/outerDefaultClasses")
 
-#### outerDefaultClasses Type
+#### Type de outerDefaultClasses
 
-`object` ([Details](frw-definitions-form-properties-outerdefaultclasses.md))
+`object` ([Détails](frw-definitions-form-properties-outerdefaultclasses.md))
 
-## Definitions group Section
+## Groupe de définitions Section
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/Section"}
 ```
 
-| Property                                                                            | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                    |
-| :---------------------------------------------------------------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [section](#section)                                                                 | `object`  | Required | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Section/properties/section")                                                                                |
-| [id](#id)                                                                           | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-section-properties-id.md "https://example.com/schemas/custom#/definitions/Section/properties/id")                                                                           |
-| [cacherTexteExplicatifChampsObligatoires](#cachertexteexplicatifchampsobligatoires) | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-section-properties-cachertexteexplicatifchampsobligatoires.md "https://example.com/schemas/custom#/definitions/Section/properties/cacherTexteExplicatifChampsObligatoires") |
-| [classes](#classes)                                                                 | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-section-properties-classes.md "https://example.com/schemas/custom#/definitions/Section/properties/classes")                                                                 |
-| [v-if](#v-if)                                                                       | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-section-properties-v-if.md "https://example.com/schemas/custom#/definitions/Section/properties/v-if")                                                                       |
-| [components](#components)                                                           | `array`   | Optional | cannot be null | [Untitled schema](frw-definitions-section-properties-components.md "https://example.com/schemas/custom#/definitions/Section/properties/components")                                                           |
+| Propriété                                                                           | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                    |
+| :---------------------------------------------------------------------------------- | :-------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [section](#section)                                                                 | `object`  | Obligatoire | ne peut être nul | [Schéma sans nom](frw-definitions-section-properties-translation.md "https://example.com/schemas/custom#/definitions/Section/properties/section")                                                             |
+| [id](#id)                                                                           | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-properties-id.md "https://example.com/schemas/custom#/definitions/Section/properties/id")                                                                           |
+| [cacherTexteExplicatifChampsObligatoires](#cachertexteexplicatifchampsobligatoires) | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-properties-cachertexteexplicatifchampsobligatoires.md "https://example.com/schemas/custom#/definitions/Section/properties/cacherTexteExplicatifChampsObligatoires") |
+| [classes](#classes)                                                                 | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-properties-classes.md "https://example.com/schemas/custom#/definitions/Section/properties/classes")                                                                 |
+| [v-if](#v-if)                                                                       | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-properties-v-if.md "https://example.com/schemas/custom#/definitions/Section/properties/v-if")                                                                       |
+| [components](#components)                                                           | `array`   | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-properties-components.md "https://example.com/schemas/custom#/definitions/Section/properties/components")                                                           |
 
 ### section
 
@@ -262,27 +261,26 @@ Multilingue
 
 `section`
 
-*   is required
+*   est requis
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
+*   Type: `object` ([Translation](frw-definitions-section-properties-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Section/properties/section")
+*   défini dans: [Schéma sans nom](frw-definitions-section-properties-translation.md "https://example.com/schemas/custom#/definitions/Section/properties/section")
 
-#### section Type
+#### Type de section
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Translation](frw-definitions-section-properties-translation.md))
 
-#### section Default Value
+#### Valeur par défaut de section
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### id
@@ -291,15 +289,15 @@ The default value is:
 
 `id`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-section-properties-id.md "https://example.com/schemas/custom#/definitions/Section/properties/id")
+*   défini dans: [Schéma sans nom](frw-definitions-section-properties-id.md "https://example.com/schemas/custom#/definitions/Section/properties/id")
 
-#### id Type
+#### Type de id
 
 `string`
 
@@ -309,15 +307,15 @@ Permet d'afficher l'indication de champs obligatoires.
 
 `cacherTexteExplicatifChampsObligatoires`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-section-properties-cachertexteexplicatifchampsobligatoires.md "https://example.com/schemas/custom#/definitions/Section/properties/cacherTexteExplicatifChampsObligatoires")
+*   défini dans: [Schéma sans nom](frw-definitions-section-properties-cachertexteexplicatifchampsobligatoires.md "https://example.com/schemas/custom#/definitions/Section/properties/cacherTexteExplicatifChampsObligatoires")
 
-#### cacherTexteExplicatifChampsObligatoires Type
+#### Type de cacherTexteExplicatifChampsObligatoires
 
 `boolean`
 
@@ -327,15 +325,15 @@ Permet d'afficher l'indication de champs obligatoires.
 
 `classes`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-section-properties-classes.md "https://example.com/schemas/custom#/definitions/Section/properties/classes")
+*   défini dans: [Schéma sans nom](frw-definitions-section-properties-classes.md "https://example.com/schemas/custom#/definitions/Section/properties/classes")
 
-#### classes Type
+#### Type de classes
 
 `string`
 
@@ -345,15 +343,15 @@ Conditionnal display on another property/form field.
 
 `v-if`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-section-properties-v-if.md "https://example.com/schemas/custom#/definitions/Section/properties/v-if")
+*   défini dans: [Schéma sans nom](frw-definitions-section-properties-v-if.md "https://example.com/schemas/custom#/definitions/Section/properties/v-if")
 
-#### v-if Type
+#### Type de v-if
 
 `string`
 
@@ -363,33 +361,33 @@ Conditionnal display on another property/form field.
 
 `components`
 
-*   is optional
+*   est optionnel
 
-*   Type: an array of merged types ([Details](frw-definitions-section-properties-components-items.md))
+*   Type: an array of merged types ([Détails](frw-definitions-section-properties-components-items.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-section-properties-components.md "https://example.com/schemas/custom#/definitions/Section/properties/components")
+*   défini dans: [Schéma sans nom](frw-definitions-section-properties-components.md "https://example.com/schemas/custom#/definitions/Section/properties/components")
 
-#### components Type
+#### Type de components
 
-an array of merged types ([Details](frw-definitions-section-properties-components-items.md))
+an array of merged types ([Détails](frw-definitions-section-properties-components-items.md))
 
-## Definitions group SectionsGroup
+## Groupe de définitions SectionsGroup
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/SectionsGroup"}
 ```
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                  |
-| :---------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sections](#sections)         | `array`  | Optional | cannot be null | [Untitled schema](frw-definitions-section-group-properties-sections.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sections") |
-| [prefixId](#prefixid)         | `string` | Optional | cannot be null | [Untitled schema](frw-definitions-section-group-properties-prefixid.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/prefixId") |
-| [classes](#classes-1)         | `string` | Optional | cannot be null | [Untitled schema](frw-definitions-section-group-properties-classes.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/classes")   |
-| [v-if](#v-if-1)               | `string` | Optional | cannot be null | [Untitled schema](frw-definitions-section-group-properties-v-if.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/v-if")         |
-| [sectionGroup](#sectiongroup) | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sectionGroup")                   |
+| Propriété                     | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                         |
+| :---------------------------- | :------- | :---------- | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sections](#sections)         | `array`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-group-properties-sections.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sections")        |
+| [prefixId](#prefixid)         | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-group-properties-prefixid.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/prefixId")        |
+| [classes](#classes-1)         | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-group-properties-classes.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/classes")          |
+| [v-if](#v-if-1)               | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-group-properties-v-if.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/v-if")                |
+| [sectionGroup](#sectiongroup) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-group-properties-translation.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sectionGroup") |
 
 ### sections
 
@@ -397,15 +395,15 @@ Reference this group by using
 
 `sections`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object[]` ([Section](frw-definitions-section.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-section-group-properties-sections.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sections")
+*   défini dans: [Schéma sans nom](frw-definitions-section-group-properties-sections.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sections")
 
-#### sections Type
+#### Type de sections
 
 `object[]` ([Section](frw-definitions-section.md))
 
@@ -415,15 +413,15 @@ Reference this group by using
 
 `prefixId`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-section-group-properties-prefixid.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/prefixId")
+*   défini dans: [Schéma sans nom](frw-definitions-section-group-properties-prefixid.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/prefixId")
 
-#### prefixId Type
+#### Type de prefixId
 
 `string`
 
@@ -433,15 +431,15 @@ Reference this group by using
 
 `classes`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-section-group-properties-classes.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/classes")
+*   défini dans: [Schéma sans nom](frw-definitions-section-group-properties-classes.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/classes")
 
-#### classes Type
+#### Type de classes
 
 `string`
 
@@ -451,15 +449,15 @@ Conditionnal display on another property/form field.
 
 `v-if`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-section-group-properties-v-if.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/v-if")
+*   défini dans: [Schéma sans nom](frw-definitions-section-group-properties-v-if.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/v-if")
 
-#### v-if Type
+#### Type de v-if
 
 `string`
 
@@ -469,51 +467,50 @@ Multilingue
 
 `sectionGroup`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
+*   Type: `object` ([Translation](frw-definitions-section-group-properties-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sectionGroup")
+*   défini dans: [Schéma sans nom](frw-definitions-section-group-properties-translation.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sectionGroup")
 
-#### sectionGroup Type
+#### Type de sectionGroup
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Translation](frw-definitions-section-group-properties-translation.md))
 
-#### sectionGroup Default Value
+#### Valeur par défaut de sectionGroup
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
-## Definitions group Display
+## Groupe de définitions Display
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/Display"}
 ```
 
-| Property                              | Type      | Required | Nullable       | Defined by                                                                                                                                                      |
-| :------------------------------------ | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [type](#type)                         | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-display-properties-type.md "https://example.com/schemas/custom#/definitions/Display/properties/type")                         |
-| [classes](#classes-2)                 | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-display-properties-classes.md "https://example.com/schemas/custom#/definitions/Display/properties/classes")                   |
-| [afficherBlocCode](#afficherbloccode) | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-display-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Display/properties/afficherBlocCode") |
-| [tag](#tag)                           | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-display-properties-tag.md "https://example.com/schemas/custom#/definitions/Display/properties/tag")                           |
-| [src](#src)                           | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/src")                                      |
-| [base64](#base64)                     | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/base64")                                   |
-| [text](#text)                         | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/text")                                     |
-| [title](#title-1)                     | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/title")                                    |
-| [additionals](#additionals)           | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-display-properties-additionals.md "https://example.com/schemas/custom#/definitions/Display/properties/additionals")           |
-| [alt](#alt)                           | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/alt")                                      |
-| [v-if](#v-if-2)                       | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-display-properties-v-if.md "https://example.com/schemas/custom#/definitions/Display/properties/v-if")                         |
-| [components](#components-1)           | `array`   | Optional | cannot be null | [Untitled schema](frw-definitions-display-properties-components.md "https://example.com/schemas/custom#/definitions/Display/properties/components")             |
+| Propriété                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                      |
+| :------------------------------------ | :-------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [type](#type)                         | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-type.md "https://example.com/schemas/custom#/definitions/Display/properties/type")                         |
+| [classes](#classes-2)                 | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-classes.md "https://example.com/schemas/custom#/definitions/Display/properties/classes")                   |
+| [afficherBlocCode](#afficherbloccode) | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Display/properties/afficherBlocCode") |
+| [tag](#tag)                           | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-tag.md "https://example.com/schemas/custom#/definitions/Display/properties/tag")                           |
+| [src](#src)                           | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/src")                   |
+| [base64](#base64)                     | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-translation-1.md "https://example.com/schemas/custom#/definitions/Display/properties/base64")              |
+| [text](#text)                         | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-translation-2.md "https://example.com/schemas/custom#/definitions/Display/properties/text")                |
+| [title](#title-1)                     | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-translation-3.md "https://example.com/schemas/custom#/definitions/Display/properties/title")               |
+| [additionals](#additionals)           | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-additionals.md "https://example.com/schemas/custom#/definitions/Display/properties/additionals")           |
+| [alt](#alt)                           | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-translation-4.md "https://example.com/schemas/custom#/definitions/Display/properties/alt")                 |
+| [v-if](#v-if-2)                       | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-v-if.md "https://example.com/schemas/custom#/definitions/Display/properties/v-if")                         |
+| [components](#components-1)           | `array`   | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-components.md "https://example.com/schemas/custom#/definitions/Display/properties/components")             |
 
 ### type
 
@@ -521,46 +518,53 @@ Types from custom templates list.
 
 `type`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-display-properties-type.md "https://example.com/schemas/custom#/definitions/Display/properties/type")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-type.md "https://example.com/schemas/custom#/definitions/Display/properties/type")
 
-#### type Type
+#### Type de type
 
 `string`
 
-#### type Examples
+#### Exemple de type
 
-```json
-"inline"
+```yaml
+inline
+
 ```
 
-```json
-"dynamic"
+```yaml
+dynamic
+
 ```
 
-```json
-"bandeau"
+```yaml
+bandeau
+
 ```
 
-```json
-"bandeau-notification"
+```yaml
+bandeau-notification
+
 ```
 
-```json
-"image"
+```yaml
+image
+
 ```
 
-```json
-"avis"
+```yaml
+avis
+
 ```
 
-```json
-"accordeon"
+```yaml
+accordeon
+
 ```
 
 ### classes
@@ -569,15 +573,15 @@ Types from custom templates list.
 
 `classes`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-display-properties-classes.md "https://example.com/schemas/custom#/definitions/Display/properties/classes")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-classes.md "https://example.com/schemas/custom#/definitions/Display/properties/classes")
 
-#### classes Type
+#### Type de classes
 
 `string`
 
@@ -587,15 +591,15 @@ Indique si le bloc de code utilisé pour générer le contrôle est affiché sou
 
 `afficherBlocCode`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean` ([afficherBlocCode](frw-definitions-display-properties-afficherbloccode.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-display-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Display/properties/afficherBlocCode")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Display/properties/afficherBlocCode")
 
-#### afficherBlocCode Type
+#### Type de afficherBlocCode
 
 `boolean` ([afficherBlocCode](frw-definitions-display-properties-afficherbloccode.md))
 
@@ -605,15 +609,15 @@ Indique si le bloc de code utilisé pour générer le contrôle est affiché sou
 
 `tag`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-display-properties-tag.md "https://example.com/schemas/custom#/definitions/Display/properties/tag")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-tag.md "https://example.com/schemas/custom#/definitions/Display/properties/tag")
 
-#### tag Type
+#### Type de tag
 
 `string`
 
@@ -623,27 +627,26 @@ Multilingue
 
 `src`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
+*   Type: `object` ([Translation](frw-definitions-display-properties-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/src")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/src")
 
-#### src Type
+#### Type de src
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Translation](frw-definitions-display-properties-translation.md))
 
-#### src Default Value
+#### Valeur par défaut de src
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### base64
@@ -652,27 +655,26 @@ Multilingue
 
 `base64`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
+*   Type: `object` ([Translation](frw-definitions-display-properties-translation-1.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/base64")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-translation-1.md "https://example.com/schemas/custom#/definitions/Display/properties/base64")
 
-#### base64 Type
+#### Type de base64
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Translation](frw-definitions-display-properties-translation-1.md))
 
-#### base64 Default Value
+#### Valeur par défaut de base64
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### text
@@ -681,27 +683,26 @@ Multilingue
 
 `text`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
+*   Type: `object` ([Translation](frw-definitions-display-properties-translation-2.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/text")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-translation-2.md "https://example.com/schemas/custom#/definitions/Display/properties/text")
 
-#### text Type
+#### Type de text
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Translation](frw-definitions-display-properties-translation-2.md))
 
-#### text Default Value
+#### Valeur par défaut de text
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### title
@@ -710,27 +711,26 @@ Multilingue
 
 `title`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
+*   Type: `object` ([Translation](frw-definitions-display-properties-translation-3.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/title")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-translation-3.md "https://example.com/schemas/custom#/definitions/Display/properties/title")
 
-#### title Type
+#### Type de title
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Translation](frw-definitions-display-properties-translation-3.md))
 
-#### title Default Value
+#### Valeur par défaut de title
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### additionals
@@ -739,17 +739,17 @@ The default value is:
 
 `additionals`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Details](frw-definitions-display-properties-additionals.md))
+*   Type: `object` ([Détails](frw-definitions-display-properties-additionals.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-display-properties-additionals.md "https://example.com/schemas/custom#/definitions/Display/properties/additionals")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-additionals.md "https://example.com/schemas/custom#/definitions/Display/properties/additionals")
 
-#### additionals Type
+#### Type de additionals
 
-`object` ([Details](frw-definitions-display-properties-additionals.md))
+`object` ([Détails](frw-definitions-display-properties-additionals.md))
 
 ### alt
 
@@ -757,27 +757,26 @@ Multilingue
 
 `alt`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
+*   Type: `object` ([Translation](frw-definitions-display-properties-translation-4.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/alt")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-translation-4.md "https://example.com/schemas/custom#/definitions/Display/properties/alt")
 
-#### alt Type
+#### Type de alt
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Translation](frw-definitions-display-properties-translation-4.md))
 
-#### alt Default Value
+#### Valeur par défaut de alt
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### v-if
@@ -786,15 +785,15 @@ Conditionnal display on another property/form field.
 
 `v-if`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-display-properties-v-if.md "https://example.com/schemas/custom#/definitions/Display/properties/v-if")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-v-if.md "https://example.com/schemas/custom#/definitions/Display/properties/v-if")
 
-#### v-if Type
+#### Type de v-if
 
 `string`
 
@@ -804,60 +803,60 @@ Conditionnal display on another property/form field.
 
 `components`
 
-*   is optional
+*   est optionnel
 
-*   Type: an array of merged types ([Details](frw-definitions-display-properties-components-items.md))
+*   Type: an array of merged types ([Détails](frw-definitions-display-properties-components-items.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-display-properties-components.md "https://example.com/schemas/custom#/definitions/Display/properties/components")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-components.md "https://example.com/schemas/custom#/definitions/Display/properties/components")
 
-#### components Type
+#### Type de components
 
-an array of merged types ([Details](frw-definitions-display-properties-components-items.md))
+an array of merged types ([Détails](frw-definitions-display-properties-components-items.md))
 
-## Definitions group Input
+## Groupe de définitions Input
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/Input"}
 ```
 
-| Property                                    | Type      | Required | Nullable       | Defined by                                                                                                                                                                                             |
-| :------------------------------------------ | :-------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [name](#name)                               | `string`  | Required | cannot be null | [Untitled schema](frw-definitions-input-properties-name.md "https://example.com/schemas/custom#/definitions/Input/properties/name")                                                                    |
-| [type](#type-1)                             | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-type.md "https://example.com/schemas/custom#/definitions/Input/properties/type")                                                                    |
-| [value](#value)                             | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-value.md "https://example.com/schemas/custom#/definitions/Input/properties/value")                                                                  |
-| [limit](#limit)                             | `number`  | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-limit.md "https://example.com/schemas/custom#/definitions/Input/properties/limit")                                                                  |
-| [validation-name](#validation-name)         | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/validation-name")                                                                   |
-| [validation-messages](#validation-messages) | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-validation-messages-messages-de-validation-personnalisés.md "https://example.com/schemas/custom#/definitions/Input/properties/validation-messages") |
-| [label](#label)                             | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/label")                                                                             |
-| [placeholder](#placeholder)                 | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/placeholder")                                                                       |
-| [inputClasses](#inputclasses)               | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-inputclasses.md "https://example.com/schemas/custom#/definitions/Input/properties/inputClasses")                                                    |
-| [inputmode](#inputmode)                     | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-inputmode.md "https://example.com/schemas/custom#/definitions/Input/properties/inputmode")                                                          |
-| [pattern](#pattern)                         | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-pattern.md "https://example.com/schemas/custom#/definitions/Input/properties/pattern")                                                              |
-| [outerClasses](#outerclasses)               | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-outerclasses.md "https://example.com/schemas/custom#/definitions/Input/properties/outerClasses")                                                    |
-| [help](#help)                               | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/help")                                                                              |
-| [pdfBind](#pdfbind)                         | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-pdfbind.md "https://example.com/schemas/custom#/definitions/Input/properties/pdfBind")                                                              |
-| [additionals](#additionals-1)               | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-additionals.md "https://example.com/schemas/custom#/definitions/Input/properties/additionals")                                                      |
-| [v-if](#v-if-3)                             | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-v-if.md "https://example.com/schemas/custom#/definitions/Input/properties/v-if")                                                                    |
-| [v-else-value](#v-else-value)               | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-v-else-value.md "https://example.com/schemas/custom#/definitions/Input/properties/v-else-value")                                                    |
-| [helpPosition](#helpposition)               | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-helpposition.md "https://example.com/schemas/custom#/definitions/Input/properties/helpPosition")                                                    |
-| [min](#min)                                 | Multiple  | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-min.md "https://example.com/schemas/custom#/definitions/Input/properties/min")                                                                      |
-| [max](#max)                                 | Multiple  | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-max.md "https://example.com/schemas/custom#/definitions/Input/properties/max")                                                                      |
-| [addLabel](#addlabel)                       | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/addLabel")                                                                          |
-| [removeLabel](#removelabel)                 | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/removeLabel")                                                                       |
-| [instanceLabel](#instancelabel)             | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/instanceLabel")                                                                     |
-| [tooltip](#tooltip)                         | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation-1.md "https://example.com/schemas/custom#/definitions/Input/properties/tooltip")                                                                         |
-| [options](#options)                         | Multiple  | Optional | can be null    | [Untitled schema](frw-definitions-input-properties-options.md "https://example.com/schemas/custom#/definitions/Input/properties/options")                                                              |
-| [nomDocument](#nomdocument)                 | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/nomDocument")                                                                       |
-| [afficherBlocCode](#afficherbloccode-1)     | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Input/properties/afficherBlocCode")                                            |
-| [validations](#validations)                 | `object`  | Optional | can be null    | [Untitled schema](frw-definitions-input-properties-validation.md "https://example.com/schemas/custom#/definitions/Input/properties/validations")                                                       |
-| [repeatable](#repeatable)                   | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-repeatable.md "https://example.com/schemas/custom#/definitions/Input/properties/repeatable")                                                        |
-| [minimum](#minimum)                         | `number`  | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-minimum.md "https://example.com/schemas/custom#/definitions/Input/properties/minimum")                                                              |
-| [components](#components-2)                 | `array`   | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-components.md "https://example.com/schemas/custom#/definitions/Input/properties/components")                                                        |
-| [disabled](#disabled)                       | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-disabled.md "https://example.com/schemas/custom#/definitions/Input/properties/disabled")                                                            |
+| Propriété                                   | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                             |
+| :------------------------------------------ | :-------- | :---------- | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [name](#name)                               | `string`  | Obligatoire | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-name.md "https://example.com/schemas/custom#/definitions/Input/properties/name")                                                                    |
+| [type](#type-1)                             | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-type.md "https://example.com/schemas/custom#/definitions/Input/properties/type")                                                                    |
+| [value](#value)                             | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-value.md "https://example.com/schemas/custom#/definitions/Input/properties/value")                                                                  |
+| [limit](#limit)                             | `number`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-limit.md "https://example.com/schemas/custom#/definitions/Input/properties/limit")                                                                  |
+| [validation-name](#validation-name)         | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/validation-name")                                                  |
+| [validation-messages](#validation-messages) | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-validation-messages-messages-de-validation-personnalisés.md "https://example.com/schemas/custom#/definitions/Input/properties/validation-messages") |
+| [label](#label)                             | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-translation-1.md "https://example.com/schemas/custom#/definitions/Input/properties/label")                                                          |
+| [placeholder](#placeholder)                 | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-translation-2.md "https://example.com/schemas/custom#/definitions/Input/properties/placeholder")                                                    |
+| [inputClasses](#inputclasses)               | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-inputclasses.md "https://example.com/schemas/custom#/definitions/Input/properties/inputClasses")                                                    |
+| [inputmode](#inputmode)                     | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-inputmode.md "https://example.com/schemas/custom#/definitions/Input/properties/inputmode")                                                          |
+| [pattern](#pattern)                         | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-pattern.md "https://example.com/schemas/custom#/definitions/Input/properties/pattern")                                                              |
+| [outerClasses](#outerclasses)               | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-outerclasses.md "https://example.com/schemas/custom#/definitions/Input/properties/outerClasses")                                                    |
+| [help](#help)                               | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-translation-3.md "https://example.com/schemas/custom#/definitions/Input/properties/help")                                                           |
+| [pdfBind](#pdfbind)                         | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-pdfbind.md "https://example.com/schemas/custom#/definitions/Input/properties/pdfBind")                                                              |
+| [additionals](#additionals-1)               | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-additionals.md "https://example.com/schemas/custom#/definitions/Input/properties/additionals")                                                      |
+| [v-if](#v-if-3)                             | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-v-if.md "https://example.com/schemas/custom#/definitions/Input/properties/v-if")                                                                    |
+| [v-else-value](#v-else-value)               | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-v-else-value.md "https://example.com/schemas/custom#/definitions/Input/properties/v-else-value")                                                    |
+| [helpPosition](#helpposition)               | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-helpposition.md "https://example.com/schemas/custom#/definitions/Input/properties/helpPosition")                                                    |
+| [min](#min)                                 | Plusieurs | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-min.md "https://example.com/schemas/custom#/definitions/Input/properties/min")                                                                      |
+| [max](#max)                                 | Plusieurs | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-max.md "https://example.com/schemas/custom#/definitions/Input/properties/max")                                                                      |
+| [addLabel](#addlabel)                       | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-translation-4.md "https://example.com/schemas/custom#/definitions/Input/properties/addLabel")                                                       |
+| [removeLabel](#removelabel)                 | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-translation-5.md "https://example.com/schemas/custom#/definitions/Input/properties/removeLabel")                                                    |
+| [instanceLabel](#instancelabel)             | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-translation-6.md "https://example.com/schemas/custom#/definitions/Input/properties/instanceLabel")                                                  |
+| [tooltip](#tooltip)                         | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-translation-7.md "https://example.com/schemas/custom#/definitions/Input/properties/tooltip")                                                        |
+| [options](#options)                         | Plusieurs | Optionnel   | peut être nul    | [Schéma sans nom](frw-definitions-input-properties-options.md "https://example.com/schemas/custom#/definitions/Input/properties/options")                                                              |
+| [nomDocument](#nomdocument)                 | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-translation-8.md "https://example.com/schemas/custom#/definitions/Input/properties/nomDocument")                                                    |
+| [afficherBlocCode](#afficherbloccode-1)     | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Input/properties/afficherBlocCode")                                            |
+| [validations](#validations)                 | `object`  | Optionnel   | peut être nul    | [Schéma sans nom](frw-definitions-input-properties-validation.md "https://example.com/schemas/custom#/definitions/Input/properties/validations")                                                       |
+| [repeatable](#repeatable)                   | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-repeatable.md "https://example.com/schemas/custom#/definitions/Input/properties/repeatable")                                                        |
+| [minimum](#minimum)                         | `number`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-minimum.md "https://example.com/schemas/custom#/definitions/Input/properties/minimum")                                                              |
+| [components](#components-2)                 | `array`   | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-components.md "https://example.com/schemas/custom#/definitions/Input/properties/components")                                                        |
+| [disabled](#disabled)                       | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-disabled.md "https://example.com/schemas/custom#/definitions/Input/properties/disabled")                                                            |
 
 ### name
 
@@ -865,15 +864,15 @@ Adds a name attribute, and when used with <FormulateForm> this is the key of the
 
 `name`
 
-*   is required
+*   est requis
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-name.md "https://example.com/schemas/custom#/definitions/Input/properties/name")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-name.md "https://example.com/schemas/custom#/definitions/Input/properties/name")
 
-#### name Type
+#### Type de name
 
 `string`
 
@@ -883,23 +882,23 @@ Required. The type of input element. See the input library for a full range of o
 
 `type`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-type.md "https://example.com/schemas/custom#/definitions/Input/properties/type")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-type.md "https://example.com/schemas/custom#/definitions/Input/properties/type")
 
-#### type Type
+#### Type de type
 
 `string`
 
-#### type Constraints
+#### Contraintes de type
 
-**enum**: the value of this property must be equal to one of the following values:
+**énumération**: la valeur de cette propriété doit être égale à l'une des valeurs suivantes:
 
-| Value                    | Explanation |
+| Valeur                   | Explication |
 | :----------------------- | :---------- |
 | `"listeDeroulante"`      |             |
 | `"text"`                 |             |
@@ -935,12 +934,13 @@ Required. The type of input element. See the input library for a full range of o
 | `"url"`                  |             |
 | `"week"`                 |             |
 
-#### type Default Value
+#### Valeur par défaut de type
 
-The default value is:
+La valeur par défaut est:
 
-```json
-"text"
+```yaml
+text
+
 ```
 
 ### value
@@ -949,15 +949,15 @@ The default value is:
 
 `value`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-value.md "https://example.com/schemas/custom#/definitions/Input/properties/value")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-value.md "https://example.com/schemas/custom#/definitions/Input/properties/value")
 
-#### value Type
+#### Type de value
 
 `string`
 
@@ -967,15 +967,15 @@ The default value is:
 
 `limit`
 
-*   is optional
+*   est optionnel
 
 *   Type: `number`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-limit.md "https://example.com/schemas/custom#/definitions/Input/properties/limit")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-limit.md "https://example.com/schemas/custom#/definitions/Input/properties/limit")
 
-#### limit Type
+#### Type de limit
 
 `number`
 
@@ -985,27 +985,26 @@ Multilingue
 
 `validation-name`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
+*   Type: `object` ([Translation](frw-definitions-input-properties-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/validation-name")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/validation-name")
 
-#### validation-name Type
+#### Type de validation-name
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Translation](frw-definitions-input-properties-translation.md))
 
-#### validation-name Default Value
+#### Valeur par défaut de validation-name
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### validation-messages
@@ -1014,15 +1013,15 @@ The default value is:
 
 `validation-messages`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([validation-messages (Messages de validation personnalisés)](frw-definitions-input-properties-validation-messages-messages-de-validation-personnalisés.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-messages-messages-de-validation-personnalisés.md "https://example.com/schemas/custom#/definitions/Input/properties/validation-messages")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-messages-messages-de-validation-personnalisés.md "https://example.com/schemas/custom#/definitions/Input/properties/validation-messages")
 
-#### validation-messages Type
+#### Type de validation-messages
 
 `object` ([validation-messages (Messages de validation personnalisés)](frw-definitions-input-properties-validation-messages-messages-de-validation-personnalisés.md))
 
@@ -1032,27 +1031,26 @@ Multilingue
 
 `label`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
+*   Type: `object` ([Translation](frw-definitions-input-properties-translation-1.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/label")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-translation-1.md "https://example.com/schemas/custom#/definitions/Input/properties/label")
 
-#### label Type
+#### Type de label
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Translation](frw-definitions-input-properties-translation-1.md))
 
-#### label Default Value
+#### Valeur par défaut de label
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### placeholder
@@ -1061,27 +1059,26 @@ Multilingue
 
 `placeholder`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
+*   Type: `object` ([Translation](frw-definitions-input-properties-translation-2.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/placeholder")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-translation-2.md "https://example.com/schemas/custom#/definitions/Input/properties/placeholder")
 
-#### placeholder Type
+#### Type de placeholder
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Translation](frw-definitions-input-properties-translation-2.md))
 
-#### placeholder Default Value
+#### Valeur par défaut de placeholder
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### inputClasses
@@ -1090,15 +1087,15 @@ The default value is:
 
 `inputClasses`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-inputclasses.md "https://example.com/schemas/custom#/definitions/Input/properties/inputClasses")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-inputclasses.md "https://example.com/schemas/custom#/definitions/Input/properties/inputClasses")
 
-#### inputClasses Type
+#### Type de inputClasses
 
 `string`
 
@@ -1108,23 +1105,23 @@ Text field inputmode (html)
 
 `inputmode`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-inputmode.md "https://example.com/schemas/custom#/definitions/Input/properties/inputmode")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-inputmode.md "https://example.com/schemas/custom#/definitions/Input/properties/inputmode")
 
-#### inputmode Type
+#### Type de inputmode
 
 `string`
 
-#### inputmode Constraints
+#### Contraintes de inputmode
 
-**enum**: the value of this property must be equal to one of the following values:
+**énumération**: la valeur de cette propriété doit être égale à l'une des valeurs suivantes:
 
-| Value      | Explanation |
+| Valeur     | Explication |
 | :--------- | :---------- |
 | `"number"` |             |
 
@@ -1134,15 +1131,15 @@ Regex pattern (html)
 
 `pattern`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-pattern.md "https://example.com/schemas/custom#/definitions/Input/properties/pattern")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-pattern.md "https://example.com/schemas/custom#/definitions/Input/properties/pattern")
 
-#### pattern Type
+#### Type de pattern
 
 `string`
 
@@ -1152,15 +1149,15 @@ Regex pattern (html)
 
 `outerClasses`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-outerclasses.md "https://example.com/schemas/custom#/definitions/Input/properties/outerClasses")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-outerclasses.md "https://example.com/schemas/custom#/definitions/Input/properties/outerClasses")
 
-#### outerClasses Type
+#### Type de outerClasses
 
 `string`
 
@@ -1170,27 +1167,26 @@ Multilingue
 
 `help`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
+*   Type: `object` ([Translation](frw-definitions-input-properties-translation-3.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/help")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-translation-3.md "https://example.com/schemas/custom#/definitions/Input/properties/help")
 
-#### help Type
+#### Type de help
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Translation](frw-definitions-input-properties-translation-3.md))
 
-#### help Default Value
+#### Valeur par défaut de help
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### pdfBind
@@ -1199,15 +1195,15 @@ The default value is:
 
 `pdfBind`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-pdfbind.md "https://example.com/schemas/custom#/definitions/Input/properties/pdfBind")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-pdfbind.md "https://example.com/schemas/custom#/definitions/Input/properties/pdfBind")
 
-#### pdfBind Type
+#### Type de pdfBind
 
 `string`
 
@@ -1217,17 +1213,17 @@ The default value is:
 
 `additionals`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Details](frw-definitions-input-properties-additionals.md))
+*   Type: `object` ([Détails](frw-definitions-input-properties-additionals.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-additionals.md "https://example.com/schemas/custom#/definitions/Input/properties/additionals")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-additionals.md "https://example.com/schemas/custom#/definitions/Input/properties/additionals")
 
-#### additionals Type
+#### Type de additionals
 
-`object` ([Details](frw-definitions-input-properties-additionals.md))
+`object` ([Détails](frw-definitions-input-properties-additionals.md))
 
 ### v-if
 
@@ -1235,15 +1231,15 @@ Conditionnal display on another property/form field.
 
 `v-if`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-v-if.md "https://example.com/schemas/custom#/definitions/Input/properties/v-if")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-v-if.md "https://example.com/schemas/custom#/definitions/Input/properties/v-if")
 
-#### v-if Type
+#### Type de v-if
 
 `string`
 
@@ -1253,15 +1249,15 @@ Valeur de remplacement lorsque le v-if n'affiche pas le champ. Supporté CÔTÉ 
 
 `v-else-value`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-v-else-value.md "https://example.com/schemas/custom#/definitions/Input/properties/v-else-value")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-v-else-value.md "https://example.com/schemas/custom#/definitions/Input/properties/v-else-value")
 
-#### v-else-value Type
+#### Type de v-else-value
 
 `string`
 
@@ -1271,23 +1267,23 @@ Valeur de remplacement lorsque le v-if n'affiche pas le champ. Supporté CÔTÉ 
 
 `helpPosition`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-helpposition.md "https://example.com/schemas/custom#/definitions/Input/properties/helpPosition")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-helpposition.md "https://example.com/schemas/custom#/definitions/Input/properties/helpPosition")
 
-#### helpPosition Type
+#### Type de helpPosition
 
 `string`
 
-#### helpPosition Constraints
+#### Contraintes de helpPosition
 
-**enum**: the value of this property must be equal to one of the following values:
+**énumération**: la valeur de cette propriété doit être égale à l'une des valeurs suivantes:
 
-| Value      | Explanation |
+| Valeur     | Explication |
 | :--------- | :---------- |
 | `"before"` |             |
 | `"after"`  |             |
@@ -1298,17 +1294,17 @@ Valeur de remplacement lorsque le v-if n'affiche pas le champ. Supporté CÔTÉ 
 
 `min`
 
-*   is optional
+*   est optionnel
 
-*   Type: any of the following: `string` or `number` ([Details](frw-definitions-input-properties-min.md))
+*   Type: l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-min.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-min.md "https://example.com/schemas/custom#/definitions/Input/properties/min")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-min.md "https://example.com/schemas/custom#/definitions/Input/properties/min")
 
-#### min Type
+#### Type de min
 
-any of the following: `string` or `number` ([Details](frw-definitions-input-properties-min.md))
+l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-min.md))
 
 ### max
 
@@ -1316,17 +1312,17 @@ any of the following: `string` or `number` ([Details](frw-definitions-input-prop
 
 `max`
 
-*   is optional
+*   est optionnel
 
-*   Type: any of the following: `string` or `number` ([Details](frw-definitions-input-properties-max.md))
+*   Type: l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-max.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-max.md "https://example.com/schemas/custom#/definitions/Input/properties/max")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-max.md "https://example.com/schemas/custom#/definitions/Input/properties/max")
 
-#### max Type
+#### Type de max
 
-any of the following: `string` or `number` ([Details](frw-definitions-input-properties-max.md))
+l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-max.md))
 
 ### addLabel
 
@@ -1334,27 +1330,26 @@ Multilingue
 
 `addLabel`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
+*   Type: `object` ([Translation](frw-definitions-input-properties-translation-4.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/addLabel")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-translation-4.md "https://example.com/schemas/custom#/definitions/Input/properties/addLabel")
 
-#### addLabel Type
+#### Type de addLabel
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Translation](frw-definitions-input-properties-translation-4.md))
 
-#### addLabel Default Value
+#### Valeur par défaut de addLabel
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### removeLabel
@@ -1363,27 +1358,26 @@ Multilingue
 
 `removeLabel`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
+*   Type: `object` ([Translation](frw-definitions-input-properties-translation-5.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/removeLabel")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-translation-5.md "https://example.com/schemas/custom#/definitions/Input/properties/removeLabel")
 
-#### removeLabel Type
+#### Type de removeLabel
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Translation](frw-definitions-input-properties-translation-5.md))
 
-#### removeLabel Default Value
+#### Valeur par défaut de removeLabel
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### instanceLabel
@@ -1392,27 +1386,26 @@ Multilingue
 
 `instanceLabel`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
+*   Type: `object` ([Translation](frw-definitions-input-properties-translation-6.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/instanceLabel")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-translation-6.md "https://example.com/schemas/custom#/definitions/Input/properties/instanceLabel")
 
-#### instanceLabel Type
+#### Type de instanceLabel
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Translation](frw-definitions-input-properties-translation-6.md))
 
-#### instanceLabel Default Value
+#### Valeur par défaut de instanceLabel
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### tooltip
@@ -1421,27 +1414,26 @@ The default value is:
 
 `tooltip`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation-1.md))
+*   Type: `object` ([Translation](frw-definitions-input-properties-translation-7.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation-1.md "https://example.com/schemas/custom#/definitions/Input/properties/tooltip")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-translation-7.md "https://example.com/schemas/custom#/definitions/Input/properties/tooltip")
 
-#### tooltip Type
+#### Type de tooltip
 
-`object` ([Translation](frw-definitions-translation-1.md))
+`object` ([Translation](frw-definitions-input-properties-translation-7.md))
 
-#### tooltip Default Value
+#### Valeur par défaut de tooltip
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### options
@@ -1450,22 +1442,23 @@ Array or object of options (select or box classifications)
 
 `options`
 
-*   is optional
+*   est optionnel
 
-*   Type: any of the following: `object` or `string` or `array` ([Details](frw-definitions-input-properties-options.md))
+*   Type: l'un des éléments suivants :`object` ou `string` ou `array` ([Détails](frw-definitions-input-properties-options.md))
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-options.md "https://example.com/schemas/custom#/definitions/Input/properties/options")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-options.md "https://example.com/schemas/custom#/definitions/Input/properties/options")
 
-#### options Type
+#### Type de options
 
-any of the following: `object` or `string` or `array` ([Details](frw-definitions-input-properties-options.md))
+l'un des éléments suivants :`object` ou `string` ou `array` ([Détails](frw-definitions-input-properties-options.md))
 
-#### options Examples
+#### Exemple de options
 
-```json
-"yesno"
+```yaml
+yesno
+
 ```
 
 ### nomDocument
@@ -1474,27 +1467,26 @@ Multilingue
 
 `nomDocument`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Translation](frw-definitions-translation.md))
+*   Type: `object` ([Translation](frw-definitions-input-properties-translation-8.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Input/properties/nomDocument")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-translation-8.md "https://example.com/schemas/custom#/definitions/Input/properties/nomDocument")
 
-#### nomDocument Type
+#### Type de nomDocument
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Translation](frw-definitions-input-properties-translation-8.md))
 
-#### nomDocument Default Value
+#### Valeur par défaut de nomDocument
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### afficherBlocCode
@@ -1503,15 +1495,15 @@ Indique si le bloc de code utilisé pour générer le contrôle est affiché sou
 
 `afficherBlocCode`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean` ([afficherBlocCode](frw-definitions-input-properties-afficherbloccode.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Input/properties/afficherBlocCode")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Input/properties/afficherBlocCode")
 
-#### afficherBlocCode Type
+#### Type de afficherBlocCode
 
 `boolean` ([afficherBlocCode](frw-definitions-input-properties-afficherbloccode.md))
 
@@ -1521,24 +1513,25 @@ Indique si le bloc de code utilisé pour générer le contrôle est affiché sou
 
 `validations`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Validation](frw-definitions-input-properties-validation.md))
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation.md "https://example.com/schemas/custom#/definitions/Input/properties/validations")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation.md "https://example.com/schemas/custom#/definitions/Input/properties/validations")
 
-#### validations Type
+#### Type de validations
 
 `object` ([Validation](frw-definitions-input-properties-validation.md))
 
-#### validations Default Value
+#### Valeur par défaut de validations
 
-The default value is:
+La valeur par défaut est:
 
-```json
+```yaml
 {}
+
 ```
 
 ### repeatable
@@ -1547,15 +1540,15 @@ The default value is:
 
 `repeatable`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-repeatable.md "https://example.com/schemas/custom#/definitions/Input/properties/repeatable")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-repeatable.md "https://example.com/schemas/custom#/definitions/Input/properties/repeatable")
 
-#### repeatable Type
+#### Type de repeatable
 
 `boolean`
 
@@ -1565,15 +1558,15 @@ The default value is:
 
 `minimum`
 
-*   is optional
+*   est optionnel
 
 *   Type: `number`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-minimum.md "https://example.com/schemas/custom#/definitions/Input/properties/minimum")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-minimum.md "https://example.com/schemas/custom#/definitions/Input/properties/minimum")
 
-#### minimum Type
+#### Type de minimum
 
 `number`
 
@@ -1583,17 +1576,17 @@ The default value is:
 
 `components`
 
-*   is optional
+*   est optionnel
 
-*   Type: an array of merged types ([Details](frw-definitions-input-properties-components-items.md))
+*   Type: an array of merged types ([Détails](frw-definitions-input-properties-components-items.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-components.md "https://example.com/schemas/custom#/definitions/Input/properties/components")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-components.md "https://example.com/schemas/custom#/definitions/Input/properties/components")
 
-#### components Type
+#### Type de components
 
-an array of merged types ([Details](frw-definitions-input-properties-components-items.md))
+an array of merged types ([Détails](frw-definitions-input-properties-components-items.md))
 
 ### disabled
 
@@ -1601,31 +1594,31 @@ an array of merged types ([Details](frw-definitions-input-properties-components-
 
 `disabled`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-disabled.md "https://example.com/schemas/custom#/definitions/Input/properties/disabled")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-disabled.md "https://example.com/schemas/custom#/definitions/Input/properties/disabled")
 
-#### disabled Type
+#### Type de disabled
 
 `boolean`
 
-## Definitions group Translation
+## Groupe de définitions Translation
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/Translation"}
 ```
 
-| Property              | Type     | Required | Nullable    | Defined by                                                                                                                                  |
-| :-------------------- | :------- | :------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
-| [fr](#fr)             | `string` | Required | can be null | [Untitled schema](frw-definitions-translation-properties-fr.md "https://example.com/schemas/custom#/definitions/Translation/properties/fr") |
-| [en](#en)             | `string` | Optional | can be null | [Untitled schema](frw-definitions-translation-properties-en.md "https://example.com/schemas/custom#/definitions/Translation/properties/en") |
-| Additional Properties | Any      | Optional | can be null |                                                                                                                                             |
+| Propriété                 | Type     | Obligatoire | Nullable      | Défini par                                                                                                                                  |
+| :------------------------ | :------- | :---------- | :------------ | :------------------------------------------------------------------------------------------------------------------------------------------ |
+| [fr](#fr)                 | `string` | Obligatoire | peut être nul | [Schéma sans nom](frw-definitions-translation-properties-fr.md "https://example.com/schemas/custom#/definitions/Translation/properties/fr") |
+| [en](#en)                 | `string` | Optionnel   | peut être nul | [Schéma sans nom](frw-definitions-translation-properties-en.md "https://example.com/schemas/custom#/definitions/Translation/properties/en") |
+| Propriétés Additionnelles | Any      | Optionnel   | can be null   |                                                                                                                                             |
 
 ### fr
 
@@ -1633,15 +1626,15 @@ Texte de langue française.
 
 `fr`
 
-*   is required
+*   est requis
 
 *   Type: `string` ([fr](frw-definitions-translation-properties-fr.md))
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation-properties-fr.md "https://example.com/schemas/custom#/definitions/Translation/properties/fr")
+*   défini dans: [Schéma sans nom](frw-definitions-translation-properties-fr.md "https://example.com/schemas/custom#/definitions/Translation/properties/fr")
 
-#### fr Type
+#### Type de fr
 
 `string` ([fr](frw-definitions-translation-properties-fr.md))
 
@@ -1651,35 +1644,35 @@ Texte de langue anglaise.
 
 `en`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string` ([en](frw-definitions-translation-properties-en.md))
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation-properties-en.md "https://example.com/schemas/custom#/definitions/Translation/properties/en")
+*   défini dans: [Schéma sans nom](frw-definitions-translation-properties-en.md "https://example.com/schemas/custom#/definitions/Translation/properties/en")
 
-#### en Type
+#### Type de en
 
 `string` ([en](frw-definitions-translation-properties-en.md))
 
-### Additional Properties
+### Propriétés Additionnelles
 
-Additional properties are allowed and do not have to follow a specific schema
+D’autres propriétés sont autorisées et n’ont pas à suivre un schéma spécifique
 
-## Definitions group Tooltip
+## Groupe de définitions Tooltip
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/Tooltip"}
 ```
 
-| Property              | Type     | Required | Nullable       | Defined by                                                                                                                   |
-| :-------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------- |
-| [title](#title-2)     | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Tooltip/properties/title") |
-| [text](#text-1)       | `object` | Required | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Tooltip/properties/text")  |
-| Additional Properties | Any      | Optional | can be null    |                                                                                                                              |
+| Propriété                 | Type     | Obligatoire | Nullable         | Défini par                                                                                                                   |
+| :------------------------ | :------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------- |
+| [title](#title-2)         | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Tooltip/properties/title") |
+| [text](#text-1)           | `object` | Obligatoire | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Tooltip/properties/text")  |
+| Propriétés Additionnelles | Any      | Optionnel   | can be null      |                                                                                                                              |
 
 ### title
 
@@ -1687,27 +1680,26 @@ Multilingue
 
 `title`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Tooltip/properties/title")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Tooltip/properties/title")
 
-#### title Type
+#### Type de title
 
 `object` ([Translation](frw-definitions-translation.md))
 
-#### title Default Value
+#### Valeur par défaut de title
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### text
@@ -1716,76 +1708,75 @@ Multilingue
 
 `text`
 
-*   is required
+*   est requis
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Tooltip/properties/text")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Tooltip/properties/text")
 
-#### text Type
+#### Type de text
 
 `object` ([Translation](frw-definitions-translation.md))
 
-#### text Default Value
+#### Valeur par défaut de text
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
-### Additional Properties
+### Propriétés Additionnelles
 
-Additional properties are allowed and do not have to follow a specific schema
+D’autres propriétés sont autorisées et n’ont pas à suivre un schéma spécifique
 
-## Definitions group Defaults
+## Groupe de définitions Defaults
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/Defaults"}
 ```
 
-| Property              | Type | Required | Nullable    | Defined by |
-| :-------------------- | :--- | :------- | :---------- | :--------- |
-| Additional Properties | Any  | Optional | can be null |            |
+| Propriété                 | Type | Obligatoire | Nullable    | Défini par |
+| :------------------------ | :--- | :---------- | :---------- | :--------- |
+| Propriétés Additionnelles | Any  | Optionnel   | can be null |            |
 
-### Additional Properties
+### Propriétés Additionnelles
 
-Additional properties are allowed and do not have to follow a specific schema
+D’autres propriétés sont autorisées et n’ont pas à suivre un schéma spécifique
 
-## Definitions group Config
+## Groupe de définitions Config
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/Config"}
 ```
 
-| Property                                              | Type      | Required | Nullable       | Defined by                                                                                                                                                                               |
-| :---------------------------------------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [afficherBlocCode](#afficherbloccode-2)               | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-configuration-du-formulaire-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Config/properties/afficherBlocCode")       |
-| [afficherPartagePage](#afficherpartagepage)           | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-configuration-du-formulaire-properties-afficherpartagepage.md "https://example.com/schemas/custom#/definitions/Config/properties/afficherPartagePage") |
-| [confirmationTransmission](#confirmationtransmission) | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-confirmation-de-transmission.md "https://example.com/schemas/custom#/definitions/Config/properties/confirmationTransmission")                          |
-| [courrielReprise](#courrielreprise)                   | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-courrielreprise.md "https://example.com/schemas/custom#/definitions/Config/properties/courrielReprise")                                                |
-| [debuterFormulaire](#debuterformulaire)               | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-debuterformulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/debuterFormulaire")                                            |
-| [enregistrement](#enregistrement)                     | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-enregistrement.md "https://example.com/schemas/custom#/definitions/Config/properties/enregistrement")                                                  |
-| [formulaireUnilingue](#formulaireunilingue)           | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-configuration-du-formulaire-properties-formulaireunilingue.md "https://example.com/schemas/custom#/definitions/Config/properties/formulaireUnilingue") |
-| [gererPlageDisponibilite](#gererplagedisponibilite)   | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité.md "https://example.com/schemas/custom#/definitions/Config/properties/gererPlageDisponibilite")                      |
-| [injecterJs](#injecterjs)                             | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-scripts-vuejs-à-injecter-au-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/injecterJs")                              |
-| [messages](#messages)                                 | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-messages.md "https://example.com/schemas/custom#/definitions/Config/properties/messages")                                                              |
-| [pages](#pages)                                       | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-pages.md "https://example.com/schemas/custom#/definitions/Config/properties/pages")                                                                    |
-| [piv](#piv)                                           | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-configuration-du-formulaire-properties-piv.md "https://example.com/schemas/custom#/definitions/Config/properties/piv")                                 |
-| [revision](#revision)                                 | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-page-de-révision.md "https://example.com/schemas/custom#/definitions/Config/properties/revision")                                                      |
-| [scripts](#scripts)                                   | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-scripts.md "https://example.com/schemas/custom#/definitions/Config/properties/scripts")                                                                |
-| [securite](#securite)                                 | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-sécurité-du-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/securite")                                                |
-| [soumission](#soumission)                             | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-page-de-soumission.md "https://example.com/schemas/custom#/definitions/Config/properties/soumission")                                                  |
-| [title](#title-3)                                     | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Config/properties/title")                                                              |
+| Propriété                                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                 |
+| :---------------------------------------------------- | :-------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [afficherBlocCode](#afficherbloccode-2)               | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Config/properties/afficherBlocCode")                         |
+| [afficherPartagePage](#afficherpartagepage)           | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-afficherpartagepage.md "https://example.com/schemas/custom#/definitions/Config/properties/afficherPartagePage")                   |
+| [confirmationTransmission](#confirmationtransmission) | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-confirmation-de-transmission.md "https://example.com/schemas/custom#/definitions/Config/properties/confirmationTransmission")     |
+| [courrielReprise](#courrielreprise)                   | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-courrielreprise.md "https://example.com/schemas/custom#/definitions/Config/properties/courrielReprise")                           |
+| [debuterFormulaire](#debuterformulaire)               | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-debuterformulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/debuterFormulaire")                       |
+| [enregistrement](#enregistrement)                     | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-enregistrement.md "https://example.com/schemas/custom#/definitions/Config/properties/enregistrement")                             |
+| [formulaireUnilingue](#formulaireunilingue)           | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-formulaireunilingue.md "https://example.com/schemas/custom#/definitions/Config/properties/formulaireUnilingue")                   |
+| [gererPlageDisponibilite](#gererplagedisponibilite)   | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-gerer-les-plages-de-disponibilité.md "https://example.com/schemas/custom#/definitions/Config/properties/gererPlageDisponibilite") |
+| [injecterJs](#injecterjs)                             | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-scripts-vuejs-à-injecter-au-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/injecterJs")         |
+| [messages](#messages)                                 | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-messages.md "https://example.com/schemas/custom#/definitions/Config/properties/messages")                                         |
+| [pages](#pages)                                       | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-pages.md "https://example.com/schemas/custom#/definitions/Config/properties/pages")                                               |
+| [piv](#piv)                                           | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-piv.md "https://example.com/schemas/custom#/definitions/Config/properties/piv")                                                   |
+| [revision](#revision)                                 | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-page-de-révision.md "https://example.com/schemas/custom#/definitions/Config/properties/revision")                                 |
+| [scripts](#scripts)                                   | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-scripts.md "https://example.com/schemas/custom#/definitions/Config/properties/scripts")                                           |
+| [securite](#securite)                                 | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-sécurité-du-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/securite")                           |
+| [soumission](#soumission)                             | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-page-de-soumission.md "https://example.com/schemas/custom#/definitions/Config/properties/soumission")                             |
+| [title](#title-3)                                     | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Config/properties/title")                                                                                |
 
 ### afficherBlocCode
 
@@ -1793,15 +1784,15 @@ Reference this group by using
 
 `afficherBlocCode`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean` ([afficherBlocCode](frw-definitions-configuration-du-formulaire-properties-afficherbloccode.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-configuration-du-formulaire-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Config/properties/afficherBlocCode")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Config/properties/afficherBlocCode")
 
-#### afficherBlocCode Type
+#### Type de afficherBlocCode
 
 `boolean` ([afficherBlocCode](frw-definitions-configuration-du-formulaire-properties-afficherbloccode.md))
 
@@ -1811,15 +1802,15 @@ Reference this group by using
 
 `afficherPartagePage`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean` ([afficherPartagePage](frw-definitions-configuration-du-formulaire-properties-afficherpartagepage.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-configuration-du-formulaire-properties-afficherpartagepage.md "https://example.com/schemas/custom#/definitions/Config/properties/afficherPartagePage")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-afficherpartagepage.md "https://example.com/schemas/custom#/definitions/Config/properties/afficherPartagePage")
 
-#### afficherPartagePage Type
+#### Type de afficherPartagePage
 
 `boolean` ([afficherPartagePage](frw-definitions-configuration-du-formulaire-properties-afficherpartagepage.md))
 
@@ -1829,17 +1820,17 @@ Reference this group by using
 
 `confirmationTransmission`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Confirmation de transmission](frw-definitions-confirmation-de-transmission.md))
+*   Type: `object` ([Confirmation de transmission](frw-definitions-configuration-du-formulaire-properties-confirmation-de-transmission.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-confirmation-de-transmission.md "https://example.com/schemas/custom#/definitions/Config/properties/confirmationTransmission")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-confirmation-de-transmission.md "https://example.com/schemas/custom#/definitions/Config/properties/confirmationTransmission")
 
-#### confirmationTransmission Type
+#### Type de confirmationTransmission
 
-`object` ([Confirmation de transmission](frw-definitions-confirmation-de-transmission.md))
+`object` ([Confirmation de transmission](frw-definitions-configuration-du-formulaire-properties-confirmation-de-transmission.md))
 
 ### courrielReprise
 
@@ -1847,17 +1838,17 @@ Paramètres associés au courriel de reprise.
 
 `courrielReprise`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([courrielReprise](frw-definitions-courrielreprise.md))
+*   Type: `object` ([courrielReprise](frw-definitions-configuration-du-formulaire-properties-courrielreprise.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-courrielreprise.md "https://example.com/schemas/custom#/definitions/Config/properties/courrielReprise")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-courrielreprise.md "https://example.com/schemas/custom#/definitions/Config/properties/courrielReprise")
 
-#### courrielReprise Type
+#### Type de courrielReprise
 
-`object` ([courrielReprise](frw-definitions-courrielreprise.md))
+`object` ([courrielReprise](frw-definitions-configuration-du-formulaire-properties-courrielreprise.md))
 
 ### debuterFormulaire
 
@@ -1865,17 +1856,17 @@ Paramètres de la page permettant de débuter un formulaire.
 
 `debuterFormulaire`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([debuterFormulaire](frw-definitions-debuterformulaire.md))
+*   Type: `object` ([debuterFormulaire](frw-definitions-configuration-du-formulaire-properties-debuterformulaire.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-debuterformulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/debuterFormulaire")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-debuterformulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/debuterFormulaire")
 
-#### debuterFormulaire Type
+#### Type de debuterFormulaire
 
-`object` ([debuterFormulaire](frw-definitions-debuterformulaire.md))
+`object` ([debuterFormulaire](frw-definitions-configuration-du-formulaire-properties-debuterformulaire.md))
 
 ### enregistrement
 
@@ -1883,17 +1874,17 @@ Paramètres associés à l'enregistrement d'un formulaire
 
 `enregistrement`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([enregistrement](frw-definitions-enregistrement.md))
+*   Type: `object` ([enregistrement](frw-definitions-configuration-du-formulaire-properties-enregistrement.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-enregistrement.md "https://example.com/schemas/custom#/definitions/Config/properties/enregistrement")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-enregistrement.md "https://example.com/schemas/custom#/definitions/Config/properties/enregistrement")
 
-#### enregistrement Type
+#### Type de enregistrement
 
-`object` ([enregistrement](frw-definitions-enregistrement.md))
+`object` ([enregistrement](frw-definitions-configuration-du-formulaire-properties-enregistrement.md))
 
 ### formulaireUnilingue
 
@@ -1901,15 +1892,15 @@ Permet de retirer le selecteur de langue. Le formulaire s'affichera en français
 
 `formulaireUnilingue`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-configuration-du-formulaire-properties-formulaireunilingue.md "https://example.com/schemas/custom#/definitions/Config/properties/formulaireUnilingue")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-formulaireunilingue.md "https://example.com/schemas/custom#/definitions/Config/properties/formulaireUnilingue")
 
-#### formulaireUnilingue Type
+#### Type de formulaireUnilingue
 
 `boolean`
 
@@ -1919,17 +1910,17 @@ Permet de retirer le selecteur de langue. Le formulaire s'affichera en français
 
 `gererPlageDisponibilite`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Gerer les plages de disponibilité](frw-definitions-gerer-les-plages-de-disponibilité.md))
+*   Type: `object` ([Gerer les plages de disponibilité](frw-definitions-configuration-du-formulaire-properties-gerer-les-plages-de-disponibilité.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité.md "https://example.com/schemas/custom#/definitions/Config/properties/gererPlageDisponibilite")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-gerer-les-plages-de-disponibilité.md "https://example.com/schemas/custom#/definitions/Config/properties/gererPlageDisponibilite")
 
-#### gererPlageDisponibilite Type
+#### Type de gererPlageDisponibilite
 
-`object` ([Gerer les plages de disponibilité](frw-definitions-gerer-les-plages-de-disponibilité.md))
+`object` ([Gerer les plages de disponibilité](frw-definitions-configuration-du-formulaire-properties-gerer-les-plages-de-disponibilité.md))
 
 ### injecterJs
 
@@ -1937,17 +1928,17 @@ Permet de retirer le selecteur de langue. Le formulaire s'affichera en français
 
 `injecterJs`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Scripts Vue.js à injecter au formulaire.](frw-definitions-scripts-vuejs-à-injecter-au-formulaire.md))
+*   Type: `object` ([Scripts Vue.js à injecter au formulaire.](frw-definitions-configuration-du-formulaire-properties-scripts-vuejs-à-injecter-au-formulaire.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-scripts-vuejs-à-injecter-au-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/injecterJs")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-scripts-vuejs-à-injecter-au-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/injecterJs")
 
-#### injecterJs Type
+#### Type de injecterJs
 
-`object` ([Scripts Vue.js à injecter au formulaire.](frw-definitions-scripts-vuejs-à-injecter-au-formulaire.md))
+`object` ([Scripts Vue.js à injecter au formulaire.](frw-definitions-configuration-du-formulaire-properties-scripts-vuejs-à-injecter-au-formulaire.md))
 
 ### messages
 
@@ -1955,17 +1946,17 @@ Paramètres associés aux différents messages.
 
 `messages`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([messages](frw-definitions-messages.md))
+*   Type: `object` ([messages](frw-definitions-configuration-du-formulaire-properties-messages.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-messages.md "https://example.com/schemas/custom#/definitions/Config/properties/messages")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-messages.md "https://example.com/schemas/custom#/definitions/Config/properties/messages")
 
-#### messages Type
+#### Type de messages
 
-`object` ([messages](frw-definitions-messages.md))
+`object` ([messages](frw-definitions-configuration-du-formulaire-properties-messages.md))
 
 ### pages
 
@@ -1973,17 +1964,17 @@ Paramètres associés à différentes pages.
 
 `pages`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([pages](frw-definitions-pages.md))
+*   Type: `object` ([pages](frw-definitions-configuration-du-formulaire-properties-pages.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-pages.md "https://example.com/schemas/custom#/definitions/Config/properties/pages")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-pages.md "https://example.com/schemas/custom#/definitions/Config/properties/pages")
 
-#### pages Type
+#### Type de pages
 
-`object` ([pages](frw-definitions-pages.md))
+`object` ([pages](frw-definitions-configuration-du-formulaire-properties-pages.md))
 
 ### piv
 
@@ -1991,15 +1982,15 @@ Paramètres associés au PIV.
 
 `piv`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([piv](frw-definitions-configuration-du-formulaire-properties-piv.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-configuration-du-formulaire-properties-piv.md "https://example.com/schemas/custom#/definitions/Config/properties/piv")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-piv.md "https://example.com/schemas/custom#/definitions/Config/properties/piv")
 
-#### piv Type
+#### Type de piv
 
 `object` ([piv](frw-definitions-configuration-du-formulaire-properties-piv.md))
 
@@ -2009,17 +2000,17 @@ Paramètres associés au PIV.
 
 `revision`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Page de révision](frw-definitions-page-de-révision.md))
+*   Type: `object` ([Page de révision](frw-definitions-configuration-du-formulaire-properties-page-de-révision.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-page-de-révision.md "https://example.com/schemas/custom#/definitions/Config/properties/revision")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-page-de-révision.md "https://example.com/schemas/custom#/definitions/Config/properties/revision")
 
-#### revision Type
+#### Type de revision
 
-`object` ([Page de révision](frw-definitions-page-de-révision.md))
+`object` ([Page de révision](frw-definitions-configuration-du-formulaire-properties-page-de-révision.md))
 
 ### scripts
 
@@ -2027,17 +2018,17 @@ Paramètres associés au PIV.
 
 `scripts`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([scripts](frw-definitions-scripts.md))
+*   Type: `object` ([scripts](frw-definitions-configuration-du-formulaire-properties-scripts.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-scripts.md "https://example.com/schemas/custom#/definitions/Config/properties/scripts")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-scripts.md "https://example.com/schemas/custom#/definitions/Config/properties/scripts")
 
-#### scripts Type
+#### Type de scripts
 
-`object` ([scripts](frw-definitions-scripts.md))
+`object` ([scripts](frw-definitions-configuration-du-formulaire-properties-scripts.md))
 
 ### securite
 
@@ -2045,17 +2036,17 @@ Paramètres associés au PIV.
 
 `securite`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Sécurité du formulaire](frw-definitions-sécurité-du-formulaire.md))
+*   Type: `object` ([Sécurité du formulaire](frw-definitions-configuration-du-formulaire-properties-sécurité-du-formulaire.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-sécurité-du-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/securite")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-sécurité-du-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/securite")
 
-#### securite Type
+#### Type de securite
 
-`object` ([Sécurité du formulaire](frw-definitions-sécurité-du-formulaire.md))
+`object` ([Sécurité du formulaire](frw-definitions-configuration-du-formulaire-properties-sécurité-du-formulaire.md))
 
 ### soumission
 
@@ -2063,17 +2054,17 @@ Paramètres associés au PIV.
 
 `soumission`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Page de soumission](frw-definitions-page-de-soumission.md))
+*   Type: `object` ([Page de soumission](frw-definitions-configuration-du-formulaire-properties-page-de-soumission.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-page-de-soumission.md "https://example.com/schemas/custom#/definitions/Config/properties/soumission")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-page-de-soumission.md "https://example.com/schemas/custom#/definitions/Config/properties/soumission")
 
-#### soumission Type
+#### Type de soumission
 
-`object` ([Page de soumission](frw-definitions-page-de-soumission.md))
+`object` ([Page de soumission](frw-definitions-configuration-du-formulaire-properties-page-de-soumission.md))
 
 ### title
 
@@ -2081,40 +2072,39 @@ Multilingue
 
 `title`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Config/properties/title")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Config/properties/title")
 
-#### title Type
+#### Type de title
 
 `object` ([Translation](frw-definitions-translation.md))
 
-#### title Default Value
+#### Valeur par défaut de title
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
-## Definitions group Securite
+## Groupe de définitions Securite
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/Securite"}
 ```
 
-| Property                      | Type      | Required | Nullable       | Defined by                                                                                                                                                              |
-| :---------------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [accesAnonyme](#accesanonyme) | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-sécurité-du-formulaire-properties-accesanonyme.md "https://example.com/schemas/custom#/definitions/Securite/properties/accesAnonyme") |
+| Propriété                     | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                              |
+| :---------------------------- | :-------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [accesAnonyme](#accesanonyme) | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-sécurité-du-formulaire-properties-accesanonyme.md "https://example.com/schemas/custom#/definitions/Securite/properties/accesAnonyme") |
 
 ### accesAnonyme
 
@@ -2122,31 +2112,31 @@ Permet d'activer l'accès anonyme au formulaire.
 
 `accesAnonyme`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-sécurité-du-formulaire-properties-accesanonyme.md "https://example.com/schemas/custom#/definitions/Securite/properties/accesAnonyme")
+*   défini dans: [Schéma sans nom](frw-definitions-sécurité-du-formulaire-properties-accesanonyme.md "https://example.com/schemas/custom#/definitions/Securite/properties/accesAnonyme")
 
-#### accesAnonyme Type
+#### Type de accesAnonyme
 
 `boolean`
 
-## Definitions group Enregistrement
+## Groupe de définitions Enregistrement
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/Enregistrement"}
 ```
 
-| Property                                                                      | Type      | Required | Nullable       | Defined by                                                                                                                                                                                    |
-| :---------------------------------------------------------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [actif](#actif)                                                               | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-enregistrement-properties-actif.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/actif")                                       |
-| [afficherMessageIncitatif](#affichermessageincitatif)                         | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-enregistrement-properties-affichermessageincitatif.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/afficherMessageIncitatif") |
-| [texteModaleEnregistrementAuthentifie](#textemodaleenregistrementauthentifie) | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/texteModaleEnregistrementAuthentifie")                            |
+| Propriété                                                                     | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                    |
+| :---------------------------------------------------------------------------- | :-------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [actif](#actif)                                                               | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-enregistrement-properties-actif.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/actif")                                       |
+| [afficherMessageIncitatif](#affichermessageincitatif)                         | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-enregistrement-properties-affichermessageincitatif.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/afficherMessageIncitatif") |
+| [texteModaleEnregistrementAuthentifie](#textemodaleenregistrementauthentifie) | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/texteModaleEnregistrementAuthentifie")                            |
 
 ### actif
 
@@ -2154,15 +2144,15 @@ Indique si l'enregistrement du formulaire est actif (bouton enregistré présent
 
 `actif`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean` ([actif](frw-definitions-enregistrement-properties-actif.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-enregistrement-properties-actif.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/actif")
+*   défini dans: [Schéma sans nom](frw-definitions-enregistrement-properties-actif.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/actif")
 
-#### actif Type
+#### Type de actif
 
 `boolean` ([actif](frw-definitions-enregistrement-properties-actif.md))
 
@@ -2172,15 +2162,15 @@ Indique si le message (avis avertissement en haut de chaque page) incitant l'enr
 
 `afficherMessageIncitatif`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean` ([afficherMessageIncitatif](frw-definitions-enregistrement-properties-affichermessageincitatif.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-enregistrement-properties-affichermessageincitatif.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/afficherMessageIncitatif")
+*   défini dans: [Schéma sans nom](frw-definitions-enregistrement-properties-affichermessageincitatif.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/afficherMessageIncitatif")
 
-#### afficherMessageIncitatif Type
+#### Type de afficherMessageIncitatif
 
 `boolean` ([afficherMessageIncitatif](frw-definitions-enregistrement-properties-affichermessageincitatif.md))
 
@@ -2190,43 +2180,42 @@ Multilingue
 
 `texteModaleEnregistrementAuthentifie`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/texteModaleEnregistrementAuthentifie")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/texteModaleEnregistrementAuthentifie")
 
-#### texteModaleEnregistrementAuthentifie Type
+#### Type de texteModaleEnregistrementAuthentifie
 
 `object` ([Translation](frw-definitions-translation.md))
 
-#### texteModaleEnregistrementAuthentifie Default Value
+#### Valeur par défaut de texteModaleEnregistrementAuthentifie
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
-## Definitions group GererPlageDisponibilite
+## Groupe de définitions GererPlageDisponibilite
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/GererPlageDisponibilite"}
 ```
 
-| Property                                              | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                |
-| :---------------------------------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [actif](#actif-1)                                     | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité-properties-actif.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/actif")                                       |
-| [joursOuvrablesUniquement](#joursouvrablesuniquement) | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité-properties-joursouvrablesuniquement.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/joursOuvrablesUniquement") |
-| [nombreConvois](#nombreconvois)                       | `integer` | Optional | cannot be null | [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité-properties-nombreconvois.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/nombreConvois")                       |
-| [plages](#plages)                                     | `array`   | Optional | cannot be null | [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité-properties-plages.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/plages")                                     |
+| Propriété                                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                                |
+| :---------------------------------------------------- | :-------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [actif](#actif-1)                                     | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-actif.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/actif")                                       |
+| [joursOuvrablesUniquement](#joursouvrablesuniquement) | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-joursouvrablesuniquement.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/joursOuvrablesUniquement") |
+| [nombreConvois](#nombreconvois)                       | `integer` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-nombreconvois.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/nombreConvois")                       |
+| [plages](#plages)                                     | `array`   | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-plages.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/plages")                                     |
 
 ### actif
 
@@ -2234,15 +2223,15 @@ Reference this group by using
 
 `actif`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité-properties-actif.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/actif")
+*   défini dans: [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-actif.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/actif")
 
-#### actif Type
+#### Type de actif
 
 `boolean`
 
@@ -2252,15 +2241,15 @@ Reference this group by using
 
 `joursOuvrablesUniquement`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité-properties-joursouvrablesuniquement.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/joursOuvrablesUniquement")
+*   défini dans: [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-joursouvrablesuniquement.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/joursOuvrablesUniquement")
 
-#### joursOuvrablesUniquement Type
+#### Type de joursOuvrablesUniquement
 
 `boolean`
 
@@ -2270,15 +2259,15 @@ Reference this group by using
 
 `nombreConvois`
 
-*   is optional
+*   est optionnel
 
 *   Type: `integer`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité-properties-nombreconvois.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/nombreConvois")
+*   défini dans: [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-nombreconvois.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/nombreConvois")
 
-#### nombreConvois Type
+#### Type de nombreConvois
 
 `integer`
 
@@ -2288,31 +2277,31 @@ Reference this group by using
 
 `plages`
 
-*   is optional
+*   est optionnel
 
 *   Type: `array`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité-properties-plages.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/plages")
+*   défini dans: [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-plages.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/plages")
 
-#### plages Type
+#### Type de plages
 
 `array`
 
-## Definitions group ConfirmationTransmission
+## Groupe de définitions ConfirmationTransmission
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/ConfirmationTransmission"}
 ```
 
-| Property                                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                  |
-| :---------------------------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [texteSupplementaire](#textesupplementaire)                 | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/ConfirmationTransmission/properties/texteSupplementaire")                                                                 |
-| [nomChampCourrielUtilisateur](#nomchampcourrielutilisateur) | `string` | Optional | cannot be null | [Untitled schema](frw-definitions-confirmation-de-transmission-properties-nomchampcourrielutilisateur.md "https://example.com/schemas/custom#/definitions/ConfirmationTransmission/properties/nomChampCourrielUtilisateur") |
-| [modaleCourrielConfirmation](#modalecourrielconfirmation)   | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-fenêtre-modale-de-courriel-de-confirmation.md "https://example.com/schemas/custom#/definitions/ConfirmationTransmission/properties/modaleCourrielConfirmation")                           |
+| Propriété                                                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                                                |
+| :---------------------------------------------------------- | :------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [texteSupplementaire](#textesupplementaire)                 | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/ConfirmationTransmission/properties/texteSupplementaire")                                                                               |
+| [nomChampCourrielUtilisateur](#nomchampcourrielutilisateur) | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-confirmation-de-transmission-properties-nomchampcourrielutilisateur.md "https://example.com/schemas/custom#/definitions/ConfirmationTransmission/properties/nomChampCourrielUtilisateur")               |
+| [modaleCourrielConfirmation](#modalecourrielconfirmation)   | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-confirmation-de-transmission-properties-fenêtre-modale-de-courriel-de-confirmation.md "https://example.com/schemas/custom#/definitions/ConfirmationTransmission/properties/modaleCourrielConfirmation") |
 
 ### texteSupplementaire
 
@@ -2320,27 +2309,26 @@ Multilingue
 
 `texteSupplementaire`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/ConfirmationTransmission/properties/texteSupplementaire")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/ConfirmationTransmission/properties/texteSupplementaire")
 
-#### texteSupplementaire Type
+#### Type de texteSupplementaire
 
 `object` ([Translation](frw-definitions-translation.md))
 
-#### texteSupplementaire Default Value
+#### Valeur par défaut de texteSupplementaire
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ### nomChampCourrielUtilisateur
@@ -2349,15 +2337,15 @@ Nom du champ courriel qui contient l'adresse courriel à utiliser pour le courri
 
 `nomChampCourrielUtilisateur`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-confirmation-de-transmission-properties-nomchampcourrielutilisateur.md "https://example.com/schemas/custom#/definitions/ConfirmationTransmission/properties/nomChampCourrielUtilisateur")
+*   défini dans: [Schéma sans nom](frw-definitions-confirmation-de-transmission-properties-nomchampcourrielutilisateur.md "https://example.com/schemas/custom#/definitions/ConfirmationTransmission/properties/nomChampCourrielUtilisateur")
 
-#### nomChampCourrielUtilisateur Type
+#### Type de nomChampCourrielUtilisateur
 
 `string`
 
@@ -2367,32 +2355,32 @@ Nom du champ courriel qui contient l'adresse courriel à utiliser pour le courri
 
 `modaleCourrielConfirmation`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Fenêtre modale de courriel de confirmation](frw-definitions-fenêtre-modale-de-courriel-de-confirmation.md))
+*   Type: `object` ([Fenêtre modale de courriel de confirmation](frw-definitions-confirmation-de-transmission-properties-fenêtre-modale-de-courriel-de-confirmation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-fenêtre-modale-de-courriel-de-confirmation.md "https://example.com/schemas/custom#/definitions/ConfirmationTransmission/properties/modaleCourrielConfirmation")
+*   défini dans: [Schéma sans nom](frw-definitions-confirmation-de-transmission-properties-fenêtre-modale-de-courriel-de-confirmation.md "https://example.com/schemas/custom#/definitions/ConfirmationTransmission/properties/modaleCourrielConfirmation")
 
-#### modaleCourrielConfirmation Type
+#### Type de modaleCourrielConfirmation
 
-`object` ([Fenêtre modale de courriel de confirmation](frw-definitions-fenêtre-modale-de-courriel-de-confirmation.md))
+`object` ([Fenêtre modale de courriel de confirmation](frw-definitions-confirmation-de-transmission-properties-fenêtre-modale-de-courriel-de-confirmation.md))
 
-## Definitions group CourrielReprise
+## Groupe de définitions CourrielReprise
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/CourrielReprise"}
 ```
 
-| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                          |
-| :---------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [courrielExpediteur](#courrielexpediteur) | `string` | Optional | cannot be null | [Untitled schema](frw-definitions-courrielreprise-properties-courrielexpediteur.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/courrielExpediteur") |
-| [nomExpediteur](#nomexpediteur)           | `string` | Optional | cannot be null | [Untitled schema](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/nomExpediteur")    |
-| [objet](#objet)                           | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/objet")                                                |
-| [corps](#corps)                           | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/corps")                                                |
+| Propriété                                 | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                          |
+| :---------------------------------------- | :------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [courrielExpediteur](#courrielexpediteur) | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-courrielreprise-properties-courrielexpediteur.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/courrielExpediteur") |
+| [nomExpediteur](#nomexpediteur)           | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/nomExpediteur")    |
+| [objet](#objet)                           | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/objet")                                                |
+| [corps](#corps)                           | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/corps")                                                |
 
 ### courrielExpediteur
 
@@ -2400,22 +2388,23 @@ Adresse courriel expéditeur.
 
 `courrielExpediteur`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string` ([courrielExpediteur](frw-definitions-courrielreprise-properties-courrielexpediteur.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-courrielreprise-properties-courrielexpediteur.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/courrielExpediteur")
+*   défini dans: [Schéma sans nom](frw-definitions-courrielreprise-properties-courrielexpediteur.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/courrielExpediteur")
 
-#### courrielExpediteur Type
+#### Type de courrielExpediteur
 
 `string` ([courrielExpediteur](frw-definitions-courrielreprise-properties-courrielexpediteur.md))
 
-#### courrielExpediteur Examples
+#### Exemple de courrielExpediteur
 
-```json
-"NEPASREPONDRE@mtess.gouv.qc.ca"
+```yaml
+NEPASREPONDRE@mtess.gouv.qc.ca
+
 ```
 
 ### nomExpediteur
@@ -2424,22 +2413,23 @@ Nom de l'expéditeur expéditeur.
 
 `nomExpediteur`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string` ([courrielExpediteur](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/nomExpediteur")
+*   défini dans: [Schéma sans nom](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/nomExpediteur")
 
-#### nomExpediteur Type
+#### Type de nomExpediteur
 
 `string` ([courrielExpediteur](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md))
 
-#### nomExpediteur Examples
+#### Exemple de nomExpediteur
 
-```json
-"Formulaires en ligne - MESS"
+```yaml
+Formulaires en ligne - MESS
+
 ```
 
 ### objet
@@ -2448,33 +2438,33 @@ Multilingue
 
 `objet`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/objet")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/objet")
 
-#### objet Type
+#### Type de objet
 
 `object` ([Translation](frw-definitions-translation.md))
 
-#### objet Default Value
+#### Valeur par défaut de objet
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
-#### objet Examples
+#### Exemple de objet
 
-```json
-"Formulaire  « {0} » incomplet"
+```yaml
+Formulaire  « {0} » incomplet
+
 ```
 
 ### corps
@@ -2483,41 +2473,40 @@ Multilingue
 
 `corps`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/corps")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/corps")
 
-#### corps Type
+#### Type de corps
 
 `object` ([Translation](frw-definitions-translation.md))
 
-#### corps Default Value
+#### Valeur par défaut de corps
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
-## Definitions group DebuterFormulaire
+## Groupe de définitions DebuterFormulaire
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/DebuterFormulaire"}
 ```
 
-| Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                |
-| :-------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [authentifie](#authentifie) | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-debuterformulaire-properties-authentifie.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie") |
-| [anonyme](#anonyme)         | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-debuterformulaire-properties-anonyme.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/anonyme")         |
+| Propriété                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                |
+| :-------------------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [authentifie](#authentifie) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-debuterformulaire-properties-authentifie.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie") |
+| [anonyme](#anonyme)         | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-debuterformulaire-properties-anonyme.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/anonyme")         |
 
 ### authentifie
 
@@ -2525,15 +2514,15 @@ Paramètres de la page permettant de débuter un formulaire authentifié.
 
 `authentifie`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([authentifie](frw-definitions-debuterformulaire-properties-authentifie.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-debuterformulaire-properties-authentifie.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie")
+*   défini dans: [Schéma sans nom](frw-definitions-debuterformulaire-properties-authentifie.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie")
 
-#### authentifie Type
+#### Type de authentifie
 
 `object` ([authentifie](frw-definitions-debuterformulaire-properties-authentifie.md))
 
@@ -2543,29 +2532,29 @@ Paramètres de la page permettant de débuter un formulaire anonyme.
 
 `anonyme`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([anonyme](frw-definitions-debuterformulaire-properties-anonyme.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-debuterformulaire-properties-anonyme.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/anonyme")
+*   défini dans: [Schéma sans nom](frw-definitions-debuterformulaire-properties-anonyme.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/anonyme")
 
-#### anonyme Type
+#### Type de anonyme
 
 `object` ([anonyme](frw-definitions-debuterformulaire-properties-anonyme.md))
 
-## Definitions group Messages
+## Groupe de définitions Messages
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/Messages"}
 ```
 
-| Property                            | Type     | Required | Nullable       | Defined by                                                                                                                                                      |
-| :---------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [erreurTechnique](#erreurtechnique) | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-messages-properties-erreurtechnique.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique") |
+| Propriété                           | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                      |
+| :---------------------------------- | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [erreurTechnique](#erreurtechnique) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-messages-properties-erreurtechnique.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique") |
 
 ### erreurTechnique
 
@@ -2573,29 +2562,29 @@ Paramètres du message d'erreur technique.
 
 `erreurTechnique`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([erreurTechnique](frw-definitions-messages-properties-erreurtechnique.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-messages-properties-erreurtechnique.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique")
+*   défini dans: [Schéma sans nom](frw-definitions-messages-properties-erreurtechnique.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique")
 
-#### erreurTechnique Type
+#### Type de erreurTechnique
 
 `object` ([erreurTechnique](frw-definitions-messages-properties-erreurtechnique.md))
 
-## Definitions group Pages
+## Groupe de définitions Pages
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/Pages"}
 ```
 
-| Property                            | Type     | Required | Nullable       | Defined by                                                                                                                                                |
-| :---------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sessionInvalide](#sessioninvalide) | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-pages-properties-sessioninvalide.md "https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide") |
+| Propriété                           | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                |
+| :---------------------------------- | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sessionInvalide](#sessioninvalide) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-pages-properties-sessioninvalide.md "https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide") |
 
 ### sessionInvalide
 
@@ -2603,29 +2592,29 @@ Paramètres associés à la page de session invalide.
 
 `sessionInvalide`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([sessionInvalide](frw-definitions-pages-properties-sessioninvalide.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-pages-properties-sessioninvalide.md "https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide")
+*   défini dans: [Schéma sans nom](frw-definitions-pages-properties-sessioninvalide.md "https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide")
 
-#### sessionInvalide Type
+#### Type de sessionInvalide
 
 `object` ([sessionInvalide](frw-definitions-pages-properties-sessioninvalide.md))
 
-## Definitions group Revision
+## Groupe de définitions Revision
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/Revision"}
 ```
 
-| Property                                        | Type      | Required | Nullable       | Defined by                                                                                                                                                                          |
-| :---------------------------------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [validationAutomatique](#validationautomatique) | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-page-de-révision-properties-validationautomatique.md "https://example.com/schemas/custom#/definitions/Revision/properties/validationAutomatique") |
+| Propriété                                       | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                          |
+| :---------------------------------------------- | :-------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [validationAutomatique](#validationautomatique) | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-page-de-révision-properties-validationautomatique.md "https://example.com/schemas/custom#/definitions/Revision/properties/validationAutomatique") |
 
 ### validationAutomatique
 
@@ -2633,29 +2622,29 @@ Indique si la fenêtre modale permettant la saisie d'une adresse courriel pour l
 
 `validationAutomatique`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-page-de-révision-properties-validationautomatique.md "https://example.com/schemas/custom#/definitions/Revision/properties/validationAutomatique")
+*   défini dans: [Schéma sans nom](frw-definitions-page-de-révision-properties-validationautomatique.md "https://example.com/schemas/custom#/definitions/Revision/properties/validationAutomatique")
 
-#### validationAutomatique Type
+#### Type de validationAutomatique
 
 `boolean`
 
-## Definitions group Soumission
+## Groupe de définitions Soumission
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/Soumission"}
 ```
 
-| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                     |
-| :-------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
-| [texteBoutonSoumettre](#texteboutonsoumettre) | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Soumission/properties/texteBoutonSoumettre") |
+| Propriété                                     | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                     |
+| :-------------------------------------------- | :------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
+| [texteBoutonSoumettre](#texteboutonsoumettre) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Soumission/properties/texteBoutonSoumettre") |
 
 ### texteBoutonSoumettre
 
@@ -2663,40 +2652,39 @@ Multilingue
 
 `texteBoutonSoumettre`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Soumission/properties/texteBoutonSoumettre")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Soumission/properties/texteBoutonSoumettre")
 
-#### texteBoutonSoumettre Type
+#### Type de texteBoutonSoumettre
 
 `object` ([Translation](frw-definitions-translation.md))
 
-#### texteBoutonSoumettre Default Value
+#### Valeur par défaut de texteBoutonSoumettre
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
-## Definitions group ModaleCourrielConfirmation
+## Groupe de définitions ModaleCourrielConfirmation
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/ModaleCourrielConfirmation"}
 ```
 
-| Property          | Type      | Required | Nullable       | Defined by                                                                                                                                                                                      |
-| :---------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [actif](#actif-2) | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-fenêtre-modale-de-courriel-de-confirmation-properties-actif.md "https://example.com/schemas/custom#/definitions/ModaleCourrielConfirmation/properties/actif") |
+| Propriété         | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                      |
+| :---------------- | :-------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [actif](#actif-2) | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-fenêtre-modale-de-courriel-de-confirmation-properties-actif.md "https://example.com/schemas/custom#/definitions/ModaleCourrielConfirmation/properties/actif") |
 
 ### actif
 
@@ -2704,72 +2692,71 @@ Indique si la fenêtre modale permettant la saisie d'une adresse courriel pour l
 
 `actif`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-fenêtre-modale-de-courriel-de-confirmation-properties-actif.md "https://example.com/schemas/custom#/definitions/ModaleCourrielConfirmation/properties/actif")
+*   défini dans: [Schéma sans nom](frw-definitions-fenêtre-modale-de-courriel-de-confirmation-properties-actif.md "https://example.com/schemas/custom#/definitions/ModaleCourrielConfirmation/properties/actif")
 
-#### actif Type
+#### Type de actif
 
 `boolean`
 
-## Definitions group ValidationMessages
+## Groupe de définitions ValidationMessages
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/ValidationMessages"}
 ```
 
-| Property         | Type     | Required | Nullable       | Defined by                                                                                                                                               |
-| :--------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `^[a-zA-Z0-9]+$` | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/ValidationMessages/patternProperties/^\[a-zA-Z0-9]+$") |
+| Propriété        | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                               |
+| :--------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `^[a-zA-Z0-9]+$` | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/ValidationMessages/patternProperties/^\[a-zA-Z0-9]+$") |
 
-### Pattern: `^[a-zA-Z0-9]+$`
+### Modèle:`^[a-zA-Z0-9]+$`
 
 Multilingue
 
 `^[a-zA-Z0-9]+$`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/ValidationMessages/patternProperties/^\[a-zA-Z0-9]+$")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/ValidationMessages/patternProperties/^\[a-zA-Z0-9]+$")
 
-#### ^\[a-zA-Z0-9]+$ Type
+#### Type de ^\[a-zA-Z0-9]+$
 
 `object` ([Translation](frw-definitions-translation.md))
 
-#### ^\[a-zA-Z0-9]+$ Default Value
+#### Valeur par défaut de ^\[a-zA-Z0-9]+$
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
-## Definitions group InjecterJs
+## Groupe de définitions InjecterJs
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/InjecterJs"}
 ```
 
-| Property              | Type     | Required | Nullable       | Defined by                                                                                                                         |
-| :-------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
-| [method](#method)     | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-nomfonction.md "https://example.com/schemas/custom#/definitions/InjecterJs/properties/method")   |
-| [computed](#computed) | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-nomfonction.md "https://example.com/schemas/custom#/definitions/InjecterJs/properties/computed") |
-| [watch](#watch)       | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-nomfonction.md "https://example.com/schemas/custom#/definitions/InjecterJs/properties/watch")    |
+| Propriété             | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                        |
+| :-------------------- | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [method](#method)     | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-scripts-vuejs-à-injecter-au-formulaire-properties-method.md "https://example.com/schemas/custom#/definitions/InjecterJs/properties/method")     |
+| [computed](#computed) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-scripts-vuejs-à-injecter-au-formulaire-properties-computed.md "https://example.com/schemas/custom#/definitions/InjecterJs/properties/computed") |
+| [watch](#watch)       | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-scripts-vuejs-à-injecter-au-formulaire-properties-watch.md "https://example.com/schemas/custom#/definitions/InjecterJs/properties/watch")       |
 
 ### method
 
@@ -2777,17 +2764,17 @@ Méthodes de type 'method' à injecter au code au modèle vue.js du formulaire.
 
 `method`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([method](frw-definitions-nomfonction.md))
+*   Type: `object` ([method](frw-definitions-scripts-vuejs-à-injecter-au-formulaire-properties-method.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-nomfonction.md "https://example.com/schemas/custom#/definitions/InjecterJs/properties/method")
+*   défini dans: [Schéma sans nom](frw-definitions-scripts-vuejs-à-injecter-au-formulaire-properties-method.md "https://example.com/schemas/custom#/definitions/InjecterJs/properties/method")
 
-#### method Type
+#### Type de method
 
-`object` ([method](frw-definitions-nomfonction.md))
+`object` ([method](frw-definitions-scripts-vuejs-à-injecter-au-formulaire-properties-method.md))
 
 ### computed
 
@@ -2795,17 +2782,17 @@ Méthodes de type 'computed' à injecter au code au modèle vue.js du formulaire
 
 `computed`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([computed](frw-definitions-nomfonction.md))
+*   Type: `object` ([computed](frw-definitions-scripts-vuejs-à-injecter-au-formulaire-properties-computed.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-nomfonction.md "https://example.com/schemas/custom#/definitions/InjecterJs/properties/computed")
+*   défini dans: [Schéma sans nom](frw-definitions-scripts-vuejs-à-injecter-au-formulaire-properties-computed.md "https://example.com/schemas/custom#/definitions/InjecterJs/properties/computed")
 
-#### computed Type
+#### Type de computed
 
-`object` ([computed](frw-definitions-nomfonction.md))
+`object` ([computed](frw-definitions-scripts-vuejs-à-injecter-au-formulaire-properties-computed.md))
 
 ### watch
 
@@ -2813,70 +2800,70 @@ Méthodes de type 'watch' à injecter au code au modèle vue.js du formulaire.
 
 `watch`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([watch](frw-definitions-nomfonction.md))
+*   Type: `object` ([watch](frw-definitions-scripts-vuejs-à-injecter-au-formulaire-properties-watch.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-nomfonction.md "https://example.com/schemas/custom#/definitions/InjecterJs/properties/watch")
+*   défini dans: [Schéma sans nom](frw-definitions-scripts-vuejs-à-injecter-au-formulaire-properties-watch.md "https://example.com/schemas/custom#/definitions/InjecterJs/properties/watch")
 
-#### watch Type
+#### Type de watch
 
-`object` ([watch](frw-definitions-nomfonction.md))
+`object` ([watch](frw-definitions-scripts-vuejs-à-injecter-au-formulaire-properties-watch.md))
 
-## Definitions group NomFonction
+## Groupe de définitions NomFonction
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/NomFonction"}
 ```
 
-| Property         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                 |
-| :--------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `^[a-zA-Z0-9]+$` | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire.md "https://example.com/schemas/custom#/definitions/NomFonction/patternProperties/^\[a-zA-Z0-9]+$") |
+| Propriété        | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                                 |
+| :--------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `^[a-zA-Z0-9]+$` | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire.md "https://example.com/schemas/custom#/definitions/NomFonction/patternProperties/^\[a-zA-Z0-9]+$") |
 
-### Pattern: `^[a-zA-Z0-9]+$`
+### Modèle:`^[a-zA-Z0-9]+$`
 
 
 
 `^[a-zA-Z0-9]+$`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Nom de la fonction Vue.js à injecter dans le formulaire](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire.md "https://example.com/schemas/custom#/definitions/NomFonction/patternProperties/^\[a-zA-Z0-9]+$")
+*   défini dans: [Schéma sans nom](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire.md "https://example.com/schemas/custom#/definitions/NomFonction/patternProperties/^\[a-zA-Z0-9]+$")
 
-#### ^\[a-zA-Z0-9]+$ Type
+#### Type de ^\[a-zA-Z0-9]+$
 
 `object` ([Nom de la fonction Vue.js à injecter dans le formulaire](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire.md))
 
-## Definitions group Code
+## Groupe de définitions Code
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/Code"}
 ```
 
-| Property | Type | Required | Nullable | Defined by |
-| :------- | :--- | :------- | :------- | :--------- |
+| Propriété | Type | Obligatoire | Nullable | Défini par |
+| :-------- | :--- | :---------- | :------- | :--------- |
 
-## Definitions group Scripts
+## Groupe de définitions Scripts
 
-Reference this group by using
+Référencer ce groupe en utilisant
 
 ```json
 {"$ref":"https://example.com/schemas/custom#/definitions/Scripts"}
 ```
 
-| Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                                        |
-| :-------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [outilStatistiques](#outilstatistiques) | `string` | Optional | cannot be null | [Untitled schema](frw-definitions-scripts-properties-outilstatistiques.md "https://example.com/schemas/custom#/definitions/Scripts/properties/outilStatistiques") |
+| Propriété                               | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                        |
+| :-------------------------------------- | :------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [outilStatistiques](#outilstatistiques) | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-scripts-properties-outilstatistiques.md "https://example.com/schemas/custom#/definitions/Scripts/properties/outilStatistiques") |
 
 ### outilStatistiques
 
@@ -2884,20 +2871,21 @@ Javascript servant à une solution d'outil statistiques (ex. Google Analytics ou
 
 `outilStatistiques`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string` ([outilStatistiques](frw-definitions-scripts-properties-outilstatistiques.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-scripts-properties-outilstatistiques.md "https://example.com/schemas/custom#/definitions/Scripts/properties/outilStatistiques")
+*   défini dans: [Schéma sans nom](frw-definitions-scripts-properties-outilstatistiques.md "https://example.com/schemas/custom#/definitions/Scripts/properties/outilStatistiques")
 
-#### outilStatistiques Type
+#### Type de outilStatistiques
 
 `string` ([outilStatistiques](frw-definitions-scripts-properties-outilstatistiques.md))
 
-#### outilStatistiques Examples
+#### Exemple de outilStatistiques
 
-```json
-"<script> // Votre js ici... </script>"
+```yaml
+<script> // Votre js ici... </script>
+
 ```

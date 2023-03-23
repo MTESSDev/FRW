@@ -1,4 +1,4 @@
-# Untitled schema Schema
+# Schéma de Schéma sans nom
 
 ```txt
 https://example.com/schemas/custom#/definitions/ValidationMessages
@@ -6,45 +6,44 @@ https://example.com/schemas/custom#/definitions/ValidationMessages
 
 
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable             | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## ValidationMessages Type
+## Type de ValidationMessages
 
-unknown
+inconnu
 
-# ValidationMessages Properties
+# Propriétés de ValidationMessages
 
-| Property         | Type     | Required | Nullable       | Defined by                                                                                                                                               |
-| :--------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `^[a-zA-Z0-9]+$` | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/ValidationMessages/patternProperties/^\[a-zA-Z0-9]+$") |
+| Propriété        | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                               |
+| :--------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `^[a-zA-Z0-9]+$` | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/ValidationMessages/patternProperties/^\[a-zA-Z0-9]+$") |
 
-## Pattern: `^[a-zA-Z0-9]+$`
+## Modèle:`^[a-zA-Z0-9]+$`
 
 Multilingue
 
 `^[a-zA-Z0-9]+$`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/ValidationMessages/patternProperties/^\[a-zA-Z0-9]+$")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/ValidationMessages/patternProperties/^\[a-zA-Z0-9]+$")
 
-### ^\[a-zA-Z0-9]+$ Type
+### Type de ^\[a-zA-Z0-9]+$
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### ^\[a-zA-Z0-9]+$ Default Value
+### Valeur par défaut de ^\[a-zA-Z0-9]+$
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```

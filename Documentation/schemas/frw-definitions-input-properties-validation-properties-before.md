@@ -1,4 +1,4 @@
-# Untitled schema Schema
+# Schéma de Schéma sans nom
 
 ```txt
 https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/before
@@ -6,16 +6,17 @@ https://example.com/schemas/custom#/definitions/Input/properties/validations/pro
 
 Checks if a date comes before another date. If no date argument is provided the current time will be used. The value must be a Date object or a string that can be evaluated by Date.parse.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable             | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## before Type
+## Type de before
 
 `string`
 
-## before Examples
+## Exemple de before
 
-```json
-"2020-12-31"
+```yaml
+'2020-12-31'
+
 ```

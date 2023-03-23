@@ -1,4 +1,4 @@
-# Untitled schema Schema
+# Schéma de Schéma sans nom
 
 ```txt
 https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/min
@@ -6,24 +6,27 @@ https://example.com/schemas/custom#/definitions/Input/properties/validations/pro
 
 Checks the value of a Number, or length of a String or Array is more than a maximum length or value. The minimum value/length defaults to 1. You can force the validator to evaluate length or value by passing a second argument of either length or value.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable             | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## min Type
+## Type de min
 
-any of the following: `string` or `number` ([Details](frw-definitions-input-properties-validation-properties-min.md))
+l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-validation-properties-min.md))
 
-## min Examples
+## Exemple de min
 
-```json
-"9,length"
+```yaml
+9,length
+
 ```
 
-```json
-"3"
+```yaml
+'3'
+
 ```
 
-```json
-"10,value"
+```yaml
+10,value
+
 ```

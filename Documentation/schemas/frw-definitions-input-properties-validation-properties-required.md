@@ -1,4 +1,4 @@
-# Untitled schema Schema
+# Schéma de Schéma sans nom
 
 ```txt
 https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/required
@@ -6,27 +6,28 @@ https://example.com/schemas/custom#/definitions/Input/properties/validations/pro
 
 Checks if the input is empty.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable             | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## required Type
+## Type de required
 
 `string`
 
-## required Constraints
+## Contraintes de required
 
-**enum**: the value of this property must be equal to one of the following values:
+**énumération**: la valeur de cette propriété doit être égale à l'une des valeurs suivantes:
 
-| Value    | Explanation |
+| Valeur   | Explication |
 | :------- | :---------- |
 | `"trim"` |             |
 | `null`   |             |
 
-## required Default Value
+## Valeur par défaut de required
 
-The default value is:
+La valeur par défaut est:
 
-```json
-"trim"
+```yaml
+trim
+
 ```

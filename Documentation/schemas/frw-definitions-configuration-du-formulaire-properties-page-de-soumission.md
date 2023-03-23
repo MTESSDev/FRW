@@ -1,7 +1,7 @@
 # Schéma de Page de soumission
 
 ```txt
-https://example.com/schemas/custom#/definitions/Soumission
+https://example.com/schemas/custom#/definitions/Config/properties/soumission
 ```
 
 
@@ -10,11 +10,11 @@ https://example.com/schemas/custom#/definitions/Soumission
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de Soumission
+## Type de soumission
 
-`object` ([Page de soumission](frw-definitions-page-de-soumission.md))
+`object` ([Page de soumission](frw-definitions-configuration-du-formulaire-properties-page-de-soumission.md))
 
-# Propriétés de Soumission
+# Propriétés de soumission
 
 | Propriété                                     | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                     |
 | :-------------------------------------------- | :------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |

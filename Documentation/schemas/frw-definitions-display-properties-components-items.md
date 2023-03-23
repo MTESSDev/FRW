@@ -1,4 +1,4 @@
-# Untitled schema Schema
+# Schéma de Schéma sans nom
 
 ```txt
 https://example.com/schemas/custom#/definitions/Display/properties/components/items
@@ -6,16 +6,16 @@ https://example.com/schemas/custom#/definitions/Display/properties/components/it
 
 
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable             | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## items Type
+## Type de items
 
-merged type ([Details](frw-definitions-display-properties-components-items.md))
+type fusionné ([Détails](frw-definitions-display-properties-components-items.md))
 
-any of
+n'importe quel de
 
-*   [Input](frw-definitions-input.md "check type definition")
+*   [Input](frw-definitions-input.md "vérifier la définition du type")
 
-*   [Display](frw-definitions-display.md "check type definition")
+*   [Display](frw-definitions-display.md "vérifier la définition du type")

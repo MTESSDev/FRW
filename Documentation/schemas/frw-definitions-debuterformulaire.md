@@ -1,4 +1,4 @@
-# debuterFormulaire Schema
+# Schéma de debuterFormulaire
 
 ```txt
 https://example.com/schemas/custom#/definitions/DebuterFormulaire
@@ -6,20 +6,20 @@ https://example.com/schemas/custom#/definitions/DebuterFormulaire
 
 Paramètres de la page permettant de débuter un formulaire.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## DebuterFormulaire Type
+## Type de DebuterFormulaire
 
 `object` ([debuterFormulaire](frw-definitions-debuterformulaire.md))
 
-# DebuterFormulaire Properties
+# Propriétés de DebuterFormulaire
 
-| Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                |
-| :-------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [authentifie](#authentifie) | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-debuterformulaire-properties-authentifie.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie") |
-| [anonyme](#anonyme)         | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-debuterformulaire-properties-anonyme.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/anonyme")         |
+| Propriété                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                |
+| :-------------------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [authentifie](#authentifie) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-debuterformulaire-properties-authentifie.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie") |
+| [anonyme](#anonyme)         | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-debuterformulaire-properties-anonyme.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/anonyme")         |
 
 ## authentifie
 
@@ -27,15 +27,15 @@ Paramètres de la page permettant de débuter un formulaire authentifié.
 
 `authentifie`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([authentifie](frw-definitions-debuterformulaire-properties-authentifie.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-debuterformulaire-properties-authentifie.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie")
+*   défini dans: [Schéma sans nom](frw-definitions-debuterformulaire-properties-authentifie.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie")
 
-### authentifie Type
+### Type de authentifie
 
 `object` ([authentifie](frw-definitions-debuterformulaire-properties-authentifie.md))
 
@@ -45,14 +45,14 @@ Paramètres de la page permettant de débuter un formulaire anonyme.
 
 `anonyme`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([anonyme](frw-definitions-debuterformulaire-properties-anonyme.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-debuterformulaire-properties-anonyme.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/anonyme")
+*   défini dans: [Schéma sans nom](frw-definitions-debuterformulaire-properties-anonyme.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/anonyme")
 
-### anonyme Type
+### Type de anonyme
 
 `object` ([anonyme](frw-definitions-debuterformulaire-properties-anonyme.md))

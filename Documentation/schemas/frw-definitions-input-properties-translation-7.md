@@ -1,7 +1,7 @@
 # Schéma de Translation
 
 ```txt
-https://example.com/schemas/custom#/definitions/Tooltip
+https://example.com/schemas/custom#/definitions/Input/properties/tooltip
 ```
 
 
@@ -10,11 +10,11 @@ https://example.com/schemas/custom#/definitions/Tooltip
 | :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de Tooltip
+## Type de tooltip
 
-`object` ([Translation](frw-definitions-translation-1.md))
+`object` ([Translation](frw-definitions-input-properties-translation-7.md))
 
-## Valeur par défaut de Tooltip
+## Valeur par défaut de tooltip
 
 La valeur par défaut est:
 
@@ -24,7 +24,7 @@ en: ''
 
 ```
 
-# Propriétés de Tooltip
+# Propriétés de tooltip
 
 | Propriété                 | Type     | Obligatoire | Nullable         | Défini par                                                                                                                   |
 | :------------------------ | :------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------- |

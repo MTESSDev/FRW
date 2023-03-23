@@ -1,7 +1,7 @@
-# Schéma de object sans titre dans undefined
+# Schéma de Defaults values
 
 ```txt
-https://example.com/schemas/custom#/definitions/Form/properties/templates
+https://example.com/schemas/custom#/definitions/Form/properties/defaults
 ```
 
 
@@ -10,6 +10,16 @@ https://example.com/schemas/custom#/definitions/Form/properties/templates
 | :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
 | Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Type de templates
+## Type de defaults
 
-`object` ([Détails](frw-definitions-form-properties-templates.md))
+`object` ([Defaults values](frw-definitions-form-properties-defaults-values.md))
+
+# Propriétés de defaults
+
+| Propriété                 | Type | Obligatoire | Nullable    | Défini par |
+| :------------------------ | :--- | :---------- | :---------- | :--------- |
+| Propriétés Additionnelles | Any  | Optionnel   | can be null |            |
+
+## Propriétés Additionnelles
+
+D’autres propriétés sont autorisées et n’ont pas à suivre un schéma spécifique

@@ -1,4 +1,4 @@
-# Translation Schema
+# Schéma de Translation
 
 ```txt
 https://example.com/schemas/custom#/definitions/Translation
@@ -6,32 +6,31 @@ https://example.com/schemas/custom#/definitions/Translation
 
 Multilingue
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Translation Type
+## Type de Translation
 
 `object` ([Translation](frw-definitions-translation.md))
 
-## Translation Default Value
+## Valeur par défaut de Translation
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
-# Translation Properties
+# Propriétés de Translation
 
-| Property              | Type     | Required | Nullable    | Defined by                                                                                                                                  |
-| :-------------------- | :------- | :------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
-| [fr](#fr)             | `string` | Required | can be null | [Untitled schema](frw-definitions-translation-properties-fr.md "https://example.com/schemas/custom#/definitions/Translation/properties/fr") |
-| [en](#en)             | `string` | Optional | can be null | [Untitled schema](frw-definitions-translation-properties-en.md "https://example.com/schemas/custom#/definitions/Translation/properties/en") |
-| Additional Properties | Any      | Optional | can be null |                                                                                                                                             |
+| Propriété                 | Type     | Obligatoire | Nullable      | Défini par                                                                                                                                  |
+| :------------------------ | :------- | :---------- | :------------ | :------------------------------------------------------------------------------------------------------------------------------------------ |
+| [fr](#fr)                 | `string` | Obligatoire | peut être nul | [Schéma sans nom](frw-definitions-translation-properties-fr.md "https://example.com/schemas/custom#/definitions/Translation/properties/fr") |
+| [en](#en)                 | `string` | Optionnel   | peut être nul | [Schéma sans nom](frw-definitions-translation-properties-en.md "https://example.com/schemas/custom#/definitions/Translation/properties/en") |
+| Propriétés Additionnelles | Any      | Optionnel   | can be null   |                                                                                                                                             |
 
 ## fr
 
@@ -39,15 +38,15 @@ Texte de langue française.
 
 `fr`
 
-*   is required
+*   est requis
 
 *   Type: `string` ([fr](frw-definitions-translation-properties-fr.md))
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation-properties-fr.md "https://example.com/schemas/custom#/definitions/Translation/properties/fr")
+*   défini dans: [Schéma sans nom](frw-definitions-translation-properties-fr.md "https://example.com/schemas/custom#/definitions/Translation/properties/fr")
 
-### fr Type
+### Type de fr
 
 `string` ([fr](frw-definitions-translation-properties-fr.md))
 
@@ -57,18 +56,18 @@ Texte de langue anglaise.
 
 `en`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string` ([en](frw-definitions-translation-properties-en.md))
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation-properties-en.md "https://example.com/schemas/custom#/definitions/Translation/properties/en")
+*   défini dans: [Schéma sans nom](frw-definitions-translation-properties-en.md "https://example.com/schemas/custom#/definitions/Translation/properties/en")
 
-### en Type
+### Type de en
 
 `string` ([en](frw-definitions-translation-properties-en.md))
 
-## Additional Properties
+## Propriétés Additionnelles
 
-Additional properties are allowed and do not have to follow a specific schema
+D’autres propriétés sont autorisées et n’ont pas à suivre un schéma spécifique

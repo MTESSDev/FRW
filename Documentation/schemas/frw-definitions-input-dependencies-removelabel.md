@@ -1,4 +1,4 @@
-# Untitled schema Schema
+# Schéma de Schéma sans nom
 
 ```txt
 https://example.com/schemas/custom#/definitions/Input/dependencies/removeLabel
@@ -6,19 +6,19 @@ https://example.com/schemas/custom#/definitions/Input/dependencies/removeLabel
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## removeLabel Type
+## Type de removeLabel
 
-unknown
+inconnu
 
-# removeLabel Properties
+# Propriétés de removeLabel
 
-| Property      | Type          | Required | Nullable       | Defined by                                                                                                                                                                            |
-| :------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [type](#type) | Not specified | Optional | cannot be null | [Untitled schema](frw-definitions-input-dependencies-removelabel-properties-type.md "https://example.com/schemas/custom#/definitions/Input/dependencies/removeLabel/properties/type") |
+| Propriété     | Type         | Obligatoire | Nullable         | Défini par                                                                                                                                                                            |
+| :------------ | :----------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [type](#type) | Non spécifié | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-dependencies-removelabel-properties-type.md "https://example.com/schemas/custom#/definitions/Input/dependencies/removeLabel/properties/type") |
 
 ## type
 
@@ -26,23 +26,23 @@ unknown
 
 `type`
 
-*   is optional
+*   est optionnel
 
-*   Type: unknown
+*   Type: inconnu
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-dependencies-removelabel-properties-type.md "https://example.com/schemas/custom#/definitions/Input/dependencies/removeLabel/properties/type")
+*   défini dans: [Schéma sans nom](frw-definitions-input-dependencies-removelabel-properties-type.md "https://example.com/schemas/custom#/definitions/Input/dependencies/removeLabel/properties/type")
 
-### type Type
+### Type de type
 
-unknown
+inconnu
 
-### type Constraints
+### Contraintes de type
 
-**enum**: the value of this property must be equal to one of the following values:
+**énumération**: la valeur de cette propriété doit être égale à l'une des valeurs suivantes:
 
-| Value               | Explanation |
+| Valeur              | Explication |
 | :------------------ | :---------- |
 | `"group"`           |             |
 | `"file"`            |             |

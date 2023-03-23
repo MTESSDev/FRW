@@ -1,4 +1,4 @@
-# erreurTechnique Schema
+# Schéma de erreurTechnique
 
 ```txt
 https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique
@@ -6,20 +6,20 @@ https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechni
 
 Paramètres du message d'erreur technique.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## erreurTechnique Type
+## Type de erreurTechnique
 
 `object` ([erreurTechnique](frw-definitions-messages-properties-erreurtechnique.md))
 
-# erreurTechnique Properties
+# Propriétés de erreurTechnique
 
-| Property        | Type     | Required | Nullable       | Defined by                                                                                                                                               |
-| :-------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [titre](#titre) | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique/properties/titre") |
-| [corps](#corps) | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique/properties/corps") |
+| Propriété       | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                               |
+| :-------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [titre](#titre) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique/properties/titre") |
+| [corps](#corps) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique/properties/corps") |
 
 ## titre
 
@@ -27,27 +27,26 @@ Multilingue
 
 `titre`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique/properties/titre")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique/properties/titre")
 
-### titre Type
+### Type de titre
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### titre Default Value
+### Valeur par défaut de titre
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ## corps
@@ -56,25 +55,24 @@ Multilingue
 
 `corps`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique/properties/corps")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique/properties/corps")
 
-### corps Type
+### Type de corps
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### corps Default Value
+### Valeur par défaut de corps
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```

@@ -1,4 +1,4 @@
-# Code de la fonction Schema
+# Schéma de Code de la fonction
 
 ```txt
 https://example.com/schemas/custom#/definitions/NomFonction/patternProperties/^[a-zA-Z0-9]+$/properties/code
@@ -6,16 +6,17 @@ https://example.com/schemas/custom#/definitions/NomFonction/patternProperties/^[
 
 Doit respecter le format fourni dans l'exemple. Votre code va entre les accolades.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable             | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## code Type
+## Type de code
 
 `string` ([Code de la fonction](frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire-properties-code-de-la-fonction.md))
 
-## code Examples
+## Exemple de code
 
-```json
-"(){return 'bonjour!'}"
+```yaml
+(){return 'bonjour!'}
+
 ```

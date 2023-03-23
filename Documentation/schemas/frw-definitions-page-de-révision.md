@@ -1,4 +1,4 @@
-# Page de révision Schema
+# Schéma de Page de révision
 
 ```txt
 https://example.com/schemas/custom#/definitions/Revision
@@ -6,19 +6,19 @@ https://example.com/schemas/custom#/definitions/Revision
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Revision Type
+## Type de Revision
 
 `object` ([Page de révision](frw-definitions-page-de-révision.md))
 
-# Revision Properties
+# Propriétés de Revision
 
-| Property                                        | Type      | Required | Nullable       | Defined by                                                                                                                                                                          |
-| :---------------------------------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [validationAutomatique](#validationautomatique) | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-page-de-révision-properties-validationautomatique.md "https://example.com/schemas/custom#/definitions/Revision/properties/validationAutomatique") |
+| Propriété                                       | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                          |
+| :---------------------------------------------- | :-------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [validationAutomatique](#validationautomatique) | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-page-de-révision-properties-validationautomatique.md "https://example.com/schemas/custom#/definitions/Revision/properties/validationAutomatique") |
 
 ## validationAutomatique
 
@@ -26,14 +26,14 @@ Indique si la fenêtre modale permettant la saisie d'une adresse courriel pour l
 
 `validationAutomatique`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-page-de-révision-properties-validationautomatique.md "https://example.com/schemas/custom#/definitions/Revision/properties/validationAutomatique")
+*   défini dans: [Schéma sans nom](frw-definitions-page-de-révision-properties-validationautomatique.md "https://example.com/schemas/custom#/definitions/Revision/properties/validationAutomatique")
 
-### validationAutomatique Type
+### Type de validationAutomatique
 
 `boolean`

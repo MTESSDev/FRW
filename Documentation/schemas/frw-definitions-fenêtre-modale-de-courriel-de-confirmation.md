@@ -1,4 +1,4 @@
-# Fenêtre modale de courriel de confirmation Schema
+# Schéma de Fenêtre modale de courriel de confirmation
 
 ```txt
 https://example.com/schemas/custom#/definitions/ModaleCourrielConfirmation
@@ -6,19 +6,19 @@ https://example.com/schemas/custom#/definitions/ModaleCourrielConfirmation
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## ModaleCourrielConfirmation Type
+## Type de ModaleCourrielConfirmation
 
 `object` ([Fenêtre modale de courriel de confirmation](frw-definitions-fenêtre-modale-de-courriel-de-confirmation.md))
 
-# ModaleCourrielConfirmation Properties
+# Propriétés de ModaleCourrielConfirmation
 
-| Property        | Type      | Required | Nullable       | Defined by                                                                                                                                                                                      |
-| :-------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [actif](#actif) | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-fenêtre-modale-de-courriel-de-confirmation-properties-actif.md "https://example.com/schemas/custom#/definitions/ModaleCourrielConfirmation/properties/actif") |
+| Propriété       | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                      |
+| :-------------- | :-------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [actif](#actif) | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-fenêtre-modale-de-courriel-de-confirmation-properties-actif.md "https://example.com/schemas/custom#/definitions/ModaleCourrielConfirmation/properties/actif") |
 
 ## actif
 
@@ -26,14 +26,14 @@ Indique si la fenêtre modale permettant la saisie d'une adresse courriel pour l
 
 `actif`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-fenêtre-modale-de-courriel-de-confirmation-properties-actif.md "https://example.com/schemas/custom#/definitions/ModaleCourrielConfirmation/properties/actif")
+*   défini dans: [Schéma sans nom](frw-definitions-fenêtre-modale-de-courriel-de-confirmation-properties-actif.md "https://example.com/schemas/custom#/definitions/ModaleCourrielConfirmation/properties/actif")
 
-### actif Type
+### Type de actif
 
 `boolean`

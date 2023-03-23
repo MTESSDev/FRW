@@ -1,4 +1,4 @@
-# Form Schema
+# Schéma de Form
 
 ```txt
 https://example.com/schemas/custom#/definitions/Form
@@ -6,24 +6,24 @@ https://example.com/schemas/custom#/definitions/Form
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Form Type
+## Type de Form
 
 `object` ([Form](frw-definitions-form.md))
 
-# Form Properties
+# Propriétés de Form
 
-| Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                      |
-| :------------------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sectionsGroup](#sectionsgroup)             | `array`  | Optional | cannot be null | [Untitled schema](frw-definitions-form-properties-sectionsgroup.md "https://example.com/schemas/custom#/definitions/Form/properties/sectionsGroup")             |
-| [templates](#templates)                     | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-form-properties-templates.md "https://example.com/schemas/custom#/definitions/Form/properties/templates")                     |
-| [title](#title)                             | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Form/properties/title")                                       |
-| [inputDefaultClasses](#inputdefaultclasses) | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-form-properties-inputdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/inputDefaultClasses") |
-| [defaults](#defaults)                       | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-defaults-values.md "https://example.com/schemas/custom#/definitions/Form/properties/defaults")                                |
-| [outerDefaultClasses](#outerdefaultclasses) | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-form-properties-outerdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/outerDefaultClasses") |
+| Propriété                                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                      |
+| :------------------------------------------ | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sectionsGroup](#sectionsgroup)             | `array`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-form-properties-sectionsgroup.md "https://example.com/schemas/custom#/definitions/Form/properties/sectionsGroup")             |
+| [templates](#templates)                     | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-form-properties-templates.md "https://example.com/schemas/custom#/definitions/Form/properties/templates")                     |
+| [title](#title)                             | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Form/properties/title")                                       |
+| [inputDefaultClasses](#inputdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-form-properties-inputdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/inputDefaultClasses") |
+| [defaults](#defaults)                       | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-form-properties-defaults-values.md "https://example.com/schemas/custom#/definitions/Form/properties/defaults")                |
+| [outerDefaultClasses](#outerdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-form-properties-outerdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/outerDefaultClasses") |
 
 ## sectionsGroup
 
@@ -31,15 +31,15 @@ https://example.com/schemas/custom#/definitions/Form
 
 `sectionsGroup`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object[]` ([Section Group](frw-definitions-section-group.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-form-properties-sectionsgroup.md "https://example.com/schemas/custom#/definitions/Form/properties/sectionsGroup")
+*   défini dans: [Schéma sans nom](frw-definitions-form-properties-sectionsgroup.md "https://example.com/schemas/custom#/definitions/Form/properties/sectionsGroup")
 
-### sectionsGroup Type
+### Type de sectionsGroup
 
 `object[]` ([Section Group](frw-definitions-section-group.md))
 
@@ -49,17 +49,17 @@ https://example.com/schemas/custom#/definitions/Form
 
 `templates`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Details](frw-definitions-form-properties-templates.md))
+*   Type: `object` ([Détails](frw-definitions-form-properties-templates.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-form-properties-templates.md "https://example.com/schemas/custom#/definitions/Form/properties/templates")
+*   défini dans: [Schéma sans nom](frw-definitions-form-properties-templates.md "https://example.com/schemas/custom#/definitions/Form/properties/templates")
 
-### templates Type
+### Type de templates
 
-`object` ([Details](frw-definitions-form-properties-templates.md))
+`object` ([Détails](frw-definitions-form-properties-templates.md))
 
 ## title
 
@@ -67,27 +67,26 @@ Multilingue
 
 `title`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Form/properties/title")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Form/properties/title")
 
-### title Type
+### Type de title
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### title Default Value
+### Valeur par défaut de title
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ## inputDefaultClasses
@@ -96,17 +95,17 @@ The default value is:
 
 `inputDefaultClasses`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Details](frw-definitions-form-properties-inputdefaultclasses.md))
+*   Type: `object` ([Détails](frw-definitions-form-properties-inputdefaultclasses.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-form-properties-inputdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/inputDefaultClasses")
+*   défini dans: [Schéma sans nom](frw-definitions-form-properties-inputdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/inputDefaultClasses")
 
-### inputDefaultClasses Type
+### Type de inputDefaultClasses
 
-`object` ([Details](frw-definitions-form-properties-inputdefaultclasses.md))
+`object` ([Détails](frw-definitions-form-properties-inputdefaultclasses.md))
 
 ## defaults
 
@@ -114,17 +113,17 @@ The default value is:
 
 `defaults`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Defaults values](frw-definitions-defaults-values.md))
+*   Type: `object` ([Defaults values](frw-definitions-form-properties-defaults-values.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-defaults-values.md "https://example.com/schemas/custom#/definitions/Form/properties/defaults")
+*   défini dans: [Schéma sans nom](frw-definitions-form-properties-defaults-values.md "https://example.com/schemas/custom#/definitions/Form/properties/defaults")
 
-### defaults Type
+### Type de defaults
 
-`object` ([Defaults values](frw-definitions-defaults-values.md))
+`object` ([Defaults values](frw-definitions-form-properties-defaults-values.md))
 
 ## outerDefaultClasses
 
@@ -132,14 +131,14 @@ The default value is:
 
 `outerDefaultClasses`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Details](frw-definitions-form-properties-outerdefaultclasses.md))
+*   Type: `object` ([Détails](frw-definitions-form-properties-outerdefaultclasses.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-form-properties-outerdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/outerDefaultClasses")
+*   défini dans: [Schéma sans nom](frw-definitions-form-properties-outerdefaultclasses.md "https://example.com/schemas/custom#/definitions/Form/properties/outerDefaultClasses")
 
-### outerDefaultClasses Type
+### Type de outerDefaultClasses
 
-`object` ([Details](frw-definitions-form-properties-outerdefaultclasses.md))
+`object` ([Détails](frw-definitions-form-properties-outerdefaultclasses.md))

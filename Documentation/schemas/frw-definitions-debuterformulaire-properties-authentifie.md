@@ -1,4 +1,4 @@
-# authentifie Schema
+# Schéma de authentifie
 
 ```txt
 https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie
@@ -6,23 +6,23 @@ https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/aut
 
 Paramètres de la page permettant de débuter un formulaire authentifié.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## authentifie Type
+## Type de authentifie
 
 `object` ([authentifie](frw-definitions-debuterformulaire-properties-authentifie.md))
 
-# authentifie Properties
+# Propriétés de authentifie
 
-| Property                                                            | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                  |
-| :------------------------------------------------------------------ | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [actif](#actif)                                                     | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-debuterformulaire-properties-authentifie-properties-actif.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/actif") |
-| [urlAuthentification](#urlauthentification)                         | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/urlAuthentification")                                 |
-| [texte](#texte)                                                     | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/texte")                                               |
-| [boutonDebuter](#boutondebuter)                                     | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/boutonDebuter")                                       |
-| [boutonDebuterTitreAccessibilite](#boutondebutertitreaccessibilite) | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/boutonDebuterTitreAccessibilite")                     |
+| Propriété                                                           | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                  |
+| :------------------------------------------------------------------ | :-------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [actif](#actif)                                                     | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-debuterformulaire-properties-authentifie-properties-actif.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/actif") |
+| [urlAuthentification](#urlauthentification)                         | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/urlAuthentification")                                 |
+| [texte](#texte)                                                     | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/texte")                                               |
+| [boutonDebuter](#boutondebuter)                                     | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/boutonDebuter")                                       |
+| [boutonDebuterTitreAccessibilite](#boutondebutertitreaccessibilite) | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/boutonDebuterTitreAccessibilite")                     |
 
 ## actif
 
@@ -30,15 +30,15 @@ Indique si la page d'initialisation d'un formulaire est active ou non.
 
 `actif`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean` ([actif](frw-definitions-debuterformulaire-properties-authentifie-properties-actif.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-debuterformulaire-properties-authentifie-properties-actif.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/actif")
+*   défini dans: [Schéma sans nom](frw-definitions-debuterformulaire-properties-authentifie-properties-actif.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/actif")
 
-### actif Type
+### Type de actif
 
 `boolean` ([actif](frw-definitions-debuterformulaire-properties-authentifie-properties-actif.md))
 
@@ -48,27 +48,26 @@ Multilingue
 
 `urlAuthentification`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/urlAuthentification")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/urlAuthentification")
 
-### urlAuthentification Type
+### Type de urlAuthentification
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### urlAuthentification Default Value
+### Valeur par défaut de urlAuthentification
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ## texte
@@ -77,27 +76,26 @@ Multilingue
 
 `texte`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/texte")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/texte")
 
-### texte Type
+### Type de texte
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### texte Default Value
+### Valeur par défaut de texte
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ## boutonDebuter
@@ -106,27 +104,26 @@ Multilingue
 
 `boutonDebuter`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/boutonDebuter")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/boutonDebuter")
 
-### boutonDebuter Type
+### Type de boutonDebuter
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### boutonDebuter Default Value
+### Valeur par défaut de boutonDebuter
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ## boutonDebuterTitreAccessibilite
@@ -135,25 +132,24 @@ Multilingue
 
 `boutonDebuterTitreAccessibilite`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/boutonDebuterTitreAccessibilite")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie/properties/boutonDebuterTitreAccessibilite")
 
-### boutonDebuterTitreAccessibilite Type
+### Type de boutonDebuterTitreAccessibilite
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### boutonDebuterTitreAccessibilite Default Value
+### Valeur par défaut de boutonDebuterTitreAccessibilite
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```

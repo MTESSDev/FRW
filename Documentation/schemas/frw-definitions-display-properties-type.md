@@ -1,4 +1,4 @@
-# Untitled string in undefined Schema
+# Schéma de string sans titre dans undefined
 
 ```txt
 https://example.com/schemas/custom#/definitions/Display/properties/type
@@ -6,40 +6,47 @@ https://example.com/schemas/custom#/definitions/Display/properties/type
 
 Types from custom templates list.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable             | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## type Type
+## Type de type
 
 `string`
 
-## type Examples
+## Exemple de type
 
-```json
-"inline"
+```yaml
+inline
+
 ```
 
-```json
-"dynamic"
+```yaml
+dynamic
+
 ```
 
-```json
-"bandeau"
+```yaml
+bandeau
+
 ```
 
-```json
-"bandeau-notification"
+```yaml
+bandeau-notification
+
 ```
 
-```json
-"image"
+```yaml
+image
+
 ```
 
-```json
-"avis"
+```yaml
+avis
+
 ```
 
-```json
-"accordeon"
+```yaml
+accordeon
+
 ```

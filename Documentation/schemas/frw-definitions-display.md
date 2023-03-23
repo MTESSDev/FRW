@@ -1,4 +1,4 @@
-# Display Schema
+# Schéma de Display
 
 ```txt
 https://example.com/schemas/custom#/definitions/Display
@@ -6,30 +6,30 @@ https://example.com/schemas/custom#/definitions/Display
 
 Display component
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Display Type
+## Type de Display
 
 `object` ([Display](frw-definitions-display.md))
 
-# Display Properties
+# Propriétés de Display
 
-| Property                              | Type      | Required | Nullable       | Defined by                                                                                                                                                      |
-| :------------------------------------ | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [type](#type)                         | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-display-properties-type.md "https://example.com/schemas/custom#/definitions/Display/properties/type")                         |
-| [classes](#classes)                   | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-display-properties-classes.md "https://example.com/schemas/custom#/definitions/Display/properties/classes")                   |
-| [afficherBlocCode](#afficherbloccode) | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-display-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Display/properties/afficherBlocCode") |
-| [tag](#tag)                           | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-display-properties-tag.md "https://example.com/schemas/custom#/definitions/Display/properties/tag")                           |
-| [src](#src)                           | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/src")                                      |
-| [base64](#base64)                     | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/base64")                                   |
-| [text](#text)                         | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/text")                                     |
-| [title](#title)                       | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/title")                                    |
-| [additionals](#additionals)           | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-display-properties-additionals.md "https://example.com/schemas/custom#/definitions/Display/properties/additionals")           |
-| [alt](#alt)                           | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/alt")                                      |
-| [v-if](#v-if)                         | `string`  | Optional | cannot be null | [Untitled schema](frw-definitions-display-properties-v-if.md "https://example.com/schemas/custom#/definitions/Display/properties/v-if")                         |
-| [components](#components)             | `array`   | Optional | cannot be null | [Untitled schema](frw-definitions-display-properties-components.md "https://example.com/schemas/custom#/definitions/Display/properties/components")             |
+| Propriété                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                      |
+| :------------------------------------ | :-------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [type](#type)                         | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-type.md "https://example.com/schemas/custom#/definitions/Display/properties/type")                         |
+| [classes](#classes)                   | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-classes.md "https://example.com/schemas/custom#/definitions/Display/properties/classes")                   |
+| [afficherBlocCode](#afficherbloccode) | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Display/properties/afficherBlocCode") |
+| [tag](#tag)                           | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-tag.md "https://example.com/schemas/custom#/definitions/Display/properties/tag")                           |
+| [src](#src)                           | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/src")                                      |
+| [base64](#base64)                     | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/base64")                                   |
+| [text](#text)                         | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/text")                                     |
+| [title](#title)                       | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/title")                                    |
+| [additionals](#additionals)           | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-additionals.md "https://example.com/schemas/custom#/definitions/Display/properties/additionals")           |
+| [alt](#alt)                           | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/alt")                                      |
+| [v-if](#v-if)                         | `string`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-v-if.md "https://example.com/schemas/custom#/definitions/Display/properties/v-if")                         |
+| [components](#components)             | `array`   | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-display-properties-components.md "https://example.com/schemas/custom#/definitions/Display/properties/components")             |
 
 ## type
 
@@ -37,46 +37,53 @@ Types from custom templates list.
 
 `type`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-display-properties-type.md "https://example.com/schemas/custom#/definitions/Display/properties/type")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-type.md "https://example.com/schemas/custom#/definitions/Display/properties/type")
 
-### type Type
+### Type de type
 
 `string`
 
-### type Examples
+### Exemple de type
 
-```json
-"inline"
+```yaml
+inline
+
 ```
 
-```json
-"dynamic"
+```yaml
+dynamic
+
 ```
 
-```json
-"bandeau"
+```yaml
+bandeau
+
 ```
 
-```json
-"bandeau-notification"
+```yaml
+bandeau-notification
+
 ```
 
-```json
-"image"
+```yaml
+image
+
 ```
 
-```json
-"avis"
+```yaml
+avis
+
 ```
 
-```json
-"accordeon"
+```yaml
+accordeon
+
 ```
 
 ## classes
@@ -85,15 +92,15 @@ Types from custom templates list.
 
 `classes`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-display-properties-classes.md "https://example.com/schemas/custom#/definitions/Display/properties/classes")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-classes.md "https://example.com/schemas/custom#/definitions/Display/properties/classes")
 
-### classes Type
+### Type de classes
 
 `string`
 
@@ -103,15 +110,15 @@ Indique si le bloc de code utilisé pour générer le contrôle est affiché sou
 
 `afficherBlocCode`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean` ([afficherBlocCode](frw-definitions-display-properties-afficherbloccode.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-display-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Display/properties/afficherBlocCode")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Display/properties/afficherBlocCode")
 
-### afficherBlocCode Type
+### Type de afficherBlocCode
 
 `boolean` ([afficherBlocCode](frw-definitions-display-properties-afficherbloccode.md))
 
@@ -121,15 +128,15 @@ Indique si le bloc de code utilisé pour générer le contrôle est affiché sou
 
 `tag`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-display-properties-tag.md "https://example.com/schemas/custom#/definitions/Display/properties/tag")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-tag.md "https://example.com/schemas/custom#/definitions/Display/properties/tag")
 
-### tag Type
+### Type de tag
 
 `string`
 
@@ -139,27 +146,26 @@ Multilingue
 
 `src`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/src")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/src")
 
-### src Type
+### Type de src
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### src Default Value
+### Valeur par défaut de src
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ## base64
@@ -168,27 +174,26 @@ Multilingue
 
 `base64`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/base64")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/base64")
 
-### base64 Type
+### Type de base64
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### base64 Default Value
+### Valeur par défaut de base64
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ## text
@@ -197,27 +202,26 @@ Multilingue
 
 `text`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/text")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/text")
 
-### text Type
+### Type de text
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### text Default Value
+### Valeur par défaut de text
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ## title
@@ -226,27 +230,26 @@ Multilingue
 
 `title`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/title")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/title")
 
-### title Type
+### Type de title
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### title Default Value
+### Valeur par défaut de title
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ## additionals
@@ -255,17 +258,17 @@ The default value is:
 
 `additionals`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Details](frw-definitions-display-properties-additionals.md))
+*   Type: `object` ([Détails](frw-definitions-display-properties-additionals.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-display-properties-additionals.md "https://example.com/schemas/custom#/definitions/Display/properties/additionals")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-additionals.md "https://example.com/schemas/custom#/definitions/Display/properties/additionals")
 
-### additionals Type
+### Type de additionals
 
-`object` ([Details](frw-definitions-display-properties-additionals.md))
+`object` ([Détails](frw-definitions-display-properties-additionals.md))
 
 ## alt
 
@@ -273,27 +276,26 @@ Multilingue
 
 `alt`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/alt")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Display/properties/alt")
 
-### alt Type
+### Type de alt
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### alt Default Value
+### Valeur par défaut de alt
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ## v-if
@@ -302,15 +304,15 @@ Conditionnal display on another property/form field.
 
 `v-if`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-display-properties-v-if.md "https://example.com/schemas/custom#/definitions/Display/properties/v-if")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-v-if.md "https://example.com/schemas/custom#/definitions/Display/properties/v-if")
 
-### v-if Type
+### Type de v-if
 
 `string`
 
@@ -320,14 +322,14 @@ Conditionnal display on another property/form field.
 
 `components`
 
-*   is optional
+*   est optionnel
 
-*   Type: an array of merged types ([Details](frw-definitions-display-properties-components-items.md))
+*   Type: an array of merged types ([Détails](frw-definitions-display-properties-components-items.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-display-properties-components.md "https://example.com/schemas/custom#/definitions/Display/properties/components")
+*   défini dans: [Schéma sans nom](frw-definitions-display-properties-components.md "https://example.com/schemas/custom#/definitions/Display/properties/components")
 
-### components Type
+### Type de components
 
-an array of merged types ([Details](frw-definitions-display-properties-components-items.md))
+an array of merged types ([Détails](frw-definitions-display-properties-components-items.md))

@@ -1,4 +1,4 @@
-# EcsForm Schema
+# Schéma de EcsForm
 
 ```txt
 https://example.com/schemas/custom#/definitions/EcsForm
@@ -6,22 +6,22 @@ https://example.com/schemas/custom#/definitions/EcsForm
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## EcsForm Type
+## Type de EcsForm
 
 `object` ([EcsForm](frw-definitions-ecsform.md))
 
-# EcsForm Properties
+# Propriétés de EcsForm
 
-| Property                                                                              | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                      |
-| :------------------------------------------------------------------------------------ | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [afficherMessageSauvegardeCourrielReprise](#affichermessagesauvegardecourrielreprise) | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-ecsform-properties-affichermessagesauvegardecourrielreprise.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/afficherMessageSauvegardeCourrielReprise") |
-| [form](#form)                                                                         | `object`  | Required | cannot be null | [Untitled schema](frw-definitions-form.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/form")                                                                                            |
-| [config](#config)                                                                     | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-configuration-du-formulaire.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/config")                                                                   |
-| [textes](#textes)                                                                     | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-ecsform-properties-textes.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/textes")                                                                     |
+| Propriété                                                                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                      |
+| :------------------------------------------------------------------------------------ | :-------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [afficherMessageSauvegardeCourrielReprise](#affichermessagesauvegardecourrielreprise) | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-ecsform-properties-affichermessagesauvegardecourrielreprise.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/afficherMessageSauvegardeCourrielReprise") |
+| [form](#form)                                                                         | `object`  | Obligatoire | ne peut être nul | [Schéma sans nom](frw-definitions-form.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/form")                                                                                            |
+| [config](#config)                                                                     | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/config")                                                                   |
+| [textes](#textes)                                                                     | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-ecsform-properties-textes.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/textes")                                                                     |
 
 ## afficherMessageSauvegardeCourrielReprise
 
@@ -29,15 +29,15 @@ DEPRECATED (Utiliser maintenant enregistrement.afficherMessageIncitatif)
 
 `afficherMessageSauvegardeCourrielReprise`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-ecsform-properties-affichermessagesauvegardecourrielreprise.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/afficherMessageSauvegardeCourrielReprise")
+*   défini dans: [Schéma sans nom](frw-definitions-ecsform-properties-affichermessagesauvegardecourrielreprise.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/afficherMessageSauvegardeCourrielReprise")
 
-### afficherMessageSauvegardeCourrielReprise Type
+### Type de afficherMessageSauvegardeCourrielReprise
 
 `boolean`
 
@@ -47,15 +47,15 @@ DEPRECATED (Utiliser maintenant enregistrement.afficherMessageIncitatif)
 
 `form`
 
-*   is required
+*   est requis
 
 *   Type: `object` ([Form](frw-definitions-form.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-form.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/form")
+*   défini dans: [Schéma sans nom](frw-definitions-form.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/form")
 
-### form Type
+### Type de form
 
 `object` ([Form](frw-definitions-form.md))
 
@@ -65,15 +65,15 @@ DEPRECATED (Utiliser maintenant enregistrement.afficherMessageIncitatif)
 
 `config`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Configuration du formulaire](frw-definitions-configuration-du-formulaire.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-configuration-du-formulaire.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/config")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/config")
 
-### config Type
+### Type de config
 
 `object` ([Configuration du formulaire](frw-definitions-configuration-du-formulaire.md))
 
@@ -83,14 +83,14 @@ DEPRECATED (Utiliser maintenant enregistrement.afficherMessageIncitatif)
 
 `textes`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Details](frw-definitions-ecsform-properties-textes.md))
+*   Type: `object` ([Détails](frw-definitions-ecsform-properties-textes.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-ecsform-properties-textes.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/textes")
+*   défini dans: [Schéma sans nom](frw-definitions-ecsform-properties-textes.md "https://example.com/schemas/custom#/definitions/EcsForm/properties/textes")
 
-### textes Type
+### Type de textes
 
-`object` ([Details](frw-definitions-ecsform-properties-textes.md))
+`object` ([Détails](frw-definitions-ecsform-properties-textes.md))

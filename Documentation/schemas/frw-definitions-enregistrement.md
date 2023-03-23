@@ -1,4 +1,4 @@
-# enregistrement Schema
+# Schéma de enregistrement
 
 ```txt
 https://example.com/schemas/custom#/definitions/Enregistrement
@@ -6,21 +6,21 @@ https://example.com/schemas/custom#/definitions/Enregistrement
 
 Paramètres associés à l'enregistrement d'un formulaire
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Enregistrement Type
+## Type de Enregistrement
 
 `object` ([enregistrement](frw-definitions-enregistrement.md))
 
-# Enregistrement Properties
+# Propriétés de Enregistrement
 
-| Property                                                                      | Type      | Required | Nullable       | Defined by                                                                                                                                                                                    |
-| :---------------------------------------------------------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [actif](#actif)                                                               | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-enregistrement-properties-actif.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/actif")                                       |
-| [afficherMessageIncitatif](#affichermessageincitatif)                         | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-enregistrement-properties-affichermessageincitatif.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/afficherMessageIncitatif") |
-| [texteModaleEnregistrementAuthentifie](#textemodaleenregistrementauthentifie) | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/texteModaleEnregistrementAuthentifie")                            |
+| Propriété                                                                     | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                    |
+| :---------------------------------------------------------------------------- | :-------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [actif](#actif)                                                               | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-enregistrement-properties-actif.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/actif")                                       |
+| [afficherMessageIncitatif](#affichermessageincitatif)                         | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-enregistrement-properties-affichermessageincitatif.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/afficherMessageIncitatif") |
+| [texteModaleEnregistrementAuthentifie](#textemodaleenregistrementauthentifie) | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/texteModaleEnregistrementAuthentifie")                            |
 
 ## actif
 
@@ -28,15 +28,15 @@ Indique si l'enregistrement du formulaire est actif (bouton enregistré présent
 
 `actif`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean` ([actif](frw-definitions-enregistrement-properties-actif.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-enregistrement-properties-actif.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/actif")
+*   défini dans: [Schéma sans nom](frw-definitions-enregistrement-properties-actif.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/actif")
 
-### actif Type
+### Type de actif
 
 `boolean` ([actif](frw-definitions-enregistrement-properties-actif.md))
 
@@ -46,15 +46,15 @@ Indique si le message (avis avertissement en haut de chaque page) incitant l'enr
 
 `afficherMessageIncitatif`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean` ([afficherMessageIncitatif](frw-definitions-enregistrement-properties-affichermessageincitatif.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-enregistrement-properties-affichermessageincitatif.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/afficherMessageIncitatif")
+*   défini dans: [Schéma sans nom](frw-definitions-enregistrement-properties-affichermessageincitatif.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/afficherMessageIncitatif")
 
-### afficherMessageIncitatif Type
+### Type de afficherMessageIncitatif
 
 `boolean` ([afficherMessageIncitatif](frw-definitions-enregistrement-properties-affichermessageincitatif.md))
 
@@ -64,25 +64,24 @@ Multilingue
 
 `texteModaleEnregistrementAuthentifie`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/texteModaleEnregistrementAuthentifie")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Enregistrement/properties/texteModaleEnregistrementAuthentifie")
 
-### texteModaleEnregistrementAuthentifie Type
+### Type de texteModaleEnregistrementAuthentifie
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### texteModaleEnregistrementAuthentifie Default Value
+### Valeur par défaut de texteModaleEnregistrementAuthentifie
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```

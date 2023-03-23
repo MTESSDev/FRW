@@ -1,4 +1,4 @@
-# Untitled string in undefined Schema
+# Schéma de string sans titre dans undefined
 
 ```txt
 https://example.com/schemas/custom#/definitions/Input/properties/type
@@ -6,19 +6,19 @@ https://example.com/schemas/custom#/definitions/Input/properties/type
 
 Required. The type of input element. See the input library for a full range of options.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable             | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## type Type
+## Type de type
 
 `string`
 
-## type Constraints
+## Contraintes de type
 
-**enum**: the value of this property must be equal to one of the following values:
+**énumération**: la valeur de cette propriété doit être égale à l'une des valeurs suivantes:
 
-| Value                    | Explanation |
+| Valeur                   | Explication |
 | :----------------------- | :---------- |
 | `"listeDeroulante"`      |             |
 | `"text"`                 |             |
@@ -54,10 +54,11 @@ Required. The type of input element. See the input library for a full range of o
 | `"url"`                  |             |
 | `"week"`                 |             |
 
-## type Default Value
+## Valeur par défaut de type
 
-The default value is:
+La valeur par défaut est:
 
-```json
-"text"
+```yaml
+text
+
 ```

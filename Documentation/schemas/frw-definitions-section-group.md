@@ -1,4 +1,4 @@
-# Section Group Schema
+# Schéma de Section Group
 
 ```txt
 https://example.com/schemas/custom#/definitions/SectionsGroup
@@ -6,23 +6,23 @@ https://example.com/schemas/custom#/definitions/SectionsGroup
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## SectionsGroup Type
+## Type de SectionsGroup
 
 `object` ([Section Group](frw-definitions-section-group.md))
 
-# SectionsGroup Properties
+# Propriétés de SectionsGroup
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                  |
-| :---------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sections](#sections)         | `array`  | Optional | cannot be null | [Untitled schema](frw-definitions-section-group-properties-sections.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sections") |
-| [prefixId](#prefixid)         | `string` | Optional | cannot be null | [Untitled schema](frw-definitions-section-group-properties-prefixid.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/prefixId") |
-| [classes](#classes)           | `string` | Optional | cannot be null | [Untitled schema](frw-definitions-section-group-properties-classes.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/classes")   |
-| [v-if](#v-if)                 | `string` | Optional | cannot be null | [Untitled schema](frw-definitions-section-group-properties-v-if.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/v-if")         |
-| [sectionGroup](#sectiongroup) | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sectionGroup")                   |
+| Propriété                     | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                  |
+| :---------------------------- | :------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sections](#sections)         | `array`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-group-properties-sections.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sections") |
+| [prefixId](#prefixid)         | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-group-properties-prefixid.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/prefixId") |
+| [classes](#classes)           | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-group-properties-classes.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/classes")   |
+| [v-if](#v-if)                 | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-group-properties-v-if.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/v-if")         |
+| [sectionGroup](#sectiongroup) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sectionGroup")                   |
 
 ## sections
 
@@ -30,15 +30,15 @@ https://example.com/schemas/custom#/definitions/SectionsGroup
 
 `sections`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object[]` ([Section](frw-definitions-section.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-section-group-properties-sections.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sections")
+*   défini dans: [Schéma sans nom](frw-definitions-section-group-properties-sections.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sections")
 
-### sections Type
+### Type de sections
 
 `object[]` ([Section](frw-definitions-section.md))
 
@@ -48,15 +48,15 @@ https://example.com/schemas/custom#/definitions/SectionsGroup
 
 `prefixId`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-section-group-properties-prefixid.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/prefixId")
+*   défini dans: [Schéma sans nom](frw-definitions-section-group-properties-prefixid.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/prefixId")
 
-### prefixId Type
+### Type de prefixId
 
 `string`
 
@@ -66,15 +66,15 @@ https://example.com/schemas/custom#/definitions/SectionsGroup
 
 `classes`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-section-group-properties-classes.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/classes")
+*   défini dans: [Schéma sans nom](frw-definitions-section-group-properties-classes.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/classes")
 
-### classes Type
+### Type de classes
 
 `string`
 
@@ -84,15 +84,15 @@ Conditionnal display on another property/form field.
 
 `v-if`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-section-group-properties-v-if.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/v-if")
+*   défini dans: [Schéma sans nom](frw-definitions-section-group-properties-v-if.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/v-if")
 
-### v-if Type
+### Type de v-if
 
 `string`
 
@@ -102,25 +102,24 @@ Multilingue
 
 `sectionGroup`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sectionGroup")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sectionGroup")
 
-### sectionGroup Type
+### Type de sectionGroup
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### sectionGroup Default Value
+### Valeur par défaut de sectionGroup
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```

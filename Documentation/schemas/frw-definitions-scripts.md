@@ -1,4 +1,4 @@
-# scripts Schema
+# Schéma de scripts
 
 ```txt
 https://example.com/schemas/custom#/definitions/Scripts
@@ -6,19 +6,19 @@ https://example.com/schemas/custom#/definitions/Scripts
 
 (Avancé) Paramètres d'injection de javascript.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Scripts Type
+## Type de Scripts
 
 `object` ([scripts](frw-definitions-scripts.md))
 
-# Scripts Properties
+# Propriétés de Scripts
 
-| Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                                        |
-| :-------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [outilStatistiques](#outilstatistiques) | `string` | Optional | cannot be null | [Untitled schema](frw-definitions-scripts-properties-outilstatistiques.md "https://example.com/schemas/custom#/definitions/Scripts/properties/outilStatistiques") |
+| Propriété                               | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                        |
+| :-------------------------------------- | :------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [outilStatistiques](#outilstatistiques) | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-scripts-properties-outilstatistiques.md "https://example.com/schemas/custom#/definitions/Scripts/properties/outilStatistiques") |
 
 ## outilStatistiques
 
@@ -26,20 +26,21 @@ Javascript servant à une solution d'outil statistiques (ex. Google Analytics ou
 
 `outilStatistiques`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string` ([outilStatistiques](frw-definitions-scripts-properties-outilstatistiques.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-scripts-properties-outilstatistiques.md "https://example.com/schemas/custom#/definitions/Scripts/properties/outilStatistiques")
+*   défini dans: [Schéma sans nom](frw-definitions-scripts-properties-outilstatistiques.md "https://example.com/schemas/custom#/definitions/Scripts/properties/outilStatistiques")
 
-### outilStatistiques Type
+### Type de outilStatistiques
 
 `string` ([outilStatistiques](frw-definitions-scripts-properties-outilstatistiques.md))
 
-### outilStatistiques Examples
+### Exemple de outilStatistiques
 
-```json
-"<script> // Votre js ici... </script>"
+```yaml
+<script> // Votre js ici... </script>
+
 ```

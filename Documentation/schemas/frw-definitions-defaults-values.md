@@ -1,4 +1,4 @@
-# Defaults values Schema
+# Schéma de Defaults values
 
 ```txt
 https://example.com/schemas/custom#/definitions/Defaults
@@ -6,20 +6,20 @@ https://example.com/schemas/custom#/definitions/Defaults
 
 
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable             | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Defaults Type
+## Type de Defaults
 
 `object` ([Defaults values](frw-definitions-defaults-values.md))
 
-# Defaults Properties
+# Propriétés de Defaults
 
-| Property              | Type | Required | Nullable    | Defined by |
-| :-------------------- | :--- | :------- | :---------- | :--------- |
-| Additional Properties | Any  | Optional | can be null |            |
+| Propriété                 | Type | Obligatoire | Nullable    | Défini par |
+| :------------------------ | :--- | :---------- | :---------- | :--------- |
+| Propriétés Additionnelles | Any  | Optionnel   | can be null |            |
 
-## Additional Properties
+## Propriétés Additionnelles
 
-Additional properties are allowed and do not have to follow a specific schema
+D’autres propriétés sont autorisées et n’ont pas à suivre un schéma spécifique

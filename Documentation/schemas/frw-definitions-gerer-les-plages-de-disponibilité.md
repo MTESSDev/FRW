@@ -1,4 +1,4 @@
-# Gerer les plages de disponibilité Schema
+# Schéma de Gerer les plages de disponibilité
 
 ```txt
 https://example.com/schemas/custom#/definitions/GererPlageDisponibilite
@@ -6,22 +6,22 @@ https://example.com/schemas/custom#/definitions/GererPlageDisponibilite
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## GererPlageDisponibilite Type
+## Type de GererPlageDisponibilite
 
 `object` ([Gerer les plages de disponibilité](frw-definitions-gerer-les-plages-de-disponibilité.md))
 
-# GererPlageDisponibilite Properties
+# Propriétés de GererPlageDisponibilite
 
-| Property                                              | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                |
-| :---------------------------------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [actif](#actif)                                       | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité-properties-actif.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/actif")                                       |
-| [joursOuvrablesUniquement](#joursouvrablesuniquement) | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité-properties-joursouvrablesuniquement.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/joursOuvrablesUniquement") |
-| [nombreConvois](#nombreconvois)                       | `integer` | Optional | cannot be null | [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité-properties-nombreconvois.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/nombreConvois")                       |
-| [plages](#plages)                                     | `array`   | Optional | cannot be null | [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité-properties-plages.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/plages")                                     |
+| Propriété                                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                                |
+| :---------------------------------------------------- | :-------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [actif](#actif)                                       | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-actif.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/actif")                                       |
+| [joursOuvrablesUniquement](#joursouvrablesuniquement) | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-joursouvrablesuniquement.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/joursOuvrablesUniquement") |
+| [nombreConvois](#nombreconvois)                       | `integer` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-nombreconvois.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/nombreConvois")                       |
+| [plages](#plages)                                     | `array`   | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-plages.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/plages")                                     |
 
 ## actif
 
@@ -29,15 +29,15 @@ https://example.com/schemas/custom#/definitions/GererPlageDisponibilite
 
 `actif`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité-properties-actif.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/actif")
+*   défini dans: [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-actif.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/actif")
 
-### actif Type
+### Type de actif
 
 `boolean`
 
@@ -47,15 +47,15 @@ https://example.com/schemas/custom#/definitions/GererPlageDisponibilite
 
 `joursOuvrablesUniquement`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité-properties-joursouvrablesuniquement.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/joursOuvrablesUniquement")
+*   défini dans: [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-joursouvrablesuniquement.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/joursOuvrablesUniquement")
 
-### joursOuvrablesUniquement Type
+### Type de joursOuvrablesUniquement
 
 `boolean`
 
@@ -65,15 +65,15 @@ https://example.com/schemas/custom#/definitions/GererPlageDisponibilite
 
 `nombreConvois`
 
-*   is optional
+*   est optionnel
 
 *   Type: `integer`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité-properties-nombreconvois.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/nombreConvois")
+*   défini dans: [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-nombreconvois.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/nombreConvois")
 
-### nombreConvois Type
+### Type de nombreConvois
 
 `integer`
 
@@ -83,14 +83,14 @@ https://example.com/schemas/custom#/definitions/GererPlageDisponibilite
 
 `plages`
 
-*   is optional
+*   est optionnel
 
 *   Type: `array`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité-properties-plages.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/plages")
+*   défini dans: [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité-properties-plages.md "https://example.com/schemas/custom#/definitions/GererPlageDisponibilite/properties/plages")
 
-### plages Type
+### Type de plages
 
 `array`

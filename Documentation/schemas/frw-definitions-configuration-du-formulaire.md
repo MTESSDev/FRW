@@ -1,4 +1,4 @@
-# Configuration du formulaire Schema
+# Schéma de Configuration du formulaire
 
 ```txt
 https://example.com/schemas/custom#/definitions/Config
@@ -6,35 +6,35 @@ https://example.com/schemas/custom#/definitions/Config
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Config Type
+## Type de Config
 
 `object` ([Configuration du formulaire](frw-definitions-configuration-du-formulaire.md))
 
-# Config Properties
+# Propriétés de Config
 
-| Property                                              | Type      | Required | Nullable       | Defined by                                                                                                                                                                               |
-| :---------------------------------------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [afficherBlocCode](#afficherbloccode)                 | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-configuration-du-formulaire-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Config/properties/afficherBlocCode")       |
-| [afficherPartagePage](#afficherpartagepage)           | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-configuration-du-formulaire-properties-afficherpartagepage.md "https://example.com/schemas/custom#/definitions/Config/properties/afficherPartagePage") |
-| [confirmationTransmission](#confirmationtransmission) | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-confirmation-de-transmission.md "https://example.com/schemas/custom#/definitions/Config/properties/confirmationTransmission")                          |
-| [courrielReprise](#courrielreprise)                   | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-courrielreprise.md "https://example.com/schemas/custom#/definitions/Config/properties/courrielReprise")                                                |
-| [debuterFormulaire](#debuterformulaire)               | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-debuterformulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/debuterFormulaire")                                            |
-| [enregistrement](#enregistrement)                     | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-enregistrement.md "https://example.com/schemas/custom#/definitions/Config/properties/enregistrement")                                                  |
-| [formulaireUnilingue](#formulaireunilingue)           | `boolean` | Optional | cannot be null | [Untitled schema](frw-definitions-configuration-du-formulaire-properties-formulaireunilingue.md "https://example.com/schemas/custom#/definitions/Config/properties/formulaireUnilingue") |
-| [gererPlageDisponibilite](#gererplagedisponibilite)   | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité.md "https://example.com/schemas/custom#/definitions/Config/properties/gererPlageDisponibilite")                      |
-| [injecterJs](#injecterjs)                             | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-scripts-vuejs-à-injecter-au-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/injecterJs")                              |
-| [messages](#messages)                                 | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-messages.md "https://example.com/schemas/custom#/definitions/Config/properties/messages")                                                              |
-| [pages](#pages)                                       | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-pages.md "https://example.com/schemas/custom#/definitions/Config/properties/pages")                                                                    |
-| [piv](#piv)                                           | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-configuration-du-formulaire-properties-piv.md "https://example.com/schemas/custom#/definitions/Config/properties/piv")                                 |
-| [revision](#revision)                                 | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-page-de-révision.md "https://example.com/schemas/custom#/definitions/Config/properties/revision")                                                      |
-| [scripts](#scripts)                                   | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-scripts.md "https://example.com/schemas/custom#/definitions/Config/properties/scripts")                                                                |
-| [securite](#securite)                                 | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-sécurité-du-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/securite")                                                |
-| [soumission](#soumission)                             | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-page-de-soumission.md "https://example.com/schemas/custom#/definitions/Config/properties/soumission")                                                  |
-| [title](#title)                                       | `object`  | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Config/properties/title")                                                              |
+| Propriété                                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                               |
+| :---------------------------------------------------- | :-------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [afficherBlocCode](#afficherbloccode)                 | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Config/properties/afficherBlocCode")       |
+| [afficherPartagePage](#afficherpartagepage)           | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-afficherpartagepage.md "https://example.com/schemas/custom#/definitions/Config/properties/afficherPartagePage") |
+| [confirmationTransmission](#confirmationtransmission) | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-confirmation-de-transmission.md "https://example.com/schemas/custom#/definitions/Config/properties/confirmationTransmission")                          |
+| [courrielReprise](#courrielreprise)                   | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-courrielreprise.md "https://example.com/schemas/custom#/definitions/Config/properties/courrielReprise")                                                |
+| [debuterFormulaire](#debuterformulaire)               | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-debuterformulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/debuterFormulaire")                                            |
+| [enregistrement](#enregistrement)                     | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-enregistrement.md "https://example.com/schemas/custom#/definitions/Config/properties/enregistrement")                                                  |
+| [formulaireUnilingue](#formulaireunilingue)           | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-formulaireunilingue.md "https://example.com/schemas/custom#/definitions/Config/properties/formulaireUnilingue") |
+| [gererPlageDisponibilite](#gererplagedisponibilite)   | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité.md "https://example.com/schemas/custom#/definitions/Config/properties/gererPlageDisponibilite")                      |
+| [injecterJs](#injecterjs)                             | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-scripts-vuejs-à-injecter-au-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/injecterJs")                              |
+| [messages](#messages)                                 | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-messages.md "https://example.com/schemas/custom#/definitions/Config/properties/messages")                                                              |
+| [pages](#pages)                                       | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-pages.md "https://example.com/schemas/custom#/definitions/Config/properties/pages")                                                                    |
+| [piv](#piv)                                           | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-piv.md "https://example.com/schemas/custom#/definitions/Config/properties/piv")                                 |
+| [revision](#revision)                                 | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-page-de-révision.md "https://example.com/schemas/custom#/definitions/Config/properties/revision")                                                      |
+| [scripts](#scripts)                                   | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-scripts.md "https://example.com/schemas/custom#/definitions/Config/properties/scripts")                                                                |
+| [securite](#securite)                                 | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-sécurité-du-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/securite")                                                |
+| [soumission](#soumission)                             | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-page-de-soumission.md "https://example.com/schemas/custom#/definitions/Config/properties/soumission")           |
+| [title](#title)                                       | `object`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Config/properties/title")                                                              |
 
 ## afficherBlocCode
 
@@ -42,15 +42,15 @@ https://example.com/schemas/custom#/definitions/Config
 
 `afficherBlocCode`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean` ([afficherBlocCode](frw-definitions-configuration-du-formulaire-properties-afficherbloccode.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-configuration-du-formulaire-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Config/properties/afficherBlocCode")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-afficherbloccode.md "https://example.com/schemas/custom#/definitions/Config/properties/afficherBlocCode")
 
-### afficherBlocCode Type
+### Type de afficherBlocCode
 
 `boolean` ([afficherBlocCode](frw-definitions-configuration-du-formulaire-properties-afficherbloccode.md))
 
@@ -60,15 +60,15 @@ https://example.com/schemas/custom#/definitions/Config
 
 `afficherPartagePage`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean` ([afficherPartagePage](frw-definitions-configuration-du-formulaire-properties-afficherpartagepage.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-configuration-du-formulaire-properties-afficherpartagepage.md "https://example.com/schemas/custom#/definitions/Config/properties/afficherPartagePage")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-afficherpartagepage.md "https://example.com/schemas/custom#/definitions/Config/properties/afficherPartagePage")
 
-### afficherPartagePage Type
+### Type de afficherPartagePage
 
 `boolean` ([afficherPartagePage](frw-definitions-configuration-du-formulaire-properties-afficherpartagepage.md))
 
@@ -78,15 +78,15 @@ https://example.com/schemas/custom#/definitions/Config
 
 `confirmationTransmission`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Confirmation de transmission](frw-definitions-confirmation-de-transmission.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-confirmation-de-transmission.md "https://example.com/schemas/custom#/definitions/Config/properties/confirmationTransmission")
+*   défini dans: [Schéma sans nom](frw-definitions-confirmation-de-transmission.md "https://example.com/schemas/custom#/definitions/Config/properties/confirmationTransmission")
 
-### confirmationTransmission Type
+### Type de confirmationTransmission
 
 `object` ([Confirmation de transmission](frw-definitions-confirmation-de-transmission.md))
 
@@ -96,15 +96,15 @@ Paramètres associés au courriel de reprise.
 
 `courrielReprise`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([courrielReprise](frw-definitions-courrielreprise.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-courrielreprise.md "https://example.com/schemas/custom#/definitions/Config/properties/courrielReprise")
+*   défini dans: [Schéma sans nom](frw-definitions-courrielreprise.md "https://example.com/schemas/custom#/definitions/Config/properties/courrielReprise")
 
-### courrielReprise Type
+### Type de courrielReprise
 
 `object` ([courrielReprise](frw-definitions-courrielreprise.md))
 
@@ -114,15 +114,15 @@ Paramètres de la page permettant de débuter un formulaire.
 
 `debuterFormulaire`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([debuterFormulaire](frw-definitions-debuterformulaire.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-debuterformulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/debuterFormulaire")
+*   défini dans: [Schéma sans nom](frw-definitions-debuterformulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/debuterFormulaire")
 
-### debuterFormulaire Type
+### Type de debuterFormulaire
 
 `object` ([debuterFormulaire](frw-definitions-debuterformulaire.md))
 
@@ -132,15 +132,15 @@ Paramètres associés à l'enregistrement d'un formulaire
 
 `enregistrement`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([enregistrement](frw-definitions-enregistrement.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-enregistrement.md "https://example.com/schemas/custom#/definitions/Config/properties/enregistrement")
+*   défini dans: [Schéma sans nom](frw-definitions-enregistrement.md "https://example.com/schemas/custom#/definitions/Config/properties/enregistrement")
 
-### enregistrement Type
+### Type de enregistrement
 
 `object` ([enregistrement](frw-definitions-enregistrement.md))
 
@@ -150,15 +150,15 @@ Permet de retirer le selecteur de langue. Le formulaire s'affichera en français
 
 `formulaireUnilingue`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-configuration-du-formulaire-properties-formulaireunilingue.md "https://example.com/schemas/custom#/definitions/Config/properties/formulaireUnilingue")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-formulaireunilingue.md "https://example.com/schemas/custom#/definitions/Config/properties/formulaireUnilingue")
 
-### formulaireUnilingue Type
+### Type de formulaireUnilingue
 
 `boolean`
 
@@ -168,15 +168,15 @@ Permet de retirer le selecteur de langue. Le formulaire s'affichera en français
 
 `gererPlageDisponibilite`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Gerer les plages de disponibilité](frw-definitions-gerer-les-plages-de-disponibilité.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-gerer-les-plages-de-disponibilité.md "https://example.com/schemas/custom#/definitions/Config/properties/gererPlageDisponibilite")
+*   défini dans: [Schéma sans nom](frw-definitions-gerer-les-plages-de-disponibilité.md "https://example.com/schemas/custom#/definitions/Config/properties/gererPlageDisponibilite")
 
-### gererPlageDisponibilite Type
+### Type de gererPlageDisponibilite
 
 `object` ([Gerer les plages de disponibilité](frw-definitions-gerer-les-plages-de-disponibilité.md))
 
@@ -186,15 +186,15 @@ Permet de retirer le selecteur de langue. Le formulaire s'affichera en français
 
 `injecterJs`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Scripts Vue.js à injecter au formulaire.](frw-definitions-scripts-vuejs-à-injecter-au-formulaire.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-scripts-vuejs-à-injecter-au-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/injecterJs")
+*   défini dans: [Schéma sans nom](frw-definitions-scripts-vuejs-à-injecter-au-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/injecterJs")
 
-### injecterJs Type
+### Type de injecterJs
 
 `object` ([Scripts Vue.js à injecter au formulaire.](frw-definitions-scripts-vuejs-à-injecter-au-formulaire.md))
 
@@ -204,15 +204,15 @@ Paramètres associés aux différents messages.
 
 `messages`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([messages](frw-definitions-messages.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-messages.md "https://example.com/schemas/custom#/definitions/Config/properties/messages")
+*   défini dans: [Schéma sans nom](frw-definitions-messages.md "https://example.com/schemas/custom#/definitions/Config/properties/messages")
 
-### messages Type
+### Type de messages
 
 `object` ([messages](frw-definitions-messages.md))
 
@@ -222,15 +222,15 @@ Paramètres associés à différentes pages.
 
 `pages`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([pages](frw-definitions-pages.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-pages.md "https://example.com/schemas/custom#/definitions/Config/properties/pages")
+*   défini dans: [Schéma sans nom](frw-definitions-pages.md "https://example.com/schemas/custom#/definitions/Config/properties/pages")
 
-### pages Type
+### Type de pages
 
 `object` ([pages](frw-definitions-pages.md))
 
@@ -240,15 +240,15 @@ Paramètres associés au PIV.
 
 `piv`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([piv](frw-definitions-configuration-du-formulaire-properties-piv.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-configuration-du-formulaire-properties-piv.md "https://example.com/schemas/custom#/definitions/Config/properties/piv")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-piv.md "https://example.com/schemas/custom#/definitions/Config/properties/piv")
 
-### piv Type
+### Type de piv
 
 `object` ([piv](frw-definitions-configuration-du-formulaire-properties-piv.md))
 
@@ -258,15 +258,15 @@ Paramètres associés au PIV.
 
 `revision`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Page de révision](frw-definitions-page-de-révision.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-page-de-révision.md "https://example.com/schemas/custom#/definitions/Config/properties/revision")
+*   défini dans: [Schéma sans nom](frw-definitions-page-de-révision.md "https://example.com/schemas/custom#/definitions/Config/properties/revision")
 
-### revision Type
+### Type de revision
 
 `object` ([Page de révision](frw-definitions-page-de-révision.md))
 
@@ -276,15 +276,15 @@ Paramètres associés au PIV.
 
 `scripts`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([scripts](frw-definitions-scripts.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-scripts.md "https://example.com/schemas/custom#/definitions/Config/properties/scripts")
+*   défini dans: [Schéma sans nom](frw-definitions-scripts.md "https://example.com/schemas/custom#/definitions/Config/properties/scripts")
 
-### scripts Type
+### Type de scripts
 
 `object` ([scripts](frw-definitions-scripts.md))
 
@@ -294,15 +294,15 @@ Paramètres associés au PIV.
 
 `securite`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Sécurité du formulaire](frw-definitions-sécurité-du-formulaire.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-sécurité-du-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/securite")
+*   défini dans: [Schéma sans nom](frw-definitions-sécurité-du-formulaire.md "https://example.com/schemas/custom#/definitions/Config/properties/securite")
 
-### securite Type
+### Type de securite
 
 `object` ([Sécurité du formulaire](frw-definitions-sécurité-du-formulaire.md))
 
@@ -312,17 +312,17 @@ Paramètres associés au PIV.
 
 `soumission`
 
-*   is optional
+*   est optionnel
 
-*   Type: `object` ([Page de soumission](frw-definitions-page-de-soumission.md))
+*   Type: `object` ([Page de soumission](frw-definitions-configuration-du-formulaire-properties-page-de-soumission.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-page-de-soumission.md "https://example.com/schemas/custom#/definitions/Config/properties/soumission")
+*   défini dans: [Schéma sans nom](frw-definitions-configuration-du-formulaire-properties-page-de-soumission.md "https://example.com/schemas/custom#/definitions/Config/properties/soumission")
 
-### soumission Type
+### Type de soumission
 
-`object` ([Page de soumission](frw-definitions-page-de-soumission.md))
+`object` ([Page de soumission](frw-definitions-configuration-du-formulaire-properties-page-de-soumission.md))
 
 ## title
 
@@ -330,25 +330,24 @@ Multilingue
 
 `title`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Config/properties/title")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Config/properties/title")
 
-### title Type
+### Type de title
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### title Default Value
+### Valeur par défaut de title
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```

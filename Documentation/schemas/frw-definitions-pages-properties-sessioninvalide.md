@@ -1,4 +1,4 @@
-# sessionInvalide Schema
+# Schéma de sessionInvalide
 
 ```txt
 https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide
@@ -6,20 +6,20 @@ https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide
 
 Paramètres associés à la page de session invalide.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## sessionInvalide Type
+## Type de sessionInvalide
 
 `object` ([sessionInvalide](frw-definitions-pages-properties-sessioninvalide.md))
 
-# sessionInvalide Properties
+# Propriétés de sessionInvalide
 
-| Property                                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                |
-| :------------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [titrePage](#titrepage)                                 | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide/properties/titrePage")                 |
-| [corpsMessageAvertissement](#corpsmessageavertissement) | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide/properties/corpsMessageAvertissement") |
+| Propriété                                               | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                |
+| :------------------------------------------------------ | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [titrePage](#titrepage)                                 | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide/properties/titrePage")                 |
+| [corpsMessageAvertissement](#corpsmessageavertissement) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide/properties/corpsMessageAvertissement") |
 
 ## titrePage
 
@@ -27,27 +27,26 @@ Multilingue
 
 `titrePage`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide/properties/titrePage")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide/properties/titrePage")
 
-### titrePage Type
+### Type de titrePage
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### titrePage Default Value
+### Valeur par défaut de titrePage
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
 ## corpsMessageAvertissement
@@ -56,25 +55,24 @@ Multilingue
 
 `corpsMessageAvertissement`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide/properties/corpsMessageAvertissement")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide/properties/corpsMessageAvertissement")
 
-### corpsMessageAvertissement Type
+### Type de corpsMessageAvertissement
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### corpsMessageAvertissement Default Value
+### Valeur par défaut de corpsMessageAvertissement
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```

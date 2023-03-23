@@ -1,4 +1,4 @@
-# courrielReprise Schema
+# Schéma de courrielReprise
 
 ```txt
 https://example.com/schemas/custom#/definitions/CourrielReprise
@@ -6,22 +6,22 @@ https://example.com/schemas/custom#/definitions/CourrielReprise
 
 Paramètres associés au courriel de reprise.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## CourrielReprise Type
+## Type de CourrielReprise
 
 `object` ([courrielReprise](frw-definitions-courrielreprise.md))
 
-# CourrielReprise Properties
+# Propriétés de CourrielReprise
 
-| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                          |
-| :---------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [courrielExpediteur](#courrielexpediteur) | `string` | Optional | cannot be null | [Untitled schema](frw-definitions-courrielreprise-properties-courrielexpediteur.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/courrielExpediteur") |
-| [nomExpediteur](#nomexpediteur)           | `string` | Optional | cannot be null | [Untitled schema](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/nomExpediteur")    |
-| [objet](#objet)                           | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/objet")                                                |
-| [corps](#corps)                           | `object` | Optional | cannot be null | [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/corps")                                                |
+| Propriété                                 | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                          |
+| :---------------------------------------- | :------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [courrielExpediteur](#courrielexpediteur) | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-courrielreprise-properties-courrielexpediteur.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/courrielExpediteur") |
+| [nomExpediteur](#nomexpediteur)           | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/nomExpediteur")    |
+| [objet](#objet)                           | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/objet")                                                |
+| [corps](#corps)                           | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/corps")                                                |
 
 ## courrielExpediteur
 
@@ -29,22 +29,23 @@ Adresse courriel expéditeur.
 
 `courrielExpediteur`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string` ([courrielExpediteur](frw-definitions-courrielreprise-properties-courrielexpediteur.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-courrielreprise-properties-courrielexpediteur.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/courrielExpediteur")
+*   défini dans: [Schéma sans nom](frw-definitions-courrielreprise-properties-courrielexpediteur.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/courrielExpediteur")
 
-### courrielExpediteur Type
+### Type de courrielExpediteur
 
 `string` ([courrielExpediteur](frw-definitions-courrielreprise-properties-courrielexpediteur.md))
 
-### courrielExpediteur Examples
+### Exemple de courrielExpediteur
 
-```json
-"NEPASREPONDRE@mtess.gouv.qc.ca"
+```yaml
+NEPASREPONDRE@mtess.gouv.qc.ca
+
 ```
 
 ## nomExpediteur
@@ -53,22 +54,23 @@ Nom de l'expéditeur expéditeur.
 
 `nomExpediteur`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string` ([courrielExpediteur](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/nomExpediteur")
+*   défini dans: [Schéma sans nom](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/nomExpediteur")
 
-### nomExpediteur Type
+### Type de nomExpediteur
 
 `string` ([courrielExpediteur](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md))
 
-### nomExpediteur Examples
+### Exemple de nomExpediteur
 
-```json
-"Formulaires en ligne - MESS"
+```yaml
+Formulaires en ligne - MESS
+
 ```
 
 ## objet
@@ -77,33 +79,33 @@ Multilingue
 
 `objet`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/objet")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/objet")
 
-### objet Type
+### Type de objet
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### objet Default Value
+### Valeur par défaut de objet
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```
 
-### objet Examples
+### Exemple de objet
 
-```json
-"Formulaire  « {0} » incomplet"
+```yaml
+Formulaire  « {0} » incomplet
+
 ```
 
 ## corps
@@ -112,25 +114,24 @@ Multilingue
 
 `corps`
 
-*   is optional
+*   est optionnel
 
 *   Type: `object` ([Translation](frw-definitions-translation.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/corps")
+*   défini dans: [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/CourrielReprise/properties/corps")
 
-### corps Type
+### Type de corps
 
 `object` ([Translation](frw-definitions-translation.md))
 
-### corps Default Value
+### Valeur par défaut de corps
 
-The default value is:
+La valeur par défaut est:
 
-```json
-{
-  "fr": "",
-  "en": ""
-}
+```yaml
+fr: ''
+en: ''
+
 ```

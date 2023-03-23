@@ -1,4 +1,4 @@
-# outilStatistiques Schema
+# Schéma de outilStatistiques
 
 ```txt
 https://example.com/schemas/custom#/definitions/Scripts/properties/outilStatistiques
@@ -6,16 +6,17 @@ https://example.com/schemas/custom#/definitions/Scripts/properties/outilStatisti
 
 Javascript servant à une solution d'outil statistiques (ex. Google Analytics ou Matomo). Injecté dans toutes les pages à la fin du body.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable             | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## outilStatistiques Type
+## Type de outilStatistiques
 
 `string` ([outilStatistiques](frw-definitions-scripts-properties-outilstatistiques.md))
 
-## outilStatistiques Examples
+## Exemple de outilStatistiques
 
-```json
-"<script> // Votre js ici... </script>"
+```yaml
+<script> // Votre js ici... </script>
+
 ```

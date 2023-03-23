@@ -1,4 +1,4 @@
-# Validation Schema
+# Schéma de Validation
 
 ```txt
 https://example.com/schemas/custom#/definitions/Input/properties/validations
@@ -6,49 +6,50 @@ https://example.com/schemas/custom#/definitions/Input/properties/validations
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Non          | Interdit                  | Interdit                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## validations Type
+## Type de validations
 
 `object` ([Validation](frw-definitions-input-properties-validation.md))
 
-## validations Default Value
+## Valeur par défaut de validations
 
-The default value is:
+La valeur par défaut est:
 
-```json
+```yaml
 {}
+
 ```
 
-# validations Properties
+# Propriétés de validations
 
-| Property                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                                       |
-| :---------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [required](#required)         | `string`      | Optional | can be null    | [Untitled schema](frw-definitions-input-properties-validation-properties-required.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/required")         |
-| [accepted](#accepted)         | Not specified | Optional | can be null    | [Untitled schema](frw-definitions-input-properties-validation-properties-accepted.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/accepted")         |
-| [before](#before)             | `string`      | Optional | can be null    | [Untitled schema](frw-definitions-input-properties-validation-properties-before.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/before")             |
-| [after](#after)               | `string`      | Optional | can be null    | [Untitled schema](frw-definitions-input-properties-validation-properties-after.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/after")               |
-| [alpha](#alpha)               | `string`      | Optional | can be null    | [Untitled schema](frw-definitions-input-properties-validation-properties-alpha.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/alpha")               |
-| [alphanumeric](#alphanumeric) | `string`      | Optional | can be null    | [Untitled schema](frw-definitions-input-properties-validation-properties-alphanumeric.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/alphanumeric") |
-| [between](#between)           | `string`      | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-validation-properties-between.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/between")           |
-| [confirm](#confirm)           | `string`      | Optional | can be null    | [Untitled schema](frw-definitions-input-properties-validation-properties-confirm.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/confirm")           |
-| [bail](#bail)                 | Not specified | Optional | can be null    | [Untitled schema](frw-definitions-input-properties-validation-properties-bail.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/bail")                 |
-| [email](#email)               | Not specified | Optional | can be null    | [Untitled schema](frw-definitions-input-properties-validation-properties-email.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/email")               |
-| [starts\_with](#starts_with)  | `string`      | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-validation-properties-starts_with.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/starts_with")   |
-| [avant](#avant)               | `string`      | Optional | can be null    | [Untitled schema](frw-definitions-input-properties-validation-properties-avant.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/avant")               |
-| [ends\_with](#ends_with)      | `string`      | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-validation-properties-ends_with.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/ends_with")       |
-| [in](#in)                     | `string`      | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-validation-properties-in.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/in")                     |
-| [matches](#matches)           | `string`      | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-validation-properties-matches.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/matches")           |
-| [min](#min)                   | Multiple      | Optional | can be null    | [Untitled schema](frw-definitions-input-properties-validation-properties-min.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/min")                   |
-| [max](#max)                   | Multiple      | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-validation-properties-max.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/max")                   |
-| [mime](#mime)                 | `string`      | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-validation-properties-mime.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/mime")                 |
-| [not](#not)                   | `string`      | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-validation-properties-not.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/not")                   |
-| [number](#number)             | Not specified | Optional | can be null    | [Untitled schema](frw-definitions-input-properties-validation-properties-number.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/number")             |
-| [optional](#optional)         | Not specified | Optional | can be null    | [Untitled schema](frw-definitions-input-properties-validation-properties-optional.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/optional")         |
-| [url](#url)                   | Not specified | Optional | can be null    | [Untitled schema](frw-definitions-input-properties-validation-properties-url.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/url")                   |
-| [nas](#nas)                   | `boolean`     | Optional | cannot be null | [Untitled schema](frw-definitions-input-properties-validation-properties-nas.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/nas")                   |
+| Propriété                     | Type         | Obligatoire | Nullable         | Défini par                                                                                                                                                                                       |
+| :---------------------------- | :----------- | :---------- | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [required](#required)         | `string`     | Optionnel   | peut être nul    | [Schéma sans nom](frw-definitions-input-properties-validation-properties-required.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/required")         |
+| [accepted](#accepted)         | Non spécifié | Optionnel   | peut être nul    | [Schéma sans nom](frw-definitions-input-properties-validation-properties-accepted.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/accepted")         |
+| [before](#before)             | `string`     | Optionnel   | peut être nul    | [Schéma sans nom](frw-definitions-input-properties-validation-properties-before.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/before")             |
+| [after](#after)               | `string`     | Optionnel   | peut être nul    | [Schéma sans nom](frw-definitions-input-properties-validation-properties-after.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/after")               |
+| [alpha](#alpha)               | `string`     | Optionnel   | peut être nul    | [Schéma sans nom](frw-definitions-input-properties-validation-properties-alpha.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/alpha")               |
+| [alphanumeric](#alphanumeric) | `string`     | Optionnel   | peut être nul    | [Schéma sans nom](frw-definitions-input-properties-validation-properties-alphanumeric.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/alphanumeric") |
+| [between](#between)           | `string`     | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-validation-properties-between.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/between")           |
+| [confirm](#confirm)           | `string`     | Optionnel   | peut être nul    | [Schéma sans nom](frw-definitions-input-properties-validation-properties-confirm.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/confirm")           |
+| [bail](#bail)                 | Non spécifié | Optionnel   | peut être nul    | [Schéma sans nom](frw-definitions-input-properties-validation-properties-bail.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/bail")                 |
+| [email](#email)               | Non spécifié | Optionnel   | peut être nul    | [Schéma sans nom](frw-definitions-input-properties-validation-properties-email.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/email")               |
+| [starts\_with](#starts_with)  | `string`     | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-validation-properties-starts_with.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/starts_with")   |
+| [avant](#avant)               | `string`     | Optionnel   | peut être nul    | [Schéma sans nom](frw-definitions-input-properties-validation-properties-avant.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/avant")               |
+| [ends\_with](#ends_with)      | `string`     | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-validation-properties-ends_with.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/ends_with")       |
+| [in](#in)                     | `string`     | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-validation-properties-in.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/in")                     |
+| [matches](#matches)           | `string`     | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-validation-properties-matches.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/matches")           |
+| [min](#min)                   | Plusieurs    | Optionnel   | peut être nul    | [Schéma sans nom](frw-definitions-input-properties-validation-properties-min.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/min")                   |
+| [max](#max)                   | Plusieurs    | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-validation-properties-max.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/max")                   |
+| [mime](#mime)                 | `string`     | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-validation-properties-mime.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/mime")                 |
+| [not](#not)                   | `string`     | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-validation-properties-not.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/not")                   |
+| [number](#number)             | Non spécifié | Optionnel   | peut être nul    | [Schéma sans nom](frw-definitions-input-properties-validation-properties-number.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/number")             |
+| [optional](#optional)         | Non spécifié | Optionnel   | peut être nul    | [Schéma sans nom](frw-definitions-input-properties-validation-properties-optional.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/optional")         |
+| [url](#url)                   | Non spécifié | Optionnel   | peut être nul    | [Schéma sans nom](frw-definitions-input-properties-validation-properties-url.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/url")                   |
+| [nas](#nas)                   | `boolean`    | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-input-properties-validation-properties-nas.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/nas")                   |
 
 ## required
 
@@ -56,33 +57,34 @@ Checks if the input is empty.
 
 `required`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-required.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/required")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-required.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/required")
 
-### required Type
+### Type de required
 
 `string`
 
-### required Constraints
+### Contraintes de required
 
-**enum**: the value of this property must be equal to one of the following values:
+**énumération**: la valeur de cette propriété doit être égale à l'une des valeurs suivantes:
 
-| Value    | Explanation |
+| Valeur   | Explication |
 | :------- | :---------- |
 | `"trim"` |             |
 | `null`   |             |
 
-### required Default Value
+### Valeur par défaut de required
 
-The default value is:
+La valeur par défaut est:
 
-```json
-"trim"
+```yaml
+trim
+
 ```
 
 ## accepted
@@ -91,17 +93,17 @@ The value must be yes, on, 1 or true. Useful for box inputs, often where you nee
 
 `accepted`
 
-*   is optional
+*   est optionnel
 
-*   Type: `null`, the value must be null
+*   Type: `null`, la valeur doit être nulle
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-accepted.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/accepted")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-accepted.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/accepted")
 
-### accepted Type
+### Type de accepted
 
-`null`, the value must be null
+`null`, la valeur doit être nulle
 
 ## before
 
@@ -109,22 +111,23 @@ Checks if a date comes before another date. If no date argument is provided the 
 
 `before`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-before.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/before")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-before.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/before")
 
-### before Type
+### Type de before
 
 `string`
 
-### before Examples
+### Exemple de before
 
-```json
-"2020-12-31"
+```yaml
+'2020-12-31'
+
 ```
 
 ## after
@@ -133,22 +136,23 @@ Checks if a date comes after another date. If no date argument is provided the c
 
 `after`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-after.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/after")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-after.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/after")
 
-### after Type
+### Type de after
 
 `string`
 
-### after Examples
+### Exemple de after
 
-```json
-"2020-12-31"
+```yaml
+'2020-12-31'
+
 ```
 
 ## alpha
@@ -157,31 +161,32 @@ Checks if a value is only alphabetical characters. There are two character sets 
 
 `alpha`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-alpha.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/alpha")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-alpha.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/alpha")
 
-### alpha Type
+### Type de alpha
 
 `string`
 
-### alpha Constraints
+### Contraintes de alpha
 
-**enum**: the value of this property must be equal to one of the following values:
+**énumération**: la valeur de cette propriété doit être égale à l'une des valeurs suivantes:
 
-| Value       | Explanation |
+| Valeur      | Explication |
 | :---------- | :---------- |
 | `"latin"`   |             |
 | `"default"` |             |
 
-### alpha Examples
+### Exemple de alpha
 
-```json
-"latin"
+```yaml
+latin
+
 ```
 
 ## alphanumeric
@@ -190,23 +195,23 @@ Checks if a value is only made of alphabetical characters or numeric digits. For
 
 `alphanumeric`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-alphanumeric.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/alphanumeric")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-alphanumeric.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/alphanumeric")
 
-### alphanumeric Type
+### Type de alphanumeric
 
 `string`
 
-### alphanumeric Constraints
+### Contraintes de alphanumeric
 
-**enum**: the value of this property must be equal to one of the following values:
+**énumération**: la valeur de cette propriété doit être égale à l'une des valeurs suivantes:
 
-| Value       | Explanation |
+| Valeur      | Explication |
 | :---------- | :---------- |
 | `"latin"`   |             |
 | `"default"` |             |
@@ -218,26 +223,28 @@ Checks if a number or string length is between a minimum or maximum. Both the ma
 
 `between`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-between.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/between")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-between.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/between")
 
-### between Type
+### Type de between
 
 `string`
 
-### between Examples
+### Exemple de between
 
-```json
-"10,18,value"
+```yaml
+10,18,value
+
 ```
 
-```json
-"8,20,length"
+```yaml
+8,20,length
+
 ```
 
 ## confirm
@@ -246,22 +253,23 @@ Checks if the field value matches the value of another field. Mostly used for hi
 
 `confirm`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-confirm.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/confirm")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-confirm.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/confirm")
 
-### confirm Type
+### Type de confirm
 
 `string`
 
-### confirm Examples
+### Exemple de confirm
 
-```json
-"confirm:other_field"
+```yaml
+confirm:other_field
+
 ```
 
 ## bail
@@ -270,17 +278,17 @@ Used to logically stop validation on the first subsequent validation error.
 
 `bail`
 
-*   is optional
+*   est optionnel
 
-*   Type: `null`, the value must be null
+*   Type: `null`, la valeur doit être nulle
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-bail.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/bail")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-bail.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/bail")
 
-### bail Type
+### Type de bail
 
-`null`, the value must be null
+`null`, la valeur doit être nulle
 
 ## email
 
@@ -288,17 +296,17 @@ Checks if the input is a valid email address format.
 
 `email`
 
-*   is optional
+*   est optionnel
 
-*   Type: `null`, the value must be null
+*   Type: `null`, la valeur doit être nulle
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-email.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/email")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-email.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/email")
 
-### email Type
+### Type de email
 
-`null`, the value must be null
+`null`, la valeur doit être nulle
 
 ## starts\_with
 
@@ -306,15 +314,15 @@ Checks if the input starts with one of the provided options.
 
 `starts_with`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-starts_with.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/starts_with")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-starts_with.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/starts_with")
 
-### starts\_with Type
+### Type de starts\_with
 
 `string`
 
@@ -324,15 +332,15 @@ Pour une date qui doit être AVANT la date du jour.
 
 `avant`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-avant.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/avant")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-avant.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/avant")
 
-### avant Type
+### Type de avant
 
 `string`
 
@@ -342,15 +350,15 @@ Checks if the input ends with one of the provided options.
 
 `ends_with`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-ends_with.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/ends_with")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-ends_with.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/ends_with")
 
-### ends\_with Type
+### Type de ends\_with
 
 `string`
 
@@ -360,15 +368,15 @@ Checks if the input is included in an array of options.
 
 `in`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-in.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/in")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-in.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/in")
 
-### in Type
+### Type de in
 
 `string`
 
@@ -378,26 +386,28 @@ Checks if the input matches a particular value or pattern. If you pass multiple 
 
 `matches`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-matches.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/matches")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-matches.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/matches")
 
-### matches Type
+### Type de matches
 
 `string`
 
-### matches Examples
+### Exemple de matches
 
-```json
-"val1,val2"
+```yaml
+val1,val2
+
 ```
 
-```json
-"/[0-9]/"
+```yaml
+/[0-9]/
+
 ```
 
 ## min
@@ -406,30 +416,33 @@ Checks the value of a Number, or length of a String or Array is more than a maxi
 
 `min`
 
-*   is optional
+*   est optionnel
 
-*   Type: any of the following: `string` or `number` ([Details](frw-definitions-input-properties-validation-properties-min.md))
+*   Type: l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-validation-properties-min.md))
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-min.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/min")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-min.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/min")
 
-### min Type
+### Type de min
 
-any of the following: `string` or `number` ([Details](frw-definitions-input-properties-validation-properties-min.md))
+l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-validation-properties-min.md))
 
-### min Examples
+### Exemple de min
 
-```json
-"9,length"
+```yaml
+9,length
+
 ```
 
-```json
-"3"
+```yaml
+'3'
+
 ```
 
-```json
-"10,value"
+```yaml
+10,value
+
 ```
 
 ## max
@@ -438,30 +451,33 @@ Checks that the value of a Number, or length of a String or Array is less than a
 
 `max`
 
-*   is optional
+*   est optionnel
 
-*   Type: any of the following: `string` or `number` ([Details](frw-definitions-input-properties-validation-properties-max.md))
+*   Type: l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-validation-properties-max.md))
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-max.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/max")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-max.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/max")
 
-### max Type
+### Type de max
 
-any of the following: `string` or `number` ([Details](frw-definitions-input-properties-validation-properties-max.md))
+l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-input-properties-validation-properties-max.md))
 
-### max Examples
+### Exemple de max
 
-```json
-"5,length"
+```yaml
+5,length
+
 ```
 
-```json
+```yaml
 3
+
 ```
 
-```json
-"10,value"
+```yaml
+10,value
+
 ```
 
 ## mime
@@ -470,26 +486,28 @@ Checks if the type of file selected is an allowed value. This validator uses the
 
 `mime`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-mime.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/mime")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-mime.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/mime")
 
-### mime Type
+### Type de mime
 
 `string`
 
-### mime Examples
+### Exemple de mime
 
-```json
-"image/png"
+```yaml
+image/png
+
 ```
 
-```json
-"image/jpeg"
+```yaml
+image/jpeg
+
 ```
 
 ## not
@@ -498,22 +516,23 @@ Checks to ensure the input data does not match a set of predefined values.
 
 `not`
 
-*   is optional
+*   est optionnel
 
 *   Type: `string`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-not.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/not")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-not.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/not")
 
-### not Type
+### Type de not
 
 `string`
 
-### not Examples
+### Exemple de not
 
-```json
-"val1,val2"
+```yaml
+val1,val2
+
 ```
 
 ## number
@@ -522,17 +541,17 @@ Checks if the input is a valid number as evaluated by isNaN().
 
 `number`
 
-*   is optional
+*   est optionnel
 
-*   Type: `null`, the value must be null
+*   Type: `null`, la valeur doit être nulle
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-number.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/number")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-number.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/number")
 
-### number Type
+### Type de number
 
-`null`, the value must be null
+`null`, la valeur doit être nulle
 
 ## optional
 
@@ -540,17 +559,17 @@ Use this rule to make a field optional. When used all validation rules pass unti
 
 `optional`
 
-*   is optional
+*   est optionnel
 
-*   Type: `null`, the value must be null
+*   Type: `null`, la valeur doit être nulle
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-optional.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/optional")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-optional.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/optional")
 
-### optional Type
+### Type de optional
 
-`null`, the value must be null
+`null`, la valeur doit être nulle
 
 ## url
 
@@ -558,17 +577,17 @@ Checks if the input value appears to be a properly formatted URL including the p
 
 `url`
 
-*   is optional
+*   est optionnel
 
-*   Type: `null`, the value must be null
+*   Type: `null`, la valeur doit être nulle
 
-*   can be null
+*   peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-url.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/url")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-url.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/url")
 
-### url Type
+### Type de url
 
-`null`, the value must be null
+`null`, la valeur doit être nulle
 
 ## nas
 
@@ -576,14 +595,14 @@ Valider le NAS, si true valide vraiment que le NAS est valide, si false valide q
 
 `nas`
 
-*   is optional
+*   est optionnel
 
 *   Type: `boolean`
 
-*   cannot be null
+*   ne peut être nul
 
-*   defined in: [Untitled schema](frw-definitions-input-properties-validation-properties-nas.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/nas")
+*   défini dans: [Schéma sans nom](frw-definitions-input-properties-validation-properties-nas.md "https://example.com/schemas/custom#/definitions/Input/properties/validations/properties/nas")
 
-### nas Type
+### Type de nas
 
 `boolean`

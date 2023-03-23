@@ -1,4 +1,4 @@
-# Code de la fonction Schema
+# Schéma de Code de la fonction
 
 ```txt
 https://example.com/schemas/custom#/definitions/Code
@@ -6,16 +6,17 @@ https://example.com/schemas/custom#/definitions/Code
 
 Doit respecter le format fourni dans l'exemple. Votre code va entre les accolades.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [FRW.form.schema.json\*](../out/FRW.form.schema.json "open original schema") |
+| Abstrait            | Extensible | Statut         | Identifiable             | Propriétés personnalisées | Propriétés Additionnelles | Limites d'accès | Défini dans                                                                        |
+| :------------------ | :--------- | :------------- | :----------------------- | :------------------------ | :------------------------ | :-------------- | :--------------------------------------------------------------------------------- |
+| Peut être instancié | Non        | Unknown status | Identifiabilité inconnue | Interdit                  | Autorisé                  | aucun           | [FRW.form.schema.json\*](../out/FRW.form.schema.json "ouvrir le schéma d'origine") |
 
-## Code Type
+## Type de Code
 
 `string` ([Code de la fonction](frw-definitions-code-de-la-fonction.md))
 
-## Code Examples
+## Exemple de Code
 
-```json
-"(){return 'bonjour!'}"
+```yaml
+(){return 'bonjour!'}
+
 ```

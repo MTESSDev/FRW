@@ -82,8 +82,9 @@ templates:
     en: NomDeVotreGabaritEN.docx
 #ignorer permet de spécifier les champs du formulaire Web qu'on ne veut pas afficher dans le document produit.
 ignorer:
-- champ: champ1
-- champ: champ2
+#La valeur champ1 ou champ2 doit correspondre au nom du champ (name) que vous voulez exclure dans votre formulaire.
+- champ: TypesRevenusEmploi
+- champ: RevenuEmploiSalaireNet
 ````
 
 ## Créer votre premier fichier bind avec un gabarit PDF avec champs de saisie dynamique

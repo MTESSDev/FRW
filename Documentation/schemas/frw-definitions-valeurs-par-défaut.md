@@ -1,6 +1,6 @@
 ## Type de Defaults
 
-`object` ([Defaults values](frw-definitions-defaults-values.md))
+`object` ([Valeurs par défaut](frw-definitions-valeurs-par-défaut.md))
 
 # Propriétés de Defaults
 

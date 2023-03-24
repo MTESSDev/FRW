@@ -7,10 +7,10 @@
 | Propriété                                                           | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                               |
 | :------------------------------------------------------------------ | :-------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [actif](#actif)                                                     | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-debuterformulaire-properties-authentifie-properties-actif.md "schemas/form#/definitions/DebuterFormulaire/properties/authentifie/properties/actif") |
-| [urlAuthentification](#urlauthentification)                         | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/DebuterFormulaire/properties/authentifie/properties/urlAuthentification")                                 |
-| [texte](#texte)                                                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/DebuterFormulaire/properties/authentifie/properties/texte")                                               |
-| [boutonDebuter](#boutondebuter)                                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/DebuterFormulaire/properties/authentifie/properties/boutonDebuter")                                       |
-| [boutonDebuterTitreAccessibilite](#boutondebutertitreaccessibilite) | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/DebuterFormulaire/properties/authentifie/properties/boutonDebuterTitreAccessibilite")                     |
+| [urlAuthentification](#urlauthentification)                         | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/DebuterFormulaire/properties/authentifie/properties/urlAuthentification")                                  |
+| [texte](#texte)                                                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/DebuterFormulaire/properties/authentifie/properties/texte")                                                |
+| [boutonDebuter](#boutondebuter)                                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/DebuterFormulaire/properties/authentifie/properties/boutonDebuter")                                        |
+| [boutonDebuterTitreAccessibilite](#boutondebutertitreaccessibilite) | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/DebuterFormulaire/properties/authentifie/properties/boutonDebuterTitreAccessibilite")                      |
 
 ## actif
 
@@ -28,7 +28,7 @@ Indique si la page d'initialisation d'un formulaire est active ou non.
 
 ## urlAuthentification
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `urlAuthentification`
 
@@ -38,7 +38,7 @@ Multilingue
 
 ### Type de urlAuthentification
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de urlAuthentification
 
@@ -52,7 +52,7 @@ en: ''
 
 ## texte
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `texte`
 
@@ -62,7 +62,7 @@ Multilingue
 
 ### Type de texte
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de texte
 
@@ -76,7 +76,7 @@ en: ''
 
 ## boutonDebuter
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `boutonDebuter`
 
@@ -86,7 +86,7 @@ Multilingue
 
 ### Type de boutonDebuter
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de boutonDebuter
 
@@ -100,7 +100,7 @@ en: ''
 
 ## boutonDebuterTitreAccessibilite
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `boutonDebuterTitreAccessibilite`
 
@@ -110,7 +110,7 @@ Multilingue
 
 ### Type de boutonDebuterTitreAccessibilite
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de boutonDebuterTitreAccessibilite
 

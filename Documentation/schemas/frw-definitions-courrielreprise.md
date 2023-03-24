@@ -8,8 +8,8 @@
 | :---------------------------------------- | :------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [courrielExpediteur](#courrielexpediteur) | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-courrielreprise-properties-courrielexpediteur.md "schemas/form#/definitions/CourrielReprise/properties/courrielExpediteur") |
 | [nomExpediteur](#nomexpediteur)           | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md "schemas/form#/definitions/CourrielReprise/properties/nomExpediteur")    |
-| [objet](#objet)                           | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/CourrielReprise/properties/objet")                                                |
-| [corps](#corps)                           | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/CourrielReprise/properties/corps")                                                |
+| [objet](#objet)                           | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/CourrielReprise/properties/objet")                                                 |
+| [corps](#corps)                           | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/CourrielReprise/properties/corps")                                                 |
 
 ## courrielExpediteur
 
@@ -55,7 +55,7 @@ Formulaires en ligne - MESS
 
 ## objet
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `objet`
 
@@ -65,7 +65,7 @@ Multilingue
 
 ### Type de objet
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de objet
 
@@ -86,7 +86,7 @@ Formulaire  « {0} » incomplet
 
 ## corps
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `corps`
 
@@ -96,7 +96,7 @@ Multilingue
 
 ### Type de corps
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de corps
 

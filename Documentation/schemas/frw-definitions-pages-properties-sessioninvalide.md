@@ -4,14 +4,14 @@
 
 # Propriétés de sessionInvalide
 
-| Propriété                                               | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                             |
-| :------------------------------------------------------ | :------- | :---------- | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [titrePage](#titrepage)                                 | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Pages/properties/sessionInvalide/properties/titrePage")                 |
-| [corpsMessageAvertissement](#corpsmessageavertissement) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Pages/properties/sessionInvalide/properties/corpsMessageAvertissement") |
+| Propriété                                               | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                            |
+| :------------------------------------------------------ | :------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [titrePage](#titrepage)                                 | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/Pages/properties/sessionInvalide/properties/titrePage")                 |
+| [corpsMessageAvertissement](#corpsmessageavertissement) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/Pages/properties/sessionInvalide/properties/corpsMessageAvertissement") |
 
 ## titrePage
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `titrePage`
 
@@ -21,7 +21,7 @@ Multilingue
 
 ### Type de titrePage
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de titrePage
 
@@ -35,7 +35,7 @@ en: ''
 
 ## corpsMessageAvertissement
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `corpsMessageAvertissement`
 
@@ -45,7 +45,7 @@ Multilingue
 
 ### Type de corpsMessageAvertissement
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de corpsMessageAvertissement
 

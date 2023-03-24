@@ -4,13 +4,13 @@
 
 # Propriétés de Soumission
 
-| Propriété                                     | Type     | Obligatoire | Nullable         | Défini par                                                                                                                  |
-| :-------------------------------------------- | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------- |
-| [texteBoutonSoumettre](#texteboutonsoumettre) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Soumission/properties/texteBoutonSoumettre") |
+| Propriété                                     | Type     | Obligatoire | Nullable         | Défini par                                                                                                                 |
+| :-------------------------------------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| [texteBoutonSoumettre](#texteboutonsoumettre) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/Soumission/properties/texteBoutonSoumettre") |
 
 ## texteBoutonSoumettre
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `texteBoutonSoumettre`
 
@@ -20,7 +20,7 @@ Multilingue
 
 ### Type de texteBoutonSoumettre
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de texteBoutonSoumettre
 

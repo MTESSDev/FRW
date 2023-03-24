@@ -10,7 +10,7 @@
 | [prefixId](#prefixid)         | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-section-group-properties-prefixid.md "schemas/form#/definitions/SectionsGroup/properties/prefixId") |
 | [classes](#classes)           | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-section-group-properties-classes.md "schemas/form#/definitions/SectionsGroup/properties/classes")   |
 | [v-if](#v-if)                 | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-section-group-properties-v-if.md "schemas/form#/definitions/SectionsGroup/properties/v-if")         |
-| [sectionGroup](#sectiongroup) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/SectionsGroup/properties/sectionGroup")                   |
+| [sectionGroup](#sectiongroup) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/SectionsGroup/properties/sectionGroup")                    |
 
 ## sections
 
@@ -70,7 +70,7 @@ Conditionnal display on another property/form field.
 
 ## sectionGroup
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `sectionGroup`
 
@@ -80,7 +80,7 @@ Multilingue
 
 ### Type de sectionGroup
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de sectionGroup
 

@@ -4,14 +4,14 @@
 
 # Propriétés de erreurTechnique
 
-| Propriété       | Type     | Obligatoire | Nullable         | Défini par                                                                                                                            |
-| :-------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
-| [titre](#titre) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Messages/properties/erreurTechnique/properties/titre") |
-| [corps](#corps) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Messages/properties/erreurTechnique/properties/corps") |
+| Propriété       | Type     | Obligatoire | Nullable         | Défini par                                                                                                                           |
+| :-------------- | :------- | :---------- | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| [titre](#titre) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/Messages/properties/erreurTechnique/properties/titre") |
+| [corps](#corps) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/Messages/properties/erreurTechnique/properties/corps") |
 
 ## titre
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `titre`
 
@@ -21,7 +21,7 @@ Multilingue
 
 ### Type de titre
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de titre
 
@@ -35,7 +35,7 @@ en: ''
 
 ## corps
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `corps`
 
@@ -45,7 +45,7 @@ Multilingue
 
 ### Type de corps
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de corps
 

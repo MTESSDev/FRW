@@ -2,23 +2,15 @@
 
 inconnu ([Fichier formulaire](frw.md))
 
-# Définitions de Fichier formulaire
+# Propriétés de Fichier formulaire
 
-## Groupe de définitions FrwForm
+| Propriété         | Type     | Obligatoire | Nullable         | Défini par                                                                                             |
+| :---------------- | :------- | :---------- | :--------------- | :----------------------------------------------------------------------------------------------------- |
+| [form](#form)     | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-form.md "schemas/form#/properties/form")                          |
+| [config](#config) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-configuration-du-formulaire.md "schemas/form#/properties/config") |
+| [textes](#textes) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-properties-textes.md "schemas/form#/properties/textes")                       |
 
-Référencer ce groupe en utilisant
-
-```json
-{"$ref":"schemas/form#/definitions/FrwForm"}
-```
-
-| Propriété         | Type     | Obligatoire | Nullable         | Défini par                                                                                                                      |
-| :---------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------ |
-| [form](#form)     | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-form.md "schemas/form#/definitions/FrwForm/properties/form")                               |
-| [config](#config) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-configuration-du-formulaire.md "schemas/form#/definitions/FrwForm/properties/config")      |
-| [textes](#textes) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-formulaire-frw-properties-textes.md "schemas/form#/definitions/FrwForm/properties/textes") |
-
-### form
+## form
 
 Élément racine d'un formulaire.
 
@@ -28,11 +20,11 @@ Référencer ce groupe en utilisant
 
 *   ne peut être nul
 
-#### Type de form
+### Type de form
 
 `object` ([Form](frw-definitions-form.md))
 
-### config
+## config
 
 
 
@@ -42,11 +34,11 @@ Référencer ce groupe en utilisant
 
 *   ne peut être nul
 
-#### Type de config
+### Type de config
 
 `object` ([Configuration du formulaire](frw-definitions-configuration-du-formulaire.md))
 
-### textes
+## textes
 
 
 
@@ -56,9 +48,11 @@ Référencer ce groupe en utilisant
 
 *   ne peut être nul
 
-#### Type de textes
+### Type de textes
 
-`object` ([Détails](frw-definitions-formulaire-frw-properties-textes.md))
+`object` ([Détails](frw-properties-textes.md))
+
+# Définitions de Fichier formulaire
 
 ## Groupe de définitions Form
 
@@ -72,9 +66,9 @@ Référencer ce groupe en utilisant
 | :------------------------------------------ | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
 | [sectionsGroup](#sectionsgroup)             | `array`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-form-properties-sectionsgroup.md "schemas/form#/definitions/Form/properties/sectionsGroup")             |
 | [templates](#templates)                     | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-form-properties-templates.md "schemas/form#/definitions/Form/properties/templates")                     |
-| [title](#title)                             | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Form/properties/title")                                       |
+| [title](#title)                             | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/Form/properties/title")                                        |
 | [inputDefaultClasses](#inputdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-form-properties-inputdefaultclasses.md "schemas/form#/definitions/Form/properties/inputDefaultClasses") |
-| [defaults](#defaults)                       | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-defaults-values.md "schemas/form#/definitions/Form/properties/defaults")                                |
+| [defaults](#defaults)                       | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-valeurs-par-défaut.md "schemas/form#/definitions/Form/properties/defaults")                             |
 | [outerDefaultClasses](#outerdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-form-properties-outerdefaultclasses.md "schemas/form#/definitions/Form/properties/outerDefaultClasses") |
 
 ### sectionsGroup
@@ -107,7 +101,7 @@ Référencer ce groupe en utilisant
 
 ### title
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `title`
 
@@ -117,7 +111,7 @@ Multilingue
 
 #### Type de title
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de title
 
@@ -155,7 +149,7 @@ en: ''
 
 #### Type de defaults
 
-`object` ([Defaults values](frw-definitions-defaults-values.md))
+`object` ([Valeurs par défaut](frw-definitions-valeurs-par-défaut.md))
 
 ### outerDefaultClasses
 
@@ -181,7 +175,7 @@ Référencer ce groupe en utilisant
 
 | Propriété                                                                           | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                 |
 | :---------------------------------------------------------------------------------- | :-------- | :---------- | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [section](#section)                                                                 | `object`  | Obligatoire | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Section/properties/section")                                                                                |
+| [section](#section)                                                                 | `object`  | Obligatoire | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/Section/properties/section")                                                                                 |
 | [id](#id)                                                                           | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-section-properties-id.md "schemas/form#/definitions/Section/properties/id")                                                                           |
 | [cacherTexteExplicatifChampsObligatoires](#cachertexteexplicatifchampsobligatoires) | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-section-properties-cachertexteexplicatifchampsobligatoires.md "schemas/form#/definitions/Section/properties/cacherTexteExplicatifChampsObligatoires") |
 | [classes](#classes)                                                                 | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-section-properties-classes.md "schemas/form#/definitions/Section/properties/classes")                                                                 |
@@ -190,7 +184,7 @@ Référencer ce groupe en utilisant
 
 ### section
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `section`
 
@@ -200,7 +194,7 @@ Multilingue
 
 #### Type de section
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de section
 
@@ -296,7 +290,7 @@ Référencer ce groupe en utilisant
 | [prefixId](#prefixid)         | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-section-group-properties-prefixid.md "schemas/form#/definitions/SectionsGroup/properties/prefixId") |
 | [classes](#classes-1)         | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-section-group-properties-classes.md "schemas/form#/definitions/SectionsGroup/properties/classes")   |
 | [v-if](#v-if-1)               | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-section-group-properties-v-if.md "schemas/form#/definitions/SectionsGroup/properties/v-if")         |
-| [sectionGroup](#sectiongroup) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/SectionsGroup/properties/sectionGroup")                   |
+| [sectionGroup](#sectiongroup) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/SectionsGroup/properties/sectionGroup")                    |
 
 ### sections
 
@@ -356,7 +350,7 @@ Conditionnal display on another property/form field.
 
 ### sectionGroup
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `sectionGroup`
 
@@ -366,7 +360,7 @@ Multilingue
 
 #### Type de sectionGroup
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de sectionGroup
 
@@ -403,12 +397,12 @@ Référencer ce groupe en utilisant
 | [classes](#classes-2)                 | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-affichage-properties-classes.md "schemas/form#/definitions/ComposantAffichage/properties/classes")                   |
 | [afficherBlocCode](#afficherbloccode) | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-affichage-properties-afficherbloccode.md "schemas/form#/definitions/ComposantAffichage/properties/afficherBlocCode") |
 | [tag](#tag)                           | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-affichage-properties-tag.md "schemas/form#/definitions/ComposantAffichage/properties/tag")                           |
-| [src](#src)                           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantAffichage/properties/src")                                                  |
-| [base64](#base64)                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantAffichage/properties/base64")                                               |
-| [text](#text)                         | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantAffichage/properties/text")                                                 |
-| [title](#title-1)                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantAffichage/properties/title")                                                |
+| [src](#src)                           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/src")                                                   |
+| [base64](#base64)                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/base64")                                                |
+| [text](#text)                         | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/text")                                                  |
+| [title](#title-1)                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/title")                                                 |
 | [additionals](#additionals)           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-affichage-properties-additionals.md "schemas/form#/definitions/ComposantAffichage/properties/additionals")           |
-| [alt](#alt)                           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantAffichage/properties/alt")                                                  |
+| [alt](#alt)                           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/alt")                                                   |
 | [v-if](#v-if-2)                       | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-affichage-properties-v-if.md "schemas/form#/definitions/ComposantAffichage/properties/v-if")                         |
 | [components](#components-1)           | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-affichage-properties-components.md "schemas/form#/definitions/ComposantAffichage/properties/components")             |
 
@@ -521,7 +515,7 @@ Indique si le bloc de code utilisé pour générer le contrôle est affiché sou
 
 ### src
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `src`
 
@@ -531,7 +525,7 @@ Multilingue
 
 #### Type de src
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de src
 
@@ -545,7 +539,7 @@ en: ''
 
 ### base64
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `base64`
 
@@ -555,7 +549,7 @@ Multilingue
 
 #### Type de base64
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de base64
 
@@ -569,7 +563,7 @@ en: ''
 
 ### text
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `text`
 
@@ -579,7 +573,7 @@ Multilingue
 
 #### Type de text
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de text
 
@@ -593,7 +587,7 @@ en: ''
 
 ### title
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `title`
 
@@ -603,7 +597,7 @@ Multilingue
 
 #### Type de title
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de title
 
@@ -631,7 +625,7 @@ en: ''
 
 ### alt
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `alt`
 
@@ -641,7 +635,7 @@ Multilingue
 
 #### Type de alt
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de alt
 
@@ -689,40 +683,40 @@ Référencer ce groupe en utilisant
 {"$ref":"schemas/form#/definitions/ComposantInteraction"}
 ```
 
-| Propriété                                   | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                         |
-| :------------------------------------------ | :-------- | :---------- | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [name](#name)                               | `string`  | Obligatoire | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-name.md "schemas/form#/definitions/ComposantInteraction/properties/name")                                                                    |
-| [type](#type-1)                             | `string`  | Obligatoire | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-type.md "schemas/form#/definitions/ComposantInteraction/properties/type")                                                                    |
-| [value](#value)                             | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-value.md "schemas/form#/definitions/ComposantInteraction/properties/value")                                                                  |
-| [limit](#limit)                             | `number`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-limit.md "schemas/form#/definitions/ComposantInteraction/properties/limit")                                                                  |
-| [validation-name](#validation-name)         | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantInteraction/properties/validation-name")                                                                                   |
-| [validation-messages](#validation-messages) | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-validation-messages-messages-de-validation-personnalisés.md "schemas/form#/definitions/ComposantInteraction/properties/validation-messages") |
-| [label](#label)                             | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantInteraction/properties/label")                                                                                             |
-| [placeholder](#placeholder)                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantInteraction/properties/placeholder")                                                                                       |
-| [inputClasses](#inputclasses)               | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-inputclasses.md "schemas/form#/definitions/ComposantInteraction/properties/inputClasses")                                                    |
-| [inputmode](#inputmode)                     | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-inputmode.md "schemas/form#/definitions/ComposantInteraction/properties/inputmode")                                                          |
-| [pattern](#pattern)                         | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-pattern.md "schemas/form#/definitions/ComposantInteraction/properties/pattern")                                                              |
-| [outerClasses](#outerclasses)               | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-outerclasses.md "schemas/form#/definitions/ComposantInteraction/properties/outerClasses")                                                    |
-| [help](#help)                               | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantInteraction/properties/help")                                                                                              |
-| [pdfBind](#pdfbind)                         | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-pdfbind.md "schemas/form#/definitions/ComposantInteraction/properties/pdfBind")                                                              |
-| [additionals](#additionals-1)               | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-additionals.md "schemas/form#/definitions/ComposantInteraction/properties/additionals")                                                      |
-| [v-if](#v-if-3)                             | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-v-if.md "schemas/form#/definitions/ComposantInteraction/properties/v-if")                                                                    |
-| [v-else-value](#v-else-value)               | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-v-else-value.md "schemas/form#/definitions/ComposantInteraction/properties/v-else-value")                                                    |
-| [helpPosition](#helpposition)               | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-helpposition.md "schemas/form#/definitions/ComposantInteraction/properties/helpPosition")                                                    |
-| [min](#min)                                 | Plusieurs | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-min.md "schemas/form#/definitions/ComposantInteraction/properties/min")                                                                      |
-| [max](#max)                                 | Plusieurs | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-max.md "schemas/form#/definitions/ComposantInteraction/properties/max")                                                                      |
-| [addLabel](#addlabel)                       | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantInteraction/properties/addLabel")                                                                                          |
-| [removeLabel](#removelabel)                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantInteraction/properties/removeLabel")                                                                                       |
-| [instanceLabel](#instancelabel)             | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantInteraction/properties/instanceLabel")                                                                                     |
-| [tooltip](#tooltip)                         | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation-1.md "schemas/form#/definitions/ComposantInteraction/properties/tooltip")                                                                                         |
-| [options](#options)                         | Plusieurs | Optionnel   | peut être nul    | [Fichier formulaire](frw-definitions-composant-interaction-properties-options.md "schemas/form#/definitions/ComposantInteraction/properties/options")                                                              |
-| [nomDocument](#nomdocument)                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantInteraction/properties/nomDocument")                                                                                       |
-| [afficherBlocCode](#afficherbloccode-1)     | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-afficherbloccode.md "schemas/form#/definitions/ComposantInteraction/properties/afficherBlocCode")                                            |
-| [validations](#validations)                 | `object`  | Optionnel   | peut être nul    | [Fichier formulaire](frw-definitions-composant-interaction-properties-validation.md "schemas/form#/definitions/ComposantInteraction/properties/validations")                                                       |
-| [repeatable](#repeatable)                   | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-repeatable.md "schemas/form#/definitions/ComposantInteraction/properties/repeatable")                                                        |
-| [minimum](#minimum)                         | `number`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-minimum.md "schemas/form#/definitions/ComposantInteraction/properties/minimum")                                                              |
-| [components](#components-2)                 | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-components.md "schemas/form#/definitions/ComposantInteraction/properties/components")                                                        |
-| [disabled](#disabled)                       | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-disabled.md "schemas/form#/definitions/ComposantInteraction/properties/disabled")                                                            |
+| Propriété                                   | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                       |
+| :------------------------------------------ | :-------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [name](#name)                               | `string`  | Obligatoire | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-name.md "schemas/form#/definitions/ComposantInteraction/properties/name")                                  |
+| [type](#type-1)                             | `string`  | Obligatoire | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-type.md "schemas/form#/definitions/ComposantInteraction/properties/type")                                  |
+| [value](#value)                             | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-value.md "schemas/form#/definitions/ComposantInteraction/properties/value")                                |
+| [limit](#limit)                             | `number`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-limit.md "schemas/form#/definitions/ComposantInteraction/properties/limit")                                |
+| [validation-name](#validation-name)         | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantInteraction/properties/validation-name")                                                  |
+| [validation-messages](#validation-messages) | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-messages-de-validation.md "schemas/form#/definitions/ComposantInteraction/properties/validation-messages") |
+| [label](#label)                             | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantInteraction/properties/label")                                                            |
+| [placeholder](#placeholder)                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantInteraction/properties/placeholder")                                                      |
+| [inputClasses](#inputclasses)               | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-inputclasses.md "schemas/form#/definitions/ComposantInteraction/properties/inputClasses")                  |
+| [inputmode](#inputmode)                     | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-inputmode.md "schemas/form#/definitions/ComposantInteraction/properties/inputmode")                        |
+| [pattern](#pattern)                         | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-pattern.md "schemas/form#/definitions/ComposantInteraction/properties/pattern")                            |
+| [outerClasses](#outerclasses)               | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-outerclasses.md "schemas/form#/definitions/ComposantInteraction/properties/outerClasses")                  |
+| [help](#help)                               | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantInteraction/properties/help")                                                             |
+| [pdfBind](#pdfbind)                         | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-pdfbind.md "schemas/form#/definitions/ComposantInteraction/properties/pdfBind")                            |
+| [additionals](#additionals-1)               | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-additionals.md "schemas/form#/definitions/ComposantInteraction/properties/additionals")                    |
+| [v-if](#v-if-3)                             | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-v-if.md "schemas/form#/definitions/ComposantInteraction/properties/v-if")                                  |
+| [v-else-value](#v-else-value)               | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-v-else-value.md "schemas/form#/definitions/ComposantInteraction/properties/v-else-value")                  |
+| [helpPosition](#helpposition)               | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-helpposition.md "schemas/form#/definitions/ComposantInteraction/properties/helpPosition")                  |
+| [min](#min)                                 | Plusieurs | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-min.md "schemas/form#/definitions/ComposantInteraction/properties/min")                                    |
+| [max](#max)                                 | Plusieurs | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-max.md "schemas/form#/definitions/ComposantInteraction/properties/max")                                    |
+| [addLabel](#addlabel)                       | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantInteraction/properties/addLabel")                                                         |
+| [removeLabel](#removelabel)                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantInteraction/properties/removeLabel")                                                      |
+| [instanceLabel](#instancelabel)             | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantInteraction/properties/instanceLabel")                                                    |
+| [tooltip](#tooltip)                         | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-infobulle.md "schemas/form#/definitions/ComposantInteraction/properties/tooltip")                                                           |
+| [options](#options)                         | Plusieurs | Optionnel   | peut être nul    | [Fichier formulaire](frw-definitions-composant-interaction-properties-options.md "schemas/form#/definitions/ComposantInteraction/properties/options")                            |
+| [nomDocument](#nomdocument)                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantInteraction/properties/nomDocument")                                                      |
+| [afficherBlocCode](#afficherbloccode-1)     | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-afficherbloccode.md "schemas/form#/definitions/ComposantInteraction/properties/afficherBlocCode")          |
+| [validations](#validations)                 | `object`  | Optionnel   | peut être nul    | [Fichier formulaire](frw-definitions-composant-interaction-properties-validation.md "schemas/form#/definitions/ComposantInteraction/properties/validations")                     |
+| [repeatable](#repeatable)                   | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-repeatable.md "schemas/form#/definitions/ComposantInteraction/properties/repeatable")                      |
+| [minimum](#minimum)                         | `number`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-minimum.md "schemas/form#/definitions/ComposantInteraction/properties/minimum")                            |
+| [components](#components-2)                 | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-components.md "schemas/form#/definitions/ComposantInteraction/properties/components")                      |
+| [disabled](#disabled)                       | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-interaction-properties-disabled.md "schemas/form#/definitions/ComposantInteraction/properties/disabled")                          |
 
 ### name
 
@@ -833,7 +827,7 @@ text
 
 ### validation-name
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `validation-name`
 
@@ -843,7 +837,7 @@ Multilingue
 
 #### Type de validation-name
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de validation-name
 
@@ -867,11 +861,11 @@ en: ''
 
 #### Type de validation-messages
 
-`object` ([validation-messages (Messages de validation personnalisés)](frw-definitions-composant-interaction-properties-validation-messages-messages-de-validation-personnalisés.md))
+`object` ([Messages de validation](frw-definitions-composant-interaction-properties-messages-de-validation.md))
 
 ### label
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `label`
 
@@ -881,7 +875,7 @@ Multilingue
 
 #### Type de label
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de label
 
@@ -895,7 +889,7 @@ en: ''
 
 ### placeholder
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `placeholder`
 
@@ -905,7 +899,7 @@ Multilingue
 
 #### Type de placeholder
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de placeholder
 
@@ -983,7 +977,7 @@ Regex pattern (html)
 
 ### help
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `help`
 
@@ -993,7 +987,7 @@ Multilingue
 
 #### Type de help
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de help
 
@@ -1114,7 +1108,7 @@ l'un des éléments suivants :`string` ou `number` ([Détails](frw-definitions-
 
 ### addLabel
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `addLabel`
 
@@ -1124,7 +1118,7 @@ Multilingue
 
 #### Type de addLabel
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de addLabel
 
@@ -1138,7 +1132,7 @@ en: ''
 
 ### removeLabel
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `removeLabel`
 
@@ -1148,7 +1142,7 @@ Multilingue
 
 #### Type de removeLabel
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de removeLabel
 
@@ -1162,7 +1156,7 @@ en: ''
 
 ### instanceLabel
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `instanceLabel`
 
@@ -1172,7 +1166,7 @@ Multilingue
 
 #### Type de instanceLabel
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de instanceLabel
 
@@ -1196,7 +1190,7 @@ en: ''
 
 #### Type de tooltip
 
-`object` ([Translation](frw-definitions-translation-1.md))
+`object` ([Infobulle](frw-definitions-infobulle.md))
 
 #### Valeur par défaut de tooltip
 
@@ -1231,7 +1225,7 @@ yesno
 
 ### nomDocument
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `nomDocument`
 
@@ -1241,7 +1235,7 @@ Multilingue
 
 #### Type de nomDocument
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de nomDocument
 
@@ -1354,11 +1348,11 @@ Référencer ce groupe en utilisant
 {"$ref":"schemas/form#/definitions/Translation"}
 ```
 
-| Propriété                 | Type     | Obligatoire | Nullable      | Défini par                                                                                                               |
-| :------------------------ | :------- | :---------- | :------------ | :----------------------------------------------------------------------------------------------------------------------- |
-| [fr](#fr)                 | `string` | Obligatoire | peut être nul | [Fichier formulaire](frw-definitions-translation-properties-fr.md "schemas/form#/definitions/Translation/properties/fr") |
-| [en](#en)                 | `string` | Optionnel   | peut être nul | [Fichier formulaire](frw-definitions-translation-properties-en.md "schemas/form#/definitions/Translation/properties/en") |
-| Propriétés Additionnelles | Any      | Optionnel   | can be null   |                                                                                                                          |
+| Propriété                 | Type     | Obligatoire | Nullable      | Défini par                                                                                                              |
+| :------------------------ | :------- | :---------- | :------------ | :---------------------------------------------------------------------------------------------------------------------- |
+| [fr](#fr)                 | `string` | Obligatoire | peut être nul | [Fichier formulaire](frw-definitions-traduction-properties-fr.md "schemas/form#/definitions/Translation/properties/fr") |
+| [en](#en)                 | `string` | Optionnel   | peut être nul | [Fichier formulaire](frw-definitions-traduction-properties-en.md "schemas/form#/definitions/Translation/properties/en") |
+| Propriétés Additionnelles | Any      | Optionnel   | can be null   |                                                                                                                         |
 
 ### fr
 
@@ -1372,7 +1366,7 @@ Texte de langue française.
 
 #### Type de fr
 
-`string` ([fr](frw-definitions-translation-properties-fr.md))
+`string` ([fr](frw-definitions-traduction-properties-fr.md))
 
 ### en
 
@@ -1386,7 +1380,7 @@ Texte de langue anglaise.
 
 #### Type de en
 
-`string` ([en](frw-definitions-translation-properties-en.md))
+`string` ([en](frw-definitions-traduction-properties-en.md))
 
 ### Propriétés Additionnelles
 
@@ -1400,15 +1394,15 @@ Référencer ce groupe en utilisant
 {"$ref":"schemas/form#/definitions/Tooltip"}
 ```
 
-| Propriété                 | Type     | Obligatoire | Nullable         | Défini par                                                                                                |
-| :------------------------ | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------- |
-| [title](#title-2)         | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Tooltip/properties/title") |
-| [text](#text-1)           | `object` | Obligatoire | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Tooltip/properties/text")  |
-| Propriétés Additionnelles | Any      | Optionnel   | can be null      |                                                                                                           |
+| Propriété                 | Type     | Obligatoire | Nullable         | Défini par                                                                                               |
+| :------------------------ | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------- |
+| [title](#title-2)         | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/Tooltip/properties/title") |
+| [text](#text-1)           | `object` | Obligatoire | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/Tooltip/properties/text")  |
+| Propriétés Additionnelles | Any      | Optionnel   | can be null      |                                                                                                          |
 
 ### title
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `title`
 
@@ -1418,7 +1412,7 @@ Multilingue
 
 #### Type de title
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de title
 
@@ -1432,7 +1426,7 @@ en: ''
 
 ### text
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `text`
 
@@ -1442,7 +1436,7 @@ Multilingue
 
 #### Type de text
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de text
 
@@ -1500,7 +1494,7 @@ Référencer ce groupe en utilisant
 | [scripts](#scripts)                                   | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-scripts.md "schemas/form#/definitions/Config/properties/scripts")                                                                |
 | [securite](#securite)                                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-sécurité-du-formulaire.md "schemas/form#/definitions/Config/properties/securite")                                                |
 | [soumission](#soumission)                             | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-page-de-soumission.md "schemas/form#/definitions/Config/properties/soumission")                                                  |
-| [title](#title-3)                                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Config/properties/title")                                                              |
+| [title](#title-3)                                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/Config/properties/title")                                                               |
 
 ### afficherBlocCode
 
@@ -1728,7 +1722,7 @@ Paramètres associés au PIV.
 
 ### title
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `title`
 
@@ -1738,7 +1732,7 @@ Multilingue
 
 #### Type de title
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de title
 
@@ -1788,7 +1782,7 @@ Référencer ce groupe en utilisant
 | :---------------------------------------------------------------------------- | :-------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [actif](#actif)                                                               | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-enregistrement-properties-actif.md "schemas/form#/definitions/Enregistrement/properties/actif")                                       |
 | [afficherMessageIncitatif](#affichermessageincitatif)                         | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-enregistrement-properties-affichermessageincitatif.md "schemas/form#/definitions/Enregistrement/properties/afficherMessageIncitatif") |
-| [texteModaleEnregistrementAuthentifie](#textemodaleenregistrementauthentifie) | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Enregistrement/properties/texteModaleEnregistrementAuthentifie")                            |
+| [texteModaleEnregistrementAuthentifie](#textemodaleenregistrementauthentifie) | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/Enregistrement/properties/texteModaleEnregistrementAuthentifie")                             |
 
 ### actif
 
@@ -1820,7 +1814,7 @@ Indique si le message (avis avertissement en haut de chaque page) incitant l'enr
 
 ### texteModaleEnregistrementAuthentifie
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `texteModaleEnregistrementAuthentifie`
 
@@ -1830,7 +1824,7 @@ Multilingue
 
 #### Type de texteModaleEnregistrementAuthentifie
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de texteModaleEnregistrementAuthentifie
 
@@ -1923,13 +1917,13 @@ Référencer ce groupe en utilisant
 
 | Propriété                                                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                                               |
 | :---------------------------------------------------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [texteSupplementaire](#textesupplementaire)                 | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ConfirmationTransmission/properties/texteSupplementaire")                                                                 |
+| [texteSupplementaire](#textesupplementaire)                 | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ConfirmationTransmission/properties/texteSupplementaire")                                                                  |
 | [nomChampCourrielUtilisateur](#nomchampcourrielutilisateur) | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-confirmation-de-transmission-properties-nomchampcourrielutilisateur.md "schemas/form#/definitions/ConfirmationTransmission/properties/nomChampCourrielUtilisateur") |
 | [modaleCourrielConfirmation](#modalecourrielconfirmation)   | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-fenêtre-modale-de-courriel-de-confirmation.md "schemas/form#/definitions/ConfirmationTransmission/properties/modaleCourrielConfirmation")                           |
 
 ### texteSupplementaire
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `texteSupplementaire`
 
@@ -1939,7 +1933,7 @@ Multilingue
 
 #### Type de texteSupplementaire
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de texteSupplementaire
 
@@ -1991,8 +1985,8 @@ Référencer ce groupe en utilisant
 | :---------------------------------------- | :------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [courrielExpediteur](#courrielexpediteur) | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-courrielreprise-properties-courrielexpediteur.md "schemas/form#/definitions/CourrielReprise/properties/courrielExpediteur") |
 | [nomExpediteur](#nomexpediteur)           | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-courrielreprise-properties-courrielexpediteur-1.md "schemas/form#/definitions/CourrielReprise/properties/nomExpediteur")    |
-| [objet](#objet)                           | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/CourrielReprise/properties/objet")                                                |
-| [corps](#corps)                           | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/CourrielReprise/properties/corps")                                                |
+| [objet](#objet)                           | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/CourrielReprise/properties/objet")                                                 |
+| [corps](#corps)                           | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/CourrielReprise/properties/corps")                                                 |
 
 ### courrielExpediteur
 
@@ -2038,7 +2032,7 @@ Formulaires en ligne - MESS
 
 ### objet
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `objet`
 
@@ -2048,7 +2042,7 @@ Multilingue
 
 #### Type de objet
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de objet
 
@@ -2069,7 +2063,7 @@ Formulaire  « {0} » incomplet
 
 ### corps
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `corps`
 
@@ -2079,7 +2073,7 @@ Multilingue
 
 #### Type de corps
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de corps
 
@@ -2218,13 +2212,13 @@ Référencer ce groupe en utilisant
 {"$ref":"schemas/form#/definitions/Soumission"}
 ```
 
-| Propriété                                     | Type     | Obligatoire | Nullable         | Défini par                                                                                                                  |
-| :-------------------------------------------- | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------- |
-| [texteBoutonSoumettre](#texteboutonsoumettre) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Soumission/properties/texteBoutonSoumettre") |
+| Propriété                                     | Type     | Obligatoire | Nullable         | Défini par                                                                                                                 |
+| :-------------------------------------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| [texteBoutonSoumettre](#texteboutonsoumettre) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/Soumission/properties/texteBoutonSoumettre") |
 
 ### texteBoutonSoumettre
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `texteBoutonSoumettre`
 
@@ -2234,7 +2228,7 @@ Multilingue
 
 #### Type de texteBoutonSoumettre
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de texteBoutonSoumettre
 
@@ -2280,13 +2274,13 @@ Référencer ce groupe en utilisant
 {"$ref":"schemas/form#/definitions/ValidationMessages"}
 ```
 
-| Propriété        | Type     | Obligatoire | Nullable         | Défini par                                                                                                                            |
-| :--------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
-| `^[a-zA-Z0-9]+$` | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ValidationMessages/patternProperties/^\[a-zA-Z0-9]+$") |
+| Propriété        | Type     | Obligatoire | Nullable         | Défini par                                                                                                                           |
+| :--------------- | :------- | :---------- | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| `^[a-zA-Z0-9]+$` | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ValidationMessages/patternProperties/^\[a-zA-Z0-9]+$") |
 
 ### Modèle:`^[a-zA-Z0-9]+$`
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `^[a-zA-Z0-9]+$`
 
@@ -2296,7 +2290,7 @@ Multilingue
 
 #### Type de ^\[a-zA-Z0-9]+$
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 #### Valeur par défaut de ^\[a-zA-Z0-9]+$
 

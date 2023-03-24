@@ -16,15 +16,13 @@
 
 *   [Confirmation de transmission](./frw-definitions-confirmation-de-transmission.md) – `schemas/form#/definitions/ConfirmationTransmission`
 
-*   [Defaults values](./frw-definitions-defaults-values.md) – `schemas/form#/definitions/Defaults`
-
 *   [Fenêtre modale de courriel de confirmation](./frw-definitions-fenêtre-modale-de-courriel-de-confirmation.md) – `schemas/form#/definitions/ModaleCourrielConfirmation`
 
 *   [Form](./frw-definitions-form.md) – `schemas/form#/definitions/Form`
 
-*   [Formulaire FRW](./frw-definitions-formulaire-frw.md) – `schemas/form#/definitions/FrwForm`
-
 *   [Gerer les plages de disponibilité](./frw-definitions-gerer-les-plages-de-disponibilité.md) – `schemas/form#/definitions/GererPlageDisponibilite`
+
+*   [Infobulle](./frw-definitions-infobulle.md) – `schemas/form#/definitions/Tooltip`
 
 *   [Nom de la fonction Vue.js à injecter dans le formulaire](./frw-definitions-nomfonction-patternproperties-nom-de-la-fonction-vuejs-à-injecter-dans-le-formulaire.md) – `schemas/form#/definitions/NomFonction/patternProperties/^[a-zA-Z0-9]+$`
 
@@ -40,9 +38,9 @@
 
 *   [Sécurité du formulaire](./frw-definitions-sécurité-du-formulaire.md) – `schemas/form#/definitions/Securite`
 
-*   [Translation](./frw-definitions-translation.md "Multilingue") – `schemas/form#/definitions/Translation`
+*   [Traduction](./frw-definitions-traduction.md "Textes multilingue (fr et en supportés seulement)") – `schemas/form#/definitions/Translation`
 
-*   [Translation](./frw-definitions-translation-1.md) – `schemas/form#/definitions/Tooltip`
+*   [Valeurs par défaut](./frw-definitions-valeurs-par-défaut.md) – `schemas/form#/definitions/Defaults`
 
 *   [anonyme](./frw-definitions-debuterformulaire-properties-anonyme.md "Paramètres de la page permettant de débuter un formulaire anonyme") – `schemas/form#/definitions/DebuterFormulaire/properties/anonyme`
 
@@ -68,7 +66,7 @@
 
 *   [object sans titre dans Fichier formulaire](./frw-definitions-form-properties-outerdefaultclasses.md) – `schemas/form#/definitions/Form/properties/outerDefaultClasses`
 
-*   [object sans titre dans Fichier formulaire](./frw-definitions-formulaire-frw-properties-textes.md) – `schemas/form#/definitions/FrwForm/properties/textes`
+*   [object sans titre dans Fichier formulaire](./frw-properties-textes.md) – `schemas/form#/properties/textes`
 
 *   [object sans titre dans Fichier formulaire](./frw-definitions-component.md) – `schemas/form#/definitions/Component`
 

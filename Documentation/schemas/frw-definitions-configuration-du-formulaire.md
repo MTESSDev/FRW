@@ -22,7 +22,7 @@
 | [scripts](#scripts)                                   | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-scripts.md "schemas/form#/definitions/Config/properties/scripts")                                                                |
 | [securite](#securite)                                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-sécurité-du-formulaire.md "schemas/form#/definitions/Config/properties/securite")                                                |
 | [soumission](#soumission)                             | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-page-de-soumission.md "schemas/form#/definitions/Config/properties/soumission")                                                  |
-| [title](#title)                                       | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Config/properties/title")                                                              |
+| [title](#title)                                       | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/Config/properties/title")                                                               |
 
 ## afficherBlocCode
 
@@ -250,7 +250,7 @@ Paramètres associés au PIV.
 
 ## title
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `title`
 
@@ -260,7 +260,7 @@ Multilingue
 
 ### Type de title
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de title
 

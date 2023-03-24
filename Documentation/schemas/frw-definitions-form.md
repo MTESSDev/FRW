@@ -8,9 +8,9 @@
 | :------------------------------------------ | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
 | [sectionsGroup](#sectionsgroup)             | `array`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-form-properties-sectionsgroup.md "schemas/form#/definitions/Form/properties/sectionsGroup")             |
 | [templates](#templates)                     | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-form-properties-templates.md "schemas/form#/definitions/Form/properties/templates")                     |
-| [title](#title)                             | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Form/properties/title")                                       |
+| [title](#title)                             | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/Form/properties/title")                                        |
 | [inputDefaultClasses](#inputdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-form-properties-inputdefaultclasses.md "schemas/form#/definitions/Form/properties/inputDefaultClasses") |
-| [defaults](#defaults)                       | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-defaults-values.md "schemas/form#/definitions/Form/properties/defaults")                                |
+| [defaults](#defaults)                       | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-valeurs-par-défaut.md "schemas/form#/definitions/Form/properties/defaults")                             |
 | [outerDefaultClasses](#outerdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-form-properties-outerdefaultclasses.md "schemas/form#/definitions/Form/properties/outerDefaultClasses") |
 
 ## sectionsGroup
@@ -43,7 +43,7 @@
 
 ## title
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `title`
 
@@ -53,7 +53,7 @@ Multilingue
 
 ### Type de title
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de title
 
@@ -91,7 +91,7 @@ en: ''
 
 ### Type de defaults
 
-`object` ([Defaults values](frw-definitions-defaults-values.md))
+`object` ([Valeurs par défaut](frw-definitions-valeurs-par-défaut.md))
 
 ## outerDefaultClasses
 

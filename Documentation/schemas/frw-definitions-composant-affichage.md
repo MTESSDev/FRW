@@ -19,12 +19,12 @@ type: dynamic
 | [classes](#classes)                   | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-affichage-properties-classes.md "schemas/form#/definitions/ComposantAffichage/properties/classes")                   |
 | [afficherBlocCode](#afficherbloccode) | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-affichage-properties-afficherbloccode.md "schemas/form#/definitions/ComposantAffichage/properties/afficherBlocCode") |
 | [tag](#tag)                           | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-affichage-properties-tag.md "schemas/form#/definitions/ComposantAffichage/properties/tag")                           |
-| [src](#src)                           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantAffichage/properties/src")                                                  |
-| [base64](#base64)                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantAffichage/properties/base64")                                               |
-| [text](#text)                         | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantAffichage/properties/text")                                                 |
-| [title](#title)                       | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantAffichage/properties/title")                                                |
+| [src](#src)                           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/src")                                                   |
+| [base64](#base64)                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/base64")                                                |
+| [text](#text)                         | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/text")                                                  |
+| [title](#title)                       | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/title")                                                 |
 | [additionals](#additionals)           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-affichage-properties-additionals.md "schemas/form#/definitions/ComposantAffichage/properties/additionals")           |
-| [alt](#alt)                           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/ComposantAffichage/properties/alt")                                                  |
+| [alt](#alt)                           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/alt")                                                   |
 | [v-if](#v-if)                         | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-affichage-properties-v-if.md "schemas/form#/definitions/ComposantAffichage/properties/v-if")                         |
 | [components](#components)             | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-composant-affichage-properties-components.md "schemas/form#/definitions/ComposantAffichage/properties/components")             |
 
@@ -137,7 +137,7 @@ Indique si le bloc de code utilisé pour générer le contrôle est affiché sou
 
 ## src
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `src`
 
@@ -147,7 +147,7 @@ Multilingue
 
 ### Type de src
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de src
 
@@ -161,7 +161,7 @@ en: ''
 
 ## base64
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `base64`
 
@@ -171,7 +171,7 @@ Multilingue
 
 ### Type de base64
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de base64
 
@@ -185,7 +185,7 @@ en: ''
 
 ## text
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `text`
 
@@ -195,7 +195,7 @@ Multilingue
 
 ### Type de text
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de text
 
@@ -209,7 +209,7 @@ en: ''
 
 ## title
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `title`
 
@@ -219,7 +219,7 @@ Multilingue
 
 ### Type de title
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de title
 
@@ -247,7 +247,7 @@ en: ''
 
 ## alt
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `alt`
 
@@ -257,7 +257,7 @@ Multilingue
 
 ### Type de alt
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de alt
 

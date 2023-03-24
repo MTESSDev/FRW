@@ -6,7 +6,7 @@
 
 | Propriété                                                                           | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                 |
 | :---------------------------------------------------------------------------------- | :-------- | :---------- | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [section](#section)                                                                 | `object`  | Obligatoire | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Section/properties/section")                                                                                |
+| [section](#section)                                                                 | `object`  | Obligatoire | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/Section/properties/section")                                                                                 |
 | [id](#id)                                                                           | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-section-properties-id.md "schemas/form#/definitions/Section/properties/id")                                                                           |
 | [cacherTexteExplicatifChampsObligatoires](#cachertexteexplicatifchampsobligatoires) | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-section-properties-cachertexteexplicatifchampsobligatoires.md "schemas/form#/definitions/Section/properties/cacherTexteExplicatifChampsObligatoires") |
 | [classes](#classes)                                                                 | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-section-properties-classes.md "schemas/form#/definitions/Section/properties/classes")                                                                 |
@@ -15,7 +15,7 @@
 
 ## section
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `section`
 
@@ -25,7 +25,7 @@ Multilingue
 
 ### Type de section
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de section
 

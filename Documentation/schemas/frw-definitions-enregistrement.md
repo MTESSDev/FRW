@@ -8,7 +8,7 @@
 | :---------------------------------------------------------------------------- | :-------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [actif](#actif)                                                               | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-enregistrement-properties-actif.md "schemas/form#/definitions/Enregistrement/properties/actif")                                       |
 | [afficherMessageIncitatif](#affichermessageincitatif)                         | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-enregistrement-properties-affichermessageincitatif.md "schemas/form#/definitions/Enregistrement/properties/afficherMessageIncitatif") |
-| [texteModaleEnregistrementAuthentifie](#textemodaleenregistrementauthentifie) | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Enregistrement/properties/texteModaleEnregistrementAuthentifie")                            |
+| [texteModaleEnregistrementAuthentifie](#textemodaleenregistrementauthentifie) | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-traduction.md "schemas/form#/definitions/Enregistrement/properties/texteModaleEnregistrementAuthentifie")                             |
 
 ## actif
 
@@ -40,7 +40,7 @@ Indique si le message (avis avertissement en haut de chaque page) incitant l'enr
 
 ## texteModaleEnregistrementAuthentifie
 
-Multilingue
+Textes multilingue (fr et en supportés seulement)
 
 `texteModaleEnregistrementAuthentifie`
 
@@ -50,7 +50,7 @@ Multilingue
 
 ### Type de texteModaleEnregistrementAuthentifie
 
-`object` ([Translation](frw-definitions-translation.md))
+`object` ([Traduction](frw-definitions-traduction.md))
 
 ### Valeur par défaut de texteModaleEnregistrementAuthentifie
 

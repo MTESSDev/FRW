@@ -4,10 +4,10 @@
 
 # Propriétés de sessionInvalide
 
-| Propriété                                               | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                |
-| :------------------------------------------------------ | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [titrePage](#titrepage)                                 | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide/properties/titrePage")                 |
-| [corpsMessageAvertissement](#corpsmessageavertissement) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide/properties/corpsMessageAvertissement") |
+| Propriété                                               | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                             |
+| :------------------------------------------------------ | :------- | :---------- | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [titrePage](#titrepage)                                 | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Pages/properties/sessionInvalide/properties/titrePage")                 |
+| [corpsMessageAvertissement](#corpsmessageavertissement) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Pages/properties/sessionInvalide/properties/corpsMessageAvertissement") |
 
 ## titrePage
 

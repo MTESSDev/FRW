@@ -4,13 +4,13 @@
 
 # Propriétés de SectionsGroup
 
-| Propriété                     | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                  |
-| :---------------------------- | :------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sections](#sections)         | `array`  | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-group-properties-sections.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sections") |
-| [prefixId](#prefixid)         | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-group-properties-prefixid.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/prefixId") |
-| [classes](#classes)           | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-group-properties-classes.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/classes")   |
-| [v-if](#v-if)                 | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-section-group-properties-v-if.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/v-if")         |
-| [sectionGroup](#sectiongroup) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/SectionsGroup/properties/sectionGroup")                   |
+| Propriété                     | Type     | Obligatoire | Nullable         | Défini par                                                                                                                               |
+| :---------------------------- | :------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| [sections](#sections)         | `array`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-section-group-properties-sections.md "schemas/form#/definitions/SectionsGroup/properties/sections") |
+| [prefixId](#prefixid)         | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-section-group-properties-prefixid.md "schemas/form#/definitions/SectionsGroup/properties/prefixId") |
+| [classes](#classes)           | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-section-group-properties-classes.md "schemas/form#/definitions/SectionsGroup/properties/classes")   |
+| [v-if](#v-if)                 | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-section-group-properties-v-if.md "schemas/form#/definitions/SectionsGroup/properties/v-if")         |
+| [sectionGroup](#sectiongroup) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/SectionsGroup/properties/sectionGroup")                   |
 
 ## sections
 

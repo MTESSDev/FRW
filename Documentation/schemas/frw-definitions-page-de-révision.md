@@ -4,9 +4,9 @@
 
 # Propriétés de Revision
 
-| Propriété                                       | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                          |
-| :---------------------------------------------- | :-------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [validationAutomatique](#validationautomatique) | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-page-de-révision-properties-validationautomatique.md "https://example.com/schemas/custom#/definitions/Revision/properties/validationAutomatique") |
+| Propriété                                       | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                       |
+| :---------------------------------------------- | :-------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [validationAutomatique](#validationautomatique) | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-page-de-révision-properties-validationautomatique.md "schemas/form#/definitions/Revision/properties/validationAutomatique") |
 
 ## validationAutomatique
 

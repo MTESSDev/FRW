@@ -1,0 +1,3 @@
+## Type de default
+
+`dynamic`

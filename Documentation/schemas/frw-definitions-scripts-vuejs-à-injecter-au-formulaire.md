@@ -4,11 +4,11 @@
 
 # Propriétés de InjecterJs
 
-| Propriété             | Type     | Obligatoire | Nullable         | Défini par                                                                                                                         |
-| :-------------------- | :------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
-| [method](#method)     | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-nomfonction.md "https://example.com/schemas/custom#/definitions/InjecterJs/properties/method")   |
-| [computed](#computed) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-nomfonction.md "https://example.com/schemas/custom#/definitions/InjecterJs/properties/computed") |
-| [watch](#watch)       | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-nomfonction.md "https://example.com/schemas/custom#/definitions/InjecterJs/properties/watch")    |
+| Propriété             | Type     | Obligatoire | Nullable         | Défini par                                                                                                      |
+| :-------------------- | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------- |
+| [method](#method)     | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-nomfonction.md "schemas/form#/definitions/InjecterJs/properties/method")   |
+| [computed](#computed) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-nomfonction.md "schemas/form#/definitions/InjecterJs/properties/computed") |
+| [watch](#watch)       | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-nomfonction.md "schemas/form#/definitions/InjecterJs/properties/watch")    |
 
 ## method
 

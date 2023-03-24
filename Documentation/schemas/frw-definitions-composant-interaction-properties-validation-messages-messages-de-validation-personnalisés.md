@@ -1,8 +1,8 @@
-## Type de ValidationMessages
+## Type de validation-messages
 
-inconnu
+`object` ([validation-messages (Messages de validation personnalisés)](frw-definitions-composant-interaction-properties-validation-messages-messages-de-validation-personnalisés.md))
 
-# Propriétés de ValidationMessages
+# Propriétés de validation-messages
 
 | Propriété        | Type     | Obligatoire | Nullable         | Défini par                                                                                                                            |
 | :--------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------ |

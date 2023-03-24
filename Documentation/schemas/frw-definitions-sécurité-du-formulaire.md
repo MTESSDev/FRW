@@ -4,9 +4,9 @@
 
 # Propriétés de Securite
 
-| Propriété                     | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                              |
-| :---------------------------- | :-------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [accesAnonyme](#accesanonyme) | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-sécurité-du-formulaire-properties-accesanonyme.md "https://example.com/schemas/custom#/definitions/Securite/properties/accesAnonyme") |
+| Propriété                     | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                           |
+| :---------------------------- | :-------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [accesAnonyme](#accesanonyme) | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-sécurité-du-formulaire-properties-accesanonyme.md "schemas/form#/definitions/Securite/properties/accesAnonyme") |
 
 ## accesAnonyme
 

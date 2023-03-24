@@ -4,9 +4,9 @@
 
 # Propriétés de ModaleCourrielConfirmation
 
-| Propriété       | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                      |
-| :-------------- | :-------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [actif](#actif) | `boolean` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-fenêtre-modale-de-courriel-de-confirmation-properties-actif.md "https://example.com/schemas/custom#/definitions/ModaleCourrielConfirmation/properties/actif") |
+| Propriété       | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                   |
+| :-------------- | :-------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [actif](#actif) | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-fenêtre-modale-de-courriel-de-confirmation-properties-actif.md "schemas/form#/definitions/ModaleCourrielConfirmation/properties/actif") |
 
 ## actif
 

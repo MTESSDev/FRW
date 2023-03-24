@@ -4,10 +4,10 @@
 
 # Propriétés de erreurTechnique
 
-| Propriété       | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                               |
-| :-------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [titre](#titre) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique/properties/titre") |
-| [corps](#corps) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique/properties/corps") |
+| Propriété       | Type     | Obligatoire | Nullable         | Défini par                                                                                                                            |
+| :-------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
+| [titre](#titre) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Messages/properties/erreurTechnique/properties/titre") |
+| [corps](#corps) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Messages/properties/erreurTechnique/properties/corps") |
 
 ## titre
 

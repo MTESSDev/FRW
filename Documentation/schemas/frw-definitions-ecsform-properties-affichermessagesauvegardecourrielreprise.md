@@ -1,3 +1,0 @@
-## Type de afficherMessageSauvegardeCourrielReprise
-
-`boolean`

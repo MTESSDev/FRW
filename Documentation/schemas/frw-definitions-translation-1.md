@@ -14,11 +14,11 @@ en: ''
 
 # Propriétés de Tooltip
 
-| Propriété                 | Type     | Obligatoire | Nullable         | Défini par                                                                                                                   |
-| :------------------------ | :------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------- |
-| [title](#title)           | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Tooltip/properties/title") |
-| [text](#text)             | `object` | Obligatoire | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Tooltip/properties/text")  |
-| Propriétés Additionnelles | Any      | Optionnel   | can be null      |                                                                                                                              |
+| Propriété                 | Type     | Obligatoire | Nullable         | Défini par                                                                                                |
+| :------------------------ | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------- |
+| [title](#title)           | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Tooltip/properties/title") |
+| [text](#text)             | `object` | Obligatoire | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Tooltip/properties/text")  |
+| Propriétés Additionnelles | Any      | Optionnel   | can be null      |                                                                                                           |
 
 ## title
 

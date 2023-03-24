@@ -4,9 +4,9 @@
 
 # Propriétés de Soumission
 
-| Propriété                                     | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                     |
-| :-------------------------------------------- | :------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
-| [texteBoutonSoumettre](#texteboutonsoumettre) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-translation.md "https://example.com/schemas/custom#/definitions/Soumission/properties/texteBoutonSoumettre") |
+| Propriété                                     | Type     | Obligatoire | Nullable         | Défini par                                                                                                                  |
+| :-------------------------------------------- | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------- |
+| [texteBoutonSoumettre](#texteboutonsoumettre) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-translation.md "schemas/form#/definitions/Soumission/properties/texteBoutonSoumettre") |
 
 ## texteBoutonSoumettre
 

@@ -4,9 +4,9 @@
 
 # Propriétés de Pages
 
-| Propriété                           | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                |
-| :---------------------------------- | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sessionInvalide](#sessioninvalide) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-pages-properties-sessioninvalide.md "https://example.com/schemas/custom#/definitions/Pages/properties/sessionInvalide") |
+| Propriété                           | Type     | Obligatoire | Nullable         | Défini par                                                                                                                             |
+| :---------------------------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
+| [sessionInvalide](#sessioninvalide) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-pages-properties-sessioninvalide.md "schemas/form#/definitions/Pages/properties/sessionInvalide") |
 
 ## sessionInvalide
 

@@ -14,11 +14,11 @@ en: ''
 
 # Propriétés de Translation
 
-| Propriété                 | Type     | Obligatoire | Nullable      | Défini par                                                                                                                                  |
-| :------------------------ | :------- | :---------- | :------------ | :------------------------------------------------------------------------------------------------------------------------------------------ |
-| [fr](#fr)                 | `string` | Obligatoire | peut être nul | [Schéma sans nom](frw-definitions-translation-properties-fr.md "https://example.com/schemas/custom#/definitions/Translation/properties/fr") |
-| [en](#en)                 | `string` | Optionnel   | peut être nul | [Schéma sans nom](frw-definitions-translation-properties-en.md "https://example.com/schemas/custom#/definitions/Translation/properties/en") |
-| Propriétés Additionnelles | Any      | Optionnel   | can be null   |                                                                                                                                             |
+| Propriété                 | Type     | Obligatoire | Nullable      | Défini par                                                                                                               |
+| :------------------------ | :------- | :---------- | :------------ | :----------------------------------------------------------------------------------------------------------------------- |
+| [fr](#fr)                 | `string` | Obligatoire | peut être nul | [Fichier formulaire](frw-definitions-translation-properties-fr.md "schemas/form#/definitions/Translation/properties/fr") |
+| [en](#en)                 | `string` | Optionnel   | peut être nul | [Fichier formulaire](frw-definitions-translation-properties-en.md "schemas/form#/definitions/Translation/properties/en") |
+| Propriétés Additionnelles | Any      | Optionnel   | can be null   |                                                                                                                          |
 
 ## fr
 

@@ -4,9 +4,9 @@
 
 # Propriétés de Scripts
 
-| Propriété                               | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                        |
-| :-------------------------------------- | :------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [outilStatistiques](#outilstatistiques) | `string` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-scripts-properties-outilstatistiques.md "https://example.com/schemas/custom#/definitions/Scripts/properties/outilStatistiques") |
+| Propriété                               | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                     |
+| :-------------------------------------- | :------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
+| [outilStatistiques](#outilstatistiques) | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-scripts-properties-outilstatistiques.md "schemas/form#/definitions/Scripts/properties/outilStatistiques") |
 
 ## outilStatistiques
 

@@ -4,9 +4,9 @@
 
 # Propriétés de Messages
 
-| Propriété                           | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                      |
-| :---------------------------------- | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [erreurTechnique](#erreurtechnique) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-messages-properties-erreurtechnique.md "https://example.com/schemas/custom#/definitions/Messages/properties/erreurTechnique") |
+| Propriété                           | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                   |
+| :---------------------------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
+| [erreurTechnique](#erreurtechnique) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-messages-properties-erreurtechnique.md "schemas/form#/definitions/Messages/properties/erreurTechnique") |
 
 ## erreurTechnique
 

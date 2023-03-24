@@ -4,10 +4,10 @@
 
 # Propriétés de DebuterFormulaire
 
-| Propriété                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                |
-| :-------------------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [authentifie](#authentifie) | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-debuterformulaire-properties-authentifie.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/authentifie") |
-| [anonyme](#anonyme)         | `object` | Optionnel   | ne peut être nul | [Schéma sans nom](frw-definitions-debuterformulaire-properties-anonyme.md "https://example.com/schemas/custom#/definitions/DebuterFormulaire/properties/anonyme")         |
+| Propriété                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                             |
+| :-------------------------- | :------- | :---------- | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [authentifie](#authentifie) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-debuterformulaire-properties-authentifie.md "schemas/form#/definitions/DebuterFormulaire/properties/authentifie") |
+| [anonyme](#anonyme)         | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-definitions-debuterformulaire-properties-anonyme.md "schemas/form#/definitions/DebuterFormulaire/properties/anonyme")         |
 
 ## authentifie
 

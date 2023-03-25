@@ -75,3 +75,7 @@ Pour un premier formulaire, il est fortement recommandé de clôner le présent 
 
 1. Vérifier si une [issue](https://github.com/MTESSDev/FRW/issues) existe avec le même problème;
 2. Créez une [issue](https://github.com/MTESSDev/FRW/issues) si elle n'existe pas déjà une et mettre le plus de détails possibles afin de reproduire le problème.
+
+# Schémas
+
+[issue](Documentation/schemas/README.md)

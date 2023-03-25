@@ -78,4 +78,4 @@ Pour un premier formulaire, il est fortement recommandé de clôner le présent 
 
 # Schémas
 
-[issue](Documentation/schemas/README.md)
+[issue](Documentation/schemas/readme.md)

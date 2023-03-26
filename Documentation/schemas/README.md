@@ -8,6 +8,8 @@
 
 ### Objets
 
+*   [Attributs supplémentaires](./frw-form-definitions-attributs-supplémentaires.md) – `schemas/form#/definitions/Additionals`
+
 *   [Composant affichage](./frw-form-definitions-composant-affichage.md "Composant pour l'affichage") – `schemas/form#/definitions/ComposantAffichage`
 
 *   [Composant interaction](./frw-form-definitions-composant-interaction.md "Composant pour l'intéraction") – `schemas/form#/definitions/ComposantInteraction`
@@ -29,6 +31,8 @@
 *   [Page de révision](./frw-form-definitions-page-de-révision.md) – `schemas/form#/definitions/Revision`
 
 *   [Page de soumission](./frw-form-definitions-page-de-soumission.md) – `schemas/form#/definitions/Soumission`
+
+*   [RÉSERVÉ FRW - Templates de composants](./frw-form-definitions-form-properties-réservé-frw---templates-de-composants.md) – `schemas/form#/definitions/Form/properties/templates`
 
 *   [Scripts Vue.js à injecter au formulaire.](./frw-form-definitions-scripts-vuejs-à-injecter-au-formulaire.md) – `schemas/form#/definitions/InjecterJs`
 
@@ -55,12 +59,6 @@
 *   [erreurTechnique](./frw-form-definitions-messages-properties-erreurtechnique.md "Paramètres du message d'erreur technique") – `schemas/form#/definitions/Messages/properties/erreurTechnique`
 
 *   [messages](./frw-form-definitions-messages.md "Paramètres associés aux différents messages") – `schemas/form#/definitions/Messages`
-
-*   [object sans titre dans Fichier formulaire](./frw-form-definitions-composant-affichage-properties-additionals.md) – `schemas/form#/definitions/ComposantAffichage/properties/additionals`
-
-*   [object sans titre dans Fichier formulaire](./frw-form-definitions-composant-interaction-properties-additionals.md) – `schemas/form#/definitions/ComposantInteraction/properties/additionals`
-
-*   [object sans titre dans Fichier formulaire](./frw-form-definitions-form-properties-templates.md) – `schemas/form#/definitions/Form/properties/templates`
 
 *   [object sans titre dans Fichier formulaire](./frw-form-definitions-form-properties-inputdefaultclasses.md) – `schemas/form#/definitions/Form/properties/inputDefaultClasses`
 

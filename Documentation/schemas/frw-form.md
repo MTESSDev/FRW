@@ -1,6 +1,6 @@
 ## Type de Fichier formulaire
 
-inconnu ([Fichier formulaire](frw-form.md))
+`object` ([Fichier formulaire](frw-form.md))
 
 # Propriétés de Fichier formulaire
 
@@ -23,6 +23,14 @@ inconnu ([Fichier formulaire](frw-form.md))
 ### Type de form
 
 `object` ([Form](frw-form-definitions-form.md))
+
+### Exemple de form
+
+```yaml
+form:
+  title: Mon formulaire
+
+```
 
 ## config
 
@@ -62,14 +70,14 @@ Référencer ce groupe en utilisant
 {"$ref":"schemas/form#/definitions/Form"}
 ```
 
-| Propriété                                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                        |
-| :------------------------------------------ | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [sectionsGroup](#sectionsgroup)             | `array`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-sectionsgroup.md "schemas/form#/definitions/Form/properties/sectionsGroup")             |
-| [templates](#templates)                     | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-templates.md "schemas/form#/definitions/Form/properties/templates")                     |
-| [title](#title)                             | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/Form/properties/title")                                        |
-| [inputDefaultClasses](#inputdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-inputdefaultclasses.md "schemas/form#/definitions/Form/properties/inputDefaultClasses") |
-| [defaults](#defaults)                       | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-valeurs-par-défaut.md "schemas/form#/definitions/Form/properties/defaults")                             |
-| [outerDefaultClasses](#outerdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-outerdefaultclasses.md "schemas/form#/definitions/Form/properties/outerDefaultClasses") |
+| Propriété                                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                |
+| :------------------------------------------ | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sectionsGroup](#sectionsgroup)             | `array`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-sectionsgroup.md "schemas/form#/definitions/Form/properties/sectionsGroup")                     |
+| [templates](#templates)                     | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-réservé-frw---templates-de-composants.md "schemas/form#/definitions/Form/properties/templates") |
+| [title](#title)                             | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/Form/properties/title")                                                |
+| [inputDefaultClasses](#inputdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-inputdefaultclasses.md "schemas/form#/definitions/Form/properties/inputDefaultClasses")         |
+| [defaults](#defaults)                       | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-valeurs-par-défaut.md "schemas/form#/definitions/Form/properties/defaults")                                     |
+| [outerDefaultClasses](#outerdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-outerdefaultclasses.md "schemas/form#/definitions/Form/properties/outerDefaultClasses")         |
 
 ### sectionsGroup
 
@@ -97,7 +105,11 @@ Référencer ce groupe en utilisant
 
 #### Type de templates
 
-`object` ([Détails](frw-form-definitions-form-properties-templates.md))
+`object` ([RÉSERVÉ FRW - Templates de composants](frw-form-definitions-form-properties-réservé-frw---templates-de-composants.md))
+
+#### Limites d'accès de templates
+
+La valeur de cette propriété est gérée exclusivement par l'autorité propriétaire, et les tentatives d'une demande de modification de la valeur de cette propriété devraient être ignorées ou rejetées par cette autorité propriétaire.
 
 ### title
 
@@ -401,7 +413,7 @@ Référencer ce groupe en utilisant
 | [base64](#base64)                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/base64")                                                |
 | [text](#text)                         | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/text")                                                  |
 | [title](#title-1)                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/title")                                                 |
-| [additionals](#additionals)           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-affichage-properties-additionals.md "schemas/form#/definitions/ComposantAffichage/properties/additionals")           |
+| [additionals](#additionals)           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-attributs-supplémentaires.md "schemas/form#/definitions/ComposantAffichage/properties/additionals")                            |
 | [alt](#alt)                           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/alt")                                                   |
 | [v-if](#v-if-2)                       | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-affichage-properties-v-if.md "schemas/form#/definitions/ComposantAffichage/properties/v-if")                         |
 | [components](#components-1)           | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-affichage-properties-components.md "schemas/form#/definitions/ComposantAffichage/properties/components")             |
@@ -621,7 +633,7 @@ en: ''
 
 #### Type de additionals
 
-`object` ([Détails](frw-form-definitions-composant-affichage-properties-additionals.md))
+`object` ([Attributs supplémentaires](frw-form-definitions-attributs-supplémentaires.md))
 
 ### alt
 
@@ -699,7 +711,7 @@ Référencer ce groupe en utilisant
 | [outerClasses](#outerclasses)               | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-outerclasses.md "schemas/form#/definitions/ComposantInteraction/properties/outerClasses")                  |
 | [help](#help)                               | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/ComposantInteraction/properties/help")                                                             |
 | [pdfBind](#pdfbind)                         | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-pdfbind.md "schemas/form#/definitions/ComposantInteraction/properties/pdfBind")                            |
-| [additionals](#additionals-1)               | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-additionals.md "schemas/form#/definitions/ComposantInteraction/properties/additionals")                    |
+| [additionals](#additionals-1)               | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-attributs-supplémentaires.md "schemas/form#/definitions/ComposantInteraction/properties/additionals")                                       |
 | [v-if](#v-if-3)                             | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-v-if.md "schemas/form#/definitions/ComposantInteraction/properties/v-if")                                  |
 | [v-else-value](#v-else-value)               | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-v-else-value.md "schemas/form#/definitions/ComposantInteraction/properties/v-else-value")                  |
 | [helpPosition](#helpposition)               | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-helpposition.md "schemas/form#/definitions/ComposantInteraction/properties/helpPosition")                  |
@@ -1025,7 +1037,7 @@ en: ''
 
 #### Type de additionals
 
-`object` ([Détails](frw-form-definitions-composant-interaction-properties-additionals.md))
+`object` ([Attributs supplémentaires](frw-form-definitions-attributs-supplémentaires.md))
 
 ### v-if
 
@@ -1339,6 +1351,17 @@ La valeur par défaut est:
 #### Type de disabled
 
 `boolean`
+
+## Groupe de définitions Additionals
+
+Référencer ce groupe en utilisant
+
+```json
+{"$ref":"schemas/form#/definitions/Additionals"}
+```
+
+| Propriété | Type | Obligatoire | Nullable | Défini par |
+| :-------- | :--- | :---------- | :------- | :--------- |
 
 ## Groupe de définitions Translation
 

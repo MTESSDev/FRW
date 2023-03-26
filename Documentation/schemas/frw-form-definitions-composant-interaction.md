@@ -36,7 +36,7 @@ validations
 | [outerClasses](#outerclasses)               | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-outerclasses.md "schemas/form#/definitions/ComposantInteraction/properties/outerClasses")         |
 | [help](#help)                               | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/ComposantInteraction/properties/help")                                                    |
 | [pdfBind](#pdfbind)                         | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-pdfbind.md "schemas/form#/definitions/ComposantInteraction/properties/pdfBind")                   |
-| [additionals](#additionals)                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-additionals.md "schemas/form#/definitions/ComposantInteraction/properties/additionals")           |
+| [additionals](#additionals)                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-attributs-supplémentaires.md "schemas/form#/definitions/ComposantInteraction/properties/additionals")                              |
 | [v-if](#v-if)                               | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-v-if.md "schemas/form#/definitions/ComposantInteraction/properties/v-if")                         |
 | [v-else-value](#v-else-value)               | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-v-else-value.md "schemas/form#/definitions/ComposantInteraction/properties/v-else-value")         |
 | [helpPosition](#helpposition)               | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-helpposition.md "schemas/form#/definitions/ComposantInteraction/properties/helpPosition")         |
@@ -362,7 +362,7 @@ en: ''
 
 ### Type de additionals
 
-`object` ([Détails](frw-form-definitions-composant-interaction-properties-additionals.md))
+`object` ([Attributs supplémentaires](frw-form-definitions-attributs-supplémentaires.md))
 
 ## v-if
 

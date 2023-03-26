@@ -4,14 +4,14 @@
 
 # Propriétés de Form
 
-| Propriété                                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                        |
-| :------------------------------------------ | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [sectionsGroup](#sectionsgroup)             | `array`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-sectionsgroup.md "schemas/form#/definitions/Form/properties/sectionsGroup")             |
-| [templates](#templates)                     | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-templates.md "schemas/form#/definitions/Form/properties/templates")                     |
-| [title](#title)                             | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/Form/properties/title")                                        |
-| [inputDefaultClasses](#inputdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-inputdefaultclasses.md "schemas/form#/definitions/Form/properties/inputDefaultClasses") |
-| [defaults](#defaults)                       | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-valeurs-par-défaut.md "schemas/form#/definitions/Form/properties/defaults")                             |
-| [outerDefaultClasses](#outerdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-outerdefaultclasses.md "schemas/form#/definitions/Form/properties/outerDefaultClasses") |
+| Propriété                                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                |
+| :------------------------------------------ | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sectionsGroup](#sectionsgroup)             | `array`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-sectionsgroup.md "schemas/form#/definitions/Form/properties/sectionsGroup")                     |
+| [templates](#templates)                     | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-réservé-frw---templates-de-composants.md "schemas/form#/definitions/Form/properties/templates") |
+| [title](#title)                             | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/Form/properties/title")                                                |
+| [inputDefaultClasses](#inputdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-inputdefaultclasses.md "schemas/form#/definitions/Form/properties/inputDefaultClasses")         |
+| [defaults](#defaults)                       | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-valeurs-par-défaut.md "schemas/form#/definitions/Form/properties/defaults")                                     |
+| [outerDefaultClasses](#outerdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-outerdefaultclasses.md "schemas/form#/definitions/Form/properties/outerDefaultClasses")         |
 
 ## sectionsGroup
 
@@ -39,7 +39,11 @@
 
 ### Type de templates
 
-`object` ([Détails](frw-form-definitions-form-properties-templates.md))
+`object` ([RÉSERVÉ FRW - Templates de composants](frw-form-definitions-form-properties-réservé-frw---templates-de-composants.md))
+
+### Limites d'accès de templates
+
+La valeur de cette propriété est gérée exclusivement par l'autorité propriétaire, et les tentatives d'une demande de modification de la valeur de cette propriété devraient être ignorées ou rejetées par cette autorité propriétaire.
 
 ## title
 

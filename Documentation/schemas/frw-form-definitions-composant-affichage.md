@@ -23,7 +23,7 @@ type: dynamic
 | [base64](#base64)                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/base64")                                                |
 | [text](#text)                         | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/text")                                                  |
 | [title](#title)                       | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/title")                                                 |
-| [additionals](#additionals)           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-affichage-properties-additionals.md "schemas/form#/definitions/ComposantAffichage/properties/additionals")           |
+| [additionals](#additionals)           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-attributs-supplémentaires.md "schemas/form#/definitions/ComposantAffichage/properties/additionals")                            |
 | [alt](#alt)                           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/alt")                                                   |
 | [v-if](#v-if)                         | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-affichage-properties-v-if.md "schemas/form#/definitions/ComposantAffichage/properties/v-if")                         |
 | [components](#components)             | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-affichage-properties-components.md "schemas/form#/definitions/ComposantAffichage/properties/components")             |
@@ -243,7 +243,7 @@ en: ''
 
 ### Type de additionals
 
-`object` ([Détails](frw-form-definitions-composant-affichage-properties-additionals.md))
+`object` ([Attributs supplémentaires](frw-form-definitions-attributs-supplémentaires.md))
 
 ## alt
 

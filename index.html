@@ -14,11 +14,14 @@
     window.$docsify = {
       name: 'FRW',
       repo: 'MTESSDev/FRW',
-      routerMode: 'history', // default: 'hash'
+      //routerMode: 'history', // default: 'hash'
       loadSidebar: true,
       relativePath: true,
       search: 'auto', // default
 
+      alias: {
+                '/.*/_sidebar.md': '/FRW/_sidebar.md'
+            },
       
 /*search: [
   '/',            // => /README.md

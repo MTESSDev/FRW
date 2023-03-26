@@ -6,7 +6,7 @@
 
 | Propriété                                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                |
 | :------------------------------------------ | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sectionsGroup](#sectionsgroup)             | `array`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-sectionsgroup.md "schemas/form#/definitions/Form/properties/sectionsGroup")                     |
+| [sectionsGroup](#sectionsgroup)             | `array`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-groupes-de-sections.md "schemas/form#/definitions/Form/properties/sectionsGroup")               |
 | [templates](#templates)                     | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-réservé-frw---templates-de-composants.md "schemas/form#/definitions/Form/properties/templates") |
 | [title](#title)                             | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/Form/properties/title")                                                |
 | [inputDefaultClasses](#inputdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-inputdefaultclasses.md "schemas/form#/definitions/Form/properties/inputDefaultClasses")         |

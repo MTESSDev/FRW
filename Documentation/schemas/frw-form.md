@@ -72,7 +72,7 @@ Référencer ce groupe en utilisant
 
 | Propriété                                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                |
 | :------------------------------------------ | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sectionsGroup](#sectionsgroup)             | `array`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-sectionsgroup.md "schemas/form#/definitions/Form/properties/sectionsGroup")                     |
+| [sectionsGroup](#sectionsgroup)             | `array`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-groupes-de-sections.md "schemas/form#/definitions/Form/properties/sectionsGroup")               |
 | [templates](#templates)                     | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-réservé-frw---templates-de-composants.md "schemas/form#/definitions/Form/properties/templates") |
 | [title](#title)                             | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/Form/properties/title")                                                |
 | [inputDefaultClasses](#inputdefaultclasses) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-form-properties-inputdefaultclasses.md "schemas/form#/definitions/Form/properties/inputDefaultClasses")         |
@@ -192,7 +192,7 @@ Référencer ce groupe en utilisant
 | [cacherTexteExplicatifChampsObligatoires](#cachertexteexplicatifchampsobligatoires) | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-section-properties-cachertexteexplicatifchampsobligatoires.md "schemas/form#/definitions/Section/properties/cacherTexteExplicatifChampsObligatoires") |
 | [classes](#classes)                                                                 | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-section-properties-classes.md "schemas/form#/definitions/Section/properties/classes")                                                                 |
 | [v-if](#v-if)                                                                       | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-section-properties-v-if.md "schemas/form#/definitions/Section/properties/v-if")                                                                       |
-| [components](#components)                                                           | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-section-properties-components.md "schemas/form#/definitions/Section/properties/components")                                                           |
+| [components](#components)                                                           | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composants.md "schemas/form#/definitions/Section/properties/components")                                                                              |
 
 ### section
 
@@ -384,6 +384,17 @@ en: ''
 
 ```
 
+## Groupe de définitions Components
+
+Référencer ce groupe en utilisant
+
+```json
+{"$ref":"schemas/form#/definitions/Components"}
+```
+
+| Propriété | Type | Obligatoire | Nullable | Défini par |
+| :-------- | :--- | :---------- | :------- | :--------- |
+
 ## Groupe de définitions Component
 
 Référencer ce groupe en utilisant
@@ -416,7 +427,7 @@ Référencer ce groupe en utilisant
 | [additionals](#additionals)           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-attributs-supplémentaires.md "schemas/form#/definitions/ComposantAffichage/properties/additionals")                            |
 | [alt](#alt)                           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/alt")                                                   |
 | [v-if](#v-if-2)                       | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-affichage-properties-v-if.md "schemas/form#/definitions/ComposantAffichage/properties/v-if")                         |
-| [components](#components-1)           | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-affichage-properties-components.md "schemas/form#/definitions/ComposantAffichage/properties/components")             |
+| [components](#components-1)           | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composants.md "schemas/form#/definitions/ComposantAffichage/properties/components")                                            |
 
 ### type
 
@@ -727,7 +738,7 @@ Référencer ce groupe en utilisant
 | [validations](#validations)                 | `object`  | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation.md "schemas/form#/definitions/ComposantInteraction/properties/validations")                     |
 | [repeatable](#repeatable)                   | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-repeatable.md "schemas/form#/definitions/ComposantInteraction/properties/repeatable")                      |
 | [minimum](#minimum)                         | `number`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-minimum.md "schemas/form#/definitions/ComposantInteraction/properties/minimum")                            |
-| [components](#components-2)                 | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-components.md "schemas/form#/definitions/ComposantInteraction/properties/components")                      |
+| [components](#components-2)                 | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composants.md "schemas/form#/definitions/ComposantInteraction/properties/components")                                                       |
 | [disabled](#disabled)                       | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-disabled.md "schemas/form#/definitions/ComposantInteraction/properties/disabled")                          |
 
 ### name

@@ -52,7 +52,7 @@ validations
 | [validations](#validations)                 | `object`  | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation.md "schemas/form#/definitions/ComposantInteraction/properties/validations")            |
 | [repeatable](#repeatable)                   | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-repeatable.md "schemas/form#/definitions/ComposantInteraction/properties/repeatable")             |
 | [minimum](#minimum)                         | `number`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-minimum.md "schemas/form#/definitions/ComposantInteraction/properties/minimum")                   |
-| [components](#components)                   | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-components.md "schemas/form#/definitions/ComposantInteraction/properties/components")             |
+| [components](#components)                   | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composants.md "schemas/form#/definitions/ComposantInteraction/properties/components")                                              |
 | [disabled](#disabled)                       | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-disabled.md "schemas/form#/definitions/ComposantInteraction/properties/disabled")                 |
 
 ## name

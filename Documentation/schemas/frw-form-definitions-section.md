@@ -11,7 +11,7 @@
 | [cacherTexteExplicatifChampsObligatoires](#cachertexteexplicatifchampsobligatoires) | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-section-properties-cachertexteexplicatifchampsobligatoires.md "schemas/form#/definitions/Section/properties/cacherTexteExplicatifChampsObligatoires") |
 | [classes](#classes)                                                                 | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-section-properties-classes.md "schemas/form#/definitions/Section/properties/classes")                                                                 |
 | [v-if](#v-if)                                                                       | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-section-properties-v-if.md "schemas/form#/definitions/Section/properties/v-if")                                                                       |
-| [components](#components)                                                           | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-section-properties-components.md "schemas/form#/definitions/Section/properties/components")                                                           |
+| [components](#components)                                                           | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composants.md "schemas/form#/definitions/Section/properties/components")                                                                              |
 
 ## section
 

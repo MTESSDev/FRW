@@ -26,7 +26,7 @@ type: dynamic
 | [additionals](#additionals)           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-attributs-supplémentaires.md "schemas/form#/definitions/ComposantAffichage/properties/additionals")                            |
 | [alt](#alt)                           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/ComposantAffichage/properties/alt")                                                   |
 | [v-if](#v-if)                         | `string`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-affichage-properties-v-if.md "schemas/form#/definitions/ComposantAffichage/properties/v-if")                         |
-| [components](#components)             | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-affichage-properties-components.md "schemas/form#/definitions/ComposantAffichage/properties/components")             |
+| [components](#components)             | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composants.md "schemas/form#/definitions/ComposantAffichage/properties/components")                                            |
 
 ## type
 

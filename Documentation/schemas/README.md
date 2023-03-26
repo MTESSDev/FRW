@@ -78,15 +78,11 @@
 
 ### Tableaux
 
-*   [array sans titre dans Fichier formulaire](./frw-form-definitions-form-properties-sectionsgroup.md) – `schemas/form#/definitions/Form/properties/sectionsGroup`
+*   [Composants](./frw-form-definitions-composants.md) – `schemas/form#/definitions/Components`
 
-*   [array sans titre dans Fichier formulaire](./frw-form-definitions-section-group-properties-sections.md) – `schemas/form#/definitions/SectionsGroup/properties/sections`
+*   [Groupes de sections](./frw-form-definitions-form-properties-groupes-de-sections.md) – `schemas/form#/definitions/Form/properties/sectionsGroup`
 
-*   [array sans titre dans Fichier formulaire](./frw-form-definitions-section-properties-components.md) – `schemas/form#/definitions/Section/properties/components`
-
-*   [array sans titre dans Fichier formulaire](./frw-form-definitions-composant-affichage-properties-components.md) – `schemas/form#/definitions/ComposantAffichage/properties/components`
-
-*   [array sans titre dans Fichier formulaire](./frw-form-definitions-composant-interaction-properties-components.md) – `schemas/form#/definitions/ComposantInteraction/properties/components`
+*   [Sections](./frw-form-definitions-section-group-properties-sections.md) – `schemas/form#/definitions/SectionsGroup/properties/sections`
 
 *   [array sans titre dans Fichier formulaire](./frw-form-definitions-gerer-les-plages-de-disponibilité-properties-plages.md) – `schemas/form#/definitions/GererPlageDisponibilite/properties/plages`
 

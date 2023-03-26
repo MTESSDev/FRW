@@ -71,7 +71,7 @@ Pour un premier formulaire, il est fortement recommandé de clôner le présent 
 1. N'hésitez pas à aider d'autres utilisateurs ou à partager vos idées.
 
 &nbsp;
-## Vous avez trouvé un probème (bug) dans la solution?
+## Vous avez trouvé un problème (bug) dans la solution?
 
 1. Vérifier si une [issue](https://github.com/MTESSDev/FRW/issues) existe avec le même problème;
 2. Créez une [issue](https://github.com/MTESSDev/FRW/issues) si elle n'existe pas déjà une et mettre le plus de détails possibles afin de reproduire le problème.

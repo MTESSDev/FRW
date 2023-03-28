@@ -6,7 +6,7 @@ Dans ce guide, nous expliquons comment intégrer notre solution de formulaires e
 
 Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de traitement dans votre système qui fait l'orchestration des étapes suivantes :
 
-1. [Préparer les données de pré remplissage](pre-remplissage.md) (facultatif) À COMPLÉTER;
+1. [Préparer les données de pré remplissage](pre-remplissage.md) (facultatif);
 
 1. Créer le formulaire en appelant l'API [CreerFormulaireIndividu](../Swagger/readme.md#apiv1siscreerformulaireindividutypeformulaire) (FRW111)
    

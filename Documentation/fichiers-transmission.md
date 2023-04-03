@@ -85,9 +85,11 @@ http_client:
         throw_exception_if_body_not_contains_all:
             - success # À remplacer par un code de retour ou un mot retourné par votre api afin de valider que tout est concluant
 ``` 
-Tout le bloc `http_client` est basé sur l'outil [YamlHttpClient](https://github.com/anisite/YamlHttpClient), vous pouvez vous y référer pour bâtir votre `json_content`.
+
 
 ## Variables 
+
+Variables du bloc `http_client` utilisables dans le style `mustache`. Tout le bloc `http_client` est basé sur l'outil [YamlHttpClient](https://github.com/anisite/YamlHttpClient), vous pouvez vous y référer pour bâtir votre `json_content`.
 
 | Variable | Type/Valeur | Description |
 | ---      |----         | ---         |

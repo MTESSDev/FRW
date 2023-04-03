@@ -96,5 +96,11 @@ Tout le bloc `http_client` est basé sur l'outil [YamlHttpClient](https://github
 | noConfirmation | numérique  | Numéro unique de confirmation, peut-être validé par un agent, termine par ``311`` |
 | noExecution | numérique  | **Ne pas utiliser sera retiré**|
 | documentsProduits | objet | Liste des documents produits par FRW (pdf, word) par les tâches `genererWord` et `genererPdf` <details><summary>**documentProduit**</summary>**nom** : Le nom du document généré en sortie<br> **fichier** : Le contenu du fichier en ``base64``</details>|
-| IdUtilisateur| |Identifiant de l'utilisateur reçus lors de la création du formulaire | 
-||Tableau à compléter...| |
+| donneesFormulaire | objet | Tout le contenu ``formulaire`` inclus, `form`, `config`, et vos objets passés en pré-remplissage<details><summary>**donneeFormulaire**</summary>**form** : Les données du formulaire<br> **config** : Certaines configurations<br> **AUTRES** : Vos objets personnalisés</details>|
+| configDev | objet | Contenu spécial pour les essais, configurations developpeurs/analystes|
+| fichiersExternes | objet | Contenu d'un ou des fichiers requis en sortie |
+| contenuFormulaireJson | string | **Ne pas utiliser sera retiré** Contenu du formulaire tel que stocké dans la BD |
+| IdUtilisateur| string |Identifiant de l'utilisateur reçus lors de la création du formulaire | 
+| dateTransmission | date | Date de transmission | 
+| modeSimulation | booléen | `true` si l'appel provient du bouton Tester transmission | 
+| documentsSoumis | objet | Liste des documents soumis par les utilisateur (pièces jointes au formulaire). C'est la tâche `traiterDocumentsSoumis` qui renseigne cet objet en préparant et validant vos fichiers. <details><summary>**documentSoumis**</summary>Il s'agit d'un dictionnaire contenant comme clée le nom du ``champ pièce jointe`` et comme valeur un tableau d'objet. <br>Chaque objet contient alors:<br>**url** : Le nom du fichier à utiliser tel quel lors de l'appel à l'API `Telecharger`.<br>**name** : Le nom de la pièce jointe et son type (ex: ``GrpPJCertificatNaissance_0_PJCertificatNaissance.pdf``)<br>**AUTRES** : Les métadonnées (extraites automatiquement, il s'agit des autres champs dans le même groupe qui sont convertis comme métadonnées automatiquement ex: `LigneAffaire`, `TypeDocument`)</details>|

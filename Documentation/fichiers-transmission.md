@@ -89,8 +89,12 @@ Tout le bloc `http_client` est basé sur l'outil [YamlHttpClient](https://github
 
 ## Variables 
 
-| Variable | Description |
-| --- |----|
-|IdUtilisateur| Identifiant de l'utilisateur reçus lors de la création du formulaire |
-||Tableau à compléter...|
-
+| Variable | Type/Valeur | Description |
+| ---      |----         | ---         |
+| langue | `fr`, `en`    | Langue d'affichage du formulaire |
+| noFormulaire | numérique   | Numéro unique séquentiel du formulaire |
+| noConfirmation | numérique  | Numéro unique de confirmation, peut-être validé par un agent, termine par ``311`` |
+| noExecution | numérique  | **Ne pas utiliser sera retiré**|
+| documentsProduits | objet | Liste des documents produits par FRW (pdf, word) par les tâches `genererWord` et `genererPdf` <details><summary>**documentProduit**</summary>**nom** : Le nom du document généré en sortie<br> **fichier** : Le contenu du fichier en ``base64``</details>|
+| IdUtilisateur| |Identifiant de l'utilisateur reçus lors de la création du formulaire | 
+||Tableau à compléter...| |

@@ -106,3 +106,6 @@ Variables du bloc `http_client` utilisables dans le style `mustache`. Tout le bl
 | dateTransmission | date | Date de transmission | 
 | modeSimulation | booléen | `true` si l'appel provient du bouton Tester transmission | 
 | documentsSoumis | objet | Liste des documents soumis par les utilisateur (pièces jointes au formulaire). C'est la tâche `traiterDocumentsSoumis` qui renseigne cet objet en préparant et validant vos fichiers. <details><summary>**documentSoumis**</summary>Il s'agit d'un dictionnaire contenant comme clée le nom du ``champ pièce jointe`` et comme valeur un tableau d'objet. <br>Chaque objet contient alors:<br>**url** : Le nom du fichier à utiliser tel quel lors de l'appel à l'API `Telecharger`.<br>**name** : Le nom de la pièce jointe et son type (ex: ``GrpPJCertificatNaissance_0_PJCertificatNaissance.pdf``)<br>**AUTRES** : Les métadonnées (extraites automatiquement, il s'agit des autres champs dans le même groupe qui sont convertis comme métadonnées automatiquement ex: `LigneAffaire`, `TypeDocument`)</details>|
+
+
+[Exemple de json produit par FRW en sortie vers un API externe](exemple-json-appeler-service-web.md)

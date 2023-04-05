@@ -12,11 +12,6 @@ jobs:
     if: ${{ !github.event.issue.pull_request }}
     runs-on: self-hosted
     steps:
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-      - run: npm config set strict-ssl false
       - uses: MTESSDev/github-actions-issue-to-work-item@master
         env:
           ado_token: "${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}"

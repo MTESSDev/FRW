@@ -15,6 +15,7 @@ jobs:
       - uses: danhellem/github-actions-issue-to-work-item@master
         env:
           ado_token: "${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}"
+          ado_url: "https://devops700.itp.extra/700/SPFS-FRW"
           #github_token: "${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}"
           ado_organization: "MTESS-PES"
           ado_project: "FRW"

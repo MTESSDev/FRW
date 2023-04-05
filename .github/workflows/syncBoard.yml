@@ -15,10 +15,10 @@ jobs:
       - uses: danhellem/github-actions-issue-to-work-item@master
         env:
           ado_token: "${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}"
-          ado_url: "https://devops700.itp.extra/700/SPFS-FRW"
+          ado_url: "https://devops700.itp.extra/"
           #github_token: "${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}"
-          ado_organization: "MTESS-PES"
-          ado_project: "FRW"
+          ado_organization: "700"
+          ado_project: "SPFS-FRW"
           #ado_area_path: "optional_area_path\\optional_area_path"
           #ado_iteration_path: "optional_iteration_path\\optional_iteration_path"
           ado_wit: "Bug"

@@ -12,6 +12,7 @@ jobs:
     if: ${{ !github.event.issue.pull_request }}
     runs-on: self-hosted
     steps:
+      - run: set NODE_TLS_REJECT_UNAUTHORIZED=1
       - uses: MTESSDev/github-actions-issue-to-work-item@master
         env:
           ado_token: "${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}"

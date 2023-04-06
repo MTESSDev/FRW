@@ -8,11 +8,11 @@
 1. Affichage
 1. Multilingue (français et anglais);
    * Responsive (appareils mobiles et tablettes);
-   * Respecte le standard du gouvernement du Québec en ressources informationnelles (SGQRI) : Standard sur l'accessibilité des sites Web (SGQRI 008 2.0)
+   * Respecte le [standard du gouvernement du Québec en ressources informationnelles (SGQRI 008 2.0)](https://www.tresor.gouv.qc.ca/fileadmin/PDF/ressources_informationnelles/AccessibiliteWeb/standard-access-web.pdf) 
 1. Contrôles
    * Respect des règles du Système de design gouvernemental.;
    * Éventail élargi de contrôles disponibles;
-     * Lien vers le guide de configuration des formulaires : https://formulaires.it.mtess.gouv.qc.ca/Form/7/P700U/0/N
+     * Lien vers le [guide de configuration des formulaires](https://formulaires.it.mtess.gouv.qc.ca/Form/7/P700U/0/N);
      * Exemples : Contrôle d’adresse normalisé, ajout de pièces jointes;
    * Validations de champs prédéfinies;
 1. Pré remplissage des données

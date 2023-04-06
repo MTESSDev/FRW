@@ -6,7 +6,7 @@
 Un outil incroyable qui permet de créer des formulaires très rapidement à l'aide de simples fichiers de configuration YAML (low code). [Consulter les technologies utilisées](Documentation/technologies-utilisees.md).
 
 Les formulaires générés sont accessibles, adaptatifs (responsive), sécuritaires et respectent les règles du [système de design Québec.ca](https://design.quebec.ca/).
-
+[Consulter la liste des fonctionnalités offertes par FRW](Documentation/fonctionnalites.md).
 &nbsp;
 
 ## Comment l'utiliser?

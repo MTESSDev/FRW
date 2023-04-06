@@ -1,0 +1,499 @@
+# yaml-language-server: $schema=https://formulaires.it.mtess.gouv.qc.ca/api/v1/SIS/ObtenirSchema/form
+# debug: langue=auto, showAll=false
+
+config:
+  securite: 
+    accesAnonyme: true
+  gererPlageDisponibilite:
+    actif: true
+    joursOuvrablesUniquement: true
+    nombreConvois: 1
+    plages:
+      - 08-20 # 8h à 20h
+#-------------------------------------------------------------------------------------------
+form:
+  title:
+    fr: Demande de services d’emploi
+    en: Application for Employment Services
+  sectionsGroup:
+    - sectionGroup:
+      sections: &sectionsAdulte
+        # Section informations importantes
+        - section:
+            fr: Information importante
+            en: Important Information
+          id: informationsImportantes
+          components:                 
+            - type: zoneEvidence
+              classes: page-texte
+              text:
+                fr: <p>Vous faites une demande pour obtenir des services d’aide à l’emploi. Si vous avez besoin d’aide pour la compléter, nous vous invitons à enregistrer votre demande et à communiquer avec nous.</p>
+                    <p><a href="https://www.localisateur.servicesquebec.gouv.qc.ca/" target="_blank" class="d-block">
+                        <span class="nom-service lien-externe">Trouver un bureau de services</span>
+                        <span class="sr-only">. Ce lien sera ouvert dans un nouvel onglet</span>
+                    </a></p>
+                    <p>Les renseignements que vous fournissez sont confidentiels et serviront à déterminer de quelle manière votre Bureau de Services Québec pourrait vous soutenir. Si vous ne fournissez pas de réponses à ces questions, le MTESS ne pourra analyser votre demande. Vous avez le droit d’accéder aux données que vous fournissez et de les faire rectifier au besoin.</p>
+                en: <p>You are applying for employment assistance services. If you need help completing the application, we invite you to save your request and contact us.</p>
+                    <p><a href="https://www.localisateur.servicesquebec.gouv.qc.ca/" target="_blank" class="d-block">
+                        <span class="nom-service lien-externe">Find a service desk</span>
+                        <span class="sr-only">. This link will be opened in a new tab</span>
+                    </a></p>
+                    <p>The information you provide is confidential and will be used to determine how your Bureau de Services Québec could support you. If you do not provide answers to these questions, MTESS will not be able to analyze your request. You have the right to access the data you provide and have it corrected if necessary.</p>
+        # Section 1 - Renseignements sur l'identité
+        - section:
+            fr: Renseignements sur l'identité
+            en: Identification
+          id: renseignementsIdentite
+          components:
+            - name: NomFamille
+              type: text
+              label:
+                fr: Nom de famille
+                en: Last name
+              validations:
+                max: 36,length
+            - name: Prenom
+              type: text
+              label:
+                fr: Prénom
+                en: First name
+              validations:
+                max: 22,length
+            - name: DateNaissance
+              type: date
+              label:
+                fr: Date de naissance
+                en: Date of birth
+              validations:
+                avant:
+            - name: Nas
+              type: nas
+              outerClasses: md
+              label:
+                fr: Numéro d'assurance sociale
+                en: Social insurance number           
+            - name: Sexe
+              type: radio
+              label:
+                fr: Sexe
+                en: Gender
+              options:
+                Feminin:
+                  fr: Féminin
+                  en: Female
+                Masculin:
+                  fr: Masculin
+                  en: Male
+            - name: EtatMatrimonial
+              type: select
+              label:
+                fr: État matrimonial
+                en: Marital Status
+              options:
+                celibataire:
+                  fr: Célibataire
+                  en: Single
+                marieUnionCivile:
+                  fr: Marié ou uni civilement
+                  en: Married or in a civil union
+                conjointFait:
+                  fr: Conjoint de fait
+                  en: Common-law spouse
+                veuf:
+                  fr: Veuf
+                  en: Widowed
+                separe:
+                  fr: Séparé légalement
+                  en: Legally separated
+                separeSansJugement:
+                  fr: Séparé sans jugement
+                  en: Separated, de facto
+                divorce:
+                  fr: Divorcé
+                  en: Divorced
+            - name: Langue
+              type: radio
+              label:
+                fr: Langue de correspondance
+                en: Language of correspondence
+              options:
+                Francais:
+                  fr: Français
+                  en: French
+                Anglais:
+                  fr: Anglais
+                  en: English
+            - name: CitCanadienne
+              type: radio
+              label:
+                fr: Avez-vous la citoyenneté canadienne?
+                en: Are you a Canadian citizen?
+              options: yesno                                  
+            - name: StatutAuCanada
+              v-if: val('prefixId$CitCanadienne') === 'false'
+              type: radio
+              label:
+                fr: Quel est votre statut au Canada?
+                en: What is your status in Canada?                  
+              options:
+                ResPermanent:
+                  fr: Résidente permanente ou résident permanent au sens de la Loi sur l'immigration et la protection des réfugiés
+                  en: Permanent resident or permanent resident within the meaning of the Immigration and Refugee Protection Act
+                TravailleurTemp:
+                  fr: Travailleur ou travailleuse temporaire 
+                  en: Temporary worker  
+                TitulairePermisTemp:
+                  fr: Titulaire de permis de séjour temporaire
+                  en: Holder of a temporary resident permit
+                EtudiantEtranger:
+                  fr: Étudiante étrangère ou étudiant étranger
+                  en: Foreign student 
+                DemandeurAsile:
+                  fr: Demandeur d’asile
+                  en: Asylum seeker
+                PersonneRefugierOuProtege:
+                  fr: Personne reconnue comme réfugiée ou comme personne protégée 
+                  en: Person recognized as a refugee or protected person
+                PersonneAutorise:
+                  fr: Personne autorisée à voir sa demande de résidence permanente traitée au Canada
+                  en: Person authorized to have their application for permanent residence processed in Canada
+                PersonneMersureSpecialUkrainiens:
+                  fr: Personne bénéficiant d’une mesure spéciale pour les ressortissants ukrainiens
+                  en: Person receiving special relief for Ukrainian
+            - name: PermisOctroiResidencePermanente
+              v-if: val('prefixId$StatutAuCanada') === 'TitulairePermisTemp'
+              type: radio
+              options: yesno
+              label:
+                fr: Votre permis a-t-il été émis en vue de l’octroi éventuel de la résidence permanente?
+                en: Was your permit issued for the purpose of granting permanent residence?
+            - name: PossedePermisTravail
+              v-if: val('prefixId$StatutAuCanada') === 'EtudiantEtranger'
+              type: radio
+              options: yesno
+              label:
+                fr: Détenez-vous un permis de travail?
+                en: Do you have a work permit?
+            - name: AdmisPeriodeCovid
+              v-if: val('prefixId$StatutAuCanada') === 'DemandeurAsile'
+              type: radio
+              options: yesno
+              label:
+                fr: Êtes-vous admis ou admise au Programme spécial des demandeurs d’asile en période de COVID-19?
+                en: Are you admitted or admitted to the Special Refugee Protection Program during COVID-19?
+        # Section 2 - Adresse
+        - section:
+            fr: Adresse
+            en: Address
+          id: adresse
+          components:
+            - name: Adresse        
+              type: adresse
+              label: 
+                fr: Adresse
+                en: Address
+              additionals:
+                recherche-avec-no-civique: true
+            - name: Telephone1
+              outerClasses: md
+              type: tel
+              label:
+                fr: Téléphone
+                en: Telephone
+              help:
+                fr: Si vous n’avez pas de numéro de téléphone, inscrivez le numéro d’un membre de votre famille, d’un ami ou d’un organisme, par exemple, qui pourra au besoin vous transmettre nos messages.
+                en: If you don’t have a telephone number, provide another number for someone (e.g., family member, friend, organization) who can pass on our messages, if necessary.
+            - name: Telephone2
+              outerClasses: md
+              type: tel
+              label:
+                fr: Autre téléphone
+                en: Other Telephone
+              validations:
+                optional: null
+            - name: Courriel
+              type: text
+              label:
+                fr: Adresse courriel
+                en: E-mail
+              validations:
+                matches: /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/   
+                optional: null
+              validation-messages:
+                matches:
+                  fr: Le champ « Adresse courriel » n'est pas valide.
+                  en: The "E-mail" field is invalid.          
+        # Section 3 - Raison de la demande
+        - section:
+            fr: Votre demande de services d'emploi
+            en: Your application for employment services
+          id: raisonDemande
+          components:
+            - type: avis
+              classes: information
+              text:
+                fr: <p>SVP cochez toutes les phrases qui décrivent bien votre demande (Vous pouvez cocher autant de cases que nécessaire).</p>
+                en: <p>Please check all the sentences that describe your request (You can check as many boxes as necessary).</p>          
+            - name: PrecisionRaisonDemandeEmploi
+              type: checkbox
+              label:
+                fr: Indiquez le but ou les buts de votre demande de services d'emploi.
+                en: Please specify the reasons for your application for employment services.
+              options:
+                ChoisirCarriere:
+                  fr: Choisir un métier, une profession, faire ou valider un choix de carrière 
+                  en: Choose a trade, profession, make or validate a career choice
+                ChercherEmploi:
+                  fr: Chercher et trouver un emploi
+                  en: Looking for and finding a job
+                SurmonterDifficulterTrouverEmploi:
+                  fr: Surmonter des difficultés à trouver ou à conserver un emploi
+                  en: Overcoming difficulties in finding or keeping a job
+                SuivreFormation:
+                  fr: Suivre une formation, obtenir un diplôme ou une certification
+                  en: Take training, diploma or certification
+                ObtenirReconnaisanceExperience:
+                  fr: Obtenir une reconnaissance de mon expérience, de mes compétences ou de ma formation
+                  en: Get recognition for your experience, skills or training
+                DevenirTravailleurAtonome:
+                  fr: Devenir travailleur autonome, réaliser un projet d’entreprise
+                  en: Becoming self-employed, carrying out a business project
+            - type: zoneEvidence
+              classes: page-texte
+              text:
+                fr: 
+                    <p>Si ces choix ne correspondent pas à vos besoins ou si vous souhaitez obtenir des informations supplémentaires, communiquer avec <a href="https://www.localisateur.servicesquebec.gouv.qc.ca/" target="_blank"><span class="nom-service lien-externe">Services Québec</span><span class="sr-only">. Ce lien sera ouvert dans un nouvel onglet</span></a></p>
+                en: 
+                    <p>If these choices do not meet your needs or you would like additional information, contact <a href="https://www.localisateur.servicesquebec.gouv.qc.ca/" target="_blank"><span class="nom-service lien-externe">Services Québec</span><span class="sr-only">. Ce lien sera ouvert dans un nouvel onglet</span></a></p>                   
+            - name: ChoisirCarriere
+              type: group
+              v-if: val('prefixId$PrecisionRaisonDemandeEmploi').includes('ChoisirCarriere')
+              label:
+                fr: Choisir un métier, une profession, faire ou valider un choix de carrière 
+                en: Choose a trade, profession, make or validate a career choice
+              components:
+                - name: PrecisionSuplementaireRaisonDemandeEmploi
+                  label:
+                    fr: Veuillez préciser ce que vous souhaitez faire.
+                    en: Please specify what you would like to do.
+                  type: checkbox                 
+                  options:
+                    ReorienterCarriere:
+                      fr: Me réorienter, changer de carrière
+                      en: Redirect myself, change careers
+                    ExplorerCarriere:
+                      fr: Explorer différentes possibilités de carrière
+                      en: Explore different career opportunities
+                    IdentifierChoixProfessionnel:
+                      fr: Identifier un choix professionnel 
+                      en: Identify a professional choice
+                    ValiderChoixProfessionnel:
+                      fr: Valider un choix professionnel
+                      en: Validate a professional choice
+                    ConnaitreMetierAvenir:
+                      fr: Connaître les professions en demande ou les métiers d’avenir
+                      en: Know the occupations in demand or the trades of the future
+            - name: ChercherEmploi
+              type: group
+              v-if: val('prefixId$PrecisionRaisonDemandeEmploi').includes('ChercherEmploi')
+              label:
+                fr: Chercher et trouver un emploi
+                en: Looking for and finding a job
+              components:
+                - name: PrecisionChercherEmploi
+                  label:
+                    fr: Veuillez préciser ce que vous souhaitez faire.
+                    en: Please specify the reasons for your job search.
+                  type: checkbox                  
+                  options:
+                    TrouverOpportuniterEmploi:
+                      fr: Trouver des opportunités d’emploi, trouver des entreprises qui embauchent
+                      en: Finding employment opportunities, finding companies that hire
+                    OrganiserStructurerPlanifierAction:
+                      fr: Organiser, structurer et planifier mes actions
+                      en: Organize, structure and plan my actions
+                    ReviserCV:
+                      fr: Rédiger ou réviser mon curriculum vitae ou mes lettres de présentation
+                      en: Write or revise my resume or cover letters 
+                    PreparerEntrevue:
+                      fr: Me préparer aux entrevues
+                      en: Preparing for interviews
+            - name: SurmonterDifficulterTrouverEmploi
+              type: group
+              v-if: val('prefixId$PrecisionRaisonDemandeEmploi').includes('SurmonterDifficulterTrouverEmploi')
+              label:
+                fr: Surmonter des difficultés à trouver ou à conserver un emploi
+                en: Overcoming difficulties in finding or keeping a job
+              components:
+                - name: PrecisionSurmonterDifficulterTrouverEmploi
+                  label:
+                    fr: Veuillez préciser de quelles difficultés il s’agit.
+                    en: Please specify the difficulties.
+                  type: checkbox                 
+                  options:
+                    AbsentMarcherTravail:
+                      fr: Je suis absent du marché du travail depuis longtemps
+                      en: I have been out of the labour market for a long time
+                    PeuPasExperienceTravail:
+                      fr: J’ai peu ou pas d’expérience de travail
+                      en: I have little or no work experience
+                    PeuPasExperienceTravailQuebecCanada:
+                      fr: J’ai peu ou pas d’expérience de travail au Québec ou au Canada
+                      en: I have little or no work experience in Quebec or Canada
+                    DiscriminationHarcelementRejet:
+                      fr: J’ai vécu de la discrimination, du harcèlement ou du rejet
+                      en: I have experienced discrimination, harassment or rejection
+                    PeuRessourcesFinancieres:
+                      fr: J’ai peu de ressources financières
+                      en: I have few financial resources
+                    EmploiRareSecteurInteresse:
+                      fr: Les emplois sont rares dans le secteur qui m’intéresse
+                      en: Jobs are scarce in the sector that interests me
+                    AutreDifficulte:
+                      fr: Autre difficulté
+                      en: Another difficulty
+            - name: SuivreFormation
+              type: group
+              v-if: val('prefixId$PrecisionRaisonDemandeEmploi').includes('SuivreFormation')
+              label:
+                fr: Suivre une formation, obtenir un diplôme ou une certification
+                en: Take training, diploma or certification
+              components:
+                - name: PrecisionSuivreFormation
+                  label:
+                    fr: Veuillez préciser ce que vous souhaitez faire.
+                    en: Please specify what you would like to do.
+                  type: checkbox                 
+                  options:
+                    CompleterSecondaire:
+                      fr: Compléter mes études secondaires
+                      en: Completing high school
+                    SuivreFormationProfessionelleOuTechniqueOuMarcheTravail:
+                      fr: Suivre une formation professionnelle ou technique pour intégrer ou réintégrer le marché du travail
+                      en: Vocational or technical training to enter or re-enter the labour market
+                    SuivreFormationRequise:
+                      fr: Suivre une formation requise pour exercer un métier ou une profession réglementés au Québec
+                      en: Training required to practice a regulated trade or profession in Quebec
+                    ProgrammeApprentissageMetierTavail:
+                      fr: Participer à un programme d’apprentissage d’un métier en milieu de travail 
+                      en: Participating in a workplace trades apprenticeship program
+                    FormationAdditionnelDomaine:
+                      fr: Suivre une formation additionnelle, exercer une spécialité dans mon domaine
+                      en: Additional training, specialization in my field
+                    FormationAppoint:
+                      fr: Suivre une formation d’appoint, compléter la formation que j’ai déjà 
+                      en: Take refresher training, complete the training I already have
+                    VivreExperienceTravail:
+                      fr: Vivre une expérience de travail pour acquérir des compétences 
+                      en: Work experience to develop skills
+            - name: ObtenirReconnaisanceExperience
+              type: group
+              v-if: val('prefixId$PrecisionRaisonDemandeEmploi').includes('ObtenirReconnaisanceExperience')
+              label:
+                fr: Obtenir une reconnaissance de mon expérience, de mes compétences ou de ma formation
+                en: Get recognition for my experience, skills or training
+              components:
+                - name: PrecisionObtenirReconnaisanceExperience
+                  label:
+                    fr: Veuillez préciser ce que vous souhaitez faire.
+                    en: Please specify what you would like to do.
+                  type: checkbox                  
+                  options:
+                    PreuveCompetenceReconnaissanceAcquis:
+                      fr: Avoir une preuve de compétence ou une reconnaissance de mes acquis ( je n’ai pas de diplôme dans le domaine qui m’intéresse)
+                      en: Have proof of competence or recognition of my prior learning (I do not have a degree in the field that interests me)
+                    ReconnaitreExperienceFormation:
+                      fr: Faire reconnaître mon expérience ou ma formation pour obtenir le permis d’exercice d’un métier ou une profession réglementés au Québec
+                      en: Have my experience or training recognized for licensure in a regulated trade or profession in Quebec
+                    EquivaleneceSecondaireCinq:
+                      fr: Obtenir une équivalence de secondaire 5
+                      en: Achieving Secondary 5 Equivalency           
+        # Section 4 - Emplois
+        - section:
+            fr: Votre situation d'emploi
+            en: Your employment status
+          id: emplois
+          components:
+            - name: EnEmploi
+              type: radio
+              label:
+                fr: Actuellement, est-ce que vous occupez un emploi?
+                en: Are you currently employed?
+              options: yesno
+              help:
+                    fr: (Temps plein, temps partiel, permanent ou temporaire)
+                    en: (Full-time, part-time, permanent or temporary)
+            - name: TempsSansEmploi
+              v-if: val('prefixId$EnEmploi') === 'false'
+              type: date
+              label:
+                fr: Depuis quand êtes-vous sans emploi?
+                en: When did you become unemployed?
+              help:
+                    fr: Estimez la date au mois près
+                    en: Estimate the date to the nearest month
+            - name: PrecisionAutre
+              type: textarea
+              label:
+                fr: Dans quel domaine travaillez-vous ou avez-vous travaillé? Quel est votre métier ou votre profession?
+                en: In what field do you work or have you worked? What is your trade or profession?
+              help:
+                    fr: Si vous n’avez pas d’expérience sur le marché du travail, vous pouvez passer à la question suivante.
+                    en: If you don’t have any labour market experience, you can move on to the next question.
+              validations:
+                optional: null  
+              additionals:
+                rows: 4
+        # Section 5 - Confirmation
+        - section:
+            fr: Confirmation
+            en: Confirmation
+          id: AffirmationSolennelle
+          components:            
+            - type: zoneEvidence
+              components:
+                - type: dynamic
+                  tag: p
+                  text:
+                    fr: <b>J’affirme</b> solennellement que les renseignements qui figurent dans cette demande sont exacts et complets.
+                    en: <b>I solemnly affirm</b> that the information provided in this application is accurate and complete.         
+            - type: dynamic
+              tag: p
+              text:
+                fr: Inscrivez vos prénom et nom de famille ci-dessous, dans le champ Signature.
+                en: Enter your first and last name below in the Signature field.
+            - type: inline
+              classes: no-wrap
+              components:
+                - name: DateSignature
+                  type: date
+                  label:
+                    fr: Date
+                    en: Date
+                - name: Signature
+                  type: text
+                  outerClasses: w-100
+                  label:
+                    fr: Signature
+                    en: Signature       
+        # Section 6 - Revision
+        - section:
+            fr: Révision
+            en: Revision
+          id: revision
+          cacherTexteExplicatifChampsObligatoires: true
+          components:
+            - type: dynamic
+              tag: div
+              v-if: val('EtatRevision') === 'initial'
+              classes: texte-revision
+              text:
+                fr: Vous devez cliquer sur le bouton « Valider » afin de vérifier que le formulaire est rempli correctement.
+                en: You must click on the Validate button to verify that the form has been properly filled out.
+            - type: dynamic
+              tag: div
+              v-if: val('EtatRevision') === 'sans-erreur'
+              classes: texte-revision
+              text:
+                fr: Votre formulaire est validé. Vous pouvez cliquer sur le bouton « Soumettre ».
+                en: Your form has been validated. You can click on the Submit button.

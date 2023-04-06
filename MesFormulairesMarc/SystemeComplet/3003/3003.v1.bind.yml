@@ -1,0 +1,4125 @@
+config:
+  formulaire:
+    systeme: 1
+    type: 3003
+  pdf:
+    rapetisserTexteTropLong: true
+    redirigerAnnexeTexteTroplong: true
+    pourcentageDepassementAnnexe: 20
+    verrouillerChampsPdf: true
+bundles:
+  - nomSortie: 3003_01_A1_AFDR
+    # si la condition est true, retourne la valeur après le :
+    # sinon (la condition est false), ne retourne rien; lorsqu'il n'y a rien, il n'y a pas de condition à respecter, donc le bloc s'exécute 
+    conditionsEt: '{TypeDemande:neContientPas(Afdr):false}'
+    templates:
+      - 01_a1
+    estampille:
+      positionX: 25
+      positionY: 915
+      tailleFont: 10
+      lignes:
+        - 'Numéro de référence : {{NoConfirmation}}'
+        - 'Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}'
+        - '{{^DonneesFormulaire.estampille.texteAuthentification}}Utilisateur Quebec.ca{{/DonneesFormulaire.estampille.texteAuthentification}}{{{DonneesFormulaire.estampille.texteAuthentification}}}'
+        - 'Droits et obligations transmis par courriel : {{#DonneesFormulaire.systeme.infosEnregistrement.courriel}}OUI{{/DonneesFormulaire.systeme.infosEnregistrement.courriel}}{{^DonneesFormulaire.systeme.infosEnregistrement.courriel}}NON{{/DonneesFormulaire.systeme.infosEnregistrement.courriel}}'
+        - '{{{DonneesFormulaire.estampille.ligne3}}}'
+  - nomSortie: 3003_01_A1_EQ
+    # si la condition est true, retourne la valeur après le :
+    # sinon (la condition est false), ne retourne rien; lorsqu'il n'y a rien, il n'y a pas de condition à respecter, donc le bloc s'exécute 
+    conditionsEt: '{TypeDemande:neContientPas(AideEmploi):false}'
+    templates:
+      - 01_a1
+    estampille:
+      positionX: 25
+      positionY: 915
+      tailleFont: 10
+      lignes:
+        - 'Numéro de référence : {{NoConfirmation}}'
+        - 'Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}'
+        - '{{^DonneesFormulaire.estampille.texteAuthentification}}Utilisateur Quebec.ca{{/DonneesFormulaire.estampille.texteAuthentification}}{{{DonneesFormulaire.estampille.texteAuthentification}}}'
+        - '{{{DonneesFormulaire.estampille.ligne2}}}' 
+        - '{{{DonneesFormulaire.estampille.ligne3}}}'
+  - nomSortie: 3003_01_A2
+    conditionsEt: '{Conjoint}'
+    templates:
+      - 01_a2
+    estampille:
+      positionX: 25
+      positionY: 915
+      tailleFont: 10
+      lignes:
+        - 'Numéro de référence : {{NoConfirmation}}'
+        - 'Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}'
+        - '{{^DonneesFormulaire.estampille.texteAuthentification}}Utilisateur Quebec.ca{{/DonneesFormulaire.estampille.texteAuthentification}}{{{DonneesFormulaire.estampille.texteAuthentification}}}'
+        - '{{{DonneesFormulaire.estampille.ligne2}}}' 
+        - '{{{DonneesFormulaire.estampille.ligne3}}}'
+  - nomSortie: 3003_02AFDR
+    conditionsEt: '{TypeDemande:neContientPas(Afdr):false}'
+    templates:
+      - 02
+    estampille:
+      positionX: 25
+      positionY: 915
+      tailleFont: 10
+      lignes:
+        - 'Numéro de référence : {{NoConfirmation}}'
+        - 'Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}'
+        - '{{^DonneesFormulaire.estampille.texteAuthentification}}Utilisateur Quebec.ca{{/DonneesFormulaire.estampille.texteAuthentification}}{{{DonneesFormulaire.estampille.texteAuthentification}}}'
+        - 'Droits et obligations transmis par courriel : {{#DonneesFormulaire.systeme.infosEnregistrement.courriel}}OUI{{/DonneesFormulaire.systeme.infosEnregistrement.courriel}}{{^DonneesFormulaire.systeme.infosEnregistrement.courriel}}NON{{/DonneesFormulaire.systeme.infosEnregistrement.courriel}}'
+        - '{{{DonneesFormulaire.estampille.ligne3}}}'
+  - nomSortie: 3003_03AFDR
+    conditionsEt: '{TypeDemande:neContientPas(Afdr):false}'
+    templates:
+      - 03_e1
+      - 03_e2
+      - 03_e3
+      - 03_e4
+    estampille:
+      positionX: 370
+      positionY: 985
+      tailleFont: 10
+      lignes:
+        - 'Numéro de référence : {{NoConfirmation}}'
+        - 'Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}'
+        - '{{^DonneesFormulaire.estampille.texteAuthentification}}Utilisateur Quebec.ca{{/DonneesFormulaire.estampille.texteAuthentification}}{{{DonneesFormulaire.estampille.texteAuthentification}}}'
+        - 'Droits et obligations transmis par courriel : {{#DonneesFormulaire.systeme.infosEnregistrement.courriel}}OUI{{/DonneesFormulaire.systeme.infosEnregistrement.courriel}}{{^DonneesFormulaire.systeme.infosEnregistrement.courriel}}NON{{/DonneesFormulaire.systeme.infosEnregistrement.courriel}}'
+        - '{{{DonneesFormulaire.estampille.ligne3}}}'   
+  - nomSortie: DroitsObligations
+    conditionsEt: '{TypeDemande:neContientPas(Afdr):false}'
+    templates:
+      - DO1
+  - nomSortie: RenseignementsEssentiels
+    conditionsEt: '{TypeDemande:neContientPas(Afdr):false}'
+    templates:
+      - RE1
+
+templates:
+- id: 01_a1
+  name: 3003-01 - Adulte 1
+  gabarit:
+    fr: 3003-01.v1.FR
+    en: 3003-01.v1.EN
+- id: 01_a2
+  name: 3003-01 - Adulte 2
+  gabarit:
+    fr: 3003-01.v1.FR
+    en: 3003-01.v1.EN
+  conditionsEt: '{Conjoint}'
+- id: 02
+  name: 3003-02
+  gabarit:
+    fr: 3003-02.v1.FR
+    en: 3003-02.v1.EN
+  conditionsEt: '{TypeDemande:neContientPas(Afdr):false}'
+- id: 03_e1
+  name: 3003-03 - Enf. 1-3
+  gabarit:
+    fr: 3003-03.v1.FR
+    en: 3003-03.v1.EN
+  conditionsEt: '{TypeDemande:neContientPas(Afdr):false} {0:neContientPas(Enfants):false} {Enfants.Length:cond:>=1?true|false}'
+- id: 03_e2
+  name: 3003-03 - Enf. 4-6
+  gabarit:
+    fr: 3003-03.v1.FR
+    en: 3003-03.v1.EN
+  conditionsEt: '{TypeDemande:neContientPas(Afdr):false} {0:neContientPas(Enfants):false} {Enfants.Length:cond:>=4?true|false}'
+- id: 03_e3
+  name: 3003-03 - Enf. 7-9
+  gabarit:
+    fr: 3003-03.v1.FR
+    en: 3003-03.v1.EN
+  conditionsEt: '{TypeDemande:neContientPas(Afdr):false} {0:neContientPas(Enfants):false} {Enfants.Length:cond:>=7?true|false}'
+- id: 03_e4
+  name: 3003-03 - Enf. 10-12
+  gabarit:
+    fr: 3003-03.v1.FR
+    en: 3003-03.v1.EN
+  conditionsEt: '{TypeDemande:neContientPas(Afdr):false} {0:neContientPas(Enfants):false} {Enfants.Length:cond:>=10?true|false}'
+- id: DO1
+  name: Droits et obligations
+  pdf:
+    fr: DroitsObligations.v1.FR
+    en: DroitsObligations.v1.EN
+  toujoursProduire: true
+  
+- id: RE1
+  name: Renseignements Essentiels
+  pdf:
+    fr: RenseignementsEssentiels.v1.FR
+    en: RenseignementsEssentiels.v1.EN
+  toujoursProduire: true
+
+bind:
+  01_a1:
+    DM_AFDR_FinEtudes:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdr==FinEtudesTempsPlein]
+    DM_AFDR_PerteRevenus:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdr==FinDiminutionRevenus]
+    PerteRevenus1:
+      champs: [adulte1RaisonAfdr.0.FinDiminutionRevenusType==FinRevenusEmploi]
+    PerteRevenus2:
+      champs: [adulte1RaisonAfdr.0.FinDiminutionRevenusType==FinRevenusTravailAutonome]
+    PerteRevenus3:
+      champs: [adulte1RaisonAfdr.0.FinDiminutionRevenusType==FinRevenusAssuranceEmploi]
+    PerteRevenus4:
+      champs: [adulte1RaisonAfdr.0.FinDiminutionRevenusType==FinRevenusPrestations]
+    cp12:
+      champs: [<NULL>]
+    date_FinEtudes:
+      champs: [adulte1RaisonAfdr.0.DateEvenementFinEtudesTempsPlein]
+      formule: '{adulte1RaisonAfdr.0.DateEvenementFinEtudesTempsPlein:yyyyMMdd}'
+    date_Perterevenus:
+      champs: [adulte1RaisonAfdr.0.DateEvenementFinDiminutionRevenus]
+      formule: '{adulte1RaisonAfdr.0.DateEvenementFinDiminutionRevenus:yyyyMMdd}'
+    AFDR_Raison1:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdr==AucunRevenu]
+    AFDR_Raison5:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdr==PerteConjoint]
+    AFDR_Raison5a:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdrPerteConjoint==PerteConjointDeces]
+    AFDR_Raison5b:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdrPerteConjoint==PerteConjointSeparation]
+    AFDR_Raison5c:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdrPerteConjoint==PerteConjointDivorce]
+    AFDR_Raison2:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdr==AttenteDecision]
+    AFDR_Raison3:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdr==SortieEtablissement]
+    AFDR_Raison3a:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdrSortieEtablissement==SortieEtablissementSante]
+    AFDR_Raison3b:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdrSortieEtablissement==SortieEtablissementDetention]
+    AFDR_Raison4:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdr==RevenuInsuffisant]
+    AFDR_Raison6:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdr==RemboursementFraisFuneraires]
+    AFDR_Raison7:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdr==NaissanceEnfant]
+    AFDR_Raison8:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdr==ArriveeConjoint]
+    AFDR_Raison9:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdr==ProblemeSante]
+    AFDR_Raison10:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdr==PrecisionRaisonDemandeAfdrAutreRaison]
+    AFDR_Raison10_Autre:
+      champs: [adulte1RaisonAfdr.0.PrecisionRaisonDemandeAfdrAutre]
+    EQ_Raison3:
+      champs: [adulte1RaisonAE.0.PrecisionRaisonDemandeEmploi==ReferenceEmployeur]
+    EQ_Raison2:
+      champs: [adulte1RaisonAE.0.PrecisionRaisonDemandeEmploi==RetourEcole]
+    nom:
+      champs: [adulte1NomFamille]
+    prenom:
+      champs: [adulte1Prenom]
+    nas:
+      champs:
+      - adulte1Nas1
+      - adulte1Nas2
+      formule: '{adulte1Nas1:forcenumeric()}{adulte1Nas2:forcenumeric()}'
+    date_naissance:
+      champs: [adulte1DateNaissance]
+      formule: '{adulte1DateNaissance:yyyyMMdd}'
+    date_nas9:
+      champs: [adulte1DateExpirationNas]
+      formule: '{adulte1DateExpirationNas:yyyyMMdd}'
+    EQ_Raison1:
+      champs: [adulte1RaisonAE.0.PrecisionRaisonDemandeEmploi==AideRechercheEmploi]
+    Sexe_Feminin:
+      champs: [adulte1Sexe==Feminin]
+    Langue_Francais:
+      champs: [adulte1Langue==Francais]
+    Langue_Anglais:
+      champs: [adulte1Langue==Anglais]
+    NeQC_Oui:
+      champs: [adulte1NeQC==true]
+    NeQC_Non:
+      champs: [adulte1NeQC==false]
+    Sexe_Masculin:
+      champs: [adulte1Sexe==Masculin]
+    Autochtone_Oui:
+      champs: [adulte1Autochtone==true]
+    anneereussisP1:
+      champs: [adulte1Primaire.0.NbAnneesReussiesPrimaire==1]
+    anneereussisP2:
+      champs: [adulte1Primaire.0.NbAnneesReussiesPrimaire==2]
+    anneereussisP3:
+      champs: [adulte1Primaire.0.NbAnneesReussiesPrimaire==3]
+    anneereussisP4:
+      champs: [adulte1Primaire.0.NbAnneesReussiesPrimaire==4]
+    anneereussisS1:
+      champs: [adulte1SecondaireGen.0.NbAnneesReussiesSecGeneral==1]
+    anneereussisSp3:
+      champs: [adulte1SecondaireProf.0.NbAnneesReussiesSecFormProf==3]
+    anneereussisSsp1:
+      champs: [adulte1SecondaireMetier.0.NbAnneesReussiesSecMetier==1]
+    DiplomeDES:
+      champs: [adulte1SecondaireGen.0.DiplomeSecGeneral==Des]
+    DiplomeAEP:
+      champs: [adulte1SecondaireProf.0.DiplomeSecFormProf==Aep]
+    parent_nom:
+      champs: [adulte1NomDuParent]
+    CitCanadienne_Oui:
+      champs:
+      - adulte1CitCanadienne==true
+      - adulte1NeCanada==true
+    CitCanadienne_Non:
+      champs: [adulte1CitCanadienne==false]
+    ResPermanent_Oui:
+      champs: [adulte1EstResidentPermanent==true]
+    ResPermanent_Non:
+      champs: [adulte1EstResidentPermanent==false]
+    DemAsile_Oui:
+      champs: [adulte1EstDemandeurAsile==true]
+    DemAsile_Non:
+      champs: [adulte1EstDemandeurAsile==false]
+    PersProtege_Oui:
+      champs: [adulte1EstRefugieOuProtege==true]
+    PersProtege_Non:
+      champs: [adulte1EstRefugieOuProtege==false]
+    StatutPers_Autre:
+      champs: [adulte1PrecisionAutreStatut]
+    pays:
+      champs: [adulte1Pays1]
+    date_arrivee:
+      champs: [adulte1DateArriveeCanada]
+      formule: '{adulte1DateArriveeCanada:yyyyMMdd}'
+    Autochtone_Non:
+      champs: [adulte1Autochtone==false]
+    PremiereNation1:
+      champs: [adulte1AutochtoneType==AmerindienReserve]
+    PremiereNation2:
+      champs: [adulte1AutochtoneType==AmerindienHorsReserve]
+    PremiereNation3:
+      champs: [adulte1AutochtoneType==Inuit]
+    adresse_numero:
+      champs: [adulte1Adresse.0.NoCivique]
+    adresse_app:
+      champs: [adulte1Adresse.0.Appartement]
+    adresse_rue:
+      champs: [adulte1Adresse.0.Rue]
+    adresse_ville:
+      champs: [adulte1Adresse.0.Municipalite]
+    adresse_codePostal:
+      champs: [adulte1Adresse.0.CodePostal]
+      formule: '{adulte1Adresse.0.CodePostal:codePostal()}'
+    adresse_telephone1:
+      champs: [adulte1Telephone1]
+      formule: '{adulte1Telephone1:forcerNombre()}'
+    adresse_telephone2:
+      champs: [adulte1Telephone2]
+      formule: '{adulte1Telephone2:forcerNombre()}'
+    Emploi_Oui:
+      champs: [adulte1EnEmploi==true]
+    Emploi_Non:
+      champs: [adulte1EnEmploi==false]
+    Emploi_Tplein:
+      champs: [adulte1PrecisionStatutEmploi==TempsPlein]
+    Emploi_Tpartiel:
+      champs: [adulte1PrecisionStatutEmploi==TempsPartiel]
+    Emploi_Tappel:
+      champs: [adulte1PrecisionStatutEmploi==SurAppel]
+    Emploi_Tautonome:
+      champs: [adulte1PrecisionStatutEmploi==TravailleurAutonome]
+    Prestation_Oui:
+      champs: [adulte1AideGouvRecue==true]
+    Prestation_Non:
+      champs: [adulte1AideGouvRecue==false]
+    Prestation1:
+      champs: [adulte1TypeAideRecue==AssuranceEmploi]
+    Prestation2:
+      champs: [adulte1TypeAideRecue==RQAP]
+    Prestation3:
+      champs: [adulte1TypeAideRecue==AutresAide]
+    Prestation3_Autre:
+      champs: [adulte1AideRecueAutrePrecision]
+    Enfant_Oui:
+      champs: [adulte1EnfantsACharge==true]
+    Enfant_Non:
+      champs: [adulte1EnfantsACharge==false]
+    Enfant_Combien:
+      champs: [adulte1NbrEnfants]
+    Chef-Famile_Oui:
+      champs: [adulte1ChefMonoparentale==true]
+    Chef-Famile_Non:
+      champs: [adulte1ChefMonoparentale==false]
+    Handicap_Oui:
+      champs: [adulte1Handicap==true]
+    Handicap_Non:
+      champs: [adulte1Handicap==false]
+    Handicap:
+      champs: [adulte1TypeHandicap]
+    Parlees_Francais:
+      champs: [adulte1LanguesParlees==Francais]
+    Parlees_Anglais:
+      champs: [adulte1LanguesParlees==Anglais]
+    Parlees_Autre:
+      champs: [adulte1LanguesParlees==AutresLanguesParlees]
+    languesparlees:
+      champs: [adulte1PrecisionLanguesParlees]
+    Ecrites_Francais:
+      champs: [adulte1LanguesEcrites==Francais]
+    Ecrites_Anglais:
+      champs: [adulte1LanguesEcrites==Anglais]
+    Ecrites_Autre:
+      champs: [adulte1LanguesEcrites==AutresLanguesEcrites]
+    languesecrites:
+      champs: [adulte1PrecisionLanguesEcrites]
+    Casier_Oui:
+      champs: [adulte1CasierJudiciaire==true]
+    Casier_Non:
+      champs: [adulte1CasierJudiciaire==false]
+    Minorite_Oui:
+      champs: [adulte1MinoriteVisible==true]
+    Minorite_Non:
+      champs: [adulte1MinoriteVisible==false]
+    Enseignement_Oui:
+      champs: [adulte1AuxEtudes==true]
+    Enseignement_Non:
+      champs: [adulte1AuxEtudes==false]
+    Enseignement_TPlein:
+      champs: [adulte1PrecisionStatutEtudes==TempsPlein]
+    Enseignement_TPartiel:
+      champs: [adulte1PrecisionStatutEtudes==TempsPartiel]
+    Enseignement_Diplome:
+      champs: [adulte1DiplomeVise]
+    EQ_Oui:
+      champs: [TypeDemande==AideEmploi]
+    EQ_Raison3_Autre:
+      champs: [adulte1RaisonAE.0.PrecisionRaisonEmployeur]
+    EQ_Raison5:
+      champs: [adulte1RaisonAE.0.PrecisionRaisonDemandeEmploi==PrecisionRaisonDemandeEmploiAutreRaison]
+    EQ_Raison4:
+      champs: [adulte1RaisonAE.0.PrecisionRaisonDemandeEmploi==ReferenceOrganisme]
+    EQ_Raison4_Autre:
+      champs: [adulte1RaisonAE.0.PrecisionRaisonOrganisme]
+    EQ_Raison5_Autre:
+      champs: [adulte1RaisonAE.0.PrecisionRaisonDemandeAideEmploi]
+    AFDR_Oui:
+      champs: [TypeDemande==Afdr]
+    Travaille_Oui:
+      champs: [adulte1Travaille==true]
+    Travaille_Non:
+      champs: [adulte1Travaille==false]
+    entreprise1:
+      champs: [adulte1Emplois.0.NomEntreprise]
+    date_periodeDu1:
+      champs: [adulte1Emplois.0.PeriodeDu]
+      formule: '{adulte1Emplois.0.PeriodeDu:yyyyMMdd}'
+    date_periodeAu1:
+      champs: [adulte1Emplois.0.PeriodeAu]
+      formule: '{adulte1Emplois.0.PeriodeAu:yyyyMMdd}'
+    salaire1:
+      champs: [adulte1Emplois.0.SalaireHebdo]
+    heuresSemaine1:
+      champs: [adulte1Emplois.0.HeuresHebdo]
+    Emploi1:
+      champs: [adulte1Emplois.0.TitreEmploiOccupe]
+    taches1:
+      champs: [adulte1Emplois.0.PrincipalesTachesAccomplies]
+    RaisonEmploi1a:
+      champs: [adulte1Emplois.0.RaisonFinEmploi==Abandon]
+    RaisonEmploi1e:
+      champs: [adulte1Emplois.0.RaisonFinEmploi==ManqueTravail]
+    RaisonEmploi1b:
+      champs: [adulte1Emplois.0.RaisonFinEmploi==ChangementEmploi]
+    RaisonEmploi1g:
+      champs: [adulte1Emplois.0.RaisonFinEmploi==ProblemeSante]
+    RaisonEmploi1f:
+      champs: [adulte1Emplois.0.RaisonFinEmploi==NaissancePriseChargeEnfant]
+    RaisonEmploi1c:
+      champs: [adulte1Emplois.0.RaisonFinEmploi==Congediement]
+    RaisonEmploi1d:
+      champs: [adulte1Emplois.0.RaisonFinEmploi==FermetureEntreprise]
+    RaisonEmploi1h:
+      champs: [adulte1Emplois.0.RaisonFinEmploi==AutreRaison]
+    RaisonEmploi1h_Autre:
+      champs: [adulte1Emplois.0.PrecisionAutre]
+    entreprise2:
+      champs: [adulte1Emplois.1.NomEntreprise]
+    date_periodeDu2:
+      champs: [adulte1Emplois.1.PeriodeDu]
+      formule: '{adulte1Emplois.1.PeriodeDu:yyyyMMdd}'
+    date_periodeAu2:
+      champs: [adulte1Emplois.1.PeriodeAu]
+      formule: '{adulte1Emplois.1.PeriodeAu:yyyyMMdd}'
+    salaire2:
+      champs: [adulte1Emplois.1.SalaireHebdo]
+    heuresSemaine2:
+      champs: [adulte1Emplois.1.HeuresHebdo]
+    Emploi2:
+      champs: [adulte1Emplois.1.TitreEmploiOccupe]
+    taches2:
+      champs: [adulte1Emplois.1.PrincipalesTachesAccomplies]
+    RaisonEmploi2a:
+      champs: [adulte1Emplois.1.RaisonFinEmploi==Abandon]
+    RaisonEmploi2e:
+      champs: [adulte1Emplois.1.RaisonFinEmploi==ManqueTravail]
+    RaisonEmploi2g:
+      champs: [adulte1Emplois.1.RaisonFinEmploi==ProblemeSante]
+    RaisonEmploi2b:
+      champs: [adulte1Emplois.1.RaisonFinEmploi==ChangementEmploi]
+    RaisonEmploi2f:
+      champs: [adulte1Emplois.1.RaisonFinEmploi==NaissancePriseChargeEnfant]
+    RaisonEmploi2c:
+      champs: [adulte1Emplois.1.RaisonFinEmploi==Congediement]
+    RaisonEmploi2d:
+      champs: [adulte1Emplois.1.RaisonFinEmploi==FermetureEntreprise]
+    RaisonEmploi2h:
+      champs: [adulte1Emplois.1.RaisonFinEmploi==AutreRaison]
+    RaisonEmploi2h_Autre:
+      champs: [adulte1Emplois.1.PrecisionAutre]
+    Nom_institutionFinanciere:
+      champs: [NomEtablissementFinancier]
+    Adresse_succursale:
+      champs: [AdresseSuccursale.0.AdresseComplete]
+    CP_succursale:
+      champs: [AdresseSuccursale.0.CodePostal]
+      formule: '{AdresseSuccursale.0.CodePostal:codePostal()}'
+    Num_succursale:
+      champs: [NumSuccursale]
+    Num_institution:
+      champs: [NumEtablissement]
+    Num_compte_Req-00:
+      champs: [NumCompte]
+    date_affirmation:
+      champs: [DateSignature]
+      formule: '{DateSignature:yyyy-MM-dd}'
+    EQ_Non:
+      champs: [TypeDemande==AideEmploi]
+      formule: '{TypeDemande:exclude(AideEmploi):true}'
+    AFDR_Non:
+      champs: [TypeDemande==Afdr]
+      formule: '{TypeDemande:exclude(Afdr):true}'
+    StatutPers:
+      champs: [adulte1PrecisionAutreStatut]
+      formule: '{adulte1PrecisionAutreStatut:true|false}'
+    Permis_Oui:
+      champs: [adulte1PermisConduire==true]
+    Permis_Non:
+      champs: [adulte1PermisConduire==false]
+    permisClasse:
+      champs: [adulte1ClassePermisConduire]
+    anneereussisP5:
+      champs: [adulte1Primaire.0.NbAnneesReussiesPrimaire==5]
+    anneereussisP6:
+      champs: [adulte1Primaire.0.NbAnneesReussiesPrimaire==6]
+    anneereussisP7:
+      champs: [adulte1Primaire.0.NbAnneesReussiesPrimaire==7]
+    anneereussisS2:
+      champs: [adulte1SecondaireGen.0.NbAnneesReussiesSecGeneral==2]
+    anneereussisS3:
+      champs: [adulte1SecondaireGen.0.NbAnneesReussiesSecGeneral==3]
+    anneereussisS4:
+      champs: [adulte1SecondaireGen.0.NbAnneesReussiesSecGeneral==4]
+    anneereussisS5:
+      champs: [adulte1SecondaireGen.0.NbAnneesReussiesSecGeneral==5]
+    anneereussisSp4:
+      champs: [adulte1SecondaireProf.0.NbAnneesReussiesSecFormProf==4]
+    anneereussisSp5:
+      champs: [adulte1SecondaireProf.0.NbAnneesReussiesSecFormProf==5]
+    anneereussisSp6:
+      champs: [adulte1SecondaireProf.0.NbAnneesReussiesSecFormProf==6]
+    PRG_S:
+      champs: [adulte1SecondaireProf.0.DisciplineSecFormProf]
+    DiplomeDEP:
+      champs: [adulte1SecondaireProf.0.DiplomeSecFormProf==Dep]
+    DiplomeASP:
+      champs: [adulte1SecondaireProf.0.DiplomeSecFormProf==Asp]
+    date_FinEtudesSp:
+      champs: [adulte1SecondaireProf.0.DateFinSecFormProf]
+      formule: '{adulte1SecondaireProf.0.DateFinSecFormProf:yyyyMM}'
+    date_FinEtudesS:
+      champs: [adulte1SecondaireGen.0.DateFinSecGeneral]
+      formule: '{adulte1SecondaireGen.0.DateFinSecGeneral:yyyyMM}'
+    date_FinEtudesP:
+      champs: [adulte1Primaire.0.DateFinPrimaire]
+      formule: '{adulte1Primaire.0.DateFinPrimaire:yyyyMM}'
+    PRG_Ssp:
+      champs: [adulte1SecondaireMetier.0.DisciplineSecMetier]
+    date_FinEtudesSsp:
+      champs: [adulte1SecondaireMetier.0.DateFinSecMetier]
+      formule: '{adulte1SecondaireMetier.0.DateFinSecMetier:yyyyMM}'
+    anneereussisC1:
+      champs: [adulte1Collegial.0.NbAnneesReussiesCollegial==1]
+    anneereussisC2:
+      champs: [adulte1Collegial.0.NbAnneesReussiesCollegial==2]
+    anneereussisC3:
+      champs: [adulte1Collegial.0.NbAnneesReussiesCollegial==3]
+    PRG_C:
+      champs: [adulte1Collegial.0.DisciplineCollegial]
+    DiplomeDEC:
+      champs: [adulte1Collegial.0.DiplomeCollegial==Dec]
+    DiplomeAEC:
+      champs: [adulte1Collegial.0.DiplomeCollegial==Aec]
+    DiplomeCEC:
+      champs: [adulte1Collegial.0.DiplomeCollegial==Cec]
+    date_FinEtudesC:
+      champs: [adulte1Collegial.0.DateFinCollegial]
+      formule: '{adulte1Collegial.0.DateFinCollegial:yyyyMM}'
+    anneereussisU1:
+      champs: [adulte1Universitaire.0.NbAnneesReussiesUniversitaire==1]
+    anneereussisU2:
+      champs: [adulte1Universitaire.0.NbAnneesReussiesUniversitaire==2]
+    anneereussisU3:
+      champs: [adulte1Universitaire.0.NbAnneesReussiesUniversitaire==3]
+    anneereussisU4:
+      champs: [adulte1Universitaire.0.NbAnneesReussiesUniversitaire==4]
+    anneereussisU5:
+      champs: [adulte1Universitaire.0.NbAnneesReussiesUniversitaire==5]
+    anneereussisU6:
+      champs: [adulte1Universitaire.0.NbAnneesReussiesUniversitaire==6]
+    anneereussisU7:
+      champs: [adulte1Universitaire.0.NbAnneesReussiesUniversitaire==7]
+    PRG_U:
+      champs: [adulte1Universitaire.0.DisciplineUniversitaire]
+    DiplomeCERT:
+      champs: [adulte1Universitaire.0.DiplomeUniversitaire==Cert]
+    DiplomeBAC:
+      champs: [adulte1Universitaire.0.DiplomeUniversitaire==Bac]
+    DiplomeMA:
+      champs: [adulte1Universitaire.0.DiplomeUniversitaire==Ma]
+    DiplomeDOC:
+      champs: [adulte1Universitaire.0.DiplomeUniversitaire==Doc]
+    date_FinEtudesU:
+      champs: [adulte1Universitaire.0.DateFinUniversitaire]
+      formule: '{adulte1Universitaire.0.DateFinUniversitaire:yyyyMM}'
+    TitreCours1:
+      champs: [adulte1FormationsEmploi.0.TitreCours]
+    TitreCours2:
+      champs: [adulte1FormationsEmploi.1.TitreCours]
+    date_finCours1:
+      champs: [adulte1FormationsEmploi.0.DateFinCours]
+      formule: '{adulte1FormationsEmploi.0.DateFinCours:yyyyMMdd}'
+    date_finCours2:
+      champs: [adulte1FormationsEmploi.1.DateFinCours]
+      formule: '{adulte1FormationsEmploi.1.DateFinCours:yyyyMMdd}'
+    specialite:
+      champs: [adulte1SpecialiteEtudesEtranger]
+    anneereussies:
+      champs: [adulte1NbAnneesReussiesEtudesEtranger]
+    Evaluation_Oui:
+      champs: [adulte1EtudesEvaluationComparative==true]
+    domaine:
+      champs: [adulte1EtudesEvaluationComparativeDomaine]
+    Evaluation_Non:
+      champs: [adulte1EtudesEvaluationComparative==false]
+    CarteQualif_Oui:
+      champs: [adulte1PossedeCartesQualification==true]
+    CarteQualif_Non:
+      champs: [adulte1PossedeCartesQualification==false]
+    CarteQualif:
+      champs: [adulte1CartesQualification]
+    OrdreProf_Oui:
+      champs: [adulte1EstMembreOrdreProfessionnel==true]
+    OrdreProf_Non:
+      champs: [adulte1EstMembreOrdreProfessionnel==false]
+    OrdreProf:
+      champs: [adulte1OrdreProfessionnel]
+    Limitations_Oui:
+      champs: [adulte1Limitations==true]
+    Limitations_Non:
+      champs: [adulte1Limitations==false]
+    Limitations:
+      champs: [adulte1PrecisionLimitations]
+    DispoTravaille_Oui:
+      champs: [adulte1DisponibleTravail==true]
+    DispoTravaille_Non:
+      champs: [adulte1DisponibleTravail==false]
+    Dispo_Tplein:
+      champs: [adulte1DisponibilitesTravail==DispoTravailTempsPlein]
+    Dispo_Tpartiel:
+      champs: [adulte1DisponibilitesTravail==DispoTravailTempsPartiel]
+    Dispo_Jour:
+      champs: [adulte1DisponibilitesTravail==DispoTravailJour]
+    Dispo_Soir:
+      champs: [adulte1DisponibilitesTravail==DispoTravailSoir]
+    Dispo_Nuit:
+      champs: [adulte1DisponibilitesTravail==DispoTravailNuit]
+    NonDispo:
+      champs: [adulte1RaisonNonDisponibiliteTravail]
+    Dispo_Lieu1:
+      champs: [adulte1LieuxDisponibiliteTravail==LieuDispoTravailLocalite]
+    Dispo_Lieu2:
+      champs: [adulte1LieuxDisponibiliteTravail==LieuDispoTravailRegion]
+    Dispo_Lieu3:
+      champs: [adulte1LieuxDisponibiliteTravail==LieuDispoTravailAutre]
+    Dispo_Lieu3_Autre:
+      champs: [adulte1LieuxDisponibiliteTravailPrecision]
+    emploisrecherche:
+      champs: [adulte1DisponibiliteEmploisRecherches.0.NomEmploi]
+    emploisrecherche2:
+      champs: [adulte1DisponibiliteEmploisRecherches.1.NomEmploi]
+    ExperienceEmploi:
+      champs: [adulte1DisponibiliteEmploisRecherches.0.ExperienceEmploi==true]
+    ExperienceEmploi2:
+      champs: [adulte1DisponibiliteEmploisRecherches.1.ExperienceEmploi==true]
+    Signature-01:
+      champs:
+      - Signature
+      - SignatureRequerant
+    parent_prenom:
+      champs: [adulte1PrenomDuParent]
+    Marital1:
+      champs: [adulte1EtatMatrimonial==celibataire]
+    Marital3:
+      champs: [adulte1EtatMatrimonial==conjointFait]
+    Marital6:
+      champs: [adulte1EtatMatrimonial==separeSansJugement]
+    Marital2:
+      champs: [adulte1EtatMatrimonial==marieUnionCivile]
+    Marital4:
+      champs: [adulte1EtatMatrimonial==veuf]
+    Marital7:
+      champs: [adulte1EtatMatrimonial==divorce]
+    Marital5:
+      champs: [adulte1EtatMatrimonial==separe]
+    date_finUnion:
+      champs: [adulte1DateFinUnion]
+      formule: '{adulte1DateFinUnion:yyyyMMdd}'
+  01_a2:
+    DM_AFDR_FinEtudes:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdr==FinEtudesTempsPlein]
+    DM_AFDR_PerteRevenus:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdr==FinDiminutionRevenus]
+    PerteRevenus1:
+      champs: [adulte2RaisonAfdr.0.FinDiminutionRevenusType==FinRevenusEmploi]
+    PerteRevenus2:
+      champs: [adulte2RaisonAfdr.0.FinDiminutionRevenusType==FinRevenusTravailAutonome]
+    PerteRevenus3:
+      champs: [adulte2RaisonAfdr.0.FinDiminutionRevenusType==FinRevenusAssuranceEmploi]
+    cp12:
+      champs: [<NULL>]
+    date_FinEtudes:
+      champs: [adulte2RaisonAfdr.0.DateEvenementFinEtudesTempsPlein]
+      formule: '{adulte2RaisonAfdr.0.DateEvenementFinEtudesTempsPlein:yyyyMMdd}'
+    date_Perterevenus:
+      champs: [adulte2RaisonAfdr.0.DateEvenementFinDiminutionRevenus]
+      formule: '{adulte2RaisonAfdr.0.DateEvenementFinDiminutionRevenus:yyyyMMdd}'
+    AFDR_Raison1:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdr==AucunRevenu]
+    AFDR_Raison5:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdr==PerteConjoint]
+    AFDR_Raison5a:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdrPerteConjoint==PerteConjointDeces]
+    AFDR_Raison5b:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdrPerteConjoint==PerteConjointSeparation]
+    AFDR_Raison5c:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdrPerteConjoint==PerteConjointDivorce]
+    AFDR_Raison2:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdr==AttenteDecision]
+    AFDR_Raison3:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdr==SortieEtablissement]
+    AFDR_Raison3a:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdrSortieEtablissement==SortieEtablissementSante]
+    AFDR_Raison3b:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdrSortieEtablissement==SortieEtablissementDetention]
+    AFDR_Raison4:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdr==RevenuInsuffisant]
+    AFDR_Raison6:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdr==RemboursementFraisFuneraires]
+    AFDR_Raison7:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdr==NaissanceEnfant]
+    AFDR_Raison8:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdr==ArriveeConjoint]
+    AFDR_Raison9:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdr==ProblemeSante]
+    AFDR_Raison10:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdr==PrecisionRaisonDemandeAfdrAutreRaison]
+    AFDR_Raison10_Autre:
+      champs: [adulte2RaisonAfdr.0.PrecisionRaisonDemandeAfdrAutre]
+    EQ_Raison3:
+      champs: [adulte2RaisonAE.0.PrecisionRaisonDemandeEmploi==ReferenceEmployeur]
+    EQ_Raison2:
+      champs: [adulte2RaisonAE.0.PrecisionRaisonDemandeEmploi==RetourEcole]
+    nom:
+      champs: [adulte2NomFamille]
+    prenom:
+      champs: [adulte2Prenom]
+    nas:
+      champs:
+      - adulte2Nas1
+      - adulte2Nas2
+      formule: '{adulte2Nas1:forcenumeric()}{adulte2Nas2:forcenumeric()}'
+    date_naissance:
+      champs: [adulte2DateNaissance]
+      formule: '{adulte2DateNaissance:yyyyMMdd}'
+    date_nas9:
+      champs: [adulte2DateExpirationNas]
+      formule: '{adulte2DateExpirationNas:yyyyMMdd}'
+    EQ_Raison1:
+      champs: [adulte2RaisonAE.0.PrecisionRaisonDemandeEmploi==AideRechercheEmploi]
+    Sexe_Feminin:
+      champs: [adulte2Sexe==Feminin]
+    Langue_Francais:
+      champs: [adulte2Langue==Francais]
+    Langue_Anglais:
+      champs: [adulte2Langue==Anglais]
+    NeQC_Oui:
+      champs: [adulte2NeQC==true]
+    NeQC_Non:
+      champs: [adulte2NeQC==false]
+    Sexe_Masculin:
+      champs: [adulte2Sexe==Masculin]
+    Autochtone_Oui:
+      champs: [adulte2Autochtone==true]
+    anneereussisP1:
+      champs: [adulte2Primaire.0.NbAnneesReussiesPrimaire==1]
+    anneereussisP2:
+      champs: [adulte2Primaire.0.NbAnneesReussiesPrimaire==2]
+    anneereussisP3:
+      champs: [adulte2Primaire.0.NbAnneesReussiesPrimaire==3]
+    anneereussisP4:
+      champs: [adulte2Primaire.0.NbAnneesReussiesPrimaire==4]
+    anneereussisS1:
+      champs: [adulte2SecondaireGen.0.NbAnneesReussiesSecGeneral==1]
+    anneereussisSp3:
+      champs: [adulte2SecondaireProf.0.NbAnneesReussiesSecFormProf==3]
+    anneereussisSsp1:
+      champs: [adulte2SecondaireMetier.0.NbAnneesReussiesSecMetier==1]
+    DiplomeDES:
+      champs: [adulte2SecondaireGen.0.DiplomeSecGeneral==Des]
+    DiplomeAEP:
+      champs: [adulte2SecondaireProf.0.DiplomeSecFormProf==Aep]
+    parent_nom:
+      champs: [adulte2NomDuParent]
+    CitCanadienne_Oui:
+      champs:
+      - adulte2CitCanadienne==true
+      - adulte2NeCanada==true
+    CitCanadienne_Non:
+      champs: [adulte2CitCanadienne==false]
+    ResPermanent_Oui:
+      champs: [adulte2EstResidentPermanent==true]
+    ResPermanent_Non:
+      champs: [adulte2EstResidentPermanent==false]
+    DemAsile_Oui:
+      champs: [adulte2EstDemandeurAsile==true]
+    DemAsile_Non:
+      champs: [adulte2EstDemandeurAsile==false]
+    PersProtege_Oui:
+      champs: [adulte2EstRefugieOuProtege==true]
+    PersProtege_Non:
+      champs: [adulte2EstRefugieOuProtege==false]
+    StatutPers_Autre:
+      champs: [adulte2PrecisionAutreStatut]
+    pays:
+      champs: [adulte2Pays1]
+    date_arrivee:
+      champs: [adulte2DateArriveeCanada]
+      formule: '{adulte2DateArriveeCanada:yyyyMMdd}'
+    Autochtone_Non:
+      champs: [adulte2Autochtone==false]
+    PremiereNation1:
+      champs: [adulte2AutochtoneType==AmerindienReserve]
+    PremiereNation2:
+      champs: [adulte2AutochtoneType==AmerindienHorsReserve]
+    PremiereNation3:
+      champs: [adulte2AutochtoneType==Inuit]
+    adresse_numero:
+      champs: [adulte2Adresse.0.NoCivique]
+    adresse_app:
+      champs: [adulte2Adresse.0.Appartement]
+    adresse_rue:
+      champs: [adulte2Adresse.0.Rue]
+    adresse_ville:
+      champs: [adulte2Adresse.0.Municipalite]
+    adresse_codePostal:
+      champs: [adulte2Adresse.0.CodePostal]
+      formule: '{adulte2Adresse.0.CodePostal:codePostal()}'
+    adresse_telephone1:
+      champs: [adulte2Telephone1]
+      formule: '{adulte2Telephone1:forcerNombre()}'
+    adresse_telephone2:
+      champs: [adulte2Telephone2]
+      formule: '{adulte2Telephone2:forcerNombre()}'
+    Emploi_Oui:
+      champs: [adulte2EnEmploi==true]
+    Emploi_Non:
+      champs: [adulte2EnEmploi==false]
+    Emploi_Tplein:
+      champs: [adulte2PrecisionStatutEmploi==TempsPlein]
+    Emploi_Tpartiel:
+      champs: [adulte2PrecisionStatutEmploi==TempsPartiel]
+    Emploi_Tappel:
+      champs: [adulte2PrecisionStatutEmploi==SurAppel]
+    Emploi_Tautonome:
+      champs: [adulte2PrecisionStatutEmploi==TravailleurAutonome]
+    Prestation_Oui:
+      champs: [adulte2AideGouvRecue==true]
+    Prestation_Non:
+      champs: [adulte2AideGouvRecue==false]
+    Prestation1:
+      champs: [adulte2TypeAideRecue==AssuranceEmploi]
+    Prestation2:
+      champs: [adulte2TypeAideRecue==RQAP]
+    Prestation3:
+      champs: [adulte2TypeAideRecue==AutresAide]
+    Prestation3_Autre:
+      champs: [adulte2AideRecueAutrePrecision]
+    Enfant_Oui:
+      champs: [adulte2EnfantsACharge==true]
+    Enfant_Non:
+      champs: [adulte2EnfantsACharge==false]
+    Enfant_Combien:
+      champs: [adulte2NbrEnfants]
+    Chef-Famile_Oui:
+      champs: [adulte2ChefMonoparentale==true]
+    Chef-Famile_Non:
+      champs: [adulte2ChefMonoparentale==false]
+    Handicap_Oui:
+      champs: [adulte2Handicap==true]
+    Handicap_Non:
+      champs: [adulte2Handicap==false]
+    Handicap:
+      champs: [adulte2TypeHandicap]
+    Parlees_Francais:
+      champs: [adulte2LanguesParlees==Francais]
+    Parlees_Anglais:
+      champs: [adulte2LanguesParlees==Anglais]
+    Parlees_Autre:
+      champs: [adulte2LanguesParlees==AutresLanguesParlees]
+    languesparlees:
+      champs: [adulte2PrecisionLanguesParlees]
+    Ecrites_Francais:
+      champs: [adulte2LanguesEcrites==Francais]
+    Ecrites_Anglais:
+      champs: [adulte2LanguesEcrites==Anglais]
+    Ecrites_Autre:
+      champs: [adulte2LanguesEcrites==AutresLanguesEcrites]
+    languesecrites:
+      champs: [adulte2PrecisionLanguesEcrites]
+    Casier_Oui:
+      champs: [adulte2CasierJudiciaire==true]
+    Casier_Non:
+      champs: [adulte2CasierJudiciaire==false]
+    Minorite_Oui:
+      champs: [adulte2MinoriteVisible==true]
+    Minorite_Non:
+      champs: [adulte2MinoriteVisible==false]
+    Enseignement_Oui:
+      champs: [adulte2AuxEtudes==true]
+    Enseignement_Non:
+      champs: [adulte2AuxEtudes==false]
+    Enseignement_TPlein:
+      champs: [adulte2PrecisionStatutEtudes==TempsPlein]
+    Enseignement_TPartiel:
+      champs: [adulte2PrecisionStatutEtudes==TempsPartiel]
+    Enseignement_Diplome:
+      champs: [adulte2DiplomeVise]
+    EQ_Oui:
+      champs: [TypeDemande==AideEmploi]
+    EQ_Raison3_Autre:
+      champs: [adulte2RaisonAE.0.PrecisionRaisonEmployeur]
+    EQ_Raison5:
+      champs: [adulte2RaisonAE.0.PrecisionRaisonDemandeEmploi==PrecisionRaisonDemandeEmploiAutreRaison]
+    EQ_Raison4:
+      champs: [adulte2RaisonAE.0.PrecisionRaisonDemandeEmploi==ReferenceOrganisme]
+    EQ_Raison4_Autre:
+      champs: [adulte2RaisonAE.0.PrecisionRaisonOrganisme]
+    EQ_Raison5_Autre:
+      champs: [adulte2RaisonAE.0.PrecisionRaisonDemandeAideEmploi]
+    AFDR_Oui:
+      champs: [TypeDemande==Afdr]
+    Travaille_Oui:
+      champs: [adulte2Travaille==true]
+    Travaille_Non:
+      champs: [adulte2Travaille==false]
+    entreprise1:
+      champs: [adulte2Emplois.0.NomEntreprise]
+    date_periodeDu1:
+      champs: [adulte2Emplois.0.PeriodeDu]
+      formule: '{adulte2Emplois.0.PeriodeDu:yyyyMMdd}'
+    date_periodeAu1:
+      champs: [adulte2Emplois.0.PeriodeAu]
+      formule: '{adulte2Emplois.0.PeriodeAu:yyyyMMdd}'
+    salaire1:
+      champs: [adulte2Emplois.0.SalaireHebdo]
+    heuresSemaine1:
+      champs: [adulte2Emplois.0.HeuresHebdo]
+    Emploi1:
+      champs: [adulte2Emplois.0.TitreEmploiOccupe]
+    taches1:
+      champs: [adulte2Emplois.0.PrincipalesTachesAccomplies]
+    RaisonEmploi1a:
+      champs: [adulte2Emplois.0.RaisonFinEmploi==Abandon]
+    RaisonEmploi1e:
+      champs: [adulte2Emplois.0.RaisonFinEmploi==ManqueTravail]
+    RaisonEmploi1b:
+      champs: [adulte2Emplois.0.RaisonFinEmploi==ChangementEmploi]
+    RaisonEmploi1g:
+      champs: [adulte2Emplois.0.RaisonFinEmploi==ProblemeSante]
+    RaisonEmploi1f:
+      champs: [adulte2Emplois.0.RaisonFinEmploi==NaissancePriseChargeEnfant]
+    RaisonEmploi1c:
+      champs: [adulte2Emplois.0.RaisonFinEmploi==Congediement]
+    RaisonEmploi1d:
+      champs: [adulte2Emplois.0.RaisonFinEmploi==FermetureEntreprise]
+    RaisonEmploi1h:
+      champs: [adulte2Emplois.0.RaisonFinEmploi==AutreRaison]
+    RaisonEmploi1h_Autre:
+      champs: [adulte2Emplois.0.PrecisionAutre]
+    entreprise2:
+      champs: [adulte2Emplois.1.NomEntreprise]
+    date_periodeDu2:
+      champs: [adulte2Emplois.1.PeriodeDu]
+      formule: '{adulte2Emplois.1.PeriodeDu:yyyyMMdd}'
+    date_periodeAu2:
+      champs: [adulte2Emplois.1.PeriodeAu]
+      formule: '{adulte2Emplois.1.PeriodeAu:yyyyMMdd}'
+    salaire2:
+      champs: [adulte2Emplois.1.SalaireHebdo]
+    heuresSemaine2:
+      champs: [adulte2Emplois.1.HeuresHebdo]
+    Emploi2:
+      champs: [adulte2Emplois.1.TitreEmploiOccupe]
+    taches2:
+      champs: [adulte2Emplois.1.PrincipalesTachesAccomplies]
+    RaisonEmploi2a:
+      champs: [adulte2Emplois.1.RaisonFinEmploi==Abandon]
+    RaisonEmploi2e:
+      champs: [adulte2Emplois.1.RaisonFinEmploi==ManqueTravail]
+    RaisonEmploi2g:
+      champs: [adulte2Emplois.1.RaisonFinEmploi==ProblemeSante]
+    RaisonEmploi2b:
+      champs: [adulte2Emplois.1.RaisonFinEmploi==ChangementEmploi]
+    RaisonEmploi2f:
+      champs: [adulte2Emplois.1.RaisonFinEmploi==NaissancePriseChargeEnfant]
+    RaisonEmploi2c:
+      champs: [adulte2Emplois.1.RaisonFinEmploi==Congediement]
+    RaisonEmploi2d:
+      champs: [adulte2Emplois.1.RaisonFinEmploi==FermetureEntreprise]
+    RaisonEmploi2h:
+      champs: [adulte2Emplois.1.RaisonFinEmploi==AutreRaison]
+    RaisonEmploi2h_Autre:
+      champs: [adulte2Emplois.1.PrecisionAutre]
+    Nom_institutionFinanciere:
+      champs: [NomEtablissementFinancier]
+    Adresse_succursale:
+      champs: [AdresseSuccursale.0.AdresseComplete]
+    CP_succursale:
+      champs: [AdresseSuccursale.0.CodePostal]
+      formule: '{AdresseSuccursale.0.CodePostal:codePostal()}'
+    Num_succursale:
+      champs: [NumSuccursale]
+    Num_institution:
+      champs: [NumEtablissement]
+    Num_compte_Req-00:
+      champs: [NumCompte]
+    date_affirmation:
+      champs: [DateSignatureConjoint]
+      formule: '{DateSignatureConjoint:yyyy-MM-dd}'
+    EQ_Non:
+      champs: [TypeDemande==AideEmploi]
+      formule: '{TypeDemande:exclude(AideEmploi):true}'
+    AFDR_Non:
+      champs: [TypeDemande==Afdr]
+      formule: '{TypeDemande:exclude(Afdr):true}'
+    StatutPers:
+      champs: [adulte2PrecisionAutreStatut]
+      formule: '{adulte2PrecisionAutreStatut:true|false}'
+    Permis_Oui:
+      champs: [adulte2PermisConduire==true]
+    Permis_Non:
+      champs: [adulte2PermisConduire==false]
+    permisClasse:
+      champs: [adulte2ClassePermisConduire]
+    anneereussisP5:
+      champs: [adulte2Primaire.0.NbAnneesReussiesPrimaire==5]
+    anneereussisP6:
+      champs: [adulte2Primaire.0.NbAnneesReussiesPrimaire==6]
+    anneereussisP7:
+      champs: [adulte2Primaire.0.NbAnneesReussiesPrimaire==7]
+    anneereussisS2:
+      champs: [adulte2SecondaireGen.0.NbAnneesReussiesSecGeneral==2]
+    anneereussisS3:
+      champs: [adulte2SecondaireGen.0.NbAnneesReussiesSecGeneral==3]
+    anneereussisS4:
+      champs: [adulte2SecondaireGen.0.NbAnneesReussiesSecGeneral==4]
+    anneereussisS5:
+      champs: [adulte2SecondaireGen.0.NbAnneesReussiesSecGeneral==5]
+    anneereussisSp4:
+      champs: [adulte2SecondaireProf.0.NbAnneesReussiesSecFormProf==4]
+    anneereussisSp5:
+      champs: [adulte2SecondaireProf.0.NbAnneesReussiesSecFormProf==5]
+    anneereussisSp6:
+      champs: [adulte2SecondaireProf.0.NbAnneesReussiesSecFormProf==6]
+    PRG_S:
+      champs: [adulte2SecondaireProf.0.DisciplineSecFormProf]
+    DiplomeDEP:
+      champs: [adulte2SecondaireProf.0.DiplomeSecFormProf==Dep]
+    DiplomeASP:
+      champs: [adulte2SecondaireProf.0.DiplomeSecFormProf==Asp]
+    date_FinEtudesSp:
+      champs: [adulte2SecondaireProf.0.DateFinSecFormProf]
+      formule: '{adulte2SecondaireProf.0.DateFinSecFormProf:yyyyMM}'
+    date_FinEtudesS:
+      champs: [adulte2SecondaireGen.0.DateFinSecGeneral]
+      formule: '{adulte2SecondaireGen.0.DateFinSecGeneral:yyyyMM}'
+    date_FinEtudesP:
+      champs: [adulte2Primaire.0.DateFinPrimaire]
+      formule: '{adulte2Primaire.0.DateFinPrimaire:yyyyMM}'
+    PRG_Ssp:
+      champs: [adulte2SecondaireMetier.0.DisciplineSecMetier]
+    date_FinEtudesSsp:
+      champs: [adulte2SecondaireMetier.0.DateFinSecMetier]
+      formule: '{adulte2SecondaireMetier.0.DateFinSecMetier:yyyyMM}'
+    anneereussisC1:
+      champs: [adulte2Collegial.0.NbAnneesReussiesCollegial==1]
+    anneereussisC2:
+      champs: [adulte2Collegial.0.NbAnneesReussiesCollegial==2]
+    anneereussisC3:
+      champs: [adulte2Collegial.0.NbAnneesReussiesCollegial==3]
+    PRG_C:
+      champs: [adulte2Collegial.0.DisciplineCollegial]
+    DiplomeDEC:
+      champs: [adulte2Collegial.0.DiplomeCollegial==Dec]
+    DiplomeAEC:
+      champs: [adulte2Collegial.0.DiplomeCollegial==Aec]
+    DiplomeCEC:
+      champs: [adulte2Collegial.0.DiplomeCollegial==Cec]
+    date_FinEtudesC:
+      champs: [adulte2Collegial.0.DateFinCollegial]
+      formule: '{adulte2Collegial.0.DateFinCollegial:yyyyMM}'
+    anneereussisU1:
+      champs: [adulte2Universitaire.0.NbAnneesReussiesUniversitaire==1]
+    anneereussisU2:
+      champs: [adulte2Universitaire.0.NbAnneesReussiesUniversitaire==2]
+    anneereussisU3:
+      champs: [adulte2Universitaire.0.NbAnneesReussiesUniversitaire==3]
+    anneereussisU4:
+      champs: [adulte2Universitaire.0.NbAnneesReussiesUniversitaire==4]
+    anneereussisU5:
+      champs: [adulte2Universitaire.0.NbAnneesReussiesUniversitaire==5]
+    anneereussisU6:
+      champs: [adulte2Universitaire.0.NbAnneesReussiesUniversitaire==6]
+    anneereussisU7:
+      champs: [adulte2Universitaire.0.NbAnneesReussiesUniversitaire==7]
+    PRG_U:
+      champs: [adulte2Universitaire.0.DisciplineUniversitaire]
+    DiplomeCERT:
+      champs: [adulte2Universitaire.0.DiplomeUniversitaire==Cert]
+    DiplomeBAC:
+      champs: [adulte2Universitaire.0.DiplomeUniversitaire==Bac]
+    DiplomeMA:
+      champs: [adulte2Universitaire.0.DiplomeUniversitaire==Ma]
+    DiplomeDOC:
+      champs: [adulte2Universitaire.0.DiplomeUniversitaire==Doc]
+    date_FinEtudesU:
+      champs: [adulte2Universitaire.0.DateFinUniversitaire]
+      formule: '{adulte2Universitaire.0.DateFinUniversitaire:yyyyMM}'
+    TitreCours1:
+      champs: [adulte2FormationsEmploi.0.TitreCours]
+    TitreCours2:
+      champs: [adulte2FormationsEmploi.1.TitreCours]
+    date_finCours1:
+      champs: [adulte2FormationsEmploi.0.DateFinCours]
+      formule: '{adulte2FormationsEmploi.0.DateFinCours:yyyyMMdd}'
+    date_finCours2:
+      champs: [adulte2FormationsEmploi.1.DateFinCours]
+      formule: '{adulte2FormationsEmploi.1.DateFinCours:yyyyMMdd}'
+    specialite:
+      champs: [adulte2SpecialiteEtudesEtranger]
+    anneereussies:
+      champs: [adulte2NbAnneesReussiesEtudesEtranger]
+    Evaluation_Oui:
+      champs: [adulte2EtudesEvaluationComparative==true]
+    domaine:
+      champs: [adulte2EtudesEvaluationComparativeDomaine]
+    Evaluation_Non:
+      champs: [adulte2EtudesEvaluationComparative==false]
+    CarteQualif_Oui:
+      champs: [adulte2PossedeCartesQualification==true]
+    CarteQualif_Non:
+      champs: [adulte2PossedeCartesQualification==false]
+    CarteQualif:
+      champs: [adulte2CartesQualification]
+    OrdreProf_Oui:
+      champs: [adulte2EstMembreOrdreProfessionnel==true]
+    OrdreProf_Non:
+      champs: [adulte2EstMembreOrdreProfessionnel==false]
+    OrdreProf:
+      champs: [adulte2OrdreProfessionnel]
+    Limitations_Oui:
+      champs: [adulte2Limitations==true]
+    Limitations_Non:
+      champs: [adulte2Limitations==false]
+    Limitations:
+      champs: [adulte2PrecisionLimitations]
+    DispoTravaille_Oui:
+      champs: [adulte2DisponibleTravail==true]
+    DispoTravaille_Non:
+      champs: [adulte2DisponibleTravail==false]
+    Dispo_Tplein:
+      champs: [adulte2DisponibilitesTravail==DispoTravailTempsPlein]
+    Dispo_Tpartiel:
+      champs: [adulte2DisponibilitesTravail==DispoTravailTempsPartiel]
+    Dispo_Jour:
+      champs: [adulte2DisponibilitesTravail==DispoTravailJour]
+    Dispo_Soir:
+      champs: [adulte2DisponibilitesTravail==DispoTravailSoir]
+    Dispo_Nuit:
+      champs: [adulte2DisponibilitesTravail==DispoTravailNuit]
+    NonDispo:
+      champs: [adulte2RaisonNonDisponibiliteTravail]
+    Dispo_Lieu1:
+      champs: [adulte2LieuxDisponibiliteTravail==LieuDispoTravailLocalite]
+    Dispo_Lieu2:
+      champs: [adulte2LieuxDisponibiliteTravail==LieuDispoTravailRegion]
+    Dispo_Lieu3:
+      champs: [adulte2LieuxDisponibiliteTravail==LieuDispoTravailAutre]
+    Dispo_Lieu3_Autre:
+      champs: [adulte2LieuxDisponibiliteTravailPrecision]
+    emploisrecherche:
+      champs: [adulte2DisponibiliteEmploisRecherches.0.NomEmploi]
+    emploisrecherche2:
+      champs: [adulte2DisponibiliteEmploisRecherches.1.NomEmploi]
+    ExperienceEmploi:
+      champs: [adulte2DisponibiliteEmploisRecherches.0.ExperienceEmploi==true]
+    ExperienceEmploi2:
+      champs: [adulte2DisponibiliteEmploisRecherches.1.ExperienceEmploi==true]
+    Signature-01:
+      champs: [SignatureConjoint]
+    parent_prenom:
+      champs: [adulte2PrenomDuParent]
+    Marital1:
+      champs: [adulte2EtatMatrimonial==celibataire]
+    Marital3:
+      champs: [adulte2EtatMatrimonial==conjointFait]
+    Marital6:
+      champs: [adulte2EtatMatrimonial==separeSansJugement]
+    Marital2:
+      champs: [adulte2EtatMatrimonial==marieUnionCivile]
+    Marital4:
+      champs: [adulte2EtatMatrimonial==veuf]
+    Marital5:
+      champs: [adulte2EtatMatrimonial==separe]
+    Marital7:
+      champs: [adulte2EtatMatrimonial==divorce]
+    date_finUnion:
+      champs: [adulte2DateFinUnion]
+      formule: '{adulte2DateFinUnion:yyyyMMdd}'
+    PerteRevenus4:
+      champs: [adulte2RaisonAfdr.0.FinDiminutionRevenusType==FinRevenusPrestations]
+  02:
+    Conjoint_Oui:
+      champs: [HabiteAvecAutreAdulte==true]
+    Conjoint_Non:
+      champs: [HabiteAvecAutreAdulte==false]
+    ConjointMarie_Oui:
+      champs: [PrecisionsAdulte2.0.MarieUniCivilementAdulte==true]
+    ConjointMarie_Non:
+      champs: [PrecisionsAdulte2.0.MarieUniCivilementAdulte==false]
+    ConjointEnfant_Oui:
+      champs: [PrecisionsAdulte2.0.AutreParentEnfant==true]
+    ConjointEnfant_Non:
+      champs: [PrecisionsAdulte2.0.AutreParentEnfant==false]
+    ConjointCohabitation_Oui:
+      champs: [PrecisionsAdulte2.0.VieMaritaleUnAn==true]
+    ConjointCohabitation_Non:
+      champs: [PrecisionsAdulte2.0.VieMaritaleUnAn==false]
+    ConjointCohabitation1an_Oui:
+      champs: [PrecisionsAdulte2.0.ViePasseeMaritaleUnAn==true]
+    ConjointCohabitation1an_Non:
+      champs: [PrecisionsAdulte2.0.ViePasseeMaritaleUnAn==false]
+    date_Cohabitation:
+      champs: [PrecisionsAdulte2.0.DateDebutCohabitation]
+      formule: '{PrecisionsAdulte2.0.DateDebutCohabitation:yyyyMMdd}'
+    Conjoint_nom:
+      champs: [PrecisionsAdulte2.0.NomAdulte2CohabitationMoinsUnAn]
+    Conjoint_prenom:
+      champs: [PrecisionsAdulte2.0.PrenomAdulte2CohabitationMoinsUnAn]
+    Adulte1_CP12:
+      champs: [adulte1Cp12]
+    Adulte1_NomFamille:
+      champs: [adulte1NomFamille]
+    Adulte1_Prenom:
+      champs: [adulte1Prenom]
+    Adulte1_NAM:
+      champs: [adulte1Nam]
+    Adulte2_CP12:
+      champs: [adulte2Cp12]
+    Adulte2_NomFamille:
+      champs: [adulte2NomFamille]
+    Adulte2_Prenom:
+      champs: [adulte2Prenom]
+    Adulte2_NAM:
+      champs: [adulte2Nam]
+    Adulte1_curateur_Oui:
+      champs: [adulte1Curateur==true]
+    Adulte1_curateur_Non:
+      champs: [adulte1Curateur==false]
+    Adulte2_curateur_Oui:
+      champs: [adulte2Curateur==true]
+    Adulte2_curateur_Non:
+      champs: [adulte2Curateur==false]
+    Adulte1_dossierCurateur:
+      champs: [adulte1DosCurateur]
+    Adulte2_dossierCurateur:
+      champs: [adulte2DosCurateur]
+    Adulte1_Enceinte_Oui:
+      champs: [adulte1EstEnceinte==true]
+    Adulte1_Enceinte_Non:
+      champs: [adulte1EstEnceinte==false]
+    Adulte2_Enceinte_Oui:
+      champs: [adulte2EstEnceinte==true]
+    Adulte2_Enceinte_Non:
+      champs: [adulte2EstEnceinte==false]
+    Adulte1_date_enceinte:
+      champs: [adulte1DateAccouchement]
+      formule: '{adulte1DateAccouchement:yyyyMMdd}'
+    Adulte2_date_enceinte:
+      champs: [adulte2DateAccouchement]
+      formule: '{adulte2DateAccouchement:yyyyMMdd}'
+    Adulte1_sante_Oui:
+      champs: [adulte1EstValidePourTravailler==true]
+    Adulte1_sante_Non:
+      champs: [adulte1EstValidePourTravailler==false]
+    Adulte2_sante_Oui:
+      champs: [adulte2EstValidePourTravailler==true]
+    Adulte2_sante_Non:
+      champs: [adulte2EstValidePourTravailler==false]
+    Adulte1_sante:
+      champs: [adulte1PrecisionInvalidite]
+    Adulte2_sante:
+      champs: [adulte2PrecisionInvalidite]
+    habitation1:
+      champs: [TypeDomicile==propriete]
+    habitation2:
+      champs: [TypeDomicile==logement]
+    habitation3:
+      champs: [TypeDomicile==subventionne]
+    habitation4:
+      champs: [TypeDomicile==chambre]
+    habitation5:
+      champs: [TypeDomicile==familiale]
+    habitation6:
+      champs: [TypeDomicile==autre]
+    habitation_autre:
+      champs: [DomicileAilleursPrecision]
+    proprietaire_nom:
+      champs: [ProprietaireInfos.0.NomProprio]
+    proprietaire_prenom:
+      champs: [ProprietaireInfos.0.PrenomProprio]
+    proprietaire_telephone1:
+      champs: [ProprietaireInfos.0.TelephoneProprio]
+      formule: '{ProprietaireInfos.0.TelephoneProprio:forcerNombre()}'
+    DebutOccupation:
+      champs: [DomicileDateDebut]
+      formule: '{DomicileDateDebut:yyyyMMdd}'
+    CoutMensuelHabitation:
+      champs: [DomicileCoutMensuel]
+      formule: '{DomicileCoutMensuel:forcerNombre(entier)}'
+    ChauffageOui:
+      champs: [DomicileChauffage==true]
+    ChauffageNon:
+      champs: [DomicileChauffage==false]
+    ElectriciteOui:
+      champs: [DomicileElectricite==true]
+    ElectriciteNon:
+      champs: [DomicileElectricite==false]
+    AllocationLog_Oui:
+      champs: [RecoitDomicileAllocation==true]
+    AllocationLog_Non:
+      champs: [RecoitDomicileAllocation==false]
+    MontantAllocationLogement:
+      champs: [DomicileAllocationMontant]
+      formule: '{DomicileAllocationMontant:forcerNombre(entier)}'
+    colocation_Oui:
+      champs: [DomicileAutresPersonnes==true]
+    colocation_Non:
+      champs: [DomicileAutresPersonnes==false]
+    colocation:
+      champs: [DomicileAutrespersonnesPrecision]
+    revenuTravail_Oui:
+      champs: [PossedeRevenusTravail==true]
+    revenuTravail_Non:
+      champs: [PossedeRevenusTravail==false]
+    Adulte1_revenuEmploi1:
+      champs: [RevenusEmploi.0.RevenuEmploiProprio==A1]
+    Adulte2_revenuEmploi1:
+      champs: [RevenusEmploi.0.RevenuEmploiProprio==A2]
+    revenuEmploi_employeur1:
+      champs: [RevenusEmploi.0.RevenuEmploiSourceNomEmployeur]
+    revenuEmploi_salaire1:
+      champs: [RevenusEmploi.0.RevenuEmploiSalaireNet]
+      formule: '{RevenusEmploi.0.RevenuEmploiSalaireNet:forcerNombre(entier)}'
+    revenuEmploi_salaire2:
+      champs: [RevenusEmploi.1.RevenuEmploiSalaireNet]
+      formule: '{RevenusEmploi.1.RevenuEmploiSalaireNet:forcerNombre(entier)}'
+    Adulte1_revenuEmploi2:
+      champs: [RevenusEmploi.1.RevenuEmploiProprio==A1]
+    Adulte2_revenuEmploi2:
+      champs: [RevenusEmploi.1.RevenuEmploiProprio==A2]
+    revenuEmploi_employeur2:
+      champs: [RevenusEmploi.1.RevenuEmploiSourceNomEmployeur]
+    REtemps1-1:
+      champs: [RevenusEmploi.0.RevenuEmploiFrequence==hebdo]
+    REtemps2-1:
+      champs: [RevenusEmploi.1.RevenuEmploiFrequence==hebdo]
+    REtemps1-2:
+      champs: [RevenusEmploi.0.RevenuEmploiFrequence==bihebdo]
+    REtemps2-2:
+      champs: [RevenusEmploi.1.RevenuEmploiFrequence==bihebdo]
+    REtemps1-3:
+      champs: [RevenusEmploi.0.RevenuEmploiFrequence==mensuel]
+    REtemps2-3:
+      champs: [RevenusEmploi.1.RevenuEmploiFrequence==mensuel]
+    Adulte1_pourboire1:
+      champs: [RevenusPourboires.0.RevenuPourboireProprio==A1]
+    Adulte2_pourboire1:
+      champs: [RevenusPourboires.0.RevenuPourboireProprio==A2]
+    Adulte1_pourboire2:
+      champs: [RevenusPourboires.1.RevenuPourboireProprio==A1]
+    Adulte2_pourboire2:
+      champs: [RevenusPourboires.1.RevenuPourboireProprio==A2]
+    pourboire_employeur1:
+      champs: [RevenusPourboires.0.RevenuPourboireSourceNomEmployeur]
+    pourboire_employeur2:
+      champs: [RevenusPourboires.1.RevenuPourboireSourceNomEmployeur]
+    pourboire_salaire1:
+      champs: [RevenusPourboires.0.RevenuPourboireMontantNet]
+      formule: '{RevenusPourboires.0.RevenuPourboireMontantNet:forcerNombre(entier)}'
+    pourboire_salaire2:
+      champs: [RevenusPourboires.1.RevenuPourboireMontantNet]
+      formule: '{RevenusPourboires.1.RevenuPourboireMontantNet:forcerNombre(entier)}'
+    Ptemps1-1:
+      champs: [RevenusPourboires.0.RevenuPourboireFrequence==hebdo]
+    Ptemps2-1:
+      champs: [RevenusPourboires.1.RevenuPourboireFrequence==hebdo]
+    Ptemps1-2:
+      champs: [RevenusPourboires.0.RevenuPourboireFrequence==bihebdo]
+    Ptemps2-2:
+      champs: [RevenusPourboires.1.RevenuPourboireFrequence==bihebdo]
+    Ptemps1-3:
+      champs: [RevenusPourboires.0.RevenuPourboireFrequence==mensuel]
+    Ptemps2-3:
+      champs: [RevenusPourboires.1.RevenuPourboireFrequence==mensuel]
+    Adulte1_autonome1:
+      champs: [RevenuAutonomeOuEntreprise.0.RevenuAutonomeProprio==A1]
+    Adulte1_autonome2:
+      champs: [RevenuAutonomeOuEntreprise.1.RevenuAutonomeProprio==A1]
+    Adulte2_autonome1:
+      champs: [RevenuAutonomeOuEntreprise.0.RevenuAutonomeProprio==A2]
+    Adulte2_autonome2:
+      champs: [RevenuAutonomeOuEntreprise.1.RevenuAutonomeProprio==A2]
+    revenus_autonome1:
+      champs: [RevenuAutonomeOuEntreprise.0.NatureRevenus]
+    revenus_autonome2:
+      champs: [RevenuAutonomeOuEntreprise.1.NatureRevenus]
+    autonome_date1:
+      champs: [RevenuAutonomeOuEntreprise.0.DateDebutRevenu]
+      formule: '{RevenuAutonomeOuEntreprise.0.DateDebutRevenu:yyyyMMdd}'
+    autonome_date2:
+      champs: [RevenuAutonomeOuEntreprise.1.DateDebutRevenu]
+      formule: '{RevenuAutonomeOuEntreprise.1.DateDebutRevenu:yyyyMMdd}'
+    autonome_salaire1:
+      champs: [RevenuAutonomeOuEntreprise.0.RevenuAutonomeBrut]
+      formule: '{RevenuAutonomeOuEntreprise.0.RevenuAutonomeBrut:forcerNombre(entier)}'
+    autonome_salaire2:
+      champs: [RevenuAutonomeOuEntreprise.1.RevenuAutonomeBrut]
+      formule: '{RevenuAutonomeOuEntreprise.1.RevenuAutonomeBrut:forcerNombre(entier)}'
+    TAtemps1-1:
+      champs: [RevenuAutonomeOuEntreprise.0.RevenuAutonomeFrequence==hebdo]
+    TAtemps2-1:
+      champs: [RevenuAutonomeOuEntreprise.1.RevenuAutonomeFrequence==hebdo]
+    TAtemps1-2:
+      champs: [RevenuAutonomeOuEntreprise.0.RevenuAutonomeFrequence==bihebdo]
+    TAtemps2-2:
+      champs: [RevenuAutonomeOuEntreprise.1.RevenuAutonomeFrequence==bihebdo]
+    TAtemps1-3:
+      champs: [RevenuAutonomeOuEntreprise.0.RevenuAutonomeFrequence==mensuel]
+    TAtemps2-3:
+      champs: [RevenuAutonomeOuEntreprise.1.RevenuAutonomeFrequence==mensuel]
+    prestation_Oui:
+      champs: [PossedeRevenusGouvernementaux==true]
+    prestation_Non:
+      champs: [PossedeRevenusGouvernementaux==false]
+    Adulte1_prestation1:
+      champs: [SommesProvincial.0.SommeProvincialProprio==A1]
+    Adulte2_prestation1:
+      champs: [SommesProvincial.0.SommeProvincialProprio==A2]
+    Adulte1_prestation2:
+      champs: [SommesProvincial.1.SommeProvincialProprio==A1]
+    Adulte2_prestation2:
+      champs: [SommesProvincial.1.SommeProvincialProprio==A2]
+    prestationSource1:
+      champs: [SommesProvincial.0.SommeProvincialSource]
+    prestationSource2:
+      champs: [SommesProvincial.1.SommeProvincialSource]
+    prestation1:
+      champs: [SommesProvincial.0.SommeProvincialMontantBrut]
+      formule: '{SommesProvincial.0.SommeProvincialMontantBrut:forcerNombre(entier)}'
+    prestation2:
+      champs: [SommesProvincial.1.SommeProvincialMontantBrut]
+      formule: '{SommesProvincial.1.SommeProvincialMontantBrut:forcerNombre(entier)}'
+    PROtemps1-1:
+      champs: [SommesProvincial.0.SommeProvincialFrequence==hebdo]
+    PROtemps2-1:
+      champs: [SommesProvincial.1.SommeProvincialFrequence==hebdo]
+    PROtemps1-2:
+      champs: [SommesProvincial.0.SommeProvincialFrequence==bihebdo]
+    PROtemps2-2:
+      champs: [SommesProvincial.1.SommeProvincialFrequence==bihebdo]
+    PROtemps1-3:
+      champs: [SommesProvincial.0.SommeProvincialFrequence==mensuel]
+    PROtemps2-3:
+      champs: [SommesProvincial.1.SommeProvincialFrequence==mensuel]
+    Adulte1_prestation3:
+      champs: [SommesFederal.0.SommeFederalProprio==A1]
+    Adulte2_prestation3:
+      champs: [SommesFederal.0.SommeFederalProprio==A2]
+    Adulte1_prestation4:
+      champs: [SommesFederal.1.SommeFederalProprio==A1]
+    Adulte2_prestation4:
+      champs: [SommesFederal.1.SommeFederalProprio==A2]
+    prestationSource3:
+      champs: [SommesFederal.0.SommeFederalSource]
+    prestationSource4:
+      champs: [SommesFederal.1.SommeFederalSource]
+    prestation3:
+      champs: [SommesFederal.0.SommeFederalMontantBrut]
+      formule: '{SommesFederal.0.SommeFederalMontantBrut:forcerNombre(entier)}'
+    prestation4:
+      champs: [SommesFederal.1.SommeFederalMontantBrut]
+      formule: '{SommesFederal.1.SommeFederalMontantBrut:forcerNombre(entier)}'
+    FEDtemps1-1:
+      champs: [SommesFederal.0.SommeFederalFrequence==hebdo]
+    FEDtemps2-1:
+      champs: [SommesFederal.1.SommeFederalFrequence==hebdo]
+    FEDtemps1-2:
+      champs: [SommesFederal.0.SommeFederalFrequence==bihebdo]
+    FEDtemps2-2:
+      champs: [SommesFederal.1.SommeFederalFrequence==bihebdo]
+    FEDtemps1-3:
+      champs: [SommesFederal.0.SommeFederalFrequence==mensuel]
+    FEDtemps2-3:
+      champs: [SommesFederal.1.SommeFederalFrequence==mensuel]
+    Adulte1_prestation5:
+      champs: [SommesOrganismeAutre.0.SommeOrganismeAutreProprio==A1]
+    Adulte1_prestation6:
+      champs: [SommesOrganismeAutre.1.SommeOrganismeAutreProprio==A1]
+    Adulte2_prestation5:
+      champs: [SommesOrganismeAutre.0.SommeOrganismeAutreProprio==A2]
+    Adulte2_prestation6:
+      champs: [SommesOrganismeAutre.1.SommeOrganismeAutreProprio==A2]
+    prestationSource5:
+      champs: [SommesOrganismeAutre.0.SommeOrganismeAutreSource]
+    prestationSource6:
+      champs: [SommesOrganismeAutre.1.SommeOrganismeAutreSource]
+    prestation5:
+      champs: [SommesOrganismeAutre.0.SommeOrganismeAutreMontantBrut]
+      formule: '{SommesOrganismeAutre.0.SommeOrganismeAutreMontantBrut:forcerNombre(entier)}'
+    prestation6:
+      champs: [SommesOrganismeAutre.1.SommeOrganismeAutreMontantBrut]
+      formule: '{SommesOrganismeAutre.1.SommeOrganismeAutreMontantBrut:forcerNombre(entier)}'
+    AUtemps1-1:
+      champs: [SommesOrganismeAutre.0.SommeOrganismeAutreFrequence==hebdo]
+    AUtemps2-1:
+      champs: [SommesOrganismeAutre.1.SommeOrganismeAutreFrequence==hebdo]
+    AUtemps1-2:
+      champs: [SommesOrganismeAutre.0.SommeOrganismeAutreFrequence==bihebdo]
+    AUtemps2-2:
+      champs: [SommesOrganismeAutre.1.SommeOrganismeAutreFrequence==bihebdo]
+    AUtemps1-3:
+      champs: [SommesOrganismeAutre.0.SommeOrganismeAutreFrequence==mensuel]
+    AUtemps2-3:
+      champs: [SommesOrganismeAutre.1.SommeOrganismeAutreFrequence==mensuel]
+    revenuAutre_Oui:
+      champs: [PossedeRevenuAutre==true]
+    revenuAutre_Non:
+      champs: [PossedeRevenuAutre==false]
+    Adulte1_pension1:
+      champs: [RevenusAutreChambre.0.RevenusAutresChambreProprio==A1]
+    Adulte2_pension1:
+      champs: [RevenusAutreChambre.0.RevenusAutresChambreProprio==A2]
+    Adultes_pension1:
+      champs: [RevenusAutreChambre.0.RevenusAutresChambreProprio==A12]
+    NbrePensionnaire1:
+      champs: [RevenusAutreChambre.0.ChambreursNombre]
+    nomPensionnaire1:
+      champs: [RevenusAutreChambre.0.NomPrenomChambreur]
+    pension1:
+      champs: [RevenusAutreChambre.0.MontantChambreur]
+      formule: '{RevenusAutreChambre.0.MontantChambreur:forcerNombre(entier)}'
+    PEtemps1-1:
+      champs: [RevenusAutreChambre.0.FrequenceChambreur==hebdo]
+    PEtemps1-2:
+      champs: [RevenusAutreChambre.0.FrequenceChambreur==bihebdo]
+    PEtemps1-3:
+      champs: [RevenusAutreChambre.0.FrequenceChambreur==mensuel]
+    Adulte1_location1:
+      champs: [RevenusAutreLocation.0.RevenusAutresLocationProprio==A1]
+    Adulte1_location2:
+      champs: [RevenusAutreLocation.1.RevenusAutresLocationProprio==A1]
+    Adulte2_location1:
+      champs: [RevenusAutreLocation.0.RevenusAutresLocationProprio==A2]
+    Adulte2_location2:
+      champs: [RevenusAutreLocation.1.RevenusAutresLocationProprio==A2]
+    locationSource1:
+      champs: [RevenusAutreLocation.0.RevenusAutresLocationSource]
+    locationSource2:
+      champs: [RevenusAutreLocation.1.RevenusAutresLocationSource]
+    location1:
+      champs: [RevenusAutreLocation.0.MontantLocation]
+      formule: '{RevenusAutreLocation.0.MontantLocation:forcerNombre(entier)}'
+    location2:
+      champs: [RevenusAutreLocation.1.MontantLocation]
+      formule: '{RevenusAutreLocation.1.MontantLocation:forcerNombre(entier)}'
+    LOCtemps1-1:
+      champs: [RevenusAutreLocation.0.FrequenceLocation==hebdo]
+    LOCtemps2-1:
+      champs: [RevenusAutreLocation.1.FrequenceLocation==hebdo]
+    LOCtemps1-2:
+      champs: [RevenusAutreLocation.0.FrequenceLocation==bihebdo]
+    LOCtemps2-2:
+      champs: [RevenusAutreLocation.1.FrequenceLocation==bihebdo]
+    LOCtemps1-3:
+      champs: [RevenusAutreLocation.0.FrequenceLocation==mensuel]
+    LOCtemps2-3:
+      champs: [RevenusAutreLocation.1.FrequenceLocation==mensuel]
+    Adulte1_placement1:
+      champs: [RevenusAutrePlacement.0.RevenusAutresPlacementProprio==A1]
+    Adulte1_placement2:
+      champs: [RevenusAutrePlacement.1.RevenusAutresPlacementProprio==A1]
+    Adulte2_placement1:
+      champs: [RevenusAutrePlacement.0.RevenusAutresPlacementProprio==A2]
+    Adulte2_placement2:
+      champs: [RevenusAutrePlacement.1.RevenusAutresPlacementProprio==A2]
+    placementSource1:
+      champs: [RevenusAutrePlacement.0.RevenusAutresPlacementSource]
+    placementSource2:
+      champs: [RevenusAutrePlacement.1.RevenusAutresPlacementSource]
+    placement1:
+      champs: [RevenusAutrePlacement.0.MontantPlacement]
+      formule: '{RevenusAutrePlacement.0.MontantPlacement:forcerNombre(entier)}'
+    placement2:
+      champs: [RevenusAutrePlacement.1.MontantPlacement]
+      formule: '{RevenusAutrePlacement.1.MontantPlacement:forcerNombre(entier)}'
+    PLtemps1-1:
+      champs: [RevenusAutrePlacement.0.FrequenceRevenusAutresPlacement==hebdo]
+    PLtemps2-1:
+      champs: [RevenusAutrePlacement.1.FrequenceRevenusAutresPlacement==hebdo]
+    PLtemps1-2:
+      champs: [RevenusAutrePlacement.0.FrequenceRevenusAutresPlacement==bihebdo]
+    PLtemps2-2:
+      champs: [RevenusAutrePlacement.1.FrequenceRevenusAutresPlacement==bihebdo]
+    PLtemps1-3:
+      champs: [RevenusAutrePlacement.0.FrequenceRevenusAutresPlacement==mensuel]
+    PLtemps2-3:
+      champs: [RevenusAutrePlacement.1.FrequenceRevenusAutresPlacement==mensuel]
+    Adulte1_fonds1:
+      champs: [RevenusAutreFondPension.0.RevenusAutresFondPensionProprio==A1]
+    Adulte1_fonds2:
+      champs: [RevenusAutreFondPension.1.RevenusAutresFondPensionProprio==A1]
+    Adulte2_fonds1:
+      champs: [RevenusAutreFondPension.0.RevenusAutresFondPensionProprio==A2]
+    Adulte2_fonds2:
+      champs: [RevenusAutreFondPension.1.RevenusAutresFondPensionProprio==A2]
+    fondsSource1:
+      champs: [RevenusAutreFondPension.0.RevenusAutresFondPensionSource]
+    fondsSource2:
+      champs: [RevenusAutreFondPension.1.RevenusAutresFondPensionSource]
+    fonds1:
+      champs: [RevenusAutreFondPension.0.MontantFondsPension]
+      formule: '{RevenusAutreFondPension.0.MontantFondsPension:forcerNombre(entier)}'
+    fonds2:
+      champs: [RevenusAutreFondPension.1.MontantFondsPension]
+      formule: '{RevenusAutreFondPension.1.MontantFondsPension:forcerNombre(entier)}'
+    FONtemps1-1:
+      champs: [RevenusAutreFondPension.0.FrequenceRevenusAutresFondPension==hebdo]
+    FONtemps2-1:
+      champs: [RevenusAutreFondPension.1.FrequenceRevenusAutresFondPension==hebdo]
+    FONtemps1-2:
+      champs: [RevenusAutreFondPension.0.FrequenceRevenusAutresFondPension==bihebdo]
+    FONtemps2-2:
+      champs: [RevenusAutreFondPension.1.FrequenceRevenusAutresFondPension==bihebdo]
+    FONtemps1-3:
+      champs: [RevenusAutreFondPension.0.FrequenceRevenusAutresFondPension==mensuel]
+    FONtemps2-3:
+      champs: [RevenusAutreFondPension.1.FrequenceRevenusAutresFondPension==mensuel]
+    Adulte1_alimentaire1:
+      champs: [RevenusAutrePensionAlimentaire.0.PensionAlimentaireProprio==A1]
+    Adulte1_alimentaire2:
+      champs: [RevenusAutrePensionAlimentaire.1.PensionAlimentaireProprio==A1]
+    Adulte2_alimentaire1:
+      champs: [RevenusAutrePensionAlimentaire.0.PensionAlimentaireProprio==A2]
+    Adulte2_alimentaire2:
+      champs: [RevenusAutrePensionAlimentaire.1.PensionAlimentaireProprio==A2]
+    entente1-1:
+      champs: [RevenusAutrePensionAlimentaire.0.PensionAlimentaireStatut==recoit]
+    entente2-1:
+      champs: [RevenusAutrePensionAlimentaire.1.PensionAlimentaireStatut==recoit]
+    entente1-2:
+      champs: [RevenusAutrePensionAlimentaire.0.PensionAlimentaireStatut==attente]
+    entente2-2:
+      champs: [RevenusAutrePensionAlimentaire.1.PensionAlimentaireStatut==attente]
+    entente1-3:
+      champs: [RevenusAutrePensionAlimentaire.0.PensionAlimentaireStatut==nonRecu]
+    entente2-3:
+      champs: [RevenusAutrePensionAlimentaire.1.PensionAlimentaireStatut==nonRecu]
+    alimentaireSource1:
+      champs: [RevenusAutrePensionAlimentaire.0.PensionAlimentaireSource]
+    alimentaireSource2:
+      champs: [RevenusAutrePensionAlimentaire.1.PensionAlimentaireSource]
+    alimentaire1:
+      champs: [RevenusAutrePensionAlimentaire.0.PensionAlimentaireMontant]
+      formule: '{RevenusAutrePensionAlimentaire.0.PensionAlimentaireMontant:forcerNombre(entier)}'
+    alimentaire2:
+      champs: [RevenusAutrePensionAlimentaire.1.PensionAlimentaireMontant]
+      formule: '{RevenusAutrePensionAlimentaire.1.PensionAlimentaireMontant:forcerNombre(entier)}'
+    ALtemps1-1:
+      champs: [RevenusAutrePensionAlimentaire.0.PensionAlimentaireFrequence==hebdo]
+    ALtemps2-1:
+      champs: [RevenusAutrePensionAlimentaire.1.PensionAlimentaireFrequence==hebdo]
+    ALtemps1-2:
+      champs: [RevenusAutrePensionAlimentaire.0.PensionAlimentaireFrequence==bihebdo]
+    ALtemps2-2:
+      champs: [RevenusAutrePensionAlimentaire.1.PensionAlimentaireFrequence==bihebdo]
+    ALtemps1-3:
+      champs: [RevenusAutrePensionAlimentaire.0.PensionAlimentaireFrequence==mensuel]
+    ALtemps2-3:
+      champs: [RevenusAutrePensionAlimentaire.1.PensionAlimentaireFrequence==mensuel]
+    Adulte1_autre1:
+      champs: [RevenusAutreDivers.0.RevenuDiversProprio==A1]
+    Adulte1_autre2:
+      champs: [RevenusAutreDivers.1.RevenuDiversProprio==A1]
+    Adulte2_autre1:
+      champs: [RevenusAutreDivers.0.RevenuDiversProprio==A2]
+    Adulte2_autre2:
+      champs: [RevenusAutreDivers.1.RevenuDiversProprio==A2]
+    autreSource1:
+      champs: [RevenusAutreDivers.0.RevenuDiversSource]
+    autreSource2:
+      champs: [RevenusAutreDivers.1.RevenuDiversSource]
+    autre1:
+      champs: [RevenusAutreDivers.0.RevenuDiversMontant]
+      formule: '{RevenusAutreDivers.0.RevenuDiversMontant:forcerNombre(entier)}'
+    autre2:
+      champs: [RevenusAutreDivers.1.RevenuDiversMontant]
+      formule: '{RevenusAutreDivers.1.RevenuDiversMontant:forcerNombre(entier)}'
+    autre_date1:
+      champs: [RevenusAutreDivers.0.RevenuDiversDate]
+      formule: '{RevenusAutreDivers.0.RevenuDiversDate:yyyyMMdd}'
+    autre_date2:
+      champs: [RevenusAutreDivers.1.RevenuDiversDate]
+      formule: '{RevenusAutreDivers.1.RevenuDiversDate:yyyyMMdd}'
+    revenuAttente_Oui:
+      champs: [PossedeRevenuAttente==true]
+    revenuAttente_Non:
+      champs: [PossedeRevenuAttente==false]
+    Adulte1_attente1:
+      champs: [RevenusAttente.0.RevenusAttenteProprio==A1]
+    Adulte1_attente2:
+      champs: [RevenusAttente.1.RevenusAttenteProprio==A1]
+    Adulte2_attente1:
+      champs: [RevenusAttente.0.RevenusAttenteProprio==A2]
+    Adulte2_attente2:
+      champs: [RevenusAttente.1.RevenusAttenteProprio==A2]
+    attenteSource1:
+      champs: [RevenusAttente.0.RevenusAttenteSource]
+    attenteSource2:
+      champs: [RevenusAttente.1.RevenusAttenteSource]
+    attente1:
+      champs: [RevenusAttente.0.RevenusAttenteMontant]
+      formule: '{RevenusAttente.0.RevenusAttenteMontant:forcerNombre(entier)}'
+    attente2:
+      champs: [RevenusAttente.1.RevenusAttenteMontant]
+      formule: '{RevenusAttente.1.RevenusAttenteMontant:forcerNombre(entier)}'
+    attente_date1:
+      champs: [RevenusAttente.0.RevenusAttenteDate]
+      formule: '{RevenusAttente.0.RevenusAttenteDate:yyyyMMdd}'
+    attente_date2:
+      champs: [RevenusAttente.1.RevenusAttenteDate]
+      formule: '{RevenusAttente.1.RevenusAttenteDate:yyyyMMdd}'
+    avoirsCompte_Oui:
+      champs: [PossedeAvoirsComptes==true]
+    avoirsCompte_Non:
+      champs: [PossedeAvoirsComptes==false]
+    Adulte1_compte1:
+      champs: [AvoirsComptes.0.AvoirCompteProprio==A1]
+    Adulte1_compte2:
+      champs: [AvoirsComptes.1.AvoirCompteProprio==A1]
+    Adulte2_compte1:
+      champs: [AvoirsComptes.0.AvoirCompteProprio==A2]
+    Adulte2_compte2:
+      champs: [AvoirsComptes.1.AvoirCompteProprio==A2]
+    Adultes_compte1:
+      champs: [AvoirsComptes.0.AvoirCompteProprio==A12]
+    Adultes_compte2:
+      champs: [AvoirsComptes.1.AvoirCompteProprio==A12]
+    compteAdresse1:
+      champs: [AvoirsComptes.0.AvoirCompteAdresse]
+    compteAdresse2:
+      champs: [AvoirsComptes.1.AvoirCompteAdresse]
+    compteNumero1:
+      champs: [AvoirsComptes.0.AvoirCompteNumero]
+    compteNumero2:
+      champs: [AvoirsComptes.1.AvoirCompteNumero]
+    compteEtat_1:
+      champs: [AvoirsComptes.0.AvoirCompteStatut==actif]
+    compteEtat_3:
+      champs: [AvoirsComptes.1.AvoirCompteStatut==actif]
+    compteEtat_2:
+      champs: [AvoirsComptes.0.AvoirCompteStatut==inactif]
+    compteEtat_4:
+      champs: [AvoirsComptes.1.AvoirCompteStatut==inactif]
+    compte1:
+      champs: [AvoirsComptes.0.AvoirCompteMontant]
+      formule: '{AvoirsComptes.0.AvoirCompteMontant:forcerNombre(entier)}'
+    compte2:
+      champs: [AvoirsComptes.1.AvoirCompteMontant]
+      formule: '{AvoirsComptes.1.AvoirCompteMontant:forcerNombre(entier)}'
+    avoirsArgent_Oui:
+      champs: [PossedeAvoirsEnMain==true]
+    avoirsArgent_Non:
+      champs: [PossedeAvoirsEnMain==false]
+    Adulte1_argent1:
+      champs: [AvoirsEnMain.0.AvoirEnMainProprio==A1]
+    Adulte1_argent2:
+      champs: [AvoirsEnMain.1.AvoirEnMainProprio==A1]
+    Adulte2_argent1:
+      champs: [AvoirsEnMain.0.AvoirEnMainProprio==A2]
+    Adulte2_argent2:
+      champs: [AvoirsEnMain.1.AvoirEnMainProprio==A2]
+    Adultes_argent1:
+      champs: [AvoirsEnMain.0.AvoirEnMainProprio==A12]
+    Adultes_argent2:
+      champs: [AvoirsEnMain.1.AvoirEnMainProprio==A12]
+    argentDescription1:
+      champs: [AvoirsEnMain.0.AvoirEnMainDescription]
+    argentDescription2:
+      champs: [AvoirsEnMain.1.AvoirEnMainDescription]
+    argent1:
+      champs: [AvoirsEnMain.0.AvoirEnMainMontant]
+      formule: '{AvoirsEnMain.0.AvoirEnMainMontant:forcerNombre(entier)}'
+    argent2:
+      champs: [AvoirsEnMain.1.AvoirEnMainMontant]
+      formule: '{AvoirsEnMain.1.AvoirEnMainMontant:forcerNombre(entier)}'
+    avoirsCheque_Oui:
+      champs: [PossedeChequesEnCirculation==true]
+    avoirsCheque_Non:
+      champs: [PossedeChequesEnCirculation==false]
+    Adulte1_cheque1:
+      champs: [ChequesEnCirculation.0.ChequesEnCirculationProprio==A1]
+    Adulte1_cheque2:
+      champs: [ChequesEnCirculation.1.ChequesEnCirculationProprio==A1]
+    Adulte2_cheque1:
+      champs: [ChequesEnCirculation.0.ChequesEnCirculationProprio==A2]
+    Adulte2_cheque2:
+      champs: [ChequesEnCirculation.1.ChequesEnCirculationProprio==A2]
+    Adultes_cheque1:
+      champs: [ChequesEnCirculation.0.ChequesEnCirculationProprio==A12]
+    Adultes_cheque2:
+      champs: [ChequesEnCirculation.1.ChequesEnCirculationProprio==A12]
+    chequeDescription1:
+      champs: [ChequesEnCirculation.0.ChequesEnCirculationDescription]
+    chequeDescription2:
+      champs: [ChequesEnCirculation.1.ChequesEnCirculationDescription]
+    cheque_date1:
+      champs: [ChequesEnCirculation.0.ChequesEnCirculationDate]
+      formule: '{ChequesEnCirculation.0.ChequesEnCirculationDate:yyyyMMdd}'
+    cheque_date2:
+      champs: [ChequesEnCirculation.1.ChequesEnCirculationDate]
+      formule: '{ChequesEnCirculation.1.ChequesEnCirculationDate:yyyyMMdd}'
+    cheque1:
+      champs: [ChequesEnCirculation.0.ChequesEnCirculationMontant]
+      formule: '{ChequesEnCirculation.0.ChequesEnCirculationMontant:forcerNombre(entier)}'
+    cheque2:
+      champs: [ChequesEnCirculation.1.ChequesEnCirculationMontant]
+      formule: '{ChequesEnCirculation.1.ChequesEnCirculationMontant:forcerNombre(entier)}'
+    avoirsREER_Oui:
+      champs: [PossedePlacements==true]
+    avoirsREER_Non:
+      champs: [PossedePlacements==false]
+    Adulte1_REER1:
+      champs: [AvoirsPlacements.0.AvoirPlacementProprio==A1]
+    Adulte1_REER2:
+      champs: [AvoirsPlacements.1.AvoirPlacementProprio==A1]
+    Adulte2_REER1:
+      champs: [AvoirsPlacements.0.AvoirPlacementProprio==A2]
+    Adulte2_REER2:
+      champs: [AvoirsPlacements.1.AvoirPlacementProprio==A2]
+    Adultes_REER1:
+      champs: [AvoirsPlacements.0.AvoirPlacementProprio==A12]
+    Adultes_REER2:
+      champs: [AvoirsPlacements.1.AvoirPlacementProprio==A12]
+    REERDescription1:
+      champs: [AvoirsPlacements.0.AvoirPlacementDescription]
+    REERDescription2:
+      champs: [AvoirsPlacements.1.AvoirPlacementDescription]
+    REER1:
+      champs: [AvoirsPlacements.0.AvoirPlacementMontant]
+      formule: '{AvoirsPlacements.0.AvoirPlacementMontant:forcerNombre(entier)}'
+    REER2:
+      champs: [AvoirsPlacements.1.AvoirPlacementMontant]
+      formule: '{AvoirsPlacements.1.AvoirPlacementMontant:forcerNombre(entier)}'
+    sommesDues_Oui:
+      champs: [PossedeSommesDues==true]
+    sommesDues_Non:
+      champs: [PossedeSommesDues==false]
+    Adulte1_dues1:
+      champs: [AvoirsSommesDues.0.AvoirSommeDueProprio==A1]
+    Adulte1_dues2:
+      champs: [AvoirsSommesDues.1.AvoirSommeDueProprio==A1]
+    Adulte2_dues1:
+      champs: [AvoirsSommesDues.0.AvoirSommeDueProprio==A2]
+    Adulte2_dues2:
+      champs: [AvoirsSommesDues.1.AvoirSommeDueProprio==A2]
+    Adultes_dues1:
+      champs: [AvoirsSommesDues.0.AvoirSommeDueProprio==A12]
+    Adultes_dues2:
+      champs: [AvoirsSommesDues.1.AvoirSommeDueProprio==A12]
+    duesDescription1:
+      champs: [AvoirsSommesDues.0.AvoirSommeDueDescription]
+    duesDescription2:
+      champs: [AvoirsSommesDues.1.AvoirSommeDueDescription]
+    dues1:
+      champs: [AvoirsSommesDues.0.AvoirSommeDueMontant]
+      formule: '{AvoirsSommesDues.0.AvoirSommeDueMontant:forcerNombre(entier)}'
+    dues2:
+      champs: [AvoirsSommesDues.1.AvoirSommeDueMontant]
+      formule: '{AvoirsSommesDues.1.AvoirSommeDueMontant:forcerNombre(entier)}'
+    bienVehicule_Oui:
+      champs: [PossedeBiensVehicules==true]
+    bienVehicule_Non:
+      champs: [PossedeBiensVehicules==false]
+    Adulte1_vehicule1:
+      champs: [BiensVehicules.0.ProprioVehicule==A1]
+    Adulte1_vehicule2:
+      champs: [BiensVehicules.1.ProprioVehicule==A1]
+    Adulte2_vehicule1:
+      champs: [BiensVehicules.0.ProprioVehicule==A2]
+    Adulte2_vehicule2:
+      champs: [BiensVehicules.1.ProprioVehicule==A2]
+    Adultes_vehicule1:
+      champs: [BiensVehicules.0.ProprioVehicule==A12]
+    Adultes_vehicule2:
+      champs: [BiensVehicules.1.ProprioVehicule==A12]
+    vehicule1-1:
+      champs: [BiensVehicules.0.VehiculeAdapte==true]
+    vehicule2-1:
+      champs: [BiensVehicules.1.VehiculeAdapte==true]
+    vehicule1-2:
+      champs: [BiensVehicules.0.VehiculeProprioLocataire==VehiculeProprietaire]
+    vehicule2-2:
+      champs: [BiensVehicules.1.VehiculeProprioLocataire==VehiculeProprietaire]
+    vehicule1-3:
+      champs: [BiensVehicules.0.VehiculeProprioLocataire==VehiculeLocataire]
+    vehicule2-3:
+      champs: [BiensVehicules.1.VehiculeProprioLocataire==VehiculeLocataire]
+    vehicule1:
+      champs: [BiensVehicules.0.VehiculeValeurMarchande]
+      formule: '{BiensVehicules.0.VehiculeValeurMarchande:forcerNombre(entier)}'
+    vehicule2:
+      champs: [BiensVehicules.1.VehiculeValeurMarchande]
+      formule: '{BiensVehicules.1.VehiculeValeurMarchande:forcerNombre(entier)}'
+    vehiculeDescription1:
+      champs: [BiensVehicules.0.VehiculeTypeMarqueAnnee]
+    vehiculeDescription2:
+      champs: [BiensVehicules.1.VehiculeTypeMarqueAnnee]
+    bienImmobilier_Oui:
+      champs: [PossedeBiensImmobiliers==true]
+    bienImmobilier_Non:
+      champs: [PossedeBiensImmobiliers==false]
+    Adulte1_immobilier1:
+      champs: [BiensImmobiliers.0.ProprioBienImmobilier==A1]
+    Adulte1_immobilier2:
+      champs: [BiensImmobiliers.1.ProprioBienImmobilier==A1]
+    Adulte2_immobilier1:
+      champs: [BiensImmobiliers.0.ProprioBienImmobilier==A2]
+    Adulte2_immobilier2:
+      champs: [BiensImmobiliers.1.ProprioBienImmobilier==A2]
+    Adultes_immobilier1:
+      champs: [BiensImmobiliers.0.ProprioBienImmobilier==A12]
+    Adultes_immobilier2:
+      champs: [BiensImmobiliers.1.ProprioBienImmobilier==A12]
+    immobilierDescription1:
+      champs: [BiensImmobiliers.0.BienImmobilierDescription]
+    immobilierDescription2:
+      champs: [BiensImmobiliers.1.BienImmobilierDescription]
+    immobilier1:
+      champs: [BiensImmobiliers.0.DetteEmpruntBienImmobilier]
+      formule: '{BiensImmobiliers.0.DetteEmpruntBienImmobilier:forcerNombre(entier)}'
+    immobilier2:
+      champs: [BiensImmobiliers.1.DetteEmpruntBienImmobilier]
+      formule: '{BiensImmobiliers.1.DetteEmpruntBienImmobilier:forcerNombre(entier)}'
+    immobilierValeur1:
+      champs: [BiensImmobiliers.0.ValeurBienImmobilier]
+      formule: '{BiensImmobiliers.0.ValeurBienImmobilier:forcerNombre(entier)}'
+    immobilierValeur2:
+      champs: [BiensImmobiliers.1.ValeurBienImmobilier]
+      formule: '{BiensImmobiliers.1.ValeurBienImmobilier:forcerNombre(entier)}'
+    bienMobilier_Oui:
+      champs: [PossedeBiensMobiliers==true]
+    bienMobilier_Non:
+      champs: [PossedeBiensMobiliers==false]
+    Adulte1_mobilier1:
+      champs: [BiensMobiliers.0.BienMobilierProprio==A1]
+    Adulte1_mobilier2:
+      champs: [BiensMobiliers.1.BienMobilierProprio==A1]
+    Adulte2_mobilier1:
+      champs: [BiensMobiliers.0.BienMobilierProprio==A2]
+    Adulte2_mobilier2:
+      champs: [BiensMobiliers.1.BienMobilierProprio==A2]
+    Adultes_mobilier1:
+      champs: [BiensMobiliers.0.BienMobilierProprio==A12]
+    Adultes_mobilier2:
+      champs: [BiensMobiliers.1.BienMobilierProprio==A12]
+    mobilierDescription1:
+      champs: [BiensMobiliers.0.BienMobilierDescription]
+    mobilierDescription2:
+      champs: [BiensMobiliers.1.BienMobilierDescription]
+    mobilier1:
+      champs: [BiensMobiliers.0.BienMobilierValeur]
+      formule: '{BiensMobiliers.0.BienMobilierValeur:forcerNombre(entier)}'
+    mobilier2:
+      champs: [BiensMobiliers.1.BienMobilierValeur]
+      formule: '{BiensMobiliers.1.BienMobilierValeur:forcerNombre(entier)}'
+    bienAssurance_Oui:
+      champs: [PossedeBiensAssuranceVie==true]
+    bienAssurance_Non:
+      champs: [PossedeBiensAssuranceVie==false]
+    Adulte1_assurance1:
+      champs: [BiensAssuranceVie.0.BienAssuranceVieProprio==A1]
+    Adulte2_assurance1:
+      champs: [BiensAssuranceVie.0.BienAssuranceVieProprio==A2]
+    Adulte1_assurance2:
+      champs: [BiensAssuranceVie.1.BienAssuranceVieProprio==A1]
+    Adulte2_assurance2:
+      champs: [BiensAssuranceVie.1.BienAssuranceVieProprio==A2]
+    assuranceSource1:
+      champs: [BiensAssuranceVie.0.BienAssuranceVieCompagnie]
+    assuranceSource2:
+      champs: [BiensAssuranceVie.1.BienAssuranceVieCompagnie]
+    assurance1-1:
+      champs: [BiensAssuranceVie.0.BienAssuranceVieValeursAccumulees==yes]
+    assurance2-1:
+      champs: [BiensAssuranceVie.1.BienAssuranceVieValeursAccumulees==yes]
+    assurance1-2:
+      champs: [BiensAssuranceVie.0.BienAssuranceVieValeursAccumulees==no]
+    assurance2-2:
+      champs: [BiensAssuranceVie.1.BienAssuranceVieValeursAccumulees==no]
+    assurance1-3:
+      champs: [BiensAssuranceVie.0.BienAssuranceVieValeursAccumulees==neSaitPas]
+    assurance2-3:
+      champs: [BiensAssuranceVie.1.BienAssuranceVieValeursAccumulees==neSaitPas]
+    bienEntreprise_Oui:
+      champs: [PossedeEntreprise==true]
+    bienEntreprise_Non:
+      champs: [PossedeEntreprise==false]
+    Adulte1_entreprise1:
+      champs: [BiensEntreprise.0.BiensEntrepriseProprio==A1]
+    Adulte1_entreprise2:
+      champs: [BiensEntreprise.1.BiensEntrepriseProprio==A1]
+    Adulte2_entreprise1:
+      champs: [BiensEntreprise.0.BiensEntrepriseProprio==A2]
+    Adulte2_entreprise2:
+      champs: [BiensEntreprise.1.BiensEntrepriseProprio==A2]
+    Adultes_entreprise1:
+      champs: [BiensEntreprise.0.BiensEntrepriseProprio==A12]
+    Adultes_entreprise2:
+      champs: [BiensEntreprise.1.BiensEntrepriseProprio==A12]
+    entrepriseNumero1:
+      champs: [BiensEntreprise.0.BiensEntrepriseNEQ]
+    entrepriseNumero2:
+      champs: [BiensEntreprise.1.BiensEntrepriseNEQ]
+    entreprise1-1:
+      champs: [BiensEntreprise.0.BiensEntrepriseStatut==individuelle]
+    entreprise2-1:
+      champs: [BiensEntreprise.1.BiensEntrepriseStatut==individuelle]
+    entreprise1-2:
+      champs: [BiensEntreprise.0.BiensEntrepriseStatut==societe]
+    entreprise2-2:
+      champs: [BiensEntreprise.1.BiensEntrepriseStatut==societe]
+    entreprise1-3:
+      champs: [BiensEntreprise.0.BiensEntrepriseStatut==compagnie]
+    entreprise2-3:
+      champs: [BiensEntreprise.1.BiensEntrepriseStatut==compagnie]
+    entrepriseP1-2:
+      champs: [BiensEntreprise.0.BiensEntrepriseSocietePourcentage]
+    entrepriseP2-2:
+      champs: [BiensEntreprise.1.BiensEntrepriseSocietePourcentage]
+    entrepriseP1-3:
+      champs: [BiensEntreprise.0.BiensEntrepriseCompagniePourcentage]
+    entrepriseP2-3:
+      champs: [BiensEntreprise.1.BiensEntrepriseCompagniePourcentage]
+    bienVendu_Oui:
+      champs: [PossedeBiensCedes==true]
+    bienVendu_Non:
+      champs: [PossedeBiensCedes==false]
+    Adulte1_vendu1:
+      champs: [BiensCedes.0.BiensCedesProprio==A1]
+    Adulte1_vendu2:
+      champs: [BiensCedes.1.BiensCedesProprio==A1]
+    Adulte2_vendu1:
+      champs: [BiensCedes.0.BiensCedesProprio==A2]
+    Adulte2_vendu2:
+      champs: [BiensCedes.1.BiensCedesProprio==A2]
+    Adultes_vendu1:
+      champs: [BiensCedes.0.BiensCedesProprio==A12]
+    Adultes_vendu2:
+      champs: [BiensCedes.1.BiensCedesProprio==A12]
+    immobilierVendu1:
+      champs: [BiensCedes.0.BiensCedesDescription]
+    immobilierVendu2:
+      champs: [BiensCedes.1.BiensCedesDescription]
+    vendu_date1:
+      champs: [BiensCedes.0.BiensCedesDate]
+      formule: '{BiensCedes.0.BiensCedesDate:yyyyMMdd}'
+    vendu_date2:
+      champs: [BiensCedes.1.BiensCedesDate]
+      formule: '{BiensCedes.1.BiensCedesDate:yyyyMMdd}'
+    vendu1:
+      champs: [BiensCedes.0.BiensCedesValeur]
+      formule: '{BiensCedes.0.BiensCedesValeur:forcerNombre(entier)}'
+    vendu2:
+      champs: [BiensCedes.1.BiensCedesValeur]
+      formule: '{BiensCedes.1.BiensCedesValeur:forcerNombre(entier)}'
+    destinataire1-1:
+      champs: [DestinataireCouple==A12]
+    destinataire1-2:
+      champs: [DestinataireCouple==A1]
+    destinataire1-3:
+      champs: [DestinataireCouple==A2]
+    section7:
+      champs: [TexteRenseignementsAdditionnels]
+    RempliSoiMeme:
+      champs: [Procuration]
+    section8_date1:
+      champs: [DateSignature]
+      formule: '{DateSignature:yyyyMMdd}'
+    CoutMensuelHabitationDecimal:
+      champs: [DomicileCoutMensuel]
+      formule: '{DomicileCoutMensuel:forcerNombre(decimales)}'
+    MontantAllocationLogementDecimals:
+      champs: [DomicileAllocationMontant]
+      formule: '{DomicileAllocationMontant:forcerNombre(decimales)}'
+    revenuEmploi_salaireDecimals1:
+      champs: [RevenusEmploi.0.RevenuEmploiSalaireNet]
+      formule: '{RevenusEmploi.0.RevenuEmploiSalaireNet:forcerNombre(decimales)}'
+    revenuEmploi_salaireDecimals2:
+      champs: [RevenusEmploi.1.RevenuEmploiSalaireNet]
+      formule: '{RevenusEmploi.1.RevenuEmploiSalaireNet:forcerNombre(decimales)}'
+    Adulte1_revenuEmploi3:
+      champs: [RevenusEmploi.2.RevenuEmploiProprio==A1]
+    Adulte1_revenuEmploi4:
+      champs: [RevenusEmploi.3.RevenuEmploiProprio==A1]
+    Adulte2_revenuEmploi3:
+      champs: [RevenusEmploi.2.RevenuEmploiProprio==A2]
+    Adulte2_revenuEmploi4:
+      champs: [RevenusEmploi.3.RevenuEmploiProprio==A2]
+    revenuEmploi_employeur3:
+      champs: [RevenusEmploi.2.RevenuEmploiSourceNomEmployeur]
+    revenuEmploi_employeur4:
+      champs: [RevenusEmploi.3.RevenuEmploiSourceNomEmployeur]
+    revenuEmploi_salaire3:
+      champs: [RevenusEmploi.2.RevenuEmploiSalaireNet]
+      formule: '{RevenusEmploi.2.RevenuEmploiSalaireNet:forcerNombre(entier)}'
+    revenuEmploi_salaire4:
+      champs: [RevenusEmploi.3.RevenuEmploiSalaireNet]
+      formule: '{RevenusEmploi.3.RevenuEmploiSalaireNet:forcerNombre(entier)}'
+    REtemps3-1:
+      champs: [RevenusEmploi.2.RevenuEmploiFrequence==hebdo]
+    REtemps4-1:
+      champs: [RevenusEmploi.3.RevenuEmploiFrequence==hebdo]
+    REtemps3-2:
+      champs: [RevenusEmploi.2.RevenuEmploiFrequence==bihebdo]
+    REtemps4-2:
+      champs: [RevenusEmploi.3.RevenuEmploiFrequence==bihebdo]
+    REtemps3-3:
+      champs: [RevenusEmploi.2.RevenuEmploiFrequence==mensuel]
+    REtemps4-3:
+      champs: [RevenusEmploi.3.RevenuEmploiFrequence==mensuel]
+    revenuEmploi_salaireDecimals3:
+      champs: [RevenusEmploi.2.RevenuEmploiSalaireNet]
+      formule: '{RevenusEmploi.2.RevenuEmploiSalaireNet:forcerNombre(decimales)}'
+    revenuEmploi_salaireDecimals4:
+      champs: [RevenusEmploi.3.RevenuEmploiSalaireNet]
+      formule: '{RevenusEmploi.3.RevenuEmploiSalaireNet:forcerNombre(decimales)}'
+    pourboire_salaireDecimals1:
+      champs: [RevenusPourboires.0.RevenuPourboireMontantNet]
+      formule: '{RevenusPourboires.0.RevenuPourboireMontantNet:forcerNombre(decimales)}'
+    pourboire_salaireDecimals2:
+      champs: [RevenusPourboires.1.RevenuPourboireMontantNet]
+      formule: '{RevenusPourboires.1.RevenuPourboireMontantNet:forcerNombre(decimales)}'
+    autonome_salaireDecimals1:
+      champs: [RevenuAutonomeOuEntreprise.0.RevenuAutonomeBrut]
+      formule: '{RevenuAutonomeOuEntreprise.0.RevenuAutonomeBrut:forcerNombre(decimales)}'
+    autonome_salaireDecimals2:
+      champs: [RevenuAutonomeOuEntreprise.1.RevenuAutonomeBrut]
+      formule: '{RevenuAutonomeOuEntreprise.1.RevenuAutonomeBrut:forcerNombre(decimales)}'
+    prestationDecimals1:
+      champs: [SommesProvincial.0.SommeProvincialMontantBrut]
+      formule: '{SommesProvincial.0.SommeProvincialMontantBrut:forcerNombre(decimales)}'
+    prestationDecimals2:
+      champs: [SommesProvincial.1.SommeProvincialMontantBrut]
+      formule: '{SommesProvincial.1.SommeProvincialMontantBrut:forcerNombre(decimales)}'
+    prestationDecimals3:
+      champs: [SommesFederal.0.SommeFederalMontantBrut]
+      formule: '{SommesFederal.0.SommeFederalMontantBrut:forcerNombre(decimales)}'
+    prestationDecimals4:
+      champs: [SommesFederal.1.SommeFederalMontantBrut]
+      formule: '{SommesFederal.1.SommeFederalMontantBrut:forcerNombre(decimales)}'
+    prestationDecimals5:
+      champs: [SommesOrganismeAutre.0.SommeOrganismeAutreMontantBrut]
+      formule: '{SommesOrganismeAutre.0.SommeOrganismeAutreMontantBrut:forcerNombre(decimales)}'
+    prestationDecimals6:
+      champs: [SommesOrganismeAutre.1.SommeOrganismeAutreMontantBrut]
+      formule: '{SommesOrganismeAutre.1.SommeOrganismeAutreMontantBrut:forcerNombre(decimales)}'
+    pensionDecimals1:
+      champs: [RevenusAutreChambre.0.MontantChambreur]
+      formule: '{RevenusAutreChambre.0.MontantChambreur:forcerNombre(decimales)}'
+    locationDecimals1:
+      champs: [RevenusAutreLocation.0.MontantLocation]
+      formule: '{RevenusAutreLocation.0.MontantLocation:forcerNombre(decimales)}'
+    locationDecimals2:
+      champs: [RevenusAutreLocation.1.MontantLocation]
+      formule: '{RevenusAutreLocation.1.MontantLocation:forcerNombre(decimales)}'
+    placementDecimals1:
+      champs: [RevenusAutrePlacement.0.MontantPlacement]
+      formule: '{RevenusAutrePlacement.0.MontantPlacement:forcerNombre(decimales)}'
+    placementDecimals2:
+      champs: [RevenusAutrePlacement.1.MontantPlacement]
+      formule: '{RevenusAutrePlacement.1.MontantPlacement:forcerNombre(decimales)}'
+    fondsDecimals1:
+      champs: [RevenusAutreFondPension.0.MontantFondsPension]
+      formule: '{RevenusAutreFondPension.0.MontantFondsPension:forcerNombre(decimales)}'
+    fondsDecimals2:
+      champs: [RevenusAutreFondPension.1.MontantFondsPension]
+      formule: '{RevenusAutreFondPension.1.MontantFondsPension:forcerNombre(decimales)}'
+    alimentaireDecimals1:
+      champs: [RevenusAutrePensionAlimentaire.0.PensionAlimentaireMontant]
+      formule: '{RevenusAutrePensionAlimentaire.0.PensionAlimentaireMontant:forcerNombre(decimales)}'
+    alimentaireDecimals2:
+      champs: [RevenusAutrePensionAlimentaire.1.PensionAlimentaireMontant]
+      formule: '{RevenusAutrePensionAlimentaire.1.PensionAlimentaireMontant:forcerNombre(decimales)}'
+    autreDecimals1:
+      champs: [RevenusAutreDivers.0.RevenuDiversMontant]
+      formule: '{RevenusAutreDivers.0.RevenuDiversMontant:forcerNombre(decimales)}'
+    autreDecimals2:
+      champs: [RevenusAutreDivers.1.RevenuDiversMontant]
+      formule: '{RevenusAutreDivers.1.RevenuDiversMontant:forcerNombre(decimales)}'
+    attenteDecimals1:
+      champs: [RevenusAttente.0.RevenusAttenteMontant]
+      formule: '{RevenusAttente.0.RevenusAttenteMontant:forcerNombre(decimales)}'
+    attenteDecimals2:
+      champs: [RevenusAttente.1.RevenusAttenteMontant]
+      formule: '{RevenusAttente.1.RevenusAttenteMontant:forcerNombre(decimales)}'
+    Adulte1_compte3:
+      champs: [AvoirsComptes.2.AvoirCompteProprio==A1]
+    Adulte1_compte4:
+      champs: [AvoirsComptes.3.AvoirCompteProprio==A1]
+    Adulte1_compte5:
+      champs: [AvoirsComptes.4.AvoirCompteProprio==A1]
+    Adulte2_compte3:
+      champs: [AvoirsComptes.2.AvoirCompteProprio==A2]
+    Adulte2_compte4:
+      champs: [AvoirsComptes.3.AvoirCompteProprio==A2]
+    Adulte2_compte5:
+      champs: [AvoirsComptes.4.AvoirCompteProprio==A2]
+    Adultes_compte3:
+      champs: [AvoirsComptes.2.AvoirCompteProprio==A12]
+    Adultes_compte4:
+      champs: [AvoirsComptes.3.AvoirCompteProprio==A12]
+    Adultes_compte5:
+      champs: [AvoirsComptes.4.AvoirCompteProprio==A12]
+    compteAdresse3:
+      champs: [AvoirsComptes.2.AvoirCompteAdresse]
+    compteAdresse4:
+      champs: [AvoirsComptes.3.AvoirCompteAdresse]
+    compteAdresse5:
+      champs: [AvoirsComptes.4.AvoirCompteAdresse]
+    compteNumero3:
+      champs: [AvoirsComptes.2.AvoirCompteNumero]
+    compteNumero4:
+      champs: [AvoirsComptes.3.AvoirCompteNumero]
+    compteNumero5:
+      champs: [AvoirsComptes.4.AvoirCompteNumero]
+    compteEtat_5:
+      champs: [AvoirsComptes.2.AvoirCompteStatut==actif]
+    compteEtat_7:
+      champs: [AvoirsComptes.3.AvoirCompteStatut==actif]
+    compteEtat_9:
+      champs: [AvoirsComptes.4.AvoirCompteStatut==actif]
+    compteEtat_6:
+      champs: [AvoirsComptes.2.AvoirCompteStatut==inactif]
+    compteEtat_8:
+      champs: [AvoirsComptes.3.AvoirCompteStatut==inactif]
+    compteEtat_10:
+      champs: [AvoirsComptes.4.AvoirCompteStatut==inactif]
+    compte3:
+      champs: [AvoirsComptes.2.AvoirCompteMontant]
+      formule: '{AvoirsComptes.2.AvoirCompteMontant:forcerNombre(entier)}'
+    compte4:
+      champs: [AvoirsComptes.3.AvoirCompteMontant]
+      formule: '{AvoirsComptes.3.AvoirCompteMontant:forcerNombre(entier)}'
+    compte5:
+      champs: [AvoirsComptes.4.AvoirCompteMontant]
+      formule: '{AvoirsComptes.4.AvoirCompteMontant:forcerNombre(entier)}'
+    compteDecimals1:
+      champs: [AvoirsComptes.0.AvoirCompteMontant]
+      formule: '{AvoirsComptes.0.AvoirCompteMontant:forcerNombre(decimales)}'
+    compteDecimals2:
+      champs: [AvoirsComptes.1.AvoirCompteMontant]
+      formule: '{AvoirsComptes.1.AvoirCompteMontant:forcerNombre(decimales)}'
+    compteDecimals3:
+      champs: [AvoirsComptes.2.AvoirCompteMontant]
+      formule: '{AvoirsComptes.2.AvoirCompteMontant:forcerNombre(decimales)}'
+    compteDecimals4:
+      champs: [AvoirsComptes.3.AvoirCompteMontant]
+      formule: '{AvoirsComptes.3.AvoirCompteMontant:forcerNombre(decimales)}'
+    compteDecimals5:
+      champs: [AvoirsComptes.4.AvoirCompteMontant]
+      formule: '{AvoirsComptes.4.AvoirCompteMontant:forcerNombre(decimales)}'
+    argentDecimals1:
+      champs: [AvoirsEnMain.0.AvoirEnMainMontant]
+      formule: '{AvoirsEnMain.0.AvoirEnMainMontant:forcerNombre(decimales)}'
+    argentDecimals2:
+      champs: [AvoirsEnMain.1.AvoirEnMainMontant]
+      formule: '{AvoirsEnMain.1.AvoirEnMainMontant:forcerNombre(decimales)}'
+    Adulte1_argent3:
+      champs: [AvoirsEnMain.2.AvoirEnMainProprio==A1]
+    Adulte2_argent3:
+      champs: [AvoirsEnMain.2.AvoirEnMainProprio==A2]
+    Adulte1_argent4:
+      champs: [AvoirsEnMain.3.AvoirEnMainProprio==A1]
+    Adulte2_argent4:
+      champs: [AvoirsEnMain.3.AvoirEnMainProprio==A2]
+    Adultes_argent3:
+      champs: [AvoirsEnMain.2.AvoirEnMainProprio==A12]
+    Adultes_argent4:
+      champs: [AvoirsEnMain.3.AvoirEnMainProprio==A12]
+    argentDescription3:
+      champs: [AvoirsEnMain.2.AvoirEnMainDescription]
+    argentDescription4:
+      champs: [AvoirsEnMain.3.AvoirEnMainDescription]
+    argent3:
+      champs: [AvoirsEnMain.2.AvoirEnMainMontant]
+      formule: '{AvoirsEnMain.2.AvoirEnMainMontant:forcerNombre(entier)}'
+    argent4:
+      champs: [AvoirsEnMain.3.AvoirEnMainMontant]
+      formule: '{AvoirsEnMain.3.AvoirEnMainMontant:forcerNombre(entier)}'
+    argentDecimals13:
+      champs: [AvoirsEnMain.2.AvoirEnMainMontant]
+      formule: '{AvoirsEnMain.2.AvoirEnMainMontant:forcerNombre(decimales)}'
+    argentDecimals4:
+      champs: [AvoirsEnMain.3.AvoirEnMainMontant]
+      formule: '{AvoirsEnMain.3.AvoirEnMainMontant:forcerNombre(decimales)}'
+    chequeDecimals1:
+      champs: [ChequesEnCirculation.0.ChequesEnCirculationMontant]
+      formule: '{ChequesEnCirculation.0.ChequesEnCirculationMontant:forcerNombre(decimales)}'
+    chequeDecimals2:
+      champs: [ChequesEnCirculation.1.ChequesEnCirculationMontant]
+      formule: '{ChequesEnCirculation.1.ChequesEnCirculationMontant:forcerNombre(decimales)}'
+    Adulte1_cheque3:
+      champs: [ChequesEnCirculation.2.ChequesEnCirculationProprio==A1]
+    Adulte1_cheque4:
+      champs: [ChequesEnCirculation.3.ChequesEnCirculationProprio==A1]
+    Adulte1_cheque5:
+      champs: [ChequesEnCirculation.4.ChequesEnCirculationProprio==A1]
+    Adulte1_cheque6:
+      champs: [ChequesEnCirculation.5.ChequesEnCirculationProprio==A1]
+    Adulte2_cheque3:
+      champs: [ChequesEnCirculation.2.ChequesEnCirculationProprio==A2]
+    Adulte2_cheque4:
+      champs: [ChequesEnCirculation.3.ChequesEnCirculationProprio==A2]
+    Adulte2_cheque5:
+      champs: [ChequesEnCirculation.4.ChequesEnCirculationProprio==A2]
+    Adulte2_cheque6:
+      champs: [ChequesEnCirculation.5.ChequesEnCirculationProprio==A2]
+    Adultes_cheque3:
+      champs: [ChequesEnCirculation.2.ChequesEnCirculationProprio==A12]
+    Adultes_cheque4:
+      champs: [ChequesEnCirculation.3.ChequesEnCirculationProprio==A12]
+    Adultes_cheque5:
+      champs: [ChequesEnCirculation.4.ChequesEnCirculationProprio==A12]
+    Adultes_cheque6:
+      champs: [ChequesEnCirculation.5.ChequesEnCirculationProprio==A12]
+    chequeDescription3:
+      champs: [ChequesEnCirculation.2.ChequesEnCirculationDescription]
+    chequeDescription4:
+      champs: [ChequesEnCirculation.3.ChequesEnCirculationDescription]
+    chequeDescription5:
+      champs: [ChequesEnCirculation.4.ChequesEnCirculationDescription]
+    chequeDescription6:
+      champs: [ChequesEnCirculation.5.ChequesEnCirculationDescription]
+    cheque_date3:
+      champs: [ChequesEnCirculation.2.ChequesEnCirculationDate]
+      formule: '{ChequesEnCirculation.2.ChequesEnCirculationDate:yyyyMMdd}'
+    cheque_date4:
+      champs: [ChequesEnCirculation.3.ChequesEnCirculationDate]
+      formule: '{ChequesEnCirculation.3.ChequesEnCirculationDate:yyyyMMdd}'
+    cheque_date5:
+      champs: [ChequesEnCirculation.4.ChequesEnCirculationDate]
+      formule: '{ChequesEnCirculation.4.ChequesEnCirculationDate:yyyyMMdd}'
+    cheque_date6:
+      champs: [ChequesEnCirculation.5.ChequesEnCirculationDate]
+      formule: '{ChequesEnCirculation.5.ChequesEnCirculationDate:yyyyMMdd}'
+    cheque3:
+      champs: [ChequesEnCirculation.2.ChequesEnCirculationMontant]
+      formule: '{ChequesEnCirculation.2.ChequesEnCirculationMontant:forcerNombre(entier)}'
+    chequeDecimals3:
+      champs: [ChequesEnCirculation.2.ChequesEnCirculationMontant]
+      formule: '{ChequesEnCirculation.2.ChequesEnCirculationMontant:forcerNombre(decimales)}'
+    cheque4:
+      champs: [ChequesEnCirculation.3.ChequesEnCirculationMontant]
+      formule: '{ChequesEnCirculation.3.ChequesEnCirculationMontant:forcerNombre(entier)}'
+    chequeDecimals4:
+      champs: [ChequesEnCirculation.3.ChequesEnCirculationMontant]
+      formule: '{ChequesEnCirculation.3.ChequesEnCirculationMontant:forcerNombre(decimales)}'
+    cheque:
+      champs: [ChequesEnCirculation.4.ChequesEnCirculationMontant]
+      formule: '{ChequesEnCirculation.4.ChequesEnCirculationMontant:forcerNombre(entier)}'
+    chequeDecimals5:
+      champs: [ChequesEnCirculation.4.ChequesEnCirculationMontant]
+      formule: '{ChequesEnCirculation.4.ChequesEnCirculationMontant:forcerNombre(decimales)}'
+    cheque6:
+      champs: [ChequesEnCirculation.5.ChequesEnCirculationMontant]
+      formule: '{ChequesEnCirculation.5.ChequesEnCirculationMontant:forcerNombre(entier)}'
+    chequeDecimals6:
+      champs: [ChequesEnCirculation.5.ChequesEnCirculationMontant]
+      formule: '{ChequesEnCirculation.5.ChequesEnCirculationMontant:forcerNombre(decimales)}'
+    Adulte1_REER3:
+      champs: [AvoirsPlacements.2.AvoirPlacementProprio==A1]
+    Adulte2_REER3:
+      champs: [AvoirsPlacements.2.AvoirPlacementProprio==A2]
+    Adultes_REER3:
+      champs: [AvoirsPlacements.2.AvoirPlacementProprio==A12]
+    REERDescription3:
+      champs: [AvoirsPlacements.2.AvoirPlacementDescription]
+    REER3:
+      champs: [AvoirsPlacements.2.AvoirPlacementMontant]
+      formule: '{AvoirsPlacements.2.AvoirPlacementMontant:forcerNombre(entier)}'
+    REERDecimals1:
+      champs: [AvoirsPlacements.0.AvoirPlacementMontant]
+      formule: '{AvoirsPlacements.0.AvoirPlacementMontant:forcerNombre(decimales)}'
+    REERDecimals12:
+      champs: [AvoirsPlacements.1.AvoirPlacementMontant]
+      formule: '{AvoirsPlacements.1.AvoirPlacementMontant:forcerNombre(decimales)}'
+    REERDecimals3:
+      champs: [AvoirsPlacements.2.AvoirPlacementMontant]
+      formule: '{AvoirsPlacements.2.AvoirPlacementMontant:forcerNombre(decimales)}'
+    Adulte1_dues3:
+      champs: [AvoirsSommesDues.2.AvoirSommeDueProprio==A1]
+    Adulte2_dues3:
+      champs: [AvoirsSommesDues.2.AvoirSommeDueProprio==A2]
+    Adultes_dues3:
+      champs: [AvoirsSommesDues.2.AvoirSommeDueProprio==A12]
+    duesDescription3:
+      champs: [AvoirsSommesDues.2.AvoirSommeDueDescription]
+    dues3:
+      champs: [AvoirsSommesDues.2.AvoirSommeDueMontant]
+      formule: '{AvoirsSommesDues.2.AvoirSommeDueMontant:forcerNombre(entier)}'
+    duesDecimals3:
+      champs: [AvoirsSommesDues.2.AvoirSommeDueMontant]
+      formule: '{AvoirsSommesDues.2.AvoirSommeDueMontant:forcerNombre(decimales)}'
+    duesDecimals2:
+      champs: [AvoirsSommesDues.1.AvoirSommeDueMontant]
+      formule: '{AvoirsSommesDues.1.AvoirSommeDueMontant:forcerNombre(decimales)}'
+    duesDecimals1:
+      champs: [AvoirsSommesDues.0.AvoirSommeDueMontant]
+      formule: '{AvoirsSommesDues.0.AvoirSommeDueMontant:forcerNombre(decimales)}'
+    Adulte1_vehicule3:
+      champs: [BiensVehicules.2.ProprioVehicule==A1]
+    Adulte1_vehicule4:
+      champs: [BiensVehicules.3.ProprioVehicule==A1]
+    Adulte1_vehicule5:
+      champs: [BiensVehicules.4.ProprioVehicule==A1]
+    Adulte1_vehicule6:
+      champs: [BiensVehicules.5.ProprioVehicule==A1]
+    Adulte2_vehicule3:
+      champs: [BiensVehicules.2.ProprioVehicule==A2]
+    Adulte2_vehicule4:
+      champs: [BiensVehicules.3.ProprioVehicule==A2]
+    Adulte2_vehicule5:
+      champs: [BiensVehicules.4.ProprioVehicule==A2]
+    Adulte2_vehicule6:
+      champs: [BiensVehicules.5.ProprioVehicule==A2]
+    Adultes_vehicule3:
+      champs: [BiensVehicules.2.ProprioVehicule==A12]
+    Adultes_vehicule4:
+      champs: [BiensVehicules.3.ProprioVehicule==A12]
+    Adultes_vehicule5:
+      champs: [BiensVehicules.4.ProprioVehicule==A12]
+    Adultes_vehicule6:
+      champs: [BiensVehicules.5.ProprioVehicule==A12]
+    vehiculeDescription3:
+      champs: [BiensVehicules.2.VehiculeTypeMarqueAnnee]
+    vehiculeDescription4:
+      champs: [BiensVehicules.3.VehiculeTypeMarqueAnnee]
+    vehiculeDescription5:
+      champs: [BiensVehicules.4.VehiculeTypeMarqueAnnee]
+    vehiculeDescription6:
+      champs: [BiensVehicules.5.VehiculeTypeMarqueAnnee]
+    vehicule3-1:
+      champs: [BiensVehicules.2.VehiculeAdapte==true]
+    vehicule4-1:
+      champs: [BiensVehicules.3.VehiculeAdapte==true]
+    vehicule5-1:
+      champs: [BiensVehicules.4.VehiculeAdapte==true]
+    vehicule6-1:
+      champs: [BiensVehicules.5.VehiculeAdapte==true]
+    vehicule3-2:
+      champs: [BiensVehicules.2.VehiculeProprioLocataire==VehiculeProprietaire]
+    vehicule4-2:
+      champs: [BiensVehicules.3.VehiculeProprioLocataire==VehiculeProprietaire]
+    vehicule5-2:
+      champs: [BiensVehicules.4.VehiculeProprioLocataire==VehiculeProprietaire]
+    vehicule6-2:
+      champs: [BiensVehicules.5.VehiculeProprioLocataire==VehiculeProprietaire]
+    vehicule3-3:
+      champs: [BiensVehicules.2.VehiculeProprioLocataire==VehiculeLocataire]
+    vehicule4-3:
+      champs: [BiensVehicules.3.VehiculeProprioLocataire==VehiculeLocataire]
+    vehicule5-3:
+      champs: [BiensVehicules.4.VehiculeProprioLocataire==VehiculeLocataire]
+    vehicule6-3:
+      champs: [BiensVehicules.5.VehiculeProprioLocataire==VehiculeLocataire]
+    vehicule3:
+      champs: [BiensVehicules.2.VehiculeValeurMarchande]
+      formule: '{BiensVehicules.2.VehiculeValeurMarchande:forcerNombre(entier)}'
+    vehicule4:
+      champs: [BiensVehicules.3.VehiculeValeurMarchande]
+      formule: '{BiensVehicules.3.VehiculeValeurMarchande:forcerNombre(entier)}'
+    vehicule5:
+      champs: [BiensVehicules.4.VehiculeValeurMarchande]
+      formule: '{BiensVehicules.4.VehiculeValeurMarchande:forcerNombre(entier)}'
+    vehicule6:
+      champs: [BiensVehicules.5.VehiculeValeurMarchande]
+      formule: '{BiensVehicules.5.VehiculeValeurMarchande:forcerNombre(entier)}'
+    vehiculeDecimals1:
+      champs: [BiensVehicules.0.VehiculeValeurMarchande]
+      formule: '{BiensVehicules.0.VehiculeValeurMarchande:forcerNombre(decimales)}'
+    vehiculeDecimals2:
+      champs: [BiensVehicules.1.VehiculeValeurMarchande]
+      formule: '{BiensVehicules.1.VehiculeValeurMarchande:forcerNombre(decimales)}'
+    vehiculeDecimals3:
+      champs: [BiensVehicules.2.VehiculeValeurMarchande]
+      formule: '{BiensVehicules.2.VehiculeValeurMarchande:forcerNombre(decimales)}'
+    vehiculeDecimals4:
+      champs: [BiensVehicules.3.VehiculeValeurMarchande]
+      formule: '{BiensVehicules.3.VehiculeValeurMarchande:forcerNombre(decimales)}'
+    vehiculeDecimals5:
+      champs: [BiensVehicules.4.VehiculeValeurMarchande]
+      formule: '{BiensVehicules.4.VehiculeValeurMarchande:forcerNombre(decimales)}'
+    vehiculeDecimals6:
+      champs: [BiensVehicules.5.VehiculeValeurMarchande]
+      formule: '{BiensVehicules.5.VehiculeValeurMarchande:forcerNombre(decimales)}'
+    Adulte1_immobilier3:
+      champs: [BiensImmobiliers.2.ProprioBienImmobilier==A1]
+    Adulte2_immobilier3:
+      champs: [BiensImmobiliers.2.ProprioBienImmobilier==A2]
+    Adultes_immobilier3:
+      champs: [BiensImmobiliers.2.ProprioBienImmobilier==A12]
+    immobilierDescription3:
+      champs: [BiensImmobiliers.2.BienImmobilierDescription]
+    immobilier3:
+      champs: [BiensImmobiliers.2.DetteEmpruntBienImmobilier]
+      formule: '{BiensImmobiliers.2.DetteEmpruntBienImmobilier:forcerNombre(entier)}'
+    immobilierValeur3:
+      champs: [BiensImmobiliers.2.ValeurBienImmobilier]
+      formule: '{BiensImmobiliers.2.ValeurBienImmobilier:forcerNombre(entier)}'
+    immobilierDecimals1:
+      champs: [BiensImmobiliers.0.DetteEmpruntBienImmobilier]
+      formule: '{BiensImmobiliers.0.DetteEmpruntBienImmobilier:forcerNombre(decimales)}'
+    immobilierDecimals2:
+      champs: [BiensImmobiliers.1.DetteEmpruntBienImmobilier]
+      formule: '{BiensImmobiliers.1.DetteEmpruntBienImmobilier:forcerNombre(decimales)}'
+    immobilierDecimals3:
+      champs: [BiensImmobiliers.2.DetteEmpruntBienImmobilier]
+      formule: '{BiensImmobiliers.2.DetteEmpruntBienImmobilier:forcerNombre(decimales)}'
+    immobilierValeurDecimals1:
+      champs: [BiensImmobiliers.0.ValeurBienImmobilier]
+      formule: '{BiensImmobiliers.0.ValeurBienImmobilier:forcerNombre(decimales)}'
+    immobilierValeurDecimals2:
+      champs: [BiensImmobiliers.1.ValeurBienImmobilier]
+      formule: '{BiensImmobiliers.1.ValeurBienImmobilier:forcerNombre(decimales)}'
+    immobilierValeurDecimals3:
+      champs: [BiensImmobiliers.2.ValeurBienImmobilier]
+      formule: '{BiensImmobiliers.2.ValeurBienImmobilier:forcerNombre(decimales)}'
+    Adulte1_mobilier3:
+      champs: [BiensMobiliers.2.BienMobilierProprio==A1]
+    Adulte2_mobilier3:
+      champs: [BiensMobiliers.2.BienMobilierProprio==A2]
+    Adultes_mobilier3:
+      champs: [BiensMobiliers.2.BienMobilierProprio==A12]
+    mobilierDescription3:
+      champs: [BiensMobiliers.2.BienMobilierDescription]
+    mobilier3:
+      champs: [BiensMobiliers.2.BienMobilierValeur]
+      formule: '{BiensMobiliers.2.BienMobilierValeur:forcerNombre(entier)}'
+    mobilierDecimals1:
+      champs: [BiensMobiliers.0.BienMobilierValeur]
+      formule: '{BiensMobiliers.0.BienMobilierValeur:forcerNombre(decimales)}'
+    mobilierDecimals2:
+      champs: [BiensMobiliers.1.BienMobilierValeur]
+      formule: '{BiensMobiliers.1.BienMobilierValeur:forcerNombre(decimales)}'
+    mobilierDecimals3:
+      champs: [BiensMobiliers.2.BienMobilierValeur]
+      formule: '{BiensMobiliers.2.BienMobilierValeur:forcerNombre(decimales)}'
+    Adulte1_entreprise3:
+      champs: [BiensEntreprise.2.BiensEntrepriseProprio==A1]
+    Adulte2_entreprise3:
+      champs: [BiensEntreprise.2.BiensEntrepriseProprio==A2]
+    Adultes_entreprise3:
+      champs: [BiensEntreprise.2.BiensEntrepriseProprio==A12]
+    entrepriseNumero3:
+      champs: [BiensEntreprise.2.BiensEntrepriseNEQ]
+    entreprise3-1:
+      champs: [BiensEntreprise.2.BiensEntrepriseStatut==individuelle]
+    entreprise3-2:
+      champs: [BiensEntreprise.2.BiensEntrepriseStatut==societe]
+    entreprise3-3:
+      champs: [BiensEntreprise.2.BiensEntrepriseStatut==compagnie]
+    entrepriseP3-2:
+      champs: [BiensEntreprise.2.BiensEntrepriseSocietePourcentage]
+    entrepriseP3-3:
+      champs: [BiensEntreprise.2.BiensEntrepriseCompagniePourcentage]
+    Adulte1_vendu3:
+      champs: [BiensCedes.2.BiensCedesProprio==A1]
+    Adulte2_vendu3:
+      champs: [BiensCedes.2.BiensCedesProprio==A2]
+    Adultes_vendu3:
+      champs: [BiensCedes.2.BiensCedesProprio==A12]
+    immobilierVendu3:
+      champs: [BiensCedes.2.BiensCedesDescription]
+    vendu_date3:
+      champs: [BiensCedes.2.BiensCedesDate]
+      formule: '{BiensCedes.2.BiensCedesDate:yyyyMMdd}'
+    vendu3:
+      champs: [BiensCedes.2.BiensCedesValeur]
+      formule: '{BiensCedes.2.BiensCedesValeur:forcerNombre(entier)}'
+    venduDecimals1:
+      champs: [BiensCedes.0.BiensCedesValeur]
+      formule: '{BiensCedes.0.BiensCedesValeur:forcerNombre(decimales)}'
+    venduDecimals2:
+      champs: [BiensCedes.1.BiensCedesValeur]
+      formule: '{BiensCedes.1.BiensCedesValeur:forcerNombre(decimales)}'
+    venduDecimals3:
+      champs: [BiensCedes.2.BiensCedesValeur]
+      formule: '{BiensCedes.2.BiensCedesValeur:forcerNombre(decimales)}'
+    Signature-02-A1:
+      champs:
+      - Signature
+      - SignatureRequerant
+    Signature-02-A2:
+      champs: [SignatureConjoint]
+    destinataireRaison:
+      champs: [DestinataireAutrePersonne]
+    reserveMinistere_date:
+      champs: [<NULL>]
+    Adulte1_Enseignement_Oui:
+      champs: [adulte1AuxEtudes==true]
+    Adulte1_Enseignement_Non:
+      champs: [adulte1AuxEtudes==false]
+    Adulte2_Enseignement_Oui:
+      champs: [adulte2AuxEtudes==true]
+    Adulte2_Enseignement_Non:
+      champs: [adulte2AuxEtudes==false]
+    Adulte1_NBCours:
+      champs: [adulte1NbrCoursSuivis]
+    Adulte2_NBCours:
+      champs: [adulte2NbrCoursSuivis]
+    Adulte1_NBHeures:
+      champs: [adulte1NbrHeuresSemaine]
+    Adulte2_NBHeures:
+      champs: [adulte2NbrHeuresSemaine]
+    Adulte1_NBUnites:
+      champs: [adulte1NbrCreditsUnites]
+    Adulte2_NBUnites:
+      champs: [adulte2NbrCreditsUnites]
+    Adulte1_NBPeriodes:
+      champs: [adulte1NbrPeriodesSemaine]
+    Adulte2_NBPeriodes:
+      champs: [adulte2NbrPeriodesSemaine]
+    Adulte1_Enseignement1:
+      champs: [adulte1NiveauEtudes==SecondaireGeneral]
+    Adulte1_Enseignement2:
+      champs: [adulte1NiveauEtudes==SecondairePro]
+    Adulte1_Enseignement3:
+      champs: [adulte1NiveauEtudes==Collegial]
+    Adulte1_Enseignement4:
+      champs: [adulte1NiveauEtudes==Universite1]
+    Adulte1_Enseignement5:
+      champs: [adulte1NiveauEtudes==Universite2]
+    Adulte1_Enseignement6:
+      champs: [adulte1NiveauEtudes==AutreNiveau]
+    Adulte1_Enseignement6_Autre:
+      champs: [adulte1NiveauEtudeAutrePrecision]
+    Adulte1_Enseignement_Domaine:
+      champs: [adulte1DomaineEtudes]
+    Adulte1_InscriptionScolaire_Oui:
+      champs: [adulte1Inscription==true]
+    Adulte1_InscriptionScolaire_Non:
+      champs: [adulte1Inscription==false]
+    Adulte1_date_InscriptionScolaire:
+      champs: [adulte1DateInscription]
+      formule: '{adulte1DateInscription:yyyyMMdd}'
+    Adulte1_InscriptionPrevue_Oui:
+      champs: [adulte1InscriptionPrevue==true]
+    Adulte1_InscriptionPrevue_Non:
+      champs: [adulte1InscriptionPrevue==false]
+    Adulte1_date_InscriptionPrevue:
+      champs: [adulte1DateInscriptionPrevue]
+      formule: '{adulte1DateInscriptionPrevue:yyyyMMdd}'
+    Adulte2_Enseignement1:
+      champs: [adulte2NiveauEtudes==SecondaireGeneral]
+    Adulte2_Enseignement2:
+      champs: [adulte2NiveauEtudes==SecondairePro]
+    Adulte2_Enseignement3:
+      champs: [adulte2NiveauEtudes==Collegial]
+    Adulte2_Enseignement4:
+      champs: [adulte2NiveauEtudes==Universite1]
+    Adulte2_Enseignement5:
+      champs: [adulte2NiveauEtudes==Universite2]
+    Adulte2_Enseignement6:
+      champs: [adulte2NiveauEtudes==AutreNiveau]
+    Adulte2_Enseignement6_Autre:
+      champs: [adulte2NiveauEtudeAutrePrecision]
+    Adulte2_Enseignement_Domaine:
+      champs: [adulte2DomaineEtudes]
+    Adulte2_InscriptionScolaire_Oui:
+      champs: [adulte2Inscription==true]
+    Adulte2_InscriptionScolaire_Non:
+      champs: [adulte2Inscription==false]
+    Adulte2_date_InscriptionScolaire:
+      champs: [adulte2DateInscription]
+      formule: '{adulte2DateInscription:yyyyMMdd}'
+    Adulte2_InscriptionPrevue_Oui:
+      champs: [adulte2InscriptionPrevue==true]
+    Adulte2_InscriptionPrevue_Non:
+      champs: [adulte2InscriptionPrevue==false]
+    Adulte2_date_InscriptionPrevue:
+      champs: [adulte2DateInscriptionPrevue]
+      formule: '{adulte2DateInscriptionPrevue:yyyyMMdd}'
+    A1reserveMinistere_verif:
+      champs: [<NULL>]
+    A2reserveMinistere_verif:
+      champs: [<NULL>]
+    A1reserveMinistere_permis:
+      champs: [<NULL>]
+    A1reserveMinistere_NAM:
+      champs: [<NULL>]
+    A1reserveMinistere_passeport:
+      champs: [<NULL>]
+    A1reserveMinistere_doc:
+      champs: [<NULL>]
+    A1reserveMinistere_doc2:
+      champs: [<NULL>]
+    A1reserveMinistere_autre:
+      champs: [<NULL>]
+    A1reserveMinistere_autre2:
+      champs: [<NULL>]
+    A2reserveMinistere_permis:
+      champs: [<NULL>]
+    A2reserveMinistere_NAM:
+      champs: [<NULL>]
+    A2reserveMinistere_passeport:
+      champs: [<NULL>]
+    A2reserveMinistere_doc:
+      champs: [<NULL>]
+    A2reserveMinistere_doc2:
+      champs: [<NULL>]
+    A2reserveMinistere_autre:
+      champs: [<NULL>]
+  03_e1:
+    E1_Nom:
+      champs: [Enfants.0.Nom]
+    adulte1_nom:
+      champs: [adulte1NomFamille]
+    adulte1_prenom:
+      champs: [adulte1Prenom]
+    A1_CP12:
+      champs: [adulte1Cp12]
+    adulte2_nom:
+      champs: [adulte2NomFamille]
+    adulte2_prenom:
+      champs: [adulte2Prenom]
+    A2_CP12:
+      champs: [adulte2Cp12]
+    E1_CP12:
+      champs: [Enfants.0.Cp12]
+    E1_Prenom:
+      champs: [Enfants.0.Prenom]
+    E1_Date_Naissance:
+      champs: [Enfants.0.DateDeNaissance]
+      formule: '{Enfants.0.DateDeNaissance:yyyyMMdd}'
+    E1_NAM:
+      champs: [Enfants.0.Nam]
+    E1_Sexe1:
+      champs: [Enfants.0.Sexe==F]
+    E1_Sexe2:
+      champs: [Enfants.0.Sexe==M]
+    E1_Etude_Oui:
+      champs: [Enfants.0.AuxEtudes==true]
+    E1_Etude_Non:
+      champs: [Enfants.0.AuxEtudes==false]
+    E1_Etude1:
+      champs: [Enfants.0.NiveauEtudes==Prematernelle]
+    E1_Etude2:
+      champs: [Enfants.0.NiveauEtudes==Maternelle]
+    E1_Etude3:
+      champs: [Enfants.0.NiveauEtudes==Primaire]
+    E1_Etude4:
+      champs: [Enfants.0.NiveauEtudes==SecondaireGen]
+    E1_Etude5:
+      champs: [Enfants.0.NiveauEtudes==SecondaireProf]
+    E1_Etude6:
+      champs: [Enfants.0.NiveauEtudes==Collegial]
+    E1_Etude7:
+      champs: [Enfants.0.NiveauEtudes==Universitaire]
+    E1_Etude8:
+      champs: [Enfants.0.NiveauEtudes==Autre]
+    E1_AutreEtude:
+      champs: [Enfants.0.PrecisionAutre]
+    E1_HandicapeOui:
+      champs: [Enfants.0.Handicape==true]
+    E1_HandicapeNon:
+      champs: [Enfants.0.Handicape==false]
+    E1_NomPere:
+      champs: [Enfants.0.NomParent1]
+    E1_PrenomPere:
+      champs: [Enfants.0.PrenomParent1]
+    E1_P1_Pere:
+      champs: [Enfants.0.QualiteParent==pere]
+    E1_P1_Mere:
+      champs: [Enfants.0.QualiteParent==mere]
+    E1_P1_PaysResidence:
+      champs: [Enfants.0.PaysResidenceParent]
+    E1_NomMere:
+      champs: [Enfants.0.NomParent2]
+    E1_PrenomMere:
+      champs: [Enfants.0.PrenomParent2]
+    E1_P2_Pere:
+      champs: [Enfants.0.QualiteParent2==pere]
+    E1_P2_Mere:
+      champs: [Enfants.0.QualiteParent2==mere]
+    E1_P2_PaysResidence:
+      champs: [Enfants.0.PaysResidenceParent2]
+    E1_GardePartageeOui:
+      champs: [Enfants.0.PartageLaGarde==true]
+    E1_GardePartageeNon:
+      champs: [Enfants.0.PartageLaGarde==false]
+    E1_NBJoursGardecor:
+      champs: [Enfants.0.NombreJours]
+    E1_Garde1:
+      champs: [Enfants.0.Frequence==hebdo]
+    E1_Garde2:
+      champs: [Enfants.0.Frequence==mensuel]
+    E1_Garde3:
+      champs: [Enfants.0.Frequence==annuel]
+    E1_Garde4:
+      champs: [Enfants.0.DocumentGarde==Jugement]
+    E1_Garde5:
+      champs: [Enfants.0.DocumentGarde==Amiable]
+    E1_Garde6:
+      champs: [Enfants.0.DocumentGarde==Mediation]
+    E1_Garde7:
+      champs: [Enfants.0.DocumentGarde==Autre]
+    E1_DocumentGarde:
+      champs: [Enfants.0.PrecisionDocumentGarde]
+    E2_CP12:
+      champs: [Enfants.1.Cp12]
+    E2_Nom:
+      champs: [Enfants.1.Nom]
+    E2_Prenom:
+      champs: [Enfants.1.Prenom]
+    E2_Date_Naissance:
+      champs: [Enfants.1.DateDeNaissance]
+      formule: '{Enfants.1.DateDeNaissance:yyyyMMdd}'
+    E2_NAM:
+      champs: [Enfants.1.Nam]
+    E2_Sexe1:
+      champs: [Enfants.1.Sexe==F]
+    E2_Sexe2:
+      champs: [Enfants.1.Sexe==M]
+    E2_Etude_Oui:
+      champs: [Enfants.1.AuxEtudes==true]
+    E2_Etude_Non:
+      champs: [Enfants.1.AuxEtudes==false]
+    E2_Etude1:
+      champs: [Enfants.1.NiveauEtudes==Prematernelle]
+    E2_Etude2:
+      champs: [Enfants.1.NiveauEtudes==Maternelle]
+    E2_Etude3:
+      champs: [Enfants.1.NiveauEtudes==Primaire]
+    E2_Etude4:
+      champs: [Enfants.1.NiveauEtudes==SecondaireGen]
+    E2_Etude5:
+      champs: [Enfants.1.NiveauEtudes==SecondaireProf]
+    E2_Etude6:
+      champs: [Enfants.1.NiveauEtudes==Collegial]
+    E2_Etude7:
+      champs: [Enfants.1.NiveauEtudes==Universitaire]
+    E2_Etude8:
+      champs: [Enfants.1.NiveauEtudes==Autre]
+    E2_AutreEtude:
+      champs: [Enfants.1.PrecisionAutre]
+    E2_HandicapeOui:
+      champs: [Enfants.1.Handicape==true]
+    E2_HandicapeNon:
+      champs: [Enfants.1.Handicape==false]
+    E2_NomPere:
+      champs: [Enfants.1.NomParent1]
+    E2_PrenomPere:
+      champs: [Enfants.1.PrenomParent1]
+    E2_P1_Pere:
+      champs: [Enfants.1.QualiteParent==pere]
+    E2_P1_Mere:
+      champs: [Enfants.1.QualiteParent==mere]
+    E2_P1_PaysResidence:
+      champs: [Enfants.1.PaysResidenceParent]
+    E2_NomMere:
+      champs: [Enfants.1.NomParent2]
+    E2_PrenomMere:
+      champs: [Enfants.1.PrenomParent2]
+    E2_P2_Pere:
+      champs: [Enfants.1.QualiteParent2==pere]
+    E2_P2_Mere:
+      champs: [Enfants.1.QualiteParent2==mere]
+    E2_P2_PaysResidence:
+      champs: [Enfants.1.PaysResidenceParent2]
+    E2_GardePartageeOui:
+      champs: [Enfants.1.PartageLaGarde==true]
+    E2_GardePartageeNon:
+      champs: [Enfants.1.PartageLaGarde==false]
+    E2_NBJoursGardecor:
+      champs: [Enfants.1.NombreJours]
+    E2_Garde1:
+      champs: [Enfants.1.Frequence==hebdo]
+    E2_Garde2:
+      champs: [Enfants.1.Frequence==mensuel]
+    E2_Garde3:
+      champs: [Enfants.1.Frequence==annuel]
+    E2_Garde4:
+      champs: [Enfants.1.DocumentGarde==Jugement]
+    E2_Garde5:
+      champs: [Enfants.1.DocumentGarde==Amiable]
+    E2_Garde6:
+      champs: [Enfants.1.DocumentGarde==Mediation]
+    E2_Garde7:
+      champs: [Enfants.1.DocumentGarde==Autre]
+    E2_DocumentGarde:
+      champs: [Enfants.1.PrecisionDocumentGarde]
+    E3_CP12:
+      champs: [Enfants.2.Cp12]
+    E3_Nom:
+      champs: [Enfants.2.Nom]
+    E3_Prenom:
+      champs: [Enfants.2.Prenom]
+    E3_Date_Naissance:
+      champs: [Enfants.2.DateDeNaissance]
+      formule: '{Enfants.2.DateDeNaissance:yyyyMMdd}'
+    E3_NAM:
+      champs: [Enfants.2.Nam]
+    E3_Sexe1:
+      champs: [Enfants.2.Sexe==F]
+    E3_Sexe2:
+      champs: [Enfants.2.Sexe==M]
+    E3_Etude_Oui:
+      champs: [Enfants.2.AuxEtudes==true]
+    E3_Etude_Non:
+      champs: [Enfants.2.AuxEtudes==false]
+    E3_Etude1:
+      champs: [Enfants.2.NiveauEtudes==Prematernelle]
+    E3_Etude2:
+      champs: [Enfants.2.NiveauEtudes==Maternelle]
+    E3_Etude3:
+      champs: [Enfants.2.NiveauEtudes==Primaire]
+    E3_Etude4:
+      champs: [Enfants.2.NiveauEtudes==SecondaireGen]
+    E3_Etude5:
+      champs: [Enfants.2.NiveauEtudes==SecondaireProf]
+    E3_Etude6:
+      champs: [Enfants.2.NiveauEtudes==Collegial]
+    E3_Etude7:
+      champs: [Enfants.2.NiveauEtudes==Universitaire]
+    E3_Etude8:
+      champs: [Enfants.2.NiveauEtudes==Autre]
+    E3_AutreEtude:
+      champs: [Enfants.2.PrecisionAutre]
+    E3_HandicapeOui:
+      champs: [Enfants.2.Handicape==true]
+    E3_HandicapeNon:
+      champs: [Enfants.2.Handicape==false]
+    E3_NomPere:
+      champs: [Enfants.2.NomParent1]
+    E3_PrenomPere:
+      champs: [Enfants.2.PrenomParent1]
+    E3_P1_Pere:
+      champs: [Enfants.2.QualiteParent==pere]
+    E3_P1_Mere:
+      champs: [Enfants.2.QualiteParent==mere]
+    E3_P1_PaysResidence:
+      champs: [Enfants.2.PaysResidenceParent]
+    E3_NomMere:
+      champs: [Enfants.2.NomParent2]
+    E3_PrenomMere:
+      champs: [Enfants.2.PrenomParent2]
+    E3_P2_Pere:
+      champs: [Enfants.2.QualiteParent2==pere]
+    E3_P2_Mere:
+      champs: [Enfants.2.QualiteParent2==mere]
+    E3_P2_PaysResidence:
+      champs: [Enfants.2.PaysResidenceParent2]
+    E3_GardePartageeOui:
+      champs: [Enfants.2.PartageLaGarde==true]
+    E3_GardePartageeNon:
+      champs: [Enfants.2.PartageLaGarde==false]
+    E3_NBJoursGardecor:
+      champs: [Enfants.2.NombreJours]
+    E3_Garde1:
+      champs: [Enfants.2.Frequence==hebdo]
+    E3_Garde2:
+      champs: [Enfants.2.Frequence==mensuel]
+    E3_Garde3:
+      champs: [Enfants.2.Frequence==annuel]
+    E3_Garde4:
+      champs: [Enfants.2.DocumentGarde==Jugement]
+    E3_Garde5:
+      champs: [Enfants.2.DocumentGarde==Amiable]
+    E3_Garde6:
+      champs: [Enfants.2.DocumentGarde==Mediation]
+    E3_Garde7:
+      champs: [Enfants.2.DocumentGarde==Autre]
+    E3_DocumentGarde:
+      champs: [Enfants.2.PrecisionDocumentGarde]
+    E_revenusOui:
+      champs: [EnfantsPossedentRevenus==true]
+    E_revenusNon:
+      champs: [EnfantsPossedentRevenus==false]
+    E1_revenusPrenom:
+      champs: [DetailRevenuEnfant.0.PrenomEnfant]
+    E1_revenusSource:
+      champs: [DetailRevenuEnfant.0.SourceRevenu]
+    E2_revenuPrenom:
+      champs: [DetailRevenuEnfant.1.PrenomEnfant]
+    E2_revenuSource:
+      champs: [DetailRevenuEnfant.1.SourceRevenu]
+    revenus1:
+      champs: [DetailRevenuEnfant.0.MontantRevenu]
+      formule: '{DetailRevenuEnfant.0.MontantRevenu:forcerNombre(entier)}'
+    revenus2:
+      champs: [DetailRevenuEnfant.1.MontantRevenu]
+      formule: '{DetailRevenuEnfant.1.MontantRevenu:forcerNombre(entier)}'
+    Etemps1-1:
+      champs: [DetailRevenuEnfant.0.FrequenceRevenu==hebdo]
+    Etemps2-1:
+      champs: [DetailRevenuEnfant.1.FrequenceRevenu==hebdo]
+    Etemps1-2:
+      champs: [DetailRevenuEnfant.0.FrequenceRevenu==bihebdo]
+    Etemps2-2:
+      champs: [DetailRevenuEnfant.1.FrequenceRevenu==bihebdo]
+    Etemps1-3:
+      champs: [DetailRevenuEnfant.0.FrequenceRevenu==mensuel]
+    Etemps2-3:
+      champs: [DetailRevenuEnfant.1.FrequenceRevenu==mensuel]
+    E_biensOui:
+      champs: [EnfantsPossedentBiens==true]
+    E_biensNon:
+      champs: [EnfantsPossedentBiens==false]
+    E1_biensPrenom:
+      champs: [DetailBienEnfant.0.PrenomEnfant]
+    E2_biensPrenom:
+      champs: [DetailBienEnfant.1.PrenomEnfant]
+    E1_biensPSource:
+      champs: [DetailBienEnfant.0.DescriptionBien]
+    E2_biensPSource:
+      champs: [DetailBienEnfant.1.DescriptionBien]
+    biens1:
+      champs: [DetailBienEnfant.0.ValeurBien]
+      formule: '{DetailBienEnfant.0.ValeurBien:forcerNombre(entier)}'
+    biens2:
+      champs: [DetailBienEnfant.1.ValeurBien]
+      formule: '{DetailBienEnfant.1.ValeurBien:forcerNombre(entier)}'
+    Adulte1_date:
+      champs: [DateSignature]
+      formule: '{DateSignature:yyyy-MM-dd}'
+    Adulte2_date:
+      champs: [DateSignatureConjoint]
+      formule: '{DateSignatureConjoint:yyyy-MM-dd}'
+    E_memeAdresseOui:
+      champs: [EnfantsHabitentMemeAdresse==true]
+    E_memeAdresseNon:
+      champs: [EnfantsHabitentMemeAdresse==false]
+    colocation:
+      champs: [PrecisionRaison]
+    revenusDecimals1:
+      champs: [DetailRevenuEnfant.0.MontantRevenu]
+      formule: '{DetailRevenuEnfant.0.MontantRevenu:forcerNombre(decimales)}'
+    revenusDecimals2:
+      champs: [DetailRevenuEnfant.1.MontantRevenu]
+      formule: '{DetailRevenuEnfant.1.MontantRevenu:forcerNombre(decimales)}'
+    biensDecimals1:
+      champs: [DetailBienEnfant.0.ValeurBien]
+      formule: '{DetailBienEnfant.0.ValeurBien:forcerNombre(decimales)}'
+    biensDecimals2:
+      champs: [DetailBienEnfant.1.ValeurBien]
+      formule: '{DetailBienEnfant.1.ValeurBien:forcerNombre(decimales)}'
+    E3_biensPrenom:
+      champs: [DetailBienEnfant.2.PrenomEnfant]
+    E3_biensPSource:
+      champs: [DetailBienEnfant.2.DescriptionBien]
+    biens3:
+      champs: [DetailBienEnfant.2.ValeurBien]
+      formule: '{DetailBienEnfant.2.ValeurBien:forcerNombre(entier)}'
+    biensDecimals3:
+      champs: [DetailBienEnfant.2.ValeurBien]
+      formule: '{DetailBienEnfant.2.ValeurBien:forcerNombre(decimales)}'
+    Signature-03-A1:
+      champs:
+      - Signature
+      - SignatureRequerant
+    Signature-03-A2:
+      champs: [SignatureConjoint]
+  03_e2:
+    adulte1_nom:
+      champs: [adulte1NomFamille]
+    adulte1_prenom:
+      champs: [adulte1Prenom]
+    A1_CP12:
+      champs: [adulte1Cp12]
+    adulte2_nom:
+      champs: [adulte2NomFamille]
+    adulte2_prenom:
+      champs: [adulte2Prenom]
+    A2_CP12:
+      champs: [adulte2Cp12]
+    E1_CP12:
+      champs: [Enfants.3.Cp12]
+    E1_Nom:
+      champs: [Enfants.3.Nom]
+    E1_Prenom:
+      champs: [Enfants.3.Prenom]
+    E1_Date_Naissance:
+      champs: [Enfants.3.DateDeNaissance]
+      formule: '{Enfants.3.DateDeNaissance:yyyyMMdd}'
+    E1_NAM:
+      champs: [Enfants.3.Nam]
+    E1_Sexe1:
+      champs: [Enfants.3.Sexe==F]
+    E1_Sexe2:
+      champs: [Enfants.3.Sexe==M]
+    E1_Etude_Oui:
+      champs: [Enfants.3.AuxEtudes==true]
+    E1_Etude_Non:
+      champs: [Enfants.3.AuxEtudes==false]
+    E1_Etude1:
+      champs: [Enfants.3.NiveauEtudes==Prematernelle]
+    E1_Etude2:
+      champs: [Enfants.3.NiveauEtudes==Maternelle]
+    E1_Etude3:
+      champs: [Enfants.3.NiveauEtudes==Primaire]
+    E1_Etude4:
+      champs: [Enfants.3.NiveauEtudes==SecondaireGen]
+    E1_Etude5:
+      champs: [Enfants.3.NiveauEtudes==SecondaireProf]
+    E1_Etude6:
+      champs: [Enfants.3.NiveauEtudes==Collegial]
+    E1_Etude7:
+      champs: [Enfants.3.NiveauEtudes==Universitaire]
+    E1_Etude8:
+      champs: [Enfants.3.NiveauEtudes==Autre]
+    E1_AutreEtude:
+      champs: [Enfants.3.PrecisionAutre]
+    E1_HandicapeOui:
+      champs: [Enfants.3.Handicape==true]
+    E1_HandicapeNon:
+      champs: [Enfants.3.Handicape==false]
+    E1_NomPere:
+      champs: [Enfants.3.NomParent1]
+    E1_PrenomPere:
+      champs: [Enfants.3.PrenomParent1]
+    E1_P1_Pere:
+      champs: [Enfants.3.QualiteParent==pere]
+    E1_P1_Mere:
+      champs: [Enfants.3.QualiteParent==mere]
+    E1_P1_PaysResidence:
+      champs: [Enfants.3.PaysResidenceParent]
+    E1_NomMere:
+      champs: [Enfants.3.NomParent2]
+    E1_PrenomMere:
+      champs: [Enfants.3.PrenomParent2]
+    E1_P2_Pere:
+      champs: [Enfants.3.QualiteParent2==pere]
+    E1_P2_Mere:
+      champs: [Enfants.3.QualiteParent2==mere]
+    E1_P2_PaysResidence:
+      champs: [Enfants.3.PaysResidenceParent2]
+    E1_GardePartageeOui:
+      champs: [Enfants.3.PartageLaGarde==true]
+    E1_GardePartageeNon:
+      champs: [Enfants.3.PartageLaGarde==false]
+    E1_NBJoursGardecor:
+      champs: [Enfants.3.NombreJours]
+    E1_Garde1:
+      champs: [Enfants.3.Frequence==hebdo]
+    E1_Garde2:
+      champs: [Enfants.3.Frequence==mensuel]
+    E1_Garde3:
+      champs: [Enfants.3.Frequence==annuel]
+    E1_Garde4:
+      champs: [Enfants.3.DocumentGarde==Jugement]
+    E1_Garde5:
+      champs: [Enfants.3.DocumentGarde==Amiable]
+    E1_Garde6:
+      champs: [Enfants.3.DocumentGarde==Mediation]
+    E1_Garde7:
+      champs: [Enfants.3.DocumentGarde==Autre]
+    E1_DocumentGarde:
+      champs: [Enfants.3.PrecisionDocumentGarde]
+    E2_CP12:
+      champs: [Enfants.4.Cp12]
+    E2_Nom:
+      champs: [Enfants.4.Nom]
+    E2_Prenom:
+      champs: [Enfants.4.Prenom]
+    E2_Date_Naissance:
+      champs: [Enfants.4.DateDeNaissance]
+      formule: '{Enfants.4.DateDeNaissance:yyyyMMdd}'
+    E2_NAM:
+      champs: [Enfants.4.Nam]
+    E2_Sexe1:
+      champs: [Enfants.4.Sexe==F]
+    E2_Sexe2:
+      champs: [Enfants.4.Sexe==M]
+    E2_Etude_Oui:
+      champs: [Enfants.4.AuxEtudes==true]
+    E2_Etude_Non:
+      champs: [Enfants.4.AuxEtudes==false]
+    E2_Etude1:
+      champs: [Enfants.4.NiveauEtudes==Prematernelle]
+    E2_Etude2:
+      champs: [Enfants.4.NiveauEtudes==Maternelle]
+    E2_Etude3:
+      champs: [Enfants.4.NiveauEtudes==Primaire]
+    E2_Etude4:
+      champs: [Enfants.4.NiveauEtudes==SecondaireGen]
+    E2_Etude5:
+      champs: [Enfants.4.NiveauEtudes==SecondaireProf]
+    E2_Etude6:
+      champs: [Enfants.4.NiveauEtudes==Collegial]
+    E2_Etude7:
+      champs: [Enfants.4.NiveauEtudes==Universitaire]
+    E2_Etude8:
+      champs: [Enfants.4.NiveauEtudes==Autre]
+    E2_AutreEtude:
+      champs: [Enfants.4.PrecisionAutre]
+    E2_HandicapeOui:
+      champs: [Enfants.4.Handicape==true]
+    E2_HandicapeNon:
+      champs: [Enfants.4.Handicape==false]
+    E2_NomPere:
+      champs: [Enfants.4.NomParent1]
+    E2_PrenomPere:
+      champs: [Enfants.4.PrenomParent1]
+    E2_P1_Pere:
+      champs: [Enfants.4.QualiteParent==pere]
+    E2_P1_Mere:
+      champs: [Enfants.4.QualiteParent==mere]
+    E2_P1_PaysResidence:
+      champs: [Enfants.4.PaysResidenceParent]
+    E2_NomMere:
+      champs: [Enfants.4.NomParent2]
+    E2_PrenomMere:
+      champs: [Enfants.4.PrenomParent2]
+    E2_P2_Pere:
+      champs: [Enfants.4.QualiteParent2==pere]
+    E2_P2_Mere:
+      champs: [Enfants.4.QualiteParent2==mere]
+    E2_P2_PaysResidence:
+      champs: [Enfants.4.PaysResidenceParent2]
+    E2_GardePartageeOui:
+      champs: [Enfants.4.PartageLaGarde==true]
+    E2_GardePartageeNon:
+      champs: [Enfants.4.PartageLaGarde==false]
+    E2_NBJoursGardecor:
+      champs: [Enfants.4.NombreJours]
+    E2_Garde1:
+      champs: [Enfants.4.Frequence==hebdo]
+    E2_Garde2:
+      champs: [Enfants.4.Frequence==mensuel]
+    E2_Garde3:
+      champs: [Enfants.4.Frequence==annuel]
+    E2_Garde4:
+      champs: [Enfants.4.DocumentGarde==Jugement]
+    E2_Garde5:
+      champs: [Enfants.4.DocumentGarde==Amiable]
+    E2_Garde6:
+      champs: [Enfants.4.DocumentGarde==Mediation]
+    E2_Garde7:
+      champs: [Enfants.4.DocumentGarde==Autre]
+    E2_DocumentGarde:
+      champs: [Enfants.4.PrecisionDocumentGarde]
+    E3_CP12:
+      champs: [Enfants.5.Cp12]
+    E3_Nom:
+      champs: [Enfants.5.Nom]
+    E3_Prenom:
+      champs: [Enfants.5.Prenom]
+    E3_Date_Naissance:
+      champs: [Enfants.5.DateDeNaissance]
+      formule: '{Enfants.5.DateDeNaissance:yyyyMMdd}'
+    E3_NAM:
+      champs: [Enfants.5.Nam]
+    E3_Sexe1:
+      champs: [Enfants.5.Sexe==F]
+    E3_Sexe2:
+      champs: [Enfants.5.Sexe==M]
+    E3_Etude_Oui:
+      champs: [Enfants.5.AuxEtudes==true]
+    E3_Etude_Non:
+      champs: [Enfants.5.AuxEtudes==false]
+    E3_Etude1:
+      champs: [Enfants.5.NiveauEtudes==Prematernelle]
+    E3_Etude2:
+      champs: [Enfants.5.NiveauEtudes==Maternelle]
+    E3_Etude3:
+      champs: [Enfants.5.NiveauEtudes==Primaire]
+    E3_Etude4:
+      champs: [Enfants.5.NiveauEtudes==SecondaireGen]
+    E3_Etude5:
+      champs: [Enfants.5.NiveauEtudes==SecondaireProf]
+    E3_Etude6:
+      champs: [Enfants.5.NiveauEtudes==Collegial]
+    E3_Etude7:
+      champs: [Enfants.5.NiveauEtudes==Universitaire]
+    E3_Etude8:
+      champs: [Enfants.5.NiveauEtudes==Autre]
+    E3_AutreEtude:
+      champs: [Enfants.5.PrecisionAutre]
+    E3_HandicapeOui:
+      champs: [Enfants.5.Handicape==true]
+    E3_HandicapeNon:
+      champs: [Enfants.5.Handicape==false]
+    E3_NomPere:
+      champs: [Enfants.5.NomParent1]
+    E3_PrenomPere:
+      champs: [Enfants.5.PrenomParent1]
+    E3_P1_Pere:
+      champs: [Enfants.5.QualiteParent==pere]
+    E3_P1_Mere:
+      champs: [Enfants.5.QualiteParent==mere]
+    E3_P1_PaysResidence:
+      champs: [Enfants.5.PaysResidenceParent]
+    E3_NomMere:
+      champs: [Enfants.5.NomParent2]
+    E3_PrenomMere:
+      champs: [Enfants.5.PrenomParent2]
+    E3_P2_Pere:
+      champs: [Enfants.5.QualiteParent2==pere]
+    E3_P2_Mere:
+      champs: [Enfants.5.QualiteParent2==mere]
+    E3_P2_PaysResidence:
+      champs: [Enfants.5.PaysResidenceParent2]
+    E3_GardePartageeOui:
+      champs: [Enfants.5.PartageLaGarde==true]
+    E3_GardePartageeNon:
+      champs: [Enfants.5.PartageLaGarde==false]
+    E3_NBJoursGardecor:
+      champs: [Enfants.5.NombreJours]
+    E3_Garde1:
+      champs: [Enfants.5.Frequence==hebdo]
+    E3_Garde2:
+      champs: [Enfants.5.Frequence==mensuel]
+    E3_Garde3:
+      champs: [Enfants.5.Frequence==annuel]
+    E3_Garde4:
+      champs: [Enfants.5.DocumentGarde==Jugement]
+    E3_Garde5:
+      champs: [Enfants.5.DocumentGarde==Amiable]
+    E3_Garde6:
+      champs: [Enfants.5.DocumentGarde==Mediation]
+    E3_Garde7:
+      champs: [Enfants.5.DocumentGarde==Autre]
+    E3_DocumentGarde:
+      champs: [Enfants.5.PrecisionDocumentGarde]
+    E_revenusOui:
+      champs: [EnfantsPossedentRevenus==true]
+    E_revenusNon:
+      champs: [EnfantsPossedentRevenus==false]
+    E1_revenusPrenom:
+      champs: [DetailRevenuEnfant.0.PrenomEnfant]
+    E1_revenusSource:
+      champs: [DetailRevenuEnfant.0.SourceRevenu]
+    E2_revenuPrenom:
+      champs: [DetailRevenuEnfant.1.PrenomEnfant]
+    E2_revenuSource:
+      champs: [DetailRevenuEnfant.1.SourceRevenu]
+    revenus1:
+      champs: [DetailRevenuEnfant.0.MontantRevenu]
+      formule: '{DetailRevenuEnfant.0.MontantRevenu:forcerNombre(entier)}'
+    revenus2:
+      champs: [DetailRevenuEnfant.1.MontantRevenu]
+      formule: '{DetailRevenuEnfant.1.MontantRevenu:forcerNombre(entier)}'
+    Etemps1-1:
+      champs: [DetailRevenuEnfant.0.FrequenceRevenu==hebdo]
+    Etemps2-1:
+      champs: [DetailRevenuEnfant.1.FrequenceRevenu==hebdo]
+    Etemps1-2:
+      champs: [DetailRevenuEnfant.0.FrequenceRevenu==bihebdo]
+    Etemps2-2:
+      champs: [DetailRevenuEnfant.1.FrequenceRevenu==bihebdo]
+    Etemps1-3:
+      champs: [DetailRevenuEnfant.0.FrequenceRevenu==mensuel]
+    Etemps2-3:
+      champs: [DetailRevenuEnfant.1.FrequenceRevenu==mensuel]
+    E_biensOui:
+      champs: [EnfantsPossedentBiens==true]
+    E_biensNon:
+      champs: [EnfantsPossedentBiens==false]
+    E1_biensPrenom:
+      champs: [DetailBienEnfant.0.PrenomEnfant]
+    E2_biensPrenom:
+      champs: [DetailBienEnfant.1.PrenomEnfant]
+    E1_biensPSource:
+      champs: [DetailBienEnfant.0.DescriptionBien]
+    E2_biensPSource:
+      champs: [DetailBienEnfant.1.DescriptionBien]
+    biens1:
+      champs: [DetailBienEnfant.0.ValeurBien]
+      formule: '{DetailBienEnfant.0.ValeurBien:forcerNombre(entier)}'
+    biens2:
+      champs: [DetailBienEnfant.1.ValeurBien]
+      formule: '{DetailBienEnfant.1.ValeurBien:forcerNombre(entier)}'
+    Adulte1_date:
+      champs: [DateSignature]
+      formule: '{DateSignature:yyyy-MM-dd}'
+    Adulte2_date:
+      champs: [DateSignatureConjoint]
+      formule: '{DateSignatureConjoint:yyyy-MM-dd}'
+    E_memeAdresseOui:
+      champs: [EnfantsHabitentMemeAdresse==true]
+    E_memeAdresseNon:
+      champs: [EnfantsHabitentMemeAdresse==false]
+    colocation:
+      champs: [PrecisionRaison]
+    revenusDecimals1:
+      champs: [DetailRevenuEnfant.0.MontantRevenu]
+      formule: '{DetailRevenuEnfant.0.MontantRevenu:forcerNombre(decimales)}'
+    revenusDecimals2:
+      champs: [DetailRevenuEnfant.1.MontantRevenu]
+      formule: '{DetailRevenuEnfant.1.MontantRevenu:forcerNombre(decimales)}'
+    biensDecimals1:
+      champs: [DetailBienEnfant.0.ValeurBien]
+      formule: '{DetailBienEnfant.0.ValeurBien:forcerNombre(decimales)}'
+    biensDecimals2:
+      champs: [DetailBienEnfant.1.ValeurBien]
+      formule: '{DetailBienEnfant.1.ValeurBien:forcerNombre(decimales)}'
+    E3_biensPrenom:
+      champs: [DetailBienEnfant.2.PrenomEnfant]
+    E3_biensPSource:
+      champs: [DetailBienEnfant.2.DescriptionBien]
+    biens3:
+      champs: [DetailBienEnfant.2.ValeurBien]
+      formule: '{DetailBienEnfant.2.ValeurBien:forcerNombre(entier)}'
+    biensDecimals3:
+      champs: [DetailBienEnfant.2.ValeurBien]
+      formule: '{DetailBienEnfant.2.ValeurBien:forcerNombre(decimales)}'
+    Signature-03-A1:
+      champs:
+      - Signature
+      - SignatureRequerant
+    Signature-03-A2:
+      champs: [SignatureConjoint]
+  03_e3:
+    adulte1_nom:
+      champs: [adulte1NomFamille]
+    adulte1_prenom:
+      champs: [adulte1Prenom]
+    A1_CP12:
+      champs: [adulte1Cp12]
+    adulte2_nom:
+      champs: [adulte2NomFamille]
+    adulte2_prenom:
+      champs: [adulte2Prenom]
+    A2_CP12:
+      champs: [adulte2Cp12]
+    E1_CP12:
+      champs: [Enfants.6.Cp12]
+    E1_Nom:
+      champs: [Enfants.6.Nom]
+    E1_Prenom:
+      champs: [Enfants.6.Prenom]
+    E1_Date_Naissance:
+      champs: [Enfants.6.DateDeNaissance]
+      formule: '{Enfants.6.DateDeNaissance:yyyyMMdd}'
+    E1_NAM:
+      champs: [Enfants.6.Nam]
+    E1_Sexe1:
+      champs: [Enfants.6.Sexe==F]
+    E1_Sexe2:
+      champs: [Enfants.6.Sexe==M]
+    E1_Etude_Oui:
+      champs: [Enfants.6.AuxEtudes==true]
+    E1_Etude_Non:
+      champs: [Enfants.6.AuxEtudes==false]
+    E1_Etude1:
+      champs: [Enfants.6.NiveauEtudes==Prematernelle]
+    E1_Etude2:
+      champs: [Enfants.6.NiveauEtudes==Maternelle]
+    E1_Etude3:
+      champs: [Enfants.6.NiveauEtudes==Primaire]
+    E1_Etude4:
+      champs: [Enfants.6.NiveauEtudes==SecondaireGen]
+    E1_Etude5:
+      champs: [Enfants.6.NiveauEtudes==SecondaireProf]
+    E1_Etude6:
+      champs: [Enfants.6.NiveauEtudes==Collegial]
+    E1_Etude7:
+      champs: [Enfants.6.NiveauEtudes==Universitaire]
+    E1_Etude8:
+      champs: [Enfants.6.NiveauEtudes==Autre]
+    E1_AutreEtude:
+      champs: [Enfants.6.PrecisionAutre]
+    E1_HandicapeOui:
+      champs: [Enfants.6.Handicape==true]
+    E1_HandicapeNon:
+      champs: [Enfants.6.Handicape==false]
+    E1_NomPere:
+      champs: [Enfants.6.NomParent1]
+    E1_PrenomPere:
+      champs: [Enfants.6.PrenomParent1]
+    E1_P1_Pere:
+      champs: [Enfants.6.QualiteParent==pere]
+    E1_P1_Mere:
+      champs: [Enfants.6.QualiteParent==mere]
+    E1_P1_PaysResidence:
+      champs: [Enfants.6.PaysResidenceParent]
+    E1_NomMere:
+      champs: [Enfants.6.NomParent2]
+    E1_PrenomMere:
+      champs: [Enfants.6.PrenomParent2]
+    E1_P2_Pere:
+      champs: [Enfants.6.QualiteParent2==pere]
+    E1_P2_Mere:
+      champs: [Enfants.6.QualiteParent2==mere]
+    E1_P2_PaysResidence:
+      champs: [Enfants.6.PaysResidenceParent2]
+    E1_GardePartageeOui:
+      champs: [Enfants.6.PartageLaGarde==true]
+    E1_GardePartageeNon:
+      champs: [Enfants.6.PartageLaGarde==false]
+    E1_NBJoursGardecor:
+      champs: [Enfants.6.NombreJours]
+    E1_Garde1:
+      champs: [Enfants.6.Frequence==hebdo]
+    E1_Garde2:
+      champs: [Enfants.6.Frequence==mensuel]
+    E1_Garde3:
+      champs: [Enfants.6.Frequence==annuel]
+    E1_Garde4:
+      champs: [Enfants.6.DocumentGarde==Jugement]
+    E1_Garde5:
+      champs: [Enfants.6.DocumentGarde==Amiable]
+    E1_Garde6:
+      champs: [Enfants.6.DocumentGarde==Mediation]
+    E1_Garde7:
+      champs: [Enfants.6.DocumentGarde==Autre]
+    E1_DocumentGarde:
+      champs: [Enfants.6.PrecisionDocumentGarde]
+    E2_CP12:
+      champs: [Enfants.7.Cp12]
+    E2_Nom:
+      champs: [Enfants.7.Nom]
+    E2_Prenom:
+      champs: [Enfants.7.Prenom]
+    E2_Date_Naissance:
+      champs: [Enfants.7.DateDeNaissance]
+      formule: '{Enfants.7.DateDeNaissance:yyyyMMdd}'
+    E2_NAM:
+      champs: [Enfants.7.Nam]
+    E2_Sexe1:
+      champs: [Enfants.7.Sexe==F]
+    E2_Sexe2:
+      champs: [Enfants.7.Sexe==M]
+    E2_Etude_Oui:
+      champs: [Enfants.7.AuxEtudes==true]
+    E2_Etude_Non:
+      champs: [Enfants.7.AuxEtudes==false]
+    E2_Etude1:
+      champs: [Enfants.7.NiveauEtudes==Prematernelle]
+    E2_Etude2:
+      champs: [Enfants.7.NiveauEtudes==Maternelle]
+    E2_Etude3:
+      champs: [Enfants.7.NiveauEtudes==Primaire]
+    E2_Etude4:
+      champs: [Enfants.7.NiveauEtudes==SecondaireGen]
+    E2_Etude5:
+      champs: [Enfants.7.NiveauEtudes==SecondaireProf]
+    E2_Etude6:
+      champs: [Enfants.7.NiveauEtudes==Collegial]
+    E2_Etude7:
+      champs: [Enfants.7.NiveauEtudes==Universitaire]
+    E2_Etude8:
+      champs: [Enfants.7.NiveauEtudes==Autre]
+    E2_AutreEtude:
+      champs: [Enfants.7.PrecisionAutre]
+    E2_HandicapeOui:
+      champs: [Enfants.7.Handicape==true]
+    E2_HandicapeNon:
+      champs: [Enfants.7.Handicape==false]
+    E2_NomPere:
+      champs: [Enfants.7.NomParent1]
+    E2_PrenomPere:
+      champs: [Enfants.7.PrenomParent1]
+    E2_P1_Pere:
+      champs: [Enfants.7.QualiteParent==pere]
+    E2_P1_Mere:
+      champs: [Enfants.7.QualiteParent==mere]
+    E2_P1_PaysResidence:
+      champs: [Enfants.7.PaysResidenceParent]
+    E2_NomMere:
+      champs: [Enfants.7.NomParent2]
+    E2_PrenomMere:
+      champs: [Enfants.7.PrenomParent2]
+    E2_P2_Pere:
+      champs: [Enfants.7.QualiteParent2==pere]
+    E2_P2_Mere:
+      champs: [Enfants.7.QualiteParent2==mere]
+    E2_P2_PaysResidence:
+      champs: [Enfants.7.PaysResidenceParent2]
+    E2_GardePartageeOui:
+      champs: [Enfants.7.PartageLaGarde==true]
+    E2_GardePartageeNon:
+      champs: [Enfants.7.PartageLaGarde==false]
+    E2_NBJoursGardecor:
+      champs: [Enfants.7.NombreJours]
+    E2_Garde1:
+      champs: [Enfants.7.Frequence==hebdo]
+    E2_Garde2:
+      champs: [Enfants.7.Frequence==mensuel]
+    E2_Garde3:
+      champs: [Enfants.7.Frequence==annuel]
+    E2_Garde4:
+      champs: [Enfants.7.DocumentGarde==Jugement]
+    E2_Garde5:
+      champs: [Enfants.7.DocumentGarde==Amiable]
+    E2_Garde6:
+      champs: [Enfants.7.DocumentGarde==Mediation]
+    E2_Garde7:
+      champs: [Enfants.7.DocumentGarde==Autre]
+    E2_DocumentGarde:
+      champs: [Enfants.7.PrecisionDocumentGarde]
+    E3_CP12:
+      champs: [Enfants.8.Cp12]
+    E3_Nom:
+      champs: [Enfants.8.Nom]
+    E3_Prenom:
+      champs: [Enfants.8.Prenom]
+    E3_Date_Naissance:
+      champs: [Enfants.8.DateDeNaissance]
+      formule: '{Enfants.8.DateDeNaissance:yyyyMMdd}'
+    E3_NAM:
+      champs: [Enfants.8.Nam]
+    E3_Sexe1:
+      champs: [Enfants.8.Sexe==F]
+    E3_Sexe2:
+      champs: [Enfants.8.Sexe==M]
+    E3_Etude_Oui:
+      champs: [Enfants.8.AuxEtudes==true]
+    E3_Etude_Non:
+      champs: [Enfants.8.AuxEtudes==false]
+    E3_Etude1:
+      champs: [Enfants.8.NiveauEtudes==Prematernelle]
+    E3_Etude2:
+      champs: [Enfants.8.NiveauEtudes==Maternelle]
+    E3_Etude3:
+      champs: [Enfants.8.NiveauEtudes==Primaire]
+    E3_Etude4:
+      champs: [Enfants.8.NiveauEtudes==SecondaireGen]
+    E3_Etude5:
+      champs: [Enfants.8.NiveauEtudes==SecondaireProf]
+    E3_Etude6:
+      champs: [Enfants.8.NiveauEtudes==Collegial]
+    E3_Etude7:
+      champs: [Enfants.8.NiveauEtudes==Universitaire]
+    E3_Etude8:
+      champs: [Enfants.8.NiveauEtudes==Autre]
+    E3_AutreEtude:
+      champs: [Enfants.8.PrecisionAutre]
+    E3_HandicapeOui:
+      champs: [Enfants.8.Handicape==true]
+    E3_HandicapeNon:
+      champs: [Enfants.8.Handicape==false]
+    E3_NomPere:
+      champs: [Enfants.8.NomParent1]
+    E3_PrenomPere:
+      champs: [Enfants.8.PrenomParent1]
+    E3_P1_Pere:
+      champs: [Enfants.8.QualiteParent==pere]
+    E3_P1_Mere:
+      champs: [Enfants.8.QualiteParent==mere]
+    E3_P1_PaysResidence:
+      champs: [Enfants.8.PaysResidenceParent]
+    E3_NomMere:
+      champs: [Enfants.8.NomParent2]
+    E3_PrenomMere:
+      champs: [Enfants.8.PrenomParent2]
+    E3_P2_Pere:
+      champs: [Enfants.8.QualiteParent2==pere]
+    E3_P2_Mere:
+      champs: [Enfants.8.QualiteParent2==mere]
+    E3_P2_PaysResidence:
+      champs: [Enfants.8.PaysResidenceParent2]
+    E3_GardePartageeOui:
+      champs: [Enfants.8.PartageLaGarde==true]
+    E3_GardePartageeNon:
+      champs: [Enfants.8.PartageLaGarde==false]
+    E3_NBJoursGardecor:
+      champs: [Enfants.8.NombreJours]
+    E3_Garde1:
+      champs: [Enfants.8.Frequence==hebdo]
+    E3_Garde2:
+      champs: [Enfants.8.Frequence==mensuel]
+    E3_Garde3:
+      champs: [Enfants.8.Frequence==annuel]
+    E3_Garde4:
+      champs: [Enfants.8.DocumentGarde==Jugement]
+    E3_Garde5:
+      champs: [Enfants.8.DocumentGarde==Amiable]
+    E3_Garde6:
+      champs: [Enfants.8.DocumentGarde==Mediation]
+    E3_Garde7:
+      champs: [Enfants.8.DocumentGarde==Autre]
+    E3_DocumentGarde:
+      champs: [Enfants.8.PrecisionDocumentGarde]
+    E_revenusOui:
+      champs: [EnfantsPossedentRevenus==true]
+    E_revenusNon:
+      champs: [EnfantsPossedentRevenus==false]
+    E1_revenusPrenom:
+      champs: [DetailRevenuEnfant.0.PrenomEnfant]
+    E1_revenusSource:
+      champs: [DetailRevenuEnfant.0.SourceRevenu]
+    E2_revenuPrenom:
+      champs: [DetailRevenuEnfant.1.PrenomEnfant]
+    E2_revenuSource:
+      champs: [DetailRevenuEnfant.1.SourceRevenu]
+    revenus1:
+      champs: [DetailRevenuEnfant.0.MontantRevenu]
+      formule: '{DetailRevenuEnfant.0.MontantRevenu:forcerNombre(entier)}'
+    revenus2:
+      champs: [DetailRevenuEnfant.1.MontantRevenu]
+      formule: '{DetailRevenuEnfant.1.MontantRevenu:forcerNombre(entier)}'
+    Etemps1-1:
+      champs: [DetailRevenuEnfant.0.FrequenceRevenu==hebdo]
+    Etemps2-1:
+      champs: [DetailRevenuEnfant.1.FrequenceRevenu==hebdo]
+    Etemps1-2:
+      champs: [DetailRevenuEnfant.0.FrequenceRevenu==bihebdo]
+    Etemps2-2:
+      champs: [DetailRevenuEnfant.1.FrequenceRevenu==bihebdo]
+    Etemps1-3:
+      champs: [DetailRevenuEnfant.0.FrequenceRevenu==mensuel]
+    Etemps2-3:
+      champs: [DetailRevenuEnfant.1.FrequenceRevenu==mensuel]
+    E_biensOui:
+      champs: [EnfantsPossedentBiens==true]
+    E_biensNon:
+      champs: [EnfantsPossedentBiens==false]
+    E1_biensPrenom:
+      champs: [DetailBienEnfant.0.PrenomEnfant]
+    E2_biensPrenom:
+      champs: [DetailBienEnfant.1.PrenomEnfant]
+    E1_biensPSource:
+      champs: [DetailBienEnfant.0.DescriptionBien]
+    E2_biensPSource:
+      champs: [DetailBienEnfant.1.DescriptionBien]
+    biens1:
+      champs: [DetailBienEnfant.0.ValeurBien]
+      formule: '{DetailBienEnfant.0.ValeurBien:forcerNombre(entier)}'
+    biens2:
+      champs: [DetailBienEnfant.1.ValeurBien]
+      formule: '{DetailBienEnfant.1.ValeurBien:forcerNombre(entier)}'
+    Adulte1_date:
+      champs: [DateSignature]
+      formule: '{DateSignature:yyyy-MM-dd}'
+    Adulte2_date:
+      champs: [DateSignatureConjoint]
+      formule: '{DateSignatureConjoint:yyyy-MM-dd}'
+    E_memeAdresseOui:
+      champs: [EnfantsHabitentMemeAdresse==true]
+    E_memeAdresseNon:
+      champs: [EnfantsHabitentMemeAdresse==false]
+    colocation:
+      champs: [PrecisionRaison]
+    revenusDecimals1:
+      champs: [DetailRevenuEnfant.0.MontantRevenu]
+      formule: '{DetailRevenuEnfant.0.MontantRevenu:forcerNombre(decimales)}'
+    revenusDecimals2:
+      champs: [DetailRevenuEnfant.1.MontantRevenu]
+      formule: '{DetailRevenuEnfant.1.MontantRevenu:forcerNombre(decimales)}'
+    biensDecimals1:
+      champs: [DetailBienEnfant.0.ValeurBien]
+      formule: '{DetailBienEnfant.0.ValeurBien:forcerNombre(decimales)}'
+    biensDecimals2:
+      champs: [DetailBienEnfant.1.ValeurBien]
+      formule: '{DetailBienEnfant.1.ValeurBien:forcerNombre(decimales)}'
+    E3_biensPrenom:
+      champs: [DetailBienEnfant.2.PrenomEnfant]
+    E3_biensPSource:
+      champs: [DetailBienEnfant.2.DescriptionBien]
+    biens3:
+      champs: [DetailBienEnfant.2.ValeurBien]
+      formule: '{DetailBienEnfant.2.ValeurBien:forcerNombre(entier)}'
+    biensDecimals3:
+      champs: [DetailBienEnfant.2.ValeurBien]
+      formule: '{DetailBienEnfant.2.ValeurBien:forcerNombre(decimales)}'
+    Signature-03-A1:
+      champs:
+      - Signature
+      - SignatureRequerant
+    Signature-03-A2:
+      champs: [SignatureConjoint]
+  03_e4:
+    adulte1_nom:
+      champs: [adulte1NomFamille]
+    adulte1_prenom:
+      champs: [adulte1Prenom]
+    A1_CP12:
+      champs: [adulte1Cp12]
+    adulte2_nom:
+      champs: [adulte2NomFamille]
+    adulte2_prenom:
+      champs: [adulte2Prenom]
+    A2_CP12:
+      champs: [adulte2Cp12]
+    E1_CP12:
+      champs: [Enfants.9.Cp12]
+    E1_Nom:
+      champs: [Enfants.9.Nom]
+    E1_Prenom:
+      champs: [Enfants.9.Prenom]
+    E1_Date_Naissance:
+      champs: [Enfants.9.DateDeNaissance]
+      formule: '{Enfants.9.DateDeNaissance:yyyyMMdd}'
+    E1_NAM:
+      champs: [Enfants.9.Nam]
+    E1_Sexe1:
+      champs: [Enfants.9.Sexe==F]
+    E1_Sexe2:
+      champs: [Enfants.9.Sexe==M]
+    E1_Etude_Oui:
+      champs: [Enfants.9.AuxEtudes==true]
+    E1_Etude_Non:
+      champs: [Enfants.9.AuxEtudes==false]
+    E1_Etude1:
+      champs: [Enfants.9.NiveauEtudes==Prematernelle]
+    E1_Etude2:
+      champs: [Enfants.9.NiveauEtudes==Maternelle]
+    E1_Etude3:
+      champs: [Enfants.9.NiveauEtudes==Primaire]
+    E1_Etude4:
+      champs: [Enfants.9.NiveauEtudes==SecondaireGen]
+    E1_Etude5:
+      champs: [Enfants.9.NiveauEtudes==SecondaireProf]
+    E1_Etude6:
+      champs: [Enfants.9.NiveauEtudes==Collegial]
+    E1_Etude7:
+      champs: [Enfants.9.NiveauEtudes==Universitaire]
+    E1_Etude8:
+      champs: [Enfants.9.NiveauEtudes==Autre]
+    E1_AutreEtude:
+      champs: [Enfants.9.PrecisionAutre]
+    E1_HandicapeOui:
+      champs: [Enfants.9.Handicape==true]
+    E1_HandicapeNon:
+      champs: [Enfants.9.Handicape==false]
+    E1_NomPere:
+      champs: [Enfants.9.NomParent1]
+    E1_PrenomPere:
+      champs: [Enfants.9.PrenomParent1]
+    E1_P1_Pere:
+      champs: [Enfants.9.QualiteParent==pere]
+    E1_P1_Mere:
+      champs: [Enfants.9.QualiteParent==mere]
+    E1_P1_PaysResidence:
+      champs: [Enfants.9.PaysResidenceParent]
+    E1_NomMere:
+      champs: [Enfants.9.NomParent2]
+    E1_PrenomMere:
+      champs: [Enfants.9.PrenomParent2]
+    E1_P2_Pere:
+      champs: [Enfants.9.QualiteParent2==pere]
+    E1_P2_Mere:
+      champs: [Enfants.9.QualiteParent2==mere]
+    E1_P2_PaysResidence:
+      champs: [Enfants.9.PaysResidenceParent2]
+    E1_GardePartageeOui:
+      champs: [Enfants.9.PartageLaGarde==true]
+    E1_GardePartageeNon:
+      champs: [Enfants.9.PartageLaGarde==false]
+    E1_NBJoursGardecor:
+      champs: [Enfants.9.NombreJours]
+    E1_Garde1:
+      champs: [Enfants.9.Frequence==hebdo]
+    E1_Garde2:
+      champs: [Enfants.9.Frequence==mensuel]
+    E1_Garde3:
+      champs: [Enfants.9.Frequence==annuel]
+    E1_Garde4:
+      champs: [Enfants.9.DocumentGarde==Jugement]
+    E1_Garde5:
+      champs: [Enfants.9.DocumentGarde==Amiable]
+    E1_Garde6:
+      champs: [Enfants.9.DocumentGarde==Mediation]
+    E1_Garde7:
+      champs: [Enfants.9.DocumentGarde==Autre]
+    E1_DocumentGarde:
+      champs: [Enfants.9.PrecisionDocumentGarde]
+    E2_CP12:
+      champs: [Enfants.10.Cp12]
+    E2_Nom:
+      champs: [Enfants.10.Nom]
+    E2_Prenom:
+      champs: [Enfants.10.Prenom]
+    E2_Date_Naissance:
+      champs: [Enfants.10.DateDeNaissance]
+      formule: '{Enfants.10.DateDeNaissance:yyyyMMdd}'
+    E2_NAM:
+      champs: [Enfants.10.Nam]
+    E2_Sexe1:
+      champs: [Enfants.10.Sexe==F]
+    E2_Sexe2:
+      champs: [Enfants.10.Sexe==M]
+    E2_Etude_Oui:
+      champs: [Enfants.10.AuxEtudes==true]
+    E2_Etude_Non:
+      champs: [Enfants.10.AuxEtudes==false]
+    E2_Etude1:
+      champs: [Enfants.10.NiveauEtudes==Prematernelle]
+    E2_Etude2:
+      champs: [Enfants.10.NiveauEtudes==Maternelle]
+    E2_Etude3:
+      champs: [Enfants.10.NiveauEtudes==Primaire]
+    E2_Etude4:
+      champs: [Enfants.10.NiveauEtudes==SecondaireGen]
+    E2_Etude5:
+      champs: [Enfants.10.NiveauEtudes==SecondaireProf]
+    E2_Etude6:
+      champs: [Enfants.10.NiveauEtudes==Collegial]
+    E2_Etude7:
+      champs: [Enfants.10.NiveauEtudes==Universitaire]
+    E2_Etude8:
+      champs: [Enfants.10.NiveauEtudes==Autre]
+    E2_AutreEtude:
+      champs: [Enfants.10.PrecisionAutre]
+    E2_HandicapeOui:
+      champs: [Enfants.10.Handicape==true]
+    E2_HandicapeNon:
+      champs: [Enfants.10.Handicape==false]
+    E2_NomPere:
+      champs: [Enfants.10.NomParent1]
+    E2_PrenomPere:
+      champs: [Enfants.10.PrenomParent1]
+    E2_P1_Pere:
+      champs: [Enfants.10.QualiteParent==pere]
+    E2_P1_Mere:
+      champs: [Enfants.10.QualiteParent==mere]
+    E2_P1_PaysResidence:
+      champs: [Enfants.10.PaysResidenceParent]
+    E2_NomMere:
+      champs: [Enfants.10.NomParent2]
+    E2_PrenomMere:
+      champs: [Enfants.10.PrenomParent2]
+    E2_P2_Pere:
+      champs: [Enfants.10.QualiteParent2==pere]
+    E2_P2_Mere:
+      champs: [Enfants.10.QualiteParent2==mere]
+    E2_P2_PaysResidence:
+      champs: [Enfants.10.PaysResidenceParent2]
+    E2_GardePartageeOui:
+      champs: [Enfants.10.PartageLaGarde==true]
+    E2_GardePartageeNon:
+      champs: [Enfants.10.PartageLaGarde==false]
+    E2_NBJoursGardecor:
+      champs: [Enfants.10.NombreJours]
+    E2_Garde1:
+      champs: [Enfants.10.Frequence==hebdo]
+    E2_Garde2:
+      champs: [Enfants.10.Frequence==mensuel]
+    E2_Garde3:
+      champs: [Enfants.10.Frequence==annuel]
+    E2_Garde4:
+      champs: [Enfants.10.DocumentGarde==Jugement]
+    E2_Garde5:
+      champs: [Enfants.10.DocumentGarde==Amiable]
+    E2_Garde6:
+      champs: [Enfants.10.DocumentGarde==Mediation]
+    E2_Garde7:
+      champs: [Enfants.10.DocumentGarde==Autre]
+    E2_DocumentGarde:
+      champs: [Enfants.10.PrecisionDocumentGarde]
+    E3_CP12:
+      champs: [Enfants.11.Cp12]
+    E3_Nom:
+      champs: [Enfants.11.Nom]
+    E3_Prenom:
+      champs: [Enfants.11.Prenom]
+    E3_Date_Naissance:
+      champs: [Enfants.11.DateDeNaissance]
+      formule: '{Enfants.11.DateDeNaissance:yyyyMMdd}'
+    E3_NAM:
+      champs: [Enfants.11.Nam]
+    E3_Sexe1:
+      champs: [Enfants.11.Sexe==F]
+    E3_Sexe2:
+      champs: [Enfants.11.Sexe==M]
+    E3_Etude_Oui:
+      champs: [Enfants.11.AuxEtudes==true]
+    E3_Etude_Non:
+      champs: [Enfants.11.AuxEtudes==false]
+    E3_Etude1:
+      champs: [Enfants.11.NiveauEtudes==Prematernelle]
+    E3_Etude2:
+      champs: [Enfants.11.NiveauEtudes==Maternelle]
+    E3_Etude3:
+      champs: [Enfants.11.NiveauEtudes==Primaire]
+    E3_Etude4:
+      champs: [Enfants.11.NiveauEtudes==SecondaireGen]
+    E3_Etude5:
+      champs: [Enfants.11.NiveauEtudes==SecondaireProf]
+    E3_Etude6:
+      champs: [Enfants.11.NiveauEtudes==Collegial]
+    E3_Etude7:
+      champs: [Enfants.11.NiveauEtudes==Universitaire]
+    E3_Etude8:
+      champs: [Enfants.11.NiveauEtudes==Autre]
+    E3_AutreEtude:
+      champs: [Enfants.11.PrecisionAutre]
+    E3_HandicapeOui:
+      champs: [Enfants.11.Handicape==true]
+    E3_HandicapeNon:
+      champs: [Enfants.11.Handicape==false]
+    E3_NomPere:
+      champs: [Enfants.11.NomParent1]
+    E3_PrenomPere:
+      champs: [Enfants.11.PrenomParent1]
+    E3_P1_Pere:
+      champs: [Enfants.11.QualiteParent==pere]
+    E3_P1_Mere:
+      champs: [Enfants.11.QualiteParent==mere]
+    E3_P1_PaysResidence:
+      champs: [Enfants.11.PaysResidenceParent]
+    E3_NomMere:
+      champs: [Enfants.11.NomParent2]
+    E3_PrenomMere:
+      champs: [Enfants.11.PrenomParent2]
+    E3_P2_Pere:
+      champs: [Enfants.11.QualiteParent2==pere]
+    E3_P2_Mere:
+      champs: [Enfants.11.QualiteParent2==mere]
+    E3_P2_PaysResidence:
+      champs: [Enfants.11.PaysResidenceParent2]
+    E3_GardePartageeOui:
+      champs: [Enfants.11.PartageLaGarde==true]
+    E3_GardePartageeNon:
+      champs: [Enfants.11.PartageLaGarde==false]
+    E3_NBJoursGardecor:
+      champs: [Enfants.11.NombreJours]
+    E3_Garde1:
+      champs: [Enfants.11.Frequence==hebdo]
+    E3_Garde2:
+      champs: [Enfants.11.Frequence==mensuel]
+    E3_Garde3:
+      champs: [Enfants.11.Frequence==annuel]
+    E3_Garde4:
+      champs: [Enfants.11.DocumentGarde==Jugement]
+    E3_Garde5:
+      champs: [Enfants.11.DocumentGarde==Amiable]
+    E3_Garde6:
+      champs: [Enfants.11.DocumentGarde==Mediation]
+    E3_Garde7:
+      champs: [Enfants.11.DocumentGarde==Autre]
+    E3_DocumentGarde:
+      champs: [Enfants.11.PrecisionDocumentGarde]
+    E_revenusOui:
+      champs: [EnfantsPossedentRevenus==true]
+    E_revenusNon:
+      champs: [EnfantsPossedentRevenus==false]
+    E1_revenusPrenom:
+      champs: [DetailRevenuEnfant.0.PrenomEnfant]
+    E1_revenusSource:
+      champs: [DetailRevenuEnfant.0.SourceRevenu]
+    E2_revenuPrenom:
+      champs: [DetailRevenuEnfant.1.PrenomEnfant]
+    E2_revenuSource:
+      champs: [DetailRevenuEnfant.1.SourceRevenu]
+    revenus1:
+      champs: [DetailRevenuEnfant.0.MontantRevenu]
+      formule: '{DetailRevenuEnfant.0.MontantRevenu:forcerNombre(entier)}'
+    revenus2:
+      champs: [DetailRevenuEnfant.1.MontantRevenu]
+      formule: '{DetailRevenuEnfant.1.MontantRevenu:forcerNombre(entier)}'
+    Etemps1-1:
+      champs: [DetailRevenuEnfant.0.FrequenceRevenu==hebdo]
+    Etemps2-1:
+      champs: [DetailRevenuEnfant.1.FrequenceRevenu==hebdo]
+    Etemps1-2:
+      champs: [DetailRevenuEnfant.0.FrequenceRevenu==bihebdo]
+    Etemps2-2:
+      champs: [DetailRevenuEnfant.1.FrequenceRevenu==bihebdo]
+    Etemps1-3:
+      champs: [DetailRevenuEnfant.0.FrequenceRevenu==mensuel]
+    Etemps2-3:
+      champs: [DetailRevenuEnfant.1.FrequenceRevenu==mensuel]
+    E_biensOui:
+      champs: [EnfantsPossedentBiens==true]
+    E_biensNon:
+      champs: [EnfantsPossedentBiens==false]
+    E1_biensPrenom:
+      champs: [DetailBienEnfant.0.PrenomEnfant]
+    E2_biensPrenom:
+      champs: [DetailBienEnfant.1.PrenomEnfant]
+    E1_biensPSource:
+      champs: [DetailBienEnfant.0.DescriptionBien]
+    E2_biensPSource:
+      champs: [DetailBienEnfant.1.DescriptionBien]
+    biens1:
+      champs: [DetailBienEnfant.0.ValeurBien]
+      formule: '{DetailBienEnfant.0.ValeurBien:forcerNombre(entier)}'
+    biens2:
+      champs: [DetailBienEnfant.1.ValeurBien]
+      formule: '{DetailBienEnfant.1.ValeurBien:forcerNombre(entier)}'
+    Adulte1_date:
+      champs: [DateSignature]
+      formule: '{DateSignature:yyyy-MM-dd}'
+    Adulte2_date:
+      champs: [DateSignatureConjoint]
+      formule: '{DateSignatureConjoint:yyyy-MM-dd}'
+    E_memeAdresseOui:
+      champs: [EnfantsHabitentMemeAdresse==true]
+    E_memeAdresseNon:
+      champs: [EnfantsHabitentMemeAdresse==false]
+    colocation:
+      champs: [PrecisionRaison]
+    revenusDecimals1:
+      champs: [DetailRevenuEnfant.0.MontantRevenu]
+      formule: '{DetailRevenuEnfant.0.MontantRevenu:forcerNombre(decimales)}'
+    revenusDecimals2:
+      champs: [DetailRevenuEnfant.1.MontantRevenu]
+      formule: '{DetailRevenuEnfant.1.MontantRevenu:forcerNombre(decimales)}'
+    biensDecimals1:
+      champs: [DetailBienEnfant.0.ValeurBien]
+      formule: '{DetailBienEnfant.0.ValeurBien:forcerNombre(decimales)}'
+    biensDecimals2:
+      champs: [DetailBienEnfant.1.ValeurBien]
+      formule: '{DetailBienEnfant.1.ValeurBien:forcerNombre(decimales)}'
+    E3_biensPrenom:
+      champs: [DetailBienEnfant.2.PrenomEnfant]
+    E3_biensPSource:
+      champs: [DetailBienEnfant.2.DescriptionBien]
+    biens3:
+      champs: [DetailBienEnfant.2.ValeurBien]
+      formule: '{DetailBienEnfant.2.ValeurBien:forcerNombre(entier)}'
+    biensDecimals3:
+      champs: [DetailBienEnfant.2.ValeurBien]
+      formule: '{DetailBienEnfant.2.ValeurBien:forcerNombre(decimales)}'
+    Signature-03-A1:
+      champs:
+      - Signature
+      - SignatureRequerant
+    Signature-03-A2:
+      champs: [SignatureConjoint]

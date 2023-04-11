@@ -77,3 +77,14 @@ Pour un premier formulaire, il est fortement recommandé de clôner le présent 
 
 1. Vérifier si une [issue](https://github.com/MTESSDev/FRW/issues) existe avec le même problème;
 2. Créez une [issue](https://github.com/MTESSDev/FRW/issues) si elle n'existe pas déjà une et mettre le plus de détails possibles afin de reproduire le problème.
+
+
+&nbsp;
+## Vous désirez être informé des changements en cours et à venir?
+
+[Consultez les milestones](https://github.com/MTESSDev/FRW/milestones), ils vous donnent l'information sur les travaux en cours et à venir, ainsi que la date prévue de livraison.
+
+
+[Configurez vos notifications](Documentation/configurer-notifications.md) afin d'être avisé lors de la publication d'une nouvelle release.
+
+Une release est publiée lorsqu'une nouvelle version est déployée dans l'environnement d'essais (normalement quelques semaines avant la production, et une date de MEP prévue est indiquée), ainsi que lors d'une mise en production.

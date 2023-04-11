@@ -7,7 +7,7 @@ Dans Github en plus d'être alerté par courriel lors d'un changement sur des é
 
 Nous vous recommendons fortement de mettre à jour vos notifications afin d'être avisés lors d'une nouvelle release. 
 
-Les releases fournissent de l'information sur les changement inclus dans la nouvelle version et les versions antérieures.
+Les releases fournissent de l'information sur les changements inclus dans la nouvelle version et les versions antérieures.
 
 &nbsp;
 

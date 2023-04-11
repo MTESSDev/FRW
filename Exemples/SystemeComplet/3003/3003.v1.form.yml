@@ -3496,7 +3496,6 @@ form:
                   options: yesno
                 - type: dynamic
                   tag: div
-                  name: PJRevAutresDivers
                   v-if: val(`${name}.AjoutPJRevenusAutreDivers`, index) === 'true'
                   components:
                   - name: TypeDocument
@@ -3843,7 +3842,6 @@ form:
                   options: yesno
                 - type: dynamic
                   tag: div
-                  name: PJAvoirPlacement
                   v-if: val(`${name}.AjoutPJAvoirsPlacements`, index) === 'true'
                   components:
                   - name: TypeDocument

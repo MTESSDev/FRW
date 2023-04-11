@@ -7,6 +7,8 @@ Un outil incroyable qui permet de créer des formulaires très rapidement à l'a
 
 Les formulaires générés sont accessibles, adaptatifs (responsive), sécuritaires et respectent les règles du [système de design Québec.ca](https://design.quebec.ca/).
 
+[Consulter la liste des fonctionnalités offertes par FRW](Documentation/fonctionnalites.md).
+
 &nbsp;
 
 ## Comment l'utiliser?

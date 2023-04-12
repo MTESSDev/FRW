@@ -16,7 +16,7 @@ jobs:
         env:
           NODE_TLS_REJECT_UNAUTHORIZED: 0
           ado_token: "${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}"
-          ado_url: "https://devops700.itp.extra/700"
+          ado_url: "https://devops700.itp.extra/700/"
           github_token: "${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}"
           ado_organization: "700"
           ado_project: "SPFS-FRW"

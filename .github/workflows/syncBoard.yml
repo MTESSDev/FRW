@@ -12,7 +12,7 @@ jobs:
     if: ${{ !github.event.issue.pull_request }}
     runs-on: self-hosted
     steps:
-      - uses: MTESSDev/github-actions-issue-to-work-item@master
+      - uses: MTESSDev/github-actions-issue-to-work-item@custom-url
         #uses: danhellem/github-actions-issue-to-work-item@master
         env:
           NODE_TLS_REJECT_UNAUTHORIZED: 0

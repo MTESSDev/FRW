@@ -8,12 +8,12 @@ on:
     types: [created, edited, deleted]
 
 jobs:
-  alert:
+  sync-devops:
     if: ${{ !github.event.issue.pull_request }}
     runs-on: self-hosted
     steps:
-      - #uses: MTESSDev/github-actions-issue-to-work-item@master
-        uses: danhellem/github-actions-issue-to-work-item@master
+      - uses: MTESSDev/github-actions-issue-to-work-item@master
+        #uses: danhellem/github-actions-issue-to-work-item@master
         env:
           NODE_TLS_REJECT_UNAUTHORIZED: 0
           ado_token: "${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}"
@@ -28,4 +28,4 @@ jobs:
           ado_active_state: "À faire"
           ado_close_state: "Closed"
           ado_bypassrules: true
-          log_level: 300
+          log_level: 100

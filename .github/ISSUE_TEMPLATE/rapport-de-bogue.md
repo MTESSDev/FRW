@@ -1,7 +1,7 @@
 ---
 name: Rapport de bogue
 about: Créer un rapport de bogue pour nous aider à améliorer la solution
-title: "[BUG]"
+title: ''
 labels: bug
 assignees: ''
 

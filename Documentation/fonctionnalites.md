@@ -6,7 +6,7 @@
    * Anonyme à partir d’un site public;
    * Sécurisés à partir d’un portail authentifié;
 1. Affichage
-1. Multilingue (français et anglais);
+   * Multilingue (français et anglais);
    * Responsive (appareils mobiles et tablettes);
    * Respecte le [standard du gouvernement du Québec en ressources informationnelles (SGQRI 008 2.0)](https://www.tresor.gouv.qc.ca/fileadmin/PDF/ressources_informationnelles/AccessibiliteWeb/standard-access-web.pdf) 
 1. Contrôles

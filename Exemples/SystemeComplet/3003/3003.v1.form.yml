@@ -4,137 +4,138 @@
 #formSettings
 #-------------------------------------------------------------------------------------------
 #permet d'inscrire une demande en différé lorsque nous sommes en dehors des plages de dispo.
-gererPlageDisponibilite:
-  actif: true
-  joursOuvrablesUniquement: true
-  nombreConvois: 1
-  plages:
-    - 08-20 # 8h à 20h
+config:
+  gererPlageDisponibilite:
+    actif: true
+    joursOuvrablesUniquement: true
+    nombreConvois: 1
+    plages:
+      - 08-20 # 8h à 20h
 
-#permet d'injecter un script javaScript dans la page d'affichage du formulaire
-injecterJs: 
-  method:  
-    estPjManquantes:
-      code: |
-        (){
-            const sectionsQuestions = this.obtenirQuestions()
+  #permet d'injecter un script javaScript dans la page d'affichage du formulaire
+  injecterJs: 
+    method:  
+      estPjManquantes:
+        code: |
+          (){
+              const sectionsQuestions = this.obtenirQuestions()
 
-            return sectionsQuestions.some((section) => {
-                if(section.questions[0].nomGroupe){
-                    return section.questions.some((question) => {
-                        const groupe = this.val(question.nomGroupe)
-                        if (groupe){
-                            return groupe.findIndex(el => el[question.nomQuestion] === 'false') > -1
-                        } else {
-                            return false
-                        }
-                    })
-                    
-                } else {
-                    return section.questions.some(q => this.val(q.nomQuestion) === 'false')
-                }                
-            })
-        }
-    obtenirListePjManquantes:
-      code: |
-        (){     
-            const sectionsQuestions = this.obtenirQuestions()
-            const documents = []
+              return sectionsQuestions.some((section) => {
+                  if(section.questions[0].nomGroupe){
+                      return section.questions.some((question) => {
+                          const groupe = this.val(question.nomGroupe)
+                          if (groupe){
+                              return groupe.findIndex(el => el[question.nomQuestion] === 'false') > -1
+                          } else {
+                              return false
+                          }
+                      })
 
-            sectionsQuestions.forEach((section) => {
-                //Questions provenant d'un groupe
-                if(section.questions[0].nomGroupe){                    
-                    section.questions.forEach((question) => {
-                        const groupe = this.val(question.nomGroupe)
-                        if (groupe){
-                            const ind = groupe.findIndex(el => el[question.nomQuestion] === 'false')
-                            if (ind > -1){
-                                documents.push({ "pageId" : section.nomSection, "nomDocument" : question.nomDocument[this.Langue], "cle" : question.nomQuestion + "[" + ind + "]", "titreDocument" : question.nomDocument["fr"]})
-                            }
-                        }
-                    })
-                } else {
-                    //Questions adulte1 et adulte 2
-                    section.questions.forEach((question) => {
-                        if (this.val(question.nomQuestion) === 'false'){
-                            const indAdulte = question.nomQuestion.charAt(6)
-                            var strAdulte = this.Langue === "fr" ? "Adulte " : "Adult "
-                            var strTitre = "Adulte " +  indAdulte + " - "
-                            strAdulte = strAdulte + indAdulte + " - "
+                  } else {
+                      return section.questions.some(q => this.val(q.nomQuestion) === 'false')
+                  }                
+              })
+          }
+      obtenirListePjManquantes:
+        code: |
+          (){     
+              const sectionsQuestions = this.obtenirQuestions()
+              const documents = []
 
-                            documents.push({ "pageId" : "adulte" + indAdulte + section.nomSection, "nomDocument" : strAdulte + question.nomDocument[this.Langue], "cle" : question.nomQuestion, "titreDocument" : strTitre + question.nomDocument["fr"]})
-                        }
+              sectionsQuestions.forEach((section) => {
+                  //Questions provenant d'un groupe
+                  if(section.questions[0].nomGroupe){                    
+                      section.questions.forEach((question) => {
+                          const groupe = this.val(question.nomGroupe)
+                          if (groupe){
+                              const ind = groupe.findIndex(el => el[question.nomQuestion] === 'false')
+                              if (ind > -1){
+                                  documents.push({ "pageId" : section.nomSection, "nomDocument" : question.nomDocument[this.Langue], "cle" : question.nomQuestion + "[" + ind + "]", "titreDocument" : question.nomDocument["fr"]})
+                              }
+                          }
+                      })
+                  } else {
+                      //Questions adulte1 et adulte 2
+                      section.questions.forEach((question) => {
+                          if (this.val(question.nomQuestion) === 'false'){
+                              const indAdulte = question.nomQuestion.charAt(6)
+                              var strAdulte = this.Langue === "fr" ? "Adulte " : "Adult "
+                              var strTitre = "Adulte " +  indAdulte + " - "
+                              strAdulte = strAdulte + indAdulte + " - "
 
-                    })
+                              documents.push({ "pageId" : "adulte" + indAdulte + section.nomSection, "nomDocument" : strAdulte + question.nomDocument[this.Langue], "cle" : question.nomQuestion, "titreDocument" : strTitre + question.nomDocument["fr"]})
+                          }
 
-                }
-            })                        
-            if(JSON.stringify(documents) !== JSON.stringify(this.form.PjManquantes || [])){
-              this.form.PjManquantes = documents
-              this.form.PjManquantesAccepteFournirDocumentsPlusTard = null    
-            }    
-            
-            return documents
-        }
-    obtenirQuestions:
-      code: |
-        (){
-            return [ { "nomSection" : "renseignementsIdentite", "questions" : [
-                       { "nomGroupe" : null, "nomQuestion" : "adulte1AjoutPJCertificatNaissance", "nomDocument" : { "fr" : "Document concernant votre certificat de naissance", "en": "Document concerning your Birth Certificate" } },
-                       { "nomGroupe" : null, "nomQuestion" : "adulte2AjoutPJCertificatNaissance", "nomDocument" : { "fr" : "Document concernant votre certificat de naissance", "en": "Document concerning your Birth Certificate" } },
-                       { "nomGroupe" : null, "nomQuestion" : "adulte1AjoutPJDocCitoyennete", "nomDocument" : { "fr" : "Document(s) confirmant votre statut", "en": "Document(s) confirming your status" } },
-                       { "nomGroupe" : null, "nomQuestion" : "adulte2AjoutPJDocCitoyennete", "nomDocument" : { "fr" : "Document(s) confirmant votre statut", "en": "Document(s) confirming your status" } },
-                       { "nomGroupe" : null, "nomQuestion" : "adulte1AjoutPJResPermanent", "nomDocument" : { "fr" : "Document(s) confirmant votre statut", "en": "Document(s) confirming your status" } },
-                       { "nomGroupe" : null, "nomQuestion" : "adulte2AjoutPJResPermanent", "nomDocument" : { "fr" : "Document(s) confirmant votre statut", "en": "Document(s) confirming your status" } },
-                       { "nomGroupe" : null, "nomQuestion" : "adulte1AjoutPJDemAsile", "nomDocument" : { "fr" : "Document confirmant votre statut", "en": "Document confirming your status" } },
-                       { "nomGroupe" : null, "nomQuestion" : "adulte2AjoutPJDemAsile", "nomDocument" : { "fr" : "Document confirmant votre statut", "en": "Document confirming your status" } },
-                       { "nomGroupe" : null, "nomQuestion" : "adulte1AjoutPJRefugieOuProtege", "nomDocument" : { "fr" : "Document confirmant votre statut", "en": "Document confirming your status" } },
-                       { "nomGroupe" : null, "nomQuestion" : "adulte2AjoutPJRefugieOuProtege", "nomDocument" : { "fr" : "Document confirmant votre statut", "en": "Document confirming your status" } },
-                       { "nomGroupe" : null, "nomQuestion" : "adulte1AjoutPJAutreStatut", "nomDocument" : { "fr" : "Document(s) confirmant votre statut", "en": "Document(s) confirming your status" } },
-                       { "nomGroupe" : null, "nomQuestion" : "adulte2AjoutPJAutreStatut", "nomDocument" : { "fr" : "Document(s) confirmant votre statut", "en": "Document(s) confirming your status" } },
-                       { "nomGroupe" : null, "nomQuestion" : "adulte1AjoutPJGrossesse", "nomDocument" : { "fr" : "Document attestant votre état de grossesse", "en": "Document attesting to your state of pregnancy" } },
-                       { "nomGroupe" : null, "nomQuestion" : "adulte2AjoutPJGrossesse", "nomDocument" : { "fr" : "Document attestant votre état de grossesse", "en": "Document attesting to your state of pregnancy" } },
-                       { "nomGroupe" : null, "nomQuestion" : "adulte1AjoutPJLimitationsFonct", "nomDocument" : { "fr": "Document concernant votre état de santé", "en": "Document attesting to your state of health" } },
-                       { "nomGroupe" : null, "nomQuestion" : "adulte2AjoutPJLimitationsFonct", "nomDocument" : { "fr": "Document concernant votre état de santé", "en": "Document attesting to your state of health" } } ]},
-                     { "nomSection" : "revenus", "questions" : [ 
-                       { "nomGroupe" : "RevenusEmploi", "nomQuestion" : "AjoutPJRevenusEmploi", "nomDocument" : {"fr" : "Documents concernant vos revenus d’emploi", "en": "Documents concerning your work income"} },
-                       { "nomGroupe" : "RevenusPourboires", "nomQuestion" : "AjoutPJRevenusPourboires", "nomDocument" : {"fr" : "Documents concernant vos pourboires", "en": "Documents concerning your tips"} }, 
-                       { "nomGroupe" : "RevenuAutonomeOuEntreprise", "nomQuestion" : "AjoutPJRevenuAutonomeOuEntreprise", "nomDocument" : { "fr": "Documents concernant vos revenus provenant d’un travail autonome ou de votre entreprise", "en": "Documents concerning your income from self-employment or a business" } }, 
-                       { "nomGroupe" : "SommesProvincial", "nomQuestion" : "AjoutPJSommesProvincial", "nomDocument" : { "fr": "Documents concernant la somme reçue d’un ministère ou d’un organisme provincial", "en": "Documents concerning the sum received from a provincial department or agency" } }, 
-                       { "nomGroupe" : "SommesFederal", "nomQuestion" : "AjoutPJSommesFederal", "nomDocument" : { "fr": "Documents concernant la somme reçue d’un ministère ou d’un organisme fédéral", "en": "Documents concerning the sum received from a federal department or agency" } }, 
-                       { "nomGroupe" : "SommesOrganismeAutre", "nomQuestion" : "AjoutPJSommesOrganismeAutre", "nomDocument" : { "fr": "Documents concernant la somme reçue d’un ministère ou d’un organisme", "en": "Documents concerning the sum received from a government department or agency" } }, 
-                       { "nomGroupe" : "RevenusAutreLocation", "nomQuestion" : "AjoutPJRevenusAutreLocation", "nomDocument" : { "fr": "Documents concernant vos revenus de location", "en": "Documents concerning your rental income" } }, 
-                       { "nomGroupe" : "RevenusAutrePlacement", "nomQuestion" : "AjoutPJRevenusAutrePlacement", "nomDocument" : { "fr": "Documents concernant vos revenus de placement ou de fiducie ou des intérêts sur une obligation", "en": "Documents concerning your income from an investment or a trust, or interest on a bond" } }, 
-                       { "nomGroupe" : "RevenusAutreFondPension", "nomQuestion" : "AjoutPJRevenusAutreFondPension", "nomDocument" : { "fr": "Documents concernant vos prestations d’un fonds de pension (fonds personnel ou fonds d’un employeur)", "en": "Documents concerning your pension benefits (personal or employer pension fund)" } }, 
-                       { "nomGroupe" : "RevenusAutrePensionAlimentaire", "nomQuestion" : "AjoutPJRevenusAutrePensionAlimentaire", "nomDocument" : { "fr": "Documents concernant vos revenus de pension alimentaire", "en": "Documents concerning your support payment income" } }, 
-                       { "nomGroupe" : "RevenusAutreDivers", "nomQuestion" : "AjoutPJRevenusAutreDivers", "nomDocument" : { "fr": "Documents concernant vos autres revenus", "en": "Documents concerning your other income" } } ]},
-                     { "nomSection" : "avoirs", "questions" : [ 
-                       { "nomGroupe" : "AvoirsPlacements", "nomQuestion" : "AjoutPJAvoirsPlacements", "nomDocument" : { "fr": "Documents concernant vos placements", "en": "Documents concerning your investments" } } ]}, 
-                     { "nomSection" : "biens", "questions" : [ 
-                       { "nomGroupe" : "BiensImmobiliers", "nomQuestion" : "AjoutPJBiensImmobiliers", "nomDocument" : { "fr": "Documents concernant vos biens immobiliers", "en": "Documents concerning your immovable property" } } ]}, 
-                     { "nomSection" : "enfantsACharge", "questions" : [ 
-                       { "nomGroupe" : "Enfants", "nomQuestion" : "AjoutPJEnfantHandicape", "nomDocument" : { "fr": "Documents de Retraite Québec concernant le supplément pour enfant handicapé nécessitant des soins exceptionnels", "en": "Retraite Québec documents concerning the Supplement for Handicapped Children Requiring Exceptional Care" } },
-                       { "nomGroupe" : "Enfants", "nomQuestion" : "AjoutPJEnfantsGardePartagee", "nomDocument" : { "fr": "Document concernant la garde de l’enfant", "en": "Document concerning the child’s custody" } } ]} ]    
-        }
-  computed:
-    estConsidereConjoint:
-      code: |
-        () {
-          this.form.Conjoint = (this.val('TypeDemande').includes('Afdr') &&
-                (this.val('PrecisionsAdulte2.MarieUniCivilementAdulte') === 'true' || this.val('PrecisionsAdulte2.AutreParentEnfant') === 'true' || this.val('PrecisionsAdulte2.VieMaritaleUnAn') === 'true' || this.val('PrecisionsAdulte2.ViePasseeMaritaleUnAn') === 'true')).toString()            
-          return this.form.Conjoint
-        } 
+                      })
 
-  watch:
-    estConsidereConjoint:
-      code: |
-        (value) {
-            this.form.Conjoint = value.toString()
-        }
-  
+                  }
+              })                        
+              if(JSON.stringify(documents) !== JSON.stringify(this.form.PjManquantes || [])){
+                this.form.PjManquantes = documents
+                this.form.PjManquantesAccepteFournirDocumentsPlusTard = null    
+              }    
 
-accesAnonyme: true
-afficherMessageSauvegardeCourrielReprise: true
+              return documents
+          }
+      obtenirQuestions:
+        code: |
+          (){
+              return [ { "nomSection" : "renseignementsIdentite", "questions" : [
+                         { "nomGroupe" : null, "nomQuestion" : "adulte1AjoutPJCertificatNaissance", "nomDocument" : { "fr" : "Document concernant votre certificat de naissance", "en": "Document concerning your Birth Certificate" } },
+                         { "nomGroupe" : null, "nomQuestion" : "adulte2AjoutPJCertificatNaissance", "nomDocument" : { "fr" : "Document concernant votre certificat de naissance", "en": "Document concerning your Birth Certificate" } },
+                         { "nomGroupe" : null, "nomQuestion" : "adulte1AjoutPJDocCitoyennete", "nomDocument" : { "fr" : "Document(s) confirmant votre statut", "en": "Document(s) confirming your status" } },
+                         { "nomGroupe" : null, "nomQuestion" : "adulte2AjoutPJDocCitoyennete", "nomDocument" : { "fr" : "Document(s) confirmant votre statut", "en": "Document(s) confirming your status" } },
+                         { "nomGroupe" : null, "nomQuestion" : "adulte1AjoutPJResPermanent", "nomDocument" : { "fr" : "Document(s) confirmant votre statut", "en": "Document(s) confirming your status" } },
+                         { "nomGroupe" : null, "nomQuestion" : "adulte2AjoutPJResPermanent", "nomDocument" : { "fr" : "Document(s) confirmant votre statut", "en": "Document(s) confirming your status" } },
+                         { "nomGroupe" : null, "nomQuestion" : "adulte1AjoutPJDemAsile", "nomDocument" : { "fr" : "Document confirmant votre statut", "en": "Document confirming your status" } },
+                         { "nomGroupe" : null, "nomQuestion" : "adulte2AjoutPJDemAsile", "nomDocument" : { "fr" : "Document confirmant votre statut", "en": "Document confirming your status" } },
+                         { "nomGroupe" : null, "nomQuestion" : "adulte1AjoutPJRefugieOuProtege", "nomDocument" : { "fr" : "Document confirmant votre statut", "en": "Document confirming your status" } },
+                         { "nomGroupe" : null, "nomQuestion" : "adulte2AjoutPJRefugieOuProtege", "nomDocument" : { "fr" : "Document confirmant votre statut", "en": "Document confirming your status" } },
+                         { "nomGroupe" : null, "nomQuestion" : "adulte1AjoutPJAutreStatut", "nomDocument" : { "fr" : "Document(s) confirmant votre statut", "en": "Document(s) confirming your status" } },
+                         { "nomGroupe" : null, "nomQuestion" : "adulte2AjoutPJAutreStatut", "nomDocument" : { "fr" : "Document(s) confirmant votre statut", "en": "Document(s) confirming your status" } },
+                         { "nomGroupe" : null, "nomQuestion" : "adulte1AjoutPJGrossesse", "nomDocument" : { "fr" : "Document attestant votre état de grossesse", "en": "Document attesting to your state of pregnancy" } },
+                         { "nomGroupe" : null, "nomQuestion" : "adulte2AjoutPJGrossesse", "nomDocument" : { "fr" : "Document attestant votre état de grossesse", "en": "Document attesting to your state of pregnancy" } },
+                         { "nomGroupe" : null, "nomQuestion" : "adulte1AjoutPJLimitationsFonct", "nomDocument" : { "fr": "Document concernant votre état de santé", "en": "Document attesting to your state of health" } },
+                         { "nomGroupe" : null, "nomQuestion" : "adulte2AjoutPJLimitationsFonct", "nomDocument" : { "fr": "Document concernant votre état de santé", "en": "Document attesting to your state of health" } } ]},
+                       { "nomSection" : "revenus", "questions" : [ 
+                         { "nomGroupe" : "RevenusEmploi", "nomQuestion" : "AjoutPJRevenusEmploi", "nomDocument" : {"fr" : "Documents concernant vos revenus d’emploi", "en": "Documents concerning your work income"} },
+                         { "nomGroupe" : "RevenusPourboires", "nomQuestion" : "AjoutPJRevenusPourboires", "nomDocument" : {"fr" : "Documents concernant vos pourboires", "en": "Documents concerning your tips"} }, 
+                         { "nomGroupe" : "RevenuAutonomeOuEntreprise", "nomQuestion" : "AjoutPJRevenuAutonomeOuEntreprise", "nomDocument" : { "fr": "Documents concernant vos revenus provenant d’un travail autonome ou de votre entreprise", "en": "Documents concerning your income from self-employment or a business" } }, 
+                         { "nomGroupe" : "SommesProvincial", "nomQuestion" : "AjoutPJSommesProvincial", "nomDocument" : { "fr": "Documents concernant la somme reçue d’un ministère ou d’un organisme provincial", "en": "Documents concerning the sum received from a provincial department or agency" } }, 
+                         { "nomGroupe" : "SommesFederal", "nomQuestion" : "AjoutPJSommesFederal", "nomDocument" : { "fr": "Documents concernant la somme reçue d’un ministère ou d’un organisme fédéral", "en": "Documents concerning the sum received from a federal department or agency" } }, 
+                         { "nomGroupe" : "SommesOrganismeAutre", "nomQuestion" : "AjoutPJSommesOrganismeAutre", "nomDocument" : { "fr": "Documents concernant la somme reçue d’un ministère ou d’un organisme", "en": "Documents concerning the sum received from a government department or agency" } }, 
+                         { "nomGroupe" : "RevenusAutreLocation", "nomQuestion" : "AjoutPJRevenusAutreLocation", "nomDocument" : { "fr": "Documents concernant vos revenus de location", "en": "Documents concerning your rental income" } }, 
+                         { "nomGroupe" : "RevenusAutrePlacement", "nomQuestion" : "AjoutPJRevenusAutrePlacement", "nomDocument" : { "fr": "Documents concernant vos revenus de placement ou de fiducie ou des intérêts sur une obligation", "en": "Documents concerning your income from an investment or a trust, or interest on a bond" } }, 
+                         { "nomGroupe" : "RevenusAutreFondPension", "nomQuestion" : "AjoutPJRevenusAutreFondPension", "nomDocument" : { "fr": "Documents concernant vos prestations d’un fonds de pension (fonds personnel ou fonds d’un employeur)", "en": "Documents concerning your pension benefits (personal or employer pension fund)" } }, 
+                         { "nomGroupe" : "RevenusAutrePensionAlimentaire", "nomQuestion" : "AjoutPJRevenusAutrePensionAlimentaire", "nomDocument" : { "fr": "Documents concernant vos revenus de pension alimentaire", "en": "Documents concerning your support payment income" } }, 
+                         { "nomGroupe" : "RevenusAutreDivers", "nomQuestion" : "AjoutPJRevenusAutreDivers", "nomDocument" : { "fr": "Documents concernant vos autres revenus", "en": "Documents concerning your other income" } } ]},
+                       { "nomSection" : "avoirs", "questions" : [ 
+                         { "nomGroupe" : "AvoirsPlacements", "nomQuestion" : "AjoutPJAvoirsPlacements", "nomDocument" : { "fr": "Documents concernant vos placements", "en": "Documents concerning your investments" } } ]}, 
+                       { "nomSection" : "biens", "questions" : [ 
+                         { "nomGroupe" : "BiensImmobiliers", "nomQuestion" : "AjoutPJBiensImmobiliers", "nomDocument" : { "fr": "Documents concernant vos biens immobiliers", "en": "Documents concerning your immovable property" } } ]}, 
+                       { "nomSection" : "enfantsACharge", "questions" : [ 
+                         { "nomGroupe" : "Enfants", "nomQuestion" : "AjoutPJEnfantHandicape", "nomDocument" : { "fr": "Documents de Retraite Québec concernant le supplément pour enfant handicapé nécessitant des soins exceptionnels", "en": "Retraite Québec documents concerning the Supplement for Handicapped Children Requiring Exceptional Care" } },
+                         { "nomGroupe" : "Enfants", "nomQuestion" : "AjoutPJEnfantsGardePartagee", "nomDocument" : { "fr": "Document concernant la garde de l’enfant", "en": "Document concerning the child’s custody" } } ]} ]    
+          }
+    computed:
+      estConsidereConjoint:
+        code: |
+          () {
+            this.form.Conjoint = (this.val('TypeDemande').includes('Afdr') &&
+                  (this.val('PrecisionsAdulte2.MarieUniCivilementAdulte') === 'true' || this.val('PrecisionsAdulte2.AutreParentEnfant') === 'true' || this.val('PrecisionsAdulte2.VieMaritaleUnAn') === 'true' || this.val('PrecisionsAdulte2.ViePasseeMaritaleUnAn') === 'true')).toString()            
+            return this.form.Conjoint
+          } 
+
+    watch:
+      estConsidereConjoint:
+        code: |
+          (value) {
+              this.form.Conjoint = value.toString()
+          }
+
+
+  accesAnonyme: true
+  afficherMessageSauvegardeCourrielReprise: true
 #-------------------------------------------------------------------------------------------
 
 form:

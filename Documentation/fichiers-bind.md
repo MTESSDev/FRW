@@ -173,8 +173,8 @@ Pour ce faire, votre fichier bind doit définir plusieurs « bundles ». Un bund
 * **Condition** : Il est possible de spécifier une ou des conditions pour déterminer si le bundle est applicable. Pour ce faire, il faut utiliser les propriétés « conditionsEt » et « conditionsOu ». Le système vérifie si la ou les valeurs concernées du formulaire respectent la ou les conditions.
 
 Chaque gabarit (template) définit les caractéristiques suivantes : 
-* **Nom de fichier du gabarit (anglais et français)** : Si aucun n’est spécifié, le gabarit par défaut sera utilisé.
-* **Champs à ignorer** : la liste des champs qui seront ignorés du traitement, c’est-à-dire qu’ils ne seront pas présents dans le fichier produit
+* **Nom de fichier du gabarit (anglais et français)** : Il est obligatoire de spécifier votre gabarit, il n'y a pas de gabarit par défaut avec champs de saisie dynamiques;
+* **Champs à ignorer** : Fonctionne uniquement avec gabarit word (exemples 1 et 2);
 * **Condition** : Il est possible de spécifier une condition pour déterminer si le gabarit est applicable à l’aide des propriétés « conditionsEt » et « conditionsOu ». Le système vérifie si les valeurs du formulaire respectent les conditions.
 
 Pour chaque gabarit (template) défini, il doit y avoir un bloc de config « bind : » défini. Cette section permet, en fonction des instructions de la configuration du formulaire, d’associer les bonnes valeurs du formulaire Web aux champs des gabarits PDF et d’appliquer un formatage si nécessaire.
@@ -203,6 +203,7 @@ config:
 bundles:
 #Le nomSortie sert à définir le nom du fichier qui sera produit. 
 #Lorsqu'on utilise un gabarit PDF pour la production du fichier, il n'est pas nécessaire de spécifier d'extension puisque ce sera toujours un PDF.
+  # 1er fichier produit
   - nomSortie: FormTest1
     # si la condition est true, retourne la valeur après le :
     # sinon (la condition est false), ne retourne rien; lorsqu'il n'y a rien, il n'y a pas de condition à respecter, donc le bloc s'exécute 
@@ -216,6 +217,7 @@ bundles:
       lignes:
         - 'Numéro de référence : {{NoConfirmation}}'
         - 'Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}'
+  # 2e fichier produit
   - nomSortie: FormTest2
     #Conjoint est une valeur booléenne provenant du formulaire
     conditionsEt: '{Conjoint}'    
@@ -228,6 +230,7 @@ bundles:
       lignes:
         - 'Numéro de référence : {{NoConfirmation}}'
         - 'Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}'
+  # 3e fichier produit; Il est possible, comme dans cet exemple, de produire en sortie un document informatif, c'est-à-dire sans qu'aucune information provenant du formulaire n'y soit affiché.  
   - nomSortie: DocumentInformatif
     conditionsEt: '{TypeDemande:neContientPas(Afdr):false}'
     templates:
@@ -249,11 +252,12 @@ templates:
   pdf:
     fr: DocumentInformatif.v1.FR
     en: DocumentInformatif.v1.EN
+  # La propriété "toujoursProduire" s'applique aux gabarits informationnels seulement et sert à forcer le traitement à produire le document même s'il n'y a aucun champs du formulaire qui y sont associés.
   toujoursProduire: true
 
 #la section bind permet, en fonction des instructions de la configuration du formulaire, d’associer les bonnes valeurs du formulaire Web aux champs des gabarits PDF et d’appliquer un formatage si nécessaire.
 bind:
-  test1:
+  template1:
     E1_Nom:
       champs: [Enfants.0.Nom]
     adulte1_nom:
@@ -272,4 +276,23 @@ bind:
       champs: [Enfants.0.Cp12]
     E1_Prenom:
       champs: [Enfants.0.Prenom]
+  template2:
+    E1_Nom:
+      champs: [Enfants.0.Nom]
+    adulte1_nom:
+      champs: [adulte1NomFamille]
+    adulte1_prenom:
+      champs: [adulte1Prenom]
+    A1_CP12:
+      champs: [adulte1Cp12]
+    adulte2_nom:
+      champs: [adulte2NomFamille]
+    adulte2_prenom:
+      champs: [adulte2Prenom]
+    A2_CP12:
+      champs: [adulte2Cp12]
+    E1_CP12:
+      champs: [Enfants.0.Cp12]
+    E1_Prenom:
+      champs: [Enfants.0.Prenom]    
 ````

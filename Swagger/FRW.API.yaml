@@ -1,17 +1,62 @@
-# Pour générer le fichier .md : npx swagger-markdown -i .\FRW.API.yaml -o .\README.md
 swagger: '2.0'
 info:
   title: FRW - API
   description: Définition de l'API publique pour intéragir avec FRW.
-  version: "1"
+  contact:
+    name: MESS - SFPS
+  version: v1
 paths:
+  /api/v1/Document/Telecharger/{nomFichierProtege}:
+    get:
+      tags:
+        - Document
+      summary: FRW121 - Télécharger une pièce par nom de fichier protégé
+      description: Permet de récupérer une pièce jointe transmise par un citoyen
+      produces:
+        - text/plain
+        - application/json
+        - text/json
+      parameters:
+        - in: path
+          name: nomFichierProtege
+          description: Nom fichier protégé (provient du contenu du formulaire)
+          required: true
+          type: string
+        - in: query
+          name: bypassSecurite
+          description: Permet de ne pas valider la sécurité.
+          type: boolean
+          default: false
+        - in: header
+          name: X-NoPublicSystemeAutorise
+          description: Guid publique de système autorisé
+          type: string
+        - in: header
+          name: X-ApiKey
+          description: Clée API
+          type: string
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ProblemDetails'
+        '404':
+          description: Fichier demandé introuvable
+          schema:
+            $ref: '#/definitions/ProblemDetails'
+        '500':
+          description: Server Error
+      security:
+        - ApiKey: []
+        - NoPublicSystemeAutorise: []
   /api/v1/SIS/CreerFormulaireIndividu/{typeFormulaire}:
     post:
       tags:
         - SIS
-      summary: |
-        FRW111 - Créer un formulaire Web pour un individu. 
-        > Permet de créer un formulaire pour un individu connu par le système autorisé.
+      summary: FRW111 - Créer un formulaire Web pour un individu.
+      description: Permet de créer un formulaire pour un individu connu par le système autorisé.
       consumes:
         - application/json
       produces:
@@ -19,40 +64,45 @@ paths:
       parameters:
         - in: path
           name: typeFormulaire
-          description: '_Example:_ `"3003"`'
+          description: _Exemple:_ `3003`
           required: true
           type: string
         - in: header
           name: X-ApiKey
           description: Clé Api
-          required: true
           type: string
         - in: header
           name: X-NoPublicSystemeAutorise
           description: Numéro public du système autorisé
-          required: true
           type: string
         - in: header
           name: X-IdentifiantUtilisateur
-          description: Identifiant de l'utilisateur pour lequel le formulaire est créé
+          description: Identifiant de l'utilisateur
           type: string
         - in: body
           name: body
-          description: ''
-          schema:
-            $ref: '#/definitions/EntrantCreerFormulaireIndividu'
+          description: 'Le contenu du formulaire (pour pré-remplissage) ex: `{"form": {"champ1": "val1"} }`'
+          schema: {}
       responses:
         '200':
           description: Success
           schema:
             $ref: '#/definitions/RetourCreerReprendreFormulaireIndividu'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ProblemDetails'
+        '500':
+          description: Server Error
+      security:
+        - ApiKey: []
+        - NoPublicSystemeAutorise: []
   /api/v1/SIS/ObtenirFormulairesIndividu:
     post:
       tags:
         - SIS
-      summary: | 
-        FRW112 - Obtenir la liste des formulaires Web d'un individu
-        > Permet d'obtenir tous les formulaires d'un individu selon les états passés en paramètres.
+      summary: FRW112 - Obtenir la liste des formulaires Web d'un individu
+      description: Permet d'obtenir tous les formulaires d'un individu selon les états passés en paramètres.
       consumes:
         - application/json
       produces:
@@ -60,21 +110,19 @@ paths:
       parameters:
         - in: header
           name: X-ApiKey
-          required: true
           description: Clé Api
           type: string
         - in: header
           name: X-NoPublicSystemeAutorise
-          required: true
           description: Numéro public du système autorisé
           type: string
         - in: header
           name: X-IdentifiantUtilisateur
-          description: Identifiant de l'utilisateur pour lequel obtenir les formulaires
+          description: Identifiant de l'utilisateur
           type: string
         - in: body
           name: body
-          description: ''
+          description: Objet de critères de recherche
           schema:
             $ref: '#/definitions/EntrantRechercherFormulairesSIS'
       responses:
@@ -84,13 +132,21 @@ paths:
             type: array
             items:
               $ref: '#/definitions/RetourRechercherFormulaires'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ProblemDetails'
+        '500':
+          description: Server Error
+      security:
+        - ApiKey: []
+        - NoPublicSystemeAutorise: []
   /api/v1/SIS/ObtenirIdentifiantSessionFormulaire/{noFormulairePublic}:
     post:
       tags:
         - SIS
-      summary: |
-        FRW113 - Obtenir un identifiant de session pour un formulaire
-        > Permet de reprendre un formulaire pour un utilisateur le demandant
+      summary: FRW113 - Obtenir un identifiant de session pour un formulaire
+      description: Permet de reprendre un formulaire pour un utilisateur le demandant
       consumes:
         - application/json
       produces:
@@ -103,35 +159,42 @@ paths:
           type: string
         - in: header
           name: X-ApiKey
-          required: true
           description: Clé Api
           type: string
         - in: header
           name: X-NoPublicSystemeAutorise
-          required: true
           description: Numéro public du système autorisé
           type: string
         - in: header
           name: X-IdentifiantUtilisateur
-          description: Identifiant de l'utilisateur pour lequel on demande une session
+          description: Identifiant de l'utilisateur
           type: string
         - in: body
           name: body
           description: Contenu à remplacer dans le formulaire à reprendre (Ne permet que de remplacer un contexte ou un objet perso. ne remplace pas le contenu d'un formulaire.)
-          schema: 
-            $ref: '#/definitions/EntrantObtenirIdentifiantSessionFormulaire'
+          schema: {}
       responses:
         '200':
           description: Success
           schema:
             $ref: '#/definitions/RetourCreerReprendreFormulaireIndividu'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/ProblemDetails'
+        '500':
+          description: Server Error
+      security:
+        - ApiKey: []
+        - NoPublicSystemeAutorise: []
   /api/v1/SIS/SupprimerFormulaire/{noFormulairePublic}:
     get:
       tags:
         - SIS
-      summary: | 
-        FRW114 - Supprimer un formulaire web
-        > Permet de supprimer un formulaire demandé
+      summary: FRW114 - Supprimer un formulaire web
+      description: Permet de supprimer un formulaire demandé
+      produces:
+        - application/json
       parameters:
         - in: path
           name: noFormulairePublic
@@ -153,141 +216,119 @@ paths:
       responses:
         '200':
           description: Success
-#  /api/v1/SIS/DeployerSysteme:
-#    post:
-#      tags:
-#        - SIS
-#      summary: | 
-#        FRWxxx - Déployer un système au complet
-#        > Il n'est pas recommandé d'utiliser cet api, préférez utiliser l'extension Azure DevOps de déploiement.
-#      consumes:
-#        - application/json
-#      parameters:
-#        - in: header
-#          name: X-ApiKey
-#          required: true
-#          description: Clé Api
-#          type: string
-#        - in: header
-#          name: X-NoPublicSystemeAutorise
-#          required: true
-#          description: Numéro public du système autorisé
-#          type: string
-#        - in: body
-#          name: body
-#          schema:
-#            $ref: '#/definitions/EntrantDeployerSysteme'
-#      responses:
-#        '200':
-#          description: Success
-  /api/v1/Document/Telecharger/{nomFichierProtege}:
-    get:
-      tags:
-        - Document
-      summary: FRW121 - Télécharger une pièce par nom de fichier protégé
-      produces:
-        - text/plain
-        - application/json
-        - text/json
-      parameters:
-        - in: path
-          name: nomFichierProtege
-          description: Nom fichier protégé (provient du contenu du formulaire)
-          required: true
-          type: string
-        - in: header
-          name: X-NoPublicSystemeAutorise
-          description: Guid publique de système autorisé
-          required: true
-          type: string
-        - in: header
-          name: X-ApiKey
-          required: true
-          description: Clée API
-          type: string
-      responses:
-        '200':
-          description: Success
         '401':
           description: Unauthorized
+          schema:
+            $ref: '#/definitions/ProblemDetails'
+        '500':
+          description: Server Error
+      security:
+        - ApiKey: []
+        - NoPublicSystemeAutorise: []
 definitions:
-  EntrantCreerFormulaireIndividu:
+  Adresse:
     type: object
-    additionalProperties: true
     properties:
-      form:
-        type: object
-        description: Le contenu du formulaire (pour pré-remplissage)
-#  EntrantDeployerSysteme:
-#    type: object
-#    properties:
-#      zip:
-#        format: byte
-#        type: string
+      rue:
+        type: string
+      municipalite:
+        type: string
+      municipaliteNomLong:
+        type: string
+      codePostal:
+        type: string
+  EntrantDeconnexion:
+    type: object
+    properties:
+      expiration:
+        format: int64
+        type: integer
+  EntrantDeployerSysteme:
+    type: object
+    properties:
+      zip:
+        format: byte
+        type: string
   EntrantRechercherFormulairesSIS:
     type: object
     properties:
       etatsFormulaireRecherche:
         type: array
-        description: Liste des états à obtenir
         items:
           type: string
-        example:
-        - CRE
-        - REP
-        - MAJ
-        - TRANSMIS
       codeTypeFormulaire:
         type: string
-        description: Code du formulaire ex. `3003`
       noConfirmation:
         format: int32
         type: integer
-        description: Numéro confirmant la transmission donné à l'utilisateur
-        example: 12345311
       noPublicFormulaire:
         type: string
-        description: Identifiant unique du formulaire
-  EntrantObtenirIdentifiantSessionFormulaire:
+  ProblemDetails:
     type: object
-    additionalProperties: true
+    properties:
+      type:
+        type: string
+      title:
+        type: string
+      status:
+        format: int32
+        type: integer
+      detail:
+        type: string
+      instance:
+        type: string
+    additionalProperties: {}
   RetourCreerReprendreFormulaireIndividu:
     type: object
     properties:
       noPublicSession:
         type: string
-        description: Identifiant de session unique, utilisable une seule fois
       noPublicForm:
         type: string
-        description: Identifiant unique du formulaire
   RetourRechercherFormulaires:
     type: object
     properties:
       typeFormulaire:
         type: string
-        description: Nom du répertoire déployé (nom du formulaire dans l'URL)
-        example: 3003
       noPublicForm:
         type: string
-        description: Identifiant unique du formulaire
       identifiantUtilisateur:
         type: string
-        description: Identifiant de l'utilisateur à qui appartient le formulaire
       titreFrancais:
         type: string
-        description: Titre français du formulaire extrait de la configuation
       titreAnglais:
         type: string
-        description: Titre anglais du formulaire extrait de la configuation
       dateCreation:
         format: date-time
-        description: Date de création du formulaire
         type: string
       dernierEtat:
         type: string
-        description: Dernier état
-        example: MAJ
       dateDernierEtat:
         format: date-time
-        description: Date de la dernière modification ou ouverture du formulaire
         type: string
+      dateEpuration:
+        format: date-time
+        type: string
+      numeroConfirmation:
+        format: int32
+        type: integer
+  StringStringValuesKeyValuePair:
+    type: object
+    properties:
+      key:
+        type: string
+      value:
+        type: array
+        items:
+          type: string
+securityDefinitions:
+  ApiKey:
+    type: apiKey
+    name: X-ApiKey
+    in: header
+    description: Clée API secrète du système autorisé
+  NoPublicSystemeAutorise:
+    type: apiKey
+    name: X-NoPublicSystemeAutorise
+    in: header
+    description: Numéro public du système autorisé

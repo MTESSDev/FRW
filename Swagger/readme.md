@@ -206,27 +206,6 @@ Permet de supprimer un formulaire demandé
 ---
 ### Models
 
-#### Adresse
-
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| rue | string |  | No |
-| municipalite | string |  | No |
-| municipaliteNomLong | string |  | No |
-| codePostal | string |  | No |
-
-#### EntrantDeconnexion
-
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| expiration | long |  | No |
-
-#### EntrantDeployerSysteme
-
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| zip | byte |  | No |
-
 #### EntrantRechercherFormulairesSIS
 
 | Name | Type | Description | Required |
@@ -267,10 +246,3 @@ Permet de supprimer un formulaire demandé
 | dateDernierEtat | dateTime |  | No |
 | dateEpuration | dateTime |  | No |
 | numeroConfirmation | integer |  | No |
-
-#### StringStringValuesKeyValuePair
-
-| Name | Type | Description | Required |
-| ---- | ---- | ----------- | -------- |
-| key | string |  | No |
-| value | [ string ] |  | No |

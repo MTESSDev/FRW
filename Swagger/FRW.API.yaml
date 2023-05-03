@@ -226,29 +226,6 @@ paths:
         - ApiKey: []
         - NoPublicSystemeAutorise: []
 definitions:
-  Adresse:
-    type: object
-    properties:
-      rue:
-        type: string
-      municipalite:
-        type: string
-      municipaliteNomLong:
-        type: string
-      codePostal:
-        type: string
-  EntrantDeconnexion:
-    type: object
-    properties:
-      expiration:
-        format: int64
-        type: integer
-  EntrantDeployerSysteme:
-    type: object
-    properties:
-      zip:
-        format: byte
-        type: string
   EntrantRechercherFormulairesSIS:
     type: object
     properties:
@@ -312,15 +289,6 @@ definitions:
       numeroConfirmation:
         format: int32
         type: integer
-  StringStringValuesKeyValuePair:
-    type: object
-    properties:
-      key:
-        type: string
-      value:
-        type: array
-        items:
-          type: string
 securityDefinitions:
   ApiKey:
     type: apiKey

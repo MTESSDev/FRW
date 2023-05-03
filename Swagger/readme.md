@@ -48,10 +48,11 @@ Permet de récupérer une pièce jointe transmise par un citoyen
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | Success |  |
-| 401 | Unauthorized | [ProblemDetails](#problemdetails) |
+| 200 | Succès |  |
+| 400 | Paramètre manquant ou invalide | [ProblemDetails](#problemdetails) |
+| 401 | Accès non autorisé | [ProblemDetails](#problemdetails) |
 | 404 | Fichier demandé introuvable | [ProblemDetails](#problemdetails) |
-| 500 | Server Error |  |
+| 500 | Paramètre manquant, invalide ou erreur interne du serveur |  |
 
 ##### Security
 
@@ -86,9 +87,10 @@ Permet de créer un formulaire pour un individu connu par le système autorisé.
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | Success | [RetourCreerReprendreFormulaireIndividu](#retourcreerreprendreformulaireindividu) |
-| 401 | Unauthorized | [ProblemDetails](#problemdetails) |
-| 500 | Server Error |  |
+| 200 | Succès | [RetourCreerReprendreFormulaireIndividu](#retourcreerreprendreformulaireindividu) |
+| 400 | Paramètre manquant ou invalide | [ProblemDetails](#problemdetails) |
+| 401 | Accès non autorisé | [ProblemDetails](#problemdetails) |
+| 500 | Paramètre manquant, invalide ou erreur interne du serveur |  |
 
 ##### Security
 
@@ -121,9 +123,10 @@ Permet d'obtenir tous les formulaires d'un individu selon les états passés en 
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | Success | [ [RetourRechercherFormulaires](#retourrechercherformulaires) ] |
-| 401 | Unauthorized | [ProblemDetails](#problemdetails) |
-| 500 | Server Error |  |
+| 200 | Succès | [ [RetourRechercherFormulaires](#retourrechercherformulaires) ] |
+| 400 | Paramètre manquant ou invalide | [ProblemDetails](#problemdetails) |
+| 401 | Accès non autorisé | [ProblemDetails](#problemdetails) |
+| 500 | Paramètre manquant, invalide ou erreur interne du serveur |  |
 
 ##### Security
 
@@ -157,9 +160,10 @@ Permet de reprendre un formulaire pour un utilisateur le demandant
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | Success | [RetourCreerReprendreFormulaireIndividu](#retourcreerreprendreformulaireindividu) |
-| 401 | Unauthorized | [ProblemDetails](#problemdetails) |
-| 500 | Server Error |  |
+| 200 | Succès | [RetourCreerReprendreFormulaireIndividu](#retourcreerreprendreformulaireindividu) |
+| 400 | Paramètre manquant ou invalide | [ProblemDetails](#problemdetails) |
+| 401 | Accès non autorisé | [ProblemDetails](#problemdetails) |
+| 500 | Paramètre manquant, invalide ou erreur interne du serveur |  |
 
 ##### Security
 
@@ -192,9 +196,10 @@ Permet de supprimer un formulaire demandé
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | Success |  |
-| 401 | Unauthorized | [ProblemDetails](#problemdetails) |
-| 500 | Server Error |  |
+| 200 | Succès |  |
+| 400 | Paramètre manquant ou invalide | [ProblemDetails](#problemdetails) |
+| 401 | Accès non autorisé | [ProblemDetails](#problemdetails) |
+| 500 | Paramètre manquant, invalide ou erreur interne du serveur |  |
 
 ##### Security
 

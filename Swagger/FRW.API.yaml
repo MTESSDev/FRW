@@ -37,9 +37,13 @@ paths:
           type: string
       responses:
         '200':
-          description: Success
+          description: Succès
+        '400':
+          description: Paramètre manquant ou invalide
+          schema:
+            $ref: '#/definitions/ProblemDetails'
         '401':
-          description: Unauthorized
+          description: Accès non autorisé
           schema:
             $ref: '#/definitions/ProblemDetails'
         '404':
@@ -47,7 +51,7 @@ paths:
           schema:
             $ref: '#/definitions/ProblemDetails'
         '500':
-          description: Server Error
+          description: Paramètre manquant, invalide ou erreur interne du serveur
       security:
         - ApiKey: []
         - NoPublicSystemeAutorise: []
@@ -85,15 +89,19 @@ paths:
           schema: {}
       responses:
         '200':
-          description: Success
+          description: Succès
           schema:
             $ref: '#/definitions/RetourCreerReprendreFormulaireIndividu'
+        '400':
+          description: Paramètre manquant ou invalide
+          schema:
+            $ref: '#/definitions/ProblemDetails'
         '401':
-          description: Unauthorized
+          description: Accès non autorisé
           schema:
             $ref: '#/definitions/ProblemDetails'
         '500':
-          description: Server Error
+          description: Paramètre manquant, invalide ou erreur interne du serveur
       security:
         - ApiKey: []
         - NoPublicSystemeAutorise: []
@@ -127,17 +135,21 @@ paths:
             $ref: '#/definitions/EntrantRechercherFormulairesSIS'
       responses:
         '200':
-          description: Success
+          description: Succès
           schema:
             type: array
             items:
               $ref: '#/definitions/RetourRechercherFormulaires'
+        '400':
+          description: Paramètre manquant ou invalide
+          schema:
+            $ref: '#/definitions/ProblemDetails'
         '401':
-          description: Unauthorized
+          description: Accès non autorisé
           schema:
             $ref: '#/definitions/ProblemDetails'
         '500':
-          description: Server Error
+          description: Paramètre manquant, invalide ou erreur interne du serveur
       security:
         - ApiKey: []
         - NoPublicSystemeAutorise: []
@@ -175,15 +187,19 @@ paths:
           schema: {}
       responses:
         '200':
-          description: Success
+          description: Succès
           schema:
             $ref: '#/definitions/RetourCreerReprendreFormulaireIndividu'
+        '400':
+          description: Paramètre manquant ou invalide
+          schema:
+            $ref: '#/definitions/ProblemDetails'
         '401':
-          description: Unauthorized
+          description: Accès non autorisé
           schema:
             $ref: '#/definitions/ProblemDetails'
         '500':
-          description: Server Error
+          description: Paramètre manquant, invalide ou erreur interne du serveur
       security:
         - ApiKey: []
         - NoPublicSystemeAutorise: []
@@ -215,13 +231,17 @@ paths:
           type: string
       responses:
         '200':
-          description: Success
+          description: Succès
+        '400':
+          description: Paramètre manquant ou invalide
+          schema:
+            $ref: '#/definitions/ProblemDetails'
         '401':
-          description: Unauthorized
+          description: Accès non autorisé
           schema:
             $ref: '#/definitions/ProblemDetails'
         '500':
-          description: Server Error
+          description: Paramètre manquant, invalide ou erreur interne du serveur
       security:
         - ApiKey: []
         - NoPublicSystemeAutorise: []

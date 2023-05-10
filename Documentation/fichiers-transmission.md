@@ -48,6 +48,11 @@ etapes: 
     # d'un utilisateur (scan antivirus et gestion pour la sortie)
     - tache: traiterDocumentsSoumis
 
+    # Permet d'extraire toutes les questions du formulaire dans toutes les langues dans un objet "questionsFormulaire"
+    # peu importe si la question ait été affichée ou répondue
+    # Disponible à partir de la release 2023.6
+    - tache: extraireQuestions
+
     # Ajouter estampille, permet d'ajouter une "Étampe" sur un document 
     # comme pour l'officialiser (mettre la date de transmission, 
     # le no. de confirmation, etc)

@@ -103,7 +103,7 @@ Variables du bloc `http_client` utilisables dans le style `mustache`. Tout le bl
 | noConfirmation | numérique  | Numéro unique de confirmation, peut-être validé par un agent, termine par ``311`` |
 | noExecution | numérique  | **Ne pas utiliser sera retiré**|
 | documentsProduits | objet | Liste des documents produits par FRW (pdf, word) par les tâches `genererWord` et `genererPdf` <details><summary>**documentProduit**</summary>**nom** : Le nom du document généré en sortie<br> **fichier** : Le contenu du fichier en ``base64``</details>|
-| donneesFormulaire | objet | Tout le contenu ``formulaire`` inclus, `form`, `config`, `InformationsSupplementaires` et vos objets passés en pré-remplissage<details><summary>**donneeFormulaire**</summary>**form** : Les données du formulaire<br> **config** : Certaines configurations<br> **AUTRES** : Vos objets personnalisés</details>|
+| donneesFormulaire | objet | Tout le contenu ``formulaire`` inclus, `form`, `config` et vos objets passés en pré-remplissage<details><summary>**donneeFormulaire**</summary>**form** : Les données du formulaire<br> **config** : Certaines configurations<br> **AUTRES** : Vos objets personnalisés</details>|
 | configDev | objet | Contenu spécial pour les essais, configurations developpeurs/analystes|
 | fichiersExternes | objet | Contenu d'un ou des fichiers requis en sortie |
 | contenuFormulaireJson | string | **Ne pas utiliser sera retiré** Contenu du formulaire tel que stocké dans la BD |

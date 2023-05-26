@@ -88,6 +88,60 @@ Exemple réel avec de vrais fichiers base64 binaires et contenu réel.
 				"LigneAffaire": "ASF"
 			}
 		]
+	},
+	"questionsFormulaire": {
+		"TypeDemande": {
+			"label": {
+				"fr": "Quel type de demande voulez-vous effectuer?",
+				"en": "Which type of application do you want to submit?"
+				},
+			"options": {
+			"Afdr": {
+				"fr": "Demande d'aide financière de dernier recours (aide sociale)",
+				"en": "Application for last-resort financial assistance (social assistance)"
+				},
+			"AideEmploi": {
+				"fr": "Demande de services d'emploi",
+				"en": "Application for employment services"
+				}
+			}
+		},
+		"HabiteAvecAutreAdulte": {
+			"label": {
+				"fr": "Habitez-vous avec un autre adulte?",
+				"en": "Are you living with another adult?"
+				},
+			"options": {
+				"true": {
+					"fr": "Oui",
+					"en": "Yes"
+				},
+				"false": {
+					"fr": "Non",
+					"en": "No"
+				}
+			}
+		},
+		"adulte1NeQC": {
+			"label": {
+				"fr": "Êtes-vous né au Québec?",
+				"en": "Were you born in Québec?"
+			},
+			"options": {
+				"true": {
+					"fr": "Oui",
+					"en": "Yes"
+				},
+				"false": {
+					"fr": "Non",
+					"en": "No"
+				}
+			}
+		}
+	},
+	"informationsSupplementaires": {
+		"inutile1": "ben oui maxi",
+		"contexte": "Marc Lalancette test - Demande #736553 - Année financière 2023"
 	}
 }
 ````

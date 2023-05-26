@@ -1,10 +1,10 @@
 # Pré-remplir les données d'un formulaire
 
-Ce guide explique comment fournir des données afin de pré-remplir des champs du formulaire comme le nom ou l'adresse.
+Ce guide explique comment fournir des données en pré-remplissage au moment de la création du formulaire.
 
 Vous devez créer un service de pré remplissage dans votre système qui fait cette opération.
 
-Le but de ce service est de produire un contenu de formulaire correspondant au format attendu par FRW en y ajoutant les valeurs déterminées par votre système.
+Le but de ce service est de préparer les données afin qu'elles correspondent au format attendu par FRW en y ajoutant les valeurs déterminées par votre système.
 
 Voici comment nous suggérons de procéder:
 
@@ -13,7 +13,7 @@ Voici comment nous suggérons de procéder:
 | Nom du paramètre | Description |
 | ---- | ---------- |
 | Type formulaire | Correspond au nom du répertoire FRW de votre formulaire |
-| Dictionnaire d'objet | Dictionnaire clé-valeur qui contiendra toutes les valeurs que vous désirez fournir au formulaire |
+| Dictionnaire d'objet | Dictionnaire clé-valeur qui contiendra toutes les valeurs que vous désirez fournir au formulaire. <br><br> Ces données peuvent être contenues dans des objets dont le nom est réservé :<br>`form` : des informations pour renseigner des champs du formulaire, comme par exemple le nom ou l'adresse,<br>`config` : un ou des domaines de valeurs personnalisés<br>`systeme` : des informations réservées au système FRW actuellement l’adresse courriel pour l’enregistrement du formulaire<br>`informationsSupplementaires` : des informations supplémentaires, pouvant contenir un contexte de formulaire (dans la propriété « contexte »)<br><br>Il est aussi possible d’utiliser des objets personnalisés réutilisables durant le traitement, qui sont redonnées en sortie au moment de la transmission, par exemple :<br>* Des informations pour l’estampille, qui sont récupérées au moment de la création de l’estampille<br>* un contexte applicatif appartenant à votre système|
 
 ## Traitement à effectuer
 
@@ -45,12 +45,17 @@ Voici comment nous suggérons de procéder:
       "estampille": {
           "texteAuthentification": "{{{TexteAuthentification}}}"
       }
+      // La propriété informationsSupplementaires permet de sauvegarder des informations supplémentaires dans la BD. Ces données peuvent contenir un contexte de formulaire, qui sera affiché en évidence dans une zone prévue à cet effet dans chaque section du formulaire. Ces données ne sont pas chiffrées et ne doivent pas contenir d'informations sensibles.
+      "informationsSupplementaires":       
+          "Cle1": "Valeur1",
+          "contexte": "Demande #253647 - Année financière 2028-2029"
+	     }
     }
     ````
 
-1. Le service doit récupérer la structure définie au point précédent et remplacer les balises par les valeurs reçues en paramètre d'entrée.
+1. Le service de pré-remplissage doit récupérer la structure définie au point précédent et remplacer les balises par les valeurs reçues en paramètre d'entrée.
 
-1. Le service retourne l'information en sortie.
+1. Le service de pré-remplissage retourne l'information en sortie.
 
 
 ## Paramètres de sortie du service de pré remplissage
@@ -58,3 +63,15 @@ Voici comment nous suggérons de procéder:
 | Nom du paramètre | Description |
 | ---- | ---------- |
 | Contenu formulaire | Contient la structure de pré remplissage avec les valeurs remplacées en format JSON |
+
+
+## Création versus modification
+
+Certaines informations peuvent être prises en compte seulement au moment de la création du formulaire, d’autres peuvent aussi être modifiées lors de la reprise. Le tableau suivant résume les possibilités : 
+
+| Type  d'information pré-remplie | Création | Reprise |
+| ---- | ---------- | ---------- |
+| Champs de formulaire | ✔ |  |
+| Propriétés personnalisées | ✔ | ✔ |
+| Informations supplémentaires | ✔ |  |
+| Domaine de valeurs personnalisées | ✔ | ✔ |

@@ -21,9 +21,7 @@ Voici comment nous suggérons de procéder:
   Vous pouvez utiliser des fichiers de configuration pour gérer cette partie.
   Voici un exemple de configuration de pré remplissage dans lequel on défini les noms des champs du formulaire (à gauche) et les valeurs reçues en paramètre d'entrée (à droite):
 
-
-    ````json
-    
+````json
 {
 	"form": {
 		"adulte1NomFamille": {{{Json GD_NM_INDV}}},
@@ -54,9 +52,7 @@ Voici comment nous suggérons de procéder:
 		"contexte": {{{ContexteFormulaire}}}
 	}
 }
-    
-    
-    ````
+````
 
 1. Le service de pré-remplissage doit récupérer la structure définie au point précédent et remplacer les balises par les valeurs reçues en paramètre d'entrée.
 

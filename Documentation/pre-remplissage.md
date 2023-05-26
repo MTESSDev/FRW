@@ -55,7 +55,7 @@ Voici comment nous suggérons de procéder:
 ````
 
 2. Le service de pré-remplissage doit récupérer la structure définie au point précédent et remplacer les balises par les valeurs reçues en paramètre d'entrée.
-
+	- Le remplacement des variables dans l'exemple ci-haut se fait grâce à un outil de syntaxe ``mustache``, nous recommandons d'utiliser [HandleBars.Net](https://github.com/Handlebars-Net/Handlebars.Net), ou encore mieux le produit [YamlHttpClient](https://github.com/anisite/YamlHttpClient) qui permet d'appeler un API par configuration ``Yaml`` et s'occupera lui-même de remplacer vos variables. 
 3. Le service de pré-remplissage retourne l'information en sortie.
 
 

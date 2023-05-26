@@ -54,9 +54,9 @@ Voici comment nous suggérons de procéder:
 }
 ````
 
-1. Le service de pré-remplissage doit récupérer la structure définie au point précédent et remplacer les balises par les valeurs reçues en paramètre d'entrée.
+2. Le service de pré-remplissage doit récupérer la structure définie au point précédent et remplacer les balises par les valeurs reçues en paramètre d'entrée.
 
-1. Le service de pré-remplissage retourne l'information en sortie.
+3. Le service de pré-remplissage retourne l'information en sortie.
 
 
 ## Paramètres de sortie du service de pré remplissage

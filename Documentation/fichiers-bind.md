@@ -1,6 +1,25 @@
-# Configurer le fichier produit à partir des données du formulaire (fichier bind)
+# Configurer le(s) fichier(s) produit(s) à partir des données du formulaire (fichier bind)
 
-L'outil FRW permet de générer un fichier à partir des données du formulaire transmis. Le fichier de configuration "bind" est requis afin de configurer le format et les caractéristiques de l'extrant à produire.
+L'outil FRW permet de générer un ou des fichiers à partir des données du formulaire transmis. Le fichier de configuration "bind" est requis afin de configurer le format et les caractéristiques de l'extrant à produire.
+
+## Gabarits
+
+La mise en page des données du formulaire dans un PDF peut être déterminée avec un gabarit Word ou un gabarit PDF avec champs de saisie dynamiques.
+
+### Gabarit Word 
+
+#### Gabarit Word générique
+
+Un gabarit générique est offert par la solution FRW. Il affiche toutes les sections et les champs tels qu'ils sont paramétrés dans le formulaire.
+Notez bien que seul les noms de section et les champs (libellé du champ et valeur associée) sont traités par le gabarit. Tous les éléments visuels (étapier, icônes, messages informationnels) sont exclus par le gabarit et ne s'affichent pas dans le PDF produit.
+
+#### Gabarit Word personnalisé
+
+Il est possible de se construire un gabarit word personnalisé, par exemple pour organiser la façon que les informations sont affichées dans une mise en page spécifique, ou pour mettre un logo spécifique.
+
+### Gabarit PDF avec champs de saisie dynamiques
+
+À utiliser lorsque les données du formulaire sont à insérer dans un fichier PDF avec champs de saisie dynamiques. Chaque champ doit alors être associé à une donnée du formulaire. Il est recommandé d’utiliser l’outil de binding pour produire cette section. Consulter le [guide de l’outil de binding](guide-outil-binding.md) pour produire votre premier fichier bind à l’aide de l’outil de binding. 
 
 ## Tester vos formulaires
 À tout moment, vous pouvez utiliser les [outils de développement](outils-developpement.md) afin de tester vos formulaires;

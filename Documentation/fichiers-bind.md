@@ -21,6 +21,8 @@ Il est possible de se construire un gabarit word personnalisé, par exemple pour
 
 À utiliser lorsque les données du formulaire sont à insérer dans un fichier PDF avec champs de saisie dynamiques. Chaque champ doit alors être associé à une donnée du formulaire. Il est recommandé d’utiliser l’outil de binding pour produire cette section. Consulter le [guide de l’outil de binding](guide-outil-binding.md) pour produire votre premier fichier bind à l’aide de l’outil de binding. 
 
+Important : le gabarit PDF doit être déverrouillé pour être utilisable par FRW.
+
 ## Tester vos formulaires
 À tout moment, vous pouvez utiliser les [outils de développement](outils-developpement.md) afin de tester vos formulaires;
 

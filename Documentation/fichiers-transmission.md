@@ -18,22 +18,10 @@ Un fichier `Transmission` est principalement nécessaire au niveau `Système` et
 # Liste des étapes désirées dans votre transmission.
 # L'ordre est importante, le traitement la respectera
 etapes:  
-    # Différer selon plage de disponibilité
-    # Permet de demander au traitement d'attendre une période spécifique pour
-    # exécuter les prochaines étapes
-    - tache: differerSelonPlageDisponibilite
-        # (Fonction avancée) Permet de spécifier lors de quelle "batch" 
-        # d'exécution nous voulons exécuter la tâche 
-      numeroExecution: 01
-      options:
-        # (Fonction avancée) Numéro d'exécution, permet de faire plus d'une batch d'appels 
-        execution: 02
-
     # Générer Word, permet de créer un document docx/pdf/html en sortie
     # contenant questions/réponses automatiquement
     # ATTENTION: pour le moment il n'est pas possible d'activer genererPdf en même temps
     - tache: genererWord
-      numeroExecution: 02
       options:
         # (optionnel) Fichier Bind précis, sinon celui par défault
         fichierBind: NOM_FORM.v1.bind.yml  

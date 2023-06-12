@@ -13,7 +13,7 @@ Voici comment nous suggérons de procéder:
 | Nom du paramètre | Description |
 | ---- | ---------- |
 | Type formulaire | Correspond au nom du répertoire FRW de votre formulaire |
-| Dictionnaire d'objet | Dictionnaire clé-valeur qui contiendra toutes les valeurs que vous désirez fournir au formulaire. <br><br> Ces données peuvent être contenues dans des objets dont le nom est réservé :<br>`form` : des informations pour renseigner des champs du formulaire, comme par exemple le nom ou l'adresse<br>`config` : un ou des domaines de valeurs personnalisés<br>`systeme` : des informations réservées au système FRW actuellement l’adresse courriel pour l’enregistrement du formulaire<br>`informationsSupplementaires` : des informations supplémentaires, pouvant contenir un contexte de formulaire (dans la propriété `contexte`)<br><br>Il est aussi possible d’utiliser des objets personnalisés réutilisables durant le traitement, qui sont redonnées en sortie au moment de la transmission, par exemple :<br>- Des informations pour l’estampille, qui sont récupérées au moment de la création de l’estampille<br>- un contexte applicatif appartenant à votre système|
+| Dictionnaire d'objet | Dictionnaire clé-valeur qui contiendra toutes les valeurs que vous désirez fournir au formulaire. <br><br> Ces données peuvent être contenues dans des objets dont le nom est réservé :<br>`form` : des informations pour renseigner des champs du formulaire comme le nom ou l'adresse<br>`formProtege (à partir de 2023.7)` : des informations pour renseigner des champs du formulaire qui ne pourront pas être altérées par l'utilisateur. Le contenu de cet objet s'ajoute au contenu de l'objet `form` et lorsqu'un champ existe dans les deux objets, la valeur de l'objet `formProtege`a préséance. <br>`config` : un ou des domaines de valeurs personnalisés<br>`systeme` : des informations réservées au système FRW actuellement l’adresse courriel pour l’enregistrement du formulaire<br>`informationsSupplementaires` : des informations supplémentaires, pouvant contenir un contexte de formulaire (dans la propriété `contexte`)<br><br>Il est aussi possible d’utiliser des objets personnalisés réutilisables durant le traitement, qui sont redonnées en sortie au moment de la transmission, par exemple :<br>- Des informations pour l’estampille, qui sont récupérées au moment de la création de l’estampille<br>- un contexte applicatif appartenant à votre système|
 
 ## Traitement à effectuer
 
@@ -30,7 +30,11 @@ Voici comment nous suggérons de procéder:
 		"adulte1Nas1": {{{Json GD_N_NAS}}},
 		"adulte1Sexe": "{{#ifCond GD_C_SEXE '=' "M"}}Masculin{{else}}Feminin{{/ifCond}}",
 		"adulte1Cp12": {{{Json GD_N_CP10 GD_N_CP12_JUM}}},
-		"adulte1Nam": {{{Json GD_N_NAM}}},
+		"adulte1Nam": {{{Json GD_N_NAM}}}
+	},
+	// L'objet formProtege sert à s'assurer que la source du champ proviendra du système autorisé. 
+	// Un utilisateur ne pourra jamais altérer le contenu d'un champ présent dans cet objet.
+	"formProtege": {
 		"adulte1Adresse": [
 			{
 				"NoCivique": {{{Json GD_A_NUMR_CIVQ}}},
@@ -42,6 +46,42 @@ Voici comment nous suggérons de procéder:
 			}
 		]
 	},
+	 "config": {
+	      "domaines": {
+	    "sportsPreRemplissage": {
+	      "Course": {
+		"label": {
+		  "fr": "Course à pied",
+		  "en": "(EN) Course à pied"
+		},
+		"mots-cle": {
+		  "fr": "chaussure",
+		  "en": "shoe"
+		}
+	      },
+	      "Hache": {
+		"label": {
+		  "fr": "Lancer de la hache",
+		  "en": "Axe throwing"
+		},
+		"mots-cle": {
+		  "fr": "Hache",
+		  "en": "Axe"
+		}
+	      },
+	      "Saut": {
+		"label": {
+		  "fr": "Saut en hauteur",
+		  "en": "(EN) Saut en hauteur"
+		},
+		"mots-cles": {
+		  "fr": "Haut",
+		  "en": "High"
+		}
+	      }  
+	    }
+	  }
+	},	
 	// La partie estampille permet d'envoyer des données du système dans l'estampille apposée sur le fichier produit par FRW lorsqu'applicable.
 	"estampille": {
 		"texteAuthentification": "TexteAuthentification"
@@ -72,7 +112,8 @@ Certaines informations peuvent être prises en compte seulement au moment de la 
 
 | Type  d'information pré-remplie | Création | Reprise |
 | ---- | ---------- | ---------- |
-| Champs de formulaire | ✔ |  |
+| Champs de formulaire (form) | ✔ |  |
+| Champs de formulaire protégés (formProtege) | ✔ | ✔ |
 | Propriétés personnalisées | ✔ | ✔ |
 | Informations supplémentaires | ✔ |  |
 | Domaine de valeurs personnalisées | ✔ | ✔ |

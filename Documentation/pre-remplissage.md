@@ -34,7 +34,9 @@ Voici comment nous suggérons de procéder:
 	},
 	// L'objet formProtege sert à s'assurer que la source du champ proviendra du système autorisé. 
 	// Un utilisateur ne pourra jamais altérer le contenu d'un champ présent dans cet objet.
+	// Dans cet exemple, la valeur du champ "adulte1NAS1" de l'objet "form" sera écrasée par celle de l'objet "formProtege" et les champs de "adulte1Adresse" s'ajouteront à l'objet "form" également. 
 	"formProtege": {
+		"adulte1Nas1": {{{Json GD_N_NAS}}},
 		"adulte1Adresse": [
 			{
 				"NoCivique": {{{Json GD_A_NUMR_CIVQ}}},

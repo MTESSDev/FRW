@@ -5,7 +5,7 @@ etapes:
   - tache: appelerServiceExterne
     options:
       client: appel_externe
-      ignorerSurBoutonForcerPdf: true
+      modeBoutonTesterTransmission: simuler
 
 
 # Cette configuration a été laissée telle quelle pour montrer les cas tordus que l'ont peut gérer en sortie vers un API

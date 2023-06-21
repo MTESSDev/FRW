@@ -13,31 +13,34 @@ La valeur par défaut est:
 
 # Propriétés de validations
 
-| Propriété                     | Type         | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                        |
-| :---------------------------- | :----------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [required](#required)         | `string`     | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-required.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/required")         |
-| [accepted](#accepted)         | Non spécifié | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-accepted.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/accepted")         |
-| [before](#before)             | `string`     | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-before.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/before")             |
-| [after](#after)               | `string`     | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-after.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/after")               |
-| [alpha](#alpha)               | `string`     | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-alpha.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/alpha")               |
-| [alphanumeric](#alphanumeric) | `string`     | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-alphanumeric.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/alphanumeric") |
-| [between](#between)           | `string`     | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-between.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/between")           |
-| [confirm](#confirm)           | `string`     | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-confirm.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/confirm")           |
-| [bail](#bail)                 | Non spécifié | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-bail.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/bail")                 |
-| [email](#email)               | Non spécifié | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-email.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/email")               |
-| [starts\_with](#starts_with)  | `string`     | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-starts_with.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/starts_with")   |
-| [avant](#avant)               | `string`     | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-avant.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/avant")               |
-| [ends\_with](#ends_with)      | `string`     | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-ends_with.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/ends_with")       |
-| [in](#in)                     | `string`     | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-in.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/in")                     |
-| [matches](#matches)           | `string`     | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-matches.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/matches")           |
-| [min](#min)                   | Plusieurs    | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-min.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/min")                   |
-| [max](#max)                   | Plusieurs    | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-max.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/max")                   |
-| [mime](#mime)                 | `string`     | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-mime.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/mime")                 |
-| [not](#not)                   | `string`     | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-not.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/not")                   |
-| [number](#number)             | Non spécifié | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-number.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/number")             |
-| [optional](#optional)         | Non spécifié | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-optional.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/optional")         |
-| [url](#url)                   | Non spécifié | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-url.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/url")                   |
-| [nas](#nas)                   | `boolean`    | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-nas.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/nas")                   |
+| Propriété                        | Type         | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                                                                   |
+| :------------------------------- | :----------- | :---------- | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [required](#required)            | `string`     | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-required.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/required")                                                    |
+| [accepted](#accepted)            | Non spécifié | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-accepted.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/accepted")                                                    |
+| [after](#after)                  | `string`     | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-after.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/after")                                                          |
+| [alpha](#alpha)                  | `string`     | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-alpha.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/alpha")                                                          |
+| [alphanumeric](#alphanumeric)    | `string`     | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-alphanumeric.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/alphanumeric")                                            |
+| [bail](#bail)                    | Non spécifié | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-bail.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/bail")                                                            |
+| [before](#before)                | `string`     | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-before.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/before")                                                        |
+| [between](#between)              | `string`     | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-between.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/between")                                                      |
+| [confirm](#confirm)              | `string`     | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-confirm.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/confirm")                                                      |
+| [date](#date)                    | `string`     | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-date.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/date")                                                            |
+| [email](#email)                  | Non spécifié | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-email.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/email")                                                          |
+| [endsWith](#endswith)            | `string`     | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-endswith.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/endsWith")                                                    |
+| [in](#in)                        | `string`     | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-in.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/in")                                                                |
+| [matches](#matches)              | `string`     | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-matches.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/matches")                                                      |
+| [max](#max)                      | Plusieurs    | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-max.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/max")                                                              |
+| [mime](#mime)                    | `string`     | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-mime.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/mime")                                                            |
+| [min](#min)                      | Plusieurs    | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-min.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/min")                                                              |
+| [not](#not)                      | `string`     | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-not.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/not")                                                              |
+| [number](#number)                | Non spécifié | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-number.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/number")                                                        |
+| [optional](#optional)            | Non spécifié | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-optional.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/optional")                                                    |
+| [url](#url)                      | Non spécifié | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-url.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/url")                                                              |
+| [startsWith](#startswith)        | `string`     | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-startswith.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/startsWith")                                                |
+| [avant](#avant)                  | `string`     | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-avant.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/avant")                                                          |
+| [nam](#nam)                      | `boolean`    | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-nam.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/nam")                                                              |
+| [nas](#nas)                      | `boolean`    | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-properties-nas.md "schemas/form#/definitions/ComposantInteraction/properties/validations/properties/nas")                                                              |
+| `^[a-z][a-z0-9A-Z]{1,99}Custom$` | Plusieurs    | Optionnel   | peut être nul    | [Fichier formulaire](frw-form-definitions-composant-interaction-properties-validation-patternproperties-a-za-z0-9a-z199custom.md "schemas/form#/definitions/ComposantInteraction/properties/validations/patternProperties/^\[a-z]\[a-z0-9A-Z]{1,99}Custom$") |
 
 ## required
 
@@ -85,27 +88,6 @@ The value must be yes, on, 1 or true. Useful for box inputs, often where you nee
 
 `null`, la valeur doit être nulle
 
-## before
-
-Checks if a date comes before another date. If no date argument is provided the current time will be used. The value must be a Date object or a string that can be evaluated by Date.parse.
-
-`before`
-
-*   est optionnel
-
-*   peut être nul
-
-### Type de before
-
-`string`
-
-### Exemple de before
-
-```yaml
-'2020-12-31'
-
-```
-
 ## after
 
 Checks if a date comes after another date. If no date argument is provided the current time will be used. The value must be a Date object or a string that can be evaluated by Date.parse.
@@ -149,6 +131,7 @@ Checks if a value is only alphabetical characters. There are two character sets 
 | :---------- | :---------- |
 | `"latin"`   |             |
 | `"default"` |             |
+| `null`      |             |
 
 ### Exemple de alpha
 
@@ -180,6 +163,41 @@ Checks if a value is only made of alphabetical characters or numeric digits. For
 | `"latin"`   |             |
 | `"default"` |             |
 | `null`      |             |
+
+## bail
+
+Used to logically stop validation on the first subsequent validation error.
+
+`bail`
+
+*   est optionnel
+
+*   peut être nul
+
+### Type de bail
+
+`null`, la valeur doit être nulle
+
+## before
+
+Checks if a date comes before another date. If no date argument is provided the current time will be used. The value must be a Date object or a string that can be evaluated by Date.parse.
+
+`before`
+
+*   est optionnel
+
+*   peut être nul
+
+### Type de before
+
+`string`
+
+### Exemple de before
+
+```yaml
+'2020-12-31'
+
+```
 
 ## between
 
@@ -228,19 +246,66 @@ confirm:other_field
 
 ```
 
-## bail
+## date
 
-Used to logically stop validation on the first subsequent validation error.
+Checks if the input is a valid date according to Date.parse(), or if a format argument is provided, it will validate according to the given format.
 
-`bail`
+`date`
 
 *   est optionnel
 
 *   peut être nul
 
-### Type de bail
+### Type de date
 
-`null`, la valeur doit être nulle
+`string`
+
+### Exemple de date
+
+```yaml
+YYYY
+
+```
+
+```yaml
+YY
+
+```
+
+```yaml
+MM
+
+```
+
+```yaml
+M
+
+```
+
+```yaml
+DD
+
+```
+
+```yaml
+D
+
+```
+
+```yaml
+YYYY-MM-DD
+
+```
+
+```yaml
+DD/MM/YYYY
+
+```
+
+```yaml
+YYYY-MM
+
+```
 
 ## email
 
@@ -256,45 +321,17 @@ Checks if the input is a valid email address format.
 
 `null`, la valeur doit être nulle
 
-## starts\_with
-
-Checks if the input starts with one of the provided options.
-
-`starts_with`
-
-*   est optionnel
-
-*   ne peut être nul
-
-### Type de starts\_with
-
-`string`
-
-## avant
-
-Pour une date qui doit être AVANT la date du jour.
-
-`avant`
-
-*   est optionnel
-
-*   peut être nul
-
-### Type de avant
-
-`string`
-
-## ends\_with
+## endsWith
 
 Checks if the input ends with one of the provided options.
 
-`ends_with`
+`endsWith`
 
 *   est optionnel
 
 *   ne peut être nul
 
-### Type de ends\_with
+### Type de endsWith
 
 `string`
 
@@ -335,37 +372,6 @@ val1,val2
 
 ```yaml
 /[0-9]/
-
-```
-
-## min
-
-Checks the value of a Number, or length of a String or Array is more than a maximum length or value. The minimum value/length defaults to 1. You can force the validator to evaluate length or value by passing a second argument of either length or value.
-
-`min`
-
-*   est optionnel
-
-*   peut être nul
-
-### Type de min
-
-l'un des éléments suivants :`string` ou `number` ([Détails](frw-form-definitions-composant-interaction-properties-validation-properties-min.md))
-
-### Exemple de min
-
-```yaml
-9,length
-
-```
-
-```yaml
-'3'
-
-```
-
-```yaml
-10,value
 
 ```
 
@@ -423,6 +429,37 @@ image/png
 
 ```yaml
 image/jpeg
+
+```
+
+## min
+
+Checks the value of a Number, or length of a String or Array is more than a maximum length or value. The minimum value/length defaults to 1. You can force the validator to evaluate length or value by passing a second argument of either length or value.
+
+`min`
+
+*   est optionnel
+
+*   peut être nul
+
+### Type de min
+
+l'un des éléments suivants :`string` ou `number` ([Détails](frw-form-definitions-composant-interaction-properties-validation-properties-min.md))
+
+### Exemple de min
+
+```yaml
+9,length
+
+```
+
+```yaml
+'3'
+
+```
+
+```yaml
+10,value
 
 ```
 
@@ -489,9 +526,51 @@ Checks if the input value appears to be a properly formatted URL including the p
 
 `null`, la valeur doit être nulle
 
+## startsWith
+
+Checks if the input starts with one of the provided options.
+
+`startsWith`
+
+*   est optionnel
+
+*   ne peut être nul
+
+### Type de startsWith
+
+`string`
+
+## avant
+
+Pour une date qui doit être AVANT la date du jour.
+
+`avant`
+
+*   est optionnel
+
+*   peut être nul
+
+### Type de avant
+
+`string`
+
+## nam
+
+Valide le NAM, si true valide selon un algorithme avec chiffre validateur, si false valide seulement le format du NAM sans l'algorithme de chiffre validateur.
+
+`nam`
+
+*   est optionnel
+
+*   ne peut être nul
+
+### Type de nam
+
+`boolean`
+
 ## nas
 
-Valider le NAS, si true valide vraiment que le NAS est valide, si false valide que c'est un nombre de 9 de long seulement.
+Valide le NAS, si true valide selon un algorithme avec chiffre validateur, si false valide seulement le format du NAS sans l'algorithme de chiffre validateur.
 
 `nas`
 
@@ -502,3 +581,17 @@ Valider le NAS, si true valide vraiment que le NAS est valide, si false valide q
 ### Type de nas
 
 `boolean`
+
+## Modèle:`^[a-z][a-z0-9A-Z]{1,99}Custom$`
+
+
+
+`^[a-z][a-z0-9A-Z]{1,99}Custom$`
+
+*   est optionnel
+
+*   peut être nul
+
+### Type de ^\[a-z]\[a-z0-9A-Z]{1,99}Custom$
+
+l'un des éléments suivants :`string` ou `boolean` ou `number` ou `integer` ([Détails](frw-form-definitions-composant-interaction-properties-validation-patternproperties-a-za-z0-9a-z199custom.md))

@@ -10,7 +10,7 @@
 
 ## validationAutomatique
 
-Indique si la fenêtre modale permettant la saisie d'une adresse courriel pour le courriel de confirmation est affichée ou non.
+Indique si la validation du formulaire est exécutée dès que la page révision est accédée, évitant ainsi à l'utilisateur de cliquer sur le bouton 'Valider'. Utile lorsqu'aucune consigne particulière ne doit être affichée avant la validation.
 
 `validationAutomatique`
 

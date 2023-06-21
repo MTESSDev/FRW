@@ -10,6 +10,7 @@
 | :---------- | :---------- |
 | `"latin"`   |             |
 | `"default"` |             |
+| `null`      |             |
 
 ## Exemple de alpha
 

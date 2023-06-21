@@ -10,7 +10,7 @@
 
 ## accesAnonyme
 
-Permet d'activer l'accès anonyme au formulaire.
+Active l'accès anonyme au formulaire.
 
 `accesAnonyme`
 

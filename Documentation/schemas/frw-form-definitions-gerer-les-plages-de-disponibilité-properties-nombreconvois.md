@@ -1,3 +1,0 @@
-## Type de nombreConvois
-
-`integer`

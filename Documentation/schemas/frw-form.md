@@ -1510,25 +1510,26 @@ Référencer ce groupe en utilisant
 {"$ref":"schemas/form#/definitions/Config"}
 ```
 
-| Propriété                                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                 |
-| :---------------------------------------------------- | :-------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [afficherBlocCode](#afficherbloccode-2)               | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-afficherbloccode.md "schemas/form#/definitions/Config/properties/afficherBlocCode")       |
-| [afficherPartagePage](#afficherpartagepage)           | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-afficherpartagepage.md "schemas/form#/definitions/Config/properties/afficherPartagePage") |
-| [confirmationTransmission](#confirmationtransmission) | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-confirmation-de-transmission.md "schemas/form#/definitions/Config/properties/confirmationTransmission")                          |
-| [courrielReprise](#courrielreprise)                   | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-courrielreprise.md "schemas/form#/definitions/Config/properties/courrielReprise")                                                |
-| [debuterFormulaire](#debuterformulaire)               | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-debuterformulaire.md "schemas/form#/definitions/Config/properties/debuterFormulaire")                                            |
-| [enregistrement](#enregistrement)                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-enregistrement.md "schemas/form#/definitions/Config/properties/enregistrement")                                                  |
-| [formulaireUnilingue](#formulaireunilingue)           | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-formulaireunilingue.md "schemas/form#/definitions/Config/properties/formulaireUnilingue") |
-| [gererPlageDisponibilite](#gererplagedisponibilite)   | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-gerer-les-plages-de-disponibilité.md "schemas/form#/definitions/Config/properties/gererPlageDisponibilite")                      |
-| [injecterJs](#injecterjs)                             | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-scripts-vuejs-à-injecter-au-formulaire.md "schemas/form#/definitions/Config/properties/injecterJs")                              |
-| [messages](#messages)                                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-messages.md "schemas/form#/definitions/Config/properties/messages")                                                              |
-| [pages](#pages)                                       | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-pages.md "schemas/form#/definitions/Config/properties/pages")                                                                    |
-| [piv](#piv)                                           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-piv.md "schemas/form#/definitions/Config/properties/piv")                                 |
-| [revision](#revision)                                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-page-de-révision.md "schemas/form#/definitions/Config/properties/revision")                                                      |
-| [scripts](#scripts)                                   | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-scripts.md "schemas/form#/definitions/Config/properties/scripts")                                                                |
-| [securite](#securite)                                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-sécurité-du-formulaire.md "schemas/form#/definitions/Config/properties/securite")                                                |
-| [soumission](#soumission)                             | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-page-de-soumission.md "schemas/form#/definitions/Config/properties/soumission")                                                  |
-| [title](#title-3)                                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/Config/properties/title")                                                               |
+| Propriété                                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                       |
+| :---------------------------------------------------- | :-------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [afficherBlocCode](#afficherbloccode-2)               | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-afficherbloccode.md "schemas/form#/definitions/Config/properties/afficherBlocCode")             |
+| [afficherPartagePage](#afficherpartagepage)           | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-afficherpartagepage.md "schemas/form#/definitions/Config/properties/afficherPartagePage")       |
+| [confirmationTransmission](#confirmationtransmission) | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-confirmation-de-transmission.md "schemas/form#/definitions/Config/properties/confirmationTransmission")                                |
+| [aiguillage](#aiguillage)                             | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-défini-le-comportement-final-du-formulaire-selon-des-critères-daiguillage.md "schemas/form#/definitions/Config/properties/aiguillage") |
+| [courrielReprise](#courrielreprise)                   | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-courrielreprise.md "schemas/form#/definitions/Config/properties/courrielReprise")                                                      |
+| [debuterFormulaire](#debuterformulaire)               | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-debuterformulaire.md "schemas/form#/definitions/Config/properties/debuterFormulaire")                                                  |
+| [domaines](#domaines)                                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-domaines.md "schemas/form#/definitions/Config/properties/domaines")                             |
+| [enregistrement](#enregistrement)                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-enregistrement.md "schemas/form#/definitions/Config/properties/enregistrement")                                                        |
+| [formulaireUnilingue](#formulaireunilingue)           | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-formulaireunilingue.md "schemas/form#/definitions/Config/properties/formulaireUnilingue")       |
+| [injecterJs](#injecterjs)                             | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-scripts-vuejs-à-injecter-au-formulaire.md "schemas/form#/definitions/Config/properties/injecterJs")                                    |
+| [messages](#messages)                                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-messages.md "schemas/form#/definitions/Config/properties/messages")                                                                    |
+| [pages](#pages)                                       | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-pages.md "schemas/form#/definitions/Config/properties/pages")                                                                          |
+| [piv](#piv)                                           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-piv.md "schemas/form#/definitions/Config/properties/piv")                                       |
+| [revision](#revision)                                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-page-de-révision.md "schemas/form#/definitions/Config/properties/revision")                                                            |
+| [scripts](#scripts)                                   | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-scripts.md "schemas/form#/definitions/Config/properties/scripts")                                                                      |
+| [securite](#securite)                                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-sécurité-du-formulaire.md "schemas/form#/definitions/Config/properties/securite")                                                      |
+| [soumission](#soumission)                             | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-page-de-soumission.md "schemas/form#/definitions/Config/properties/soumission")                                                        |
+| [title](#title-3)                                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/Config/properties/title")                                                                     |
 
 ### afficherBlocCode
 
@@ -1546,7 +1547,7 @@ Référencer ce groupe en utilisant
 
 ### afficherPartagePage
 
-(Avancé) ajouter un bouton partage dans toutes les pages à la droite du titre de la page.
+(Avancé) ajoute un bouton partage dans toutes les pages à la droite du titre de la page.
 
 `afficherPartagePage`
 
@@ -1571,6 +1572,20 @@ Référencer ce groupe en utilisant
 #### Type de confirmationTransmission
 
 `object` ([Confirmation de transmission](frw-form-definitions-confirmation-de-transmission.md))
+
+### aiguillage
+
+
+
+`aiguillage`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de aiguillage
+
+`object` ([Défini le comportement final du formulaire selon des critères d'aiguillage.](frw-form-definitions-défini-le-comportement-final-du-formulaire-selon-des-critères-daiguillage.md))
 
 ### courrielReprise
 
@@ -1600,6 +1615,24 @@ Paramètres de la page permettant de débuter un formulaire.
 
 `object` ([debuterFormulaire](frw-form-definitions-debuterformulaire.md))
 
+### domaines
+
+Définition des domaines de valeurs.
+
+`domaines`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de domaines
+
+`object` ([domaines](frw-form-definitions-configuration-du-formulaire-properties-domaines.md))
+
+#### Contraintes de domaines
+
+**nombre minimum de propriétés**: le nombre minimum de propriétés pour cet objet est :`1`
+
 ### enregistrement
 
 Paramètres associés à l'enregistrement d'un formulaire
@@ -1616,7 +1649,7 @@ Paramètres associés à l'enregistrement d'un formulaire
 
 ### formulaireUnilingue
 
-Permet de retirer le selecteur de langue. Le formulaire s'affichera en français seulement.
+Retire le selecteur de langue. Le formulaire s'affichera en français seulement.
 
 `formulaireUnilingue`
 
@@ -1627,20 +1660,6 @@ Permet de retirer le selecteur de langue. Le formulaire s'affichera en français
 #### Type de formulaireUnilingue
 
 `boolean`
-
-### gererPlageDisponibilite
-
-
-
-`gererPlageDisponibilite`
-
-*   est optionnel
-
-*   ne peut être nul
-
-#### Type de gererPlageDisponibilite
-
-`object` ([Gerer les plages de disponibilité](frw-form-definitions-gerer-les-plages-de-disponibilité.md))
 
 ### injecterJs
 
@@ -1792,7 +1811,7 @@ Référencer ce groupe en utilisant
 
 ### accesAnonyme
 
-Permet d'activer l'accès anonyme au formulaire.
+Active l'accès anonyme au formulaire.
 
 `accesAnonyme`
 
@@ -1870,77 +1889,6 @@ en: ''
 
 ```
 
-## Groupe de définitions GererPlageDisponibilite
-
-Référencer ce groupe en utilisant
-
-```json
-{"$ref":"schemas/form#/definitions/GererPlageDisponibilite"}
-```
-
-| Propriété                                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                                                  |
-| :---------------------------------------------------- | :-------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [actif](#actif-1)                                     | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-gerer-les-plages-de-disponibilité-properties-actif.md "schemas/form#/definitions/GererPlageDisponibilite/properties/actif")                                       |
-| [joursOuvrablesUniquement](#joursouvrablesuniquement) | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-gerer-les-plages-de-disponibilité-properties-joursouvrablesuniquement.md "schemas/form#/definitions/GererPlageDisponibilite/properties/joursOuvrablesUniquement") |
-| [nombreConvois](#nombreconvois)                       | `integer` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-gerer-les-plages-de-disponibilité-properties-nombreconvois.md "schemas/form#/definitions/GererPlageDisponibilite/properties/nombreConvois")                       |
-| [plages](#plages)                                     | `array`   | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-gerer-les-plages-de-disponibilité-properties-plages.md "schemas/form#/definitions/GererPlageDisponibilite/properties/plages")                                     |
-
-### actif
-
-
-
-`actif`
-
-*   est optionnel
-
-*   ne peut être nul
-
-#### Type de actif
-
-`boolean`
-
-### joursOuvrablesUniquement
-
-
-
-`joursOuvrablesUniquement`
-
-*   est optionnel
-
-*   ne peut être nul
-
-#### Type de joursOuvrablesUniquement
-
-`boolean`
-
-### nombreConvois
-
-
-
-`nombreConvois`
-
-*   est optionnel
-
-*   ne peut être nul
-
-#### Type de nombreConvois
-
-`integer`
-
-### plages
-
-
-
-`plages`
-
-*   est optionnel
-
-*   ne peut être nul
-
-#### Type de plages
-
-`array`
-
 ## Groupe de définitions ConfirmationTransmission
 
 Référencer ce groupe en utilisant
@@ -2006,6 +1954,98 @@ Nom du champ courriel qui contient l'adresse courriel à utiliser pour le courri
 #### Type de modaleCourrielConfirmation
 
 `object` ([Fenêtre modale de courriel de confirmation](frw-form-definitions-fenêtre-modale-de-courriel-de-confirmation.md))
+
+## Groupe de définitions Aiguillage
+
+Référencer ce groupe en utilisant
+
+```json
+{"$ref":"schemas/form#/definitions/Aiguillage"}
+```
+
+| Propriété       | Type    | Obligatoire | Nullable         | Défini par                                                                                                                                                                                       |
+| :-------------- | :------ | :---------- | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [choix](#choix) | `array` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-défini-le-comportement-final-du-formulaire-selon-des-critères-daiguillage-properties-choix.md "schemas/form#/definitions/Aiguillage/properties/choix") |
+
+### choix
+
+Liste de choix pour l'aiguillage
+
+`choix`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de choix
+
+`object[]` ([Défini le comportement final du formulaire selon des critères d'aiguillage.](frw-form-definitions-défini-le-comportement-final-du-formulaire-selon-des-critères-daiguillage-1.md))
+
+## Groupe de définitions Choix
+
+Référencer ce groupe en utilisant
+
+```json
+{"$ref":"schemas/form#/definitions/Choix"}
+```
+
+| Propriété                 | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                                              |
+| :------------------------ | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [vif](#vif)               | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-défini-le-comportement-final-du-formulaire-selon-des-critères-daiguillage-1-properties-vif.md "schemas/form#/definitions/Choix/properties/vif")               |
+| [mode](#mode)             | `string` | Obligatoire | ne peut être nul | [Fichier formulaire](frw-form-definitions-défini-le-comportement-final-du-formulaire-selon-des-critères-daiguillage-1-properties-mode.md "schemas/form#/definitions/Choix/properties/mode")             |
+| [formulaire](#formulaire) | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-défini-le-comportement-final-du-formulaire-selon-des-critères-daiguillage-1-properties-formulaire.md "schemas/form#/definitions/Choix/properties/formulaire") |
+
+### vif
+
+Condition d'aiguillage
+
+`vif`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de vif
+
+`string`
+
+### mode
+
+Mode d'aiguillage
+
+`mode`
+
+*   est requis
+
+*   ne peut être nul
+
+#### Type de mode
+
+`string`
+
+#### Contraintes de mode
+
+**énumération**: la valeur de cette propriété doit être égale à l'une des valeurs suivantes:
+
+| Valeur                    | Explication |
+| :------------------------ | :---------- |
+| `"redirectionFormulaire"` |             |
+| `"redirectionUrl"`        |             |
+| `"confirmation"`          |             |
+
+### formulaire
+
+Nom du formulaire de destination (mode redirectionFormulaire).
+
+`formulaire`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de formulaire
+
+`string`
 
 ## Groupe de définitions CourrielReprise
 
@@ -2226,7 +2266,7 @@ Référencer ce groupe en utilisant
 
 ### validationAutomatique
 
-Indique si la fenêtre modale permettant la saisie d'une adresse courriel pour le courriel de confirmation est affichée ou non.
+Indique si la validation du formulaire est exécutée dès que la page révision est accédée, évitant ainsi à l'utilisateur de cliquer sur le bouton 'Valider'. Utile lorsqu'aucune consigne particulière ne doit être affichée avant la validation.
 
 `validationAutomatique`
 
@@ -2284,7 +2324,7 @@ Référencer ce groupe en utilisant
 
 | Propriété         | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                        |
 | :---------------- | :-------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [actif](#actif-2) | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-fenêtre-modale-de-courriel-de-confirmation-properties-actif.md "schemas/form#/definitions/ModaleCourrielConfirmation/properties/actif") |
+| [actif](#actif-1) | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-fenêtre-modale-de-courriel-de-confirmation-properties-actif.md "schemas/form#/definitions/ModaleCourrielConfirmation/properties/actif") |
 
 ### actif
 
@@ -2335,6 +2375,96 @@ fr: ''
 en: ''
 
 ```
+
+## Groupe de définitions Domaines
+
+Référencer ce groupe en utilisant
+
+```json
+{"$ref":"schemas/form#/definitions/Domaines"}
+```
+
+| Propriété        | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                  |
+| :--------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
+| `^[a-zA-Z0-9]+$` | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-valeurelementdomaine.md "schemas/form#/definitions/NomDomaine/patternProperties/^\[a-zA-Z0-9]+$") |
+
+### Modèle:`^[a-zA-Z0-9]+$`
+
+
+
+`^[a-zA-Z0-9]+$`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de ^\[a-zA-Z0-9]+$
+
+`object` ([Nom du domaine de valeurs](frw-form-definitions-valeurelementdomaine.md))
+
+#### Contraintes de ^\[a-zA-Z0-9]+$
+
+**nombre minimum de propriétés**: le nombre minimum de propriétés pour cet objet est :`1`
+
+## Groupe de définitions NomDomaine
+
+Référencer ce groupe en utilisant
+
+```json
+{"$ref":"schemas/form#/definitions/NomDomaine"}
+```
+
+| Propriété        | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                  |
+| :--------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
+| `^[a-zA-Z0-9]+$` | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-valeurelementdomaine.md "schemas/form#/definitions/NomDomaine/patternProperties/^\[a-zA-Z0-9]+$") |
+
+### Modèle:`^[a-zA-Z0-9]+$`
+
+
+
+`^[a-zA-Z0-9]+$`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de ^\[a-zA-Z0-9]+$
+
+`object` ([Nom du domaine de valeurs](frw-form-definitions-valeurelementdomaine.md))
+
+#### Contraintes de ^\[a-zA-Z0-9]+$
+
+**nombre minimum de propriétés**: le nombre minimum de propriétés pour cet objet est :`1`
+
+## Groupe de définitions ValeurElementDomaine
+
+Référencer ce groupe en utilisant
+
+```json
+{"$ref":"schemas/form#/definitions/ValeurElementDomaine"}
+```
+
+| Propriété        | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                                            |
+| :--------------- | :------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `^[a-zA-Z0-9]+$` | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-valeurelementdomaine-patternproperties-valeur-de-lélément-du-domaine.md "schemas/form#/definitions/ValeurElementDomaine/patternProperties/^\[a-zA-Z0-9]+$") |
+
+### Modèle:`^[a-zA-Z0-9]+$`
+
+
+
+`^[a-zA-Z0-9]+$`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de ^\[a-zA-Z0-9]+$
+
+`object` ([Valeur de l'élément du domaine](frw-form-definitions-valeurelementdomaine-patternproperties-valeur-de-lélément-du-domaine.md))
+
+#### Contraintes de ^\[a-zA-Z0-9]+$
+
+**nombre minimum de propriétés**: le nombre minimum de propriétés pour cet objet est :`1`
 
 ## Groupe de définitions InjecterJs
 

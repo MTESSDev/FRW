@@ -18,11 +18,13 @@
 
 *   [Confirmation de transmission](./frw-form-definitions-confirmation-de-transmission.md) – `schemas/form#/definitions/ConfirmationTransmission`
 
+*   [Défini le comportement final du formulaire selon des critères d'aiguillage.](./frw-form-definitions-défini-le-comportement-final-du-formulaire-selon-des-critères-daiguillage.md) – `schemas/form#/definitions/Aiguillage`
+
+*   [Défini le comportement final du formulaire selon des critères d'aiguillage.](./frw-form-definitions-défini-le-comportement-final-du-formulaire-selon-des-critères-daiguillage-1.md) – `schemas/form#/definitions/Choix`
+
 *   [Fenêtre modale de courriel de confirmation](./frw-form-definitions-fenêtre-modale-de-courriel-de-confirmation.md) – `schemas/form#/definitions/ModaleCourrielConfirmation`
 
 *   [Form](./frw-form-definitions-form.md) – `schemas/form#/definitions/Form`
-
-*   [Gerer les plages de disponibilité](./frw-form-definitions-gerer-les-plages-de-disponibilité.md) – `schemas/form#/definitions/GererPlageDisponibilite`
 
 *   [Infobulle](./frw-form-definitions-infobulle.md) – `schemas/form#/definitions/Tooltip`
 
@@ -43,6 +45,8 @@
 *   [Sécurité du formulaire](./frw-form-definitions-sécurité-du-formulaire.md) – `schemas/form#/definitions/Securite`
 
 *   [Traduction](./frw-form-definitions-traduction.md "Textes multilingue (fr et en supportés seulement)") – `schemas/form#/definitions/Translation`
+
+*   [Valeur de l'élément du domaine](./frw-form-definitions-valeurelementdomaine-patternproperties-valeur-de-lélément-du-domaine.md) – `schemas/form#/definitions/ValeurElementDomaine/patternProperties/^[a-zA-Z0-9]+$`
 
 *   [Valeurs par défaut](./frw-form-definitions-valeurs-par-défaut.md) – `schemas/form#/definitions/Defaults`
 
@@ -84,7 +88,7 @@
 
 *   [Sections](./frw-form-definitions-section-group-properties-sections.md) – `schemas/form#/definitions/SectionsGroup/properties/sections`
 
-*   [array sans titre dans Fichier formulaire](./frw-form-definitions-gerer-les-plages-de-disponibilité-properties-plages.md) – `schemas/form#/definitions/GererPlageDisponibilite/properties/plages`
+*   [array sans titre dans Fichier formulaire](./frw-form-definitions-défini-le-comportement-final-du-formulaire-selon-des-critères-daiguillage-properties-choix.md "Liste de choix pour l'aiguillage") – `schemas/form#/definitions/Aiguillage/properties/choix`
 
 ## Note de version
 

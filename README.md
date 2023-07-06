@@ -9,8 +9,7 @@ Les formulaires générés sont accessibles, adaptatifs (responsive), sécuritai
 
 Nous vous invitons à consulter la [présentation complète](https://github.com/MTESSDev/FRW/blob/main/Documentation/Documents/FRW%20-%20Pr%C3%A9sentation%20compl%C3%A8te.pptx) du système. Il est important de la télécharger et de l'ouvrir dans PowerPoint directement, car sinon, dans le navigateur, les gifs ne sont pas animés.
 
-![image](https://github.com/MTESSDev/FRW/assets/129791924/8dcc5dd2-ee22-4f6e-9df0-2ae0b0293df6)
-
+[![Foo](https://github.com/MTESSDev/FRW/assets/129791924/8dcc5dd2-ee22-4f6e-9df0-2ae0b0293df6)](https://github.com/MTESSDev/FRW/blob/main/Documentation/Documents/FRW%20-%20Pr%C3%A9sentation%20compl%C3%A8te.pptx)
 
 [Consulter la liste des fonctionnalités offertes par FRW](Documentation/fonctionnalites.md).
 

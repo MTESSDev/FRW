@@ -18,6 +18,8 @@ Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de
     
     Ex. `https://formulaires.it.mtess.gouv.qc.ca/fr/Reprise?no=123456afaf3344`
 
+    Attention : la session SYSTEME créé à l'étape 2. est valide seulement pour une durée de 30 secondes. La redirection doit être effectuée dans les 30 secondes qui suivent la création sinon la session devient invalide.
+
 1. Rediriger l'utilisateur à cette url (idéalement dans un nouvel onglet du fureteur);
 
 &nbsp;
@@ -48,6 +50,8 @@ Les étapes à effectuer sont les suivantes :
    L'URL prend la forme qui suit : `{{ **Adresse du site FRW** }}/{{ **langue** }}/reprise?no={{ **No Public Session** }}`
 
     Ex. `https://formulaires.it.mtess.gouv.qc.ca/fr/Reprise?no=123456afaf3344`
+
+    Attention : la session SYSTEME créé à l'étape 1. est valide seulement pour une durée de 30 secondes. La redirection doit être effectuée dans les 30 secondes qui suivent la création sinon la session devient invalide.
 
 1. Rediriger l'utilisateur à cette url (idéalement dans un nouvel onglet du fureteur);
 

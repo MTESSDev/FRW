@@ -52,7 +52,8 @@ Les étapes à effectuer sont les suivantes :
 
     Ex. `https://formulaires.it.mtess.gouv.qc.ca/fr/Reprise?no=123456afaf3344`
 
-    Attention : la session SYSTEME créé à l'étape 1. est valide seulement pour une durée de 30 secondes. La redirection doit être effectuée dans les 30 secondes qui suivent la création sinon la session devient invalide.
+   > **Attention** \
+   > La session SYSTEME créé à l'étape 1. est valide seulement pour une durée de 30 secondes. La redirection doit être effectuée dans les 30 secondes qui suivent la création sinon la session devient invalide.
 
 1. Rediriger l'utilisateur à cette url (idéalement dans un nouvel onglet du fureteur);
 

@@ -8,7 +8,9 @@
 1. Affichage
    * Multilingue (français et anglais);
    * Responsive (appareils mobiles et tablettes);
+   <!-- markdown-link-check-disable -->
    * Respecte le [standard du gouvernement du Québec en ressources informationnelles (SGQRI 008 2.0)](https://www.tresor.gouv.qc.ca/fileadmin/PDF/ressources_informationnelles/AccessibiliteWeb/standard-access-web.pdf) 
+   <!-- markdown-link-check-enable -->
 1. Contrôles
    * Respect des règles du Système de design gouvernemental.;
    * Éventail élargi de contrôles disponibles;

@@ -35,6 +35,9 @@ etapes: 
     # Traiter documents soumis, permet de valider les pièces jointes 
     # d'un utilisateur (scan antivirus et gestion pour la sortie)
     - tache: traiterDocumentsSoumis
+      options:
+        # (optionnel) Permet de désactiver l'estampille (false par défaut)
+        desactiverEstampille: false
 
     # Permet d'extraire toutes les questions du formulaire dans toutes les langues dans un objet "questionsFormulaire"
     # peu importe si la question ait été affichée ou répondue

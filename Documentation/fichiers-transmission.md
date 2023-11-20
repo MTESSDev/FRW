@@ -37,6 +37,7 @@ etapes: 
     - tache: traiterDocumentsSoumis
       options:
         # (optionnel) Permet de désactiver l'estampille (false par défaut)
+        # Disponible à partir de la release 2023.11.1
         desactiverEstampille: false
 
     # Permet d'extraire toutes les questions du formulaire dans toutes les langues dans un objet "questionsFormulaire"

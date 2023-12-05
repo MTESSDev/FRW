@@ -1510,26 +1510,27 @@ Référencer ce groupe en utilisant
 {"$ref":"schemas/form#/definitions/Config"}
 ```
 
-| Propriété                                             | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                       |
-| :---------------------------------------------------- | :-------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [afficherBlocCode](#afficherbloccode-2)               | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-afficherbloccode.md "schemas/form#/definitions/Config/properties/afficherBlocCode")             |
-| [afficherPartagePage](#afficherpartagepage)           | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-afficherpartagepage.md "schemas/form#/definitions/Config/properties/afficherPartagePage")       |
-| [confirmationTransmission](#confirmationtransmission) | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-confirmation-de-transmission.md "schemas/form#/definitions/Config/properties/confirmationTransmission")                                |
-| [aiguillage](#aiguillage)                             | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-défini-le-comportement-final-du-formulaire-selon-des-critères-daiguillage.md "schemas/form#/definitions/Config/properties/aiguillage") |
-| [courrielReprise](#courrielreprise)                   | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-courrielreprise.md "schemas/form#/definitions/Config/properties/courrielReprise")                                                      |
-| [debuterFormulaire](#debuterformulaire)               | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-debuterformulaire.md "schemas/form#/definitions/Config/properties/debuterFormulaire")                                                  |
-| [domaines](#domaines)                                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-domaines.md "schemas/form#/definitions/Config/properties/domaines")                             |
-| [enregistrement](#enregistrement)                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-enregistrement.md "schemas/form#/definitions/Config/properties/enregistrement")                                                        |
-| [formulaireUnilingue](#formulaireunilingue)           | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-formulaireunilingue.md "schemas/form#/definitions/Config/properties/formulaireUnilingue")       |
-| [injecterJs](#injecterjs)                             | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-scripts-vuejs-à-injecter-au-formulaire.md "schemas/form#/definitions/Config/properties/injecterJs")                                    |
-| [messages](#messages)                                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-messages.md "schemas/form#/definitions/Config/properties/messages")                                                                    |
-| [pages](#pages)                                       | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-pages.md "schemas/form#/definitions/Config/properties/pages")                                                                          |
-| [piv](#piv)                                           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-piv.md "schemas/form#/definitions/Config/properties/piv")                                       |
-| [revision](#revision)                                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-page-de-révision.md "schemas/form#/definitions/Config/properties/revision")                                                            |
-| [scripts](#scripts)                                   | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-scripts.md "schemas/form#/definitions/Config/properties/scripts")                                                                      |
-| [securite](#securite)                                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-sécurité-du-formulaire.md "schemas/form#/definitions/Config/properties/securite")                                                      |
-| [soumission](#soumission)                             | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-page-de-soumission.md "schemas/form#/definitions/Config/properties/soumission")                                                        |
-| [title](#title-3)                                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/Config/properties/title")                                                                     |
+| Propriété                                                 | Type      | Obligatoire | Nullable         | Défini par                                                                                                                                                                       |
+| :-------------------------------------------------------- | :-------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [afficherBlocCode](#afficherbloccode-2)                   | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-afficherbloccode.md "schemas/form#/definitions/Config/properties/afficherBlocCode")             |
+| [afficherPartagePage](#afficherpartagepage)               | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-afficherpartagepage.md "schemas/form#/definitions/Config/properties/afficherPartagePage")       |
+| [confirmationTransmission](#confirmationtransmission)     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-confirmation-de-transmission.md "schemas/form#/definitions/Config/properties/confirmationTransmission")                                |
+| [aiguillage](#aiguillage)                                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-défini-le-comportement-final-du-formulaire-selon-des-critères-daiguillage.md "schemas/form#/definitions/Config/properties/aiguillage") |
+| [courrielReprise](#courrielreprise)                       | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-courrielreprise.md "schemas/form#/definitions/Config/properties/courrielReprise")                                                      |
+| [debuterFormulaire](#debuterformulaire)                   | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-debuterformulaire.md "schemas/form#/definitions/Config/properties/debuterFormulaire")                                                  |
+| [domaines](#domaines)                                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-domaines.md "schemas/form#/definitions/Config/properties/domaines")                             |
+| [enregistrement](#enregistrement)                         | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-enregistrement.md "schemas/form#/definitions/Config/properties/enregistrement")                                                        |
+| [formulaireUnilingue](#formulaireunilingue)               | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-configuration-du-formulaire-properties-formulaireunilingue.md "schemas/form#/definitions/Config/properties/formulaireUnilingue")       |
+| [injecterJs](#injecterjs)                                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-scripts-vuejs-à-injecter-au-formulaire.md "schemas/form#/definitions/Config/properties/injecterJs")                                    |
+| [messages](#messages)                                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-messages.md "schemas/form#/definitions/Config/properties/messages")                                                                    |
+| [pages](#pages)                                           | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-pages.md "schemas/form#/definitions/Config/properties/pages")                                                                          |
+| [piv](#piv)                                               | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-piv.md "schemas/form#/definitions/Config/properties/piv")                                                                              |
+| [revision](#revision)                                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-page-de-révision.md "schemas/form#/definitions/Config/properties/revision")                                                            |
+| [scripts](#scripts)                                       | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-scripts.md "schemas/form#/definitions/Config/properties/scripts")                                                                      |
+| [securite](#securite)                                     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-sécurité-du-formulaire.md "schemas/form#/definitions/Config/properties/securite")                                                      |
+| [soumission](#soumission)                                 | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-page-de-soumission.md "schemas/form#/definitions/Config/properties/soumission")                                                        |
+| [title](#title-3)                                         | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/Config/properties/title")                                                                     |
+| [plageEffectiviteFormulaire](#plageeffectiviteformulaire) | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-plageeffectiviteformulaire.md "schemas/form#/definitions/Config/properties/plageEffectiviteFormulaire")                                |
 
 ### afficherBlocCode
 
@@ -1715,7 +1716,7 @@ Paramètres associés au PIV.
 
 #### Type de piv
 
-`object` ([piv](frw-form-definitions-configuration-du-formulaire-properties-piv.md))
+`object` ([piv](frw-form-definitions-piv.md))
 
 ### revision
 
@@ -1796,6 +1797,20 @@ fr: ''
 en: ''
 
 ```
+
+### plageEffectiviteFormulaire
+
+
+
+`plageEffectiviteFormulaire`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de plageEffectiviteFormulaire
+
+`object` ([plageEffectiviteFormulaire](frw-form-definitions-plageeffectiviteformulaire.md))
 
 ## Groupe de définitions Securite
 
@@ -2234,9 +2249,10 @@ Référencer ce groupe en utilisant
 {"$ref":"schemas/form#/definitions/Pages"}
 ```
 
-| Propriété                           | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                  |
-| :---------------------------------- | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
-| [sessionInvalide](#sessioninvalide) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-pages-properties-sessioninvalide.md "schemas/form#/definitions/Pages/properties/sessionInvalide") |
+| Propriété                                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                          |
+| :------------------------------------------ | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sessionInvalide](#sessioninvalide)         | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-pages-properties-sessioninvalide.md "schemas/form#/definitions/Pages/properties/sessionInvalide")         |
+| [formulaireDesactive](#formulairedesactive) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-pages-properties-formulairedesactive.md "schemas/form#/definitions/Pages/properties/formulaireDesactive") |
 
 ### sessionInvalide
 
@@ -2251,6 +2267,20 @@ Paramètres associés à la page de session invalide.
 #### Type de sessionInvalide
 
 `object` ([sessionInvalide](frw-form-definitions-pages-properties-sessioninvalide.md))
+
+### formulaireDesactive
+
+Paramètres associés à la page de formulaire désactivé.
+
+`formulaireDesactive`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de formulaireDesactive
+
+`object` ([formulaireDesactive](frw-form-definitions-pages-properties-formulairedesactive.md))
 
 ## Groupe de définitions Revision
 
@@ -2313,6 +2343,62 @@ fr: ''
 en: ''
 
 ```
+
+## Groupe de définitions PlageEffectiviteFormulaire
+
+Référencer ce groupe en utilisant
+
+```json
+{"$ref":"schemas/form#/definitions/PlageEffectiviteFormulaire"}
+```
+
+| Propriété                                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                                                                                                    |
+| :------------------------------------------ | :------- | :---------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [dateDebut](#datedebut)                     | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-plageeffectiviteformulaire-properties-datedebut.md "schemas/form#/definitions/PlageEffectiviteFormulaire/properties/dateDebut")                     |
+| [dateFin](#datefin)                         | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-plageeffectiviteformulaire-properties-datefin.md "schemas/form#/definitions/PlageEffectiviteFormulaire/properties/dateFin")                         |
+| [nbJoursDelaiReprise](#nbjoursdelaireprise) | `number` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-plageeffectiviteformulaire-properties-nbjoursdelaireprise.md "schemas/form#/definitions/PlageEffectiviteFormulaire/properties/nbJoursDelaiReprise") |
+
+### dateDebut
+
+
+
+`dateDebut`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de dateDebut
+
+`string`
+
+### dateFin
+
+
+
+`dateFin`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de dateFin
+
+`string`
+
+### nbJoursDelaiReprise
+
+
+
+`nbJoursDelaiReprise`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de nbJoursDelaiReprise
+
+`number`
 
 ## Groupe de définitions ModaleCourrielConfirmation
 
@@ -2589,5 +2675,330 @@ Javascript servant à une solution d'outil statistiques (ex. Google Analytics ou
 
 ```yaml
 <script> // Votre js ici... </script>
+
+```
+
+## Groupe de définitions Piv
+
+Référencer ce groupe en utilisant
+
+```json
+{"$ref":"schemas/form#/definitions/Piv"}
+```
+
+| Propriété                   | Type     | Obligatoire | Nullable         | Défini par                                                                                                       |
+| :-------------------------- | :------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------- |
+| [entete](#entete)           | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-entete.md "schemas/form#/definitions/Piv/properties/entete")           |
+| [piedPage](#piedpage)       | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-piedpage.md "schemas/form#/definitions/Piv/properties/piedPage")       |
+| [nousJoindre](#nousjoindre) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-nousjoindre.md "schemas/form#/definitions/Piv/properties/nousJoindre") |
+
+### entete
+
+
+
+`entete`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de entete
+
+`object` ([entete](frw-form-definitions-entete.md))
+
+### piedPage
+
+
+
+`piedPage`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de piedPage
+
+`object` ([piedPage](frw-form-definitions-piedpage.md))
+
+### nousJoindre
+
+Permet d'afficher un lien 'Nous joindre' en dessous du changement de langue
+
+`nousJoindre`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de nousJoindre
+
+`object` ([nousJoindre](frw-form-definitions-nousjoindre.md))
+
+## Groupe de définitions Entete
+
+Référencer ce groupe en utilisant
+
+```json
+{"$ref":"schemas/form#/definitions/Entete"}
+```
+
+| Propriété                           | Type     | Obligatoire | Nullable         | Défini par                                                                                                             |
+| :---------------------------------- | :------- | :---------- | :--------------- | :--------------------------------------------------------------------------------------------------------------------- |
+| [nomSiteMOLigne1](#nomsitemoligne1) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/Entete/properties/nomSiteMOLigne1") |
+| [nomSiteMOLigne2](#nomsitemoligne2) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/Entete/properties/nomSiteMOLigne2") |
+
+### nomSiteMOLigne1
+
+Textes multilingue (fr et en supportés seulement)
+
+`nomSiteMOLigne1`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de nomSiteMOLigne1
+
+`object` ([Traduction](frw-form-definitions-traduction.md))
+
+#### Valeur par défaut de nomSiteMOLigne1
+
+La valeur par défaut est:
+
+```yaml
+fr: ''
+en: ''
+
+```
+
+### nomSiteMOLigne2
+
+Textes multilingue (fr et en supportés seulement)
+
+`nomSiteMOLigne2`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de nomSiteMOLigne2
+
+`object` ([Traduction](frw-form-definitions-traduction.md))
+
+#### Valeur par défaut de nomSiteMOLigne2
+
+La valeur par défaut est:
+
+```yaml
+fr: ''
+en: ''
+
+```
+
+## Groupe de définitions NousJoindre
+
+Référencer ce groupe en utilisant
+
+```json
+{"$ref":"schemas/form#/definitions/NousJoindre"}
+```
+
+| Propriété           | Type      | Obligatoire | Nullable         | Défini par                                                                                                                          |
+| :------------------ | :-------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
+| [actif](#actif-2)   | `boolean` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-nousjoindre-properties-actif.md "schemas/form#/definitions/NousJoindre/properties/actif") |
+| [texte](#texte)     | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/NousJoindre/properties/texte")                   |
+| [urlLien](#urllien) | `object`  | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/NousJoindre/properties/urlLien")                 |
+
+### actif
+
+
+
+`actif`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de actif
+
+`boolean`
+
+### texte
+
+Textes multilingue (fr et en supportés seulement)
+
+`texte`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de texte
+
+`object` ([Traduction](frw-form-definitions-traduction.md))
+
+#### Valeur par défaut de texte
+
+La valeur par défaut est:
+
+```yaml
+fr: ''
+en: ''
+
+```
+
+### urlLien
+
+Textes multilingue (fr et en supportés seulement)
+
+`urlLien`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de urlLien
+
+`object` ([Traduction](frw-form-definitions-traduction.md))
+
+#### Valeur par défaut de urlLien
+
+La valeur par défaut est:
+
+```yaml
+fr: ''
+en: ''
+
+```
+
+## Groupe de définitions PiedPage
+
+Référencer ce groupe en utilisant
+
+```json
+{"$ref":"schemas/form#/definitions/PiedPage"}
+```
+
+| Propriété     | Type     | Obligatoire | Nullable         | Défini par                                                                                              |
+| :------------ | :------- | :---------- | :--------------- | :------------------------------------------------------------------------------------------------------ |
+| [logo](#logo) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-logo.md "schemas/form#/definitions/PiedPage/properties/logo") |
+
+### logo
+
+Logo affiché dans le centre du pied de page
+
+`logo`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de logo
+
+`object` ([logo](frw-form-definitions-logo.md))
+
+## Groupe de définitions Logo
+
+Référencer ce groupe en utilisant
+
+```json
+{"$ref":"schemas/form#/definitions/Logo"}
+```
+
+| Propriété             | Type     | Obligatoire | Nullable         | Défini par                                                                                                              |
+| :-------------------- | :------- | :---------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------- |
+| [base64](#base64-1)   | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/Logo/properties/base64")             |
+| [width](#width)       | `number` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-logo-properties-width.md "schemas/form#/definitions/Logo/properties/width")   |
+| [height](#height)     | `number` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-logo-properties-height.md "schemas/form#/definitions/Logo/properties/height") |
+| [alt](#alt-1)         | `string` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-logo-properties-alt.md "schemas/form#/definitions/Logo/properties/alt")       |
+| [urlLien](#urllien-1) | `object` | Optionnel   | ne peut être nul | [Fichier formulaire](frw-form-definitions-traduction.md "schemas/form#/definitions/Logo/properties/urlLien")            |
+
+### base64
+
+Textes multilingue (fr et en supportés seulement)
+
+`base64`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de base64
+
+`object` ([Traduction](frw-form-definitions-traduction.md))
+
+#### Valeur par défaut de base64
+
+La valeur par défaut est:
+
+```yaml
+fr: ''
+en: ''
+
+```
+
+### width
+
+
+
+`width`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de width
+
+`number` ([width](frw-form-definitions-logo-properties-width.md))
+
+### height
+
+
+
+`height`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de height
+
+`number` ([height](frw-form-definitions-logo-properties-height.md))
+
+### alt
+
+
+
+`alt`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de alt
+
+`string` ([alt](frw-form-definitions-logo-properties-alt.md))
+
+### urlLien
+
+Textes multilingue (fr et en supportés seulement)
+
+`urlLien`
+
+*   est optionnel
+
+*   ne peut être nul
+
+#### Type de urlLien
+
+`object` ([Traduction](frw-form-definitions-traduction.md))
+
+#### Valeur par défaut de urlLien
+
+La valeur par défaut est:
+
+```yaml
+fr: ''
+en: ''
 
 ```

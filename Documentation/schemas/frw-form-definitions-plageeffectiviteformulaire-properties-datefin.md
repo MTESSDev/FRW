@@ -1,0 +1,3 @@
+## Type de dateFin
+
+`string`

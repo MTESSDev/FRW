@@ -1,3 +1,5 @@
+# yaml-language-server: $schema=https://formulaires.it.mtess.gouv.qc.ca/api/v1/SIS/ObtenirSchema/transmission
+
 etapes:
   # Traiter les documents transmis par les utilsateurs dans votre formulaire
   - tache: traiterDocumentsSoumis

@@ -50,6 +50,17 @@ etapes: 
     # le no. de confirmation, etc)
     - tache: ajouterEstampille
 
+    # Permet d'envoyer un courriel via le système FRW. Ajoutez une tâche "envoyerCourriel" pour chaque courriel différent à envoyer.
+    # Disponible à partie de la release 2024.2
+    - tache: envoyerCourriel
+      options:
+        # Le gabarit spécifié doit être défini dans la section "gabaritsCourriels"
+        gabarit: confirmation
+        # Il est possible de définir des parties variables à utiliser dans le courriel.
+        partiesVariables: 
+          partie1: 'Une'
+          partie2: 'de test'
+
     # Appeler service externet permet d'appeler un API de dépôt.
     - tache: appelerServiceExterne
       options: 
@@ -61,6 +72,31 @@ etapes: 
         # Permet de désactiver l'appel à ce service web lors du clique sur le bouton "Tester transmission" de l'interface des outils de développement
         # Options disponibles : ignorer, simuler ou encore retirer l'option pour que l'étape s'exécute sur le bouton tester transmission
         modeBoutonTesterTransmission: simuler 
+
+# Liste des gabarits de courriel pour la tâche "envoyerCourriel"
+gabaritsCourriels:
+  - id: confirmation
+    # Liste des destinataires
+    a:
+      tous: 
+        - 'esun-a02@essais.mess.gouv.qc.ca'    
+    # L'objet du courriel peut contenir des parties variables
+    objet: '{{envoyerCourriel.partiesVariables.partie1}} demande {{envoyerCourriel.partiesVariables.partie2}}'
+    # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
+    # Le PDF du formulaire produit par FRW ainsi que les pièces jointes ajoutées au formulaire peuvent être ajoutées au courriel. Un lien de téléchargement peut être affiché pour chaque fichier dans le courriel.
+    corps: |
+      <p>ceci est un test</p>
+      <p>Exemple1a : {{donneesFormulaire.form.Exemple1a.0}}, Exemple1b : {{donneesFormulaire.form.Exemple1b.0}}</p>
+      {{#each listePJ}}
+        {{#ifCond @first '=' True}}
+        <br>
+        <ul>
+        {{/ifCond}}
+          <li><a href="{{url}}">{{nomOriginal}}</a></li>
+        {{#ifCond @last '=' True}}
+        </ul>
+        {{/ifCond}}
+      {{/each}}
 
 # La liste des clients http
 http_client:

@@ -26,6 +26,8 @@
    * Validations avant transmission : Une page de révision est inclue dans la solution FRW afin d’effectuer toutes les validations sur le formulaire avant sa transmission;
    * Envoi des données du formulaire : Le système utilisant la solution FRW doit se prévoir un API qui recevra les données du formulaire envoyées lors de la transmission;
    * Production d’un fichier contenant les données du formulaire : La solution FRW permet de produire un fichier PDF contenant toute l’information saisie dans le formulaire à partir d’un gabarit Word ou d’un gabarit PDF avec champs de saisie dynamiques.
+   * Envoi de courriel: La solution FRW peut envoyer des courriels lors de la transmission du formulaire. (Disponible à partir de la release 2024.2)
+     * Le PDF du formulaire ainsi que les pièces jointes téléversées par l'utilisateur peuvent être ajoutées dans les courriels.
 1. Sécurité
    * Données chiffrées;
    * Répond aux normes de sécurités du MESS;

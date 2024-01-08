@@ -13,6 +13,22 @@ Pour que l'outil FRW puisse gérer le contenu en sortie, il faut ajouter un fich
 
 Un fichier `Transmission` est principalement nécessaire au niveau `Système` et que dans certains précis cas au niveau d'un formulaire, comme par exemple pour remplacer les étapes par défaut que vous aviez défini.
 
+# Contenu du fichier de transmission
+## Étapes
+Lors de la transmission, le traitement FRW exécute les étapes dans l'ordre qu'elles ont été configurées dans le fichier de transmission. Nous vous recommandons donc d'utiliser le même ordre que nous utilisons dans notre exemple plus bas.
+
+### genererWord
+
+### genererPDF
+### traiterDocumentsSoumis
+### extraireQuestions
+### ajouterEstampille
+### envoyerCourriel
+### appelerServiceExterne
+
+## http_client
+Cette section permet de spécifier toutes les caractéristiques de l'appel à l'API défini dans l'étape `appelerServiceExterne`.
+
 ## Exemple de toutes les possibilitées de configuration
 ```yaml
 # Liste des étapes désirées dans votre transmission.

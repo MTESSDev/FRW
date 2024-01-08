@@ -76,10 +76,20 @@ etapes: 
 # Liste des gabarits de courriel pour la tâche "envoyerCourriel"
 gabaritsCourriels:
   - id: confirmation
-    # Liste des destinataires
+    # Liste des destinataires (peut être une liste)
     a:
       tous: 
-        - 'esun-a02@essais.mess.gouv.qc.ca'    
+        - 'esun-a02@essais.mess.gouv.qc.ca'
+    # Liste des copies conformes (Facultatif, peut être une liste)
+    cc:
+      tous:
+        - 'esun-a05@essais.mess.gouv.qc.ca'
+    # Liste des copies conformes invisibles (Facultatif, peut être une liste)
+    cci:
+      tous:
+        - 'esun-a04@essais.mess.gouv.qc.ca'
+    # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
+    nomExpediteur: Test FRW Transmission
     # L'objet du courriel peut contenir des parties variables
     objet: '{{envoyerCourriel.partiesVariables.partie1}} demande {{envoyerCourriel.partiesVariables.partie2}}'
     # Les données du formulaires peuvent être réutilisées dans le contenu du courriel

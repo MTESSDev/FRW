@@ -18,13 +18,48 @@ Un fichier `Transmission` est principalement nécessaire au niveau `Système` et
 Lors de la transmission, le traitement FRW exécute les étapes dans l'ordre qu'elles ont été configurées dans le fichier de transmission. Nous vous recommandons donc d'utiliser le même ordre que nous utilisons dans notre exemple plus bas.
 
 ### genererWord
+Permet de produire un extrant contenant les données saisies dans le formulaire Web à partir d'un gabarit Word (docx).
+
+Il vous est possible de vous créer un gabarit Word personnalisé ou d'utiliser celui offert par la solution FRW.
+
+Référez-vous à la page [fichiers-bind](https://github.com/MTESSDev/FRW/blob/main/Documentation/fichiers-bind.md) pour plus de détails.
 
 ### genererPDF
+Permet de produire un extrant contenant les données saisies dans le formulaire Web à partir d'un gabarit PDF avec champs de saisie dynamiques.
+
+Il vous est possible de vous créer un gabarit Word personnalisé ou d'utiliser celui offert par la solution FRW.
+
+Référez-vous à la page [fichiers-bind](https://github.com/MTESSDev/FRW/blob/main/Documentation/fichiers-bind.md) pour plus de détails.
+
 ### traiterDocumentsSoumis
+Permet de traiter les pièces jointes que l'utilisateur a envoyé avec le formulaire. Le scan d'antivirus est effectué dans ce traitement.
+
+Cette tâche est requise si votre formulaire permet de joindre des documents.
+
 ### extraireQuestions
+Permet d'ajouter toutes les questions du formulaire dans l'objet JSON fourni lors de la transmission. Les questions sont extraites dans les deux langues lorsqu'applicable.
+
 ### ajouterEstampille
+Permet d'ajouter des informations par dessus l'extrant produit par les étapes `genererWord`ou `genererPDF` pour reproduire une estampille apposée manuellement. 
+
+L'estampille est configurée dans le fichier `bind` associé au formulaire. Il est possible de définir les informations qu'on veut afficher ainsi que sa position dans la page.
+
+Référez-vous à la page [fichiers-bind](https://github.com/MTESSDev/FRW/blob/main/Documentation/fichiers-bind.md) pour plus de détails.
+
 ### envoyerCourriel
+Permet d'envoyer un courriel via le système FRW lors de la transmission du formulaire. Il faudra définir autant d'étapes "envoyerCourriel" qu'il y a de courriels différents à envoyer ainsi qu'un gabarit de courriel à utiliser pour chaque tâche.
+
+Pour chaque gabarit courriel, il est possible :
+- de spécifier une liste de destinataires, de copies conformes et de copies conformes invisibles et celles-ci peuvent être différentes entre chaque étape `envoyerCourriel`;
+- d'ajouter l'extrant produit par les étapes `genererWord`ou `genererPDF` ainsi que les documents fournis par l'utilisateur en pièces jointe du courriel.
+- d'utiliser des parties variables définies dans la tâche elle même.
+
 ### appelerServiceExterne
+Permet de spécifier l'API externe à appeler lors de la transmission.
+
+Il est possible de définir le comportement attendu avec l'utilisation du bouton `Tester transmission` offert dans les outils de développement afin de simuler une transmission.
+
+Cette tâche est directement liée à la section `http_client`.
 
 ## http_client
 Cette section permet de spécifier toutes les caractéristiques de l'appel à l'API défini dans l'étape `appelerServiceExterne`.

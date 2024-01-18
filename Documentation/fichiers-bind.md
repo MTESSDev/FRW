@@ -103,7 +103,8 @@ templates:
     en: NomDeVotreGabaritEN.docx
   #ignorer permet de spécifier les champs du formulaire Web qu'on ne veut pas afficher dans le document produit.
   ignorer:
-  #La valeur champ1 ou champ2 doit correspondre au nom du champ (name) que vous voulez exclure dans votre formulaire.
+  #La valeur du champ doit correspondre au nom du champ (name) que vous voulez exclure dans votre formulaire.
+  # IMPORTANT: L'exclusion des champs se fait sur tous les champs qui débutent (startswith) par le nom du champ spécifié.
   - champ: TypesRevenusEmploi
   - champ: RevenuEmploiSalaireNet
 ````

@@ -25,7 +25,20 @@ Dans cette interface vous trouverez :
    
 1. Le bouton "Ouvrir" / "Reprendre" qui ouvrira le formulaire sélectionné.
 
-![image](https://user-images.githubusercontent.com/26974817/226616307-21c99315-abbf-4894-b23e-8218c0c4dcc6.png)
+
+![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/choixRadio.png)
+
+![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/listeForm.png)
+
+![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/numeroSequentiel.png)
+
+![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/jsonChamp.png)
+
+![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/outilDev.png)
+
+![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/ouvrirBtn.png)
+
+![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/reprendreBtn.png)
 
 &nbsp;
 

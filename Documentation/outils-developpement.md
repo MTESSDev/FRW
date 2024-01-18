@@ -13,15 +13,17 @@ La page de démarrage d'essais est disponible à l'url `https://formulaires.it.m
 
 Dans cette interface vous trouverez :
 
-1. La liste des formulaires de votre système;
+1. Un bouton radio permettant de choisir le mode d'ouverture du formulaire;
 
-1. Une case à cocher vous permettant d'indiquer si vous désirez ouvrir le formulaire en mode anonyme ou non;
+1. La liste des formulaires de votre système (pour l'ouverture);
+
+1. Un champ afin de saisir le numéro séquentiel du formulaire à reprendre (pour la reprise);
 
 1. Un champ afin de saisir du JSON afin de simuler un pré-remplissage (non disponible si accès anonyme);
 
 1. Une case à cocher vous permettant d'indiquer si vous désirez afficher la barre d'outils de développement;
    
-1. Le bouton "Ouvrir" qui ouvrira le formulaire sélectionné.
+1. Le bouton "Ouvrir" / "Reprendre" qui ouvrira le formulaire sélectionné.
 
 ![image](https://user-images.githubusercontent.com/26974817/226616307-21c99315-abbf-4894-b23e-8218c0c4dcc6.png)
 

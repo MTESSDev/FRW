@@ -21,7 +21,7 @@ jobs:
           github_token: "${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}"
           ado_organization: "700"
           ado_project: "TPM"
-          #ado_area_path: "optional_area_path\\optional_area_path"
+          ado_area_path: "TPM\\FRW"
           #ado_iteration_path: "optional_iteration_path\\optional_iteration_path"
           ado_wit: "User Story"
           ado_new_state: "New"

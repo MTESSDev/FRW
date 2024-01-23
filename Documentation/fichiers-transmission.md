@@ -46,12 +46,13 @@ L'estampille est configurée dans le fichier `bind` associé au formulaire. Il e
 
 Référez-vous à la page [fichiers-bind](https://github.com/MTESSDev/FRW/blob/main/Documentation/fichiers-bind.md) pour plus de détails.
 
-### envoyerCourriel
+### envoyerCourriel (disponible à partir de la release 2024.2)
 Permet d'envoyer un courriel via le système FRW lors de la transmission du formulaire. Il faudra définir autant d'étapes "envoyerCourriel" qu'il y a de courriels différents à envoyer ainsi qu'un gabarit de courriel à utiliser pour chaque tâche.
 
 Pour chaque gabarit courriel, il est possible :
 - de spécifier une liste de destinataires, de copies conformes et de copies conformes invisibles et celles-ci peuvent être différentes entre chaque étape `envoyerCourriel`;
 - d'ajouter l'extrant produit par les étapes `genererWord`ou `genererPDF` ainsi que les documents fournis par l'utilisateur en pièces jointe du courriel.
+    - Il est possible de spécifier quelles pièces jointes on veut rendre disponible dans le courriel en appliquant des filtres. Se référer à l'exemple complet plus bas.
 - d'utiliser des parties variables définies dans la tâche elle même.
 
 ### appelerServiceExterne
@@ -107,7 +108,26 @@ etapes: 
       options:
         # Le gabarit spécifié doit être défini dans la section "gabaritsCourriels"
         gabarit: confirmation
-        # Il est possible de définir des parties variables à utiliser dans le courriel.
+        # Les filtres permettent de définir des documents précis à ajouter au courriel. Si aucun filtre n'est spécifié, tous les documents seront affichés dans la liste du courriel.
+        # **IMPORTANT** Les filtres sont combinés entre eux (condition "ET"). Il est donc possible de spécifier un seul filtre à la fois sinon les documents seront tous exclus du courriel.
+        filtresDocuments:
+            #Permet de spécifier un document précis à joindre au courriel en utilisant son nom original
+          - typeFiltre: nomOriginal
+            # Doit correspondre au "nomSortie" défini pour le bundle dans le fichier "bind" du formulaire ou à la propriété "name" du composant de fichiers joint dans le formulaire (customFile)
+            valeur: 0006-01 - Dépôt direct
+            # Permet de spécifier un document précis à exclure du courriel en utilisant son nom original
+          - typeFiltre: exclureNomOriginal
+            valeur: 0006-01 - Dépôt direct
+            # Permet de joindre au courriel le document produit par la tâche "genererWord"   
+          - typeFiltre: tacheSource
+            valeur: genererWord
+            # Permet de joindre au courriel tous les documents joints au formulaire via les contrôles de fichiers joints (customFile) 
+          - typeFiltre: tacheSource
+            valeur: traiterDocumentsSoumis
+            # Permet de joindre au courriel le document produit par la tâche "genererPDF"
+          - typeFiltre: tacheSource
+            valeur: genererPDF
+        # Permet de définir des parties variables à utiliser dans le courriel.
         partiesVariables: 
           partie1: 'Une'
           partie2: 'de test'
@@ -144,20 +164,15 @@ gabaritsCourriels:
     # L'objet du courriel peut contenir des parties variables
     objet: '{{envoyerCourriel.partiesVariables.partie1}} demande {{envoyerCourriel.partiesVariables.partie2}}'
     # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
-    # Le PDF du formulaire produit par FRW ainsi que les pièces jointes ajoutées au formulaire peuvent être ajoutées au courriel. Un lien de téléchargement peut être affiché pour chaque fichier dans le courriel.
     corps: |
       <p>ceci est un test</p>
       <p>Exemple1a : {{donneesFormulaire.form.Exemple1a.0}}, Exemple1b : {{donneesFormulaire.form.Exemple1b.0}}</p>
-      {{#each listePJ}}
-        {{#ifCond @first '=' True}}
-        <br>
+        # Pour faire afficher les documents téléchargeables, il faut ajouter le tableau ci-dessous. Une liste contenant chaque document avec son nom original dans FRW sera ajoutée au contenu du courriel. Sur le clique du lien, le document sera téléchargé.
         <ul>
-        {{/ifCond}}
-          <li><a href="{{url}}">{{nomOriginal}}</a></li>
-        {{#ifCond @last '=' True}}
+          {{#listePJ}}
+        <li><a href="{{url}}">{{nomOriginal}}</a></li>
+          {{/listePJ}}
         </ul>
-        {{/ifCond}}
-      {{/each}}
 
 # La liste des clients http
 http_client:

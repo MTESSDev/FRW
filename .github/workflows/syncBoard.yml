@@ -20,7 +20,7 @@ jobs:
           ado_url: "https://devops700.itp.extra/"
           github_token: "${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}"
           ado_organization: "700"
-          ado_project: "SPFS-FRW"
+          ado_project: "TPM"
           #ado_area_path: "optional_area_path\\optional_area_path"
           #ado_iteration_path: "optional_iteration_path\\optional_iteration_path"
           ado_wit: "User Story"

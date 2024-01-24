@@ -105,8 +105,8 @@ templates:
   ignorer:
   #La valeur du champ doit correspondre au nom du champ (name) que vous voulez exclure dans votre formulaire.
   # IMPORTANT: L'exclusion des champs se fait sur tous les champs qui débutent (startswith) par le nom du champ spécifié.
-  - champ: TypesRevenusEmploi
-  - champ: RevenuEmploiSalaireNet
+    - champ: TypesRevenusEmploi
+    - champ: RevenuEmploiSalaireNet
 ````
 
 ## Créer votre premier fichier bind avec un gabarit PDF avec champs de saisie dynamique

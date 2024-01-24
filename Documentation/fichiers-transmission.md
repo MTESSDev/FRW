@@ -127,6 +127,13 @@ etapes: 
             # Permet de joindre au courriel le document produit par la tâche "genererPDF"
           - typeFiltre: tacheSource
             valeur: genererPDF
+            # Permet de sélectionner des documents selon une métadonnée qui aura été spécifiée dans le formulaire pour la pièce jointe
+          - typeFiltre: metadonnee
+            clee: TypeDocument
+            valeurs: 
+              - INFOPERS 
+              - SANTE
+              - REVENU
         # Permet de définir des parties variables à utiliser dans le courriel.
         partiesVariables: 
           partie1: 'Une'

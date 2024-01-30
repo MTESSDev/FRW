@@ -38,7 +38,7 @@ Pour un premier formulaire, il est fortement recommandé de clôner le présent 
 &nbsp;
 ### Déployer un formulaire
 
-1. Se procurer une clée API et un code de système autorisé auprès du MESS (Contacter le MESS);
+1. Se procurer une clé API et un code de système autorisé auprès du MESS (Contacter le MESS);
 1. [Déployer un formulaire avec DevOps](Documentation/deployer.md);
  
 &nbsp;

@@ -6,6 +6,6 @@ L'outil a été développé en utilisant :
 - [Vue.js (v2)](https://v2.vuejs.org/)
 - .NET 6
 - Jint
-- Stubble.Org
+- [Stubble.Org](https://github.com/StubbleOrg/Stubble)
 
 

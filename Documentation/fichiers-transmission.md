@@ -114,19 +114,19 @@ etapes: 
             #Permet de spécifier un document précis à joindre au courriel en utilisant son nom original
           - typeFiltre: nomOriginal
             # Doit correspondre au "nomSortie" défini pour le bundle dans le fichier "bind" du formulaire ou à la propriété "name" du composant de fichiers joint dans le formulaire (customFile)
-            valeur: 0006-01 - Dépôt direct
+            valeurs: 0006-01 - Dépôt direct
             # Permet de spécifier un document précis à exclure du courriel en utilisant son nom original
           - typeFiltre: exclureNomOriginal
-            valeur: 0006-01 - Dépôt direct
+            valeurs: 0006-01 - Dépôt direct
             # Permet de joindre au courriel le document produit par la tâche "genererWord"   
           - typeFiltre: tacheSource
-            valeur: genererWord
+            valeurs: genererWord
             # Permet de joindre au courriel tous les documents joints au formulaire via les contrôles de fichiers joints (customFile) 
           - typeFiltre: tacheSource
-            valeur: traiterDocumentsSoumis
+            valeurs: traiterDocumentsSoumis
             # Permet de joindre au courriel le document produit par la tâche "genererPDF"
           - typeFiltre: tacheSource
-            valeur: genererPDF
+            valeurs: genererPDF
             # Permet de sélectionner des documents selon une métadonnée qui aura été spécifiée dans le formulaire pour la pièce jointe
           - typeFiltre: metadonnee
             clee: TypeDocument

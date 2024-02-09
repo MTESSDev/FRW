@@ -46,7 +46,7 @@ L'estampille est configurée dans le fichier `bind` associé au formulaire. Il e
 
 Référez-vous à la page [fichiers-bind](https://github.com/MTESSDev/FRW/blob/main/Documentation/fichiers-bind.md) pour plus de détails.
 
-### envoyerCourriel (disponible à partir de la release 2024.2)
+### envoyerCourriel (disponible à partir de la release [2024.2](https://github.com/MTESSDev/FRW/releases/tag/2024.2-IT))
 Permet d'envoyer un courriel via le système FRW lors de la transmission du formulaire. Il faudra définir autant d'étapes "envoyerCourriel" qu'il y a de courriels différents à envoyer ainsi qu'un gabarit de courriel à utiliser pour chaque tâche.
 
 Pour chaque gabarit courriel, il est possible :
@@ -54,6 +54,9 @@ Pour chaque gabarit courriel, il est possible :
 - d'ajouter l'extrant produit par les étapes `genererWord`ou `genererPDF` ainsi que les documents fournis par l'utilisateur en pièces jointe du courriel.
     - Il est possible de spécifier quelles pièces jointes on veut rendre disponible dans le courriel en appliquant des filtres. Se référer à l'exemple complet plus bas.
 - d'utiliser des parties variables définies dans la tâche elle même.
+
+### conserverFichier (disponible à partir de la release 2024.3)
+Permet d'indiquer au système de conserver une copie du fichier produit par l'orchestration dans un répertoire interne pour être récupéré par un autre traitement.
 
 ### appelerServiceExterne
 Permet de spécifier l'API externe à appeler lors de la transmission.
@@ -138,6 +141,9 @@ etapes: 
         partiesVariables: 
           partie1: 'Une'
           partie2: 'de test'
+
+    # Conserver une copie du fichier produit par l'orchestration dans un répertoire interne pour être récupéré par un autre traitement.
+    - tache: conserverFichier
 
     # Appeler service externet permet d'appeler un API de dépôt.
     - tache: appelerServiceExterne

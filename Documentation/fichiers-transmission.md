@@ -137,6 +137,15 @@ etapes: 
               - INFOPERS 
               - SANTE
               - REVENU
+        # Permet de définir des conditions pour déclencher l'envoi du courriel.
+        # Il est possible d'utiliser "conditionsET" ou "conditionsOU", mais pas en même temps.
+        conditionsEt:
+          - condition: '=='
+            champFormulaire: 'donneesFormulaire.form.adulte1Sexe'
+            valeur: 'Masculin' 
+          - condition: "=="
+            champCalcule: "{{#ifCond donneesFormulaire.form.adulte1Langue '==' 'Francais'}}true{{/ifCond}}"
+            valeur: true   
         # Permet de définir des parties variables à utiliser dans le courriel.
         partiesVariables: 
           partie1: 'Une'

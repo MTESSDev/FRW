@@ -46,6 +46,7 @@ form:
             fr: Révision
             en: Revision
           id: revision
+          cacherTexteExplicatifChampsObligatoires: true          
           components:
             - type: dynamic
               tag: div

@@ -17,13 +17,11 @@ Dans cette interface vous trouverez :
 
 1. La liste des formulaires de votre système (pour l'ouverture);
 
-1. Un champ afin de saisir le numéro séquentiel du formulaire à reprendre (pour la reprise);
-
 1. Un champ afin de saisir du JSON afin de simuler un pré-remplissage (non disponible si accès anonyme);
 
 1. Une case à cocher vous permettant d'indiquer si vous désirez afficher la barre d'outils de développement;
    
-1. Le bouton "Ouvrir" / "Reprendre" qui ouvrira le formulaire sélectionné.
+1. Le bouton "Ouvrir" qui ouvrira le formulaire sélectionné.
 
 
 ![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/choixRadio.png)

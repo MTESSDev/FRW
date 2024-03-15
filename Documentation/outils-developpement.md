@@ -24,19 +24,15 @@ Dans cette interface vous trouverez :
 1. Le bouton "Ouvrir" qui ouvrira le formulaire sélectionné.
 
 
-![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/choixRadio.png)
+![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/imgModeOuverture.png)
 
-![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/listeForm.png)
+![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/imgChoixForm.png)
 
-![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/numeroSequentiel.png)
+![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/imgJsonPreRemp.png)
 
-![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/jsonChamp.png)
+![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/imgOutilDev.png)
 
-![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/outilDev.png)
-
-![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/ouvrirBtn.png)
-
-![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/reprendreBtn.png)
+![image](https://raw.githubusercontent.com/MTESSDev/FRW/main/Documentation/images/imgBtnOuvrir.png)
 
 &nbsp;
 

@@ -8,4 +8,4 @@ Vous pouvez remplacer "1" par le numéro de votre système autorisé, et "3003" 
 
 # Gif de l'outil 
 
-Voir le gif animé ici : https://github.com/MTESSDev/FRW/blob/main/Documentation/images/Outil_Binding.gif
+![Animation](https://github.com/MTESSDev/FRW/blob/main/Documentation/images/Outil_Binding.gif)

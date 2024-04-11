@@ -27,6 +27,6 @@ http_client:
       # Permet de tout "dumper" les variables de l'application vers votre API
       json_content: |
           {{{Json .}}}
-      check_response:
-        throw_exception_if_body_not_contains_all:
-            - success # À remplacer par un code de retour ou un mot retourné par votre api afin de valider que tout est concluant
+    check_response:
+      throw_exception_if_body_not_contains_all:
+          - success # À remplacer par un code de retour ou un mot retourné par votre api afin de valider que tout est concluant

@@ -23,7 +23,7 @@ Nous vous invitons à consulter la [présentation complète](https://github.com/
 ### Pré-requis
 
 1. Clôner le dépôt courant et copiez le répertoire "Exemple" pour le nommer à votre goût, il regroupera tous vos formulaires (Ne faire cette étape qu'une seule fois);
-2. Installer [VS Code](https://code.visualstudio.com/);
+2. Installer [VS Code](https://code.visualstudio.com/); 
 
 3. [Configurer votre bac à sable](https://github.com/MTESSDev/vscode-mtess-frw-bacasable) (Contactez le MESS afin d'obtenir l'url à utiliser lors de la configuration);
 

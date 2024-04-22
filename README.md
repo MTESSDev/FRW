@@ -1,4 +1,4 @@
-[![Build](https://github.com/MTESSDev/FRW/actions/workflows/build.yml/badge.svg)](https://github.com/MTESSDev/FRW/actions/workflows/build.yml) [![Satus](https://status.infologique.net/api/badge/1/status)](https://status.infologique.net/status/mess) [![Uptime](https://status.infologique.net/api/badge/1/uptime/24)](https://status.infologique.net/status/mess)
+[![Build](https://github.com/MTESSDev/FRW/actions/workflows/build.yml/badge.svg)](https://github.com/MTESSDev/FRW/actions/workflows/build.yml) [![Satus](https://status.infologique.net/api/badge/1/status)](https://status.infologique.net/status/mess) [![Uptime](https://status.infologique.net/api/badge/1/uptime/24)](https://status.infologique.net/status/mess) [![response](https://status.infologique.net/api/badge/1/response)](https://status.infologique.net/status/mess)
 
 # FRW - Formulaires Web
 

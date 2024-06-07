@@ -93,6 +93,7 @@ bundles:
       lignes:
         - 'Numéro de référence : {{NoConfirmation}}'
         - 'Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}'
+        - '{{{DonneesFormulaire.form.NomFamille}}}, {{{DonneesFormulaire.form.Prenom}}}'
 #La section templates sert à définir les caractéristiques du gabarit utilisé.
 #Lorsqu'on utilise le gabarit Word générique de FRW pour la production du fichier, cette section ne sert qu'à lister les champs à exclure.
 templates:

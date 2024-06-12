@@ -68,7 +68,6 @@ Exemple réel avec de vrais fichiers base64 binaires et contenu réel.
 		"codent": "mes\\cotda05"
 	},
 	"fichiersExternes": null,
-	"contenuFormulaireJson": "{\"form\":{\"EtatRevision\":\"initial\",\"validAll\":false,\"adulte1Cp12\":null,\"Conjoint\":\"false\",\"TypeDemande\":[\"Afdr\"],\"HabiteAvecAutreAdulte\":\"true\",\"adulte1NeQC\":\"false\",\"adulte1NeCanada\":\"true\",\"adulte1AjoutPJCertificatNaissance\":\"true\",\"adulte1GrpPJCertificatNaissance\":[{\"TypeDocument\":\"INFOPERS\",\"LigneAffaire\":\"ASF\",\"PJCertificatNaissance\":[{\"url\":\"wwogkwqn8DUnD19LqkrMfnJQAv1LEju76q0ADoZwFZRLKgoLO2INgony4VNK.pdf\",\"name\":\"ECS - Schéma solution formulaires dynamiques_2021-07-05.pdf\",\"_type\":\"customFile\"}]}],\"adulte1Nas2\":null,\"adulte1EstValidePourTravailler\":null,\"adulte1Telephone2\":null,\"adulte1Handicap\":null,\"adulte1LanguesParlees\":null,\"adulte1LanguesEcrites\":null,\"adulte1CasierJudiciaire\":null,\"adulte1MinoriteVisible\":null,\"DestinataireAutrePersonne\":null,\"TexteRenseignementsAdditionnels\":null,\"Procuration\":null},\"systeme\":{}}",
 	"idUtilisateur": "TestUtil",
 	"dateTransmission": "2023-03-13T21:04:32.5490054-04:00",
 	"modeSimulation": true,

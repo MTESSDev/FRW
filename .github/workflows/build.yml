@@ -12,4 +12,5 @@ jobs:
       with:
         use-quiet-mode: 'yes'
         folder-path: 'Documentation'
+        config-file: 'mlc_config.json'
         file-path: './README.md'

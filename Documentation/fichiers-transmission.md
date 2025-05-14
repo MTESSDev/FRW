@@ -150,6 +150,7 @@ etapes: 
         partiesVariables: 
           partie1: 'Une'
           partie2: 'de test'
+          partie3: '{{donneesFormulaire.form.testCourriel}}'
 
     # Conserver une copie du fichier produit par l'orchestration dans un répertoire interne pour être récupéré par un autre traitement.
     - tache: conserverFichier
@@ -174,13 +175,17 @@ gabaritsCourriels:
       tous: 
         - 'esun-a02@essais.mess.gouv.qc.ca'
     # Liste des copies conformes (Facultatif, peut être une liste)
+    # Dans cet exemple, une des adresse réfère à un champ du formulaire nommé "testCourriel"
     cc:
       tous:
         - 'esun-a05@essais.mess.gouv.qc.ca'
+        - '{{donneesFormulaire.form.testCourriel}}'
     # Liste des copies conformes invisibles (Facultatif, peut être une liste)
+    # Dans cet exemple, une des adresse réfère à la partie variable "partie3" définie dans le module "envoyerCourriel"
     cci:
       tous:
         - 'esun-a04@essais.mess.gouv.qc.ca'
+        - '{{envoyerCourriel.partiesVariables.partie3}}'
     # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
     nomExpediteur: Test FRW Transmission
     # L'objet du courriel peut contenir des parties variables

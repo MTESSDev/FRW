@@ -188,6 +188,7 @@ gabaritsCourriels:
         - '{{envoyerCourriel.partiesVariables.partie3}}'
     # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
     nomExpediteur: Test FRW Transmission
+    retourA: '{{envoyerCourriel.partiesVariables.partie3}}'
     # L'objet du courriel peut contenir des parties variables
     objet: '{{envoyerCourriel.partiesVariables.partie1}} demande {{envoyerCourriel.partiesVariables.partie2}}'
     # Les données du formulaires peuvent être réutilisées dans le contenu du courriel

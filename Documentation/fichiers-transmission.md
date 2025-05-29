@@ -54,6 +54,7 @@ Pour chaque gabarit courriel, il est possible :
 - d'ajouter l'extrant produit par les étapes `genererWord`ou `genererPDF` ainsi que les documents fournis par l'utilisateur en pièces jointe du courriel.
     - Il est possible de spécifier quelles pièces jointes on veut rendre disponible dans le courriel en appliquant des filtres. Se référer à l'exemple complet plus bas.
 - d'utiliser des parties variables définies dans la tâche elle même.
+- de spécifier si la version estampillée des pièces jointes doit être utilisée.
 
 ### conserverFichier (disponible à partir de la release 2024.3)
 Permet d'indiquer au système de conserver une copie du fichier produit par l'orchestration dans un répertoire interne pour être récupéré par un autre traitement.
@@ -151,6 +152,8 @@ etapes: 
           partie1: 'Une'
           partie2: 'de test'
           partie3: '{{donneesFormulaire.form.testCourriel}}'
+        # Indique si la version estampillée des pièces jointes doit être utilisée. Valeur par défaut : true.
+        afficherEstampille: true
 
     # Conserver une copie du fichier produit par l'orchestration dans un répertoire interne pour être récupéré par un autre traitement.
     - tache: conserverFichier

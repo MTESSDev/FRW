@@ -6,6 +6,7 @@ Dans ce guide, nous expliquons comment intégrer notre solution de formulaires e
 
 Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de traitement dans votre système qui fait l'orchestration des étapes suivantes :
 
+### Formulaire authentifié
 1. [Préparer les données de pré remplissage](pre-remplissage.md) (facultatif);
 
 1. Créer le formulaire en appelant l'API [CreerFormulaireIndividu](../Swagger/readme.md#apiv1siscreerformulaireindividutypeformulaire) (FRW111)
@@ -23,6 +24,17 @@ Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de
 
 1. Rediriger l'utilisateur à cette url (idéalement dans un nouvel onglet du fureteur);
 
+### Formulaire anonyme
+1. [Préparer les données de pré remplissage](pre-remplissage.md) (facultatif);
+    1. Encoder le json de préremplissage obtenu en base 64;
+1. Préparer l'URL de redirection à la page du formulaire
+    L'URL prend la forme qui suit : `{{ **Adresse du site FRW** }}/{{ **langue** }}/DebuterFormulaire/{{ **No Systeme Autorisé** }}/{{**Type Formulaire**}}?donnees={{Json de préremplissage en base 64}}`
+
+    Ex. `https://formulaires.it.mtess.gouv.qc.ca/fr/DebuterFormulaire/3772818/3003?donnees=eyJmb3JtIjp7Im5vbUNoYW1wMSI6InZhbGV1ckNoYW1wMSJ9fQ==`
+    > **Attention** \
+    > Aucune donnée sensible ne doit être transmise dans le préremplissage anonyme. Celui-ci doit uniquement être utilisé à des fins d’orientation ou de guidage au sein du formulaire.
+
+1. Rediriger l'utilisateur à cette url (idéalement dans un nouvel onglet du fureteur);
 &nbsp;
 
 ## Afficher la liste des formulaires d'un utilisateur

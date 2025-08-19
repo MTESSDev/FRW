@@ -17,7 +17,7 @@ Dans cette interface vous trouverez :
 
 1. La liste des formulaires de votre système (pour l'ouverture);
 
-1. Un champ afin de saisir du JSON afin de simuler un pré-remplissage (non disponible si accès anonyme);
+1. Un champ afin de saisir du JSON afin de simuler un pré-remplissage;
 
 1. Une case à cocher vous permettant d'indiquer si vous désirez afficher la barre d'outils de développement;
    

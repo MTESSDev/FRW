@@ -4,7 +4,7 @@ Dans ce guide, nous expliquons comment intégrer notre solution de formulaires e
 &nbsp;
 ## Créer un formulaire et y rediriger l'utilisateur
 
-Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de traitement dans votre système qui fait l'orchestration des étapes suivantes :
+Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de traitement dans votre système qui fait l'orchestration de certaines étapes selon qu'il s'agit d'un formulaire authentifié ou d'un formulaire anonyme.
 
 ### Formulaire authentifié
 1. [Préparer les données de pré remplissage](pre-remplissage.md) (facultatif);
@@ -15,7 +15,7 @@ Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de
 
 1. Préparer l'URL de redirection à la page du formulaire
 
-    L'URL prend la forme qui suit : `{{ **Adresse du site FRW** }}/{{ **langue** }}/reprise?no={{ **No Public Session** }}`
+    L'URL prend la forme qui suit : `{Adresse du site FRW}/{langue}/reprise?no={No Public Session}`
     
     Ex. `https://formulaires.it.mtess.gouv.qc.ca/fr/Reprise?no=123456afaf3344`
 
@@ -26,13 +26,19 @@ Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de
 
 ### Formulaire anonyme
 1. [Préparer les données de pré remplissage](pre-remplissage.md) (facultatif);
-    1. Encoder le json de préremplissage obtenu en base 64;
-1. Préparer l'URL de redirection à la page du formulaire
-    L'URL prend la forme qui suit : `{{ **Adresse du site FRW** }}/{{ **langue** }}/DebuterFormulaire/{{ **No Systeme Autorisé** }}/{{**Type Formulaire**}}?donnees={{Json de préremplissage en base 64}}`
+    1. Encoder votre json de préremplissage en base 64;
 
-    Ex. `https://formulaires.it.mtess.gouv.qc.ca/fr/DebuterFormulaire/3772818/3003?donnees=eyJmb3JtIjp7Im5vbUNoYW1wMSI6InZhbGV1ckNoYW1wMSJ9fQ==`
+1. Préparer l'URL de redirection à la page du formulaire;
+  
+   L'URL prend la forme qui suit :
+  
+   `{Adresse du site FRW}/{langue}/Form/{No Systeme Autorisé}/{Type Formulaire}/0/N?donnees={Json de préremplissage en base 64}`
+
+    Ex. `https://formulaires.it.mtess.gouv.qc.ca/fr/Form/1/3003/0/N?donnees=eyJmb3JtIjp7Im5vbUNoYW1wMSI6InZhbGV1ckNoYW1wMSJ9fQ==`
+
     > **Attention** \
     > Aucune donnée sensible ne doit être transmise dans le préremplissage anonyme. Celui-ci doit uniquement être utilisé à des fins d’orientation ou de guidage au sein du formulaire.
+    > Le nombre de caractères maximum supporté est de 1000.
 
 1. Rediriger l'utilisateur à cette url (idéalement dans un nouvel onglet du fureteur);
 &nbsp;

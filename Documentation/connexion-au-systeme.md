@@ -1,12 +1,24 @@
 # Connecter votre système à la solution FRW
-Dans ce guide, nous expliquons comment intégrer notre solution de formulaires en ligne à votre système. Nous couvrons la partie de connexion en amont des formulaires, c'est-à-dire les étapes pour démarrer, reprendre, supprimer un formulaire ou encore lister les formulaires d'un utilisateur à partir de votre système.
+Dans ce guide, nous expliquons comment intégrer notre solution de formulaires en ligne à votre système. 
 
-&nbsp;
-## Créer un formulaire et y rediriger l'utilisateur
+Il existe deux types de formulaire : 
+- Formulaire **authentifié** : permet une intégration complète avec votre système autorisé;
+- Formulaire **anonyme** : permet d’utiliser FRW de façon indépendante; aucune intégration à votre système (outre la redirection initiale qui permet de créer le formulaire).
 
-Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de traitement dans votre système qui fait l'orchestration de certaines étapes selon qu'il s'agit d'un formulaire authentifié ou d'un formulaire anonyme.
+||Formulaire authentifié|Formulaire anonyme|
+|--|--|--|
+|Création du formulaire|Initiée par un appel de votre système à une API de FRW.|Effectuée par FRW suite à une redirection web à partir de votre système.|
+|Association du formulaire à un identifiant utilisateur|Oui.|Non.|
+|Reprise du formulaire|Via votre système (appel API FRW).|Via un courriel de reprise envoyé par FRW contenant un lien sécurisé par mot de passe.|
+|Suppression du formulaire|Via votre système (appel API FRW).|Non supportée.|
 
-### Formulaire authentifié
+## Formulaire authentifié
+Cette section couvre la partie de connexion en amont des formulaires authentifiés, c'est-à-dire les étapes pour démarrer, reprendre, supprimer un formulaire ou encore lister les formulaires d'un utilisateur à partir de votre système.
+
+### Créer un formulaire et y rediriger l'utilisateur
+
+Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de traitement dans votre système qui fait l'orchestration des étapes suivantres : 
+
 1. [Préparer les données de pré remplissage](pre-remplissage.md) (facultatif);
 
 1. Créer le formulaire en appelant l'API [CreerFormulaireIndividu](../Swagger/readme.md#apiv1siscreerformulaireindividutypeformulaire) (FRW111)
@@ -24,31 +36,11 @@ Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de
 
 1. Rediriger l'utilisateur à cette url (idéalement dans un nouvel onglet du fureteur);
 
-### Formulaire anonyme
-1. [Préparer les données de pré remplissage](pre-remplissage.md) (facultatif);
-    1. Encoder votre json de préremplissage en base 64;
-
-1. Préparer l'URL de redirection à la page du formulaire;
-  
-   L'URL prend la forme qui suit :
-  
-   `{Adresse du site FRW}/{langue}/Form/{No Systeme Autorisé}/{Type Formulaire}/0/N?donnees={Json de préremplissage en base 64}`
-
-    Ex. `https://formulaires.it.mtess.gouv.qc.ca/fr/Form/1/3003/0/N?donnees=eyJmb3JtIjp7Im5vbUNoYW1wMSI6InZhbGV1ckNoYW1wMSJ9fQ==`
-
-    > **Attention** \
-    > Aucune donnée sensible ne doit être transmise dans le préremplissage anonyme. Celui-ci doit uniquement être utilisé à des fins d’orientation ou de guidage au sein du formulaire.
-    > Le nombre de caractères maximum supporté est de 1000.
-
-1. Rediriger l'utilisateur à cette url (idéalement dans un nouvel onglet du fureteur);
-&nbsp;
-
 ## Afficher la liste des formulaires d'un utilisateur
 
 Pour obtenir la liste des formulaires d'un utilisateur afin de l'afficher dans une de vos pages, vous devez d'appeler l'API [ObtenirFormulairesIndividu](../Swagger/readme.md#apiv1sisobtenirformulairesindividu) (FRW112).
  
 
-&nbsp;
 ## Reprendre un formulaire
 
 Pour reprendre un formulaire, il faut connaitre son numéro de formulaire public en ayant préalablement appelé l'API [ObtenirFormulairesIndividu](../Swagger/readme.md#apiv1sisobtenirformulairesindividu) (FRW112)
@@ -75,9 +67,27 @@ Les étapes à effectuer sont les suivantes :
 
 1. Rediriger l'utilisateur à cette url (idéalement dans un nouvel onglet du fureteur);
 
-&nbsp;
+
 ## Supprimer un formulaire
 
 Il est possible de supprimer un formulaire à partir de son numéro de formulaire public. Il suffit d'appeler l'API [SupprimerFormulaire](../Swagger/readme.md#apiv1sissupprimerformulairenoformulairepublic) (FRW114).
 
+## Formulaire anonyme
+### Créer un formulaire
+1. [Préparer les données de pré remplissage](pre-remplissage.md) (facultatif);
+    1. Encoder votre json de préremplissage en base 64;
 
+1. Préparer l'URL de redirection à la page du formulaire;
+  
+   L'URL prend la forme qui suit :
+  
+   `{Adresse du site FRW}/{langue}/Form/{No Systeme Autorisé}/{Type Formulaire}/0/N?donnees={Json de préremplissage en base 64}`
+
+    Ex. `https://formulaires.it.mtess.gouv.qc.ca/fr/Form/1/3003/0/N?donnees=eyJmb3JtIjp7Im5vbUNoYW1wMSI6InZhbGV1ckNoYW1wMSJ9fQ==`
+
+    > **Attention** \
+    > Aucune donnée sensible ne doit être transmise dans le préremplissage anonyme. Celui-ci doit uniquement être utilisé à des fins d’orientation ou de guidage au sein du formulaire.
+    > Le nombre de caractères maximum supporté est de 1000.
+
+1. Rediriger l'utilisateur à cette url (idéalement dans un nouvel onglet du fureteur);
+&nbsp;

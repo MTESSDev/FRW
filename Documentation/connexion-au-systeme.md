@@ -17,7 +17,7 @@ Cette section couvre la partie de connexion en amont des formulaires authentifi�
 
 ### Créer un formulaire et y rediriger l'utilisateur
 
-Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de traitement dans votre système qui fait l'orchestration des étapes suivantres : 
+Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de traitement dans votre système qui fait l'orchestration des étapes suivantes : 
 
 1. [Préparer les données de pré remplissage](pre-remplissage.md) (facultatif);
 

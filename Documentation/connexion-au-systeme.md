@@ -39,7 +39,7 @@ Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de
 ## Afficher la liste des formulaires d'un utilisateur
 
 Pour obtenir la liste des formulaires d'un utilisateur afin de l'afficher dans une de vos pages, vous devez d'appeler l'API [ObtenirFormulairesIndividu](../Swagger/readme.md#apiv1sisobtenirformulairesindividu) (FRW112).
- 
+- Il est recommandé de filtrer (à l'aide des critères de recherche) sur les états suivants afin de conserver seulement les formulaires qui sont pertinents à afficher pour l'utilisateur : CRE, MAJ, COURRIEL, REP, REPAGENT.
 
 ## Reprendre un formulaire
 

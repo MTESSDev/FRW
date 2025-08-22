@@ -39,12 +39,13 @@ Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de
 ## Afficher la liste des formulaires d'un utilisateur
 
 Pour obtenir la liste des formulaires d'un utilisateur afin de l'afficher dans une de vos pages, vous devez d'appeler l'API [ObtenirFormulairesIndividu](../Swagger/readme.md#apiv1sisobtenirformulairesindividu) (FRW112).
-- Il est recommandé de filtrer (à l'aide des critères de recherche) sur les états suivants afin de conserver seulement les formulaires qui sont pertinents à afficher pour l'utilisateur : CRE, MAJ, COURRIEL, REP, REPAGENT.
+- Si vous offrez la possibilité de Reprendre ou Supprimer, vous devez filtrer sur les [états de formulaire](cycle-de-vie-etats.md) suivants afin de conserver seulement les formulaires qui sont pertinents à afficher pour l'utilisateur : `CRE`, `MAJ`, `COURRIEL`, `REP`, `REPAGENT`.
+   - Dans toute autre état, la reprise et la suppression ne sont pas supportées.
+- Pour filtrer, il suffit de passer la liste des états dans la propriété `etatsFormulaireRecherche` du paramètre d'entrée [entrantrechercherformulairessis](../Swagger/readme.md#entrantrechercherformulairessis) de FRW112.
 
 ## Reprendre un formulaire
 
-Pour reprendre un formulaire, il faut connaitre son numéro de formulaire public en ayant préalablement appelé l'API [ObtenirFormulairesIndividu](../Swagger/readme.md#apiv1sisobtenirformulairesindividu) (FRW112)
- qui obtient la liste des formulaires d'un utilisateur.
+Pour reprendre un formulaire, il faut connaitre son numéro de formulaire public en ayant préalablement appelé l'API [ObtenirFormulairesIndividu](../Swagger/readme.md#apiv1sisobtenirformulairesindividu) (FRW112) qui obtient la liste des formulaires d'un utilisateur.
 
 Pour déclencher la reprise, il faut également avoir une page de traitement qui s'occupera des étapes à réaliser. 
 

@@ -75,8 +75,8 @@ Il est possible de supprimer un formulaire à partir de son numéro de formulair
 
 ## Formulaire anonyme
 ### Créer un formulaire
-1. [Préparer les données de pré remplissage](pre-remplissage.md) (facultatif);
-    1. Encoder votre json de préremplissage en base 64;
+1. [Préparer les données de pré remplissage](pre-remplissage.md) encodées en base 64 (facultatif);
+    1. Disponible à partir du milestone [2025.10](https://github.com/MTESSDev/FRW/milestones).
 
 1. Préparer l'URL de redirection à la page du formulaire;
   

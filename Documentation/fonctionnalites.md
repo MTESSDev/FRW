@@ -19,8 +19,9 @@
    * Validations de champs prédéfinies;
 1. Pré remplissage des données
    * Un système autorisé dans FRW peut envoyer des données pour pré remplir son formulaire afin d’éviter la saisie d’informations déjà connues.
-1. Conavigation
+1. Conavigation 
    * Un système autorisé dans FRW peut établir une session de conavigation avec un citoyen ou un utilisateur, permettant à un intervenant de visualiser en temps réel le formulaire en cours de remplissage et de fournir un accompagnement personnalisé. Cette fonctionnalité facilite le support, réduit les erreurs de saisie et améliore l’expérience utilisateur.
+   * Disponible à partir du milestone [2025.09](https://github.com/MTESSDev/FRW/milestones)
 1. Enregistrement et reprise
    * Anonyme : La reprise s’effectue via un lien envoyé par courriel nécessitant un mot de passe défini par l’utilisateur lors de l’enregistrement;
    * Authentifié : La solution FRW offre des APIs pour obtenir la liste des formulaires d’un utilisateur et reprendre des formulaires;

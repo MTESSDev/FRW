@@ -6,7 +6,7 @@ Vous devez créer un service de pré remplissage dans votre système qui fait ce
 
 Le but de ce service est de préparer les données afin qu'elles correspondent au format attendu par FRW en y ajoutant les valeurs déterminées par votre système.
 
-Voici comment nous suggérons de procéder:
+Voici comment nous suggérons de procéder :
 
 ## Paramètres d'entrée du service de pré remplissage
 
@@ -100,7 +100,6 @@ Voici comment nous suggérons de procéder:
 	- Le remplacement des variables dans l'exemple ci-haut se fait grâce à un outil de syntaxe ``mustache``, nous recommandons d'utiliser [HandleBars.Net](https://github.com/Handlebars-Net/Handlebars.Net), ou encore mieux le produit [YamlHttpClient](https://github.com/anisite/YamlHttpClient) qui permet d'appeler un API par configuration ``Yaml`` et s'occupera lui-même de remplacer vos variables. 
 3. Le service de pré-remplissage retourne l'information en sortie.
 
-
 ## Paramètres de sortie du service de pré remplissage
 
 | Nom du paramètre | Description |
@@ -110,7 +109,7 @@ Voici comment nous suggérons de procéder:
 
 ## Création versus modification
 
-Certaines informations peuvent être prises en compte seulement au moment de la création du formulaire, d’autres peuvent aussi être modifiées lors de la reprise. Le tableau suivant résume les possibilités : 
+Certaines informations peuvent être prises en compte seulement au moment de la création du formulaire, d’autres peuvent aussi être modifiées lors de la reprise (reprise "authentifiée" seulement). Le tableau suivant résume les possibilités : 
 
 | Type  d'information pré-remplie | Création | Reprise |
 | ---- | ---------- | ---------- |

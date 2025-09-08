@@ -11,3 +11,4 @@
 | SUP | Supprimé par l'utilisateur |
 | TRANSMIS | Transmis (soumis) par l'utilisateur |
 | EPURE | Épuré par le traitement lot, formulaire trop vieux |
+| REPAGENT | Lorsqu'un agent se connecte au formulaire en co-navigation |

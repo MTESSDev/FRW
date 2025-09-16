@@ -118,3 +118,9 @@ Certaines informations peuvent être prises en compte seulement au moment de la 
 | Propriétés personnalisées | ✔ | ✔ |
 | Informations supplémentaires | ✔ |  |
 | Domaine de valeurs personnalisées | ✔ | ✔ |
+
+## Pré-remplissage anonyme
+
+Le pré-remplissage est maintenant disponible pour les formulaires anonymes, toutefois vous devez préalablement autoriser les champs concernés dans la config "form.yml" de votre formulaire ou de votre système autorisé.
+
+Pour plus de détails, voir la section [Personnalisation des formulaires - Concepts de base](https://formulaires.it.mtess.gouv.qc.ca/fr/Form/7/P700U/0/N/#p=personnalisationBase) du P700.

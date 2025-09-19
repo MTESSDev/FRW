@@ -120,6 +120,7 @@ Certaines informations peuvent être prises en compte seulement au moment de la 
 | Domaine de valeurs personnalisées | ✔ | ✔ |
 
 ## Pré-remplissage anonyme
+> À partir de la version ``2025.10``
 
 Le pré-remplissage est maintenant disponible pour les formulaires anonymes, toutefois vous devez préalablement autoriser les champs concernés dans la config "form.yml" de votre formulaire ou de votre système autorisé.
 

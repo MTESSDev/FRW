@@ -73,13 +73,13 @@ Les étapes à effectuer sont les suivantes :
 
 Il est possible de supprimer un formulaire à partir de son numéro de formulaire public. Il suffit d'appeler l'API [SupprimerFormulaire](../Swagger/readme.md#apiv1sissupprimerformulairenoformulairepublic) (FRW114).
 
-### Déléguer l'exploitation d'un formulaire
+### Déléguer l'exploitation d'un formulaire authentifié
 
 > À partir de la version `2025.11`
 
-Il est possible de déléguer l'exploitation d'un de vos formulaires à un autre système autorisé qui est partenaire de FRW. 
+Il est possible de déléguer l'exploitation d'un de vos formulaires à un autre système autorisé qui est partenaire de FRW. En gros permettre à celui-ci d'interagir avec les APIs de FRW en votre nom, en utilisant votre numéro interne de système autorisé.
 
-Plus précisément, la délégation permet à ce système de : 
+La délégation permet à ce système d'appeler en votre nom les APis suivants : 
 - Créer des formulaires web pour un individu (FRW111),
 - Obtenir la liste des formulaires web d'un individu (FRW112),
 - Obtenir un identifiant de session pour un formulaire (pour la reprise) (FRW113),

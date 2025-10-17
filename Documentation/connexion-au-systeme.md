@@ -36,14 +36,14 @@ Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de
 
 1. Rediriger l'utilisateur à cette url (idéalement dans un nouvel onglet du fureteur);
 
-## Afficher la liste des formulaires d'un utilisateur
+### Afficher la liste des formulaires d'un utilisateur
 
 Pour obtenir la liste des formulaires d'un utilisateur afin de l'afficher dans une de vos pages, vous devez d'appeler l'API [ObtenirFormulairesIndividu](../Swagger/readme.md#apiv1sisobtenirformulairesindividu) (FRW112).
 - Si vous offrez la possibilité de Reprendre ou Supprimer, vous devez filtrer sur les [états de formulaire](cycle-de-vie-etats.md) suivants afin de conserver seulement les formulaires qui sont pertinents à afficher pour l'utilisateur : `CRE`, `MAJ`, `COURRIEL`, `REP`, `REPAGENT`.
    - Dans toute autre état, la reprise et la suppression ne sont pas supportées.
 - Pour filtrer, il suffit de passer la liste des états dans la propriété `etatsFormulaireRecherche` du paramètre d'entrée [entrantrechercherformulairessis](../Swagger/readme.md#entrantrechercherformulairessis) de FRW112.
 
-## Reprendre un formulaire
+### Reprendre un formulaire
 
 Pour reprendre un formulaire, il faut connaitre son numéro de formulaire public en ayant préalablement appelé l'API [ObtenirFormulairesIndividu](../Swagger/readme.md#apiv1sisobtenirformulairesindividu) (FRW112) qui obtient la liste des formulaires d'un utilisateur.
 
@@ -69,9 +69,34 @@ Les étapes à effectuer sont les suivantes :
 1. Rediriger l'utilisateur à cette url (idéalement dans un nouvel onglet du fureteur);
 
 
-## Supprimer un formulaire
+### Supprimer un formulaire
 
 Il est possible de supprimer un formulaire à partir de son numéro de formulaire public. Il suffit d'appeler l'API [SupprimerFormulaire](../Swagger/readme.md#apiv1sissupprimerformulairenoformulairepublic) (FRW114).
+
+### Déléguer l'exploitation d'un formulaire authentifié
+
+> À partir de la version `2025.11`
+
+Il est possible de déléguer l'exploitation d'un de vos formulaires à un autre système autorisé qui est partenaire de FRW. En gros permettre à celui-ci d'interagir avec les APIs de FRW en votre nom, en utilisant votre numéro interne de système autorisé.
+
+La délégation permet à ce système d'appeler en votre nom les APis suivants : 
+- Créer des formulaires web pour un individu (FRW111),
+- Obtenir la liste des formulaires web d'un individu (FRW112),
+- Obtenir un identifiant de session pour un formulaire (pour la reprise) (FRW113),
+- Supprimer un formulaire web (FRW114).
+
+Pour ce faire, vous devez inscrire le numéro public de système autorisé auquel vous déléguez les droits d'exploitation du formulaire dans la config "form.yml" du formulaire concerné.
+
+Cette configuration prend la forme suivante : 
+
+```yml
+config:
+  systemesDelegues: 
+    - ae28300e-f12b-4fc1-bb2b-cc4aea16fd93 # client id système 1
+    - 499AE741-730C-4F58-8F40-AA15EC5F2326 # client id système 2
+```
+
+Ce système doit ensuite rajouter votre numéro public de système autorisé en tant que déléguant lors de ses appels aux APIs de FRW (FRW111, FRW112, FRW113 et FRW114).
 
 ## Formulaire anonyme
 ### Créer un formulaire

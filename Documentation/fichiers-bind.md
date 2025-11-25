@@ -89,10 +89,10 @@ bundles:
       positionY: 710
 #tailleFont permet de spécifier la grosseur de police dans le fichier
       tailleFont: 9
-#rotation permet d'appliquer une rotation au texte, par exemple 90 pour que le texte soit affiché verticalement de bas en haut.
+#rotation permet d'appliquer une rotation dans le sens anti-horaire au texte, par exemple 90 pour que le texte soit affiché verticalement de bas en haut.
       rotation: 90
-#couleurRGBA permet de définir la couleur de l'estampille.
-      couleurRGBA: [255, 0, 0]
+#couleurRGBA permet de définir la couleur de l'estampille. Rouge dans cet exemple et à 50% de transparence.
+      couleurRGBA: [255, 0, 0, 0.5]
 #toutePages lorsqu'activé l'estampille est apposé sur toutes les pages.
       toutePages: true 
 #lignes permet de spécifier l'information à afficher dans l'estampille dans l'ordre désiré

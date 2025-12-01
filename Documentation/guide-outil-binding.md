@@ -41,8 +41,8 @@ Pour configurer ou modifier un champ, cliquez simplement sur la zone colorée (v
     * Utilisez la barre de recherche pour trouver la variable de données (ex: `signatureLocateurPrincipal.0.Date`).
     * Vous pouvez cocher "Afficher même les valeurs assignées" pour voir toutes les options disponibles.
 
-3.  **Formatage de la donnée (SmartFormat)** :
-    Cette section permet de transformer la donnée brute avant de l'afficher.
+3.  **Optionnel: Formatage de la donnée (SmartFormat)** :
+    Cette section permet de transformer la donnée brute avant de l'afficher, nécessaire dans certains cas plus complexes.
     * **Formules rapides** : Cliquez sur les liens bleus pour insérer automatiquement des formats courants (ex: `yyyy-MM-dd` pour les dates, `Chiffres seulement` pour les nombres).
     * **Formule (optionnel)** : Zone de texte pour éditer manuellement le formatage.
         * *Exemple visible* : `{signatureLocateurPrincipal.0.Date:dd MM yyyy}` (Transforme la date en format Jour/Mois/Année avec des espaces).

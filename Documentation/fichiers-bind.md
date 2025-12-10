@@ -95,6 +95,8 @@ bundles:
       couleurRGBA: [255, 0, 0, 0.5]
 #toutePages lorsqu'activé l'estampille est apposé sur toutes les pages.
       toutePages: true 
+#coinAncrage permet de définir la position de départ pour le calcul des coordonnées de l'estampille. Les valeurs supportées sont: basGauche, basDroite, hautGauche, hautDroite. La valeur par défaut est "basGauche".
+      coinAncrage: basGauche       
 #lignes permet de spécifier l'information à afficher dans l'estampille dans l'ordre désiré
       lignes:
         - 'Numéro de référence : {{NoConfirmation}}'

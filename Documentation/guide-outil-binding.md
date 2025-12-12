@@ -59,6 +59,111 @@ Pour configurer ou modifier un champ, cliquez simplement sur la zone colorée (v
 * **SmartFormat** : Pour des formatages complexes, référez-vous à la documentation "SmartFormat" mentionnée dans la fenêtre d'assignation.
 
 
+
+
+## 5. Syntaxe de Binding (fichier bind.yml)
+
+Notez que les formules sont normalement appliquées avec la fenêtre de binding de l'outil. La documentation ici détaille la structure du fichier mais aussi des formules qui peuvent être saisie directement dans l'interface.
+
+### 📌 Structure Générale
+
+Chaque définition de champ suit ce modèle :
+
+```yaml
+Nom_Du_Champ_PDF:
+  champs: [Chemin.Vers.Donnee]
+  formule: '{Expression}'
+```
+
+* **champs** : Liste des propriétés JSON requises pour que la formule fonctionne.
+* **formule** : Chaîne de caractères définissant la logique d'affichage.
+
+---
+
+### 🛠 Opérateurs et Syntaxe
+
+#### 1. Interpolation Simple
+Affiche directement la valeur d'une donnée. On peut combiner plusieurs valeurs et du texte statique.
+
+* **Syntaxe** : `'{Chemin}'`
+* **Exemple** :
+    ```yaml
+    formule: '{locateurs.0.adresse.0.Municipalite}, {locateurs.0.adresse.0.Province}'
+    ```
+    *Résultat :* `Montréal, Québec`
+
+#### 2. Conditionnelle Ternaire
+Évalue une condition booléenne.
+* **Syntaxe** : `'{Condition:{ValeurSiVrai}|{ValeurSiFaux}}'`
+* **Exemple** : Si un représentant est défini, utiliser son courriel, sinon utiliser celui du locateur.
+    ```yaml
+    formule: '{locateurs.0.questionRepresentant:{locateurs.0.courrielRepresentant}|{locateurs.0.courrielLocateur}}'
+    ```
+
+#### 3. Fonction `include()`
+Vérifie si la valeur d'un champ correspond à une chaîne spécifique ou à une liste d'options (séparées par `|`).
+
+* **Syntaxe** : `'{Chemin:include(valeur):{SiVrai}|{SiFaux}}'`
+* **Exemple (Choix multiple)** : Si le nombre de pièces est "autre", afficher la précision textuelle.
+    ```yaml
+    formule: '{nbPieces:include(autre):{nbPiecesAutre}|{nbPieces}}'
+    ```
+* **Exemple (Case à cocher)** : Retourne `true` seulement si le mode est chèque ou chèque postdaté.
+    ```yaml
+    formule: '{modePaiement:include(cheque|chequePostDate):true}'
+    ```
+
+#### 4. Formatage de Date
+Formate une date selon un masque spécifique. Les espaces sont littéraux (utiles pour l'alignement dans les cases PDF).
+
+* **Syntaxe** : `'{CheminDate:format}'`
+* **Exemple** :
+    ```yaml
+    formule: '{dateDebutBail:dd          MM          yyyy}'
+    ```
+    *Résultat :* `01          07          2025`
+
+#### 5. Vérification `isnullOrEmpty`
+Vérifie si une valeur est nulle ou vide.
+
+* **Syntaxe** : `'{Chemin:isnullOrEmpty:{SiVide}|{SiNonVide}}'`
+* **Exemple** : Cocher une case "Oui" si le champ n'est pas vide.
+    ```yaml
+    formule: '{annexe6ServicesLoisirs.0.accesActivitesLoisirs:isnullOrEmpty:false|true}'
+    ```
+>Notez que la formule ne retournera rien et ne s'exécutera pas si ``annexe6ServicesLoisirs.0.accesActivitesLoisirs`` est ``null`` dans le code.
+
+#### 6. Conditions sur les Collections (`Length`)
+Permet d'effectuer des conditions basées sur la taille d'une liste (array).
+
+* **Syntaxe** : `'{Chemin.Length:cond:Operateur?{SiVrai}|{SiFaux}}'`
+* **Exemple** :
+    ```yaml
+    formule: '{locateurs.Length:cond:>=3?true|false}'
+    ```
+
+---
+
+### 📝 Exemples Complexes
+
+#### Concaténation Conditionnelle
+Si la propriété est une copropriété, afficher les initiales, sinon ne rien afficher (ou afficher autre chose).
+
+```yaml
+formule: '{logementCoproprieteDivise:include(true):{signatureLocataire1.0.Initiales}    {signatureLocataire3.0.Initiales}}'
+```
+
+#### Logique de Fallback (Date)
+Utiliser la `dateRemiseReglementImmeuble`. Si `possedeRemiseReglementImmeuble` est faux, utiliser alors la `X-DateTransmission`.
+
+```yaml
+formule: '{dateRemiseReglementImmeuble:dd          MM          yyyy}{possedeRemiseReglementImmeuble:include(false):{X-DateTransmission:dd          MM          yyyy}}'
+```
+
+
+
+
+
 # Gif de l'outil 
 
 ![Animation](https://github.com/MTESSDev/FRW/blob/main/Documentation/images/Outil_Binding.gif)

@@ -70,6 +70,12 @@ Pour un premier formulaire, il est fortement recommandé de clôner le présent 
 1. [Supprimer un formulaire](Documentation/connexion-au-systeme.md#supprimer-un-formulaire);
 
 &nbsp;
+### Workflows
+Vous avez besoin d'impliquer plusieurs participants à différentes étapes dans la complétion de votre formulaire? 
+
+Utilisez les [workflows](/Documentation/workflows.md).
+
+&nbsp;
 ## Vous avez une question ou une suggestion?
 
 1. Vérifier si une [discussion](https://github.com/MTESSDev/FRW/discussions) existe avec le même questionnement/suggestion;

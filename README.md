@@ -69,6 +69,7 @@ Pour un premier formulaire, il est fortement recommandé de clôner le présent 
 1. [Reprendre un formulaire](Documentation/connexion-au-systeme.md#reprendre-un-formulaire);
 1. [Supprimer un formulaire](Documentation/connexion-au-systeme.md#supprimer-un-formulaire);
 
+&nbsp;
 ### Workflows
 Vous avez besoin d'impliquer plusieurs participants à différentes étapes dans la complétion de votre formulaire? 
 

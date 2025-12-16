@@ -43,7 +43,7 @@ Pour un premier formulaire, il est fortement recommandé de clôner le présent 
  
 &nbsp;
 ### Définir le ou les fichiers à produire à partir des données du formulaire (optionnel)
-1. [Configurer le fichier de transmission](Documentation/fichiers-transmission.md) du formulaire; 
+1. [Configurer le fichier de transmission](Documentation/creer-premier-fichier-transmission.md) du formulaire; 
 1. [Créer un gabarit](Documentation/gabarits.md) (PDF ou Word);
 1. [Configurer le fichier "bind"](Documentation/fichiers-bind.md) du formulaire;
 

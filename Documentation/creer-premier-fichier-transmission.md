@@ -1,6 +1,8 @@
 # Créer votre premier fichier de transmission
 
-Pour débuter et tester un premier fichier de transmission, il est recommandé de débuter avec un fichier nommé `default.v0.transmission.yml` ([Voir configuration transmission](fichiers-transmission.md)) que vous créez à la racine, donc au [niveau système](niveaux-fichiers-config.md), là où tous vos répertoires de formulaires sont.
+> Le présent guide vous explique comment créer une config de transmission **simple** pour votre premier formulaire. Toutefois, le guide [fichiers-transmission.md](/Documentation/fichiers-transmission.md) est plus complet et détaille toutes les tâches possibles.
+
+Pour débuter et tester un premier fichier de transmission, il est recommandé de débuter avec un fichier nommé `default.v0.transmission.yml` que vous créez à la racine, donc au [niveau système](niveaux-fichiers-config.md), là où tous vos répertoires de formulaires sont.
 
 Amusons-nous à simuler un appel vers un API fictif afin de se familiariser avec la solution et les diverses options. Cette étape est pratique aussi pour se faire une idée des données que votre API pourra recevoir lorsqu'elle sera configurée.
 

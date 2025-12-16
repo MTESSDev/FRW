@@ -161,9 +161,140 @@ formule: '{dateRemiseReglementImmeuble:dd          MM          yyyy}{possedeRemi
 ```
 
 
+## Documentation des Formatteurs SmartFormat Personnalisés dans FRW
+
+Cette documentation décrit les extensions "maison" ajoutées à SmartFormat pour faciliter la manipulation de données, la logique conditionnelle et le formatage spécifique dans nos modèles (templates).
+
+---
+
+### 1. Code Postal (`codePostal`)
+
+Ce formatteur normalise une chaîne de caractères pour qu'elle respecte le format visuel standard d'un code postal canadien (tout en majuscules, sans espaces).
+
+* **Alias :** `codePostal`
+* **Action :** Met en majuscules et supprime tous les espaces blancs.
+
+#### Syntaxe
+```text
+{NomVariable:codePostal}
+```
+
+#### Exemples
+
+| Valeur d'entrée | Modèle | Résultat |
+| :--- | :--- | :--- |
+| `"h3z 2y7"` | `{Code:codePostal}` | **H3Z2Y7** |
+| `"  g1q   1q9 "` | `{Code:codePostal}` | **G1Q1Q9** |
+
+---
+
+### 2. Inclusion (`include`)
+
+Vérifie si la valeur de la variable est présente dans une liste d'options fournie. Permet d'afficher du texte conditionnel selon que la valeur est trouvée ou non.
+
+* **Alias :** `include`
+* **Supporte :** Chaîne de caractères (String), Tableaux (Arrays), Dictionnaires.
+
+#### Syntaxe
+```text
+{NomVariable:include(ValeurA|ValeurB):TexteSiTrouvé|TexteSiNonTrouvé}
+```
+
+#### Exemples
+*Hypothèse : La variable `Statut` vaut `"EnCours"`.*
+
+| Modèle | Résultat | Explication |
+| :--- | :--- | :--- |
+| `{Statut:include(Actif|EnCours):Dossier Ouvert|Dossier Fermé}` | **Dossier Ouvert** | "EnCours" est dans la liste. |
+| `{Statut:include(Fermé|Archivé):Inactif|Actif}` | **Actif** | "EnCours" n'est pas trouvé (Else). |
+
+---
+
+### 3. Exclusion (`exclude` ou `neContientPas`)
+
+L'inverse logique de `include`. Utile pour afficher un contenu par défaut sauf si la valeur correspond à une exception spécifique.
+
+* **Alias :** `exclude`, `neContientPas`
+
+#### Syntaxe
+**Attention à l'ordre :** Le premier segment de texte s'affiche si la valeur **N'EST PAS** dans la liste (Succès).
+
+```text
+{NomVariable:exclude(InterditA|InterditB):TexteSiValide(PasDansLaListe)|TexteSiInvalide(DansLaListe)}
+```
+
+#### Exemples
+*Hypothèse : La variable `Pays` vaut `"Canada"`.*
+
+| Modèle | Résultat | Explication |
+| :--- | :--- | :--- |
+| {Pays:exclude(USA&#124;Mexique):International&#124;Amérique du Nord}` | **International** | "Canada" n'est pas dans la liste d'exclusion. |
+| {Pays:neContientPas(Canada):Étranger&#124;Local} | **Local** | "Canada" est l'élément exclu. |
+
+---
+
+### 4. Forcer Numérique (`forcenumeric`)
+
+Permet de nettoyer une chaîne pour ne garder que les chiffres, ou d'extraire spécifiquement la partie entière ou décimale d'un nombre.
+
+* **Alias :** `forcenumeric`, `forcerNombre`
+
+#### Options disponibles
+1. **(Aucune option)** : Garde uniquement les chiffres `0-9`.
+2. **`entier`** : Retourne la partie entière (avant le point).
+3. **`decimales`** : Retourne la partie décimale (après le point, formatée sur 2 chiffres).
+
+#### Syntaxe
+```text
+{NomVariable:forcerNombre}
+{NomVariable:forcerNombre(entier)}
+{NomVariable:forcerNombre(decimales)}
+```
+
+#### Exemples
+*Hypothèse : La variable `Montant` vaut `"125.50 $"` ou le décimal `125.5`.*
+
+| Modèle | Résultat | Notes |
+| :--- | :--- | :--- |
+| `{Montant:forcerNombre}` | **12550** | Nettoyage strict (regex). |
+| `{Montant:forcerNombre(entier)}` | **125** | Partie gauche. |
+| `{Montant:forcerNombre(decimales)}` | **50** | Partie droite (pad 2 zéros). |
+
+---
+
+### 5. Null ou Vide (`isnullOrEmpty`)
+
+Permet de gérer l'affichage lorsqu'une donnée est manquante (`null`) ou ne contient que des espaces vides.
+
+* **Alias :** `isnullOrEmpty`
+* **Note importante :** Ce formatteur ne prend **pas** de parenthèses `()`.
+
+#### Syntaxe
+```text
+{NomVariable:isnullOrEmpty:TexteSiVide|TexteSiRempli}
+```
+*Le segment `TexteSiRempli` peut contenir la variable elle-même (imbrication).*
+
+#### Exemples
+
+| Cas | Modèle | Résultat |
+| :--- | :--- | :--- |
+| `Tel` est `null` | {Tel:isnullOrEmpty:Non fourni&#124;{Tel}} | ``NULL`` |
+| `Tel` vaut `"555-0000"` | {Tel:isnullOrEmpty:Non fourni&#124;Poste: {Tel}} | **Poste: 555-0000** |
+
+---
+
+### Résumé rapide
+
+| Formatteur | Alias | Description |
+| :--- | :--- | :--- |
+| **Code Postal** | `codePostal` | Formate en `H3H3H3`. |
+| **Include** | `include` | Si `Valeur` est dans la liste -> Affiche A, Sinon B. |
+| **Exclude** | `exclude`, `neContientPas` | Si `Valeur` n'est PAS dans la liste -> Affiche A, Sinon B. |
+| **Numérique** | `forcenumeric`, `forcerNombre` | Nettoie ou extrait `entier`/`decimales`. |
+| **Vide** | `isnullOrEmpty` | Si `Vide` -> Affiche A, Sinon B. |
 
 
-
-# Gif de l'outil 
+## Gif de l'outil 
 
 ![Animation](https://github.com/MTESSDev/FRW/blob/main/Documentation/images/Outil_Binding.gif)

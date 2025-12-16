@@ -119,7 +119,7 @@ workflows:
 ### Config form
 Vous devez ensuite configurer l'aiguillage, les "filtre étapes" et les courrielWorkflow dans votre formulaire. 
 
-Voir le P700U Guide utilisateur FRW section [Aiguillage en mode workflow](https://master-www.extra-frw.sa.mes.reseau.intra/fr/Form/750/P700U/0/N/#p=sectWf). <!-- todo remplacer par le lien qui pointe en IT avant de merger. -->
+Voir le P700U Guide utilisateur FRW section [Aiguillage en mode workflow](https://formulaires.it.mtess.gouv.qc.ca/fr/Form/7/P700U/0/N/#p=sectWf). 
 
 
 

@@ -62,8 +62,9 @@ workflows:
                   modeBoutonTesterTransmission: simuler 
             
             # Pour chaque participant dont le rôle est "eleve" : 
-            # - Génère un courriel du gabarit "demandeContribution" avec les informations de ce participant 
-            # - Envoie ce courriel
+            # - Génère un courriel du gabarit "demandeContribution" avec les informations de ce participant;
+            # - Ce gabarit doit être défini sous "gabaritsCourriels:" de la présente config;
+            # - Envoie ce courriel.
             - tache: envoyerCourrielParticipant
               options: 
                   role: eleve
@@ -73,7 +74,7 @@ workflows:
             # le formulaire et envoyer un courriel d'expiration (du gabarit "formExpire") à chaque participant
             - tache: expirerFormulaire
               options:
-                  gabarit: formExpire
+                  gabarit: formExpire # doit être défini sous gabaritsCourriels de la présente config
                   delaiExpirationHeures: 48
                   langue: fr
 
@@ -114,6 +115,15 @@ workflows:
                     - typeFiltre: tacheSource
                       valeurs: genererWord
 
+# Les gabarits de courriels sont définis ici
+# Voir le guide fichiers-transmission.md pour le détail complet.
+gabaritsCourriels:
+  - id: demandeContribution
+    [...]
+  - id: dernSigTransmis
+    [...]
+  - id : formExpire
+    [...]
 ```
 
 ### Config form

@@ -73,7 +73,7 @@ Pour un premier formulaire, il est fortement recommandé de clôner le présent 
 ### Workflows
 Vous avez besoin d'impliquer plusieurs participants à différentes étapes dans la complétion de votre formulaire? 
 
-Utilisez les [workflows](/Documentation/workflows.md).
+Utilisez les [workflows](Documentation/workflows.md).
 
 &nbsp;
 ## Vous avez une question ou une suggestion?

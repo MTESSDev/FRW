@@ -4,9 +4,9 @@
 Le workflow est un type d'aiguillage qui permet d'impliquer plusieurs participants dans la complétion d'un formulaire séparé en plusieurs étapes.
 
 La configuration du workflow vous permet de déterminer :
-- Qui peut remplir quelles sections et dans quel ordre,
-- Qui peut voir quelles informations aux différentes étapes,
-- Quelles conditions doivent être réunies pour passer d'une étape à l'autre,
+- Qui peut remplir quelles sections et dans quel ordre ;
+- Qui peut voir quelles informations aux différentes étapes ;
+- Quelles conditions doivent être réunies pour passer d'une étape à l'autre ;
 - Quelles notifications sont envoyées.
 
 Exemple d'utilisation

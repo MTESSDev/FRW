@@ -205,8 +205,8 @@ Vérifie si la valeur de la variable est présente dans une liste d'options four
 
 | Modèle | Résultat | Explication |
 | :--- | :--- | :--- |
-| `{Statut:include(Actif|EnCours):Dossier Ouvert|Dossier Fermé}` | **Dossier Ouvert** | "EnCours" est dans la liste. |
-| `{Statut:include(Fermé|Archivé):Inactif|Actif}` | **Actif** | "EnCours" n'est pas trouvé (Else). |
+| {Statut:include(Actif&#124;EnCours):Dossier Ouvert|Dossier Fermé} | **Dossier Ouvert** | "EnCours" est dans la liste. |
+| {Statut:include(Fermé&#124;Archivé):Inactif&#124;Actif} | **Actif** | "EnCours" n'est pas trouvé (Else). |
 
 ---
 
@@ -228,7 +228,7 @@ L'inverse logique de `include`. Utile pour afficher un contenu par défaut sauf 
 
 | Modèle | Résultat | Explication |
 | :--- | :--- | :--- |
-| {Pays:exclude(USA&#124;Mexique):International&#124;Amérique du Nord}` | **International** | "Canada" n'est pas dans la liste d'exclusion. |
+| {Pays:exclude(USA&#124;Mexique):International&#124;Amérique du Nord} | **International** | "Canada" n'est pas dans la liste d'exclusion. |
 | {Pays:neContientPas(Canada):Étranger&#124;Local} | **Local** | "Canada" est l'élément exclu. |
 
 ---

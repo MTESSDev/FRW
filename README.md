@@ -43,7 +43,7 @@ Pour un premier formulaire, il est fortement recommandé de clôner le présent 
  
 &nbsp;
 ### Définir le ou les fichiers à produire à partir des données du formulaire (optionnel)
-1. [Configurer le fichier de transmission](Documentation/fichiers-transmission.md) du formulaire; 
+1. [Configurer le fichier de transmission](Documentation/creer-premier-fichier-transmission.md) du formulaire; 
 1. [Créer un gabarit](Documentation/gabarits.md) (PDF ou Word);
 1. [Configurer le fichier "bind"](Documentation/fichiers-bind.md) du formulaire;
 
@@ -68,6 +68,12 @@ Pour un premier formulaire, il est fortement recommandé de clôner le présent 
 1. [Afficher la liste des formulaires d'un utilisateur](Documentation/connexion-au-systeme.md#afficher-la-liste-des-formulaires-dun-utilisateur) ;
 1. [Reprendre un formulaire](Documentation/connexion-au-systeme.md#reprendre-un-formulaire);
 1. [Supprimer un formulaire](Documentation/connexion-au-systeme.md#supprimer-un-formulaire);
+
+&nbsp;
+### Workflows
+Vous avez besoin d'impliquer plusieurs participants à différentes étapes dans la complétion de votre formulaire? 
+
+Utilisez les [workflows](Documentation/workflows.md).
 
 &nbsp;
 ## Vous avez une question ou une suggestion?

@@ -66,8 +66,12 @@ Il est possible de définir le comportement attendu avec l'utilisation du bouton
 
 Cette tâche est directement liée à la section `http_client`.
 
-## http_client
+### http_client
 Cette section permet de spécifier toutes les caractéristiques de l'appel à l'API défini dans l'étape `appelerServiceExterne`.
+
+### expirerFormulaire (Disponible pour les formulaires en workflow seulement)
+Permet d'ajouter un délai d'expiration programmé pour le formulaire. Lorsque le délai est atteint, le formulaire sera automatiquement expiré s'il n'a pas été transmis, ce qui fait qu'il ne sera plus possible pour les participants de le compléter.
+Se référer à l'exemple du fichier de transmission en [workflow](workflows.md#config-transmission).
 
 ## Exemple de toutes les possibilitées de configuration
 ```yaml

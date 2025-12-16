@@ -39,7 +39,16 @@ workflows:
       - id: initial # La 1e étape doit toujours être "initial".
         evenements:
           quandQuelqunTransmet: # Transmission initiale du formulaire, déclenche les tâches configurées dessous
-            
+            # Déclenche une tâche d'expiration planifiée selon le délai défini.
+            - tache: expirerFormulaire
+              options:
+                  # Le gabarit défini ici doit être défini dans la section des gabarits courriels
+                  gabarit: formExpire
+                  # Délai d'expiration du formulaire en heures après l'exécution de cette étape.
+                  delaiExpirationHeures: 1
+                  # Langue d'exécution de la tâche
+                  langue: fr  
+                  modeBoutonTesterTransmission: simuler            
             # Créé les participants dont le rôle est "eleve" en extrayant les informations saisies dans le formulaire. 
             # Ces participants sont envoyés vers l'étape "contribution".
             - tache: interventionParticipant 

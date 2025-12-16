@@ -151,6 +151,8 @@ config:
     pourcentageDepassementAnnexe: 20
 #verouillerChampsPdf permet de verouiller le fichier lorsque le traitement a terminé d'insérer les valeurs.
     verrouillerChampsPdf: true
+#Permet de forcer la taille des champs du pdf qui ont un font-size "auto"
+    overrideTailleChampsAuto: 7
 bundles:
 #Le nomSortie sert à définir le nom du fichier qui sera produit. 
 #Lorsqu'on utilise un gabarit PDF pour la production du fichier, il n'est pas nécessaire de spécifier d'extension puisque ce sera toujours un PDF.
@@ -231,6 +233,8 @@ config:
     pourcentageDepassementAnnexe: 20
 #verouillerChampsPdf permet de verouiller le fichier lorsque le traitement a terminé d'insérer les valeurs.
     verrouillerChampsPdf: true
+#Permet de forcer la taille des champs du pdf qui ont un font-size "auto"
+    overrideTailleChampsAuto: 7
 bundles:
 #Le nomSortie sert à définir le nom du fichier qui sera produit. 
 #Lorsqu'on utilise un gabarit PDF pour la production du fichier, il n'est pas nécessaire de spécifier d'extension puisque ce sera toujours un PDF.

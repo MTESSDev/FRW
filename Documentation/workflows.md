@@ -27,7 +27,10 @@ Voici un exemple de configuration de workflow.
 workflows:
   - id: karate
     roles: 
-      - id: sensei # Le premier rôle défini est l'utilisateur principal; c'est celui qui initie le formulaire, et c'est le seul qui peut le réinitialiser à l'étape initial en cas de modification.
+      # Le premier rôle défini est l'utilisateur principal; 
+      # C'est celui qui initie le formulaire, et c'est le seul qui peut le réinitialiser 
+      # à l'étape initial en cas de modification.
+      - id: sensei 
         label: 
           fr: "Sensei"
           en: "YesNoSensei"
@@ -36,19 +39,13 @@ workflows:
           fr: "Élève"
           en: "Student"
     etapes:
-      - id: initial # La 1e étape doit toujours être "initial".
+      # La 1e étape doit toujours être "initial".
+      - id: initial 
         evenements:
-          quandQuelqunTransmet: # Transmission initiale du formulaire, déclenche les tâches configurées dessous
-            # Déclenche une tâche d'expiration planifiée selon le délai défini.
-            - tache: expirerFormulaire
-              options:
-                  # Le gabarit défini ici doit être défini dans la section des gabarits courriels
-                  gabarit: formExpire
-                  # Délai d'expiration du formulaire en heures après l'exécution de cette étape.
-                  delaiExpirationHeures: 1
-                  # Langue d'exécution de la tâche
-                  langue: fr  
-                  modeBoutonTesterTransmission: simuler            
+          
+          # Transmission initiale du formulaire, déclenche les tâches configurées dessous
+          quandQuelqunTransmet: 
+    
             # Créé les participants dont le rôle est "eleve" en extrayant les informations saisies dans le formulaire. 
             # Ces participants sont envoyés vers l'étape "contribution".
             - tache: interventionParticipant 
@@ -72,16 +69,21 @@ workflows:
                   role: eleve
                   gabarit: demandeContribution
             
-            # Inscris une tâche asynchrone qui va s'exécuter après le délai de 48 heures et qui va expirer le formulaire et envoyer un courriel d'expiration (du gabarit "formExpire") à chaque participant
+            # Inscris une tâche asynchrone qui va s'exécuter après le délai de 48 heures et qui va expirer 
+            # le formulaire et envoyer un courriel d'expiration (du gabarit "formExpire") à chaque participant
             - tache: expirerFormulaire
               options:
                   gabarit: formExpire
                   delaiExpirationHeures: 48
                   langue: fr
 
-      - id: contribution # L'étape "contribution", vers laquelle les participants ont été envoyés à l'étape initial, est définie ici.
+      # L'étape "contribution", vers laquelle les participants ont été envoyés à l'étape initial, est définie ici.
+      - id: contribution 
         evenements:
-          quandLeDernierTransmet: # Le dernier participant qui transmet sa partie de formulaire à l'étape "contribution" va déclencher l'exécution des tâches 
+          
+          # Le dernier participant qui transmet sa partie de formulaire à l'étape "contribution" 
+          # va déclencher l'exécution des tâches
+          quandLeDernierTransmet:  
             
             - tache: interventionParticipant
               options: 
@@ -96,13 +98,14 @@ workflows:
                 gabarit: dernSigTransmis
                 modeBoutonTesterTransmission: simuler 
 
-      - id: transmission # La dernière étape doit toujours s'appeler "transmission"
+      # La dernière étape doit toujours s'appeler "transmission"
+      - id: transmission 
         evenements:
           quandQuelqunTransmet:
             - tache: genererWord
             - tache: traiterDocumentsSoumis
             - tache: ajouterEstampille
-            - tache: envoyerCourrielParticipant # remplacer par un envoyerCourrielParticipant pour chaque rôle
+            - tache: envoyerCourrielParticipant 
               options: 
                   role: sensei
                   gabarit: finFinal2

@@ -1,0 +1,120 @@
+# yaml-language-server: $schema=C:/Users/gagsa09/source/repos/SPFS-FRW/SPFS-FRW-Configuration/out/FRW-transmission.schema.json
+
+workflows:
+  - id: karate
+    roles:
+      - id: sensei
+        label: 
+          fr: "Sensei"
+          en: "Sensei(en)"
+
+      - id: eleve
+        label: 
+          fr: "Élève"
+          en: "Élève(en)"
+
+    etapes:
+      - id: initial
+        label: 
+          fr: Initial
+          en: Initial
+        evenements:
+          quandQuelqunTransmet:
+            
+            - tache: interventionParticipant
+              options: 
+                  role: eleve
+                  vers: contributionsignature
+                  chargerCourrielsWorkflow: true
+                  modeBoutonTesterTransmission: simuler 
+            
+            - tache: interventionParticipant
+              options: 
+                  role: sensei
+                  chargerCourrielsWorkflow: true
+                  modeBoutonTesterTransmission: simuler 
+
+            - tache: envoyerCourrielParticipant
+              options: 
+                  role: eleve
+                  gabarit: signature
+                  modeBoutonTesterTransmission: simuler 
+                  
+            - tache: envoyerCourrielParticipant
+              options: 
+                  role: sensei
+                  gabarit: suiviDemande
+                  modeBoutonTesterTransmission: simuler 
+      
+      - id: contributionsignature
+        label: 
+          fr: Contribution et signature  
+        evenements:
+          quandLeDernierTransmet:
+
+            - tache: interventionParticipant
+              options: 
+                  role: sensei
+                  vers: transmission
+                  chargerCourrielsWorkflow: true
+                  modeBoutonTesterTransmission: simuler 
+
+      - id: transmission 
+        evenements:
+          quandQuelqunTransmet:
+            - tache: genererWord
+            - tache: ajouterEstampille
+            - tache: envoyerCourrielParticipant 
+              options: 
+                  role: eleve
+                  gabarit: ContratOfficiel
+                  modeBoutonTesterTransmission: simuler
+            - tache: envoyerCourrielParticipant 
+              options: 
+                  role: sensei
+                  gabarit: ContratOfficiel
+                  modeBoutonTesterTransmission: simuler
+
+gabaritsCourriels:
+
+  - id: suiviDemande
+    nomExpediteur: EssaisFRW
+    objet: Cours de karaté ({{donneesFormulaire.form.nomCours}}) - Suivi des inscriptions
+    corps: |
+      <p>Bonjour {{envoyerCourriel.participantCourant.role}} {{envoyerCourriel.participantCourant.details.nomSensei}},</p>
+      <p>Les demandes d'inscriptions ont été envoyés aux élèves.</p> 
+      <p>Cliquez ici pour accéder au suivi de cette transaction : <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>Suivi des inscriptions</a></p>
+      <p>Infos de débogage : </p>
+      <p>- mdp = {{donneesFormulaire.form.motPasseWF}}</p> 
+
+  - id: signature
+    nomExpediteur: EssaisFRW
+    objet: Cours de karaté ({{donneesFormulaire.form.nomCours}}) - Contribution et signature
+    corps: |
+      <p>Bonjour {{envoyerCourriel.participantCourant.role}} {{envoyerCourriel.participantCourant.details.nomEleve}},</p>
+      <p>Cliquez ici pour remplir et signer votre partie du formulaire : <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>Contribution et signature</a></p>
+      <p>Infos de débogage : </p>
+      <p>- mdp = {{donneesFormulaire.form.motPasseWF}}</p> 
+      
+  - id: transmission
+    nomExpediteur: EssaisFRW
+    objet: Cours de karaté ({{donneesFormulaire.form.nomCours}}) - Étape transmission
+    corps: |
+      <p>Bonjour {{envoyerCourriel.participantCourant.role}} {{envoyerCourriel.participantCourant.details.nomEleve}},</p>
+      <p>Cliquez ici pour finaliser votre inscription : <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>transmission</a></p>
+      <p>Infos de débogage : </p>
+      <p>- mdp = {{donneesFormulaire.form.motPasseWF}}</p>       
+
+  - id: ContratOfficiel
+    nomExpediteur: EssaisFRW
+    objet: Cours de karaté ({{donneesFormulaire.form.nomCours}}) - Contrat officiel
+    corps: |
+      <p>Bonjour {{envoyerCourriel.participantCourant.role}} {{envoyerCourriel.participantCourant.details.nomEleve}},</p>
+      <p>Voici votre contrat officiel {{typeFormulaire}} pour votre cours de Karaté {{donneesFormulaire.form.nomCours}}.</p>
+      <p>Votre numéro de confirmation est : {{noConfirmation}}-{{#envoyerCourriel.workflow.revision}}{{.}}{{/envoyerCourriel.workflow.revision}}{{^envoyerCourriel.workflow.revision}}0{{/envoyerCourriel.workflow.revision}}</p>
+      <p>{{#envoyerCourriel.workflow.revision}}Ce message s'affiche seulement si le formulaire a été modifié.{{/envoyerCourriel.workflow.revision}}</p>
+      <ul>
+        {{#listePJ}}
+        <li><a href="{{url}}">{{nomOriginal}}</a></li>
+        {{/listePJ}}
+      </ul>

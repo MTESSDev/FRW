@@ -132,5 +132,5 @@ Vous devez ensuite configurer l'aiguillage, les "filtre étapes" et les courriel
 Voir le P700U Guide utilisateur FRW section [Aiguillage en mode workflow](https://formulaires.it.mtess.gouv.qc.ca/fr/Form/7/P700U/0/N/#p=sectWf). 
 
 
-
-
+## Exemple
+Un formulaire d'exemple de workflow complet est disponible dans le répertoire [Démo workflow](../Exemples/Démo%20workflow/).

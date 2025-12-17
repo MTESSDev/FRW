@@ -1,0 +1,443 @@
+# yaml-language-server: $schema=https://formulaires.it.mtess.gouv.qc.ca/api/v1/SIS/ObtenirSchema/form
+# debug: langue=auto, showAll=false
+
+config:  
+  aiguillage:
+    choix:
+      - mode: workflow
+        Workflow: karate
+  securite: 
+    accesAnonyme: true
+  enregistrement:
+    actif: true
+    afficherMessageIncitatif: false
+    
+form:
+  title:
+    fr: Cours de Karaté
+
+  sectionsGroup:
+  - sectionGroup:
+      fr: Cours de Karaté
+    filtreEtapes: 
+      - initial: 
+    sections: 
+      - section: # explications
+          fr: Explications
+        id: sectExplications
+        components:
+          - type: avis
+            classes: avertissement
+            title: 
+              fr: Pré-requis pour tous les workflows
+            text:
+              fr: Tous les participants doivent posséder une adresse courriel.
+          - type: zoneEvidence
+            tag: div
+            #classes: page-texte
+            text: 
+              fr: |
+                <h3>Description sommaire</h3>
+                <p>Ce formulaire d'exemple permet de démarrer un cours de karaté et de recueillir les inscriptions des élèves, puis de produire et envoyer un contrat officiel signé aux participants.</p>
+                <h3>Utilisateurs</h3>
+                <p>Les utilisateurs de ce formulaire sont : </p>
+                <h4>L'utilisateur principal</h4>
+                <p>Un professeur d'arts martiaux japonais (un <b>Sensei</b>).</p>
+                <h4>Les autres participants</h4>
+                <p>Les <b>élèves</b> qui s'inscrivent au cours. <br><br>
+                Ceux-ci sont déjà connus du Sensei, c'est-à-dire qu'ils ont déjà manifesté au Sensei leur intérêt pour le cours (préalablement à la création du formulaire web) et ont donné leur nom et leur adresse courriel.</p>
+                <h3>Étapes</h3>
+                <p>Une étape est complétée quand le participant transmet sa partie du formulaire. <br><br>Les étapes du formulaire sont les suivantes : </p>
+                <h4>Étape initiale</h4>
+                <p>En tant que Sensei, vous complétez la section initiale du formulaire. Celle-ci contient :
+                <ul>
+                  <li>Des informations sur le cours&nbsp;;</li>
+                  <li>Des informations d'identification et les adresses courriel des participants (Sensei et élèves)&nbsp;;</li>
+                  <li>La définition du mot de passe.</li>
+                </ul></p>
+                <h4>Étape "contribution et signature"</h4>
+                <p>À cette étape, les élèves :
+                <ul>
+                  <li>Révisent les informations sur le cours&nbsp;;</li>
+                  <li>Complètent les informations personnelles demandées&nbsp;;</li>
+                  <li>Apposent leur signature électronique.</li>
+                </ul></p>
+                <h4>Étape "transmission"</h4>
+                <p>À cette étape, le Sensei :
+                <ul>
+                  <li>Révise les informations saisies&nbsp;;</li>
+                  <li>Appose sa signature électronique.</li>
+                </ul></p>
+                <p>C'est à la complétion de cette étape que le contrat est produit en format pdf et envoyé à tous les participants, ce qui complète le workflow.</p>
+      - section: # Informations sur le cours
+          fr: Informations sur le cours
+        id: sectInfoCours
+        components:
+          - type: zoneEvidence
+            tag: div
+            classes: page-texte
+            v-if: this.wf.etape.nom === 'initial'
+            text: 
+              fr: |
+                <p>Cette section permet au Sensei de saisir toutes les informations pertinentes pour le cours. </p>
+                <p>Elles seront récapitulées aux élèves dans les parties du formulaire qu'ils complètent, et feront également partie du pdf final.</p>
+          - name: nomCours
+            type: text
+            label:
+              fr: Nom du cours
+          - name: comp
+            type: text
+            label:
+              fr: Compétences visées
+          - name: horaire
+            type: text
+            label:
+              fr: Horaire
+      - section: # Sensei
+          fr: Sensei
+        id: sectSensei
+        components:
+          - type: zoneEvidence
+            v-if: this.wf.etape.nom === 'initial'
+            tag: div
+            classes: page-texte
+            text: 
+              fr: Cette section permet de recueillir les coordonnées du Sensei ainsi que son adresse courriel.
+          - type: group
+            name: groupSensei
+            label:
+              fr: Coordonnées du Sensei
+            components:
+              - name: nomSensei
+                type: text
+                label: 
+                  fr: Nom du Sensei
+              - name: anneesExpSensei
+                type: text
+                label: 
+                  fr: Nombre d'années d'expérience           
+              - type: courrielWorkflow
+                role: sensei
+                motDePasse: val('motPasseWF')
+                name: courrielSensei
+                label: 
+                  fr: Adresse courriel du Sensei
+      - section: # Élèves
+          fr: Élèves
+        id: sectEleves
+        components:
+          - type: zoneEvidence
+            v-if: this.wf.etape.nom === 'initial'
+            tag: div
+            classes: page-texte
+            text: 
+              fr: Cette section permet de recueillir les coordonnées des élèves qui veulent s'inscrire ainsi que leurs adresses courriel.
+          - type: repeatableGroup
+            name: rpgEleves
+            repeatable: true              
+            label:
+              fr: Élèves
+            instanceLabel:
+              fr: Élève
+            addLabel:
+              fr: Ajouter un élève              
+            removeLabel:
+              fr: Supprimer l'élève
+            limit: 3              
+            components: 
+              - name: nomEleve
+                type: text
+                label: 
+                  fr: Nom de l'élève
+              - type: courrielWorkflow
+                role: eleve
+                motDePasse: val('motPasseWF')
+                name: courrielEleve
+                label: 
+                  fr: Adresse courriel de l'élève
+
+  - sectionGroup:
+      fr: Elève 1
+    prefixId: eleve1
+    filtreEtapes: 
+      - contributionsignature: 
+        - eleve: 1
+    classes: icone user
+    sections: &sectionsEleves
+      
+      - section: # Étapes à suivre
+          fr: Étapes à suivre
+        id: etapesASuivreEleve
+        cacherTexteExplicatifChampsObligatoires: true
+        components:
+          - type: dynamic
+            tag: div              
+            text:
+              fr: |
+                <h3>1. Remplissage du formulaire d'inscription</h3>
+                <p>Le Sensei a rempli le formulaire d'inscription au cours de karaté. Vous devez maintenant remplir les sections qui vous concernent et prendre certains engagements.</p>
+                <p>Les champs <b>obligatoires</b> sont identifiés par un astérisque (<span class="icone-champ-requis">*</span>).</p>                  
+                <p>Si vous avez des questions, si vous constatez des erreurs ou que des modifications doivent être apportées au formulaire d'inscription au cours de karaté, veuillez communiquer directement avec le Sensei (p. ex : téléphone, message texte, courriel, etc.). Il sera en mesure d'effectuer les modifications nécessaires et un nouveau formulaire vous sera transmis, le cas échéant.</p>                  
+                <hr>
+                <h3>2. Signature du formulaire d'inscription au cours de karaté</h3>
+                <p>Vous trouverez dans la section <strong>« Aperçu et signature du formulaire »</strong> une ébauche du formulaire qui comprend les informations que vous avez saisies.</p>
+                <p>Si toutes les informations sont exactes, vous pouvez inscrire votre nom complet et cliquer sur le bouton <strong>« Signer »</strong>.</p>
+                <hr>
+                <h3>3. Transmission du formulaire d'inscription au cours de karaté</h3>
+                <p>Vous pourrez transmettre au Sensei votre formulaire d'inscription signé à la section <strong>« Révision »</strong>.</p>
+                <p><b>Lorsque toutes les parties concernées l'auront rempli et signé, vous recevrez la version finale par courriel</b> ainsi que tous les documents joints (p. ex. : horaires, décharge, etc.).</p>
+                <p>Ces documents seront présentés en format PDF et disponibles pour téléchargement ou impression pendant <b>90 jours</b>. Une fois ce délai expiré, les documents ne seront plus disponibles.</p>
+
+      - section: # Identification
+          fr: Identification
+        id: identificationEleve               
+        components:
+          - type: zoneEvidence
+            tag: div
+            classes: page-texte
+            text: 
+              fr: Contribution de l'élève.
+          - type: textarea
+            name: expEleve
+            label:
+              fr: Décrivez votre expérience en karaté
+          - type: textarea
+            name: attEleve
+            label:
+              fr: Décrivez vos attentes face au cours
+          - type: textarea
+            name: dispoEleve
+            label:
+              fr: Quelles sont vos disponibilités?              
+      
+      - section : # Engagement solonnel
+          fr: Engagement solonnel infos cours
+        id: engInfoCoursEleve
+        sommaire: 
+          inclureSections: 
+            - sectInfoCours
+
+        components: 
+          - type: checkbox
+            name: eleveConfirmeQueBlaBlaBla
+            label:
+              fr: Je confirme que j'ai validé les informations du cours et que je les accepte à l'intérieur de mon coeur
+
+      - section: # Engagement 2
+          fr: Engagement solonnel participants
+        id: engPartEleve
+        sommaire:
+          inclureSections: 
+            - sectSensei
+            - sectEleves
+        components:
+          - type: checkbox
+            name: eleveConfirmeQueBlaBlaBla2
+            label:
+              fr: Je confirme que j'ai validé l'identité du Sensei et des autres élèves et que j'accepte de suivre le cours avec ces personnes
+      
+      - section: # Signature du formulaire
+          fr: Signature du formulaire
+        id: signEleve       
+        components:               
+          - name: signatureEleve
+            type: signature
+            label: 
+              fr: Signature électronique
+            additionals:
+              texte-consentement : <p>En signant ce document, vous attestez en avoir pris connaissance, en comprendre les termes et les accepter.</p>
+              lecture-seule: false
+                
+  - sectionGroup:
+      fr: Élève 2
+    prefixId: eleve2
+    v-if: val('rpgEleves') && val('rpgEleves').length > 1
+    filtreEtapes: 
+      - contributionsignature: 
+        - eleve: 2       
+    classes: icone user
+    sections: *sectionsEleves
+
+  - sectionGroup:
+      fr: Élève 3
+    prefixId: eleve3
+    v-if: val('rpgEleves') && val('rpgEleves').length > 2
+    filtreEtapes: 
+      - contributionsignature: 
+        - eleve: 3
+    classes: icone user
+    sections: *sectionsEleves
+
+  # Locateur responsable (Transmission)
+  - sectionGroup:
+      fr: Transmission du formulaire
+    filtreEtapes: 
+      - transmission: 
+        - sensei:
+    classes: icone register
+    sections:
+      # Fonctionnement bail locateurPrincipal transmission
+      - section:
+          fr: Finalisation du formulaire
+        id: finalisation
+        cacherTexteExplicatifChampsObligatoires: true          
+        components:
+          - type: dynamic
+            tag: div
+            text:
+              fr: |
+                <h3>Signature du formulaire d'inscription</h3>
+                <p>Le formulaire d'inscription a été rempli et signé par tous les élèves.</p>                  
+                <p>Vous trouverez dans la section <strong>« Aperçu final »</strong> un sommaire qui récapitule toutes les informations saisies au formulaire par tous les participants.</p>
+                <p>Si vous devez modifier le formulaire d'inscription, les autres parties devront recommencer le processus et signer de nouveau.</p>
+                <p>Si toutes les informations sont exactes, vous pouvez inscrire votre nom complet et cliquer sur le bouton <strong>« Signer »</strong>.</p> 
+            
+  - sectionGroup:
+      fr: Fin
+    sections: 
+      - section:
+          fr: Suivi des inscriptions
+        id: suiviInsc
+        filtreEtapes:
+          - consultation:
+            sensei:
+          - transmission:
+        components:
+          - type: zoneEvidence
+            tag: div
+            text: 
+              fr: |
+                <p>Cette section permet au Sensei d'avoir une vue d'ensemble sur les inscriptions des élèves. </p>
+                <p>Elle permet aussi de revenir en modification s'il y avait une correction à effectuer.</p>
+          - type: suiviEtapesWF
+            name: sewf
+            label: 
+              fr: Suivi des inscriptions
+            etapesVisibles: contributionsignature
+            etapesObligatoires: 
+              - contributionSignature:
+            templateDescriptionRoleParticipant: "{{#nom}}{{nom}}{{/nom}}"
+
+      - section: # Choix du mot de passe
+          fr: Choix du mot de passe
+          en: Choice of password
+        id: choixMotPasseBail          
+        filtreEtapes: 
+          - initial: 
+        components:
+          - type: dynamic
+            tag: div
+            classes: mb-32
+            text:
+              fr: |
+                <div class="utd-page-texte">
+                  <p>Le mot de passe protège l'accès au formulaire d'inscription. Il est requis pour accéder au formulaire. </p>
+                  <p>Le Sensei doit choisir un mot de passe et le <b>communiquer en toute sécurité</b> à tous les participants.</p>
+                </div>
+          - name: motPasseWF
+            type: text            
+            label: 
+              fr: Mot de passe
+              en: Password
+            outerClasses: lg
+
+      # Aperçu du bail (initial, Sensei principal)
+      - section:
+          fr: Aperçu du formulaire d'inscription
+        id: apercuInitial
+        cacherTexteExplicatifChampsObligatoires: true          
+        filtreEtapes: 
+         - initial: 
+         - consultation:
+        sommaire: 
+          exclureSections: 
+            - sectExplications
+            - eleve1etapesASuivreEleve
+            - eleve2etapesASuivreEleve
+            - eleve3etapesASuivreEleve
+            - eleve1identificationEleve
+            - eleve2identificationEleve
+            - eleve3identificationEleve
+            - eleve1engInfoCoursEleve
+            - eleve2engInfoCoursEleve
+            - eleve3engInfoCoursEleve
+            - eleve1engPartEleve
+            - eleve2engPartEleve
+            - eleve3engPartEleve
+            - eleve1signEleve
+            - eleve2signEleve
+            - eleve3signEleve
+            - suiviInsc
+            - finalisation
+            - apercuFinal
+
+      # Aperçu du bail (initial, Sensei principal)
+      - section:
+          fr: Aperçu final
+        id: apercuFinal
+        cacherTexteExplicatifChampsObligatoires: true          
+        filtreEtapes: 
+         - transmission:
+        sommaire: 
+          exclureSections: 
+            - sectExplications
+            - eleve1etapesASuivreEleve
+            - eleve2etapesASuivreEleve
+            - eleve3etapesASuivreEleve
+            - suiviInsc
+            - finalisation
+            - apercuInitial
+
+      - section: # Révision
+          fr: Révision
+          en: Revision
+        id: revision
+        filtreEtapes:
+          initial:
+          contributionsignature:
+          transmission:
+        components:
+          - type: dynamic # val('EtatRevision') === 'initial'
+            tag: div
+            v-if: val('EtatRevision') === 'initial'
+            classes: texte-revision
+            text: 
+              fr: Vous devez cliquer sur le bouton « Valider » afin de vérifier que le formulaire est rempli correctement.
+              en: You must click on the Validate button to verify that the form has been properly filled out.
+            
+          - type: dynamic # Étape 'initial' et 'sans-erreur'
+            tag: div
+            v-if: val('EtatRevision') === 'sans-erreur' && this.wf.etape.nom === 'initial'
+            classes: texte-revision
+            text: 
+              fr: |
+                <p>Le formulaire d'inscription est maintenant rempli.</p>
+                <p>Avant de le transmettre aux autres, relisez-le attentivement afin de <b>vérifier l'exactitude de toutes les informations qu'il contient</b> et d'apporter les corrections nécessaires, le cas échéant. Vous pouvez le faire en accédant à la section <strong>« Aperçu du formulaire »</strong>.</p>
+                <p>Si toutes les informations sont exactes, vous pouvez cliquer sur le bouton <strong>« Soumettre »</strong>. Le formulaire sera automatiquement transmis aux élèves afin qu'ils puissent remplir les sections qui les concernent.</p>  
+                <p><b>Lors de cette étape, les élèves devront communiquer avec vous si elles ont une interrogation ou une modification à apporter</b>.</p>  
+                <p>Si aucune modification n'est nécessaire, les élèves pourront y apposer leur signature.</p> 
+                <p>Assurez-vous d'avoir transmis aux élèves le mot de passe pour qu'ils puissent accéder au formulaire.</p>
+                <utd-avis type="avertissement">
+                  <p>Veuillez noter que l'hyperlien pour signer et conclure le formulaire d'inscription est valide pour 36 heures à compter de sa transmission aux autres parties.</p>
+                </utd-avis>
+
+          - type: dynamic # Étape 'contributionsignature'
+            tag: div
+            v-if: val('EtatRevision') === 'sans-erreur' && this.wf.etape.nom === 'contributionsignature'
+            classes: texte-revision
+            text: 
+              fr: |
+                <p>Votre partie du formulaire d'inscription est maintenant remplie.</p>
+                <p>Vous pouvez cliquer sur le bouton <strong>« Soumettre »</strong>. Le formulaire d'inscription sera automatiquement envoyé au Sensei pour qu'il puisse le signer à son tour.</p>
+                <p>Lorsque toutes les parties concernées l'auront rempli et signé, <b>vous recevrez la version finale par courriel</b> ainsi que tous les documents joints (p. ex. : horaire, règlement du cours, etc.).</p>                    
+                <p>Ces documents seront présentés en format PDF et disponibles pour téléchargement ou impression pendant <b>90 jours. Une fois ce délai expiré, les documents ne seront plus disponibles</b>.</p>
+            
+          - type: dynamic # Étape 'transmission' (locateur principal)
+            tag: div
+            v-if: val('EtatRevision') === 'sans-erreur' && this.wf.etape.nom === 'transmission' 
+            classes: texte-revision
+            text: 
+              fr: |
+                <p>Le formulaire d'inscription est maintenant rempli et signé par toutes les parties.</p>
+                <p>Vous recevrez la version finale par courriel ainsi que tous les documents joints.</p>
+                <p>Ces documents seront présentés en format PDF et disponibles pour téléchargement ou impression pendant <b>90 jours. Une fois ce délai expiré, les documents ne seront plus disponibles</b>.</p>                         

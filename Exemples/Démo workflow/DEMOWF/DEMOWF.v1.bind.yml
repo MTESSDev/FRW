@@ -1,5 +1,5 @@
 bundles:
-  - nomSortie: testword2.pdf
+  - nomSortie: ContratOfficielKarate.pdf
     templates:
       - template1
     estampille:
@@ -15,14 +15,6 @@ templates:
 - id: template1
   name: Nom inutile
   gabarit:
-#    fr: gabarit_word2_fr_stef.docx
-##    fr: test_gabarit_word.docx
-#    en: fail.docx
-#  orderby:
-#    - 
-  ignorer:
-   - champ: suiviEtapesPokemon
-   # - champ: ChoixChangements
-   # - champ: TestFRW335
-   # - champ: SignaturePrincipale
 
+  ignorer:
+   - champ: unChampIgnore

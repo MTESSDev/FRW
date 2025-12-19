@@ -69,6 +69,12 @@ form:
                   <li>Appose sa signature électronique.</li>
                 </ul></p>
                 <p>C'est à la complétion de cette étape que le contrat est produit en format pdf et envoyé à tous les participants, ce qui complète le workflow.</p>
+          - type: avis
+            #classes: avertissement
+            title: 
+              fr: Pour en savoir plus sur les workflows
+            text:
+              fr: Consulter la page <a href="https://github.com/MTESSDev/FRW/blob/main/Documentation/workflows.md" target="_blank">Workflows</a> dans la documentation d'intégration FRW sur GitHub pour le détail complet du mode workflow.<br><br>Vous pouvez aussi consulter le P700U Guide utilisateur FRW section <a href="https://formulaires.it.mtess.gouv.qc.ca/fr/Form/7/P700U/0/N/#p=sectWf" target="_blank">Aiguillage en mode workflow</a>. 
       - section: # Informations sur le cours
           fr: Informations sur le cours
         id: sectInfoCours

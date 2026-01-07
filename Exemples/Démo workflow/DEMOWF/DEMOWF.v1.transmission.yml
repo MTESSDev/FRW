@@ -49,7 +49,7 @@ workflows:
             - tache: expirerFormulaire
               options: 
                 gabarit: formExpire
-                delaiExpirationHeures: 0.03
+                delaiExpirationHeures: 48
                 langue: fr
                 modeBoutonTesterTransmission: simuler
       

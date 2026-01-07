@@ -45,6 +45,13 @@ workflows:
                   role: sensei
                   gabarit: suiviDemande
                   modeBoutonTesterTransmission: simuler 
+
+            - tache: expirerFormulaire
+              options: 
+                gabarit: formExpire
+                delaiExpirationHeures: 0.03
+                langue: fr
+                modeBoutonTesterTransmission: simuler
       
       - id: contributionsignature
         label: 

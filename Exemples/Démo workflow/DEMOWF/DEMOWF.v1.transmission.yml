@@ -84,6 +84,15 @@ workflows:
 
 gabaritsCourriels:
 
+  - id: formExpire
+    nomExpediteur: FRW
+    objet: 
+      fr: Formulaire expiré
+      en: Form expired
+    corps: 
+      fr: <p>Le formulaire est expiré.</p>
+      en: <p>Form is expired.</p>
+
   - id: suiviDemande
     nomExpediteur: EssaisFRW
     objet: Cours de karaté ({{donneesFormulaire.form.nomCours}}) - Suivi des inscriptions

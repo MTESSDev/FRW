@@ -1,0 +1,20 @@
+bundles:
+  - nomSortie: ContratOfficielKarate.pdf
+    templates:
+      - template1
+    estampille:
+      positionX: 333
+      positionY: 333
+      tailleFont: 90
+      rotation: 45
+      couleurRGBA: [46, 62, 115]
+      toutesPages: true      
+      lignes:
+        - 'lol'
+templates:
+- id: template1
+  name: Nom inutile
+  gabarit:
+
+  ignorer:
+   - champ: unChampIgnore

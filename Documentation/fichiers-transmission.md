@@ -210,7 +210,7 @@ gabaritsCourriels:
         <li><a href="{{url}}">{{nomOriginal}}</a></li>
           {{/listePJ}}
         </ul>
-        # Si vous avez utilisée la fonctionnalité de paiement avec FRW et que vous désirez afficher un reçu, il faut copier tout le bloc '{{#with donneesFormulaire.form.paiement}}'
+        # Si vous avez utilisé la fonctionnalité de paiement avec FRW et que vous désirez afficher un reçu, il faut copier tout le bloc '{{#with donneesFormulaire.form.paiement}}'
         # Vous pourrez modifier les textes à votre guise. 
         {{#with donneesFormulaire.form.paiement}}
         <div style="font-family: Arial, sans-serif; color: #333; max-width: 500px; border: 1px solid #e0e0e0; padding: 20px; border-radius: 5px;">

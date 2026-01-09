@@ -199,7 +199,8 @@ gabaritsCourriels:
     retourA: '{{envoyerCourriel.partiesVariables.partie3}}'
     # L'objet du courriel peut contenir des parties variables
     objet: '{{envoyerCourriel.partiesVariables.partie1}} demande {{envoyerCourriel.partiesVariables.partie2}}'
-    # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
+    # Les données du formulaires peuvent être réutilisées dans le contenu du courriel.
+    # Les données retournées par Moneris lors d'un paiement sont également accessibles.
     corps: |
       <p>ceci est un test</p>
       <p>Exemple1a : {{donneesFormulaire.form.Exemple1a.0}}, Exemple1b : {{donneesFormulaire.form.Exemple1b.0}}</p>
@@ -209,6 +210,47 @@ gabaritsCourriels:
         <li><a href="{{url}}">{{nomOriginal}}</a></li>
           {{/listePJ}}
         </ul>
+        # Si vous avez utilisé la fonctionnalité de paiement avec FRW et que vous désirez afficher un reçu, il faut copier tout le bloc '{{#with donneesFormulaire.form.paiement}}'
+        # Vous pourrez modifier les textes à votre guise. 
+        {{#with donneesFormulaire.form.paiement}}
+        <div style="font-family: Arial, sans-serif; color: #333; max-width: 500px; border: 1px solid #e0e0e0; padding: 20px; border-radius: 5px;">
+        <h2 style="color: #2c3e50; margin-top: 0;">Reçu de transaction</h2>
+        <div style="background-color: #f9f9f9; padding: 15px; margin-bottom: 20px;">
+        <p style="margin: 5px 0;"><strong>Statut :</strong> {{receipt.Message}}</p>
+        <p style="margin: 5px 0;"><strong>Date :</strong> {{receipt.TransDate}} à {{receipt.TransTime}}</p>
+        </div>
+        
+            <table width="100%" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+        <tr>
+        <td style="border-bottom: 1px solid #eee; color: #777;">Sous-total :</td>
+        <td style="border-bottom: 1px solid #eee; text-align: right; color: #777;">{{commande.cart.subtotal}} $</td>
+        </tr>
+        <tr>
+        <td style="border-bottom: 1px solid #eee; color: #777;">Taxes :</td>
+        <td style="border-bottom: 1px solid #eee; text-align: right; color: #777;">{{commande.cart.tax.amount}} $</td>
+        </tr>
+        <tr>
+        <td style="border-bottom: 1px solid #eee; padding-top: 10px;"><strong>Montant total :</strong></td>
+        <td style="border-bottom: 1px solid #eee; text-align: right; font-size: 1.2em; padding-top: 10px;"><strong>{{receipt.TransAmount}} $</strong></td>
+        </tr>
+        <tr>
+        <td style="border-bottom: 1px solid #eee;">Type de carte :</td>
+        <td style="border-bottom: 1px solid #eee; text-align: right;">{{receipt.CardType}}</td>
+        </tr>
+        <tr>
+        <td style="border-bottom: 1px solid #eee;"># Autorisation :</td>
+        <td style="border-bottom: 1px solid #eee; text-align: right;">{{receipt.AuthCode}}</td>
+        </tr>
+        <tr>
+        <td># Référence :</td>
+        <td style="text-align: right;">{{receipt.ReferenceNum}}</td>
+        </tr>
+        </table>
+        <div style="margin-top: 20px; font-size: 0.8em; color: #777; text-align: center;">
+                Merci de votre confiance.
+        </div>
+        </div>
+        {{/with}}
 
 # La liste des clients http
 http_client:

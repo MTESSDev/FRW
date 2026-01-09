@@ -39,7 +39,7 @@ Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de
 ### Afficher la liste des formulaires d'un utilisateur
 
 Pour obtenir la liste des formulaires d'un utilisateur afin de l'afficher dans une de vos pages, vous devez d'appeler l'API [ObtenirFormulairesIndividu](../Swagger/readme.md#apiv1sisobtenirformulairesindividu) (FRW112).
-- Si vous offrez la possibilité de Reprendre ou Supprimer, vous devez filtrer sur les [états de formulaire](cycle-de-vie-etats.md) suivants afin de conserver seulement les formulaires qui sont pertinents à afficher pour l'utilisateur : `CRE`, `MAJ`, `COURRIEL`, `REP`, `REPAGENT`.
+- Si vous offrez la possibilité de Reprendre ou Supprimer, vous devez filtrer sur les [états de formulaire](cycle-de-vie-etats.md) suivants afin de conserver seulement les formulaires qui sont pertinents à afficher pour l'utilisateur : `CRE`, `MAJ`, `COURRIEL`, `REP`, `REPAGENT`, `WORKFLOW`.
    - Dans toute autre état, la reprise et la suppression ne sont pas supportées.
 - Pour filtrer, il suffit de passer la liste des états dans la propriété `etatsFormulaireRecherche` du paramètre d'entrée [entrantrechercherformulairessis](../Swagger/readme.md#entrantrechercherformulairessis) de FRW112.
 

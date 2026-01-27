@@ -174,6 +174,18 @@ etapes: 
         # Options disponibles : ignorer, simuler ou encore retirer l'option pour que l'étape s'exécute sur le bouton tester transmission
         modeBoutonTesterTransmission: simuler 
 
+    # [Worflows seulement] Permet de faire expirer un formulaire après le délai désiré
+    - tache: expirerFormulaire
+      options:
+          gabarit: formExpire # Optionel : doit être défini sous gabaritsCourriels de la présente config, si non défini, aucun courriel n'est envoyé automatiquement
+          delaiExpirationHeures: 48 
+          langue: fr
+          # Permet de définir des conditions pour exécuter le traitement dans certains cas seulement
+          conditionsEt:
+            - condition: '=='
+              champFormulaire: 'donneesFormulaire.form.sexe'
+              valeur: 'Masculin' 
+
 # Liste des gabarits de courriel pour la tâche "envoyerCourriel"
 gabaritsCourriels:
   - id: confirmation

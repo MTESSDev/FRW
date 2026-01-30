@@ -14,3 +14,4 @@
 | REPAGENT | Lorsqu'un agent se connecte au formulaire en co-navigation |
 | WORKFLOW | Lorsqu'une étape de workflow a été soumise |
 | EXP | Lorsque le délai d'expiration du workflow a été atteint |
+| MOD | Lorsqu'un formulaire en workflow est réinitialisé à l'étape initiale par l'utilisateur principal |

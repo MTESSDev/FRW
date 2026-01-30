@@ -12,3 +12,5 @@
 | TRANSMIS | Transmis (soumis) par l'utilisateur |
 | EPURE | Épuré par le traitement lot, formulaire trop vieux |
 | REPAGENT | Lorsqu'un agent se connecte au formulaire en co-navigation |
+| WORKFLOW | Lorsqu'une étape de workflow a été soumise |
+| EXP | Lorsque le délai d'expiration du workflow a été atteint |

@@ -2,6 +2,8 @@
 
 L'outil FRW permet de générer un ou des fichiers à partir des données du formulaire transmis. Le fichier de configuration "bind" est requis afin de configurer le format et les caractéristiques de l'extrant à produire.
 
+<b> Dans les environnements de développement, un filigrane "ESSAI" est apposé automatiquement sur chaque page du document produit afin de certifier qu'il provient d'un environnement de test.</b>
+
 ## Gabarits
 
 La mise en page des données du formulaire dans un PDF peut être déterminée avec un gabarit Word ou un gabarit PDF avec champs de saisie dynamiques.

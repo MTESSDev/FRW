@@ -37,7 +37,7 @@ Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de
 1. Rediriger l'utilisateur à cette url (idéalement dans un nouvel onglet du fureteur);
 
 ### Créer un formulaire (en différé)
-> À partir de la version [2026.3](https://github.com/MTESSDev/FRW/releases/tag/2026.3-IT).
+> À partir de la version [2026.3](https://github.com/MTESSDev/FRW/milestone/46).
 
 Il est possible de créer un formulaire pour une reprise en différé avec un mot de passe. Voici les grandes étapes : 
 
@@ -51,7 +51,7 @@ Il est possible de créer un formulaire pour une reprise en différé avec un mo
 
 1. Créer le formulaire 
 
-    Créer le formulaire en appelant l'API [CreerFormulaireRepriseDifferee](../Swagger/readme.md).
+    Créer le formulaire en appelant l'API [CreerFormulaireRepriseDifferee](../Swagger/readme.md)  (FRW117).
     - Vous obtiendrez en retour un numéro public de session, un numéro public de formulaire et une clé chiffrée.
 
 1. Préparer l'URL de redirection

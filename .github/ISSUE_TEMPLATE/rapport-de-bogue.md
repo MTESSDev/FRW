@@ -10,6 +10,9 @@ assignees: ''
 **Description du problème**
 Une description courte et claire du problème.
 
+**Est-ce présent en production?**
+Oui/Non
+
 **Étapes pour reproduire le bogue**
 1. Aller à '...'
 2. Cliquer sur '....'

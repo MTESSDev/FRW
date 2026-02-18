@@ -51,7 +51,7 @@ Il est possible de créer un formulaire pour une reprise en différé avec un mo
 
 1. Créer le formulaire 
 
-    Créer le formulaire en appelant l'API [CreerFormulaireRepriseDifferee](../Swagger/readme.md)  (FRW117).
+    Créer le formulaire en appelant l'API [CreerFormulaireRepriseDifferee](../Swagger/readme.md#apiv1siscreerformulairereprisediffereetypeformulaire)  (FRW117).
     - Vous obtiendrez en retour un numéro public de session, un numéro public de formulaire et une clé chiffrée.
 
 1. Préparer l'URL de redirection

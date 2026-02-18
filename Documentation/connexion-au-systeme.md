@@ -15,7 +15,7 @@ Il existe deux types de formulaire :
 ## Formulaire authentifié
 Cette section couvre la partie de connexion en amont des formulaires authentifiés, c'est-à-dire les étapes pour démarrer, reprendre, supprimer un formulaire ou encore lister les formulaires d'un utilisateur à partir de votre système.
 
-### Créer un formulaire et y rediriger l'utilisateur
+### Créer un formulaire et rediriger l'utilisateur (en direct)
 
 Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de traitement dans votre système qui fait l'orchestration des étapes suivantes : 
 
@@ -35,6 +35,32 @@ Pour déclencher la création d'un nouveau formulaire, il faut avoir une page de
     > La session SYSTEME créé à l'étape 2. est valide seulement pour une durée de 30 secondes. La redirection doit être effectuée dans les 30 secondes qui suivent la création sinon la session devient invalide.
 
 1. Rediriger l'utilisateur à cette url (idéalement dans un nouvel onglet du fureteur);
+
+### Créer un formulaire (en différé)
+> À partir de la version [2026.3](https://github.com/MTESSDev/FRW/milestone/46).
+
+Il est possible de créer un formulaire pour une reprise en différé avec un mot de passe. Voici les grandes étapes : 
+
+1. Préparer les données de pré remplissage.
+    
+    Tout comme pour une création en direct, vous pouvez injecter des données de [pré remplissage](pre-remplissage.md) ou des informations de contexte, et/ou associer le formulaire à un identifiant d'utilisateur.
+
+    Vous devez fournir un mot de passe et communiquer celui-ci à l'utilisateur d'une façon qui vous est propre.
+
+    Vous pouvez fournir une date/heure limite pour la reprise. Une fois la date dépassée, il n'est plus possible de reprendre ce formulaire.
+
+1. Créer le formulaire 
+
+    Créer le formulaire en appelant l'API [CreerFormulaireRepriseDifferee](../Swagger/readme.md#apiv1siscreerformulairereprisediffereetypeformulaire)  (FRW117).
+    - Vous obtiendrez en retour un numéro public de session, un numéro public de formulaire et une clé chiffrée.
+
+1. Préparer l'URL de redirection
+
+    L'URL prend la forme qui suit : `{Adresse du site FRW}` **/** `{langue}` **/** `Reprise` `?cle={clé chiffrée}` `&no={No Public Session}`
+    
+    Ex. `https://formulaires.it.mtess.gouv.qc.ca/fr/Reprise?cle=CfDJ8B5BKSkHjdpFiE7V-t1PuU3_br0bu9ZbLyzNLj6cTDr4nOL7W25tbuQ_5Rh7SMx_YKe-cdR4rQHO1XRXu14aFEKCctu37RhtsfHNd1ndZkd9R6ybb6hZT3ORtcC-d_oPXaIxWSZHjRTOWMomvNg7fjXn9b0S8f9vyaNl3f1ELbC7mUx0KKg_yoC-TMfKCJqeabfVvCFyHCPwI4tghyqTCiZDYMF1p-Lgm_JfdwXPtpG7trwuDbPYIsAEtoZvTRBIxY21yAUgIq4v5m0FpSfDTEk&no=bAqgDQCQOke-MqdJ7db8hw`
+
+1. Partager cette url à votre utilisateur de la façon de votre choix. 
 
 ### Afficher la liste des formulaires d'un utilisateur
 

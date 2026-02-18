@@ -1,4 +1,4 @@
-swagger: '2.0'
+openapi: 3.0.4
 info:
   title: FRW - API
   description: Définition de l'API publique pour intéragir avec FRW.
@@ -6,317 +6,1833 @@ info:
     name: MESS - SFPS
   version: v1
 paths:
-  /api/v1/Document/Telecharger/{nomFichierProtege}:
+  '/api/v1/Conavigation/Creer/{shortInstance}':
+    post:
+      tags:
+        - Conavigation
+      summary: FRW241 - Générer un code de co-navigation
+      parameters:
+        - name: shortInstance
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: Internal Server Error
+  '/api/v1/Document/Telecharger/{nomFichierProtege}':
     get:
       tags:
         - Document
       summary: FRW121 - Télécharger une pièce par nom de fichier protégé
       description: Permet de récupérer une pièce jointe transmise par un citoyen
-      produces:
-        - text/plain
-        - application/json
-        - text/json
       parameters:
-        - in: path
-          name: nomFichierProtege
+        - name: nomFichierProtege
+          in: path
           description: Nom fichier protégé (provient du contenu du formulaire)
           required: true
-          type: string
-        - in: query
-          name: bypassSecurite
+          schema:
+            type: string
+        - name: bypassSecurite
+          in: query
           description: Permet de ne pas valider la sécurité.
-          type: boolean
-          default: false
-        - in: header
-          name: X-NoPublicSystemeAutorise
+          schema:
+            type: boolean
+            default: false
+        - name: X-NoPublicSystemeAutorise
+          in: header
           description: Guid publique de système autorisé
-          type: string
-        - in: header
-          name: X-ApiKey
+          schema:
+            type: string
+        - name: X-ApiKey
+          in: header
           description: Clée API
-          type: string
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
       responses:
         '200':
           description: Succès
         '400':
           description: Paramètre manquant ou invalide
-          schema:
-            $ref: '#/definitions/ProblemDetails'
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
         '401':
           description: Accès non autorisé
-          schema:
-            $ref: '#/definitions/ProblemDetails'
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
         '404':
           description: Fichier demandé introuvable
-          schema:
-            $ref: '#/definitions/ProblemDetails'
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
         '500':
-          description: Paramètre manquant, invalide ou erreur interne du serveur
+          description: 'Paramètre manquant, invalide ou erreur interne du serveur'
       security:
-        - ApiKey: []
-        - NoPublicSystemeAutorise: []
-  /api/v1/SIS/CreerFormulaireIndividu/{typeFormulaire}:
+        - {}
+        - {}
+  '/api/v1/Document/Telecharger/{sessionUtilisateur}/{nomFichierProtege}':
+    get:
+      tags:
+        - Document
+      summary: FRW121 - Télécharger une pièce avec session active
+      parameters:
+        - name: sessionUtilisateur
+          in: path
+          description: Session utilisateur (shortGuid) (provient de la barre adresse)
+          required: true
+          schema:
+            type: string
+        - name: nomFichierProtege
+          in: path
+          description: Nom fichier protégé (provient du contenu du formulaire)
+          required: true
+          schema:
+            type: string
+        - name: bypassSecurite
+          in: query
+          description: Permet de ne pas valider la sécurité.
+          schema:
+            type: boolean
+        - name: onglet
+          in: query
+          description: ''
+          schema:
+            type: boolean
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      responses:
+        '200':
+          description: Succès
+        '400':
+          description: Paramètre manquant ou invalide
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Accès non autorisé
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: 'Paramètre manquant, invalide ou erreur interne du serveur'
+  '/api/v1/Document/Upload/{shortInstance}':
+    post:
+      tags:
+        - Document
+      summary: FRW121 - Téléverser une pièce
+      parameters:
+        - name: shortInstance
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      responses:
+        '200':
+          description: Succès
+        '400':
+          description: Paramètre manquant ou invalide
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Accès non autorisé
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: 'Paramètre manquant, invalide ou erreur interne du serveur'
+  /api/v1/Document/Telecharger:
+    get:
+      tags:
+        - Document
+      summary: FRW121 - Télécharger une pièce jointe
+      parameters:
+        - name: nomFichierOriginal
+          in: query
+          description: Nom original du fichier
+          schema:
+            type: string
+        - name: nomFichierInterne
+          in: query
+          description: Nom interne du fichier
+          schema:
+            type: string
+        - name: checksum
+          in: query
+          description: Checksum du nom interne du fichier
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      responses:
+        '200':
+          description: Succès
+        '400':
+          description: Paramètre manquant ou invalide
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Accès non autorisé
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: 'Paramètre manquant, invalide ou erreur interne du serveur'
+  '/api/v1/Document/ObtenirPdfConfirmation/{sessionUtilisateur}':
+    get:
+      tags:
+        - Document
+      summary: FRW328 - Récupérer le formulaire produit (PDF)
+      parameters:
+        - name: sessionUtilisateur
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      responses:
+        '200':
+          description: Succès
+        '202':
+          description: Accepted
+        '204':
+          description: No Content
+        '400':
+          description: Paramètre manquant ou invalide
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Accès non autorisé
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: 'Paramètre manquant, invalide ou erreur interne du serveur'
+  /api/v1/InfosBancaires/ValiderInformationsBancaires:
+    post:
+      tags:
+        - InfosBancaires
+      parameters:
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntrantValidationBancaire'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EntrantValidationBancaire'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EntrantValidationBancaire'
+      responses:
+        '200':
+          description: OK
+  /api/Log/Error:
+    post:
+      tags:
+        - Log
+      parameters:
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                message:
+                  type: string
+            encoding:
+              url:
+                style: form
+              message:
+                style: form
+      responses:
+        '200':
+          description: OK
+  /api/Log/Information:
+    post:
+      tags:
+        - Log
+      parameters:
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+                message:
+                  type: string
+            encoding:
+              url:
+                style: form
+              message:
+                style: form
+      responses:
+        '200':
+          description: OK
+  '/api/Paiement/ObtenirJetonMoneris/{idSystemeAutorise}/{typeFormulaire}/{version}/{shortInstance}':
+    post:
+      tags:
+        - Paiement
+      summary: FRW341 - Obtenir un jeton pour le paiement
+      parameters:
+        - name: idSystemeAutorise
+          in: path
+          description: Id du système autorisé
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: typeFormulaire
+          in: path
+          description: Type du formulaire
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          description: Version
+          required: true
+          schema:
+            type: string
+        - name: shortInstance
+          in: path
+          description: ShortInstance
+          required: true
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  '/api/v1/Recherche/ObtenirTexteForm/{version}/{shortInstance}':
+    get:
+      tags:
+        - Recherche
+      summary: FRW218 - Obtenir le contenu pour la recherche
+      parameters:
+        - name: version
+          in: path
+          description: Version du formulaire
+          required: true
+          schema:
+            type: string
+        - name: shortInstance
+          in: path
+          description: Numéro public de session (GUID)
+          required: true
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Recherche'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Recherche'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Recherche'
+  '/api/RIR/RechercherAdresse/{codePostal}/{noCivique}':
+    get:
+      tags:
+        - RIR
+      summary: FRW215 - Rechercher et obtenir une adresse postale normalisée
+      parameters:
+        - name: codePostal
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+        - name: noCivique
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Adresse'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Adresse'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Adresse'
+  '/api/RIR/RechercherAdresseParCodePostal/{codePostal}':
+    get:
+      tags:
+        - RIR
+      summary: >-
+        FRW215 - Rechercher et obtenir une adresse postale normalisée par code
+        postal
+      parameters:
+        - name: codePostal
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Adresse'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Adresse'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Adresse'
+  '/api/v1/SIS/CreerFormulaireIndividu/{typeFormulaire}':
     post:
       tags:
         - SIS
       summary: FRW111 - Créer un formulaire Web pour un individu.
-      description: Permet de créer un formulaire pour un individu connu par le système autorisé.
-      consumes:
-        - application/json
-      produces:
-        - application/json
+      description: >-
+        Permet de créer un formulaire pour un individu connu par le système
+        autorisé.
       parameters:
-        - in: path
-          name: typeFormulaire
-          description: _Exemple:_ `3003`
+        - name: typeFormulaire
+          in: path
+          description: '_Exemple:_ `3003`'
           required: true
-          type: string
-        - in: header
-          name: X-ApiKey
+          schema:
+            type: string
+        - name: X-ApiKey
+          in: header
           description: Clé Api
-          type: string
-        - in: header
-          name: X-NoPublicSystemeAutorise
+          schema:
+            type: string
+        - name: X-NoPublicSystemeAutorise
+          in: header
           description: Numéro public du système autorisé
-          type: string
-        - in: header
-          name: X-IdentifiantUtilisateur
+          schema:
+            type: string
+        - name: X-NoPublicSystemeAutoriseDeleguant
+          in: header
+          description: >-
+            Numéro public du système autorisé qui a délégué le contrôle sur son
+            formulaire
+          schema:
+            type: string
+        - name: X-IdentifiantUtilisateur
+          in: header
           description: Identifiant de l'utilisateur
-          type: string
-        - in: body
-          name: body
-          description: 'Le contenu du formulaire (pour pré-remplissage) ex: `{"form": {"champ1": "val1"} }`'
-          schema: {}
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      requestBody:
+        description: >-
+          Le contenu du formulaire (pour pré-remplissage) ex: `{"form":
+          {"champ1": "val1"} }`
+        content:
+          application/json:
+            schema: {}
       responses:
         '200':
           description: Succès
-          schema:
-            $ref: '#/definitions/RetourCreerReprendreFormulaireIndividu'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RetourCreerReprendreFormulaireIndividu'
         '400':
           description: Paramètre manquant ou invalide
-          schema:
-            $ref: '#/definitions/ProblemDetails'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
         '401':
           description: Accès non autorisé
-          schema:
-            $ref: '#/definitions/ProblemDetails'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
         '500':
-          description: Paramètre manquant, invalide ou erreur interne du serveur
+          description: 'Paramètre manquant, invalide ou erreur interne du serveur'
       security:
-        - ApiKey: []
-        - NoPublicSystemeAutorise: []
+        - {}
+        - {}
   /api/v1/SIS/ObtenirFormulairesIndividu:
     post:
       tags:
         - SIS
       summary: FRW112 - Obtenir la liste des formulaires Web d'un individu
-      description: Permet d'obtenir tous les formulaires d'un individu selon les états passés en paramètres.
-      consumes:
-        - application/json
-      produces:
-        - application/json
+      description: >-
+        Permet d'obtenir tous les formulaires d'un individu selon les états
+        passés en paramètres.
       parameters:
-        - in: header
-          name: X-ApiKey
+        - name: X-ApiKey
+          in: header
           description: Clé Api
-          type: string
-        - in: header
-          name: X-NoPublicSystemeAutorise
-          description: Numéro public du système autorisé
-          type: string
-        - in: header
-          name: X-IdentifiantUtilisateur
-          description: Identifiant de l'utilisateur
-          type: string
-        - in: body
-          name: body
-          description: Objet de critères de recherche
           schema:
-            $ref: '#/definitions/EntrantRechercherFormulairesSIS'
+            type: string
+        - name: X-NoPublicSystemeAutorise
+          in: header
+          description: Numéro public du système autorisé
+          schema:
+            type: string
+        - name: X-NoPublicSystemeAutoriseDeleguant
+          in: header
+          description: >-
+            Numéro public du système autorisé qui a délégué le contrôle sur son
+            formulaire
+          schema:
+            type: string
+        - name: X-IdentifiantUtilisateur
+          in: header
+          description: Identifiant de l'utilisateur
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      requestBody:
+        description: Objet de critères de recherche
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntrantRechercherFormulairesSIS'
       responses:
         '200':
           description: Succès
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/RetourRechercherFormulaires'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RetourRechercherFormulaires'
         '400':
           description: Paramètre manquant ou invalide
-          schema:
-            $ref: '#/definitions/ProblemDetails'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
         '401':
           description: Accès non autorisé
-          schema:
-            $ref: '#/definitions/ProblemDetails'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
         '500':
-          description: Paramètre manquant, invalide ou erreur interne du serveur
+          description: 'Paramètre manquant, invalide ou erreur interne du serveur'
       security:
-        - ApiKey: []
-        - NoPublicSystemeAutorise: []
-  /api/v1/SIS/ObtenirIdentifiantSessionFormulaire/{noFormulairePublic}:
+        - {}
+        - {}
+  '/api/v1/SIS/ObtenirIdentifiantSessionFormulaire/{noFormulairePublic}':
     post:
       tags:
         - SIS
       summary: FRW113 - Obtenir un identifiant de session pour un formulaire
       description: Permet de reprendre un formulaire pour un utilisateur le demandant
-      consumes:
-        - application/json
-      produces:
-        - application/json
       parameters:
-        - in: path
-          name: noFormulairePublic
+        - name: noFormulairePublic
+          in: path
           description: Identifiant du formulaire pour lequel créer une session
           required: true
-          type: string
-        - in: header
-          name: X-ApiKey
+          schema:
+            type: string
+        - name: X-ApiKey
+          in: header
           description: Clé Api
-          type: string
-        - in: header
-          name: X-NoPublicSystemeAutorise
+          schema:
+            type: string
+        - name: X-NoPublicSystemeAutorise
+          in: header
           description: Numéro public du système autorisé
-          type: string
-        - in: header
-          name: X-IdentifiantUtilisateur
+          schema:
+            type: string
+        - name: X-NoPublicSystemeAutoriseDeleguant
+          in: header
+          description: >-
+            Numéro public du système autorisé qui a délégué le contrôle sur son
+            formulaire
+          schema:
+            type: string
+        - name: X-IdentifiantUtilisateur
+          in: header
           description: Identifiant de l'utilisateur
-          type: string
-        - in: body
-          name: body
-          description: Contenu à remplacer dans le formulaire à reprendre (Ne permet que de remplacer un contexte ou un objet perso. ne remplace pas le contenu d'un formulaire.)
-          schema: {}
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      requestBody:
+        description: >-
+          Contenu à remplacer dans le formulaire à reprendre (Ne permet que de
+          remplacer un contexte ou un objet perso. ne remplace pas le contenu
+          d'un formulaire.)
+        content:
+          application/json:
+            schema: {}
       responses:
         '200':
           description: Succès
-          schema:
-            $ref: '#/definitions/RetourCreerReprendreFormulaireIndividu'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RetourCreerReprendreFormulaireIndividu'
         '400':
           description: Paramètre manquant ou invalide
-          schema:
-            $ref: '#/definitions/ProblemDetails'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
         '401':
           description: Accès non autorisé
-          schema:
-            $ref: '#/definitions/ProblemDetails'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
         '500':
-          description: Paramètre manquant, invalide ou erreur interne du serveur
+          description: 'Paramètre manquant, invalide ou erreur interne du serveur'
       security:
-        - ApiKey: []
-        - NoPublicSystemeAutorise: []
-  /api/v1/SIS/SupprimerFormulaire/{noFormulairePublic}:
+        - {}
+        - {}
+  '/api/v1/SIS/SupprimerFormulaire/{noFormulairePublic}':
     get:
       tags:
         - SIS
       summary: FRW114 - Supprimer un formulaire web
       description: Permet de supprimer un formulaire demandé
-      produces:
-        - application/json
       parameters:
-        - in: path
-          name: noFormulairePublic
+        - name: noFormulairePublic
+          in: path
           description: Identifiant du formulaire à supprimer
           required: true
-          type: string
-        - in: header
-          name: X-ApiKey
+          schema:
+            type: string
+        - name: X-ApiKey
+          in: header
           description: Clé Api
-          type: string
-        - in: header
-          name: X-NoPublicSystemeAutorise
+          schema:
+            type: string
+        - name: X-NoPublicSystemeAutorise
+          in: header
           description: Numéro public du système autorisé
-          type: string
-        - in: header
-          name: X-IdentifiantUtilisateur
+          schema:
+            type: string
+        - name: X-NoPublicSystemeAutoriseDeleguant
+          in: header
+          description: >-
+            Numéro public du système autorisé qui a délégué le contrôle sur son
+            formulaire
+          schema:
+            type: string
+        - name: X-IdentifiantUtilisateur
+          in: header
           description: Identifiant de l'utilisateur
-          type: string
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
       responses:
         '200':
           description: Succès
         '400':
           description: Paramètre manquant ou invalide
-          schema:
-            $ref: '#/definitions/ProblemDetails'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
         '401':
           description: Accès non autorisé
-          schema:
-            $ref: '#/definitions/ProblemDetails'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
         '500':
-          description: Paramètre manquant, invalide ou erreur interne du serveur
+          description: 'Paramètre manquant, invalide ou erreur interne du serveur'
       security:
-        - ApiKey: []
-        - NoPublicSystemeAutorise: []
-definitions:
-  EntrantRechercherFormulairesSIS:
-    type: object
-    properties:
-      etatsFormulaireRecherche:
-        type: array
-        items:
+        - {}
+        - {}
+  '/api/v1/SIS/CreerFormulaireRepriseDifferee/{typeFormulaire}':
+    post:
+      tags:
+        - SIS
+      summary: FRW117 - Créer un formulaire pour reprise en différée
+      description: ''
+      parameters:
+        - name: typeFormulaire
+          in: path
+          description: '_Exemple:_ `3003`'
+          required: true
+          schema:
+            type: string
+        - name: X-ApiKey
+          in: header
+          description: Clé Api
+          schema:
+            type: string
+        - name: X-NoPublicSystemeAutorise
+          in: header
+          description: Numéro public du système autorisé
+          schema:
+            type: string
+        - name: X-NoPublicSystemeAutoriseDeleguant
+          in: header
+          description: >-
+            Numéro public du système autorisé qui a délégué le contrôle sur son
+            formulaire
+          schema:
+            type: string
+        - name: X-IdentifiantUtilisateur
+          in: header
+          description: Identifiant de l'utilisateur
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      requestBody:
+        description: Paramètres
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntrantCreerFormulaireRepriseDifferee'
+      responses:
+        '200':
+          description: Succès
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RetourCreerFormulaireRepriseDifferee'
+        '400':
+          description: Paramètre manquant ou invalide
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Accès non autorisé
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: 'Paramètre manquant, invalide ou erreur interne du serveur'
+      security:
+        - {}
+        - {}
+  '/api/v1/SIS/ObtenirSchema/{type}':
+    get:
+      tags:
+        - SIS
+      summary: Obtenir un schema
+      parameters:
+        - name: type
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+        - name: X-ApiKey
+          in: header
+          description: Clé Api
+          schema:
+            type: string
+        - name: X-NoPublicSystemeAutorise
+          in: header
+          description: Numéro public du système autorisé
+          schema:
+            type: string
+        - name: X-NoPublicSystemeAutoriseDeleguant
+          in: header
+          description: >-
+            Numéro public du système autorisé qui a délégué le contrôle sur son
+            formulaire
+          schema:
+            type: string
+        - name: X-IdentifiantUtilisateur
+          in: header
+          description: Identifiant de l'utilisateur
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      responses:
+        '200':
+          description: Succès
+        '400':
+          description: Paramètre manquant ou invalide
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Accès non autorisé
+        '500':
+          description: 'Paramètre manquant, invalide ou erreur interne du serveur'
+  /api/v1/SIS/DeployerSysteme:
+    post:
+      tags:
+        - SIS
+      summary: FRW166 - Déployer un système au complet
+      parameters:
+        - name: X-ApiKey
+          in: header
+          description: Clé Api
+          schema:
+            type: string
+        - name: X-NoPublicSystemeAutorise
+          in: header
+          description: Numéro public du système autorisé
+          schema:
+            type: string
+        - name: X-NoPublicSystemeAutoriseDeleguant
+          in: header
+          description: >-
+            Numéro public du système autorisé qui a délégué le contrôle sur son
+            formulaire
+          schema:
+            type: string
+        - name: X-IdentifiantUtilisateur
+          in: header
+          description: Identifiant de l'utilisateur
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntrantDeployerSysteme'
+      responses:
+        '200':
+          description: Succès
+        '400':
+          description: Paramètre manquant ou invalide
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Accès non autorisé
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '500':
+          description: 'Paramètre manquant, invalide ou erreur interne du serveur'
+      security:
+        - {}
+        - {}
+  '/api/Soumettre/CreerCookie/{nsForm}':
+    post:
+      tags:
+        - Soumettre
+      summary: Créer un cookie de test
+      parameters:
+        - name: nsForm
+          in: path
+          description: Id formulaire
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: idParticipant
+          in: query
+          description: Id participant du workflow
+          schema:
+            type: integer
+            format: int64
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  '/api/Soumettre/Transmission/{shortInstance}':
+    post:
+      tags:
+        - Soumettre
+      summary: FRW311 - Gérer la soumission d'un formulaire dynamique
+      parameters:
+        - name: shortInstance
+          in: path
+          description: Id publique raccourcie de la session utilisateur
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: query
+          description: La version du fichier de config à utiliser
+          schema:
+            type: string
+        - name: testerTransmission
+          in: query
+          description: >-
+            Permet de bypasser les validations et retourner le résultat de la
+            configuration de transmission
+          schema:
+            type: boolean
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+              format: json
+        required: true
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  '/api/Soumettre/MiseAJour/{idSystemeAutorise}/{typeFormulaire}/{version}/{shortInstance}':
+    post:
+      tags:
+        - Soumettre
+      summary: >-
+        Gérer la mise à jour de l'entrée dans la table des formulaires aux
+        changements de section et au clic "Enregistrer"
+      parameters:
+        - name: idSystemeAutorise
+          in: path
+          description: 'ex: 1'
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: typeFormulaire
+          in: path
+          description: 'ex: 3003'
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          description: 'ex: 0'
+          required: true
+          schema:
+            type: string
+        - name: shortInstance
+          in: path
+          description: 'ex: i3-AbG0-5UeQwX2MYv5E6w'
+          required: true
+          schema:
+            type: string
+        - name: estActionUtilisateur
+          in: query
+          description: ''
+          schema:
+            type: boolean
+        - name: estMiseAJourExpiration
+          in: query
+          description: ''
+          schema:
+            type: boolean
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+              format: json
+        required: true
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  '/api/Soumettre/ObtenirChampsObsoletes/{idSystemeAutorise}/{typeFormulaire}/{version}/{shortInstance}':
+    post:
+      tags:
+        - Soumettre
+      summary: >-
+        Gérer la mise à jour de l'entrée dans la table des formulaires aux
+        changements de section et au clic "Enregistrer"
+      parameters:
+        - name: idSystemeAutorise
+          in: path
+          description: 'ex: 1'
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: typeFormulaire
+          in: path
+          description: 'ex: 3003'
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          description: 'ex: 0'
+          required: true
+          schema:
+            type: string
+        - name: shortInstance
+          in: path
+          description: Id de session
+          required: true
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+              format: json
+        required: true
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  '/api/Soumettre/Verifier/{shortInstance}':
+    post:
+      tags:
+        - Soumettre
+      summary: >-
+        Gérer la mise à jour de l'entrée dans la table des formulaires aux
+        changements de section et au clic "Enregistrer"
+      parameters:
+        - name: shortInstance
+          in: path
+          description: 'ex: i3-AbG0-5UeQwX2MYv5E6w'
+          required: true
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  '/api/Soumettre/DeconnecterSessionUtilisateur/{shortInstance}':
+    post:
+      tags:
+        - Soumettre
+      summary: Deconnecter la session de l'utilisateur si celle-ci est expirer
+      parameters:
+        - name: shortInstance
+          in: path
+          description: 'ex: i3-AbG0-5UeQwX2MYv5E6w'
+          required: true
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntrantDeconnexion'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EntrantDeconnexion'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EntrantDeconnexion'
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  '/api/Soumettre/Signer/{shortInstance}':
+    post:
+      tags:
+        - Soumettre
+      summary: 'FRW21C : Création d''une signature numérique pour un participant'
+      parameters:
+        - name: shortInstance
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntrantSignerPR'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EntrantSignerPR'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EntrantSignerPR'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  '/api/Textes/Obtenir/{langue}/{systemeAutorise}/{typeFormulaire}/{version}':
+    get:
+      tags:
+        - Textes
+      parameters:
+        - name: langue
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: systemeAutorise
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: typeFormulaire
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      responses:
+        '200':
+          description: OK
+  '/api/v1/Workflow/ObtenirSommaireWorkflow/{shortInstance}':
+    get:
+      tags:
+        - Workflow
+      summary: FRW354 - Obtenir le sommaire d'un workflow
+      parameters:
+        - name: shortInstance
+          in: path
+          description: ShortInstance
+          required: true
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  '/api/v1/Workflow/ModifierFormulaire/{idSystemeAutorise}/{typeFormulaire}/{version}/{shortInstance}':
+    post:
+      tags:
+        - Workflow
+      summary: FRW356 - Modifier le formulaire en cours de workflow
+      parameters:
+        - name: idSystemeAutorise
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: typeFormulaire
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+        - name: version
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: shortInstance
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    Adresse:
+      type: object
+      properties:
+        rue:
           type: string
-      codeTypeFormulaire:
-        type: string
-      noConfirmation:
-        format: int32
-        type: integer
-      noPublicFormulaire:
-        type: string
-  ProblemDetails:
-    type: object
-    properties:
-      type:
-        type: string
-      title:
-        type: string
-      status:
-        format: int32
-        type: integer
-      detail:
-        type: string
-      instance:
-        type: string
-    additionalProperties: {}
-  RetourCreerReprendreFormulaireIndividu:
-    type: object
-    properties:
-      noPublicSession:
-        type: string
-      noPublicForm:
-        type: string
-  RetourRechercherFormulaires:
-    type: object
-    properties:
-      typeFormulaire:
-        type: string
-      noPublicForm:
-        type: string
-      identifiantUtilisateur:
-        type: string
-      titreFrancais:
-        type: string
-      titreAnglais:
-        type: string
-      dateCreation:
-        format: date-time
-        type: string
-      dernierEtat:
-        type: string
-      dateDernierEtat:
-        format: date-time
-        type: string
-      dateEpuration:
-        format: date-time
-        type: string
-      numeroConfirmation:
-        format: int32
-        type: integer
-securityDefinitions:
-  ApiKey:
-    type: apiKey
-    name: X-ApiKey
-    in: header
-    description: Clée API secrète du système autorisé
-  NoPublicSystemeAutorise:
-    type: apiKey
-    name: X-NoPublicSystemeAutorise
-    in: header
-    description: Numéro public du système autorisé
+          nullable: true
+        municipalite:
+          type: string
+          nullable: true
+        municipaliteNomLong:
+          type: string
+          nullable: true
+        codePostal:
+          type: string
+          nullable: true
+      additionalProperties: false
+    EntrantCreerFormulaireRepriseDifferee:
+      required:
+        - dateFin
+        - motDePasse
+      type: object
+      properties:
+        jsonData:
+          description: Contenu du formulaire
+          nullable: true
+        motDePasse:
+          minLength: 1
+          type: string
+          description: Mot de passe de la reprise
+        dateFin:
+          type: string
+          description: Date d'expiration de la session
+          format: date-time
+      additionalProperties: false
+      description: Paramètres de FRW117 - Créer un formulaire pour reprise en différée
+    EntrantDeconnexion:
+      type: object
+      properties:
+        expiration:
+          type: integer
+          format: int64
+      additionalProperties: false
+    EntrantDeployerSysteme:
+      type: object
+      properties:
+        zip:
+          type: string
+          format: byte
+          nullable: true
+      additionalProperties: false
+    EntrantRechercherFormulairesSIS:
+      type: object
+      properties:
+        etatsFormulaireRecherche:
+          type: array
+          items:
+            type: string
+          nullable: true
+        codeTypeFormulaire:
+          type: string
+          nullable: true
+        noConfirmation:
+          type: integer
+          format: int32
+          nullable: true
+        noPublicFormulaire:
+          type: string
+          nullable: true
+      additionalProperties: false
+    EntrantSignerPR:
+      type: object
+      properties:
+        nomComplet:
+          type: string
+          nullable: true
+        courriel:
+          type: string
+          nullable: true
+        initiales:
+          type: string
+          nullable: true
+        nbCaracteresInitiales:
+          type: integer
+          format: int32
+          nullable: true
+        idChamp:
+          type: string
+          nullable: true
+      additionalProperties: false
+    EntrantValidationBancaire:
+      type: object
+      properties:
+        succursale:
+          type: string
+          nullable: true
+        institutionFinanciere:
+          type: string
+          nullable: true
+        compte:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+      additionalProperties: {}
+    Recherche:
+      type: object
+      properties:
+        c:
+          type: string
+          nullable: true
+        t:
+          type: string
+          nullable: true
+        r:
+          type: string
+          nullable: true
+        h:
+          type: string
+          nullable: true
+      additionalProperties: false
+    RetourCreerFormulaireRepriseDifferee:
+      type: object
+      properties:
+        noPublicForm:
+          type: string
+          description: Numéro publique de formulaire
+          nullable: true
+        noPublicSession:
+          type: string
+          description: Numéro publique de session
+          nullable: true
+        noTransactionChiffre:
+          type: string
+          description: Numéro de reprise de formulaire
+          nullable: true
+      additionalProperties: false
+      description: Retour de FRW117 - Créer un formulaire pour reprise en différée
+    RetourCreerReprendreFormulaireIndividu:
+      type: object
+      properties:
+        noPublicSession:
+          type: string
+          nullable: true
+        noPublicForm:
+          type: string
+          nullable: true
+        noTransactionChiffre:
+          type: string
+          nullable: true
+      additionalProperties: false
+    RetourRechercherFormulaires:
+      type: object
+      properties:
+        typeFormulaire:
+          type: string
+          nullable: true
+        noPublicForm:
+          type: string
+          nullable: true
+        identifiantUtilisateur:
+          type: string
+          nullable: true
+        titreFrancais:
+          type: string
+          nullable: true
+        titreAnglais:
+          type: string
+          nullable: true
+        dateCreation:
+          type: string
+          format: date-time
+        dernierEtat:
+          type: string
+          nullable: true
+        dateDernierEtat:
+          type: string
+          format: date-time
+        dateEpuration:
+          type: string
+          format: date-time
+        numeroConfirmation:
+          type: integer
+          format: int32
+          nullable: true
+        informationsSupplementaires:
+          type: object
+          additionalProperties:
+            type: string
+          nullable: true
+      additionalProperties: false
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      description: Clée API secrète du système autorisé
+      name: X-ApiKey
+      in: header
+    NoPublicSystemeAutorise:
+      type: apiKey
+      description: Numéro public du système autorisé
+      name: X-NoPublicSystemeAutorise
+      in: header
+tags:
+  - name: Conavigation
+  - name: Document
+  - name: InfosBancaires
+  - name: Log
+  - name: Paiement
+  - name: Recherche
+  - name: RIR
+  - name: SIS
+  - name: Soumettre
+  - name: Textes
+  - name: Workflow

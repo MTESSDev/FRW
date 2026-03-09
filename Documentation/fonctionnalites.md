@@ -19,6 +19,10 @@
    * Validations de champs prédéfinies;
 1. Pré remplissage des données
    * Un système autorisé dans FRW peut envoyer des données pour pré remplir son formulaire afin d’éviter la saisie d’informations déjà connues.
+1. Données externes
+   * Possibilité d'appeler un service externe afin d'obtenir des données; 
+   * Par exemple, des listes de régions / municipalités obtenues de [Données Québec](https://www.donneesquebec.ca/);
+   * Disponible à partir du milestone [2026.4](https://github.com/MTESSDev/FRW/milestones).
 1. Conavigation 
    * Un système autorisé dans FRW peut établir une session de conavigation avec un citoyen ou un utilisateur, permettant à un intervenant de visualiser en temps réel le formulaire en cours de remplissage et de fournir un accompagnement personnalisé. Cette fonctionnalité facilite le support, réduit les erreurs de saisie et améliore l’expérience utilisateur.
    * Disponible à partir du milestone [2025.09](https://github.com/MTESSDev/FRW/milestones)

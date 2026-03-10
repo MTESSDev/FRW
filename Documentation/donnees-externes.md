@@ -25,6 +25,7 @@ En résumé les composantes à configurer sont les suivantes :
     - `data_adapter:template` - Ceci permet de formater les données dans le format de votre choix; dans notre exemple on transforme les données reçues en domaine de valeurs pour appliquer sur une liste déroulante du formulaire.
 - `http_client` - Ici vous définissez chaque appel http_client présent dans la `sequence` définie précédemment.
     - Utiliser la syntaxe "input.donneesFormulaire.form.LeNomDeVotreChamp" si c'est un champ standard ou "input.donneesFormulaire.groupeCourant.LeNomDeVotreChamp" si le champ fait parti d'un groupe dans l'url d'obtention des données.
+
 Voici un exemple complet de config transmission avec définition de sources de données externes (régions et municipalités de Données Québec).
 - Les éléments "regionsGroupe" et "municipalitesGroupe" sont présents pour démontrer l'utilisation avec des contrôles qui sont dans des groupes (standards ou répétables) dans le formulaire.
 

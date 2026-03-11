@@ -116,4 +116,4 @@ http_client:
 ### Config form 
 Vous devez ensuite appliquer la source de données externes sur votre liste déroulante dans la config form de votre formulaire.
 
-Voir le P700U Guide utilisateur FRW section [à compléter](https://formulaires.it.mtess.gouv.qc.ca/fr/Form/7/P700U/0/N/#p=sectWf). 
+[Voir le P700U Guide utilisateur FRW section "Domaines de valeurs externes"](https://formulaires.it.mtess.gouv.qc.ca/fr/Form/7/P700U/0/N/#p=DomainesValeursExternes). 

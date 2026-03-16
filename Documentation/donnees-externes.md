@@ -111,6 +111,20 @@ http_client:
       headers:
         Accept: 'application/json'
         Content-Type: 'application/json'
+
+  # Cet exemple sert pour l'utilisation avec une liste à choix multiple
+  donnees_qc_municipalites_groupe_repet_api:
+      method: POST
+      url: https://www.donneesquebec.ca/recherche/api/3/action/datastore_search_sql
+      content:
+        json_content: |      
+            {
+              "sql": "SELECT * FROM \"19385b4e-5503-4330-9e59-f998f5918363\" WHERE mcodedesi IN ('01','02','04','05','06','09','10') AND ({{#each input.donneesFormulaire.groupeCourant.regionAdministrativeGroupeRepet2}}regadm LIKE '%{{this}}%'{{#unless @last}} OR {{/unless}}{{/each}}) ORDER BY munnom LIMIT 32000"
+            }
+      headers:
+        Accept: 'application/json'
+        Content-Type: 'application/json'
+
 ```
 
 ### Config form 

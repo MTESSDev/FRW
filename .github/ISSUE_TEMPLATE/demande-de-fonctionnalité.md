@@ -20,4 +20,4 @@ Une description claire et concise de toutes les solutions ou fonctionnalités al
 Si vous aviez une idée en tête, écrivez là ici.
 
 **Contexte supplémentaire**
-Ajoutez ici tout autre contexte ou capture d'écran concernant la demande de fonctionnalité.
+Ajoutez ici tout autre contexte ou capture d'écran concernant la demande de fonctionnalité. __**Par exemple, le nombre de formulaires touchés/le nombre de transmissions totales et la date de livraison souhaitée.**__

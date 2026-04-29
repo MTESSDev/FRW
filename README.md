@@ -76,6 +76,12 @@ Vous avez besoin d'impliquer plusieurs participants à différentes étapes dans
 Utilisez les [workflows](Documentation/workflows.md).
 
 &nbsp;
+### Partenaires externes
+Vous avez besoin de permettre à des partenaires externes d'intéragir avec vos formulaires afin de leur offrir les avantages de la solution?
+
+Utilisez la fonctionnalité de [partenaires externes](Documentation/partenaires-externe.md). 
+
+&nbsp;
 ## Vous avez une question ou une suggestion?
 
 1. Vérifier si une [discussion](https://github.com/MTESSDev/FRW/discussions) existe avec le même questionnement/suggestion;

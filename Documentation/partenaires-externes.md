@@ -1,6 +1,8 @@
 # Partenaires externes
 La fonctionnalité de partenaires externes permet à un système autorisé de déléguer certaines interactions de ses formulaires (comme l'initiation et le suivi) à des entreprises privées ou organismes externes partenaires, sans pour autant leur donner les accès complets d'un système autorisé du gouvernement.
 
+> Disponible à partir de la release [2026.x](https://github.com/MTESSDev/FRW/releases)
+
 ## Avantages de la fonctionnalité
 - **Délégation et efficacité :** Permet aux partenaires de démarrer des formulaires et de pré-remplir les données pour leurs clients, allégeant ainsi le fardeau administratif du citoyen.
 - **Suivi et traçabilité :** Le partenaire externe qui a initié un formulaire est enregistré dans la base de données de FRW, ce qui permet de générer des rapports d'utilisation (et potentiellement de la facturation) au prorata de l'usage de chaque partenaire.
@@ -14,9 +16,9 @@ Un ministère gère l'émission de certificats de conformité, mais délègue l'
 
 *Utilisation :* La firme d'inspection (partenaire externe) se connecte à son propre système d'entreprise pour démarrer le formulaire de certification de FRW au nom du citoyen. Elle pré-remplit les données techniques de l'inspection. Le citoyen reçoit ensuite le lien pour compléter sa section, payer et signer. L'agence gouvernementale reçoit le formulaire officiel complet.
 
-**Cas 2 : Demandes d'aide financière via des établissements scolaires**
-
+**Cas 2 : Demandes d'aide financière via des établissements scolaires** <br>
 Un organisme offre des bourses d'études, mais les demandes sont orchestrées par des établissements d'enseignement privés. 
+
 *Utilisation :* L'école (partenaire externe) démarre le formulaire de demande pour ses étudiants. L'école peut ensuite suivre l'état d'avancement de la demande de l'étudiant (ex: "En cours", "Transmis") directement depuis son propre portail étudiant.
 
 ---

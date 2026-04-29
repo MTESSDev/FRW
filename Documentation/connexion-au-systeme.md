@@ -127,6 +127,8 @@ Ce système doit ensuite rajouter votre numéro public de système autorisé en 
 ### Interagir via un partenaire externe
 Il existe une sous-catégorie de formulaires authentifiés qui, en plus d'être associé à un identifiant utilisateur, sont également associés à un partenaire externe.
 
+> Disponible à partir de la release [2026.x](https://github.com/MTESSDev/FRW/releases)
+
 Si vous souhaitez déléguer l'initiation et le suivi d'un de vos formulaires à des entreprises privées ou organismes de l'externe (qui ne sont pas des systèmes autorisés du gouvernement), vous devez utiliser la fonctionnalité de **Partenaires externes**.
 
 La gestion de la sécurité, le pré-remplissage et la traçabilité s'effectuent à l'aide de clés de partenaires et de "secrets" propres à chaque instance de formulaire.

@@ -24,7 +24,9 @@ Un organisme offre des bourses d'études, mais les demandes sont orchestrées pa
 ---
 
 ## Configuration (Pour le système autorisé)
-En tant que système autorisé, vous êtes responsable de configurer les partenaires externes et de les associer à vos formulaires.
+En tant que système autorisé, vous êtes responsable de configurer et déployer vos partenaires externes et les associer à vos formulaires.
+
+Le déploiement est effectué avec l'outil [azurepipeline-mtess-frw-deploiement](https://github.com/MTESSDev/azurepipeline-mtess-frw-deploiement).
 
 ### 1. Définir les partenaires externes
 Vous devez créer un fichier nommé `partenairesExternes.yml` à la racine de votre système (au même niveau que vos répertoires de formulaires). Ce fichier permet de définir des regroupements et de déclarer vos partenaires. Ce fichier est pris en compte au moment de déployer vos configurations.

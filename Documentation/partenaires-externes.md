@@ -75,8 +75,12 @@ config:
 ## Intégration (Pour le partenaire externe)
 Cette section explique comment le système informatique du partenaire externe peut interagir avec les API de FRW pour démarrer et suivre un formulaire.
 
+> Cette section est en construction, revenir bientôt!
+
 ### Démarrer un formulaire
-Pour démarrer un nouveau formulaire au nom d'un client, le partenaire doit appeler l'API [InteragirFormPartenaire](../Swagger/readme.md#apiv1sisinteragirformpartenaire) `FRW131`.
+TODO
+
+<!-- Pour démarrer un nouveau formulaire au nom d'un client, le partenaire doit appeler l'API [InteragirFormPartenaire](../Swagger/readme.md#apiv1sisinteragirformpartenaire) `FRW131`.
 
 1. **Préparer les données de pré-remplissage** (facultatif). Tout comme pour un système autorisé, le partenaire peut injecter des données connues pour alléger la saisie.
 2. **Appel à l'API FRW131 :** Le partenaire appelle l'API en fournissant sa clé secrète de partenaire (`cle`) dans l'entête HTTP. FRW valide la clé, crée le formulaire et associe ce dernier au code du partenaire pour assurer la traçabilité.
@@ -87,9 +91,12 @@ Pour démarrer un nouveau formulaire au nom d'un client, le partenaire doit appe
     L'URL prend la forme suivante : `{Adresse du site FRW}/{langue}/Reprise?no={No Public Session}`
 
     TODO à ajuster pour le header `x-secret`
+ -->
 
 ### Obtenir les informations et le statut d'un formulaire
-Le partenaire externe peut, en tout temps après la création d'un formulaire, consulter l'état d'avancement de ce dernier via l'API [ObtenirInfosFormPartenaire](../Swagger/readme.md#apiv1sisobtenirinfosformpartenaire) `FRW118`.
+TODO
+
+<!-- Le partenaire externe peut, en tout temps après la création d'un formulaire, consulter l'état d'avancement de ce dernier via l'API [ObtenirInfosFormPartenaire](../Swagger/readme.md#apiv1sisobtenirinfosformpartenaire) `FRW118`.
 
 1. **Appel à l'API FRW118 :** L'appel doit inclure :
     *   La `cle` du partenaire (en entête HTTP).
@@ -100,11 +107,14 @@ Le partenaire externe peut, en tout temps après la création d'un formulaire, c
     *   L'état du formulaire (ex: *En cours*, *Transmis*).
     *   Les informations d'avancement du *workflow* (le cas échéant).
     *   **Si le formulaire est transmis :** Les données complètes du formulaire, le lien vers le PDF généré et les liens des pièces jointes (PJ) téléversées par le client.
-
+ -->
 ### Télécharger une pièce jointe
-Si le partenaire souhaite rapatrier les pièces jointes soumises par l'utilisateur une fois le formulaire transmis, il doit utiliser l'API de téléchargement existante de FRW (`FRW121`). 
+TODO
 
-Lors de cet appel, le partenaire doit obligatoirement inclure l'entête HTTP `x-secret` contenant le secret du formulaire. FRW validera cette information avant d'autoriser le téléchargement.
+<!-- Si le partenaire souhaite rapatrier les pièces jointes soumises par l'utilisateur une fois le formulaire transmis, il doit utiliser l'API de téléchargement existante de FRW (`FRW121`). 
+
+Lors de cet appel, le partenaire doit obligatoirement inclure l'entête HTTP `x-secret` contenant le secret du formulaire. FRW validera cette information avant d'autoriser le téléchargement. -->
 
 ### Reprendre un formulaire
-*À noter :* Actuellement, la reprise d'un formulaire directement via l'API par un partenaire externe n'est pas supportée. L'utilisateur (le citoyen) devra utiliser le mécanisme de reprise par courriel habituel fourni par FRW pour y accéder à nouveau ultérieurement.
+TODO
+<!-- *À noter :* Actuellement, la reprise d'un formulaire directement via l'API par un partenaire externe n'est pas supportée. L'utilisateur (le citoyen) devra utiliser le mécanisme de reprise par courriel habituel fourni par FRW pour y accéder à nouveau ultérieurement. -->

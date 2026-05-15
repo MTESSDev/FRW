@@ -49,13 +49,16 @@ partenairesExternes:
       cle: "12345678-9abc-def0-1234-56789abcdef0"
 ```
 
-> **Règles de validation du code partenaire :**
-> - Maximum de 30 caractères alphanumériques.
-> - Non sensible à la casse.
-> - Aucun espace ni caractères spéciaux (les tirets `-` et soulignés `_` sont permis).
-> - Un partenaire externe ne peut être présent que dans un seul regroupement à la fois.
+**Génération de la clé :**
+Il est de votre responsabilité de générer la clé de partenaire de votre choix; celle-ci peut prendre la forme d'un GUID ou d'une chaîne de caractères.
 
-> **Retrait d'un partenaire :** Pour désactiver un partenaire, il suffit de retirer son bloc du fichier `partenairesExternes.yml` (ou de le mettre en commentaire) et de redéployer. FRW désactivera automatiquement ce partenaire en base de données.
+**Règles de validation du code partenaire :**
+- Maximum de 30 caractères alphanumériques.
+- Non sensible à la casse.
+- Aucun espace ni caractères spéciaux (les tirets `-` et soulignés `_` sont permis).
+- Un partenaire externe ne peut être présent que dans un seul regroupement à la fois.
+
+**Retrait d'un partenaire :** Pour désactiver un partenaire, il suffit de retirer son bloc du fichier `partenairesExternes.yml` (ou de le mettre en commentaire) et de redéployer. FRW désactivera automatiquement ce partenaire en base de données.
 
 ### 2. Autoriser un regroupement dans un formulaire
 Une fois les partenaires définis globalement, vous devez indiquer quel formulaire peut être utilisé par quel regroupement de partenaires. Cela se configure dans le fichier `form.yml` de votre formulaire.

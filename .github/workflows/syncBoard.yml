@@ -10,9 +10,7 @@ on:
 jobs:
   sync-devops:
     if: ${{ !github.event.issue.pull_request }}
-    runs-on: 
-     - self-hosted
-     - MTESSDev
+    runs-on: self-hosted
     steps:
       - uses: MTESSDev/github-actions-issue-to-work-item@custom-url
         #uses: danhellem/github-actions-issue-to-work-item@master

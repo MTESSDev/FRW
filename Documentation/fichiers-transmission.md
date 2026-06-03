@@ -31,6 +31,18 @@ Il vous est possible de vous créer un gabarit Word personnalisé ou d'utiliser 
 
 Référez-vous à la page [fichiers-bind](https://github.com/MTESSDev/FRW/blob/main/Documentation/fichiers-bind.md) pour plus de détails.
 
+### ajouterEstampille
+Permet d'ajouter des informations par dessus l'extrant produit par les étapes `genererWord`ou `genererPDF` pour reproduire une estampille apposée manuellement. 
+
+L'estampille est configurée dans le fichier `bind` associé au formulaire. Il est possible de définir les informations qu'on veut afficher ainsi que sa position dans la page.
+
+Référez-vous à la page [fichiers-bind](https://github.com/MTESSDev/FRW/blob/main/Documentation/fichiers-bind.md) pour plus de détails.
+
+### signerPDF
+Permet d'ajouter une signature numérique dans le PDF produit à l'étape 'genererPDF'. Cette signature permet de certifier que le PDF a été produit par FRW et elle peut contenir l'empreinte numérique provenant du contrôle de signature électronique du formulaire Web.
+
+Cette tâche doit être positionnée APRÈS les tâches qui manipulent le PDF (ex: estampille), car on ne doit pas altérer le document une fois signé sous peine d'invalider la signature.
+
 ### traiterDocumentsSoumis
 Permet de traiter les pièces jointes que l'utilisateur a envoyé avec le formulaire. Le scan d'antivirus est effectué dans ce traitement.
 
@@ -38,13 +50,6 @@ Cette tâche est requise si votre formulaire permet de joindre des documents.
 
 ### extraireQuestions
 Permet d'ajouter toutes les questions du formulaire dans l'objet JSON fourni lors de la transmission. Les questions sont extraites dans les deux langues lorsqu'applicable.
-
-### ajouterEstampille
-Permet d'ajouter des informations par dessus l'extrant produit par les étapes `genererWord`ou `genererPDF` pour reproduire une estampille apposée manuellement. 
-
-L'estampille est configurée dans le fichier `bind` associé au formulaire. Il est possible de définir les informations qu'on veut afficher ainsi que sa position dans la page.
-
-Référez-vous à la page [fichiers-bind](https://github.com/MTESSDev/FRW/blob/main/Documentation/fichiers-bind.md) pour plus de détails.
 
 ### envoyerCourriel (disponible à partir de la release [2024.2](https://github.com/MTESSDev/FRW/releases/tag/2024.2-IT))
 Permet d'envoyer un courriel via le système FRW lors de la transmission du formulaire. Il faudra définir autant d'étapes "envoyerCourriel" qu'il y a de courriels différents à envoyer ainsi qu'un gabarit de courriel à utiliser pour chaque tâche.
@@ -92,6 +97,14 @@ etapes: 
     # ATTENTION: pour le moment il n'est pas possible d'activer genererWord en même temps
     - tache: genererPdf
 
+    # Ajouter estampille, permet d'ajouter une "Étampe" sur un document 
+    # comme pour l'officialiser (mettre la date de transmission, 
+    # le no. de confirmation, etc)
+    - tache: ajouterEstampille
+
+    # Permet d'ajouter une signature numérique sur le document afin de certifier son authenticité.
+    - tache: signerPDF
+
     # Traiter documents soumis, permet de valider les pièces jointes 
     # d'un utilisateur (scan antivirus et gestion pour la sortie)
     - tache: traiterDocumentsSoumis
@@ -104,11 +117,6 @@ etapes: 
     # peu importe si la question ait été affichée ou répondue
     # Disponible à partir de la release 2023.6
     - tache: extraireQuestions
-
-    # Ajouter estampille, permet d'ajouter une "Étampe" sur un document 
-    # comme pour l'officialiser (mettre la date de transmission, 
-    # le no. de confirmation, etc)
-    - tache: ajouterEstampille
 
     # Permet d'envoyer un courriel via le système FRW. Ajoutez une tâche "envoyerCourriel" pour chaque courriel différent à envoyer.
     # Disponible à partie de la release 2024.2

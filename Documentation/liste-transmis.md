@@ -40,5 +40,5 @@ La page est accessible via l'URL suivante, en remplaçant les variables par les 
 Si votre courriel est autorisé et la demande est valide, l'extraction s'effectuera en arrière-plan. Vous recevrez ensuite un courriel contenant un fichier d'archive `.zip` en pièce jointe.
 
 - L'archive contient les données demandées en format `.csv`. 
-- Afin d'assurer la rapidité et la stabilité du système, chaque fichier `.csv` contient un maximum de 250 000 lignes. Si votre extraction dépasse ce nombre, l'archive contiendra plusieurs fichiers subdivisés (`statistiques1.csv`, `statistiques2.csv`, etc.).
+- Afin d'assurer la rapidité et la stabilité du système, chaque fichier `.csv` contient un maximum de 250 000 lignes. Si votre extraction dépasse ce nombre, l'archive contiendra plusieurs fichiers subdivisés (`formulairesTransmis_1.csv`, `formulairesTransmis_2.csv`, etc.).
 - **Les informations incluses** : Numéro de confirmation, Date de création, Date de transmission, Code du système autorisé (qui permet d'identifier le Ministère/Organisme et le système), Code du partenaire externe (le cas échéant), et le Code de facturation.

@@ -133,7 +133,7 @@ Si vous souhaitez déléguer l'initiation et le suivi d'un de vos formulaires à
 
 La gestion de la sécurité, le pré-remplissage et la traçabilité s'effectuent à l'aide de clés de partenaires et de "secrets" propres à chaque instance de formulaire.
 
-Pour comprendre comment configurer ces regroupements et comment les partenaires externes doivent s'interfacer avec vos formulaires via nos API, veuillez consulter le guide complet à la page [Partenaires externes](/Documentation/partenaires-externes.md).
+Pour comprendre comment configurer ces regroupements et comment les partenaires externes doivent s'interfacer avec vos formulaires via nos API, veuillez consulter le guide complet à la page [Partenaires externes](partenaires-externes.md).
 
 ## Formulaire anonyme
 ### Créer un formulaire

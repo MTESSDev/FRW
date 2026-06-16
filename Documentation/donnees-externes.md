@@ -28,6 +28,7 @@ En résumé les composantes à configurer sont les suivantes :
 
 Voici un exemple complet de config transmission avec définition de sources de données externes (régions et municipalités de Données Québec).
 - Les éléments "regionsGroupe" et "municipalitesGroupe" sont présents pour démontrer l'utilisation avec des contrôles qui sont dans des groupes (standards ou répétables) dans le formulaire.
+- **Important** : remplacer le nom du champ (LeNomDeVotreChamp) dans la propriété "url" par le nom du champ dans votre formulaire.
 
 ```yml
 #Le bloc "etapes" est affiché à titre d'exemple pour représenter un fichier de transmission.
@@ -91,9 +92,10 @@ http_client:
         Accept: 'application/json'
         Content-Type: 'application/json'
 
+  # Important : remplacer le nom du champ (LeNomDeVotreChamp) dans la propriété "url" par le nom du champ dans votre formulaire.
   donnees_qc_municipalites_api:
       method: GET
-      url: 'https://www.donneesquebec.ca/recherche/api/3/action/datastore_search?resource_id=19385b4e-5503-4330-9e59-f998f5918363&filters={"mcodedesi":["01","02","04","05","06","09","10"]}&q={"regadm":"{{{input.donneesFormulaire.form.regionAdministrativeCallBackendFRW}}}"}&sort=munnom&limit=32000'
+      url: 'https://www.donneesquebec.ca/recherche/api/3/action/datastore_search?resource_id=19385b4e-5503-4330-9e59-f998f5918363&filters={"mcodedesi":["01","02","04","05","06","09","10"]}&q={"regadm":"{{{input.donneesFormulaire.form.LeNomDeVotreChamp}}}"}&sort=munnom&limit=32000'
       headers:
         Accept: 'application/json'
         Content-Type: 'application/json'

@@ -11,47 +11,52 @@ Pour que l'outil FRW puisse gérer le contenu en sortie, il faut ajouter un fich
 >| http_client  |   | X  | X  | Les éléments `http_client` se cumulent  |
 
 
-Un fichier `Transmission` est principalement nécessaire au niveau `Système` et que dans certains précis cas au niveau d'un formulaire, comme par exemple pour remplacer les étapes par défaut que vous aviez défini.
+Un fichier `Transmission` est principalement nécessaire au niveau `Système` et dans certains cas précis au niveau d'un formulaire, comme par exemple pour remplacer les étapes par défaut que vous aviez défini.
 
-# Contenu du fichier de transmission
-## Étapes
+Il existe deux grands types d'orchestration de transmission supportés par FRW :
+- **Transmission standard** : La transmission classique déclenchée par l'utilisateur (citoyen) à la fin de la complétion de son formulaire web.
+- **Transmission personnalisée** : Une transmission déclenchée de façon automatisée par votre système ou par un partenaire externe directement via l'appel d'une API, sans interaction de l'utilisateur dans l'interface web.
+
+## Transmission standard
+
+### Étapes
 Lors de la transmission, le traitement FRW exécute les étapes dans l'ordre qu'elles ont été configurées dans le fichier de transmission. Nous vous recommandons donc d'utiliser le même ordre que nous utilisons dans notre exemple plus bas.
 
-### genererWord
+#### genererWord
 Permet de produire un extrant contenant les données saisies dans le formulaire Web à partir d'un gabarit Word (docx).
 
 Il vous est possible de vous créer un gabarit Word personnalisé ou d'utiliser celui offert par la solution FRW.
 
 Référez-vous à la page [fichiers-bind](https://github.com/MTESSDev/FRW/blob/main/Documentation/fichiers-bind.md) pour plus de détails.
 
-### genererPDF
+#### genererPDF
 Permet de produire un extrant contenant les données saisies dans le formulaire Web à partir d'un gabarit PDF avec champs de saisie dynamiques.
 
 Il vous est possible de vous créer un gabarit Word personnalisé ou d'utiliser celui offert par la solution FRW.
 
 Référez-vous à la page [fichiers-bind](https://github.com/MTESSDev/FRW/blob/main/Documentation/fichiers-bind.md) pour plus de détails.
 
-### ajouterEstampille
+#### ajouterEstampille
 Permet d'ajouter des informations par dessus l'extrant produit par les étapes `genererWord`ou `genererPDF` pour reproduire une estampille apposée manuellement. 
 
 L'estampille est configurée dans le fichier `bind` associé au formulaire. Il est possible de définir les informations qu'on veut afficher ainsi que sa position dans la page.
 
 Référez-vous à la page [fichiers-bind](https://github.com/MTESSDev/FRW/blob/main/Documentation/fichiers-bind.md) pour plus de détails.
 
-### signerPDF
+#### signerPDF
 Permet d'ajouter une signature numérique dans le PDF produit à l'étape 'genererPDF'. Cette signature permet de certifier que le PDF a été produit par FRW et elle peut contenir l'empreinte numérique provenant du contrôle de signature électronique du formulaire Web.
 
 Cette tâche doit être positionnée APRÈS les tâches qui manipulent le PDF (ex: estampille), car on ne doit pas altérer le document une fois signé sous peine d'invalider la signature.
 
-### traiterDocumentsSoumis
+#### traiterDocumentsSoumis
 Permet de traiter les pièces jointes que l'utilisateur a envoyé avec le formulaire. Le scan d'antivirus est effectué dans ce traitement.
 
 Cette tâche est requise si votre formulaire permet de joindre des documents.
 
-### extraireQuestions
+#### extraireQuestions
 Permet d'ajouter toutes les questions du formulaire dans l'objet JSON fourni lors de la transmission. Les questions sont extraites dans les deux langues lorsqu'applicable.
 
-### envoyerCourriel (disponible à partir de la release [2024.2](https://github.com/MTESSDev/FRW/releases/tag/2024.2-IT))
+#### envoyerCourriel (disponible à partir de la release [2024.2](https://github.com/MTESSDev/FRW/releases/tag/2024.2-IT))
 Permet d'envoyer un courriel via le système FRW lors de la transmission du formulaire. Il faudra définir autant d'étapes "envoyerCourriel" qu'il y a de courriels différents à envoyer ainsi qu'un gabarit de courriel à utiliser pour chaque tâche.
 
 Pour chaque gabarit courriel, il est possible :
@@ -61,24 +66,24 @@ Pour chaque gabarit courriel, il est possible :
 - d'utiliser des parties variables définies dans la tâche elle même.
 - de spécifier si la version estampillée des pièces jointes doit être utilisée.
 
-### conserverFichier (disponible à partir de la release 2024.3)
+#### conserverFichier (disponible à partir de la release 2024.3)
 Permet d'indiquer au système de conserver une copie du fichier produit par l'orchestration dans un répertoire interne pour être récupéré par un autre traitement.
 
-### appelerServiceExterne
+#### appelerServiceExterne
 Permet de spécifier l'API externe à appeler lors de la transmission.
 
 Il est possible de définir le comportement attendu avec l'utilisation du bouton `Tester transmission` offert dans les outils de développement afin de simuler une transmission.
 
 Cette tâche est directement liée à la section `http_client`.
 
-### http_client
+#### http_client
 Cette section permet de spécifier toutes les caractéristiques de l'appel à l'API défini dans l'étape `appelerServiceExterne`.
 
-### expirerFormulaire (Disponible pour les formulaires en workflow seulement)
+#### expirerFormulaire (Disponible pour les formulaires en workflow seulement)
 Permet d'ajouter un délai d'expiration programmé pour le formulaire. Lorsque le délai est atteint, le formulaire sera automatiquement expiré s'il n'a pas été transmis, ce qui fait qu'il ne sera plus possible pour les participants de le compléter.
 Se référer à l'exemple du fichier de transmission en [workflow](workflows.md#config-transmission).
 
-## Exemple de toutes les possibilitées de configuration
+### Exemple de toutes les possibilitées de configuration (transmission standard)
 ```yaml
 # Liste des étapes désirées dans votre transmission.
 # L'ordre est importante, le traitement la respectera
@@ -290,11 +295,10 @@ http_client:
       # Utile pour valider que l'appel s'est bien terminé en 200 avec une validation du retour de contenu de votre API en prime
       check_response:
         throw_exception_if_body_not_contains_all:
-            - success # À remplacer par un code de retour ou un mot retourné par votre api afin de valider que tout est concluant
+            - success # À remplacer par un code de retour ou un mot retourné par votre api afin de valider que tout est concluant    
 ``` 
 
-
-## Variables et contenu
+### Variables et contenu
 
 Variables du bloc `http_client` utilisables dans le style `mustache`. Tout le bloc `http_client` est basé sur l'outil [YamlHttpClient](https://github.com/anisite/YamlHttpClient), vous pouvez vous y référer pour bâtir votre `json_content`.
 
@@ -319,3 +323,90 @@ Variables du bloc `http_client` utilisables dans le style `mustache`. Tout le bl
 
 
 [Exemple de json produit par FRW en sortie vers un API externe](exemple-json-appeler-service-web.md)
+
+## Transmission personnalisée
+
+La transmission personnalisée permet à un système autorisé ou à un partenaire externe de déclencher l'exécution de tâches de transmission (comme la production directe d’un PDF FRW) à partir d'un payload de données (JSON), et ce, sans aucune interaction utilisateur via l'interface WEB.
+
+**Caractéristiques importantes :**
+- Déclenche la production d'une transmission à la fois.
+- Ne valide ni la structure JSON, ni le format des champs lors de la génération. Le document final (ex: PDF) pourrait être incomplet ou contenir des erreurs de format si les données fournies par l'appelant sont incomplètes ou invalides.
+- Il est impossible d'exécuter la même transmission personnalisée (le même identifiant) plus d'une fois pour un même formulaire. Il est toutefois possible d'en exécuter des différentes.
+- Le coût de production est équivalent à celui d'une transmission normale.
+- Exclut les processus gérés par le workflow (comme la signature électronique) ainsi que les pièces jointes annexées au PDF. 
+
+### Configurer une transmission personnalisée
+
+La transmission personnalisée doit être définie dans la configuration de transmission (fichier `transmission.yml` au niveau Système ou Formulaire) sous le bloc de configuration `transmissionsPerso`. 
+
+Vous pouvez y lister les étapes à exécuter pour l'identifiant concerné :
+
+```yaml
+transmissionsPerso:
+  - id: envoi-partenaire # Identifiant unique de la transmission personnalisée
+    etapes:
+      - tache: genererPdf
+        langue: fr
+      - tache: ajouterEstampille
+      - tache: envoyerCourriel
+        options:
+          gabarit: monBeauCourriel
+```
+### Tâches non supportées
+Toutes les tâches d'une [transmission standard](#transmission-standard) sont supportées à l'exception de celles listées ci-dessous, qui nécessitent une interaction avec l'utilisateur ou que la transmission soit de type "Workflow" : 
+- traiterDocumentsSoumis
+- signerPDF 
+- expirerFormulaire
+
+### Déclencher une transmission personnalisée (via API)
+
+Pour lancer une transmission personnalisée, l'appelant (système autorisé ou partenaire externe) doit orchestrer deux appels API successifs : la création du formulaire, puis le déclenchement de la transmission.
+
+#### 1. Créer le formulaire
+
+Le formulaire ciblé doit d'abord être instancié dans FRW.
+
+Vous devez appeler l'API de création de formulaire (`CreerFormulaireIndividu` - FRW111) avec les éléments suivants :
+
+- **Authentification :**
+  - *Système autorisé :* Fournir le numéro public de votre système autorisé ainsi que la clé d'API.
+  - *Partenaire externe :* Fournir la clé de partenaire externe dans l'en-tête HTTP `X-ClePartenaire`.
+- **Données de pré-remplissage :** Injecter un objet de pré-remplissage JSON contenant toutes les données nécessaires (ex: pour remplir le PDF lors de sa génération).
+  > **Attention :** Pour que la tâche `genererPdf` produise un rendu valide, il faut qu'au moins un champ soit pré-rempli avec une valeur valide.
+
+**Exemple de payload JSON (FRW111) :**
+```json
+{
+  "typeFormulaire": "VOTRE_FORMULAIRE",
+  "donneesFormulaire": {
+    "form": {
+      "nomLocataire": "Tremblay",
+      "prenomLocataire": "Jean",
+      "adresse": "123 rue des Lilas"
+    }
+  }
+}
+```
+
+L'API vous retournera en réponse un **numéro public de formulaire** (ShortGuid). Conservez-le pour l'étape suivante.
+
+#### 2. Déclencher la transmission
+
+Une fois le formulaire créé, vous pouvez déclencher l'exécution des tâches en appelant l'API de transmission personnalisée (`DeclencherTransmissionPersonnalisee` - FRW122).
+
+Les paramètres requis pour cet appel sont les suivants :
+
+- **Authentification :** Utiliser la même méthode d'authentification que lors de la création (clé de partenaire externe ou informations du système autorisé).
+- **NoPublicFormulaire :** Le numéro public (ShortGuid) obtenu à la première étape.
+- **IdTransmissionPerso :** L'identifiant de la transmission configurée dans votre fichier `transmission.yml` (ex: `envoi-partenaire`). *Cet identifiant n'est pas sensible à la casse.*
+- **Identifiant Utilisateur :** (Optionnel) Identifiant de suivi fourni dans l'en-tête `X-IdentifiantUtilisateur`.
+
+**Traitement effectué par FRW :**
+Le système valide l'authentification et vérifie que cet identifiant de transmission (`IdTransmissionPerso`) n'a pas déjà été complété pour ce formulaire. Si les conditions sont remplies, un numéro de confirmation est généré (s'il n'existe pas déjà) et les étapes sont exécutées. Ce formulaire sera ensuite considéré comme transmis et facturable. 
+
+#### 3. Récupérer les résultats
+
+En réponse à l'appel de la transmission personnalisée, l'API retourne un payload contenant :
+- **documents :** La liste des documents produits (ex: le PDF généré), chaque document incluant un `nom`, un flux `fichier` (encodé en base64) et le type source du document (ex: `genererPdf`).
+- **messages :** Une liste de messages retournés par l'orchestration des tâches (avec leur `mnemonique` et texte du `message`).
+- Le contenu du retour peut varier en fonction des tâches que vous avez configurées.

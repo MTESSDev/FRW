@@ -15,7 +15,7 @@ Un fichier `Transmission` est principalement nécessaire au niveau `Système` et
 
 Il existe deux grands types d'orchestration de transmission supportés par FRW :
 - **Transmission standard** : La transmission classique déclenchée par l'utilisateur (citoyen) à la fin de la complétion de son formulaire web.
-- **Transmission personnalisée** : Une transmission déclenchée de façon automatisée par votre système ou par un partenaire externe directement via l'appel d'une API, sans interaction de l'utilisateur dans l'interface web.
+- **Transmission personnalisée** : Une transmission déclenchée de façon automatisée par votre système ou par un partenaire externe directement via l'appel d'une API, sans interaction de l'utilisateur dans l'interface web de FRW.
 
 ## Transmission standard
 
@@ -326,7 +326,7 @@ Variables du bloc `http_client` utilisables dans le style `mustache`. Tout le bl
 
 ## Transmission personnalisée
 
-La transmission personnalisée permet à un système autorisé ou à un partenaire externe de déclencher l'exécution de tâches de transmission (comme la production directe d’un PDF FRW) à partir d'un payload de données (JSON), et ce, sans aucune interaction utilisateur via l'interface WEB.
+La transmission personnalisée permet à un système autorisé ou à un partenaire externe de déclencher l'exécution de tâches de transmission (comme par exemple la production directe d'un PDF), et ce, sans aucune interaction utilisateur via l'interface WEB.
 
 **Caractéristiques importantes :**
 - Déclenche la production d'une transmission à la fois.

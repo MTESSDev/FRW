@@ -326,6 +326,8 @@ Variables du bloc `http_client` utilisables dans le style `mustache`. Tout le bl
 
 ## Transmission personnalisée
 
+> Disponible à partir de la release [2026.7](https://github.com/MTESSDev/FRW/releases)
+
 La transmission personnalisée permet à un système autorisé ou à un partenaire externe de déclencher l'exécution de tâches de transmission (comme par exemple la production directe d'un PDF), et ce, sans aucune interaction utilisateur via l'interface WEB.
 
 **Caractéristiques importantes :**

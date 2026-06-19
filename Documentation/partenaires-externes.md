@@ -80,6 +80,8 @@ Cette section explique comment le système informatique du partenaire externe pe
 
 > Cette section est en construction, revenir bientôt!
 
+*(Consultez également la page fichiers-transmission.md pour la transmission personnalisée (FRW122) par un partenaire externe.)*
+
 ### Démarrer un formulaire
 TODO
 

@@ -1,4 +1,7 @@
 # Liste des formulaires transmis
+
+> Disponible à partir de la release [2026.7](https://github.com/MTESSDev/FRW/releases/).
+
 Cette fonctionnalité permet aux différents partenaires (ministères et organismes) d'extraire de façon autonome la liste des formulaires transmis et facturés pour une période donnée (période d'un an maximum). L'extraction est envoyée par courriel sous forme de fichier CSV compressé (ZIP) et facilite grandement la reddition de comptes et le suivi de la facturation.
 
 ## 1. Configurations requises

@@ -1,6 +1,331 @@
 # Pré-remplir les données d'un formulaire 
 
-Ce guide explique comment fournir des données en pré-remplissage au moment de la création du formulaire.
+Ce guide explique comment préparer et fournir des données en pré-remplissage au moment de la création du formulaire.
+
+Ce guide couvre les opérations suivantes : 
+- Obtenir la structure d'un formulaire
+- Développement d'un service de préparation de pré-remplissage 
+
+## Obtenir la structure d'un formulaire
+
+> Disponible à partir de la release [2026.x](https://github.com/MTESSDev/FRW/releases)
+
+Avant de construire un mécanisme de pré-remplissage pour un formulaire, il est recommandé d'utiliser le service **FRW119 - Obtenir la structure d'un formulaire**.
+
+Ce service permet d'obtenir dynamiquement la définition complète d'un formulaire ainsi qu'un gabarit JSON de pré-remplissage prêt à être utilisé. 
+
+### Pourquoi utiliser FRW119 ?
+
+Traditionnellement, un système doit connaître à l'avance :
+
+- les noms exacts des champs du formulaire;
+- les groupes répétables;
+- les champs obligatoires;
+- les domaines de valeurs disponibles;
+- la structure JSON attendue par FRW.
+
+Le service **FRW119** permet plutôt de récupérer ces informations directement à partir de la configuration réelle du formulaire. 
+
+Cela évite :
+
+- les erreurs de nommage de champs;
+- le maintien manuel de structures JSON;
+- les ajustements nécessaires lors des évolutions d'un formulaire.
+
+### Ce que retourne le service
+
+Le service retourne notamment :
+
+- la liste complète des champs du formulaire;
+- le type de chaque champ (texte, date, nombre, case à cocher, liste déroulante, etc.);
+- les informations sur les groupes répétables;
+- les valeurs possibles pour les champs à choix;
+- un objet `structurePreRemplissage`. 
+
+
+<!-- 
+
+
+Exemple simplifié :
+
+```json
+{
+  "typeFormulaire": "1212",
+  "champs": [
+    {
+      "nom": "NomComplet",
+      "type": "text",
+      "obligatoire": true
+    }
+  ],
+  "structurePreRemplissage": {
+    "form": {
+      "NomComplet": ""
+    }
+  }
+}
+``` 
+
+-->
+
+### Comprendre les valeurs possibles retournées par FRW119
+
+Lorsque le service est appelé avec le paramètre `vide=false` (valeur par défaut), le gabarit retourné dans `structurePreRemplissage` ne contient pas uniquement des valeurs vides. Il fournit également des indications sur le format attendu et les valeurs autorisées pour les champs de sélection.
+
+Par exemple :
+
+```json
+{
+  "form": {
+    "TypeDomicile": "<sélection: propriete|chambre|logement|subventionne|familiale|autre>",
+    "adulte1Genre": "<sélection: Feminin|Masculin>",
+    "HabiteAvecAutreAdulte": "<sélection: true|false>",
+    "adulte1DateNaissance": "<date: AAAA-MM-JJ>",
+    "adulte1NomFamille": "<texte>"
+  }
+}
+```
+
+Ces indications permettent de comprendre rapidement :
+
+- qu'un champ attend du texte (`<texte>`);
+- qu'un champ attend une date au format `AAAA-MM-JJ`;
+- qu'un champ attend une valeur numérique (`<nombre>`);
+- qu'un champ attend une ou plusieurs valeurs parmi une liste prédéfinie (`<sélection: ...>`).
+
+Le gabarit constitue donc un excellent point de départ pour construire ou valider une structure de pré-remplissage.
+
+### Obtenir le détail des choix disponibles
+
+En complément du gabarit, la propriété `champs` fournit les métadonnées détaillées de chaque champ.
+
+Pour les champs de type :
+
+- `select`
+- `radio`
+- `checkbox`
+
+la propriété `valeursPossibles` contient la liste complète des codes acceptés et leur libellé.
+
+Exemple :
+
+```json
+{
+  "nom": "TypeDomicile",
+  "type": "select",
+  "valeursPossibles": {
+    "propriete": {
+      "fr": "Dans votre propriété"
+    },
+    "chambre": {
+      "fr": "Dans une chambre ou en pension"
+    },
+    "logement": {
+      "fr": "Dans un logement"
+    }
+  }
+}
+```
+
+Dans cet exemple :
+
+- les valeurs pouvant être transmises sont `propriete`, `chambre` ou `logement`;
+- les libellés affichés à l'utilisateur sont obtenus à partir de `valeursPossibles`;
+- le pré-remplissage doit utiliser la clé technique et non le libellé.
+
+Exemple de pré-remplissage valide :
+
+```json
+{
+  "form": {
+    "TypeDomicile": "propriete"
+  }
+}
+```
+
+et non :
+
+```json
+{
+  "form": {
+    "TypeDomicile": "Dans votre propriété"
+  }
+}
+```
+
+
+
+
+### Cas des champs multisélection
+
+Certains champs permettent plusieurs choix simultanément. Ils sont généralement représentés sous forme de tableaux dans `structurePreRemplissage`.
+
+Par exemple :
+
+```json
+{
+  "TypeDemande": [
+    "<sélection: Afdr|AideEmploi>"
+  ]
+}
+```
+
+Une valeur pré-remplie pourrait être :
+
+```json
+{
+  "form": {
+    "TypeDemande": [
+      "Afdr"
+    ]
+  }
+}
+```
+
+ou encore :
+
+```json
+{
+  "form": {
+    "TypeDemande": [
+      "Afdr",
+      "AideEmploi"
+    ]
+  }
+}
+```
+
+selon les règles du formulaire.
+
+### Cas des groupes répétables
+
+FRW119 permet aussi d'identifier les groupes répétables.
+
+Dans le gabarit, ceux-ci apparaissent sous forme de tableaux contenant un objet exemple :
+
+```json
+{
+  "form": {
+    "adulte1Emplois": [
+      {
+        "NomEntreprise": "<texte>",
+        "PeriodeDu": "<date: AAAA-MM-JJ>"
+      }
+    ]
+  }
+}
+```
+
+Dans la collection `champs`, les propriétés `groupe`, `repetable` et `maxOccurrences` permettent de déterminer si plusieurs occurrences sont autorisées.
+
+Exemple :
+
+```json
+{
+  "nom": "NomEntreprise",
+  "groupe": "adulte1Emplois",
+  "repetable": true,
+  "maxOccurrences": 2
+}
+```
+
+Cette information peut être utilisée par un système appelant pour générer dynamiquement un écran de configuration de pré-remplissage ou pour valider les données avant leur transmission.
+
+### Recommandation
+
+Pour une intégration complète, il est recommandé d'utiliser les deux parties de la réponse :
+
+| Élément | Utilisation |
+|----------|-------------|
+| `structurePreRemplissage` | Obtenir rapidement la structure JSON attendue |
+| `champs` | Obtenir les types, libellés, groupes répétables, champs obligatoires et valeurs permises |
+
+Cette approche permet de bâtir un mécanisme de pré-remplissage robuste sans devoir maintenir manuellement la structure des formulaires ou les listes de valeurs autorisées.
+
+### Comment utiliser le résultat
+
+Le contenu de `structurePreRemplissage` représente le gabarit de pré-remplissage attendu par FRW. 
+
+L'approche recommandée est :
+
+1. Appeler FRW119 pour obtenir la structure du formulaire.
+2. Conserver ou générer le gabarit retourné.
+3. Remplacer les valeurs vides par les données provenant de votre système.
+4. Retourner ce JSON comme résultat de votre service de pré-remplissage.
+5. Utiliser ensuite cette structure lors de la création du formulaire avec FRW. 
+
+Par exemple, à partir du gabarit :
+
+```json
+{
+  "form": {
+    "NomComplet": "",
+    "DateNaissance": ""
+  }
+}
+```
+
+Votre service de pré-remplissage pourrait produire :
+
+```json
+{
+  "form": {
+    "NomComplet": "Jean Tremblay",
+    "DateNaissance": "1980-01-15"
+  }
+}
+```
+
+### Paramètre `vide=true`
+
+Le service FRW119 peut être appelé avec le paramètre optionnel `vide=true`. 
+
+Dans ce mode, le gabarit retourné contient directement des valeurs utilisables :
+
+```json
+{
+  "form": {
+    "NomComplet": "",
+    "AccepteConditions": false,
+    "SportsPreferences": []
+  }
+}
+```
+
+Ce mode simplifie la génération d'un modèle de pré-remplissage dans les systèmes consommateurs.
+
+### Accès au service
+
+Le service est disponible dans le Swagger SIS de FRW. 
+
+Exemple d'appel :
+
+```http
+GET /api/v1/SIS/structureFormulaire/{typeFormulaire}
+GET /api/v1/SIS/structureFormulaire/{typeFormulaire}?vide=true
+```
+
+Une fois authentifié dans Swagger :
+
+1. Sélectionner l'opération **FRW119 - Obtenir la structure d'un formulaire**.
+2. Saisir le `typeFormulaire`.
+3. Exécuter la requête.
+4. Copier le contenu de `structurePreRemplissage`.
+5. Utiliser cette structure comme base de votre mécanisme de pré-remplissage. 
+
+### Séquence recommandée
+
+```text
+FRW119
+  ↓
+Obtention de la structure du formulaire
+  ↓
+Construction du pré-remplissage par le système
+  ↓
+FRW111 (création du formulaire)
+```
+
+L'utilisation de FRW119 est particulièrement utile lors du développement initial d'une intégration ou lorsqu'un formulaire évolue, puisqu'elle permet de toujours travailler à partir de la structure réelle configurée dans FRW. 
 
 Vous devez créer un service de pré remplissage dans votre système qui fait cette opération.
 

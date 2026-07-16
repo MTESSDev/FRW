@@ -315,7 +315,7 @@ GET /api/v1/SIS/structureFormulaire/{typeFormulaire}?vide=true
 **Authentification** 
 
 Deux possibilités :
-  - *Par clé d'API de Système autortisé :* Fournir le numéro public de votre système autorisé ainsi que la clé d'API; 
+  - *Par clé d'API de Système autorisé :* Fournir le numéro public de votre système autorisé ainsi que la clé d'API; 
     - entêtes HTTP `X-NoPublicSystemeAutorise` et `X-ApiKey`.
   - *Par clé d'API de Partenaire externe :* Fournir la clé de partenaire externe dans l'entête HTTP `X-ClePartenaire`.
 

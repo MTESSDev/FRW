@@ -14,31 +14,35 @@ Le pré-remplissage peut notamment être utilisé pour :
 - transmettre des informations provenant d'autres systèmes;
 - protéger certaines données qui ne doivent pas être modifiées par l'utilisateur.
 
-Ce guide explique les grandes étapes recommandée pour construire un pré-remplissage.
+Ce guide explique les grandes étapes recommandées pour construire un pré-remplissage.
 
 ## Paramètres possibles du JSON de pré-remplissage
 
-Exemple à haut niveau de structure de pré-remplissage : 
+Exemple de structure de pré-remplissage à haut niveau :
+
 ```json
 {
   "form": { ... },
   "formProtege": { ... },
-  "config": { ... }, 
+  "config": { ... },
   "informationsSupplementaires": { ... }
 }
 ```
 
-Le JSON de pré-remplissage peut contenir différentes propriétés selon les besoins de l'intégration. 
+Le JSON de pré-remplissage peut contenir différentes propriétés selon les besoins de l'intégration.
 
-Voici quelques exemples : 
+Voici quelques exemples :
 
 <table>
-<tr> 
-<td> Propriété </td> 
-<td> Description </td> 
-<td> Exemple </td> </tr>
-<tr> <td> <pre>form</pre> </td> 
-<td>Contient les données qui seront utilisées pour pré-remplir les champs du formulaire. Les valeurs peuvent être modifiées par l'utilisateur. </td>
+<tr>
+<td>Propriété</td>
+<td>Description</td>
+<td>Exemple</td>
+</tr>
+
+<tr>
+<td><code>form</code></td>
+<td>Contient les données qui seront utilisées pour pré-remplir les champs du formulaire. Les valeurs peuvent être modifiées par l'utilisateur.</td>
 <td>
 
 ```json
@@ -52,44 +56,44 @@ Voici quelques exemples :
     "HabiteAvecAutreAdulte": "false",
     "TypeDomicile": "propriete",
     "DomicileDateDebut": "2022-04-13",
-    "adulte1Nas1": "123456789",
-    // [...]
+    "adulte1Nas1": "123456789"
   }
 }
 ```
 
 </td>
-
 </tr>
+
 <tr>
-<td> <pre>formProtege</pre> </td>
-<td> Contient les données dont la valeur doit obligatoirement provenir du système autorisé. Les champs présents dans cet objet ne peuvent pas être modifiés par l'utilisateur. Si un même champ existe dans `form` et `formProtege`, la valeur de `formProtege` a préséance. </td>
+<td><code>formProtege</code></td>
+<td>Contient les données dont la valeur doit obligatoirement provenir du système autorisé. Les champs présents dans cet objet ne peuvent pas être modifiés par l'utilisateur. Si un même champ existe dans <code>form</code> et <code>formProtege</code>, la valeur de <code>formProtege</code> a préséance.</td>
 <td>
 
 ```json
 {
-  // Dans cet exemple, la valeur du champ "adulte1Nas1" 
-  // de l'objet "form" sera écrasée par celle de l'objet 
-  // "formProtege" à la transmission et le champs 
-  // "adulte1estRoux" sera ajouté dans l'objet "form" également. 
+  // Dans cet exemple, la valeur du champ "adulte1Nas1"
+  // de l'objet "form" sera écrasée par celle de l'objet
+  // "formProtege" à la transmission et le champ
+  // "adulte1estRoux" sera également ajouté à l'objet "form".
   "formProtege": {
     "adulte1Nas1": "888888880",
-    "adulte1estRoux" : true
+    "adulte1estRoux": true
   }
 }
 ```
 
 </td>
 </tr>
+
 <tr>
-<td> <pre>config</pre> </td>
-<td> Permet notamment de fournir des domaines de valeurs personnalisés. </td>
+<td><code>config</code></td>
+<td>Permet notamment de fournir des domaines de valeurs personnalisés.</td>
 <td>
 
 ```json
 {
   "config": {
-    // Exemple de pré-remplissage d'une domaine de valeurs
+    // Exemple de pré-remplissage d'un domaine de valeurs
     "domaines": {
       "sportsPreRemplissage": {
         "Course": {
@@ -97,7 +101,7 @@ Voici quelques exemples :
             "fr": "Course à pied",
             "en": "(EN) Course à pied"
           },
-          "mots-cle": {
+          "mots-cles": {
             "fr": "chaussure",
             "en": "shoe"
           }
@@ -107,7 +111,7 @@ Voici quelques exemples :
             "fr": "Lancer de la hache",
             "en": "Axe throwing"
           },
-          "mots-cle": {
+          "mots-cles": {
             "fr": "Hache",
             "en": "Axe"
           }
@@ -131,33 +135,34 @@ Voici quelques exemples :
 </td>
 </tr>
 
-<tr> <td> <pre>informationsSupplementaires</pre> </td> 
-<td>Permet d'enregistrer des informations supplémentaires associées au formulaire, par exemple un contexte affiché à l'utilisateur. Ces données ne sont pas chiffrées et ne doivent pas contenir d'informations sensibles. <br><br> Pour plus de détails, voir le guide utilisateur P700 aux sections <a href="https://formulaires.it.mtess.gouv.qc.ca/fr/Form/7/P700U/0/N/#p=pageContexte" target="blank">Contexte</a> et <a href="https://formulaires.it.mtess.gouv.qc.ca/fr/Form/7/P700U/0/N/#p=pageBasPage" target="blank">Bas de page</a>. </td>
+<tr>
+<td><code>informationsSupplementaires</code></td>
+<td>Permet d'enregistrer des informations supplémentaires associées au formulaire, par exemple un contexte affiché à l'utilisateur. Ces données ne sont pas chiffrées et ne doivent pas contenir d'informations sensibles.<br><br> Pour plus de détails, voir le guide utilisateur P700 aux sections <a href="https://formulaires.it.mtess.gouv.qc.ca/fr/Form/7/P700U/0/N/#p=pageContexte" target="blank">Contexte</a> et <a href="https://formulaires.it.mtess.gouv.qc.ca/fr/Form/7/P700U/0/N/#p=pageBasPage" target="blank">Bas de page</a>. </td>
 <td>
 
 ```json
 {
-	"informationsSupplementaires": {
+  "informationsSupplementaires": {
     "contexte": "Année financière 2023-2024",
-    "basPage" : "PDF Version 3.4"
-        // [...]
-    }
+    "basPage": "PDF Version 3.4"
+  }
 }
 ```
 
 </td>
 </tr>
 
-<tr> <td> Propriétés personnalisées  </td> 
-<td>Il est possible d'ajouter des objets personnalisés propres à votre intégration, par exemple pour un contexte applicatif, une estampille ou d'autres besoins techniques. Ces informations sont redonnés en sortie au moment de la transmission, pouvant ainsi être exploitées par votre API de réception de formulaire (le cas échéant). </td>
+<tr>
+<td>Propriétés personnalisées</td>
+<td>Il est possible d'ajouter des objets personnalisés propres à votre intégration, par exemple pour un contexte applicatif, une estampille ou d'autres besoins techniques. Ces informations sont retournées lors de la transmission et peuvent ainsi être exploitées par votre API de réception de formulaire (le cas échéant).</td>
 <td>
 
 ```json
 {
-	"estampille": {
-		"texteAuthentification": "TexteAuthentification"
+  "estampille": {
+    "texteAuthentification": "TexteAuthentification"
   },
-  "contexteECS": " ... contenu en base  64 ... "
+  "contexteECS": " ... contenu en base 64 ... "
 }
 ```
 
@@ -169,12 +174,12 @@ Voici quelques exemples :
 ## Obtenir la structure d'un formulaire
 
 Disponible à partir de la release [2026.x](https://github.com/MTESSDev/FRW/releases).
-
 Afin de pouvoir construire un pré-remplissage, il est recommandé d'utiliser le service **FRW119 - Obtenir la structure d'un formulaire**.
 
 Paramètres d'entrée :
-- type formulaire
-- vide : détermine si des indications permettant de comprendre le format attendu pour chaque champ est présenté dans le retour ou non
+
+- type de formulaire;
+- `vide` : détermine si des indications permettant de comprendre le format attendu pour chaque champ sont présentées dans le retour.
 
 Ce service retourne :
 
@@ -187,14 +192,14 @@ Ce service retourne :
 
 ### Exemple de structure retournée
 
-> Dans cet exemple le service a été appelé avec le paramètre "vide" à `false`.  
+> Dans cet exemple, le service a été appelé avec le paramètre `vide` à `false`.
 
 ```json
 {
   "typeFormulaire": "3003",
   "structurePreRemplissage": {
     "form": {
-    
+
       // Champ texte
       "adulte1NomFamille": "<texte>",
       // Champ date
@@ -207,7 +212,7 @@ Ce service retourne :
       "HabiteAvecAutreAdulte": "<sélection: true|false>",
       // Liste de sélection
       "adulte1Genre": "<sélection: Feminin|Masculin>",
-      // Champ multi-sélection : plusieurs valeurs peuvent être sélectionnées
+      // Champ à sélection multiple : plusieurs valeurs peuvent être sélectionnées
       "TypeDemande": [
         "<sélection: Afdr|AideEmploi>"
       ],
@@ -219,13 +224,13 @@ Ce service retourne :
           "PeriodeAu": "<date: AAAA-MM-JJ>"
         }
       ]
-	  },
+    }
   },
   "champs": // détaillé à la section suivante
 }
 ```
 
-### Section "champs"
+### Section champs
 
 En complément de `structurePreRemplissage`, le service retourne une collection `champs`.
 
@@ -236,8 +241,8 @@ Cette collection permet notamment de connaître :
 - le groupe auquel il appartient;
 - son caractère répétable;
 - le nombre maximal d'occurrences;
-- ses valeurs permises;
-- ses libellés;
+- les valeurs permises;
+- les libellés;
 - son caractère obligatoire.
 
 Exemple :
@@ -276,9 +281,9 @@ Exemple :
 
 ## Séquence recommandée
 
-Idéalement un développement est réalisé de votre côté afin d'automatiser les étapes de construction du pré-remplissage, afin d'éviter à faire du manuel à chaque fois.
+Idéalement, un développement est réalisé de votre côté afin d'automatiser les étapes de construction du pré-remplissage et d'éviter d'effectuer ces opérations manuellement à chaque fois.
 
-Les grandes étapes sont : 
+Les grandes étapes sont :
 
 1. Appeler FRW119 pour obtenir la structure du formulaire.
 2. Utiliser le gabarit `form` sous `structurePreRemplissage` comme modèle de départ.
@@ -286,17 +291,18 @@ Les grandes étapes sont :
 4. Remplacer les valeurs du modèle par les données provenant de votre système.
 5. Utiliser ce JSON lors de la création du formulaire avec FRW.
 
-Cette approche permet de toujours travailler à partir de la structure réellement configurée dans FRW sans devoir maintenir manuellement une définition de formulaire.
+Cette approche permet de toujours travailler à partir de la structure réellement configurée dans FRW sans devoir maintenir manuellement une définition du formulaire.
 
 ## Idées d'implémentation
 
 Plusieurs approches peuvent être utilisées pour fusionner les données provenant de votre système avec la structure retournée par FRW119.
 
 Par exemple :
+
 - génération programmatique du JSON;
-- moteurs de gabarits Mustache; permet le remplacement de variables avec la syntaxe `mustache`
-- [HandleBars.Net](https://github.com/Handlebars-Net/Handlebars.Net), ou encore mieux le produit 
-- [YamlHttpClient](https://github.com/anisite/YamlHttpClient); permet d'appeler un API par configuration ``Yaml`` et l'outil s'occupe lui-même de remplacer vos variables. 
+- moteur de gabarits Mustache permettant le remplacement de variables avec la syntaxe `mustache`;
+- https://github.com/Handlebars-Net/Handlebars.Net;
+- https://github.com/anisite/YamlHttpClient, qui permet d'appeler une API par configuration YAML et de remplacer automatiquement les variables.
 
 Vous pouvez communiquer avec nous si vous souhaitez en savoir plus.
 
@@ -312,32 +318,37 @@ GET /api/v1/SIS/structureFormulaire/{typeFormulaire}
 GET /api/v1/SIS/structureFormulaire/{typeFormulaire}?vide=true
 ```
 
-**Authentification** 
+**Authentification**
 
 Deux possibilités :
-  - *Par clé d'API de Système autorisé :* Fournir le numéro public de votre système autorisé ainsi que la clé d'API; 
-    - entêtes HTTP `X-NoPublicSystemeAutorise` et `X-ApiKey`.
-  - *Par clé d'API de Partenaire externe :* Fournir la clé de partenaire externe dans l'entête HTTP `X-ClePartenaire`.
+
+- *Par clé d'API de Système autorisé* : fournir le numéro public de votre système autorisé ainsi que la clé d'API;
+  - en-têtes HTTP `X-NoPublicSystemeAutorise` et `X-ApiKey`.
+- *Par clé d'API de Partenaire externe* : fournir la clé de partenaire externe dans l'en-tête HTTP `X-ClePartenaire`.
 
 ## Création versus modification
 
-Certaines informations peuvent être prises en compte seulement au moment de la création du formulaire, d’autres peuvent aussi être modifiées lors de la reprise (reprise "authentifiée" seulement). Le tableau suivant résume les possibilités : 
+Certaines informations peuvent être prises en compte seulement au moment de la création du formulaire. D'autres peuvent également être modifiées lors de la reprise (reprise authentifiée seulement).
 
-| Type  d'information pré-remplie | Création | Reprise |
-| ---- | ---------- | ---------- |
-| Champs de formulaire (form) | ✔ |  |
-| Champs de formulaire protégés (formProtege) | ✔ | ✔ |
+Le tableau suivant résume les possibilités :
+
+| Type d'information pré-remplie | Création | Reprise |
+|----------|----------|----------|
+| Champs de formulaire (`form`) | ✔ | |
+| Champs de formulaire protégés (`formProtege`) | ✔ | ✔ |
 | Propriétés personnalisées | ✔ | ✔ |
-| Informations supplémentaires | ✔ |  |
-| Domaine de valeurs personnalisées | ✔ | ✔ |
+| Informations supplémentaires | ✔ | |
+| Domaines de valeurs personnalisés | ✔ | ✔ |
 
 ## Pré-remplissage anonyme
-> À partir de la version ``2025.10``
 
-Le pré-remplissage est maintenant disponible pour les formulaires anonymes, toutefois vous devez préalablement autoriser les champs concernés dans la config "form.yml" de votre formulaire ou de votre système autorisé.
+> À partir de la version `2025.10`
 
-> Important : 
+Le pré-remplissage est maintenant disponible pour les formulaires anonymes. Toutefois, vous devez préalablement autoriser les champs concernés dans la configuration `form.yml` de votre formulaire ou de votre système autorisé.
+
+> Important :
+>
 > - Ne pas autoriser le pré-remplissage de données sensibles.
-> - Le système supporte des données en pré-remplissage d'une longueur jusqu'à environ 1000 caractères maximum.
+> - Le système prend en charge des données de pré-remplissage d'une longueur maximale d'environ 1 000 caractères.
 
 Pour plus de détails, voir la section [Personnalisation des formulaires - Concepts de base](https://formulaires.it.mtess.gouv.qc.ca/fr/Form/7/P700U/0/N/#p=personnalisationBase) du P700.

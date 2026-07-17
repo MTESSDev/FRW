@@ -87,7 +87,7 @@ Voici quelques exemples :
 
 <tr>
 <td><code>config</code></td>
-<td>Permet notamment de fournir des domaines de valeurs personnalisés.</td>
+<td>Permet notamment de fournir des domaines de valeurs personnalisés.<br><br> Pour plus de détails, voir le guide utilisateur P700 à la section <a href="https://formulaires.it.mtess.gouv.qc.ca/fr/Form/7/P700U/0/N/#p=DomainesValeurs" target="blank">Domaines de valeurs</a>.</td>
 <td>
 
 ```json
@@ -176,19 +176,31 @@ Voici quelques exemples :
 Disponible à partir de la release [2026.x](https://github.com/MTESSDev/FRW/releases).
 Afin de pouvoir construire un pré-remplissage, il est recommandé d'utiliser le service **FRW119 - Obtenir la structure d'un formulaire**.
 
-Paramètres d'entrée :
-
-- type de formulaire;
-- `vide` : détermine si des indications permettant de comprendre le format attendu pour chaque champ sont présentées dans le retour.
-
 Ce service retourne :
-
 - la structure JSON attendue par FRW;
 - la liste des champs du formulaire;
 - le type de chaque champ;
 - les groupes répétables;
 - les valeurs permises pour les champs de sélection;
 - les métadonnées nécessaires à la validation des données.
+
+Paramètres d'entrée :
+- Type de formulaire;
+- Booléen `vide` : détermine si le gabarit retourné contient des valeurs vides (vrai) ou des indications permettant de comprendre le format attendu pour chaque champ (faux).
+
+Exemples d'appel à l'API (`structureFormulaire` - FRW119) :
+
+```http
+GET /api/v1/SIS/structureFormulaire/{typeFormulaire}
+
+GET /api/v1/SIS/structureFormulaire/{typeFormulaire}?vide=true
+```
+
+| Méthode d'authentification | En-tête HTTP |
+|--|--|
+| Authentification par clé d'API de Système autorisé | Fournir le numéro public de votre système autorisé ainsi que la clé d'API dans les en-têtes HTTP `X-NoPublicSystemeAutorise` et `X-ApiKey`.
+| Par clé d'API de Partenaire externe                | Fournir la clé de partenaire externe dans l'en-tête HTTP `X-ClePartenaire`.
+
 
 ### Exemple de structure retournée
 
@@ -257,7 +269,7 @@ Exemple :
       "obligatoire": true,
       "repetable": false,
       "valeursPossibles": {
-        "propriete": {                  // <---- utiliser cette valeur dans le pré-remplissage
+        "propriete": {                  // <---- utiliser cette clé dans le pré-remplissage
           "fr": "Dans votre propriété"  // <---- ceci est le libellé visible à l'écran
         },
         "chambre": {
@@ -307,24 +319,6 @@ Par exemple :
 Vous pouvez communiquer avec nous si vous souhaitez en savoir plus.
 
 Le choix de la technologie utilisée demeure à la discrétion du système intégrateur.
-
-## Accès au service
-
-Exemples d'appel à l'API (`structureFormulaire` - FRW119) :
-
-```http
-GET /api/v1/SIS/structureFormulaire/{typeFormulaire}
-
-GET /api/v1/SIS/structureFormulaire/{typeFormulaire}?vide=true
-```
-
-**Authentification**
-
-Deux possibilités :
-
-- *Par clé d'API de Système autorisé* : fournir le numéro public de votre système autorisé ainsi que la clé d'API;
-  - en-têtes HTTP `X-NoPublicSystemeAutorise` et `X-ApiKey`.
-- *Par clé d'API de Partenaire externe* : fournir la clé de partenaire externe dans l'en-tête HTTP `X-ClePartenaire`.
 
 ## Création versus modification
 

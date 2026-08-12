@@ -457,6 +457,38 @@ FRW117 - Créer un formulaire pour reprise en différée
 
 null
 
+### /api/v1/SIS/DeclencherTransmissionPersonnalisee/{noPublicFormulaire}/{idTransmissionPerso}
+
+#### POST
+##### Summary:
+
+FRW122 - Déclencher une transmission personnalisée via clé de partenaire externe
+
+##### Parameters
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| noPublicFormulaire | path |  | Yes | [System.String](#System.String) |
+| idTransmissionPerso | path |  | Yes | [System.String](#System.String) |
+| X-NoPublicSystemeAutoriseDeleguant | header |  | No | [System.String](#System.String) |
+| X-IdentifiantUtilisateur | header |  | No | [System.String](#System.String) |
+| Accept-Language | header | Spécifie la langue préférée pour les réponses (en-CA ou fr-CA) | No | string |
+
+##### Responses
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | OK |
+| 400 | Bad Request |
+| 401 | Unauthorized |
+| 500 | Internal Server Error |
+
+##### Security
+
+| Security Schema | Scopes |
+| --- | --- |
+| ClePartenaire | |
+
 ### /api/v1/SIS/ObtenirSchema/{type}
 
 #### GET

@@ -297,6 +297,63 @@ paths:
                 $ref: '#/components/schemas/ProblemDetails'
         '500':
           description: 'Paramètre manquant, invalide ou erreur interne du serveur'
+  '/api/v1/SIS/DeclencherTransmissionPersonnalisee/{noPublicFormulaire}/{idTransmissionPerso}':
+    post:
+      tags:
+        - SIS
+      summary: >-
+        FRW122 - Déclencher une transmission personnalisée via clé de partenaire
+        externe
+      parameters:
+        - name: noPublicFormulaire
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/System.String'
+        - name: idTransmissionPerso
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/System.String'
+        - name: X-NoPublicSystemeAutoriseDeleguant
+          in: header
+          schema:
+            $ref: '#/components/schemas/System.String'
+        - name: X-IdentifiantUtilisateur
+          in: header
+          schema:
+            $ref: '#/components/schemas/System.String'
+        - name: Accept-Language
+          in: header
+          description: Spécifie la langue préférée pour les réponses (en-CA ou fr-CA)
+          schema:
+            enum:
+              - en-CA
+              - fr-CA
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: {}
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json: {}
+      security:
+        - ClePartenaire: []
   '/api/v1/Document/ObtenirPdfConfirmation/{sessionUtilisateur}':
     get:
       tags:

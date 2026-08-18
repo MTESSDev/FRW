@@ -147,8 +147,6 @@ config:
   pdf:
 #rapetisserTexteTropLong permet de réduire automatiquement la taille de la police d'un texte qui dépasse légèrement la longueur du champ dans le gabarit PDF.
     rapetisserTexteTropLong: true
-#redirigerAnnexeTexteTopLong permet de créer une page d'annexe après la dernière page du formulaire pour y afficher les champs qui dépassent la longueur permise dans le gabarit.
-    redirigerAnnexeTexteTroplong: true
 #pourcentageDepassementAnnexe permet de spécifier une limite avant de créer l'annexe des textes trop longs. En dessous de la limite, on rapetisse la police et au dessus, on créé l'annexe.
     pourcentageDepassementAnnexe: 20
 #verouillerChampsPdf permet de verouiller le fichier lorsque le traitement a terminé d'insérer les valeurs.
@@ -229,8 +227,6 @@ config:
   pdf:
 #rapetisserTexteTropLong permet de réduire automatiquement la taille de la police d'un texte qui dépasse légèrement la longueur du champ dans le gabarit PDF.
     rapetisserTexteTropLong: true
-#redirigerAnnexeTexteTopLong permet de créer une page d'annexe après la dernière page du formulaire pour y afficher les champs qui dépassent la longueur permise dans le gabarit.
-    redirigerAnnexeTexteTroplong: true
 #pourcentageDepassementAnnexe permet de spécifier une limite avant de créer l'annexe des textes trop longs. En dessous de la limite, on rapetisse la police et au dessus, on créé l'annexe.
     pourcentageDepassementAnnexe: 20
 #verouillerChampsPdf permet de verouiller le fichier lorsque le traitement a terminé d'insérer les valeurs.

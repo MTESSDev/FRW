@@ -180,20 +180,6 @@ rapetisserTexteTropLong permet de réduire automatiquement la taille de la polic
 
 `boolean` ([rapetisserTexteTropLong](frw-bind-definitions-pdf-properties-rapetissertextetroplong.md))
 
-### redirigerAnnexeTexteTroplong
-
-redirigerAnnexeTexteTopLong permet de créer une page d'annexe après la dernière page du formulaire pour y afficher les champs qui dépassent la longueur permise dans le gabarit.
-
-`redirigerAnnexeTexteTroplong`
-
-*   est optionnel
-
-*   ne peut être nul
-
-#### Type de redirigerAnnexeTexteTroplong
-
-`boolean` ([redirigerAnnexeTexteTroplong](frw-bind-definitions-pdf-properties-redirigerannexetextetroplong.md))
-
 ### pourcentageDepassementAnnexe
 
 pourcentageDepassementAnnexe permet de spécifier une limite avant de créer l'annexe des textes trop longs. En dessous de la limite, on rapetisse la police et au dessus, on créé l'annexe.

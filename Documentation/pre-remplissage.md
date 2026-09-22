@@ -173,7 +173,7 @@ Voici quelques exemples :
 
 ## Obtenir la structure d'un formulaire
 
-Disponible à partir de la release [2026.x](https://github.com/MTESSDev/FRW/releases).
+Disponible à partir de la release [2026.7](https://github.com/MTESSDev/FRW/releases).
 Afin de pouvoir construire un pré-remplissage, il est recommandé d'utiliser le service **FRW119 - Obtenir la structure d'un formulaire**.
 
 Ce service retourne :

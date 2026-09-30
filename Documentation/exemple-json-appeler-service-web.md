@@ -12,11 +12,17 @@ Exemple réel avec de vrais fichiers base64 binaires et contenu réel.
 	"documentsProduits": [
 		{
 			"fichier": "AA==",
-			"nom": "3003_01_FICHIER_NULL_POUR_ALLEGER"
+			"nom": "3003_01_FICHIER_NULL_POUR_ALLEGER",
+			"tacheSource": "genererPDF",
+			"url": "ODm9ZY82wlIk6K4q42J9cMEwXBkw5Mux9x150pX3tqKZ5omKYofrQWVyvmEGCDG7LpW5V2smXZvwW",
+			"urlEstampille": "9NJX2rgyK6hj5B9o9YvgH4j8Ny8x3lsPQ71kWqNyFzrWlko2oKTzyqrBXrwOFA8lqzx7NvHPyVgMB"
 		},
 		{
 			"fichier": "AA==",
 			"nom": "3003_02_FICHIER_NULL_POUR_ALLEGER"
+			"tacheSource": "genererPDF",
+			"url": "...",
+			"urlEstampille": "..."
 		}
 	],
 	"donneesFormulaire": {

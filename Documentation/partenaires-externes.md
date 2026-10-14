@@ -61,20 +61,33 @@ Il est de votre responsabilité de générer la clé de partenaire de votre choi
 **Retrait d'un partenaire :** Pour désactiver un partenaire, il suffit de retirer son bloc du fichier `partenairesExternes.yml` (ou de le mettre en commentaire) et de redéployer. FRW désactivera automatiquement ce partenaire en base de données.
 
 ### 2. Autoriser un regroupement dans un formulaire
-
-> Cette section est en construction, revenir bientôt!
-
-<!-- Une fois les partenaires définis globalement, vous devez indiquer quel formulaire peut être utilisé par quel regroupement de partenaires. Cela se configure dans le fichier `form.yml` de votre formulaire.
+Une fois les partenaires définis, vous devez indiquer quels regroupements peuvent utiliser quel formulaire. Cela se configure dans le fichier `form.yml` de votre formulaire, avec la clé `securite.partenairesExternesAutorises` :
 
 ```yaml
 config:
-  securite: 
+  securite:
     # Regroupements de partenaires externes autorisés
     partenairesExternesAutorises:
       - groupe_certification
 ```
 
-*Seuls les partenaires appartenant au regroupement `groupe_certification` pourront interagir avec ce formulaire.* -->
+*Seuls les partenaires appartenant au regroupement `groupe_certification` pourront interagir avec ce formulaire.*
+
+**Règles :**
+- Les valeurs de la liste sont les noms de **regroupement** déclarés dans `partenairesExternes.yml` (ex: `groupe_certification`), et non les codes ou les clés des partenaires.
+- La comparaison ne tient pas compte de la casse.
+- **Refus par défaut :** si la clé `partenairesExternesAutorises` est absente ou vide, aucun partenaire externe ne peut utiliser le formulaire. Ajoutez-la à chaque formulaire que vous ouvrez à des partenaires.
+- La liste est lue dans le fichier du **formulaire** seulement (pas dans `default.vX.form.yml`) : chaque formulaire déclare ses propres regroupements autorisés.
+- La configuration est prise en compte au moment de déployer vos configurations.
+
+**Comportement pour le partenaire :**
+
+| Situation | Réponse |
+|---|---|
+| Clé de partenaire invalide ou partenaire retiré | HTTP 401 |
+| Clé valide, mais regroupement du partenaire absent de `partenairesExternesAutorises` du formulaire | HTTP 403 |
+
+Cette validation s'applique à la création d'un formulaire (FRW111), à l'obtention de sa structure (FRW119) et au déclenchement d'une transmission personnalisée (FRW122).
 
 ---
 

@@ -61,7 +61,10 @@ Il est de votre responsabilité de générer la clé de partenaire de votre choi
 **Retrait d'un partenaire :** Pour désactiver un partenaire, il suffit de retirer son bloc du fichier `partenairesExternes.yml` (ou de le mettre en commentaire) et de redéployer. FRW désactivera automatiquement ce partenaire en base de données.
 
 ### 2. Autoriser un regroupement dans un formulaire
-Une fois les partenaires définis globalement, vous devez indiquer quel formulaire peut être utilisé par quel regroupement de partenaires. Cela se configure dans le fichier `form.yml` de votre formulaire.
+
+> Cette section est en construction, revenir bientôt!
+
+<!-- Une fois les partenaires définis globalement, vous devez indiquer quel formulaire peut être utilisé par quel regroupement de partenaires. Cela se configure dans le fichier `form.yml` de votre formulaire.
 
 ```yaml
 config:
@@ -71,7 +74,7 @@ config:
       - groupe_certification
 ```
 
-*Seuls les partenaires appartenant au regroupement `groupe_certification` pourront interagir avec ce formulaire.*
+*Seuls les partenaires appartenant au regroupement `groupe_certification` pourront interagir avec ce formulaire.* -->
 
 ---
 

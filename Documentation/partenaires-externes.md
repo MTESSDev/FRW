@@ -61,68 +61,30 @@ Il est de votre responsabilité de générer la clé de partenaire de votre choi
 **Retrait d'un partenaire :** Pour désactiver un partenaire, il suffit de retirer son bloc du fichier `partenairesExternes.yml` (ou de le mettre en commentaire) et de redéployer. FRW désactivera automatiquement ce partenaire en base de données.
 
 ### 2. Autoriser un regroupement dans un formulaire
-
-> Cette section est en construction, revenir bientôt!
-
-<!-- Une fois les partenaires définis globalement, vous devez indiquer quel formulaire peut être utilisé par quel regroupement de partenaires. Cela se configure dans le fichier `form.yml` de votre formulaire.
+Une fois les partenaires définis, vous devez indiquer quels regroupements peuvent utiliser quel formulaire. Cela se configure dans le fichier `form.yml` de votre formulaire, avec la clé `securite.partenairesExternesAutorises` :
 
 ```yaml
 config:
-  securite: 
+  securite:
     # Regroupements de partenaires externes autorisés
     partenairesExternesAutorises:
       - groupe_certification
 ```
 
-*Seuls les partenaires appartenant au regroupement `groupe_certification` pourront interagir avec ce formulaire.* -->
+*Seuls les partenaires appartenant au regroupement `groupe_certification` pourront interagir avec ce formulaire.*
 
----
+**Règles :**
+- Les valeurs de la liste sont les noms de **regroupement** déclarés dans `partenairesExternes.yml` (ex: `groupe_certification`), et non les codes ou les clés des partenaires.
+- La comparaison ne tient pas compte de la casse.
+- **Refus par défaut :** si la clé `partenairesExternesAutorises` est absente ou vide, aucun partenaire externe ne peut utiliser le formulaire. Ajoutez-la à chaque formulaire que vous ouvrez à des partenaires.
+- La liste est lue dans le fichier du **formulaire** seulement (pas dans `default.vX.form.yml`) : chaque formulaire déclare ses propres regroupements autorisés.
+- La configuration est prise en compte au moment de déployer vos configurations.
 
-## Intégration (Pour le partenaire externe)
-Cette section explique comment le système informatique du partenaire externe peut interagir avec les API de FRW pour démarrer et suivre un formulaire.
+**Comportement pour le partenaire :**
 
-> Cette section est en construction, revenir bientôt!
+| Situation | Réponse |
+|---|---|
+| Clé de partenaire invalide ou partenaire retiré | HTTP 401 |
+| Clé valide, mais regroupement du partenaire absent de `partenairesExternesAutorises` du formulaire | HTTP 403 |
 
-*(Consultez également la page fichiers-transmission.md pour la transmission personnalisée (FRW122) par un partenaire externe.)*
-
-### Démarrer un formulaire
-TODO
-
-<!-- Pour démarrer un nouveau formulaire au nom d'un client, le partenaire doit appeler l'API [InteragirFormPartenaire](../Swagger/readme.md#apiv1sisinteragirformpartenaire) `FRW131`.
-
-1. **Préparer les données de pré-remplissage** (facultatif). Tout comme pour un système autorisé, le partenaire peut injecter des données connues pour alléger la saisie.
-2. **Appel à l'API FRW131 :** Le partenaire appelle l'API en fournissant sa clé secrète de partenaire (`cle`) dans l'entête HTTP. FRW valide la clé, crée le formulaire et associe ce dernier au code du partenaire pour assurer la traçabilité.
-3. **Retour de l'API :** L'API retourne un `No Public Session` ainsi qu'un `secret` chiffré.
-    *   **Attention :** Ce `secret` est crucial. Le partenaire externe doit le sauvegarder dans son système, car il sera exigé pour tous les appels futurs concernant ce formulaire spécifique.
-4. **Redirection de l'utilisateur :** Le partenaire construit l'URL et redirige son client vers le formulaire pour qu'il puisse le compléter :
-
-    L'URL prend la forme suivante : `{Adresse du site FRW}/{langue}/Reprise?no={No Public Session}`
-
-    TODO à ajuster pour le header `x-secret`
- -->
-
-### Obtenir les informations et le statut d'un formulaire
-TODO
-
-<!-- Le partenaire externe peut, en tout temps après la création d'un formulaire, consulter l'état d'avancement de ce dernier via l'API [ObtenirInfosFormPartenaire](../Swagger/readme.md#apiv1sisobtenirinfosformpartenaire) `FRW118`.
-
-1. **Appel à l'API FRW118 :** L'appel doit inclure :
-    *   La `cle` du partenaire (en entête HTTP).
-    *   Le `secret` du formulaire obtenu lors de la création (en entête HTTP).
-2. **Informations retournées :**
-    *   Le numéro public du formulaire.
-    *   Le code du type de formulaire.
-    *   L'état du formulaire (ex: *En cours*, *Transmis*).
-    *   Les informations d'avancement du *workflow* (le cas échéant).
-    *   **Si le formulaire est transmis :** Les données complètes du formulaire, le lien vers le PDF généré et les liens des pièces jointes (PJ) téléversées par le client.
- -->
-### Télécharger une pièce jointe
-TODO
-
-<!-- Si le partenaire souhaite rapatrier les pièces jointes soumises par l'utilisateur une fois le formulaire transmis, il doit utiliser l'API de téléchargement existante de FRW (`FRW121`). 
-
-Lors de cet appel, le partenaire doit obligatoirement inclure l'entête HTTP `x-secret` contenant le secret du formulaire. FRW validera cette information avant d'autoriser le téléchargement. -->
-
-### Reprendre un formulaire
-TODO
-<!-- *À noter :* Actuellement, la reprise d'un formulaire directement via l'API par un partenaire externe n'est pas supportée. L'utilisateur (le citoyen) devra utiliser le mécanisme de reprise par courriel habituel fourni par FRW pour y accéder à nouveau ultérieurement. -->
+Cette validation s'applique à la création d'un formulaire (FRW111), à l'obtention de sa structure (FRW119) et au déclenchement d'une transmission personnalisée (FRW122).

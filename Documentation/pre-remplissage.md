@@ -393,12 +393,12 @@ formPreremplissage:
 
 | Propriété | Description |
 |----------|-------------|
-| `title` | Titre de la page de préremplissage. À défaut, le texte pilotable `preremplissage.titrePage`, puis le titre du formulaire. |
+| `title` | Titre de la page de préremplissage. À défaut, un titre générique piloté au niveau du système est utilisé, puis sinon (si non piloté), le titre du formulaire. <!-- preremplissage.titrePage -->|
 | `components` | Composants à saisir dans le formulaire de préremplissage (obligatoire, au moins un). |
 | `exigerPreremplissage` | Vrai par défaut. Le formulaire ne peut alors être débuté qu'à partir d'un lien prérempli. Mettre à `false` pour que le formulaire reste ouvrable normalement. |
 | `lienDirect` | Faux par défaut. Voir [Le lien généré](#le-lien-généré). |
 
-Les règles suivantes s'appliquent aux composants :
+Les règles suivantes s'appliquent aux composants du `formPreremplissage` :
 
 - `name` est le nom du composant dans le formulaire, `prefixId` inclus. Un composant groupe est repris en entier; un champ à l'intérieur d'un groupe ne peut pas être déclaré seul.
 - Chaque composant est fusionné avec le composant du même nom dans le formulaire : les propriétés déclarées dans `formPreremplissage` l'emportent (ex. `validations` remplace toutes les validations du composant). Le formulaire lui-même n'est pas modifié.
@@ -411,7 +411,11 @@ Les règles suivantes s'appliquent aux composants :
 
 Les champs déclarés dans `formPreremplissage` sont **autorisés automatiquement** pour le pré-remplissage anonyme : il n'est pas nécessaire de les ajouter à la liste `securite.whitelistPreremplissageAnonyme`. Pour un champ `nom`, les chemins `form.nom` et `form.nom.*` sont autorisés.
 
-Les textes de l'interface (`preremplissage.titrePage`, `boutonGenerer`, `titreLien`, `texteLien`, `libelleLien`, `boutonCopier`) sont des textes pilotables : ils peuvent être surchargés dans la section racine `textes`.
+<!-- 
+
+Note pour les admins FRW : Les textes de l'interface (`preremplissage.titrePage`, `boutonGenerer`, `titreLien`, `texteLien`, `libelleLien`, `boutonCopier`) sont des textes pilotables : ils peuvent être surchargés dans la section racine `textes`. 
+
+-->
 
 #### Le lien généré
 

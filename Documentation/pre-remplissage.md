@@ -346,3 +346,99 @@ Le pré-remplissage est maintenant disponible pour les formulaires anonymes. Tou
 > - Le système prend en charge des données de pré-remplissage d'une longueur maximale d'environ 1 000 caractères.
 
 Pour plus de détails, voir la section [Personnalisation des formulaires - Concepts de base](https://formulaires.it.mtess.gouv.qc.ca/fr/Form/7/P700U/0/N/#p=personnalisationBase) du P700.
+
+### Formulaire de préremplissage
+
+> Disponible à partir de la release [2026.x](https://github.com/MTESSDev/FRW/releases)
+
+Plutôt que de construire le lien de pré-remplissage dans un système, un formulaire anonyme peut offrir son propre **formulaire de préremplissage**. Une personne (ex. un agent) y saisit une partie des champs du formulaire, puis obtient un lien. Ce lien peut être donné à n'importe qui : la personne qui l'ouvre débute le formulaire avec ces informations déjà inscrites.
+
+Le formulaire de préremplissage est accessible à l'adresse suivante :
+
+`{Adresse du site FRW}/{langue}/Form/{No Systeme Autorisé}/{Type Formulaire}/0/P`
+
+Aucune instance de formulaire ni aucune session n'est créée par le formulaire de préremplissage.
+
+#### Configuration
+
+Le formulaire de préremplissage se définit dans la section racine `formPreremplissage` du fichier `form.yml`, au même niveau que `form:`. La présence de la section active le préremplissage. Ses composants ont la même structure que ceux du formulaire.
+
+```yaml
+form:
+  sectionsGroup:
+    - sections:
+        - id: infos
+          components:
+            - name: nom
+              type: text
+              label:
+                fr: Nom
+            - name: courrielAgent        # déclaré dans le formulaire, caché
+              type: hidden
+
+formPreremplissage:
+  title:                                 # titre de la page (le titre du formulaire ne change pas)
+    fr: Générer un lien prérempli
+  lienDirect: false                      # optionnel (faux par défaut)
+  exigerPreremplissage: true             # optionnel (vrai par défaut)
+  components:
+    - name: nom                          # hérite de tout du composant du formulaire
+      validations:
+        optional:                        # facultatif dans le préremplissage seulement
+    - name: courrielAgent                # caché dans le formulaire : type et label obligatoires ici
+      type: email
+      label:
+        fr: Courriel de l'agent
+```
+
+| Propriété | Description |
+|----------|-------------|
+| `title` | Titre de la page de préremplissage. À défaut, le texte pilotable `preremplissage.titrePage`, puis le titre du formulaire. |
+| `components` | Composants à saisir dans le formulaire de préremplissage (obligatoire, au moins un). |
+| `exigerPreremplissage` | Vrai par défaut. Le formulaire ne peut alors être débuté qu'à partir d'un lien prérempli. Mettre à `false` pour que le formulaire reste ouvrable normalement. |
+| `lienDirect` | Faux par défaut. Voir [Le lien généré](#le-lien-généré). |
+
+Les règles suivantes s'appliquent aux composants :
+
+- `name` est le nom du composant dans le formulaire, `prefixId` inclus. Un composant groupe est repris en entier; un champ à l'intérieur d'un groupe ne peut pas être déclaré seul.
+- Chaque composant est fusionné avec le composant du même nom dans le formulaire : les propriétés déclarées dans `formPreremplissage` l'emportent (ex. `validations` remplace toutes les validations du composant). Le formulaire lui-même n'est pas modifié.
+- Un champ `hidden` du formulaire doit préciser un `type` **et** un `label` dans `formPreremplissage`, sans quoi il ne peut pas être affiché.
+- Un champ qui ne sert qu'à porter une donnée, sans être affiché dans le formulaire, doit y être déclaré `type: hidden`.
+- Les `v-if` et `requisSi` du composant du formulaire ne sont pas repris (ils dépendent de champs absents du préremplissage), sauf s'ils sont redéclarés.
+- Un composant sans `name` (affichage seulement, ex. `dynamic`, `avis`) est repris tel quel.
+- Un champ est obligatoire par défaut. Utiliser `validations: optional:` pour le rendre facultatif.
+- Un `name` ne peut pas être déclaré plus d'une fois.
+
+Les champs déclarés dans `formPreremplissage` sont **autorisés automatiquement** pour le pré-remplissage anonyme : il n'est pas nécessaire de les ajouter à la liste `securite.whitelistPreremplissageAnonyme`. Pour un champ `nom`, les chemins `form.nom` et `form.nom.*` sont autorisés.
+
+Les textes de l'interface (`preremplissage.titrePage`, `boutonGenerer`, `titreLien`, `texteLien`, `libelleLien`, `boutonCopier`) sont des textes pilotables : ils peuvent être surchargés dans la section racine `textes`.
+
+#### Le lien généré
+
+Lorsque la personne clique sur `Générer le lien`, le formulaire est validé. Si tout est correct, les données saisies sont encodées en base 64 et un lien est affiché dans une fenêtre, avec un bouton pour le copier.
+
+- **Par défaut**, le lien pointe vers la page de départ du formulaire :
+  `{Adresse du site FRW}/{langue}/DebuterFormulaire/{No Systeme Autorisé}/{Type Formulaire}?donnees={Préremplissage}`
+  L'instance n'est créée qu'au clic sur `Commencer`, et non à chaque ouverture du lien (aperçus de liens, analyse des liens par les antivirus de courriel).
+- **Avec `lienDirect: true`**, le lien ouvre directement le formulaire :
+  `{Adresse du site FRW}/{langue}/Form/{No Systeme Autorisé}/{Type Formulaire}/0/N?donnees={Préremplissage}`
+  Chaque ouverture du lien crée alors une instance.
+
+#### Exiger le pré-remplissage
+
+Par défaut (`exigerPreremplissage` vrai), un formulaire qui a une section `formPreremplissage` ne peut être débuté qu'à partir d'un lien prérempli. Si le paramètre `donnees` est absent, invalide, vide ou ne contient que des propriétés non autorisées, l'utilisateur est redirigé vers la page de session invalide.
+
+> Attention : ajouter `formPreremplissage` à un formulaire existant sans mettre `exigerPreremplissage: false` empêche de le débuter sans lien prérempli.
+
+#### Conditions et erreurs
+
+Le formulaire de préremplissage n'est disponible que si l'accès anonyme (`securite:AccesAnonyme`) est activé pour le formulaire et si l'intégration en iframe est autorisée; sinon, ou si la section `formPreremplissage` est absente, l'utilisateur est redirigé vers la page de session invalide.
+
+Une configuration invalide produit une erreur 500 qui détaille les problèmes détectés, par exemple :
+
+- un composant qui n'est pas un objet, ou une section sans composants;
+- un `name` absent du formulaire;
+- un `name` déclaré plus d'une fois;
+- un champ `hidden` du formulaire sans `type` ni `label` dans `formPreremplissage`.
+
+> Important : les mêmes restrictions que le pré-remplissage anonyme s'appliquent. Ne pas faire saisir ni autoriser de données sensibles, et la longueur des données est limitée à environ 1 000 caractères.

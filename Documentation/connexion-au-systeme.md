@@ -152,5 +152,7 @@ Pour comprendre comment configurer ces regroupements et comment les partenaires 
     > Aucune donnée sensible ne doit être transmise dans le préremplissage anonyme. Celui-ci doit uniquement être utilisé à des fins d’orientation ou de guidage au sein du formulaire.
     > Le nombre de caractères maximum supporté est de 1000.
 
+    > Pour laisser un agent produire lui-même le lien prérempli, le formulaire peut définir un [formulaire de préremplissage](pre-remplissage.md#formulaire-de-préremplissage) (section `formPreremplissage`).
+
 1. Rediriger l'utilisateur à cette url (idéalement dans un nouvel onglet du fureteur);
 &nbsp;

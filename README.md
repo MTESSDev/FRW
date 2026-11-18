@@ -2,6 +2,16 @@
 
 # FRW - Formulaires Web
 
+> [!IMPORTANT]
+> **Migration progressive de Vue 2 vers Vue 3**
+>
+> Le déploiement se fera graduellement de novembre 2026 à juin 2027.
+> Consultez l'échéancier ci-dessous pour les étapes IT et PROD ainsi que les options d'adoption anticipée.
+
+![Échéancier du déploiement progressif de Vue 3 dans FRW](Documentation/images/migration-vue-3.png)
+
+*Échéancier prévisionnel, dernière mise à jour : novembre 2026. La date d'activation en PROD reste à confirmer.*
+
 ## Qu'est-ce que c'est?
 Un outil incroyable qui permet de créer des formulaires très rapidement à l'aide de simples fichiers de configuration YAML (low code).
 

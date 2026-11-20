@@ -15,3 +15,21 @@
 | WORKFLOW | Lorsqu'une étape de workflow a été soumise |
 | EXP | Lorsque le délai d'expiration du workflow a été atteint |
 | MOD | Lorsqu'un formulaire en workflow est réinitialisé à l'étape initiale par l'utilisateur principal |
+
+## Délais d'épuration
+
+Les formulaires sont épurés après un certain délai selon le type du formulaire. Voici les délais en jours pour chaque type de formulaire.
+
+| Description | Nombre de jours |
+|---|---:|
+| Formulaire confidentiel transmis | 0* |
+| Formulaire confidentiel abandonné | 0* |
+| Formulaire de longue durée transmis | 365 |
+| Formulaire de longue durée non transmis | 365 |
+| Formulaire transmis | 90 |
+| Formulaire anonyme non transmis | 90 |
+| Formulaire authentifié non transmis | 180 |
+| Formulaire supprimé par l'utilisateur | 1 |
+| Formulaire expiré | 30 |
+
+_* 0 jour signifie que l'épuration est effectuée immédiatement après la transmission_

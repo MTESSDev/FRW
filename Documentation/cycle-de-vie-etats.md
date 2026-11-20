@@ -32,4 +32,4 @@ Les formulaires sont épurés après un certain délai selon le type du formulai
 | Formulaire supprimé par l'utilisateur | 1 |
 | Formulaire expiré | 30 |
 
-_* 0 jour signifie que l'épuration est effectuée immédiatement après la transmission_
+_* 0 jour signifie que l'épuration est effectuée immédiatement après l'abandon ou la transmission_

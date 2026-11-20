@@ -20,16 +20,16 @@
 
 Les formulaires sont épurés après un certain délai selon le type du formulaire. Voici les délais en jours pour chaque type de formulaire.
 
-| Description | Nombre de jours |
-|---|---:|
-| Formulaire confidentiel transmis | 0* |
-| Formulaire confidentiel abandonné | 0* |
-| Formulaire de longue durée transmis | 365 |
-| Formulaire de longue durée non transmis | 365 |
-| Formulaire transmis | 90 |
-| Formulaire anonyme non transmis | 90 |
-| Formulaire authentifié non transmis | 180 |
-| Formulaire supprimé par l'utilisateur | 1 |
-| Formulaire expiré | 30 |
+| Description | Nombre de jours QA | Nombre de jours PROD |
+|---|---:|---:|
+| Formulaire confidentiel transmis | 0* | 0* |
+| Formulaire confidentiel abandonné | 0* | 0* |
+| Formulaire de longue durée transmis | 120 | 365 |
+| Formulaire de longue durée non transmis | 30 | 365 |
+| Formulaire transmis | 90 | 90 |
+| Formulaire anonyme non transmis | 14 | 90 |
+| Formulaire authentifié non transmis | 14 | 180 |
+| Formulaire supprimé par l'utilisateur | 1 | 1 |
+| Formulaire expiré | 30 | 30 |
 
 _* 0 jour signifie que l'épuration est effectuée immédiatement après l'abandon ou la transmission_
